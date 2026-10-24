@@ -1,0 +1,33 @@
+name: Buscar y publicar ofertas
+
+on:
+  schedule:
+    - cron: "17 */4 * * *"  # cada 4 horas
+  workflow_dispatch:         # botón para correrlo a mano
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python bot.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Guardar cambios
+        run: |
+          git config user.name "ofertas-bot"
+          git config user.email "ofertas-bot@users.noreply.github.com"
+          git add state.json docs/index.html
+          git diff --cached --quiet || git commit -m "Actualizar ofertas"
+          git push
