@@ -155,6 +155,37 @@ def send_telegram(item, rate, cfg):
         return False
 
 
+def whatsapp_text(items, rate, cfg):
+    # Formato de WhatsApp: *negrita*. Meta no permite publicar en canales por API, así que se copia a mano.
+    hoy = datetime.now(timezone.utc).strftime("%d/%m")
+    lines = [f"*🎮 Ofertas gamer de hoy ({hoy})*", ""]
+    for it in items[: cfg.get("ofertas_en_whatsapp", 8)]:
+        if it["sale_usd"] == 0:
+            lines.append(f"🎁 *GRATIS* · {it['title']} ({it['store']})")
+        else:
+            lines.append(f"🔥 *-{it['savings']}%* · {it['title']} · {fmt_cop(it['sale_usd'], rate)} ({it['store']})")
+        lines.append(it["url"])
+        lines.append("")
+    if cfg.get("url_web"):
+        lines.append(f"Todas las ofertas: {cfg['url_web']}")
+    if cfg.get("enlace_canal_telegram"):
+        lines.append(f"Al instante en Telegram: {cfg['enlace_canal_telegram']}")
+    return "\n".join(lines)
+
+
+def build_whatsapp_page(text):
+    page = f"""<!doctype html><html lang="es-CO"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Resumen para WhatsApp</title>
+<style>body{{margin:0;background:#0f1115;color:#e8eaf0;font:16px/1.45 system-ui,sans-serif;padding:16px;max-width:700px;margin:auto}}
+textarea{{width:100%;height:60vh;background:#1a1d24;color:inherit;border:1px solid #333;border-radius:10px;padding:12px;font:inherit}}
+button{{background:#25d366;color:#000;border:0;border-radius:10px;padding:14px 20px;font-weight:700;font-size:1rem;width:100%;margin:12px 0}}</style></head>
+<body><h1>Resumen para tu canal de WhatsApp</h1><p>Toca el botón, abre tu canal y pega.</p>
+<button onclick="navigator.clipboard.writeText(document.getElementById('t').value).then(()=>this.textContent='¡Copiado!')">Copiar texto</button>
+<textarea id="t" readonly>{html.escape(text)}</textarea></body></html>"""
+    (DOCS / "whatsapp.html").write_text(page, encoding="utf-8")
+
+
 def build_site(items, rate, cfg):
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     cards = []
@@ -215,6 +246,7 @@ def main():
             budget -= 1
 
     build_site(unique[: cfg.get("ofertas_en_la_web", 48)], rate, cfg)
+    build_whatsapp_page(whatsapp_text(unique, rate, cfg))
     STATE_FILE.write_text(json.dumps({"enviados": sorted(sent)[-2000:]}, indent=1), encoding="utf-8")
     print(f"{len(unique)} ofertas, tasa {rate:.0f} COP/USD")
 
