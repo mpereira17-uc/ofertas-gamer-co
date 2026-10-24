@@ -178,6 +178,12 @@ def build_site(items, rate, cfg):
                 .replace("{{JOIN}}", join))
     DOCS.mkdir(exist_ok=True)
     (DOCS / "index.html").write_text(page, encoding="utf-8")
+    site = cfg.get("url_web", "").rstrip("/") + "/"
+    (DOCS / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        f"<url><loc>{site}</loc><lastmod>{now[:10]}</lastmod><changefreq>hourly</changefreq></url></urlset>\n",
+        encoding="utf-8")
+    (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {site}sitemap.xml\n", encoding="utf-8")
 
 
 def main():
