@@ -39,7 +39,6 @@ jobs:
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           MASTODON_URL: ${{ vars.MASTODON_URL || secrets.MASTODON_URL }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FANATICAL_AFFILIATE_URL: ${{ vars.FANATICAL_AFFILIATE_URL }}
           GMG_AFFILIATE_URL: ${{ vars.GMG_AFFILIATE_URL }}
       - name: Comprobaciones críticas del sitio

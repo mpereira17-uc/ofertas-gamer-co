@@ -1,6 +1,7 @@
 """Fuentes autorizadas de ofertas. Solo APIs públicas, con reintentos y espera progresiva."""
 
 import json
+import re
 import sys
 import time
 import urllib.parse
@@ -55,6 +56,20 @@ def cop(amount, currency, rate):
     if currency == "USD" and rate:
         return int(round(amount * rate / 100) * 100)
     return None
+
+
+STEAM_HEADER = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{id}/header.jpg"
+
+
+def sharp_image(deal):
+    """CheapShark da miniaturas diminutas: se usa la portada grande de la tienda y la pequeña queda de respaldo."""
+    thumb = deal.get("thumb") or ""
+    if str(deal.get("steamAppID") or "").isdigit():
+        return STEAM_HEADER.format(id=deal["steamAppID"]), thumb
+    gog = re.match(r"(https://images\.gog-statics\.com/[0-9a-f]{64})_[\w]+\.\w+$", thumb)
+    if gog:
+        return gog.group(1) + ".jpg", thumb
+    return thumb, ""
 
 
 def make_offer(*, oid, title, store, official_url, image, original, current, currency, rate, now, cfg,
@@ -157,11 +172,14 @@ def cheapshark_deals(stores, rate, now, cfg, fetch=get_json):
             url = store["productUrl"].format(steamAppID=d["steamAppID"])
         else:
             url = store["searchUrl"].format(query=urllib.parse.quote(d["title"]))
+        image, small = sharp_image(d)
         offers.append(make_offer(
             oid=f"cs-{d['gameID']}-{d['storeID']}-{d['salePrice']}", title=d["title"], store=store,
-            official_url=url, image=d.get("thumb", ""), original=float(d["normalPrice"]),
+            official_url=url, image=image, original=float(d["normalPrice"]),
             current=float(d["salePrice"]), currency="USD", rate=rate, now=now, cfg=cfg, source="cheapshark",
             drm="Steam" if store["id"] == "steam" else None,
             tags=["descuento"] + (["metacritic-" + d["metacriticScore"]] if d.get("metacriticScore") not in (None, "0") else [])))
+        if small.startswith("https://"):
+            offers[-1]["imageSmall"] = small
         offers[-1]["metacritic"] = int(d["metacriticScore"]) if str(d.get("metacriticScore") or "0").isdigit() else 0
     return offers

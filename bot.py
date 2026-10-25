@@ -118,7 +118,6 @@ def run(args):
             offer["telegramPublishedAt"] = iso(now)
             budget -= 1
             sent_now += 1
-            channels.send_discord(offer)
     status["Publicadas en Telegram en esta ejecución"] = str(sent_now)
 
     offers.sort(key=lambda o: (o.get("currentPrice") != 0, -(o.get("discountPercentage") or 0)))

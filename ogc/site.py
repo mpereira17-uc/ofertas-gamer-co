@@ -46,6 +46,13 @@ def ext_link(url, text, affiliate=False, cls="btn btn-primary", label=None):
     return f'<a class="{cls}" href="{e(url)}" target="_blank" rel="{rel}"{aria}>{text}</a>'
 
 
+
+def fallback(o):
+    """Miniatura de respaldo por si la portada grande no existe (app.js la cambia al fallar)."""
+    small = o.get("imageSmall") or ""
+    return f' data-fallback="{e(small)}"' if small.startswith("https://") else ""
+
+
 class Site:
     def __init__(self, cfg, stores, ads, out):
         self.cfg, self.stores, self.ads, self.out = cfg, stores, ads, Path(out)
@@ -189,7 +196,7 @@ class Site:
         btn = ext_link(o["destinationUrl"], "Ver oferta", o.get("affiliate"),
                        label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
         return f"""<li class="card" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}">
-<div class="thumb"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{badge}</div>
+<div class="thumb"><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{badge}</div>
 <div class="body"><h3>{self.title_link(o)}</h3>
 <p class="meta">Tienda: {e(o['store'])}</p>
 {price}
@@ -263,7 +270,7 @@ class Site:
             btn = ext_link(o["destinationUrl"], "Ver oferta", o.get("affiliate"),
                            label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
             slides.append(f"""<li class="slide{' free' if free else ''}" id="slide-{i + 1}" aria-roledescription="diapositiva" aria-label="{i + 1} de {len(picks)}">
-<img src="{e(o['image'])}" alt="" width="1280" height="600"{' fetchpriority="high"' if i == 0 else ' loading="lazy"'} decoding="async">
+<img src="{e(o['image'])}"{fallback(o)} alt="" width="1280" height="600"{' fetchpriority="high"' if i == 0 else ' loading="lazy"'} decoding="async">
 <div class="slide-info"><span class="s-badge">{badge}</span><p class="s-store">{e(o['store'])}</p>
 <h2 class="s-title">{e(o['title'])}</h2>
 <p class="s-price">{price}{old}</p><p class="s-meta">{cop}{until}</p>
@@ -303,7 +310,7 @@ class Site:
             old = f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
             cop = f'<p class="meta">{e(cop_text(o))}</p>' if not free and cop_text(o) else ""
             until = f"Hasta el {date_es(o['expiresAt'])}" if o.get("expiresAt") else "Vigencia: fecha desconocida"
-            img = f'<img src="{e(o["image"])}" alt="Imagen de {e(o["title"])}" width="920" height="430" decoding="async">' if o.get("image") else ""
+            img = f'<img src="{e(o["image"])}"{fallback(o)} alt="Imagen de {e(o["title"])}" width="920" height="430" decoding="async">' if o.get("image") else ""
             btn = ext_link(o["destinationUrl"], f"Ver oferta en {e(o['store'])}", o.get("affiliate"),
                            label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
             ld = {"@context": "https://schema.org", "@type": "Product", "name": o["title"], "image": o.get("image") or None,

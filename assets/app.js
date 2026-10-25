@@ -382,3 +382,12 @@
     window.requestAnimationFrame(frame);
   }
 })();
+
+// Si la portada grande de una oferta no existe, se usa la miniatura original de la tienda.
+document.addEventListener("error", function (ev) {
+  var img = ev.target;
+  if (img && img.tagName === "IMG" && img.dataset.fallback && img.src !== img.dataset.fallback) {
+    img.src = img.dataset.fallback;
+    img.removeAttribute("data-fallback");
+  }
+}, true);

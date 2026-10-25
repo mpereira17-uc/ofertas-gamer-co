@@ -35,7 +35,14 @@ class TestOfertas(unittest.TestCase):
 
     def test_imagen_insegura_se_descarta(self):
         witcher = next(o for o in self.deals if o["title"].startswith("The Witcher"))
-        self.assertEqual(witcher["image"], "")
+        # La miniatura http:// se descarta; queda la portada https de Steam por su steamAppID.
+        self.assertTrue(witcher["image"].startswith("https://"))
+        self.assertNotIn("imageSmall", witcher)
+
+    def test_portada_grande_de_steam(self):
+        hollow = next(o for o in self.deals if o["title"] == "Hollow Knight" and o.get("imageSmall"))
+        self.assertTrue(hollow["image"].endswith("/367520/header.jpg"))
+        self.assertIn("capsule_sm_120", hollow["imageSmall"])
 
     def test_enlaces_oficiales_sin_afiliacion(self):
         for offer in self.epic + self.deals:
