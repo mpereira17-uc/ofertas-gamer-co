@@ -10,12 +10,19 @@
   "verificacion_google": "SfqW4gNJQ7LpoMNd2yARuzY9ALVVET1EUWIoHQh-Ciw",
   "verificacion_impact": "dc82b7b9-8030-4498-8219-c3262f230d50",
   "filtros_ofertas": {
-    "precio_maximo_usd": 20,
-    "descuento_minimo": 60,
-    "metacritic_minimo": 70
+    "precio_maximo_usd": 60,
+    "descuento_minimo": 30,
+    "metacritic_minimo": 0,
+    "paginas_cheapshark": 6
   },
   "maximo_mensajes_telegram_por_ejecucion": 6,
   "ofertas_en_whatsapp": 8,
   "dias_proximo_a_vencer": 2,
-  "horas_retener_oferta_sin_confirmar": 24
+  "horas_retener_oferta_sin_confirmar": 24,
+  "filtros_telegram": {
+    "descuento_minimo": 60,
+    "metacritic_minimo": 70
+  },
+  "indexnow_key": "d25a2de42ae37a2c1661e5023cd9824b",
+  "maximo_posts_redes_por_ejecucion": 3
 }

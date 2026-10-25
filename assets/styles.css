@@ -216,3 +216,14 @@ h2.s-title::after{display:none}
 .badge.rel{background:linear-gradient(135deg,var(--neon-1),var(--neon-2));box-shadow:0 6px 18px -6px var(--neon-1)}
 .tag.genre{border-color:rgba(139,92,246,.45);color:var(--text)}
 @media (max-width:600px){.rel-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.rel-crumb{display:none}.tabs,.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.tab,.chip{flex-shrink:0}}
+
+/* Página propia de cada oferta o juego */
+.title-link{color:inherit;text-decoration:none}
+.title-link:hover{color:var(--link);text-decoration:underline}
+.detail{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:start;margin-top:12px}
+.detail-media{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 30px 80px -40px rgba(139,92,246,.7);background:var(--surface-2);aspect-ratio:460/215}
+.detail-media img{width:100%;height:100%;object-fit:cover;display:block}
+.detail-info h1{font-size:clamp(1.7rem,4vw,2.8rem)}
+.detail-price{font-size:clamp(1.6rem,4vw,2.4rem)}
+.detail-date{font-size:1.25rem;font-weight:800;margin:.2em 0 .6em}
+@media (max-width:860px){.detail{grid-template-columns:1fr}}

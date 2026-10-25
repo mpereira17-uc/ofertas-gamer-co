@@ -132,9 +132,24 @@ def cheapshark_deals(stores, rate, now, cfg, fetch=get_json):
     by_cs = {s["cheapsharkId"]: s for s in stores.values() if s.get("cheapsharkId") and s.get("active")}
     f = cfg["filtros_ofertas"]
     params = {"storeID": ",".join(by_cs), "sortBy": "Deal Rating", "pageSize": 60,
-              "upperPrice": f["precio_maximo_usd"], "metacritic": f["metacritic_minimo"], "onSale": 1}
+              "upperPrice": f["precio_maximo_usd"], "metacritic": f.get("metacritic_minimo", 0), "onSale": 1}
+    deals, seen = [], set()
+    for page in range(f.get("paginas_cheapshark", 1)):
+        try:
+            batch = fetch(CHEAPSHARK_URL + urllib.parse.urlencode(dict(params, pageNumber=page)))
+        except Exception:
+            if page == 0:
+                raise  # sin la primera página la fuente cuenta como caída
+            break
+        for d in batch:
+            key = d.get("dealID") or (d.get("gameID"), d.get("storeID"))
+            if key not in seen:
+                seen.add(key)
+                deals.append(d)
+        if len(batch) < params["pageSize"]:
+            break
     offers = []
-    for d in fetch(CHEAPSHARK_URL + urllib.parse.urlencode(params)):
+    for d in deals:
         store = by_cs.get(d.get("storeID"))
         if not store or float(d["savings"]) < f["descuento_minimo"]:
             continue
@@ -148,4 +163,5 @@ def cheapshark_deals(stores, rate, now, cfg, fetch=get_json):
             current=float(d["salePrice"]), currency="USD", rate=rate, now=now, cfg=cfg, source="cheapshark",
             drm="Steam" if store["id"] == "steam" else None,
             tags=["descuento"] + (["metacritic-" + d["metacriticScore"]] if d.get("metacriticScore") not in (None, "0") else [])))
+        offers[-1]["metacritic"] = int(d["metacriticScore"]) if str(d.get("metacriticScore") or "0").isdigit() else 0
     return offers

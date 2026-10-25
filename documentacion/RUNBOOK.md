@@ -20,3 +20,12 @@ La rama `backup-pre-monetizacion` guarda el estado previo a esta reestructuraci�
 
 ## Rotar el token del bot
 En @BotFather: `/revoke` → nuevo token → actualízalo en **Settings → Secrets and variables → Actions**.
+
+## Promoción automática
+
+- **IndexNow** (Bing, Yandex y otros buscadores): está activo. En cada ejecución se avisa de las páginas nuevas. La clave pública está en `config/site.json` (`indexnow_key`) y se publica como `docs/<clave>.txt`.
+- **Bluesky** (opcional): en Bluesky ve a Configuración → Privacidad y seguridad → Contraseñas de app y crea una. Luego, en GitHub, ve a Settings → Secrets and variables → Actions:
+  - Variable `BLUESKY_HANDLE`, por ejemplo `ofertasgamerco.bsky.social`.
+  - Secreto `BLUESKY_APP_PASSWORD`, con la contraseña de app que creaste.
+- **Mastodon** (opcional): variable `MASTODON_URL` (ej. `https://mastodon.social`) y secreto `MASTODON_TOKEN`, con un token de app con permiso `write:statuses`.
+- En cada red se publican como máximo 3 ofertas por ejecución, solo las mejores (gratis, o 60 % de descuento con Metacritic de 70 o más). Cada post enlaza a la página propia de la oferta.

@@ -10,7 +10,7 @@ FIELDS = [
     "regions", "originalPrice", "currentPrice", "currency", "copApproximation", "discountPercentage",
     "image", "officialUrl", "destinationUrl", "affiliateNetwork", "affiliate", "sponsored", "startsAt",
     "expiresAt", "verifiedAt", "source", "sourceType", "status", "tags", "telegramPublishedAt",
-    "createdAt", "updatedAt",
+    "createdAt", "updatedAt", "metacritic",
 ]
 REQUIRED = ["id", "title", "store", "storeId", "officialUrl", "destinationUrl", "currency", "verifiedAt", "source"]
 STATUSES = {"Disponible", "Gratuito", "Próximo a vencer", "Vencido", "Pendiente de verificación",

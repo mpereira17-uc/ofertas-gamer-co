@@ -51,9 +51,10 @@ class Site:
         self.cfg, self.stores, self.ads, self.out = cfg, stores, ads, Path(out)
         self.base = cfg["url_web"].rstrip("/") + "/"
         self.pages = []
+        self.detail = {}  # id de oferta o juego -> nombre de su página propia
 
     # ---------- plantilla común ----------
-    def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website"):
+    def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website", og_image=None):
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
         stores_nav = [(f"ofertas.html?tienda={st['id']}", st["name"], "🏬") for st in self.stores.values() if st["active"]]
@@ -102,11 +103,11 @@ class Site:
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{e(canonical)}">
-<meta property="og:image" content="{self.base}assets/og-image.png">
+<meta property="og:image" content="{e(og_image or self.base + 'assets/og-image.png')}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(description)}">
-<meta name="twitter:image" content="{self.base}assets/og-image.png">
+<meta name="twitter:image" content="{e(og_image or self.base + 'assets/og-image.png')}">
 <meta name="theme-color" content="#07070d">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -189,7 +190,7 @@ class Site:
                        label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
         return f"""<li class="card" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}">
 <div class="thumb"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{badge}</div>
-<div class="body"><h3>{e(o['title'])}</h3>
+<div class="body"><h3>{self.title_link(o)}</h3>
 <p class="meta">Tienda: {e(o['store'])}</p>
 {price}
 <div class="tags">{''.join(tags)}</div>
@@ -275,6 +276,85 @@ class Site:
                 f'<nav class="s-dots" aria-label="Elegir oferta">{dots}</nav>'
                 f'<div class="s-bar" aria-hidden="true"><span></span></div></section>')
 
+    # ---------- páginas propias por oferta y por juego (para buscadores) ----------
+    def assign_pages(self, offers, games):
+        used = set()
+        for prefix, items in (("oferta", offers), ("juego", games)):
+            for it in items:
+                base = f"{prefix}-{it.get('slug') or 'x'}"
+                name = base + ".html"
+                if name in used:
+                    name = f"{base}-{it['id'].split('-')[1] if '-' in it['id'] else len(used)}.html"
+                used.add(name)
+                self.detail[it["id"]] = name
+
+    def title_link(self, it):
+        page = self.detail.get(it["id"])
+        return f'<a class="title-link" href="{page}">{e(it["title"])}</a>' if page else e(it["title"])
+
+    def offer_pages(self, offers, notice):
+        for o in offers:
+            name = self.detail.get(o["id"])
+            if not name:
+                continue
+            free = o.get("currentPrice") == 0
+            what = "gratis" if free else f"con {o.get('discountPercentage') or 0}% de descuento"
+            price = "Gratis" if free else e(money(o["currentPrice"], o["currency"]))
+            old = f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+            cop = f'<p class="meta">{e(cop_text(o))}</p>' if not free and cop_text(o) else ""
+            until = f"Hasta el {date_es(o['expiresAt'])}" if o.get("expiresAt") else "Vigencia: fecha desconocida"
+            img = f'<img src="{e(o["image"])}" alt="Imagen de {e(o["title"])}" width="920" height="430" decoding="async">' if o.get("image") else ""
+            btn = ext_link(o["destinationUrl"], f"Ver oferta en {e(o['store'])}", o.get("affiliate"),
+                           label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
+            ld = {"@context": "https://schema.org", "@type": "Product", "name": o["title"], "image": o.get("image") or None,
+                  "offers": {"@type": "Offer", "price": o.get("currentPrice"), "priceCurrency": o["currency"],
+                             "url": o["officialUrl"], "availability": "https://schema.org/InStock",
+                             "seller": {"@type": "Organization", "name": o["store"]},
+                             **({"priceValidUntil": o["expiresAt"][:10]} if o.get("expiresAt") else {})}}
+            ld = {k: v for k, v in ld.items() if v is not None}
+            self.layout(name, f"{o['title']} {what} en {o['store']}",
+                        f"{o['title']} está {what} en {o['store']}. Precio, vigencia y enlace oficial verificados por Ofertas Gamer CO.",
+                        f"""<article class="detail">
+<div class="detail-media">{img}<span class="badge{' free' if free else ''}">{'GRATIS' if free else '-' + str(o.get('discountPercentage') or 0) + '%'}</span></div>
+<div class="detail-info"><p class="eyebrow">{e(o['store'])}</p>
+<h1>{e(o['title'])}</h1>
+<p class="s-price detail-price">{price}{old}</p>{cop}
+<p class="meta"><span class="status">{e(o['status'])}</span> · {e(until)}</p>
+<p class="meta">Región: {e(region_text(o))} · Verificado: {e(date_es(o['verifiedAt']))}</p>
+<div class="cta">{btn}<a class="btn" href="ofertas.html">Ver más ofertas</a></div>
+{notice}</div></article>""",
+                        crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
+
+    def game_pages(self, games, now):
+        for g in games:
+            name = self.detail.get(g["id"])
+            if not name:
+                continue
+            when = date_label(g.get("date"), g.get("precision"))
+            rel = relative_label(g.get("date"), g.get("precision"), now)
+            img = f'<img src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">' if g.get("image") else ""
+            tags = "".join(f'<span class="tag">{e(x)}</span>' for x in g.get("platforms", [])) + \
+                "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", []))
+            ld = {"@context": "https://schema.org", "@type": "VideoGame", "name": g["title"], "url": g["url"],
+                  "gamePlatform": g.get("platforms"), "genre": g.get("genres")}
+            if g.get("image"):
+                ld["image"] = g["image"]
+            if g.get("precision") == "day":
+                ld["datePublished"] = g["date"]
+            self.layout(name, f"{g['title']}: fecha de lanzamiento en PC",
+                        f"Fecha de lanzamiento de {g['title']} en Steam: {when}. Sistemas, géneros y enlace oficial.",
+                        f"""<article class="detail">
+<div class="detail-media">{img}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+<div class="detail-info"><p class="eyebrow">Lanzamiento en Steam</p>
+<h1>{e(g['title'])}</h1>
+<p class="detail-date">📅 {e(when)}</p>
+<div class="tags">{tags}</div>
+{f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
+<div class="cta">{ext_link(g["url"], "Ver en Steam", cls="btn btn-primary", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")}<a class="btn" href="lanzamientos.html">Ver calendario</a>
+<button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
+<p class="meta">La fecha es la que publica Steam y puede cambiar. Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
+                        crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld], og_image=g.get("image"))
+
     # ---------- calendario de lanzamientos ----------
     @staticmethod
     def split_releases(games, now):
@@ -296,7 +376,7 @@ class Site:
         link = ext_link(g["url"], "Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
         return f"""<li class="rel-card" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
 <div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}</div>
-<p class="rel-name">{e(g['title'])}</p>
+<p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
 <div class="tags">{genres}</div>
@@ -398,6 +478,7 @@ class Site:
         shutil.copytree(ASSETS, self.out / "assets")
         updated = updated_dt.strftime("%d/%m/%Y %H:%M UTC")
         live = [o for o in offers if o["status"] != "Vencido"]
+        self.assign_pages(live, games or [])
         free = [o for o in live if o.get("currentPrice") == 0]
         deals = [o for o in live if o.get("currentPrice")]
         soon = sorted([o for o in live if o.get("expiresAt")], key=lambda o: o["expiresAt"])[:6]
@@ -447,8 +528,9 @@ class Site:
 {self.offer_list(top, with_filters=False, list_id="top-home")}
 {'<h2>Próximas a vencer</h2>' + self.offer_list(soon, with_filters=False, list_id="soon-home") if soon else ''}
 {self.upcoming_home(games or [], updated_dt)}
-<h2>Buscar entre todas las ofertas</h2>
-{self.offer_list(live)}
+<h2>Buscar entre las mejores ofertas</h2>
+{self.offer_list(live[:60])}
+{f'<p><a class="btn btn-primary" href="ofertas.html">Ver las {len(deals)} ofertas</a></p>' if len(live) > 60 else ''}
 <h2>Tiendas</h2>
 {stores_html}
 <p><a href="tiendas.html">Ver detalles de las tiendas</a></p>
@@ -507,6 +589,8 @@ class Site:
                     crumbs=[("noticias.html", "Noticias de ofertas")])
 
         self.releases_page(games or [], updated_dt, updated_line)
+        self.offer_pages(live, notice)
+        self.game_pages(games or [], updated_dt)
         self.static_pages(status, updated)
         self.whatsapp_page(live, updated)
         self.feeds(live, updated_dt)
@@ -517,6 +601,8 @@ class Site:
             "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
                       {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, ensure_ascii=False, indent=1))
         self.write(".nojekyll", "")
+        if self.cfg.get("indexnow_key"):  # IndexNow exige publicar la clave (no es secreta)
+            self.write(f"{self.cfg['indexnow_key']}.txt", self.cfg["indexnow_key"])
         shutil.copy(ROOT / "config" / "_headers", self.out / "_headers")
         (self.out / "data").mkdir(exist_ok=True)
         public = [{k: o[k] for k in o if k != "telegramPublishedAt"} for o in live]

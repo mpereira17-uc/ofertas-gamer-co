@@ -15,7 +15,9 @@ NON_GAMES = {"Utilidades", "Diseño e ilustración", "Edición de vídeo", "Edic
              "Desarrollo web", "Formación", "Software de entrenamiento", "Animación y modelado"}
 DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=spanish"
 DETAILS_DATE_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=english&filters=release_date"
-MAX_GAMES = 40
+MAX_GAMES = 160
+MAX_REFRESH = 50  # fichas de Steam consultadas por ejecución; el resto se reutiliza
+REFRESH_HOURS = 24
 RECENT_DAYS = 45  # los estrenos más viejos no son "recientes"
 
 MONTHS_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
@@ -85,60 +87,78 @@ def search_ids(data):
 def popular_ids(fetch):
     """Primero los más esperados y los estrenos populares; si la búsqueda falla, las listas destacadas."""
     ids = []
-    for flt, count in (("popularcomingsoon", 30), ("popularnew", 10)):
+    for flt, count, start in (("popularcomingsoon", 100, 0), ("popularcomingsoon", 100, 100), ("popularnew", 25, 0)):
         try:
-            ids += [i for i in search_ids(fetch(SEARCH_URL.format(filter=flt, count=count))) if i not in ids]
+            url = SEARCH_URL.format(filter=flt, count=count) + f"&start={start}"
+            ids += [i for i in search_ids(fetch(url)) if i not in ids]
         except Exception as exc:
-            print(f"Lanzamientos: búsqueda {flt} falló: {exc}", file=sys.stderr)
+            print(f"Lanzamientos: búsqueda {flt} desde {start} falló: {exc}", file=sys.stderr)
     if len(ids) < 10:
         ids += [i for i in steam_ids(fetch(FEATURED_URL)) if i not in ids]
     return ids[:MAX_GAMES]
 
 
-def steam_releases(now, fetch):
-    games = []
+def steam_game(app_id, now, fetch):
+    """Ficha de un juego en Steam, o None si no es un juego o no hay datos."""
+    data = (fetch(DETAILS_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
+    dates = (fetch(DETAILS_DATE_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
+    info = data.get("data") if data.get("success") else None
+    if not info or info.get("type") != "game":
+        return None
+    if NON_GAMES & {g.get("description") for g in info.get("genres") or []}:
+        return None
+    raw = ((dates.get("data") or {}).get("release_date") or {}).get("date") or ""
+    date, precision = parse_release(raw)
+    image = info.get("header_image") or ""
+    platforms = [n for k, n in (("windows", "Windows"), ("mac", "Mac"), ("linux", "Linux"))
+                 if (info.get("platforms") or {}).get(k)]
+    title = info.get("name", "").strip()
+    if not title:
+        return None
+    return {
+        "id": f"steam-{app_id}",
+        "slug": slugify(title),
+        "title": title,
+        "description": re.sub(r"<[^>]+>", "", info.get("short_description") or "").strip(),
+        "store": "Steam",
+        "url": f"https://store.steampowered.com/app/{app_id}/",
+        "image": image if image.startswith("https://") else "",
+        "platforms": platforms or ["Windows"],
+        "genres": [g["description"] for g in info.get("genres") or [] if g.get("description")][:3],
+        "releaseText": raw,
+        "date": date,
+        "precision": precision,
+        "comingSoon": bool((info.get("release_date") or {}).get("coming_soon")),
+        "verifiedAt": iso(now),
+    }
+
+
+def steam_releases(now, fetch, previous=()):
+    cache = {g["id"]: g for g in previous if g.get("id")}
+    fresh_after = iso(now - timedelta(hours=REFRESH_HOURS))
+    oldest = (now - timedelta(days=RECENT_DAYS)).strftime("%Y-%m-%d")
+    games, refreshed = [], 0
     for app_id in popular_ids(fetch):
-        try:
-            data = (fetch(DETAILS_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
-            dates = (fetch(DETAILS_DATE_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
-        except Exception as exc:  # un juego que falla no tumba el calendario
-            print(f"Lanzamientos: Steam {app_id} falló: {exc}", file=sys.stderr)
-            continue
-        info = data.get("data") if data.get("success") else None
-        if not info or info.get("type") != "game":
-            continue
-        if NON_GAMES & {g.get("description") for g in info.get("genres") or []}:
-            continue
-        raw = ((dates.get("data") or {}).get("release_date") or {}).get("date") or ""
-        date, precision = parse_release(raw)
-        if date and date < (now - timedelta(days=RECENT_DAYS)).strftime("%Y-%m-%d"):
-            continue
-        image = info.get("header_image") or ""
-        platforms = [n for k, n in (("windows", "Windows"), ("mac", "Mac"), ("linux", "Linux"))
-                     if (info.get("platforms") or {}).get(k)]
-        games.append({
-            "id": f"steam-{app_id}",
-            "slug": slugify(info.get("name", "")),
-            "title": info.get("name", "").strip(),
-            "description": re.sub(r"<[^>]+>", "", info.get("short_description") or "").strip(),
-            "store": "Steam",
-            "url": f"https://store.steampowered.com/app/{app_id}/",
-            "image": image if image.startswith("https://") else "",
-            "platforms": platforms or ["Windows"],
-            "genres": [g["description"] for g in info.get("genres") or [] if g.get("description")][:3],
-            "releaseText": raw,
-            "date": date,
-            "precision": precision,
-            "comingSoon": bool((info.get("release_date") or {}).get("coming_soon")),
-            "verifiedAt": iso(now),
-        })
-    return [g for g in games if g["title"]]
+        cached = cache.get(f"steam-{app_id}")
+        game = cached if cached and (cached.get("verifiedAt") or "") >= fresh_after else None
+        if game is None and refreshed < MAX_REFRESH:
+            refreshed += 1
+            try:
+                game = steam_game(app_id, now, fetch)
+            except Exception as exc:  # un juego que falla no tumba el calendario
+                print(f"Lanzamientos: Steam {app_id} falló: {exc}", file=sys.stderr)
+                game = cached
+        elif game is None:
+            game = cached  # se actualizará en una próxima ejecución
+        if game and not (game.get("date") and game["date"] < oldest):
+            games.append(game)
+    return games
 
 
 def update(previous, now, fetch):
     """Devuelve (juegos, estado). Si Steam falla se conserva la última versión válida."""
     try:
-        games = steam_releases(now, fetch)
+        games = steam_releases(now, fetch, previous)
         if not games:
             raise ValueError("Steam no devolvió juegos")
         return games, f"OK, {len(games)} juegos"

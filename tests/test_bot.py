@@ -17,7 +17,7 @@ class TestBot(unittest.TestCase):
             tmp = Path(tmp)
             sent = []
             with mock.patch.multiple(bot, DATA=tmp, OFFERS_FILE=tmp / "offers.json",
-                                     PUBLISHED_FILE=tmp / "pub.json", RELEASES_FILE=tmp / "rel.json",
+                                     PUBLISHED_FILE=tmp / "pub.json", RELEASES_FILE=tmp / "rel.json", SOCIAL_FILE=tmp / "soc.json",
                                      DOCS=tmp / "docs"), \
                     mock.patch.object(channels, "send_telegram", side_effect=lambda o: sent.append(o["id"]) or True), \
                     mock.patch.object(channels, "send_discord", return_value=False):
@@ -32,6 +32,8 @@ class TestBot(unittest.TestCase):
             self.assertTrue(all(o["telegramPublishedAt"] for o in data["offers"]))
             self.assertTrue((tmp / "docs" / "whatsapp.html").exists())
             self.assertTrue((tmp / "docs" / "lanzamientos.html").exists())
+            self.assertTrue(list((tmp / "docs").glob("oferta-*.html")))
+            self.assertTrue(list((tmp / "docs").glob("juego-*.html")))
             games = json.loads((tmp / "rel.json").read_text())["games"]
             self.assertEqual({g["title"] for g in games},
                              {"Nave Estelar", "Granja Tranquila", "Misterio <script>"})
