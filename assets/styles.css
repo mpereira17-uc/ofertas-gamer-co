@@ -38,6 +38,7 @@ header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
 .side a:hover{background:var(--surface-2);transform:translateX(3px)}
 .side a[aria-current="page"]{color:#fff;background:linear-gradient(135deg,var(--neon-1),var(--neon-2));box-shadow:0 8px 24px -12px var(--neon-1)}
 .side-ico{width:22px;text-align:center;font-size:1rem}
+.side-cta{display:grid;gap:8px}
 .side-cta .btn{width:100%}
 .menu-toggle{display:none}
 .js .menu-toggle{display:inline-flex}

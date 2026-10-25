@@ -233,10 +233,10 @@ class Site:
         return filters + f'<ul class="grid" id="{list_id}">' + "".join(cards) + "</ul>"
 
     def side_channels(self):
-        tg = self.cfg.get("enlace_canal_telegram")
-        if not tg:
-            return ""
-        return '<div class="side-group side-cta">' + ext_link(tg, "Canal de Telegram", cls="btn btn-tg") + "</div>"
+        links = [ext_link(self.cfg[k], label, cls=f"btn {cls}") for k, label, cls in
+                 (("enlace_canal_telegram", "Canal de Telegram", "btn-tg"), ("enlace_canal_whatsapp", "Canal de WhatsApp", "btn-wa"))
+                 if self.cfg.get(k)]
+        return '<div class="side-group side-cta">' + "".join(links) + "</div>" if links else ""
 
     def channels_cta(self):
         parts = []
