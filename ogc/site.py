@@ -223,6 +223,42 @@ class Site:
         parts.append('<a class="btn" href="whatsapp.html">Resumen para WhatsApp</a>')
         return '<div class="cta">' + "".join(parts) + "</div>"
 
+    def slider(self, offers):
+        seen, picks = set(), []
+        for o in offers:
+            if o["id"] not in seen and o.get("image"):
+                seen.add(o["id"])
+                picks.append(o)
+        picks = picks[:8]
+        if not picks:
+            return ""
+        slides = []
+        for i, o in enumerate(picks):
+            free = o.get("currentPrice") == 0
+            badge = "GRATIS" if free else f"-{o.get('discountPercentage') or 0}%"
+            if free:
+                price = "Gratis"
+            else:
+                price = e(money(o["currentPrice"], o["currency"]))
+            old = f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+            cop = f'<span class="s-cop">{e(cop_text(o))}</span>' if not free and cop_text(o) else ""
+            until = f'<span class="s-until">Hasta el {e(date_es(o["expiresAt"]))}</span>' if o.get("expiresAt") else ""
+            btn = ext_link(o["destinationUrl"], "Ver oferta", o.get("affiliate"),
+                           label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
+            slides.append(f"""<li class="slide{' free' if free else ''}" id="slide-{i + 1}" aria-roledescription="diapositiva" aria-label="{i + 1} de {len(picks)}">
+<img src="{e(o['image'])}" alt="" width="1280" height="600"{' fetchpriority="high"' if i == 0 else ' loading="lazy"'} decoding="async">
+<div class="slide-info"><span class="s-badge">{badge}</span><p class="s-store">{e(o['store'])}</p>
+<h2 class="s-title">{e(o['title'])}</h2>
+<p class="s-price">{price}{old}</p><p class="s-meta">{cop}{until}</p>
+<div class="s-cta">{btn}</div></div></li>""")
+        dots = "".join(f'<a href="#slide-{i + 1}" aria-label="Ir a la oferta {i + 1}"></a>' for i in range(len(picks)))
+        return (f'<section class="slider" aria-roledescription="carrusel" aria-label="Ofertas destacadas">'
+                f'<ul class="slides" id="slides" tabindex="0">{"".join(slides)}</ul>'
+                f'<button class="s-nav prev" type="button" aria-label="Oferta anterior" hidden>‹</button>'
+                f'<button class="s-nav next" type="button" aria-label="Oferta siguiente" hidden>›</button>'
+                f'<nav class="s-dots" aria-label="Elegir oferta">{dots}</nav>'
+                f'<div class="s-bar" aria-hidden="true"><span></span></div></section>')
+
     def ticker(self, offers):
         if not offers:
             return ""
@@ -274,7 +310,8 @@ class Site:
 
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
-                    f"""<section class="hero">
+                    f"""{self.slider(free + top)}
+<section class="hero">
 <p class="eyebrow">Juegos de PC · Colombia y Latinoamérica</p>
 <h1>Juegos <span class="grad">gratis</span> y ofertas de PC en tiendas oficiales</h1>
 <p class="lead">Ofertas Gamer CO reúne juegos gratuitos y descuentos verificados de tiendas oficiales para Colombia y Latinoamérica. Te mostramos la tienda, el precio, la vigencia y el enlace, y tú compras directamente en la tienda.</p>

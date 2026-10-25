@@ -137,3 +137,37 @@ footer.site a{color:var(--text);text-decoration:none}footer.site a:hover{color:v
 .js .card.reveal.in{transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry))}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.js .reveal{opacity:1;transform:none}.bg-particles{display:none}}
+
+/* Carrusel de ofertas destacadas */
+.slider{position:relative;margin:8px 0 8px;border-radius:24px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 30px 80px -40px rgba(139,92,246,.7);isolation:isolate}
+.slides{list-style:none;margin:0;padding:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.slides::-webkit-scrollbar{display:none}
+.slides:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+.slide{position:relative;flex:0 0 100%;scroll-snap-align:start;aspect-ratio:16/7;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;background:#0b0b16;isolation:isolate}
+.slide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;transform:scale(1.12);transition:transform 6s ease-out}
+.slide.active>img{transform:scale(1)}
+.slide::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,7,13,.92) 0%,rgba(7,7,13,.6) 45%,rgba(7,7,13,.05) 80%),linear-gradient(0deg,rgba(7,7,13,.85),transparent 55%)}
+.slide-info{position:relative;padding:clamp(20px,4vw,48px) clamp(20px,4vw,48px) clamp(20px,4vw,48px) 84px;max-width:680px;color:#fff}
+.js .slide-info>*{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.js .slide.active .slide-info>*{opacity:1;transform:none}
+.slide.active .slide-info>:nth-child(2){transition-delay:.08s}.slide.active .slide-info>:nth-child(3){transition-delay:.16s}.slide.active .slide-info>:nth-child(4){transition-delay:.24s}.slide.active .slide-info>:nth-child(5){transition-delay:.32s}.slide.active .slide-info>:nth-child(6){transition-delay:.4s}
+.s-badge{display:inline-block;font-weight:900;font-size:1rem;padding:6px 14px;border-radius:10px;background:linear-gradient(135deg,#e11d48,#f97316);box-shadow:0 0 24px rgba(244,63,94,.6)}
+.slide.free .s-badge{background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 0 24px rgba(34,197,94,.6)}
+.s-store{margin:12px 0 2px;font-weight:700;color:#c7d2fe;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
+h2.s-title{margin:0 0 8px;padding:0;font-size:clamp(1.5rem,4.5vw,3rem);line-height:1.05;letter-spacing:-.02em;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+h2.s-title::after{display:none}
+.s-price{margin:0;font-size:clamp(1.3rem,3vw,2rem);font-weight:900;color:#4ade80;text-shadow:0 0 20px rgba(74,222,128,.5)}
+.s-price s{color:#cbd5e1;font-size:.55em;font-weight:500;margin-left:10px;text-shadow:none}
+.s-meta{margin:4px 0 0;display:flex;flex-wrap:wrap;gap:4px 14px;color:#e2e8f0;font-size:.95rem}
+.s-cta{margin-top:16px}.s-cta .btn{min-width:180px;font-size:1.05rem}
+.s-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(7,7,13,.55);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s,transform .2s}
+.s-nav:hover{background:linear-gradient(135deg,var(--neon-1),var(--neon-2));transform:translateY(-50%) scale(1.08)}
+.s-nav.prev{left:14px}.s-nav.next{right:14px}
+.s-dots{position:absolute;right:20px;bottom:18px;display:flex;gap:8px}
+.s-dots a{display:block;width:12px;height:12px;border-radius:999px;background:rgba(255,255,255,.4);transition:width .3s,background .3s}
+.s-dots a[aria-current="true"]{width:32px;background:linear-gradient(90deg,var(--neon-2),var(--neon-1))}
+.s-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12)}
+.s-bar span{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--neon-3),var(--neon-2),var(--neon-1))}
+.s-bar span.run{transform:scaleX(1);transition:transform 6s linear}
+@media (max-width:760px){.slide{aspect-ratio:auto;min-height:440px}.slide::before{background:linear-gradient(0deg,rgba(7,7,13,.95) 10%,rgba(7,7,13,.55) 55%,rgba(7,7,13,.1))}.s-nav{display:none}.s-dots{left:0;right:0;justify-content:center;bottom:14px}.slide-info{padding:20px 20px 44px}}
+@media (prefers-reduced-motion:reduce){.js .slide-info>*{opacity:1;transform:none}.slide>img{transform:none}}
