@@ -10,6 +10,9 @@ from datetime import datetime
 from .model import iso, slugify
 
 FEATURED_URL = "https://store.steampowered.com/api/featuredcategories?cc=co&l=english"
+SEARCH_URL = "https://store.steampowered.com/search/results/?json=1&filter={filter}&count={count}&cc=co&l=english"
+NON_GAMES = {"Utilidades", "Diseño e ilustración", "Edición de vídeo", "Edición de fotos", "Producción de audio",
+             "Desarrollo web", "Formación", "Software de entrenamiento", "Animación y modelado"}
 DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=spanish"
 DETAILS_DATE_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=english&filters=release_date"
 MAX_GAMES = 40
@@ -68,10 +71,32 @@ def steam_ids(featured):
     return ids[:MAX_GAMES]
 
 
+def search_ids(data):
+    """Saca los appid de la búsqueda de Steam (el id viene dentro de la URL de la imagen)."""
+    ids = []
+    for item in (data or {}).get("items", []):
+        m = re.search(r"/apps/(\d+)/", item.get("logo") or "")
+        if m and int(m.group(1)) not in ids:
+            ids.append(int(m.group(1)))
+    return ids
+
+
+def popular_ids(fetch):
+    """Primero los más esperados y los estrenos populares; si la búsqueda falla, las listas destacadas."""
+    ids = []
+    for flt, count in (("popularcomingsoon", 30), ("popularnew", 10)):
+        try:
+            ids += [i for i in search_ids(fetch(SEARCH_URL.format(filter=flt, count=count))) if i not in ids]
+        except Exception as exc:
+            print(f"Lanzamientos: búsqueda {flt} falló: {exc}", file=sys.stderr)
+    if len(ids) < 10:
+        ids += [i for i in steam_ids(fetch(FEATURED_URL)) if i not in ids]
+    return ids[:MAX_GAMES]
+
+
 def steam_releases(now, fetch):
-    featured = fetch(FEATURED_URL)
     games = []
-    for app_id in steam_ids(featured):
+    for app_id in popular_ids(fetch):
         try:
             data = (fetch(DETAILS_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
             dates = (fetch(DETAILS_DATE_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
@@ -80,6 +105,8 @@ def steam_releases(now, fetch):
             continue
         info = data.get("data") if data.get("success") else None
         if not info or info.get("type") != "game":
+            continue
+        if NON_GAMES & {g.get("description") for g in info.get("genres") or []}:
             continue
         raw = ((dates.get("data") or {}).get("release_date") or {}).get("date") or ""
         date, precision = parse_release(raw)

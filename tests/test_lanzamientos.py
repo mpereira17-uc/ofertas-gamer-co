@@ -43,6 +43,12 @@ class TestLanzamientos(unittest.TestCase):
             self.assertTrue(g["url"].startswith("https://store.steampowered.com/app/"))
             self.assertNotIn("<", g["description"])
 
+    def test_ids_de_la_busqueda_popular(self):
+        data = {"items": [{"name": "A", "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1001/capsule_sm_120.jpg?t=1"},
+                          {"name": "B", "logo": "https://cdn.example/sin-id.jpg"},
+                          {"name": "A otra vez", "logo": "https://x/steam/apps/1001/a.jpg"}]}
+        self.assertEqual(releases.search_ids(data), [1001])
+
     def test_steam_caido_conserva_lo_anterior(self):
         def broken(url):
             raise OSError("sin red")
