@@ -3,6 +3,7 @@
 - IndexNow: avisa a Bing, Yandex y otros buscadores de las páginas nuevas (no necesita cuenta).
 - Bluesky: publica con la API oficial (AT Protocol) si existen BLUESKY_HANDLE y BLUESKY_APP_PASSWORD.
 - Mastodon: publica con la API oficial si existen MASTODON_URL y MASTODON_TOKEN.
+- Discord: publica con un webhook oficial del canal si existe DISCORD_WEBHOOK_URL.
 
 Sin los secretos no se publica nada. Nunca se imprimen tokens ni contraseñas.
 """
@@ -18,6 +19,7 @@ from .channels import price_line
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
 BSKY = "https://bsky.social/xrpc/"
+DISCORD_PREFIXES = ("https://discord.com/api/webhooks/", "https://discordapp.com/api/webhooks/")
 
 
 def _post(url, payload, headers=None, form=False):
@@ -90,4 +92,21 @@ def send_mastodon(offer, page_url):
         return True
     except Exception as exc:
         print(f"Mastodon falló con '{offer['title']}': {type(exc).__name__}", file=sys.stderr)
+        return False
+
+
+def send_discord(offer, page_url):
+    hook = (os.environ.get("DISCORD_WEBHOOK_URL") or "").strip()
+    if not hook.startswith(DISCORD_PREFIXES):
+        return False
+    text, link = post_text(offer, page_url)
+    embed = {"title": offer["title"][:250], "url": link, "description": text.strip()[:2000], "color": 0x22C55E}
+    if (offer.get("image") or "").startswith("https://"):
+        embed["image"] = {"url": offer["image"]}
+    try:
+        _post(hook, {"username": "Ofertas Gamer CO", "embeds": [embed], "allowed_mentions": {"parse": []}},
+              headers={"User-Agent": "OfertasGamerCO (https://ofertas-gamer-co.pages.dev, 1.0)"})
+        return True
+    except Exception as exc:
+        print(f"Discord falló con '{offer['title']}': {type(exc).__name__}", file=sys.stderr)
         return False
