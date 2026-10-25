@@ -11,11 +11,12 @@ Solo usa la librería estándar de Python.
 import argparse
 import json
 import os
+import shutil
 import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, channels, discord, promote, releases, sources, weekly, wikidata
+from ogc import alerts, channels, community, discord, images, promote, releases, sources, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -34,6 +35,8 @@ ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegra
 BOT_FILE = DATA / "telegram_bot.json"
 HISTORY_FILE = DATA / "historial_precios.json"
 EPIC_NEXT_FILE = DATA / "epic_proximos.json"
+POLL_FILE = DATA / "encuesta.json"
+IMG_DIR = DATA / "img"
 EPIC_ARCHIVE_FILE = DATA / "epic_regalados.json"
 DAILY_FILE = DATA / "oferta_del_dia.json"
 DOCS = ROOT / "docs"
@@ -220,6 +223,9 @@ def run(args):
                               promote.bluesky_post)
         history = [snap] + history[: weekly.KEEP - 1]
         save_json(WEEKLY_FILE, {"semanas": history})
+        polls = load_json(POLL_FILE, {})
+        poll = community.send_poll(snap, discord.Discord(guild=str(cfg.get("discord_servidor", ""))))
+        save_json(POLL_FILE, {"current": poll, "previous": ([polls["current"]] if polls.get("current") else []) + polls.get("previous", [])[:10]})
         status["Resumen semanal"] = f"Publicado esta ejecución en {', '.join(done) or 'ninguna red'}"
     else:
         status["Resumen semanal"] = f"Último: {history[0]['label']}" if history else "Sale el viernes"
@@ -231,13 +237,42 @@ def run(args):
             bot_info = {"username": name}
             save_json(BOT_FILE, bot_info)
         link_for = lambda x: base + site.detail[x["id"]] if x["id"] in site.detail else ""
-        status["Alertas de Telegram"] = alerts.run(str(ALERTS_FILE), offers, games, link_for, now)
+        polls = load_json(POLL_FILE, {})
+        on_poll = (lambda p: community.apply_poll_update(polls["current"], p)) if polls.get("current") else None
+        status["Alertas de Telegram"] = alerts.run(str(ALERTS_FILE), offers, games, link_for, now, on_poll=on_poll)
+        if polls:
+            save_json(POLL_FILE, polls)
         print(f"Alertas: {status['Alertas de Telegram']}")
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
     site.epic_next, site.epic_archive = epic_next, epic_archive
+    site.poll = load_json(POLL_FILE, {})
+    site.dotd_image = (IMG_DIR / "oferta-del-dia.jpg").exists()
     site.build(offers, status, now, games)
-    if getattr(site, "daily", None):
-        save_json(DAILY_FILE, site.daily)
+    daily = getattr(site, "daily", None) or {}
+    dotd = next((o for o in offers if o["id"] == daily.get("id")), None)
+    if dotd and daily.get("imageFor") != dotd["id"] and images.available() and not args.fixtures:
+        try:
+            cover = sources.get_bytes(dotd["image"]) if dotd.get("image") else None
+        except Exception as exc:
+            print(f"Imagen del día: no se pudo bajar la portada ({type(exc).__name__})", file=sys.stderr)
+            cover = None
+        jpg = images.offer_card(dotd, cover, site.pesos)
+        if jpg:
+            IMG_DIR.mkdir(exist_ok=True)
+            (IMG_DIR / "oferta-del-dia.jpg").write_bytes(jpg)
+            daily["imageFor"] = dotd["id"]
+    if IMG_DIR.exists():
+        shutil.copytree(IMG_DIR, DOCS / "img", dirs_exist_ok=True)
+    if dotd and community.daily_due(now, daily) and not args.no_send:
+        today_games = [g for g in games if g.get("precision") == "day" and g.get("date") == now.astimezone(channels.CO_TZ).strftime("%Y-%m-%d")]
+        free_now = [o for o in offers if o.get("currentPrice") == 0]
+        jpg = (IMG_DIR / "oferta-del-dia.jpg").read_bytes() if daily.get("imageFor") == dotd["id"] else None
+        text = community.daily_text(dotd, free_now, sorted(today_games, key=lambda g: g.get("rank") or 9999), base + "oferta-del-dia.html")
+        if community.send_daily(text, jpg, dotd.get("image") or ""):
+            daily["sentDate"] = now.astimezone(channels.CO_TZ).strftime("%Y-%m-%d")
+            status["Resumen diario"] = "Enviado hoy"
+    if daily:
+        save_json(DAILY_FILE, daily)
 
     if not args.no_send and not args.fixtures and cfg.get("indexnow_key"):
         new_ids = {o["id"] for o in offers if (o.get("createdAt") or "") >= iso(now)[:13]} | \

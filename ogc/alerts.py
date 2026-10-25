@@ -105,6 +105,7 @@ class Alerts:
         self.offers, self.games, self.link_for, self.now = offers, games, link_for, now
         self.api = api or (lambda method, payload: call(token, method, payload))
         self.sent = 0
+        self.on_poll = None
 
     def say(self, chat, text):
         if self.sent >= MAX_SENDS:
@@ -171,13 +172,15 @@ class Alerts:
 
     def read_messages(self):
         try:
-            data = self.api("getUpdates", {"offset": self.store.get("offset", 0), "timeout": 0, "allowed_updates": '["message"]'})
+            data = self.api("getUpdates", {"offset": self.store.get("offset", 0), "timeout": 0, "allowed_updates": '["message","poll"]'})
         except Exception as exc:
             print(f"Alertas: no se pudieron leer mensajes ({type(exc).__name__})", file=sys.stderr)
             return 0
         count = 0
         for up in data.get("result") or []:
             self.store["offset"] = max(self.store.get("offset", 0), up["update_id"] + 1)
+            if up.get("poll") and self.on_poll:
+                self.on_poll(up["poll"])
             msg = up.get("message") or {}
             chat = msg.get("chat") or {}
             if chat.get("type") == "private" and (msg.get("text") or "").startswith("/"):
@@ -219,7 +222,7 @@ def short_id(item_id):
     return hashlib.sha256(item_id.encode()).hexdigest()[:12]
 
 
-def run(path, offers, games, link_for, now, env=os.environ, api=None):
+def run(path, offers, games, link_for, now, env=os.environ, api=None, on_poll=None):
     """Lee comandos, avisa y guarda. Devuelve un texto de estado (sin datos personales)."""
     token = (env.get("TELEGRAM_BOT_TOKEN") or "").strip()
     if not token:
@@ -233,6 +236,7 @@ def run(path, offers, games, link_for, now, env=os.environ, api=None):
         print(f"Alertas: no se pudo abrir el archivo ({type(exc).__name__}); se empieza de cero", file=sys.stderr)
         store = {"offset": 0, "subs": {}}
     al = Alerts(store, token, offers, games, link_for, now, api)
+    al.on_poll = on_poll
     commands = al.read_messages()
     notified = al.check()
     with open(path, "w", encoding="utf-8") as fh:

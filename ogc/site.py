@@ -487,7 +487,8 @@ class Site:
         if not cands:
             return None
         pick = max(cands, key=lambda o: (self.value_score(o) or 0, "CO" in (o.get("regions") or [])))
-        self.daily = {"date": today, "id": pick["id"], "title": pick["title"], "recent": ([pick["id"]] + prev.get("recent", []))[:30]}
+        self.daily = {"date": today, "id": pick["id"], "title": pick["title"], "recent": ([pick["id"]] + prev.get("recent", []))[:30],
+                      **({"sentDate": prev["sentDate"]} if prev.get("sentDate") else {})}
         return pick
 
     def dotd_block(self, o, page=False):
@@ -1237,6 +1238,17 @@ class Site:
                     parts.append(f'<section class="n-sec"><h3>{ICONS[icon]} {title}</h3><ul>{rows}</ul></section>')
             return f'<article class="note">{"".join(parts) or "<p class=n-sec>No hubo novedades esta semana.</p>"}</article>'
 
+        poll_html = ""
+        polls = getattr(self, "poll", {}) or {}
+        for p in [polls.get("current")] + list(polls.get("previous") or []):
+            if p and p.get("total"):
+                total = p["total"]
+                bars = "".join(f'<li><span class="pv-name">{e(t)}</span><span class="pv-bar"><span class="pv-fill pv-{min(100, round(100 * v / total)) // 5 * 5}"></span></span>'
+                               f'<span class="pv-num">{round(100 * v / total)}%</span></li>'
+                               for t, v in sorted(p.get("votes", {}).items(), key=lambda kv: -kv[1]))
+                poll_html = (f'<section class="poll-res"><h2>{ICONS["chat"]} Lo que votó la comunidad</h2><p class="meta">{e(p["question"])} · '
+                             f'{total} votos en Telegram{"" if p.get("closed") else " (la encuesta sigue abierta)"}</p><ul class="poll-bars">{bars}</ul></section>')
+                break
         archive = "".join(f'<li><a href="{weekly.page_name(h)}">Resumen del {e(h["label"])}</a></li>' for h in history)
         archive_html = f'<h2>Resúmenes anteriores</h2><ul class="archive">{archive}</ul>' if archive else ""
         lead = ("Lo mejor de la semana: juegos gratis, los descuentos más grandes y los estrenos. Sale solo cada viernes en "
@@ -1244,7 +1256,7 @@ class Site:
         title = f"Resumen semanal del {snap['label']}" if current else "Lo mejor de esta semana (hasta ahora)"
         self.layout("resumen-semanal.html", "Resumen semanal de ofertas gamer para Colombia",
                     "Cada viernes: juegos gratis, los mejores descuentos de PC y los estrenos de la semana, en un solo lugar.",
-                    f'<h1>Resumen semanal</h1><p class="lead">{lead}</p>{updated_line}<h2>{e(title)}</h2>{render(snap)}{archive_html}',
+                    f'<h1>Resumen semanal</h1><p class="lead">{lead}</p>{updated_line}<h2>{e(title)}</h2>{render(snap)}{poll_html}{archive_html}',
                     crumbs=[("resumen-semanal.html", "Resumen semanal")])
         for h in history:
             self.layout(weekly.page_name(h), f"Resumen semanal de ofertas gamer: {h['label']}",
@@ -1381,7 +1393,8 @@ class Site:
                     f'la nota de la crítica y el precio en pesos. No es publicidad: nadie paga por salir aquí.</p>{updated_line}'
                     + (self.dotd_block(dotd, page=True) + self.score_block(dotd) if dotd else '<p class="notice">Hoy no hay una oferta destacada. Vuelve mañana.</p>')
                     + f'{notice}<p><a class="btn" href="ofertas.html">Ver todas las ofertas</a></p>',
-                    crumbs=[("oferta-del-dia.html", "Oferta del día")])
+                    crumbs=[("oferta-del-dia.html", "Oferta del día")],
+                    og_image=self.base + "img/oferta-del-dia.jpg" if getattr(self, "dotd_image", False) else (dotd or {}).get("image"))
 
         self.release_extra_pages(games or [], updated_dt, updated_line)
         self.releases_page(games or [], updated_dt, updated_line)

@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - name: Instalar Pillow (imágenes automáticas; gratis, si falla el bot sigue sin imágenes)
+        run: pip install --quiet pillow==11.0.0 || echo "Sin Pillow"
       - name: Pruebas unitarias
         run: python -m unittest discover -s tests -t .
       - name: Obtener, validar y publicar ofertas

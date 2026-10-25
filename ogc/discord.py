@@ -107,6 +107,24 @@ class Discord:
                 return sent
         return sent
 
+    def post_raw(self, kind, payload):
+        """Un mensaje con cualquier contenido oficial de Discord (por ejemplo, una encuesta). True si salió."""
+        payload = dict(payload, allowed_mentions={"parse": []})
+        try:
+            if self.token:
+                cid = self.channel_ids().get(kind) or self.channel_ids().get("ofertas")
+                if not cid:
+                    return False
+                self.request("POST", f"{API}/channels/{cid}/messages", payload, token=self.token)
+            elif self.hook:
+                self.request("POST", self.hook, dict(payload, username="Ofertas Gamer CO"))
+            else:
+                return False
+            return True
+        except Exception as exc:
+            print(f"Discord falló ({kind}): {type(exc).__name__}", file=sys.stderr)
+            return False
+
 
 def publish(dc, offers, games, link_for, history, limit, price_line, date_label, worth=lambda o: True):
     """Publica ofertas, gratis y lanzamientos que aún no estén en el historial. Devuelve el conteo por tipo."""

@@ -17,6 +17,18 @@ CHEAPSHARK_URL = "https://www.cheapshark.com/api/1.0/deals?"
 RATE_URL = "https://open.er-api.com/v6/latest/USD"
 
 
+def get_bytes(url, limit=6_000_000):
+    """Descarga una imagen pública (solo HTTPS, máximo 6 MB)."""
+    if not url.startswith("https://"):
+        raise ValueError("solo HTTPS")
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = resp.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError("imagen demasiado grande")
+    return data
+
+
 def get_json(url, attempts=3):
     for attempt in range(attempts):
         try:
