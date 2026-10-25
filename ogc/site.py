@@ -612,6 +612,8 @@ class Site:
         self.write(".nojekyll", "")
         if self.cfg.get("indexnow_key"):  # IndexNow exige publicar la clave (no es secreta)
             self.write(f"{self.cfg['indexnow_key']}.txt", self.cfg["indexnow_key"])
+        if self.cfg.get("verificacion_bing"):  # archivo de verificación de Bing (alternativa a la etiqueta meta)
+            self.write("BingSiteAuth.xml", f'<?xml version="1.0"?>\n<users>\n\t<user>{e(self.cfg["verificacion_bing"])}</user>\n</users>\n')
         shutil.copy(ROOT / "config" / "_headers", self.out / "_headers")
         (self.out / "data").mkdir(exist_ok=True)
         public = [{k: o[k] for k in o if k != "telegramPublishedAt"} for o in live]
