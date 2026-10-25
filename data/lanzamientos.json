@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T16:07:54Z",
+ "updatedAt": "2026-10-25T16:09:58Z",
  "games": [
   {
    "id": "steam-1422450",
@@ -43,7 +43,7 @@
    "date": "2026-11-19",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
    "source": "wikidata",
    "youtube": "QdBZY2fkU-0",
    "languages": 68,
@@ -136,32 +136,6 @@
    "steamRank": 3
   },
   {
-   "id": "steam-2288340",
-   "slug": "ace-combat-8-wings-of-theve",
-   "title": "Ace Combat 8: Wings of Theve",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2288340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/header.jpg",
-   "platforms": [
-    "Xbox",
-    "Windows"
-   ],
-   "genres": [
-    "Simulador de vuelo de combate"
-   ],
-   "releaseText": "2026-10-02",
-   "date": "2026-10-02",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "source": "wikidata",
-   "youtube": "JQYx_867ua0",
-   "languages": 13,
-   "wdRank": 3,
-   "rank": 6
-  },
-  {
    "id": "steam-2769570",
    "slug": "fable",
    "title": "Fable",
@@ -189,9 +163,35 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2769570/224989178/444d3c019b12b3cdfe9177a67c835cfd152d65c5/1784932430/hls_264_master.m3u8?t=1784935215"
    },
-   "rank": 7,
+   "rank": 6,
    "steamRank": 4,
-   "wdRank": 4
+   "wdRank": 3
+  },
+  {
+   "id": "steam-2288340",
+   "slug": "ace-combat-8-wings-of-theve",
+   "title": "Ace Combat 8: Wings of Theve",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2288340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/header.jpg",
+   "platforms": [
+    "Xbox",
+    "Windows"
+   ],
+   "genres": [
+    "Simulador de vuelo de combate"
+   ],
+   "releaseText": "2026-10-02",
+   "date": "2026-10-02",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "source": "wikidata",
+   "youtube": "JQYx_867ua0",
+   "languages": 13,
+   "wdRank": 4,
+   "rank": 7
   },
   {
    "id": "steam-1774880",
@@ -224,34 +224,35 @@
    "steamRank": 5
   },
   {
-   "id": "steam-2963950",
-   "slug": "persona-4-revival",
-   "title": "Persona 4 Revival",
-   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
+   "id": "steam-4260840",
+   "slug": "stranger-than-heaven",
+   "title": "STRANGER THAN HEAVEN",
+   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2963950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
+   "url": "https://store.steampowered.com/app/4260840/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
    "platforms": [
     "Windows",
     "Xbox"
    ],
    "genres": [
+    "Acción",
     "Aventura",
     "Rol"
    ],
-   "releaseText": "17 Feb, 2027",
-   "date": "2027-02-17",
+   "releaseText": "14 Jan, 2027",
+   "date": "2027-01-14",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T16:07:54Z",
    "trailer": {
-    "name": "Story Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415069/729b1a2bc6dfab5aa3d1a5389f3abe4b7f858505/movie_600x337.jpg?t=1788989520",
+    "name": " STRANGER THAN HEAVEN | Cast & Story Reveal Trailer (EN)_202607",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383005/257828cfabad647bc01d69f6d79ef7ec8278216d/movie_600x337.jpg?t=1784823062",
     "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/2963950/1023138812/3d571e248075a9715bcaee91999186898650cd2b/1788980111/hls_264_master.m3u8?t=1788989520"
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4260840/856039096/49b54c9b61e6d6f1ed834fb60a9cbcd86bc4d27e/1784791368/hls_264_master.m3u8?t=1784823062"
    },
    "rank": 9,
-   "steamRank": 16,
+   "steamRank": 55,
    "wdRank": 5
   },
   {
@@ -284,35 +285,34 @@
    "steamRank": 6
   },
   {
-   "id": "steam-4260840",
-   "slug": "stranger-than-heaven",
-   "title": "STRANGER THAN HEAVEN",
-   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
+   "id": "steam-2963950",
+   "slug": "persona-4-revival",
+   "title": "Persona 4 Revival",
+   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4260840/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
+   "url": "https://store.steampowered.com/app/2963950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
    "platforms": [
     "Windows",
     "Xbox"
    ],
    "genres": [
-    "Acción",
     "Aventura",
     "Rol"
    ],
-   "releaseText": "14 Jan, 2027",
-   "date": "2027-01-14",
+   "releaseText": "17 Feb, 2027",
+   "date": "2027-02-17",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T16:07:54Z",
    "trailer": {
-    "name": " STRANGER THAN HEAVEN | Cast & Story Reveal Trailer (EN)_202607",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383005/257828cfabad647bc01d69f6d79ef7ec8278216d/movie_600x337.jpg?t=1784823062",
+    "name": "Story Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415069/729b1a2bc6dfab5aa3d1a5389f3abe4b7f858505/movie_600x337.jpg?t=1788989520",
     "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4260840/856039096/49b54c9b61e6d6f1ed834fb60a9cbcd86bc4d27e/1784791368/hls_264_master.m3u8?t=1784823062"
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2963950/1023138812/3d571e248075a9715bcaee91999186898650cd2b/1788980111/hls_264_master.m3u8?t=1788989520"
    },
    "rank": 11,
-   "steamRank": 55,
+   "steamRank": 16,
    "wdRank": 6
   },
   {
@@ -364,7 +364,7 @@
    "date": "2026-09-29",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T16:07:54Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 7,
@@ -401,27 +401,27 @@
    "steamRank": 8
   },
   {
-   "id": "steam-1551980",
-   "slug": "clive-barker-s-hellraiser-revival",
-   "title": "Clive Barker's Hellraiser: Revival",
+   "id": "wd-Q116734043",
+   "slug": "el-profesor-layton-y-el-nuevo-mundo-a-vapor",
+   "title": "El profesor Layton y el Nuevo Mundo a vapor",
    "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1551980/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/header.jpg",
+   "store": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
+   "image": "",
    "platforms": [
-    "Xbox",
     "Windows"
    ],
    "genres": [
-    "Videojuego de terror"
+    "Videojuego de aventura",
+    "Videojuego de lógica"
    ],
-   "releaseText": "2026-10-08",
-   "date": "2026-10-08",
+   "releaseText": "2026-12-10",
+   "date": "2026-12-10",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T16:07:54Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:09:58Z",
    "source": "wikidata",
-   "youtube": "E_4kAp6gsZE",
+   "youtube": "",
    "languages": 6,
    "wdRank": 8,
    "rank": 15
@@ -457,27 +457,27 @@
    "steamRank": 9
   },
   {
-   "id": "wd-Q116734043",
-   "slug": "el-profesor-layton-y-el-nuevo-mundo-a-vapor",
-   "title": "El profesor Layton y el Nuevo Mundo a vapor",
+   "id": "steam-1551980",
+   "slug": "clive-barker-s-hellraiser-revival",
+   "title": "Clive Barker's Hellraiser: Revival",
    "description": "",
-   "store": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
-   "image": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1551980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/header.jpg",
    "platforms": [
+    "Xbox",
     "Windows"
    ],
    "genres": [
-    "Videojuego de aventura",
-    "Videojuego de lógica"
+    "Videojuego de terror"
    ],
-   "releaseText": "2026-12-10",
-   "date": "2026-12-10",
+   "releaseText": "2026-10-08",
+   "date": "2026-10-08",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T16:09:58Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "E_4kAp6gsZE",
    "languages": 6,
    "wdRank": 9,
    "rank": 17
@@ -513,6 +513,32 @@
    "steamRank": 10
   },
   {
+   "id": "steam-3219030",
+   "slug": "planet-zoo-2",
+   "title": "Planet Zoo 2",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3219030/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/header.jpg",
+   "platforms": [
+    "Xbox",
+    "Windows"
+   ],
+   "genres": [
+    "Videojuego de construcción y gestión"
+   ],
+   "releaseText": "2026-10-13",
+   "date": "2026-10-13",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 5,
+   "wdRank": 10,
+   "rank": 19
+  },
+  {
    "id": "steam-1757350",
    "slug": "ill",
    "title": "ILL",
@@ -539,32 +565,35 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/1757350/737429038/14acf5937412aa59c195d21f7efa52665816095e/1780435910/hls_264_master.m3u8?t=1780436853"
    },
-   "rank": 19,
+   "rank": 20,
    "steamRank": 11,
-   "wdRank": 10
+   "wdRank": 12
   },
   {
-   "id": "steam-2155070",
-   "slug": "fate-extra-record",
-   "title": "Fate/EXTRA Record",
-   "description": "",
+   "id": "steam-1373530",
+   "slug": "militsioner",
+   "title": "Militsioner",
+   "description": "Cada movimiento que haces es seguido por un Policía Colosal. Enfada, adula, defrauda, miente o incluso seduce a un gigante para escapar en este inmersivo simulador kafkiano.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2155070/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2155070/header.jpg",
+   "url": "https://store.steampowered.com/app/1373530/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/ab9a2c7ad1f60db59a73b7938809248e764fd5ee/header.jpg?t=1792518049",
    "platforms": [
-    "Windows"
+    "Windows",
+    "Xbox"
    ],
-   "genres": [],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
-   "precision": "day",
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 5,
-   "wdRank": 11,
-   "rank": 20
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 21,
+   "steamRank": 149,
+   "wdRank": 11
   },
   {
    "id": "steam-2050420",
@@ -593,34 +622,8 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2050420/471100/8af7a82b0f61610ee669b72218222284057b0342/1751069112/hls_264_master.m3u8?t=1655055732"
    },
-   "rank": 21,
-   "steamRank": 12
-  },
-  {
-   "id": "steam-1373530",
-   "slug": "militsioner",
-   "title": "Militsioner",
-   "description": "Cada movimiento que haces es seguido por un Policía Colosal. Enfada, adula, defrauda, miente o incluso seduce a un gigante para escapar en este inmersivo simulador kafkiano.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1373530/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/ab9a2c7ad1f60db59a73b7938809248e764fd5ee/header.jpg?t=1792518049",
-   "platforms": [
-    "Windows",
-    "Xbox"
-   ],
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Indie"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:53:31Z",
    "rank": 22,
-   "steamRank": 149,
-   "wdRank": 12
+   "steamRank": 12
   },
   {
    "id": "steam-4095380",
@@ -653,25 +656,22 @@
    "steamRank": 13
   },
   {
-   "id": "steam-3219030",
-   "slug": "planet-zoo-2",
-   "title": "Planet Zoo 2",
+   "id": "steam-2155070",
+   "slug": "fate-extra-record",
+   "title": "Fate/EXTRA Record",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3219030/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/header.jpg",
+   "url": "https://store.steampowered.com/app/2155070/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2155070/header.jpg",
    "platforms": [
-    "Xbox",
     "Windows"
    ],
-   "genres": [
-    "Videojuego de construcción y gestión"
-   ],
-   "releaseText": "2026-10-13",
-   "date": "2026-10-13",
+   "genres": [],
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T16:07:54Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:09:58Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 5,
@@ -726,7 +726,7 @@
    "date": "2027-01-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 3,
@@ -2275,7 +2275,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Paradise",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257063014/f15c33950a5d7df14c62d91045fb2b84bb11dc4f/movie_600x337.jpg?t=1730857102",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3281420/768570/591ffb764832bbfa9b626f5e3ef31ff625395685/1750975636/hls_264_master.m3u8?t=1730857102"
+   },
    "rank": 78,
    "steamRank": 68
   },
@@ -2299,7 +2305,13 @@
    "date": "2026-11-09",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Release Date Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257462664/1349c5abe2ab42656c318d0aefc5c6be0b0b9c0c/movie_600x337.jpg?t=1792069369",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3629430/1487364135/d7517b8d8dab28e1592ee0daf54fe1634066c0bd/1792061216/hls_264_master.m3u8?t=1792069369"
+   },
    "rank": 79,
    "steamRank": 69
   },
@@ -2323,7 +2335,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "OfficialPre-Alpha Tech Test Trailer | Zeverland_EN",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257225929/80ab8e37722c47883f4ddb1ff5dfad756bf866f8/movie_600x337.jpg?t=1792147534",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3371050/2008091473/a51495a8da6d89e5ab53dbbe3d0520a1bacd6c24/1762140506/hls_264_master.m3u8?t=1792147534"
+   },
    "rank": 80,
    "steamRank": 70
   },
@@ -2345,7 +2363,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257059134/8a792cb14a107641fe3dc5ab18e742fca4cc59a9/movie_600x337.jpg?t=1727384235",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2090210/762178/cac2ba55c19555c7d6005a9e05e20431658f1f09/1751074249/hls_264_master.m3u8?t=1727384235"
+   },
    "rank": 81,
    "steamRank": 71
   },
@@ -2369,7 +2393,13 @@
    "date": "2027-02-07",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "ONLY THE FITTEST SURVIVES ",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257450566/c7172622098e0fc0d6c4e7f2ad4c521f6ffff7ce/movie_600x337.jpg?t=1791475412",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2849490/1965566915/a6649f6ae481555c6c26cec894f54965485606f2/1791382351/hls_264_master.m3u8?t=1791475412"
+   },
    "rank": 82,
    "steamRank": 72
   },
@@ -2392,7 +2422,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Fourteen Years of Flames Official Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257243859/bdc0422d7969ab0cfbca326afae4220239550069/movie_600x337.jpg?t=1764908282",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4228810/983512176/23dc47fc828385653da0cf04d308e439e2a91399/1764904990/hls_264_master.m3u8?t=1764908282"
+   },
    "rank": 83,
    "steamRank": 73
   },
@@ -2416,7 +2452,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Palfarm Reveal Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257203838/313302337b51303d6298c2b1869162cbb04f3401/movie_600x337.jpg?t=1758584715",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4031890/397713568/fd5b5fdbe602fadddead9d37fc800544d3959e0e/1758550452/hls_264_master.m3u8?t=1758584715"
+   },
    "rank": 84,
    "steamRank": 74
   },
@@ -2440,7 +2482,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257152580/b560e0ee3b37eac498ebdd35891d1613c75e4df4/movie_600x337.jpg?t=1749248379",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3788800/1730198381/3d93fd2aa07ab3cce354f0537617b224dfe3dbbc/1750376516/hls_264_master.m3u8?t=1749248379"
+   },
    "rank": 85,
    "steamRank": 75
   },
@@ -2462,7 +2510,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "DoW Community Hands-On Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257244000/91e2909f5de6478bbc2816a88496f89f72caf42b/movie_600x337.jpg?t=1765354272",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1818140/10723497/ab1b5aa097ff28162049bbb06a38bb8998abfc41/1764931530/hls_264_master.m3u8?t=1765354272"
+   },
    "rank": 86,
    "steamRank": 76
   },
@@ -2486,7 +2540,13 @@
    "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Release Date + Demo Launch Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257406951/7843162258cfabf4568cc07bb1933f2e3c9898ca/movie_600x337.jpg?t=1789399826",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4348910/1511229995/1000cfde02cce52682efefbb4152c25621478d59/1787553586/hls_264_master.m3u8?t=1789399826"
+   },
    "rank": 87,
    "steamRank": 77
   },
@@ -2509,7 +2569,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Holstin - Gamescom Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410348/ee30a3f49445c6184f2627cb49ee901b6221450d/movie_600x337.jpg?t=1787845997",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2235430/43652028/f30e3d96f58b2fbfde0ab7d5c63bb950c312e2ed/1787844803/hls_264_master.m3u8?t=1787845997"
+   },
    "rank": 88,
    "steamRank": 78
   },
@@ -2533,7 +2599,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Lords of the Fallen II - Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257343218/34384ffc18ddfa4dc7645784bb4c01b85e44ebdb/movie_600x337.jpg?t=1780695018",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4767480/2011808760/f619196186462cc51aba33f8fbea0e6027196c9f/1779784237/hls_264_master.m3u8?t=1780695018"
+   },
    "rank": 89,
    "steamRank": 79
   },
@@ -2557,7 +2629,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408275/560c7dc4087a3307d4a69531878c6a88eac341b1/movie_600x337.jpg?t=1787688807",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2924520/1174446460/95421b26e9494314464820d7ba7d5195955306e2/1787673889/hls_264_master.m3u8?t=1787688807"
+   },
    "rank": 90,
    "steamRank": 80
   },
@@ -2583,7 +2661,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257015115/movie.293x165.jpg?t=1712785039",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2165810/686073/9579f745ed2914ef709ddab6799d86e3a22fad32/1751084333/hls_264_master.m3u8?t=1712785039"
+   },
    "rank": 91,
    "steamRank": 81
   },
@@ -2606,7 +2690,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257316222/55091b9900a0d630f7a6cf962a78fb4b4b65136d/movie_600x337.jpg?t=1775752758",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3283240/988125998/f506b29d5352616a3562b9cc00257db1ace82805/1775654452/hls_264_master.m3u8?t=1775752758"
+   },
    "rank": 92,
    "steamRank": 82
   },
@@ -2629,7 +2719,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257002558/movie.293x165.jpg?t=1708533200",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1257610/665178/b729d70d969136ce6ba57df443f907c092b1b42d/1751210599/hls_264_master.m3u8?t=1708533200"
+   },
    "rank": 93,
    "steamRank": 83
   },
@@ -2654,7 +2750,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Early Access Teaser",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257117941/eeb63a9530e417cb2274d3c02bab8b2f882504cb/movie_600x337.jpg?t=1742821350",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1416070/856717/e852a0128b56b7b2fa08550644b8ecf82a7ea182/1751235105/hls_264_master.m3u8?t=1742821350"
+   },
    "rank": 94,
    "steamRank": 84
   },
@@ -2680,7 +2782,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Partner Preview Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257237333/aa2cc4372119a9a60a6581673a670449e75934c3/movie_600x337.jpg?t=1764029191",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1614330/895263152/02d6984b152e544e65f96e41284465ff2d0ebc13/1764018952/hls_264_master.m3u8?t=1764029191"
+   },
    "rank": 95,
    "steamRank": 85
   },
@@ -2704,7 +2812,13 @@
    "date": "2026-11-10",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Release Date Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257447030/f74077e01a0bc40b444095eb2ced8d69fb73b366/movie_600x337.jpg?t=1791295547",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3669620/1298110492/15e10450c209ec96d29d926b8016e69705971b41/1791200757/hls_264_master.m3u8?t=1791295547"
+   },
    "rank": 96,
    "steamRank": 86
   },
@@ -2727,7 +2841,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Warlock: Dungeons & Dragons - Tráiler del gameplay",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257403620/c218c8379422e364ec0cfb6bab580364aba3c328/movie_600x337.jpg?t=1787683637",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3714800/371097903/3d75ca8d5a417f3dada1ec228cfd82e4388310a7/1787181637/hls_264_master.m3u8?t=1787683637"
+   },
    "rank": 97,
    "steamRank": 87
   },
@@ -2750,7 +2870,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "SPINE: Gameplay Overview",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257050484/movie.293x165.jpg?t=1724936876",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1731290/747811/a3ac11259728ffc606efdab33a2ce2bab3056fe4/1751025446/hls_264_master.m3u8?t=1724936876"
+   },
    "rank": 98,
    "steamRank": 88
   },
@@ -2773,7 +2899,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Short gameplay trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257356071/b4ccd0e88894973ed177bd6e0021da8c87506097/movie_600x337.jpg?t=1781193868",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4258290/1328453618/f92f4f5f809597da33b9c44add7699efbbb42d6e/1781193633/hls_264_master.m3u8?t=1781193868"
+   },
    "rank": 99,
    "steamRank": 89
   },
@@ -2797,7 +2929,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announce Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257321273/29d85f0224fd3d930627e2ffe33be529ad981839/movie_600x337.jpg?t=1776410344",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4614080/491293792/0e444b795fb1323794333d41925f23717714b900/1776410000/hls_264_master.m3u8?t=1776410344"
+   },
    "rank": 100,
    "steamRank": 90
   },
@@ -2821,7 +2959,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257061849/a8efb83c5dcc76b764af43b3d362aee77a481834/movie_600x337.jpg?t=1728310440",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3078150/766665/0fedb5074a10df44e65313ad6201e88b1a770c9b/1750972973/hls_264_master.m3u8?t=1728310440"
+   },
    "rank": 101,
    "steamRank": 91
   },
@@ -2845,7 +2989,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Guardians of the Wild Sky New Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257308048/78f5e5f3e17958c4a1bbc5e17a3fd173a051154e/movie_600x337.jpg?t=1774301471",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1579420/962516016/c226281712af7714d2b7dcee83e27ab88008403e/1774300938/hls_264_master.m3u8?t=1774301471"
+   },
    "rank": 102,
    "steamRank": 92
   },
@@ -2869,7 +3019,13 @@
    "date": "2027-01-15",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "ANANTA Launch Date Trailer | Global Release January 15th, 2027",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408424/de7e7513efa8e13833d59724248c01eb547c4489/movie_600x337.jpg?t=1787691848",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4814120/1843987309/e39710bccbe8725c28e86b2081877f8ac66368a5/1787688709/hls_264_master.m3u8?t=1787691848"
+   },
    "rank": 103,
    "steamRank": 93
   },
@@ -2892,7 +3048,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Jurassic Park: Survival - Reveal Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256996423/movie.293x165.jpg?t=1712231831",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2208810/654439/a398acf532cab558c91dd064c45afa5e5c8e6082/1751090325/hls_264_master.m3u8?t=1712231831"
+   },
    "rank": 104,
    "steamRank": 94
   },
@@ -2916,7 +3078,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Enginefall  - FGS Gameplay video",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257355048/a9585948da330270fc0590b0823157861c94d197/movie_600x337.jpg?t=1790072846",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2437390/477452120/687b8d7501222681d21d6a78b21bf36a95a3878b/1790072041/hls_264_master.m3u8?t=1790072846"
+   },
    "rank": 105,
    "steamRank": 95
   },
@@ -2938,7 +3106,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "GOT: Gameplay Reveal Trailer (Aug, 2026)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257406773/ab460e7810265165f6c8c187f520d2b3bbb0208f/movie_600x337.jpg?t=1787683248",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2838950/1292475594/aa25590eabff6be9cd555757f82f60e855409aee/1787531536/hls_264_master.m3u8?t=1787683248"
+   },
    "rank": 106,
    "steamRank": 96
   },
@@ -2961,7 +3135,13 @@
    "date": "2027-03-11",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Road Kings - Release Date Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257407281/86cbc3ef30fabdf326a6e341c67ac6bd6ab205dd/movie_600x337.jpg?t=1787685833",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2141130/1882670229/de4038a64e37c2c989752916b9ec548687963bcd/1787582928/hls_264_master.m3u8?t=1787685833"
+   },
    "rank": 107,
    "steamRank": 97
   },
@@ -2985,7 +3165,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "30 days on ship",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256996953/movie.293x165.jpg?t=1708475691",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2800370/655421/035cd3388ddd00a9e14e5137c55f2a98472ff88a/1750901319/hls_264_master.m3u8?t=1708475691"
+   },
    "rank": 108,
    "steamRank": 98
   },
@@ -3010,7 +3196,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Guildrun Announcement Trailer 2026",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257359590/9faa7bf1a8e968c24669c679c37e173999baa970/movie_600x337.jpg?t=1784131288",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3669200/1982959378/4beb0200c0df3897295f0b3bc2c3e865eeeb4e67/1783076336/hls_264_master.m3u8?t=1784131288"
+   },
    "rank": 109,
    "steamRank": 99
   },
@@ -3034,7 +3226,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257268602/529a32688b43d95ac4319763ec0d894cfd60031c/movie_600x337.jpg?t=1768924549",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2855590/1707123700/3c0713548e4eb62ced48813b106b12d3f37e9034/1768923428/hls_264_master.m3u8?t=1768924549"
+   },
    "rank": 110,
    "steamRank": 100
   },
@@ -3058,7 +3256,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257351698/8bbaae2d1ea00e9411f17ab06035284d0c7d4798/movie_600x337.jpg?t=1781531106",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4369620/1246604358/4777011bbfaff0b7e43225383086cafcc2ff0340/1780696674/hls_264_master.m3u8?t=1781531106"
+   },
    "rank": 111,
    "steamRank": 101
   },
@@ -3082,7 +3286,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257350691/26e7fb9b1276ffd07adaca19969afeca21bb7ff7/movie_600x337.jpg?t=1780600180",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4293910/639343402/551df73a6b32e90a0fc86608238bea1423e7daab/1780598392/hls_264_master.m3u8?t=1780600180"
+   },
    "rank": 112,
    "steamRank": 102
   },
@@ -3106,7 +3316,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Official Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256982225/movie.293x165.jpg?t=1701367461",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1667040/629106/cd07fd3049d38a5b03dda013f4b94fd605287e2d/1751016999/hls_264_master.m3u8?t=1701367461"
+   },
    "rank": 113,
    "steamRank": 103
   },
@@ -3130,7 +3346,13 @@
    "date": "2027-04-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "gamescom ONL 2026",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409201/d9a3baf88a8910a845cd1b3d49bfedeb3c0ae995/movie_600x337.jpg?t=1787756130",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2376260/1954599661/6b773475c8b40abced581a62551ab9948d7b28a0/1787755491/hls_264_master.m3u8?t=1787756130"
+   },
    "rank": 114,
    "steamRank": 104
   },
@@ -3153,7 +3375,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "First Night Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257267559/b1a62365fa062abd5299d652ea165a9f0179a115/movie_600x337.jpg?t=1768799795",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3426150/205349619/96a996e7b5eec5f080191d0e80df937f5bad2bad/1768768427/hls_264_master.m3u8?t=1768799795"
+   },
    "rank": 115,
    "steamRank": 105
   },
@@ -3177,7 +3405,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Fate Trigger-Closed beta test",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257166800/d51ba83a1c3637f8efdbf2b84fd59b899c9d7661/movie_600x337.jpg?t=1756698085",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3092530/73001137/6a5f7a86f825079850b6345005bbb205c63098f0/1752046082/hls_264_master.m3u8?t=1756698085"
+   },
    "rank": 116,
    "steamRank": 106
   },
@@ -3201,7 +3435,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "SGF_EN",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257365196/045ffbc72b64b9f536372794381d40b88c3c577a/movie_600x337.jpg?t=1782353824",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3199500/1775789411/043f4a6f04972fe2d64dbab81d500c9f009693b9/1782353394/hls_264_master.m3u8?t=1782353824"
+   },
    "rank": 117,
    "steamRank": 107
   },
@@ -3223,7 +3463,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announce Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391411/c2bf1411be6deb46f3fbd2a50ca95eda62661e42/movie_600x337.jpg?t=1787686051",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1573550/782554873/1b542a50f19fc5b09be8bcccdf7e3ec5d0cf22ff/1785826001/hls_264_master.m3u8?t=1787686051"
+   },
    "rank": 118,
    "steamRank": 108
   },
@@ -3247,7 +3493,13 @@
    "date": "2027-03-01",
    "precision": "month",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Trailer 3 | March 2027 Announce",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257354888/90e3c9fcf76aa6a790ce282d67973890967504d7/movie_600x337.jpg?t=1789314466",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3401960/1028126775/c150e8e2ee6792aea082b4a654f75e779fdeb9f2/1781066662/hls_264_master.m3u8?t=1789314466"
+   },
    "rank": 119,
    "steamRank": 109
   },
@@ -3270,7 +3522,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Trailer1",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256868648/movie.293x165.jpg?t=1682433020",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1572000/430935/9c42a855ee069b7769c9f4782d7274c36c73dfbe/1751004858/hls_264_master.m3u8?t=1682433020"
+   },
    "rank": 120,
    "steamRank": 110
   },
@@ -3294,7 +3552,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gamescom 2026​ Extended Gameplay Showcase",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420343/52d18143843cb05492aa6e1bca1eb8220af431b7/movie_600x337.jpg?t=1788939192",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3633680/1140225145/a16adc29f9ceb845f5090911afd69587812f03bd/1788922121/hls_264_master.m3u8?t=1788939192"
+   },
    "rank": 121,
    "steamRank": 111
   },
@@ -3318,7 +3582,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Demo Trailer (Global)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392990/b0bbbac13ef9e6a597c5eeb257a203d52d0f91bd/movie_600x337.jpg?t=1786022381",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3126410/835646702/94592d98be01167594c46dbdf54e8381ca70c746/1786021454/hls_264_master.m3u8?t=1786022381"
+   },
    "rank": 122,
    "steamRank": 112
   },
@@ -3340,7 +3610,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256900656/movie.293x165.jpg?t=1660633383",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2055770/487413/51b080e3db8fb4d0f640048a90c0a3cc4dc1388b/1751069618/hls_264_master.m3u8?t=1660633383"
+   },
    "rank": 123,
    "steamRank": 113
   },
@@ -3364,7 +3640,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Teaser Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256950709/movie.293x165.jpg?t=1686263496",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1388550/574533/e549ae7c168d170928ef29e7754493dd70f1315b/1751231222/hls_264_master.m3u8?t=1686263496"
+   },
    "rank": 124,
    "steamRank": 114
   },
@@ -3388,7 +3670,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "The Eternal Life of Goldman | What Would I Draw? | THQN Showcase 2026",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393745/ddf54c5186042a97fa4750e334548421f8325c2e/movie_600x337.jpg?t=1786130745",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2254950/34057867/3c79a6ca41c51bfd02cdef77041b24744da99db4/1786110616/hls_264_master.m3u8?t=1786130745"
+   },
    "rank": 125,
    "steamRank": 115
   },
@@ -3412,7 +3700,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257282600/de8e6a3fc3e44f07969f22e8951156641f809a85/movie_600x337.jpg?t=1770621039",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4348760/345850497/f72842fd2e23d48dc1402f257ff55877794b3160/1770619949/hls_264_master.m3u8?t=1770621039"
+   },
    "rank": 126,
    "steamRank": 116
   },
@@ -3436,7 +3730,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "ExeKiller - Gameplay Overview",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257262183/b455a752a55c24394bc554a865260b97bdaa4270/movie_600x337.jpg?t=1767962258",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1701840/982778438/2e3dd78c8165000164b4428f46b856401481b255/1767958897/hls_264_master.m3u8?t=1767962258"
+   },
    "rank": 127,
    "steamRank": 117
   },
@@ -3459,7 +3759,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Judas Reveal Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256919153/movie.293x165.jpg?t=1670549502",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/388860/518899/17e29d962ba8ae34209ccdd1dc7d755c1cf3bfdb/1751274430/hls_264_master.m3u8?t=1670549502"
+   },
    "rank": 128,
    "steamRank": 118
   },
@@ -3482,7 +3788,8 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {},
    "rank": 129,
    "steamRank": 119
   },
@@ -3506,7 +3813,13 @@
    "date": "2026-10-29",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "ATMOSFAR Early Access Release Date Trailer (Enter Tycos)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257449591/5c05ccdad009a48b2ba13a9695ca096590a8b184/movie_600x337.jpg?t=1792072634",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1798230/1408330862/455edf901a0699f4d3fc90f465bab1fa76e08dd7/1791331560/hls_264_master.m3u8?t=1792072634"
+   },
    "rank": 130,
    "steamRank": 120
   },
@@ -3530,7 +3843,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257152548/9b806b41717a971515736c08d6cbf612f9dcb72d/movie_600x337.jpg?t=1749251697",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3230430/736717338/b9f4a8b3c4d67643f944f9a9c1277bd1f14d9a68/1750883059/hls_264_master.m3u8?t=1749251697"
+   },
    "rank": 131,
    "steamRank": 121
   },
@@ -3552,7 +3871,13 @@
    "date": "2027-01-13",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Introduction Trailer (English)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420377/0bd29134d016113900dc9a7d2f89345397045058/movie_600x337.jpg?t=1788973211",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3751230/1642899568/f7858d30fd8f6661238bcc234c898da3164c7e0b/1788924730/hls_264_master.m3u8?t=1788973211"
+   },
    "rank": 132,
    "steamRank": 122
   },
@@ -3576,7 +3901,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "NC2024 Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257004273/movie.293x165.jpg?t=1709230921",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2617340/668162/97240dcee55a971aee9e9899e84f0553bbd14c8f/1750936724/hls_264_master.m3u8?t=1709230921"
+   },
    "rank": 133,
    "steamRank": 123
   },
@@ -3599,7 +3930,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Stage Fright First Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417371/75aa79e18e9bf02565ae46738c31bf18547d6fa3/movie_600x337.jpg?t=1788965770",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3260750/1965096307/23173f572ea2998597671043bf88af93ffce0f89/1788537125/hls_264_master.m3u8?t=1788965770"
+   },
    "rank": 134,
    "steamRank": 124
   },
@@ -3623,7 +3960,13 @@
    "date": "2027-11-01",
    "precision": "month",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257235372/ecbcd997f5c52d83bf716e679fc32b03889fe917/movie_600x337.jpg?t=1763662638",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2708860/1070314557/8c193529feca3a28c9c4f4c1498c444254ef2f61/1763661243/hls_264_master.m3u8?t=1763662638"
+   },
    "rank": 135,
    "steamRank": 125
   },
@@ -3647,7 +3990,13 @@
    "date": "2026-11-04",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay supercut June 2026",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257351018/91389861336f39ba83857e6c14bb18c41e81dead/movie_600x337.jpg?t=1780639882",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3581230/2129427269/424cc6baad1ea95b2ad3ca21854136f2701a1c1f/1780639522/hls_264_master.m3u8?t=1780639882"
+   },
    "rank": 136,
    "steamRank": 126
   },
@@ -3671,7 +4020,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Tokyo Game Show 2025",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257206236/efe1984d823f55a0c1fd48a47250570041adf915/movie_600x337.jpg?t=1759075863",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1400830/547028481/9575c862d512818f0b5dba9bc6a63d536e9d8595/1758811420/hls_264_master.m3u8?t=1759075863"
+   },
    "rank": 137,
    "steamRank": 127
   },
@@ -3695,7 +4050,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Gameplay",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257204012/0bde6079adab06d39a0852bf3e098e58c4360734/movie_600x337.jpg?t=1758676268",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3767320/1186070309/bfd915f794bce0d82e1baec6281e51ef91d895b7/1758549956/hls_264_master.m3u8?t=1758676268"
+   },
    "rank": 138,
    "steamRank": 128
   },
@@ -3719,7 +4080,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Kickstarter Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257144919/eae68f4ae25b8262773a3523651b82597dfe3468/movie_600x337.jpg?t=1748442996",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3516100/1498448454/d54eaad7b523cd2c8af26fbaa4ce56e62c47ded5/1750857471/hls_264_master.m3u8?t=1748442996"
+   },
    "rank": 139,
    "steamRank": 129
   },
@@ -3741,7 +4108,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Reveal Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257349336/07d9db1529e48f4f94b9c9fcee7bf096213b0ce2/movie_600x337.jpg?t=1780700366",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4665290/468010571/b84d10d774739f24c179ec626888477d3bd733e6/1780481120/hls_264_master.m3u8?t=1780700366"
+   },
    "rank": 140,
    "steamRank": 130
   },
@@ -3767,7 +4140,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Rapunzel Teaser",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392187/601bee1f443e973780154ae807458375311d567b/movie_600x337.jpg?t=1785938430",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3563080/835801084/62fd66cc51f31f25ed5c86594dc00bbe99075bc9/1785926952/hls_264_master.m3u8?t=1785938430"
+   },
    "rank": 141,
    "steamRank": 131
   },
@@ -3791,7 +4170,13 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:45:19Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Ikuma Reveal Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257124087/036530c113bbcba2ef850046073fb39a110933cd/movie_600x337.jpg?t=1744301730",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1728620/866807/7ba03933abb66dee263a2936ecef1454194df568/1751024705/hls_264_master.m3u8?t=1744301730"
+   },
    "rank": 142,
    "steamRank": 132
   },
@@ -3816,7 +4201,13 @@
    "date": "2026-11-03",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z",
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "Release Date Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429890/fee53de0c00f8b50bbc52023989be960c5a7131d/movie_600x337.jpg?t=1789923259",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2320980/1381055038/e8fa6a506fcd44c258bf05c4cda19af34da3cdcd/1789908088/hls_264_master.m3u8?t=1789923259"
+   },
    "rank": 143,
    "steamRank": 133
   },
