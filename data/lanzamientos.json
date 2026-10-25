@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T12:34:38Z",
+ "updatedAt": "2026-10-25T12:46:20Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -462,6 +462,26 @@
    "verifiedAt": "2026-10-25T11:56:36Z"
   },
   {
+   "id": "steam-4760480",
+   "slug": "you-are-empty-absolute-edition",
+   "title": "You Are Empty: Absolute Edition",
+   "description": "A forgotten cult classic shooter set in an alternate history 1950s Soviet Kyiv, most of the city's population has mysteriously vanished, and horrific monsters roam its abandoned streets. Can you uncover the cause of the catastrophe and set things right?",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4760480/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4760480/47b68109d87a169725e5735d9beb472970003b8e/header.jpg?t=1792407818",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T11:56:36Z"
+  },
+  {
    "id": "steam-3370490",
    "slug": "giggleland",
    "title": "Giggleland",
@@ -479,26 +499,6 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z"
-  },
-  {
-   "id": "steam-4760480",
-   "slug": "you-are-empty-absolute-edition",
-   "title": "You Are Empty: Absolute Edition",
-   "description": "A forgotten cult classic shooter set in an alternate history 1950s Soviet Kyiv, most of the city's population has mysteriously vanished, and horrific monsters roam its abandoned streets. Can you uncover the cause of the catastrophe and set things right?",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4760480/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4760480/47b68109d87a169725e5735d9beb472970003b8e/header.jpg?t=1792407818",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z"
@@ -526,27 +526,6 @@
    "verifiedAt": "2026-10-25T11:56:36Z"
   },
   {
-   "id": "steam-3335310",
-   "slug": "remothered-red-nun-s-legacy",
-   "title": "Remothered: Red Nun's Legacy",
-   "description": "Tu hija ha sido secuestrada. Adéntrate en una pesadilla para salvarla, sobrevive y descubre la verdad sobre la Monja Roja mediante la retrocognición, los poderes del espejo y la manipulación de las polillas. Un regreso moderno al terror de supervivencia clásico con un toque de neo-giallo italiano.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3335310/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3335310/36b0a83ca1f760fae7b0d063b89b2f5ad2e7115a/header.jpg?t=1792748869",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Aventura"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z"
-  },
-  {
    "id": "steam-5088140",
    "slug": "phantom-line-prologue",
    "title": "Phantom Line: Prologue",
@@ -564,6 +543,27 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T11:56:36Z"
+  },
+  {
+   "id": "steam-3335310",
+   "slug": "remothered-red-nun-s-legacy",
+   "title": "Remothered: Red Nun's Legacy",
+   "description": "Tu hija ha sido secuestrada. Adéntrate en una pesadilla para salvarla, sobrevive y descubre la verdad sobre la Monja Roja mediante la retrocognición, los poderes del espejo y la manipulación de las polillas. Un regreso moderno al terror de supervivencia clásico con un toque de neo-giallo italiano.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3335310/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3335310/36b0a83ca1f760fae7b0d063b89b2f5ad2e7115a/header.jpg?t=1792748869",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z"
@@ -1475,27 +1475,6 @@
    "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
-   "id": "steam-5138990",
-   "slug": "unharvest",
-   "title": "Unharvest",
-   "description": "Drena la vida de todo lo que te rodea en este juego incremental de agricultura a la inversa. Infecta todo lo que crece, mejora tus plagas y marchita el mundo hasta que no quede nada vivo.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5138990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5138990/a2088347d4eebf4f7b0531c47b948f0343627ce0/header.jpg?t=1792745648",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Casual",
-    "Simuladores"
-   ],
-   "releaseText": "7 Dec, 2026",
-   "date": "2026-12-07",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z"
-  },
-  {
    "id": "steam-5274500",
    "slug": "oferta",
    "title": "永禄立志伝",
@@ -1512,6 +1491,27 @@
    ],
    "releaseText": "25 Oct, 2026",
    "date": "2026-10-25",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5138990",
+   "slug": "unharvest",
+   "title": "Unharvest",
+   "description": "Drena la vida de todo lo que te rodea en este juego incremental de agricultura a la inversa. Infecta todo lo que crece, mejora tus plagas y marchita el mundo hasta que no quede nada vivo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5138990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5138990/a2088347d4eebf4f7b0531c47b948f0343627ce0/header.jpg?t=1792745648",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Simuladores"
+   ],
+   "releaseText": "7 Dec, 2026",
+   "date": "2026-12-07",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z"
@@ -2983,27 +2983,6 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
-   "id": "steam-3572090",
-   "slug": "dominus-gladiatus",
-   "title": "Dominus Gladiatus",
-   "description": "Dominus Gladiatus es un brutal simulador de gestión de gladiadores en el que reclutas, entrenas y equipas gladiadores y tomas decisiones de vida o muerte durante un torneo mortal de 160 días contra Domini rivales.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3572090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/33270aae739a218f5062c2050d139efa1c807d47/header.jpg?t=1792350270",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Simuladores",
-    "Estrategia"
-   ],
-   "releaseText": "5 Nov, 2026",
-   "date": "2026-11-05",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
    "id": "steam-4924750",
    "slug": "village-of-the-mirror",
    "title": "Village of the Mirror",
@@ -3021,6 +3000,27 @@
    ],
    "releaseText": "25 Oct, 2026",
    "date": "2026-10-25",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
+   "id": "steam-3572090",
+   "slug": "dominus-gladiatus",
+   "title": "Dominus Gladiatus",
+   "description": "Dominus Gladiatus es un brutal simulador de gestión de gladiadores en el que reclutas, entrenas y equipas gladiadores y tomas decisiones de vida o muerte durante un torneo mortal de 160 días contra Domini rivales.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3572090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/33270aae739a218f5062c2050d139efa1c807d47/header.jpg?t=1792350270",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "5 Nov, 2026",
+   "date": "2026-11-05",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"
