@@ -100,6 +100,28 @@ def popular_ids(fetch):
     return ids[:MAX_GAMES]
 
 
+F2P_URL = "https://store.steampowered.com/search/results/?json=1&filter=topsellers&maxprice=free&category1=998&count=48&cc=co&l=spanish"
+
+
+def free_to_play(fetch, previous=()):
+    """Los juegos gratis para siempre más jugados/vendidos en Steam (búsqueda oficial). Si falla, se conserva la lista."""
+    try:
+        games = []
+        for item in (fetch(F2P_URL) or {}).get("items", []):
+            m = re.search(r"/apps/(\d+)/", item.get("logo") or "")
+            name = (item.get("name") or "").strip()
+            if m and name:
+                app = m.group(1)
+                games.append({"id": f"steam-{app}", "title": name, "url": f"https://store.steampowered.com/app/{app}/",
+                              "image": f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{app}/header.jpg"})
+        if len(games) < 5:
+            raise ValueError("muy pocos juegos")
+        return games[:40], f"OK, {len(games[:40])} juegos"
+    except Exception as exc:
+        print(f"Gratis para siempre: Steam falló: {exc}", file=sys.stderr)
+        return list(previous), f"Falló ({type(exc).__name__}); se conserva la lista anterior"
+
+
 def steam_trailer(info):
     """El primer tráiler oficial de la ficha de Steam (video y miniatura), o {} si no hay."""
     for movie in info.get("movies") or []:

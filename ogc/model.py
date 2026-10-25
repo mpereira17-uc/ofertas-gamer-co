@@ -10,7 +10,7 @@ FIELDS = [
     "regions", "originalPrice", "currentPrice", "currency", "copApproximation", "discountPercentage",
     "image", "officialUrl", "destinationUrl", "affiliateNetwork", "affiliate", "sponsored", "startsAt",
     "expiresAt", "verifiedAt", "source", "sourceType", "status", "tags", "telegramPublishedAt",
-    "createdAt", "updatedAt", "metacritic", "imageSmall",
+    "createdAt", "updatedAt", "metacritic", "imageSmall", "otherStores",
 ]
 REQUIRED = ["id", "title", "store", "storeId", "officialUrl", "destinationUrl", "currency", "verifiedAt", "source"]
 STATUSES = {"Disponible", "Gratuito", "Próximo a vencer", "Vencido", "Pendiente de verificación",
@@ -127,11 +127,21 @@ def merge(previous, fresh_by_source, failed_sources, now, cfg):
 def dedupe(offers):
     """Una sola oferta por juego: gana la gratuita y luego el mayor descuento."""
     offers = sorted(offers, key=lambda o: (o.get("currentPrice") != 0, -(o.get("discountPercentage") or 0)))
-    seen, unique = set(), []
+    seen, unique, winner = set(), [], {}
     for offer in offers:
         key = slugify(offer["title"])
-        if offer["id"] in seen or key in seen:
+        if offer["id"] in seen:
+            continue
+        if key in seen:  # el mismo juego en otra tienda: se guarda para "Compara tiendas"
+            if offer["storeId"] != winner[key]["storeId"] and not any(x["storeId"] == offer["storeId"] for x in winner[key]["otherStores"]):
+                winner[key]["otherStores"].append({k: offer.get(k) for k in ALT_FIELDS})
             continue
         seen.update({offer["id"], key})
+        offer = dict(offer, otherStores=[])
+        winner[key] = offer
         unique.append(offer)
     return unique
+
+
+ALT_FIELDS = ("id", "title", "store", "storeId", "currentPrice", "originalPrice", "currency", "discountPercentage",
+              "copApproximation", "destinationUrl", "officialUrl", "affiliate", "image", "verifiedAt")

@@ -72,12 +72,12 @@ def bluesky_thumb(image, jwt):
         return None
 
 
-def send_bluesky(offer, page_url):
+def bluesky_post(text, link, title, description, image=None):
+    """Publica un texto con tarjeta de enlace (y portada si hay). Devuelve True si salió."""
     handle = (os.environ.get("BLUESKY_HANDLE") or "").strip().lstrip("@")
     password = (os.environ.get("BLUESKY_APP_PASSWORD") or "").strip()
     if not handle or not password:
         return False
-    text, link = post_text(offer, page_url)
     text = text[: 300 - len(link) - 1] + link
     start = len(text[: text.rindex(link)].encode("utf-8"))
     try:
@@ -88,9 +88,9 @@ def send_bluesky(offer, page_url):
             "facets": [{"index": {"byteStart": start, "byteEnd": start + len(link.encode("utf-8"))},
                         "features": [{"$type": "app.bsky.richtext.facet#link", "uri": link}]}],
             "embed": {"$type": "app.bsky.embed.external",
-                      "external": {"uri": link, "title": offer["title"], "description": price_line(offer)}},
+                      "external": {"uri": link, "title": title[:300], "description": description[:300]}},
         }
-        thumb = bluesky_thumb(offer.get("image"), session["accessJwt"])
+        thumb = bluesky_thumb(image, session["accessJwt"])
         if thumb:
             record["embed"]["external"]["thumb"] = thumb
         _post(BSKY + "com.atproto.repo.createRecord",
@@ -98,8 +98,13 @@ def send_bluesky(offer, page_url):
               headers={"Authorization": f"Bearer {session['accessJwt']}"})
         return True
     except Exception as exc:
-        print(f"Bluesky falló con '{offer['title']}': {type(exc).__name__}", file=sys.stderr)
+        print(f"Bluesky falló con '{title}': {type(exc).__name__}", file=sys.stderr)
         return False
+
+
+def send_bluesky(offer, page_url):
+    text, link = post_text(offer, page_url)
+    return bluesky_post(text, link, offer["title"], price_line(offer), offer.get("image"))
 
 
 def send_mastodon(offer, page_url):

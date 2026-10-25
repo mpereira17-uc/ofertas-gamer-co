@@ -369,6 +369,24 @@
     });
   });
 
+  // App instalable (PWA): guarda una copia para abrir sin internet y ofrece instalarla
+  if ("serviceWorker" in navigator && location.protocol === "https:") {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  }
+  var installBox = document.getElementById("install-box"), installBtn = document.getElementById("install-app"), deferred = null;
+  window.addEventListener("beforeinstallprompt", function (ev) {
+    ev.preventDefault();
+    deferred = ev;
+    if (installBox) installBox.hidden = false;
+  });
+  if (installBtn) {
+    installBtn.addEventListener("click", function () {
+      if (!deferred) return;
+      deferred.prompt();
+      deferred.userChoice.finally(function () { deferred = null; installBox.hidden = true; });
+    });
+  }
+
   // Copiar el resumen de WhatsApp como texto limpio
   var copyBtn = document.getElementById("copy-wa");
   var waText = document.getElementById("wa-text");

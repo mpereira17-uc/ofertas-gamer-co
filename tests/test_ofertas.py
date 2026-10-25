@@ -75,6 +75,15 @@ class TestOfertas(unittest.TestCase):
         unique = model.dedupe(self.deals)
         self.assertEqual(sum(1 for o in unique if o["title"] == "Hollow Knight"), 1)
 
+    def test_otras_tiendas_para_comparar(self):
+        a = dict(self.deals[0], id="x1", storeId="steam", store="Steam", discountPercentage=50, currentPrice=5.0)
+        b = dict(a, id="x2", storeId="gog", store="GOG", discountPercentage=40, currentPrice=6.0)
+        c = dict(a, id="x3", storeId="gog", store="GOG", discountPercentage=30, currentPrice=7.0)  # misma tienda: no se repite
+        unique = [o for o in model.dedupe([b, a, c]) if o["title"] == a["title"]]
+        self.assertEqual(len(unique), 1)
+        self.assertEqual(unique[0]["id"], "x1")
+        self.assertEqual([x["id"] for x in unique[0]["otherStores"]], ["x2"])
+
     def test_fuente_caida_conserva_ultima_version(self):
         merged = model.merge(self.deals, {"epic": self.epic}, {"cheapshark"}, self.now, CFG)
         self.assertTrue(any(o["source"] == "cheapshark" for o in merged))

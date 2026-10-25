@@ -42,9 +42,12 @@ ICONS = {k: _SVG.format(v) for k, v in {
 NAV = [
     ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"),
                  ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"),
-                 ("noticias.html", "Novedades", "news")]),
+                 ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
+                 ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift")]),
     ("Lanzamientos", [("lanzamientos.html", "Calendario", "calendar"), ("lanzamientos.html#proximos", "Próximos", "clock"),
-                      ("lanzamientos.html#recientes", "Recientes", "sparkle"), ("lanzamientos.html#por-confirmar", "Por confirmar", "question")]),
+                      ("lanzamientos.html#recientes", "Recientes", "sparkle"), ("lanzamientos.html#por-confirmar", "Por confirmar", "question"),
+                      ("lanzamientos-playstation.html", "PlayStation", "store"), ("lanzamientos-xbox.html", "Xbox", "store"),
+                      ("lanzamientos-switch.html", "Nintendo Switch", "store")]),
     ("Ayuda", [("guias.html", "Guías", "book"), ("preguntas-frecuentes.html", "Preguntas", "chat"),
                ("como-verificamos.html", "Cómo verificamos", "check")]),
 ]
@@ -61,6 +64,33 @@ CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; styl
        "upgrade-insecure-requests")
 
 e = html.escape
+
+SW_TEMPLATE = """// Service worker de Ofertas Gamer CO: abre la página sin internet con la última copia guardada.
+const CACHE = "ogc-__VERSION__";
+const SHELL = __SHELL__;
+self.addEventListener("install", (ev) => {
+  ev.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+self.addEventListener("activate", (ev) => {
+  ev.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+    .then(() => self.clients.claim()));
+});
+self.addEventListener("fetch", (ev) => {
+  const req = ev.request;
+  const url = new URL(req.url);
+  if (req.method !== "GET" || url.origin !== location.origin) return;
+  if (req.mode === "navigate" || url.pathname.includes("/data/")) {
+    // Primero internet (precios frescos); sin conexión, la copia guardada.
+    ev.respondWith(fetch(req).then((res) => {
+      const copy = res.clone();
+      if (res.ok) caches.open(CACHE).then((c) => c.put(req, copy));
+      return res;
+    }).catch(() => caches.match(req).then((hit) => hit || caches.match("sin-conexion.html"))));
+    return;
+  }
+  ev.respondWith(caches.match(req).then((hit) => hit || fetch(req)));
+});
+"""
 
 
 def asset_version(name):
@@ -183,6 +213,7 @@ class Site:
 </div>
 <footer class="site"><div class="wrap">
 <p class="foot-brand"><img src="assets/logo-72.png" alt="" width="32" height="32"> Ofertas Gamer CO</p>
+<p class="install" id="install-box" hidden><button class="btn btn-primary" type="button" id="install-app">Instalar la app en tu celular</button></p>
 <p>{e(DISCLOSURE)}</p>
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
 <p>Ofertas Gamer CO no vende productos ni procesa pagos. Los precios y la disponibilidad pueden cambiar sin previo aviso.</p>
@@ -221,12 +252,9 @@ class Site:
 
     def bottom_nav(self, name):
         items = [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Gratis", "gift"),
-                 ("ofertas.html#filters", "Buscar", "search"), ("favoritos.html", "Favoritos", "star")]
+                 ("ofertas.html#filters", "Buscar", "search"), ("favoritos.html", "Favoritos", "star"), ("alertas.html", "Alertas", "bell")]
         links = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h.split("#")[0] == name else ""}>{ICONS[i]}<span>{t}</span></a>'
                         for h, t, i in items)
-        tg = self.cfg.get("enlace_canal_telegram")
-        if tg:
-            links += f'<a href="{e(tg)}" target="_blank" rel="noopener noreferrer">{ICONS["bell"]}<span>Alertas</span></a>'
         return f'<nav class="bottom-nav" aria-label="Accesos rápidos">{links}</nav>'
 
     def is_search(self, o):
@@ -440,7 +468,30 @@ class Site:
         page = self.detail.get(it["id"])
         return f'<a class="title-link" href="{page}">{e(it["title"])}</a>' if page else e(it["title"])
 
+    def alert_button(self, item, kind):
+        """Botón "Avísame" que abre el bot de Telegram con la alerta ya armada."""
+        bot = getattr(self, "bot", "")
+        if not bot:
+            return ""
+        from .alerts import short_id
+        ref = ("o_" if kind == "offer" else "j_") + short_id(item["id"])
+        label = "Avísame si baja de precio" if kind == "offer" else "Avísame cuando salga"
+        return ext_link(f"https://t.me/{bot}?start={ref}", f"{ICONS['bell']} {label}", cls="btn",
+                        label=f"{label}: {item['title']} (abre Telegram)")
+
+    def compare_block(self, o):
+        """El mismo juego en otras tiendas, del más barato al más caro (solo ofertas verificadas)."""
+        same = list(o.get("otherStores") or [])
+        if not same:
+            return ""
+        price = lambda x: x.get("copApproximation") if x.get("currency") == "USD" else x.get("currentPrice")
+        rows = "".join(self.note_row(x, "offer", self.now) for x in sorted(same + [o], key=lambda x: price(x) or 0))
+        return (f'<section class="compare" aria-labelledby="cmp-h"><h2 id="cmp-h">{ICONS["store"]} Compara tiendas</h2>'
+                f'<p class="meta">El mismo juego en otras tiendas oficiales, del más barato al más caro.</p>'
+                f'<div class="note"><section class="n-sec"><ul>{rows}</ul></section></div></section>')
+
     def offer_pages(self, offers, notice):
+
         for o in offers:
             name = self.detail.get(o["id"])
             if not name:
@@ -467,9 +518,9 @@ class Site:
 {self.price_html(o, big=True)}
 {self.countdown(o)}{f'<p class="meta">{e(until)}</p>' if until else ''}
 {self.trust_chips(o, full=True)}
-<div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a></div>
+<div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a>{self.alert_button(o, "offer")}</div>
 {search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
-{notice}</div></article>""",
+{notice}</div></article>{self.compare_block(o)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
 
     @staticmethod
@@ -514,7 +565,7 @@ class Site:
 <p class="detail-date">📅 {e(when)}</p>
 <div class="tags">{tags}</div>
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
-<div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>
+<div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
 <p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld], og_image=g.get("image"))
@@ -745,6 +796,114 @@ class Site:
                     f'{coming_html}<div class="notes">{"".join(notes) or "<p>Todavía no hay novedades registradas.</p>"}</div>',
                     crumbs=[("noticias.html", "Novedades")])
 
+    def collection_pages(self, live, games, now, updated_line, notice):
+        """Páginas de temas que la gente busca en Google, armadas solo con datos reales del día."""
+        deals = [o for o in live if o.get("currentPrice")]
+        cop = lambda o: o.get("copApproximation") if o.get("currency") == "USD" else o.get("currentPrice")
+        cheap = sorted([o for o in deals if cop(o) and cop(o) < 20000], key=lambda o: -(o.get("discountPercentage") or 0))
+        huge = sorted([o for o in deals if (o.get("discountPercentage") or 0) >= 90], key=lambda o: -(o.get("discountPercentage") or 0))
+        soon_limit = (now + timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        ending = sorted([o for o in live if o.get("expiresAt") and o["expiresAt"] <= soon_limit], key=lambda o: o["expiresAt"])
+        pages = [
+            ("juegos-baratos.html", "Juegos de PC baratos en pesos colombianos", "Juegos de PC por menos de $20.000 COP",
+             "Juegos de PC en oferta que cuestan menos de $20.000 pesos colombianos (valor aproximado), en tiendas oficiales.", cheap),
+            ("ofertas-90-por-ciento.html", "Juegos con 90% de descuento o más", "Juegos con 90% de descuento o más",
+             "Los descuentos más grandes del día en tiendas oficiales de PC: 90% o más.", huge),
+            ("ofertas-terminan-pronto.html", "Ofertas de juegos que terminan pronto", "Ofertas que terminan esta semana",
+             "Juegos gratis y descuentos con fecha de fin en los próximos 7 días. Aprovecha antes de que terminen.", ending),
+        ]
+        for name, title, h1, desc, items in pages:
+            body = (f'<h1>{e(h1)}</h1><p class="lead">{e(desc)}</p>{updated_line}{notice}'
+                    + (self.offer_list(items) if items else '<p class="notice">Hoy no hay ofertas en esta categoría. Se revisa cada 4 horas.</p>')
+                    + '<p><a href="ofertas.html">Ver todas las ofertas</a></p>')
+            self.layout(name, title, desc, body, crumbs=[(name, h1)], jsonld=[self.item_list_ld(items)] if items else None)
+
+        today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        upcoming = [g for g in games if g.get("comingSoon") or (g.get("date") or "") >= today]
+        for slug, plat, label in (("playstation", "PlayStation", "PlayStation (PS5 y PS4)"), ("xbox", "Xbox", "Xbox (Series X|S y One)"),
+                                  ("switch", "Switch", "Nintendo Switch"), ("pc", "Windows", "PC")):
+            mine = [g for g in upcoming if plat in g.get("platforms", [])]
+            dated = sorted([g for g in mine if g.get("date")], key=lambda g: (g["date"], self.rank(g)))
+            tba = sorted([g for g in mine if not g.get("date")], key=self.rank)
+            name = f"lanzamientos-{slug}.html"
+            top = sorted(mine, key=self.rank)[:8]
+            spot = (f'<section class="spot"><div class="sec-head"><h2>{ICONS["flame"]} Los más esperados de {e(label)}</h2></div>'
+                    f'<ul class="spot-grid small">{"".join(self.spot_card(g, now) for g in top)}</ul></section>') if top else ""
+            body = (f'<h1>Próximos lanzamientos de {e(label)}</h1><p class="lead">Los juegos que salen para {e(label)}, día por día. '
+                    f'Las fechas son las que publican las tiendas y Wikipedia, y pueden cambiar.</p>{updated_line}{spot}'
+                    + self.release_groups(dated, now, "Calendario", f"cal-{slug}", compact=False)
+                    + self.release_groups(tba, now, "Fecha por confirmar", f"tba-{slug}", compact=False)
+                    + '<p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
+            self.layout(name, f"Próximos lanzamientos de {label}: calendario {now.year}",
+                        f"Calendario de próximos juegos para {label}: fechas de lanzamiento, géneros y tráileres.",
+                        body, crumbs=[("lanzamientos.html", "Lanzamientos"), (name, label)])
+
+    def alerts_page(self):
+        bot = getattr(self, "bot", "")
+        start = (ext_link(f"https://t.me/{bot}?start=ayuda", f"{ICONS['bell']} Abrir el bot de alertas", cls="btn btn-primary",
+                          label="Abrir el bot de alertas en Telegram") if bot else
+                 '<p class="notice">El bot de alertas se está activando. Mientras tanto, únete al canal de Telegram.</p>')
+        tg = self.cfg.get("enlace_canal_telegram", "")
+        self.layout("alertas.html", "Alertas de precio y de lanzamientos por Telegram",
+                    "Recibe un aviso en Telegram cuando un juego que quieres baje de precio, esté gratis o salga a la venta.",
+                    f"""<h1>Alertas personales</h1>
+<p class="lead">Dile al bot qué juego quieres y te avisa por Telegram cuando baje de precio, esté gratis o salga a la venta. Gratis y sin registrarte.</p>
+<div class="cta">{start}{ext_link(tg, "Canal con todas las ofertas", cls="btn") if tg else ""}</div>
+<ol class="how-steps">
+<li><strong>Abre el bot</strong><span>Toca el botón y luego «Iniciar» en Telegram.</span></li>
+<li><strong>Escribe tu alerta</strong><span><code>/alerta hollow knight</code> o <code>/alerta elden ring 50000</code> (precio máximo en pesos). Para estrenos: <code>/estreno fable</code>.</span></li>
+<li><strong>Listo</strong><span>Revisamos cada 4 horas y te escribimos solo cuando se cumple. <code>/misalertas</code> y <code>/borrar</code> para administrarlas.</span></li>
+</ol>
+<p>También puedes tocar <strong>«Avísame»</strong> en la página de cualquier oferta o lanzamiento.</p>
+<p class="meta">Privacidad: solo guardamos tu número de chat de Telegram y tus alertas, cifrados, para poder escribirte. No guardamos tu nombre ni tu teléfono. Escribe <code>/borrar todo</code> para eliminar tus datos.</p>""",
+                    crumbs=[("alertas.html", "Alertas")])
+
+    def f2p_page(self, f2p, updated_line):
+        if f2p:
+            cards = "".join(
+                f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async"></div>'
+                f'<div class="spot-body"><h3 class="clamp2">{e(g["title"])}</h3><div class="rel-actions">'
+                f'{ext_link(g["url"], "Jugar gratis en Steam", cls="btn btn-primary btn-sm btn-free", label=f"Jugar {g["title"]} gratis en Steam (abre en otra pestaña)")}</div></div></li>'
+                for g in f2p)
+            listing = f'<ul class="spot-grid small">{cards}</ul>'
+        else:
+            listing = '<p class="notice">Todavía no se cargó la lista. Vuelve en unas horas.</p>'
+        self.layout("juegos-gratis-para-siempre.html", "Juegos gratis para siempre en PC (free to play)",
+                    "Los juegos gratis para siempre más jugados en Steam ahora mismo: free to play que puedes descargar sin pagar.",
+                    f'<h1>Juegos gratis para siempre</h1><p class="lead">Juegos <em>free to play</em> que no cuestan nada, ordenados por los más jugados en Steam. '
+                    f'Pueden tener compras dentro del juego. ¿Buscas juegos de pago gratis por tiempo limitado? Mira <a href="juegos-gratis.html">Juegos gratis</a>.</p>'
+                    f'{updated_line}{listing}', crumbs=[("juegos-gratis-para-siempre.html", "Gratis para siempre")])
+
+    def weekly_pages(self, history, live, games, now, updated_line):
+        from . import weekly
+        current = history[0] if history and history[0]["week"] == weekly.week_key(now) else None
+        snap = current or weekly.snapshot(now, *weekly.pick(live, games, now))
+
+        def render(sn):
+            parts = []
+            for key, title, icon, kind in (("free", "Gratis esta semana", "gift", "offer"), ("deals", "Mejores descuentos", "flame", "offer"),
+                                           ("games", "Salen esta semana", "calendar", "game")):
+                if sn.get(key):
+                    rows = "".join(self.note_row(dict(x, platforms=x.get("platforms", []), genres=x.get("genres", [])), kind, now) for x in sn[key])
+                    parts.append(f'<section class="n-sec"><h3>{ICONS[icon]} {title}</h3><ul>{rows}</ul></section>')
+            return f'<article class="note">{"".join(parts) or "<p class=n-sec>No hubo novedades esta semana.</p>"}</article>'
+
+        archive = "".join(f'<li><a href="{weekly.page_name(h)}">Resumen del {e(h["label"])}</a></li>' for h in history)
+        archive_html = f'<h2>Resúmenes anteriores</h2><ul class="archive">{archive}</ul>' if archive else ""
+        lead = ("Lo mejor de la semana: juegos gratis, los descuentos más grandes y los estrenos. Sale solo cada viernes en "
+                '<a href="' + e(self.cfg.get("enlace_canal_telegram", "")) + '" target="_blank" rel="noopener noreferrer">Telegram</a>, Discord y Bluesky.')
+        title = f"Resumen semanal del {snap['label']}" if current else "Lo mejor de esta semana (hasta ahora)"
+        self.layout("resumen-semanal.html", "Resumen semanal de ofertas gamer para Colombia",
+                    "Cada viernes: juegos gratis, los mejores descuentos de PC y los estrenos de la semana, en un solo lugar.",
+                    f'<h1>Resumen semanal</h1><p class="lead">{lead}</p>{updated_line}<h2>{e(title)}</h2>{render(snap)}{archive_html}',
+                    crumbs=[("resumen-semanal.html", "Resumen semanal")])
+        for h in history:
+            self.layout(weekly.page_name(h), f"Resumen semanal de ofertas gamer: {h['label']}",
+                        f"Juegos gratis, mejores descuentos y estrenos de la semana del {h['label']}.",
+                        f'<h1>Resumen del {e(h["label"])}</h1><p class="lead">Así estaban las ofertas ese día. Los precios ya pueden haber cambiado: '
+                        f'mira las <a href="ofertas.html">ofertas de hoy</a>.</p>{render(h)}',
+                        crumbs=[("resumen-semanal.html", "Resumen semanal"), (weekly.page_name(h), h["label"])])
+
     def item_list_ld(self, offers):
         return {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": o["title"], "url": o["officialUrl"]}
@@ -865,6 +1024,10 @@ class Site:
         self.news_page(live, games or [], updated_dt, updated_line)
 
         self.releases_page(games or [], updated_dt, updated_line)
+        self.collection_pages(live, games or [], updated_dt, updated_line, notice)
+        self.f2p_page(getattr(self, "f2p", []), updated_line)
+        self.alerts_page()
+        self.weekly_pages(getattr(self, "weekly_history", []), live, games or [], updated_dt, updated_line)
         self.offer_pages(live, notice)
         self.game_pages(games or [], updated_dt)
         self.static_pages(status, updated)
@@ -873,9 +1036,17 @@ class Site:
         self.sitemap(updated_dt)
         self.write("site.webmanifest", json.dumps({
             "name": self.cfg["nombre"], "short_name": "Ofertas Gamer", "lang": "es", "start_url": "./index.html",
-            "display": "standalone", "background_color": "#0f1115", "theme_color": "#0f1115",
+            "display": "standalone", "background_color": "#080a12", "theme_color": "#080a12", "id": "./",
+            "description": "Juegos gratis, ofertas de PC verificadas y calendario de lanzamientos para Colombia.",
             "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
-                      {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, ensure_ascii=False, indent=1))
+                      {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}],
+            "shortcuts": [{"name": "Juegos gratis", "url": "./juegos-gratis.html"}, {"name": "Ofertas", "url": "./ofertas.html"},
+                          {"name": "Lanzamientos", "url": "./lanzamientos.html"}]}, ensure_ascii=False, indent=1))
+        # App instalable: el service worker guarda una copia para abrir la página sin internet.
+        version = asset_version("styles.css") + asset_version("app.js")
+        shell = ["./", "index.html", "sin-conexion.html", f"assets/styles.css?v={asset_version('styles.css')}",
+                 f"assets/app.js?v={asset_version('app.js')}", "assets/icon-192.png", "assets/placeholder.svg"]
+        self.write("sw.js", SW_TEMPLATE.replace("__VERSION__", version).replace("__SHELL__", json.dumps(shell)))
         self.write(".nojekyll", "")
         if self.cfg.get("indexnow_key"):  # IndexNow exige publicar la clave (no es secreta)
             self.write(f"{self.cfg['indexnow_key']}.txt", self.cfg["indexnow_key"])
@@ -943,6 +1114,8 @@ class Site:
 <ul><li>La página no requiere registro de usuario.</li>
 <li>No pedimos contraseñas, datos bancarios, números de tarjeta, documentos de identidad ni información financiera.</li>
 <li>No usamos herramientas de analítica, publicidad ni cookies de seguimiento.</li></ul>
+<h2>Alertas por Telegram (opcional)</h2>
+<p>Si creas una alerta en nuestro bot de Telegram, guardamos tu número de chat de Telegram (lo necesitamos para escribirte) y el texto de tus alertas. No guardamos tu nombre, usuario ni teléfono. Esos datos se guardan cifrados y solo los usa el bot. Puedes borrarlos cuando quieras escribiendo <code>/borrar todo</code> al bot. Los favoritos, los juegos que sigues y el tema se guardan solo en tu navegador.</p>
 <h2>Servicios técnicos que usamos</h2>
 <ul>
 <li><strong>GitHub Pages</strong> aloja la página. Como cualquier servidor web, puede procesar datos técnicos como la dirección IP para entregar el sitio y protegerlo. <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Declaración de privacidad de GitHub</a>.</li>
@@ -1038,6 +1211,9 @@ class Site:
         P("404.html", "Página no encontrada", "La página que buscas no existe en Ofertas Gamer CO.",
           '<h1>Página no encontrada</h1><p>La dirección no existe o cambió.</p><p><a class="btn btn-primary" href="index.html">Ir al inicio</a></p>',
           noindex=True)
+        P("sin-conexion.html", "Sin conexión", "No hay conexión a internet.",
+          '<h1>Sin conexión</h1><p>No hay internet en este momento. Cuando vuelva la conexión, las ofertas se actualizan solas.</p>'
+          '<p><a class="btn btn-primary" href="index.html">Reintentar</a></p>', noindex=True)
 
     def whatsapp_page(self, offers, updated):
         text = whatsapp_text(offers, self.cfg, updated)

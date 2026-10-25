@@ -14,7 +14,7 @@ import os
 import sys
 from pathlib import Path
 
-from ogc import channels, discord, promote, releases, sources, wikidata
+from ogc import alerts, channels, discord, promote, releases, sources, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -26,6 +26,10 @@ OFFERS_FILE = DATA / "offers.json"
 PUBLISHED_FILE = DATA / "telegram_publicados.json"
 SOCIAL_FILE = DATA / "redes_publicados.json"
 RELEASES_FILE = DATA / "lanzamientos.json"
+F2P_FILE = DATA / "gratis_para_siempre.json"
+WEEKLY_FILE = DATA / "resumenes.json"
+ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
+BOT_FILE = DATA / "telegram_bot.json"
 DOCS = ROOT / "docs"
 
 
@@ -130,6 +134,8 @@ def run(args):
     games, status["Fuente lanzamientos (Steam)"] = releases.update(previous_releases, now, sources.get_json)
     games, status["Fuente juegos grandes y de consola (Wikidata)"] = wikidata.add_consoles(games, previous_releases, now, sources.get_json)
     save_json(RELEASES_FILE, {"updatedAt": iso(now), "games": games})
+    f2p, status["Fuente gratis para siempre (Steam)"] = releases.free_to_play(sources.get_json, load_json(F2P_FILE, {}).get("games", []))
+    save_json(F2P_FILE, {"updatedAt": iso(now), "games": f2p})
 
     site = Site(cfg, stores, ads, DOCS)
     site.assign_pages(offers, games)
@@ -161,6 +167,27 @@ def run(args):
         status[f"{label} en esta ejecución"] = f"{posted[net]} publicadas" if ready[net] else "no configurado"
         print(f"{label}: {status[f'{label} en esta ejecución']}")
 
+    history = load_json(WEEKLY_FILE, {"semanas": []})["semanas"]
+    if weekly.is_due(now, history) and not args.no_send:
+        snap = weekly.snapshot(now, *weekly.pick(offers, games, now))
+        done = weekly.publish(snap, base + "resumen-semanal.html", discord.Discord(guild=str(cfg.get("discord_servidor", ""))),
+                              promote.bluesky_post)
+        history = [snap] + history[: weekly.KEEP - 1]
+        save_json(WEEKLY_FILE, {"semanas": history})
+        status["Resumen semanal"] = f"Publicado esta ejecución en {', '.join(done) or 'ninguna red'}"
+    else:
+        status["Resumen semanal"] = f"Último: {history[0]['label']}" if history else "Sale el viernes"
+    print(f"Resumen semanal: {status['Resumen semanal']}")
+    bot_info = load_json(BOT_FILE, {})
+    if not args.no_send:
+        name = alerts.bot_username()
+        if name and name != bot_info.get("username"):
+            bot_info = {"username": name}
+            save_json(BOT_FILE, bot_info)
+        link_for = lambda x: base + site.detail[x["id"]] if x["id"] in site.detail else ""
+        status["Alertas de Telegram"] = alerts.run(str(ALERTS_FILE), offers, games, link_for, now)
+        print(f"Alertas: {status['Alertas de Telegram']}")
+    site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
     site.build(offers, status, now, games)
 
     if not args.no_send and not args.fixtures and cfg.get("indexnow_key"):
