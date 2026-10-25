@@ -458,3 +458,10 @@ footer.site::before{background:var(--flag);height:3px;opacity:.85}
 .moved{border-color:rgba(255,61,129,.4)}
 .cal-links .chip .meta{font-size:.75rem}
 .game-faq{margin-top:28px;max-width:860px}
+/* Carátulas verticales (Wikipedia): completas, sobre una copia desenfocada */
+.poster-bg{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;filter:blur(18px) brightness(.5) saturate(1.2);transform:scale(1.25);z-index:0}
+img.poster{position:relative;z-index:1;object-fit:contain!important}
+.rel-img .badge,.rel-img .hot-tag,.rel-img .trailer-chip,.spot-img .trailer-chip,.detail-media .badge,.detail-media .play-btn{z-index:2}
+.card:hover .thumb img.poster,.rel-card:hover .rel-img img.poster{transform:none}
+.no-cover strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rel-img .no-cover,.spot-img .no-cover{padding:34px 14px 12px}
