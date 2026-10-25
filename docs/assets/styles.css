@@ -361,3 +361,4 @@ h2.f-title::after{display:none}
 .trailer-chip{position:absolute;right:8px;bottom:8px;z-index:2;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(8,10,18,.8);color:#fff;border:1px solid rgba(255,255,255,.25);transition:background .2s,transform .2s}
 .trailer-chip:hover{background:var(--neon-2);transform:scale(1.1)}
 .trailer-chip svg{width:16px;height:16px;margin-left:2px}
+.trailer-fallback{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}

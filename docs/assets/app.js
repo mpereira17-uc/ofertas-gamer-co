@@ -324,9 +324,37 @@
       } else {
         player = document.createElement("video");
         var native = hls && player.canPlayType("application/vnd.apple.mpegurl");
-        var src = video || (native ? hls : "");
-        if (!src) return; // sin formato compatible: se abre el enlace normal (Steam)
-        player.src = src;
+        var useLib = !video && hls && !native && "MediaSource" in window;
+        if (!video && !native && !useLib) return; // sin formato compatible: se abre el enlace normal (Steam)
+        if (useLib) {
+          // hls.js (copia local, licencia Apache 2.0) para los tráileres de Steam en Chrome, Edge y Firefox
+          var startLib = function () {
+            var h = new window.Hls({ enableWorker: false });
+            h.on(window.Hls.Events.ERROR, function (e, data) {
+              if (!data.fatal) return;
+              h.destroy();  // si Steam no deja reproducirlo aquí, se ofrece verlo allá
+              box.textContent = "";
+              var a = document.createElement("a");
+              a.className = "btn btn-primary trailer-fallback";
+              a.href = btn.getAttribute("href");
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+              a.textContent = "Ver el tráiler en Steam";
+              box.appendChild(a);
+            });
+            h.loadSource(hls);
+            h.attachMedia(player);
+          };
+          if (window.Hls) startLib();
+          else {
+            var tag = document.createElement("script");
+            tag.src = "assets/vendor/hls.light.min.js";
+            tag.onload = startLib;
+            document.head.appendChild(tag);
+          }
+        } else {
+          player.src = video || hls;
+        }
         player.controls = true;
         player.autoplay = true;
         player.playsInline = true;
