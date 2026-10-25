@@ -201,9 +201,13 @@ def run(args):
                               ("tumblr", promote.send_tumblr)):
                 if offer["id"] in social.setdefault(net, []) or posted[net] >= cfg.get("maximo_posts_redes_por_ejecucion", 3):
                     continue
+                if net == "tumblr" and not tumblr.can_post(social.setdefault("tumblr_horas", []), now, cfg.get("tumblr", {})):
+                    continue
                 if send(offer, link):
                     social[net].append(offer["id"])
                     posted[net] += 1
+                    if net == "tumblr":
+                        social["tumblr_horas"].append(iso(now))
         dc = discord.Discord(guild=str(cfg.get("discord_servidor", "")))
         if dc.ready:
             counts = discord.publish(dc, candidates, games, lambda x: base + site.detail[x["id"]] if x["id"] in site.detail else "",

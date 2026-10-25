@@ -88,3 +88,19 @@ def post(text, link, title, description, image=None, tags=("videojuegos", "ofert
         LAST_ERROR = f"{type(exc).__name__} {code} {detail}".strip()
         print(f"Tumblr falló con '{title}': {LAST_ERROR}", file=sys.stderr)
         return False
+
+
+def can_post(times, now, rules):
+    """Ritmo suave para Tumblr: desde la fecha de inicio, pocas publicaciones al día y separadas.
+    times: lista de fechas ISO (UTC) de publicaciones anteriores."""
+    from .channels import CO_TZ
+    from .model import parse_iso
+    co = now.astimezone(CO_TZ)
+    if co.strftime("%Y-%m-%d") < rules.get("empieza", ""):
+        return False
+    past = [parse_iso(t) for t in times]
+    today = [t for t in past if t.astimezone(CO_TZ).date() == co.date()]
+    if len(today) >= rules.get("maximo_por_dia", 2):
+        return False
+    gap = rules.get("horas_entre_posts", 2) * 3600
+    return all((now - t).total_seconds() >= gap for t in past)

@@ -39,6 +39,17 @@ class TumblrTest(unittest.TestCase):
         self.assertIn("ofertasgamerco.tumblr.com/posts", sent["url"])
         self.assertEqual([c["type"] for c in sent["body"]["content"]], ["image", "text", "link"])
 
+    def test_ritmo(self):
+        from datetime import datetime, timezone
+        rules = {"empieza": "2026-10-26", "maximo_por_dia": 2, "horas_entre_posts": 2}
+        hoy = datetime(2026, 10, 25, 20, tzinfo=timezone.utc)
+        self.assertFalse(tumblr.can_post([], hoy, rules))  # antes de la fecha de inicio
+        m = datetime(2026, 10, 26, 14, tzinfo=timezone.utc)  # 9 a. m. en Colombia
+        self.assertTrue(tumblr.can_post([], m, rules))
+        self.assertFalse(tumblr.can_post(["2026-10-26T13:00:00Z"], m, rules))  # hace 1 hora
+        self.assertTrue(tumblr.can_post(["2026-10-26T11:00:00Z"], m, rules))
+        self.assertFalse(tumblr.can_post(["2026-10-26T06:00:00Z", "2026-10-26T11:00:00Z"], m, rules))  # ya van 2 hoy
+
 
 if __name__ == "__main__":
     unittest.main()
