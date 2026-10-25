@@ -21,12 +21,12 @@ PLATFORMS = (("playstation", "PlayStation"), ("xbox", "Xbox"), ("nintendo switch
 # p:/ps: (no wdt:) para traer todas las plataformas: con wdt: Wikidata solo da la "preferida" (GTA VI salía solo en Xbox)
 QUERY = """SELECT ?g ?gLabel ?links (SAMPLE(?steam0) AS ?steam) (SAMPLE(?es0) AS ?es) (SAMPLE(?en0) AS ?en) (SAMPLE(?yt0) AS ?yt)
   (GROUP_CONCAT(DISTINCT CONCAT(STR(?date), "#", STR(?prec)); separator="|") AS ?dates)
-  (GROUP_CONCAT(DISTINCT ?platL; separator="|") AS ?plats) (GROUP_CONCAT(DISTINCT ?genL; separator="|") AS ?gens) WHERE {
+  (GROUP_CONCAT(DISTINCT CONCAT(STR(?p), "=", COALESCE(?platL, "")); separator="|") AS ?plats) (GROUP_CONCAT(DISTINCT ?genL; separator="|") AS ?gens) WHERE {
   ?g wdt:P31 wd:Q7889; p:P577/psv:P577 [wikibase:timeValue ?date; wikibase:timePrecision ?prec];
      wikibase:sitelinks ?links.
   FILTER(?links >= %(min)d && ?date >= "%(start)sT00:00:00Z"^^xsd:dateTime && ?date <= "%(end)sT00:00:00Z"^^xsd:dateTime)
   FILTER NOT EXISTS { ?g wdt:P577 ?old FILTER(?old < "%(start)sT00:00:00Z"^^xsd:dateTime) }
-  OPTIONAL { ?g p:P400/ps:P400 ?p. ?p rdfs:label ?platL FILTER(lang(?platL) = "en") }
+  OPTIONAL { ?g p:P400/ps:P400 ?p. OPTIONAL { ?p rdfs:label ?platL FILTER(lang(?platL) IN ("en", "es", "mul")) } }
   OPTIONAL { ?g p:P136/ps:P136 ?ge. ?ge rdfs:label ?genL FILTER(lang(?genL) = "es") }
   OPTIONAL { ?g wdt:P1733 ?steam0 }
   OPTIONAL { ?g wdt:P1651 ?yt0 }
@@ -40,12 +40,21 @@ def val(row, key):
     return (row.get(key) or {}).get("value") or ""
 
 
+# por número de Wikidata, porque algunas consolas no tienen nombre en inglés (PlayStation 5, por ejemplo)
+PLATFORM_IDS = {"Q63184502": "PlayStation", "Q5014725": "PlayStation", "Q98973368": "Xbox", "Q13361286": "Xbox",
+                "Q19610114": "Switch", "Q1406": "Windows", "Q14116": "Mac", "Q388": "Linux"}
+
+
 def platform_names(text):
+    """De "http://www.wikidata.org/entity/Q63184502=|...=Microsoft Windows" saca las plataformas conocidas."""
     out = []
-    for name in text.lower().split("|"):
-        for key, label in PLATFORMS:
-            if name.startswith(key) and label not in out:
-                out.append(label)
+    for part in text.split("|"):
+        uri, _, name = part.partition("=") if "=" in part else ("", "", part)
+        label = PLATFORM_IDS.get(uri.rsplit("/", 1)[-1])
+        if not label:
+            label = next((lab for key, lab in PLATFORMS if name.lower().startswith(key)), None)
+        if label and label not in out:
+            out.append(label)
     return out
 
 
@@ -76,7 +85,7 @@ def to_game(row, now):
         "store": "Steam" if steam.isdigit() else "Wikipedia",
         "url": url,
         "image": image,
-        "platforms": platform_names(val(row, "plats")) or ["Windows"],
+        "platforms": platform_names(val(row, "plats")),
         "genres": [g.capitalize() for g in val(row, "gens").split("|") if g][:3],
         "releaseText": text,
         "date": date,

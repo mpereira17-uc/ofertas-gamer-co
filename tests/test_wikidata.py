@@ -17,7 +17,7 @@ def row(qid, name, dates, links, plats, steam="", es="", yt=""):
 
 
 DATA = {"results": {"bindings": [
-    row("Q1", "Grand Theft Auto VI", "2027-05-01T00:00:00Z#11|2026-11-19T00:00:00Z#11", 80, "PlayStation 5|Xbox Series X and Series S",
+    row("Q1", "Grand Theft Auto VI", "2027-05-01T00:00:00Z#11|2026-11-19T00:00:00Z#11", 80, "http://www.wikidata.org/entity/Q63184502=|http://www.wikidata.org/entity/Q98973368=Xbox Series X and Series S",
         es="https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI", yt="QdBZY2fkU-0"),
     row("Q2", "Juego Compartido", "2026-12-01T00:00:00Z#10", 30, "Microsoft Windows|PlayStation 5", steam="555"),
     row("Q3", "Solo Año", "2027-01-01T00:00:00Z#9", 20, "Nintendo Switch 2"),
