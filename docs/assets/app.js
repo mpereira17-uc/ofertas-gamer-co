@@ -115,6 +115,63 @@
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var root = document.documentElement;
 
+  // Carrusel de ofertas destacadas: pasa solo, con flechas, puntos y deslizamiento
+  var slider = document.querySelector(".slider");
+  if (slider) {
+    var track = slider.querySelector(".slides");
+    var slides = Array.prototype.slice.call(track.children);
+    var dotsEls = Array.prototype.slice.call(slider.querySelectorAll(".s-dots a"));
+    var bar = slider.querySelector(".s-bar span");
+    var prev = slider.querySelector(".prev"), next = slider.querySelector(".next");
+    var current = 0, timer = null, paused = false, DELAY = 6000;
+    prev.hidden = next.hidden = slides.length < 2;
+    function mark(i) {
+      current = i;
+      slides.forEach(function (s, k) { s.classList.toggle("active", k === i); });
+      dotsEls.forEach(function (d, k) { if (k === i) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
+      if (bar && !calm) {
+        bar.classList.remove("run");
+        void bar.offsetWidth;
+        if (!paused) bar.classList.add("run");
+      }
+    }
+    function go(i) {
+      var n = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[n].offsetLeft, behavior: calm ? "auto" : "smooth" });
+      mark(n);
+      restart();
+    }
+    function restart() {
+      clearTimeout(timer);
+      if (!calm && !paused && slides.length > 1) timer = setTimeout(function () { go(current + 1); }, DELAY);
+    }
+    prev.addEventListener("click", function () { go(current - 1); });
+    next.addEventListener("click", function () { go(current + 1); });
+    dotsEls.forEach(function (d, k) {
+      d.addEventListener("click", function (ev) { ev.preventDefault(); go(k); });
+    });
+    track.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowRight") { ev.preventDefault(); go(current + 1); }
+      if (ev.key === "ArrowLeft") { ev.preventDefault(); go(current - 1); }
+    });
+    var scrollEnd = null;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollEnd);
+      scrollEnd = setTimeout(function () {
+        var i = Math.round(track.scrollLeft / track.clientWidth);
+        if (i !== current && slides[i]) { mark(i); restart(); }
+      }, 120);
+    }, { passive: true });
+    function pause(on) { paused = on; if (on) { clearTimeout(timer); if (bar) bar.classList.remove("run"); } else mark(current), restart(); }
+    slider.addEventListener("mouseenter", function () { pause(true); });
+    slider.addEventListener("mouseleave", function () { pause(false); });
+    slider.addEventListener("focusin", function () { pause(true); });
+    slider.addEventListener("focusout", function () { pause(false); });
+    document.addEventListener("visibilitychange", function () { pause(document.hidden); });
+    mark(0);
+    restart();
+  }
+
   // Barra de progreso y cabecera al bajar
   var progress = document.createElement("div");
   progress.className = "scroll-progress";
