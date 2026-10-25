@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T11:56:36Z",
+ "updatedAt": "2026-10-25T12:16:11Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -658,87 +658,1091 @@
    "verifiedAt": "2026-10-25T11:56:36Z"
   },
   {
-   "id": "steam-4435490",
-   "slug": "call-of-duty-modern-warfare-4",
-   "title": "Call of Duty®: Modern Warfare® 4",
-   "description": "La guerra estalla en la península de Corea cuando Corea del Norte lanza una invasión a gran escala que amenaza con desestabilizar el mundo en Call of Duty®: Modern Warfare® 4.",
+   "id": "steam-5037200",
+   "slug": "just-volleyball",
+   "title": "just volleyball",
+   "description": "just volleyball is an online and offline volleyball game with simple controls and deep player expression. take on others in anything from 1v1s &amp; 2v2s to full team-based 6v6 matches. there's no right way to play, it's just volleyball!",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4435490/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1792806931",
+   "url": "https://store.steampowered.com/app/5037200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5037200/cd1b5a290d15e7379b31dcacc12f1e5b25d37577/header.jpg?t=1792425585",
    "platforms": [
     "Windows"
    ],
    "genres": [
-    "Acción"
+    "Acción",
+    "Casual",
+    "Indie"
    ],
-   "releaseText": "22 Oct, 2026",
-   "date": "2026-10-22",
+   "releaseText": "4 Nov, 2026",
+   "date": "2026-11-04",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T11:56:36Z"
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
-   "id": "steam-3393110",
-   "slug": "aion-2",
-   "title": "AION 2",
-   "description": "AION 2 es el único MMORPG diseñado en torno a un mundo en el que las batallas se deciden en los cielos. Elige tu facción, asciende como Daeva y libra una guerra total en un mundo 36 veces más grande que el original. Solo en PC; desarrollado en Unreal Engine 5.",
+   "id": "steam-2548880",
+   "slug": "divine-frequency",
+   "title": "Divine Frequency",
+   "description": "Una historia desconcertante sobre el ascenso de un vagabundo de los contenedores de basura hasta convertirse en el software de seguridad más eficaz del universo.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3393110/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/10aa4b096ebe6af0d1dd7882e5ba004271aef6f7/header.jpg?t=1792771538",
+   "url": "https://store.steampowered.com/app/2548880/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2548880/7af521bd86bf645d46b49691c5afe67fa4ea37d0/header.jpg?t=1791206947",
    "platforms": [
     "Windows"
    ],
    "genres": [
     "Acción",
     "Aventura",
-    "Multijugador masivo"
+    "Indie"
    ],
-   "releaseText": "5 Oct, 2026",
-   "date": "2026-10-05",
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T11:56:36Z"
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
-   "id": "steam-3259780",
-   "slug": "final-fantasy-resonance",
-   "title": "FINAL FANTASY RESONANCE",
-   "description": "Vuelve al mundo pixelado de FINAL FANTASY, que ha evolucionado a partir de sus raíces clásicas. Viaja con unos compañeros unidos por el destino y recurre a las visiones para que te ayuden a descubrir en el combate la verdad oculta tras una fuerza que amenaza con destruirlo todo.",
+   "id": "steam-5072430",
+   "slug": "ghost-in-the-sql-data",
+   "title": "Ghost in the SQL Data",
+   "description": "Una llamada avisó del incendio de un colegio 14 minutos antes de que el primer testigo lo viera. Averigua con SQL quién la hizo, revisando un año de llamadas de emergencia en París.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3259780/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3259780/710da43babb2043f9f6ad0e50023e31167d94708/header.jpg?t=1792758611",
+   "url": "https://store.steampowered.com/app/5072430/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072430/51f9c7715c2f874443595ae9e76269b02444c496/header.jpg?t=1792924076",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3841580",
+   "slug": "aibond",
+   "title": "Aibond",
+   "description": "Un compañero de IA al estilo anime con verdadera memoria a largo plazo. Sin instalación, gratis para empezar. Chatea, juega, estudia juntos — tu amigo cotidiano siempre presente.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3841580/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3841580/71cc003d0e54cbccca8bf655f394b57a6bf29068/header.jpg?t=1792805317",
    "platforms": [
     "Windows"
    ],
    "genres": [
-    "Rol"
+    "Aventura",
+    "Casual",
+    "Indie"
    ],
-   "releaseText": "22 Oct, 2026",
-   "date": "2026-10-22",
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T11:56:36Z"
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
-   "id": "steam-4080220",
-   "slug": "ea-sports-fctm-27",
-   "title": "EA SPORTS FC™ 27",
-   "description": "Te damos la bienvenida a The World's Game en EA SPORTS FC™ 27. Adéntrate en The Grounds, un espacio de juego donde las calles se encuentran con el estadio, y siente un mayor control en cada modo, ya que las innovaciones impulsadas por la comunidad ofrecen una jugabilidad más fiel al fútbol.",
+   "id": "steam-5019180",
+   "slug": "epic-seven",
+   "title": "Epic Seven",
+   "description": "PLAY THE ANIMATION! A playable anime in your hands, Epic Seven. A turn-based Hero collection RPG alive with stunning 2D visuals. Collect unique Heroes in the Seventh World and plan your path to victory through elemental effects and skill combinations. Challenge Heirs worldwide in World Arena PvP.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4080220/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4080220/ff6a3779f1ca83aae8ad3878454f6c11008ea24d/header.jpg?t=1790973254",
+   "url": "https://store.steampowered.com/app/5019180/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5019180/6dabc3f404b51e08ab22763d3df4808081baa5e0/header.jpg?t=1791450712",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Rol",
+    "Estrategia",
+    "Free to Play"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3471290",
+   "slug": "im-a-wizard-but-i-dig",
+   "title": "I’m a Wizard, But I Dig",
+   "description": "Acorta tu viaje al castillo excavando un túnel a través de la montaña. Usa magia y artesanía: blande tu pico, lanza hechizos, haz explotar obstáculos e ilumina tu camino con slimes brillantes. Intercambia recursos con la Oca, desbloquea nuevas herramientas y descubre los secretos de la montaña.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3471290/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3471290/85478187bef0f3f381ca842a7e0e214e1f4216e8/header.jpg?t=1790766768",
+   "platforms": [
+    "Windows",
+    "Linux"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "30 Oct, 2026",
+   "date": "2026-10-30",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4715160",
+   "slug": "finals-week-a-chuletazo-limpio",
+   "title": "Finals Week: A chuletazo limpio",
+   "description": "Un simulador cooperativo de hacer trampas para 1-4 jugadores en el que tus amigos y tú tendréis que sobrevivir a la semana de exámenes finales. Copiad, dad esquinazo al profe y usad todas las herramientas en vuestro arsenal para aprobar sin empollar.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4715160/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4715160/3d05c4f85866620b0b47754e30414cb4414b42dc/header.jpg?t=1792614844",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3669620",
+   "slug": "warhammer-survivors",
+   "title": "Warhammer Survivors",
+   "description": "Conviértete en la viva imagen de un bullet hell en Warhammer Survivors, un roguelite de supervivencia frenético. Juega como personajes de Warhammer 40,000 y Warhammer: Age of Sigmar, reúne y evoluciona armas icónicas, y destruye oleadas interminables de enemigos.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3669620/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3669620/dc61fccdeec6b05a58fbcdd7b1d0bbbe1f6999ea/header.jpg?t=1792417110",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "10 Nov, 2026",
+   "date": "2026-11-10",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3581230",
+   "slug": "cozy-game-restoration",
+   "title": "Cozy Game Restoration",
+   "description": "Cozy Game Restoration is a soothing simulator where you gently bring forgotten video game cartridges back to life. Tear wrapping paper, peel old stickers, lift away grime, and transform dusty relics into cherished collectibles. No pressure or failure, just the quiet joy of restoring memories.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3581230/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3581230/72723670e61f2e3c107ec8f34a4acb06a7e8db20/header.jpg?t=1792727429",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Casual",
+    "Simuladores"
+   ],
+   "releaseText": "4 Nov, 2026",
+   "date": "2026-11-04",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4150720",
+   "slug": "pukey-goddess-shot-trick",
+   "title": "PUKEY GODDESS SHOT TRICK",
+   "description": "Juega a una ruleta rusa de chupitos con una diablilla que siente por ti un amor de los que matan. Se trata de un juego de supervivencia donde o provocas que ella vomite su alma o será la tuya la que potes. Cuanto más bebas, más reglas podrás saltarte... te lo pasarás de muerte.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4150720/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150720/7d4ab50bd6073a912094cb2b17d0617415e002d3/header.jpg?t=1792768849",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "8 Dec, 2026",
+   "date": "2026-12-08",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4287040",
+   "slug": "vampy-s-big-day",
+   "title": "Vampy's Big Day",
+   "description": "Sneak through sunlit villages as a clumsy vampire. Move the sun with a fairy's help to cast shadows, then spare or devour the villagers.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4287040/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4287040/557dafbc1b665616864f08930e6c3e801af5732f/header.jpg?t=1792720653",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4704520",
+   "slug": "shreddead",
+   "title": "ShredDead",
+   "description": "ShredDead es un peculiar y relajante juego incremental de despedazar zombis, centrado en la progresión y sin condiciones de derrota. Derrota oleadas infinitas, recoge botín, mejora tu árbol de habilidades y haz evolucionar a los zombis.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4704520/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704520/481c251d90942aa2a768de63a65dee1a508a91a7/header.jpg?t=1792168066",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Estrategia"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4534960",
+   "slug": "dear-passengers",
+   "title": "Dear Passengers",
+   "description": "Juega en cooperativo como la tripulación de la peor aerolínea del mundo. Tu avión se cae a pedazos, tu carga es ilegal, y la seguridad de los pasajeros apenas entra en la lista de prioridades.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4534960/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4534960/7ddef53346afe3e3d4d479dbed740cdb38cfe09a/header.jpg?t=1787132605",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "2026",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3705900",
+   "slug": "president-simulator",
+   "title": "President Simulator",
+   "description": "Conviértete en presidente de EE. UU.: firma decretos absurdos y equilibra tus políticas para que no te llamen «vendido». Comunica para ganar popularidad, gestiona entrevistas y dalo todo en las ruedas de prensa. ¿Todo se derrumba? Pulsa el botón rojo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3705900/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3705900/901e69507fd99cefdc032a099aedf17743325da3/header.jpg?t=1792573310",
    "platforms": [
     "Windows"
    ],
    "genres": [
     "Simuladores",
-    "Deportes"
+    "Acceso anticipado"
    ],
-   "releaseText": "24 Sep, 2026",
-   "date": "2026-09-24",
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T11:56:36Z"
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4398500",
+   "slug": "broke-wizards",
+   "title": "Broke Wizards",
+   "description": "Un juego party sandbox competitivo de 2 a 6 jugadores donde tus compañeros de piso magos compiten para pagar el alquiler! ¡Mata monstruos, juega al prop hunt, echa carreras en tablas voladoras y acepta encargos para ser el primero en pagarle a tu casero, un duendecillo gigante!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4398500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4398500/43e11d29439a010fa119de3277d5bd560c321166/header.jpg?t=1792651358",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4202430",
+   "slug": "veterans-napoleonic-wars",
+   "title": "Veterans: Napoleonic Wars",
+   "description": "Dirige miles de soldados en un juego de estrategia napoleónica en tiempo real donde cada descarga cuenta. Vence con decisiones rápidas y formaciones bien elegidas. Conserva tus tropas, desarrolla unidades veteranas y cambia el rumbo de la batalla.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4202430/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4202430/d0d91a6f6ada19a015760ea101c926a61e9a8548/header.jpg?t=1792667832",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie",
+    "Estrategia",
+    "Acceso anticipado"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5037510",
+   "slug": "playrooms",
+   "title": "Playrooms",
+   "description": "Thousands of balls are scattered throughout the playrooms. Someone should put them away, and there's no one here but you. Almost no one.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5037510/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5037510/aa50da281292d0776241c58beef540614f4f6191/header.jpg?t=1792862719",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2665020",
+   "slug": "milo",
+   "title": "Milo",
+   "description": "Fight alone or beside others trapped in the same nightmare. Survive waves of deranged cultists and grow your mischief of rats. The longer you stay, the more you can save, and the more you risk losing before reaching Traang, Milo’s Arcade.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2665020/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2665020/adeede75839fae152e3e0fb43145182bd427c367/header.jpg?t=1792866550",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Acceso anticipado"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4236650",
+   "slug": "oferta",
+   "title": "不良婚姻惩罚师",
+   "description": "&quot;Adultery Marriage Punisher&quot; Curing marriage pests! Investigate. Infiltrate. Snap. Spy. Steal. Outwit. What is your spouse doing behind your back? Your evidence, the deadliest sanction. Now, become the shadow of justice, and unveil every betrayal and infidelity!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4236650/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4236650/55c41e7000387a840e905717b7d037632880d854/header.jpg?t=1791537637",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2440760",
+   "slug": "gravhounds",
+   "title": "GRAVHOUNDS",
+   "description": "GRAVHOUNDS es un juego de acción y construcción cooperativo de 1 a 4 jugadores. Aterriza en planetas hostiles con tu manada, construid y defended vuestra base mientras jugáis con las leyes de la física, y llevaos el máximo botín antes de convertiros en pasto para aliens.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2440760/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2440760/b2c6cf30e2db32a1141908c8b7b034aaea5d32bf/header_alt_assets_0_spanish.jpg?t=1792425956",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Estrategia"
+   ],
+   "releaseText": "2 Nov, 2026",
+   "date": "2026-11-02",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5031210",
+   "slug": "rise-of-the-merchants",
+   "title": "Rise of the Merchants",
+   "description": "Rise of the Merchants es un juego de simulación medieval de construcción de ciudades, economía, política y comercio ambientado en un mundo online persistente.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5031210/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5031210/9f3275474864540378dfdad80bec1ad68dc46e0b/header.jpg?t=1792787021",
+   "platforms": [
+    "Windows",
+    "Linux"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia",
+    "Acceso anticipado"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3347910",
+   "slug": "rat-game",
+   "title": "Rat Game",
+   "description": "Divertidísimo y tenso cooperativo asimétrico para 8 jugadores. Ponte en la piel de una rata que quiere sabotear un restaurante o en la del chef que quiere impedirlo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3347910/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3347910/29f97d17f9bf4292e6a27e4d7da1089f16e32e69/header.jpg?t=1792758735",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Acción",
+    "Indie"
+   ],
+   "releaseText": "30 Oct, 2026",
+   "date": "2026-10-30",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-940230",
+   "slug": "geoplanetical",
+   "title": "Geoplanetical",
+   "description": "Toma el control de cualquiera de los 177 países en 2026. Moldea su economía, política, servicios públicos, diplomacia y ejército en un sandbox geopolítico vivo donde se simulan todas las naciones, todos los sistemas están conectados y tus decisiones escriben la historia.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/940230/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/940230/cd3828ba0e43c85eeccb5c1705112278bb32dcf6/header.jpg?t=1792614776",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie",
+    "Simuladores",
+    "Acceso anticipado"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5160800",
+   "slug": "find-the-needle",
+   "title": "Find The Needle",
+   "description": "Tienes una pala y una pila de heno con unos seis millones de briznas. En algún lugar hay una aguja. Encuéntrala cavando a mano, vende el heno e invierte el dinero en cintas transportadoras y máquinas hasta que ya no tengas que cavar.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5160800/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5160800/9ad39ef753543a194a7546ee8a17dc4b821cd021/header.jpg?t=1792765998",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "Q4 2026",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5313470",
+   "slug": "figure-me-out",
+   "title": "Figure Me Out",
+   "description": "A multiplayer FPS where you eliminate opponents by typing the numbers on their foreheads. Read theirs before they read yours, use tactical gadgets to disrupt the fight, and battle friends or strangers in matches with up to 20 players.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5313470/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5313470/2501fdac2bb79ccecc260783360aff70ae781e69/header.jpg?t=1792578148",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "2 Nov, 2026",
+   "date": "2026-11-02",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4984870",
+   "slug": "selkie-s-salvage-co",
+   "title": "Selkie's Salvage&Co.",
+   "description": "Selkie’s Salvage&amp;Co. is a first-person physics based incremental fishing game. Your task is to clean up the flooded planet! Fish up scrap, grind all of it down and collect trinkets of the past. Expand your salvaging operation and go beyond!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4984870/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4984870/7c53ff84a05f4fbb9f85fe1a1fc61125ad587a0b/header.jpg?t=1792643786",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3322630",
+   "slug": "culdcept-begins",
+   "title": "Culdcept BEGINS",
+   "description": "A hidden classic that fuses board and card games, Culdcept features a unique, innovative system that has captivated fans since its debut. Players become Cepters, wielding cards in intense battles where luck and strategy collide. After ten years, a brand-new story begins once again.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3322630/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3322630/1af09cd578c01c35fa6ffe1bb9747d7ed43308dc/header.jpg?t=1792469222",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Estrategia"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2482760",
+   "slug": "hunting-simulator-3",
+   "title": "Hunting Simulator 3",
+   "description": "¡Este juego de mundo abierto te permite vivir la emoción de la caza, con tu fiel perro a tu lado! Elige tu equipo entre las marcas oficiales y explora la naturaleza en busca de tu próxima presa.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2482760/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2482760/0ba3a84c44e49d78ce60e50d984eaf9c7d7f310b/header_alt_assets_0_spanish.jpg?t=1792571609",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3144010",
+   "slug": "usagi-shima-bunny-island",
+   "title": "Usagi Shima: Bunny Island",
+   "description": "Embárcate en un viaje plagado de conejos en Usagi Shima, ¡donde transformarás una isla abandonada en un refugio acogedor para unos adorables amantes de las zanahorias! Atrae a turistas peludos, llena tu isla de monadas y entabla amistad con conejos encantadores.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3144010/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3144010/header.jpg?t=1792567154",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Casual",
+    "Simuladores"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2257440",
+   "slug": "tom-the-postgirl",
+   "title": "Tom the Postgirl",
+   "description": "Acompaña a Tom, la nueva cartero del pueblo, y conoce a los vecinos, quizá demasiado bien. Su método, aunque polémico, es muy eficaz: un acoso intenso y obsesivo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2257440/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2257440/5a905398f76f365984dafd2238876c129423d12c/header.jpg?t=1792752678",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2747660",
+   "slug": "zombie-assault-resurgence",
+   "title": "Zombie Assault: Resurgence",
+   "description": "Zombie Assault: Resurgence es un intenso shooter top-down repleto de acción con profundos elementos RPG. Personaliza tu equipamiento con armas únicas y mejorables para enfrentar hordas de enemigos. ¡Juega solo o en coop con hasta 4 jugadores!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2747660/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2747660/85fc252c60283cffa45df4ed2e2d14d9ccbb0e6b/header.jpg?t=1792583182",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Acción",
+    "Rol"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5352720",
+   "slug": "memeticbox",
+   "title": "MemeticBox",
+   "description": "Un sandbox voxel de gore brutal. Cada cuerpo está hecho de bloques que puedes disparar, cortar, quemar y volar en pedazos. Juega a ser Dios: lanza gente, fulmínala con rayos, cuélgala o empálala. O toma un arma para redadas Policiales, oleadas zombie y ciudades totalmente destructibles.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5352720/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5352720/c32da40c24de551d8f029740d528d436ad0603f9/header.jpg?t=1792534291",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2562390",
+   "slug": "benny-s-backrooms",
+   "title": "Benny's Backrooms",
+   "description": "Un juego de terror cooperativo en el que tus amigos (si procede) y tú, armados solo con una aspiradora glorificada y equipo especializado, exploráis una extensión infinita de espacios liminales plagados de criaturas para extraer un material inusual en nombre de la ciencia.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2562390/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2562390/f588f241fbbaef0a40765bfddc036cc6f98a319a/header.jpg?t=1792870297",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Casual"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2434930",
+   "slug": "blue-ridge-hunting",
+   "title": "Blue Ridge Hunting",
+   "description": "Blue Ridge Hunting is a co-op horror game set in the Appalachian Mountains. Solo or with friends, investigate, document, and hunt cryptids based on real sightings, legends, and paranormal phenomena from the region.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2434930/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2434930/4a43c4caf14cb7029770a482b7bc50525ad685a4/header.jpg?t=1792672053",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3743260",
+   "slug": "virtue-and-a-sledgehammer",
+   "title": "Virtue and a Sledgehammer",
+   "description": "Regresa a tu pueblo natal y destrúyelo con un mazo en este juego narrativo de exploración. Enfréntate a tu pasado en esta historia devastadora sobre sentir que ya no perteneces al lugar en el que te criaste.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3743260/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3743260/93488f22c9da9e61dd2b9092d149695bcc846e71/header.jpg?t=1792670049",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5133900",
+   "slug": "can-em-all",
+   "title": "Can 'Em All",
+   "description": "Un satisfactorio juego incremental en primera persona sobre convertir criaturas adorables en latas. Mátalas, recoge sus cuerpos, enlátalas y véndelas. Gana dinero, mejora tus armas y máquinas, y produce cada vez más.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5133900/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5133900/19aa14ebe3720e02f7f8c720abbf9749cf36967f/header.jpg?t=1792881605",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "30 Oct, 2026",
+   "date": "2026-10-30",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5138990",
+   "slug": "unharvest",
+   "title": "Unharvest",
+   "description": "Drena la vida de todo lo que te rodea en este juego incremental de agricultura a la inversa. Infecta todo lo que crece, mejora tus plagas y marchita el mundo hasta que no quede nada vivo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5138990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5138990/a2088347d4eebf4f7b0531c47b948f0343627ce0/header.jpg?t=1792745648",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Simuladores"
+   ],
+   "releaseText": "7 Dec, 2026",
+   "date": "2026-12-07",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3010170",
+   "slug": "fangtopia",
+   "title": "Fangtopia",
+   "description": "Híncale el diente a Fangtopia, un acogedor y relajante juego de rompecabezas en el que construyes paisajes terroríficamente paradisíacos con casillas de terreno para simpáticos monstruos. Crea un mundo que dé escalofríos de pura ternura sin preocupaciones ni sustos.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3010170/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3010170/1b5d86f26f091647c9e16289f27f4c3706f74f22/header.jpg?t=1792155385",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5274500",
+   "slug": "oferta",
+   "title": "永禄立志伝",
+   "description": "Live the Sengoku era. Roam Japan, raise a warband, befriend warlords, and topple daimyo clans in battle. Rise from ronin to retainer, or raise your own banner and reach for the realm. A Sengoku sim of warband management, real-time battles, and living characters.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5274500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5274500/86b8cef77eefa9140482f5194318b427a4a8d619/header.jpg?t=1792719039",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "25 Oct, 2026",
+   "date": "2026-10-25",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-1167820",
+   "slug": "airport-contraband",
+   "title": "Airport Contraband",
+   "description": "Take over the duties of a customs officer in this roguelike-simulation game where every suitcase could be a risk. Inspect documents, question passengers, scan luggage, and seize illegal goods as you try to maintain control at Caldora Airport. Will you uphold the law or profit from contraband?",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1167820/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167820/1dea83c484607e1121848283e2554d575da8ee73/header_alt_assets_35.jpg?t=1792755120",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5189500",
+   "slug": "a-place-for-every-potion",
+   "title": "A Place for Every Potion",
+   "description": "Un relajante juego de ordenar pociones. Vierte los líquidos mezclados hasta que cada frasco contenga un solo color puro, luego coloca cada poción en su sitio. Llena 52 secciones con 4.160 pociones. Sin cronómetros, sin derrota, sin prisa.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5189500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189500/29e3941dc7a7e665a2e908d1e3619d3f94db080a/header.jpg?t=1792173815",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3517740",
+   "slug": "frostrail",
+   "title": "Frostrail",
+   "description": "A través de la escarcha, la muerte sigue las vías. Entra en un despiadado FPS de supervivencia en solitario o en cooperativo. Explora, crea y lucha para sobrevivir en un mundo helado y corrupto. Opera y mejora tu tren a vapor en un páramo implacable, donde cada elección es cuestión de supervivencia.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3517740/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3517740/3e53b69e92e50dd8ce656ae6d244897fc39193a6/header_alt_assets_2_spanish.jpg?t=1792480485",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "Q4 2026",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2379350",
+   "slug": "scramble-knights-online",
+   "title": "Scramble Knights Online",
+   "description": "Una batalla royale llena de aventuras. ¡Compite en partidos de 32 jugadores y sé el último caballero en pie!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2379350/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379350/1be9dae53e1a8f292570c4cbd7214e2246ff3a13/header.jpg?t=1792796145",
+   "platforms": [
+    "Windows",
+    "Linux"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Casual"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2551970",
+   "slug": "outcast-tales",
+   "title": "Outcast Tales",
+   "description": "Vive el inicio de una gran aventura en Outcast Tales: The First Journey. Libra combates donde prima la estrategia, toma decisiones difíciles y escoge tus propias aventuras: ¡escribe la historia de tu grupo de marginados!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2551970/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2551970/header.jpg?t=1792515580",
+   "platforms": [
+    "Windows",
+    "Linux"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie",
+    "Rol"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4715430",
+   "slug": "river-secret",
+   "title": "River Secret",
+   "description": "A story about a beautiful river that hides deadly secrets beneath its calm surface.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4715430/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4715430/cf6bf3d2afc9969d205da930f214bc2d63ee7b8b/header.jpg?t=1792637897",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "25 Oct, 2026",
+   "date": "2026-10-25",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3832030",
+   "slug": "boost-vector-ex",
+   "title": "BOOST VECTOR EX",
+   "description": "RUN FAST. Faster than any other. Take control of a Vector Master and sprint in uncompromising pure parkour racing. Hone your style with responsive, flowing controls and break limits in the Premier Vector World Cup. The race, your friends, and victory beckon your arrival... Did I mention it was fast?",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3832030/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3832030/230939528d9de1b9fe7c3e5c8ac34357aeb179c3/header.jpg?t=1792363917",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Carreras"
+   ],
+   "releaseText": "2 Nov, 2026",
+   "date": "2026-11-02",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-3818450",
+   "slug": "everlast-undying-tale",
+   "title": "Everlast: Undying Tale",
+   "description": "On Everlast: Undying Tale’s magical world of Sarkis, the undead have risen. Gather, explore, skill, and craft in this MMO-Lite Action RPG Adventure. Only by bridging the gap between the living and the dead can you break Death’s curse.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3818450/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3818450/2f283a0917a86e331fbce0a891bc3a0788e3c939/header.jpg?t=1792805642",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4476390",
+   "slug": "lost-camp",
+   "title": "Lost Camp",
+   "description": "Tras la muerte de tu madre y sin otra opción, aceptas el único trabajo disponible: vigilar y mantener un camping solitario en las montañas. Pero lo que parecía un lugar tranquilo esconde misterios que cambiarán todo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4476390/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476390/dbaf11909b52d472d2fb70e30cbc66267322606c/header.jpg?t=1792798228",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "30 Oct, 2026",
+   "date": "2026-10-30",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-4272370",
+   "slug": "coal-duty",
+   "title": "Coal Duty",
+   "description": "Coal Duty es una comedia de terror de extracción cooperativa para 1-5 jugadores. Cumple la cuota de carbón del estado en minas generadas proceduralmente, gasta tus vales, planea tu huida. Se dice que algunos mineros han escapado. El estado no lo confirma.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4272370/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4272370/02d8febba9db2d94c1c68ed5bea041e069bec4e9/header_alt_assets_0.jpg?t=1792878605",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
   }
  ]
 }
