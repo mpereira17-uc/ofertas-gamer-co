@@ -37,7 +37,10 @@ class TestLanzamientos(unittest.TestCase):
         self.assertNotIn("Pack de Trajes", titles)
         self.assertNotIn("Clásico Reciente", titles)  # salió hace más de 45 días
         self.assertEqual(len(games), 3)
+        nave = next(g for g in games if g["title"] == "Nave Estelar")
+        self.assertEqual(nave["trailer"]["video"], "https://video.akamai.steamstatic.com/store_trailers/1001/movie_max.mp4")
         misterio = next(g for g in games if g["title"].startswith("Misterio"))
+        self.assertEqual(misterio["trailer"], {})
         self.assertEqual(misterio["image"], "")
         self.assertIsNone(misterio["date"])
         for g in games:

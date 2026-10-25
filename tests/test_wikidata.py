@@ -9,7 +9,7 @@ NOW = datetime(2026, 10, 25, 12, tzinfo=timezone.utc)
 def row(qid, name, date, prec, links, plats, steam="", es=""):
     r = {"g": {"value": f"http://www.wikidata.org/entity/{qid}"}, "gLabel": {"value": name},
          "date": {"value": date + "T00:00:00Z"}, "prec": {"value": str(prec)}, "links": {"value": str(links)},
-         "plats": {"value": plats}, "gens": {"value": "videojuego de acción"}}
+         "platL": {"value": plats}, "genL": {"value": "videojuego de acción"}}
     if steam:
         r["steam"] = {"value": steam}
     if es:
@@ -18,10 +18,10 @@ def row(qid, name, date, prec, links, plats, steam="", es=""):
 
 
 DATA = {"results": {"bindings": [
-    row("Q1", "Grand Theft Auto VI", "2026-11-19", 11, 80, "PlayStation 5|Xbox Series X and Series S", es="https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI"),
+    dict(row("Q1", "Grand Theft Auto VI", "2026-11-19", 11, 80, "PlayStation 5", es="https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI"), yt={"value": "QdBZY2fkU-0"}),
     row("Q2", "Juego Compartido", "2026-12-01", 10, 30, "Microsoft Windows|PlayStation 5", steam="555"),
     row("Q3", "Solo Año", "2027-01-01", 9, 20, "Nintendo Switch 2"),
-    row("Q1", "Grand Theft Auto VI", "2027-05-01", 11, 80, "PlayStation 5"),
+    row("Q1", "Grand Theft Auto VI", "2027-05-01", 11, 80, "Xbox Series X and Series S"),
     row("Q4", "Q4", "2026-12-01", 11, 10, ""),
 ]}}
 
@@ -33,6 +33,7 @@ class TestWikidata(unittest.TestCase):
         gta, shared, year = games
         self.assertEqual((gta["date"], gta["precision"]), ("2026-11-19", "day"))
         self.assertEqual(gta["platforms"], ["PlayStation", "Xbox"])
+        self.assertEqual(gta["youtube"], "QdBZY2fkU-0")
         self.assertEqual(gta["url"], "https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI")
         self.assertEqual((shared["date"], shared["precision"]), ("2026-12-01", "month"))
         self.assertTrue(shared["image"].startswith("https://shared.akamai.steamstatic.com/"))

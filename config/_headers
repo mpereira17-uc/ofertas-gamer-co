@@ -1,6 +1,6 @@
 # Encabezados de seguridad para Cloudflare Pages (GitHub Pages ignora este archivo).
 /*
-  Content-Security-Policy: default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; media-src 'self' https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'; upgrade-insecure-requests
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
   X-Content-Type-Options: nosniff

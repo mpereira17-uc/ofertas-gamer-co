@@ -100,6 +100,24 @@ def popular_ids(fetch):
     return ids[:MAX_GAMES]
 
 
+def steam_trailer(info):
+    """El primer tráiler oficial de la ficha de Steam (video y miniatura), o {} si no hay."""
+    for movie in info.get("movies") or []:
+        poster = movie.get("thumbnail") or ""
+        video = ""
+        for kind in ("mp4", "webm"):
+            files = movie.get(kind) or {}
+            video = files.get("max") or files.get("480") or ""
+            if video:
+                break
+        hls = movie.get("hls_h264") or ""
+        video = video.replace("http://", "https://")
+        if video.startswith("https://") or hls.startswith("https://"):
+            return {"name": (movie.get("name") or "")[:120], "poster": poster if poster.startswith("https://") else "",
+                    "video": video if video.startswith("https://") else "", "hls": hls if hls.startswith("https://") else ""}
+    return {}
+
+
 def steam_game(app_id, now, fetch):
     """Ficha de un juego en Steam, o None si no es un juego o no hay datos."""
     data = (fetch(DETAILS_URL.format(id=app_id)) or {}).get(str(app_id)) or {}
@@ -132,6 +150,7 @@ def steam_game(app_id, now, fetch):
         "precision": precision,
         "comingSoon": bool((info.get("release_date") or {}).get("coming_soon")),
         "verifiedAt": iso(now),
+        "trailer": steam_trailer(info),
     }
 
 
@@ -142,7 +161,8 @@ def steam_releases(now, fetch, previous=()):
     games, refreshed = [], 0
     for app_id in popular_ids(fetch):
         cached = cache.get(f"steam-{app_id}")
-        game = cached if cached and (cached.get("verifiedAt") or "") >= fresh_after else None
+        # una ficha vieja sin el campo trailer se vuelve a pedir (así llegan los tráileres, primero los más populares)
+        game = cached if cached and "trailer" in cached and (cached.get("verifiedAt") or "") >= fresh_after else None
         if game is None and refreshed < MAX_REFRESH:
             refreshed += 1
             try:

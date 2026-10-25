@@ -5,6 +5,7 @@ tiene artículo cada juego (los grandes como GTA VI tienen decenas). Las fechas 
 precisión que da Wikidata: día exacto, solo el mes o, si solo se sabe el año, "por confirmar".
 """
 
+import re
 import sys
 import urllib.parse
 from datetime import timedelta
@@ -12,13 +13,12 @@ from datetime import timedelta
 from .model import iso, slugify
 
 ENDPOINT = "https://query.wikidata.org/sparql"
-MIN_LANGS = 6  # un juego con artículo en 6 o más Wikipedias ya es conocido
-LIMIT = 120
+MIN_LANGS = 3  # un juego con artículo en 3 o más Wikipedias ya es conocido
+LIMIT = 6000  # filas (un juego sale en varias filas: una por plataforma y género)
 PLATFORMS = (("playstation", "PlayStation"), ("xbox", "Xbox"), ("nintendo switch", "Switch"),
              ("microsoft windows", "Windows"), ("macos", "Mac"), ("linux", "Linux"))
 
-QUERY = """SELECT ?g ?gLabel ?date ?prec ?links ?steam ?es ?en
-  (GROUP_CONCAT(DISTINCT ?platL; separator="|") AS ?plats) (GROUP_CONCAT(DISTINCT ?genL; separator="|") AS ?gens) WHERE {
+QUERY = """SELECT ?g ?gLabel ?date ?prec ?links ?steam ?es ?en ?yt ?platL ?genL WHERE {
   ?g wdt:P31 wd:Q7889; p:P577/psv:P577 [wikibase:timeValue ?date; wikibase:timePrecision ?prec];
      wikibase:sitelinks ?links.
   FILTER(?links >= %(min)d && ?date >= "%(start)sT00:00:00Z"^^xsd:dateTime && ?date <= "%(end)sT00:00:00Z"^^xsd:dateTime)
@@ -26,10 +26,11 @@ QUERY = """SELECT ?g ?gLabel ?date ?prec ?links ?steam ?es ?en
   OPTIONAL { ?g wdt:P400 ?p. ?p rdfs:label ?platL FILTER(lang(?platL) = "en") }
   OPTIONAL { ?g wdt:P136 ?ge. ?ge rdfs:label ?genL FILTER(lang(?genL) = "es") }
   OPTIONAL { ?g wdt:P1733 ?steam }
+  OPTIONAL { ?g wdt:P1651 ?yt }
   OPTIONAL { ?es schema:about ?g; schema:isPartOf <https://es.wikipedia.org/> }
   OPTIONAL { ?en schema:about ?g; schema:isPartOf <https://en.wikipedia.org/> }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". }
-} GROUP BY ?g ?gLabel ?date ?prec ?links ?steam ?es ?en ORDER BY DESC(?links) LIMIT %(limit)d"""
+} ORDER BY DESC(?links) LIMIT %(limit)d"""
 
 
 def val(row, key):
@@ -79,8 +80,32 @@ def to_game(row, now):
         "comingSoon": not date or date >= now.strftime("%Y-%m-%d") or precision == "month",
         "verifiedAt": iso(now),
         "source": "wikidata",
+        "youtube": val(row, "yt") if re.fullmatch(r"[A-Za-z0-9_-]{11}", val(row, "yt")) else "",
         "languages": int(val(row, "links") or 0),
     }
+
+
+def group_rows(rows):
+    """Wikidata da una fila por cada plataforma, género y fecha: se juntan por juego."""
+    out = {}
+    for row in rows:
+        qid = val(row, "g")
+        g = out.get(qid)
+        if g is None:
+            g = out[qid] = dict(row)
+            g["_plats"], g["_gens"] = [], []
+        if val(row, "date") < val(g, "date"):  # la primera fecha del rango
+            g["date"], g["prec"] = row.get("date"), row.get("prec")
+        for key, bucket in (("platL", "_plats"), ("genL", "_gens")):
+            v = val(row, key)
+            if v and v not in g[bucket]:
+                g[bucket].append(v)
+        for key in ("steam", "es", "en", "yt"):
+            if not val(g, key) and val(row, key):
+                g[key] = row[key]
+    for g in out.values():
+        g["plats"], g["gens"] = {"value": "|".join(g["_plats"])}, {"value": "|".join(g["_gens"])}
+    return list(out.values())  # en el orden de popularidad (más idiomas primero)
 
 
 def fetch_games(now, fetch):
@@ -89,9 +114,9 @@ def fetch_games(now, fetch):
     query = QUERY % {"min": MIN_LANGS, "start": start, "end": end, "limit": LIMIT}
     data = fetch(f"{ENDPOINT}?{urllib.parse.urlencode({'query': query, 'format': 'json'})}") or {}
     games, seen = [], set()
-    for row in (data.get("results") or {}).get("bindings") or []:
+    for row in group_rows((data.get("results") or {}).get("bindings") or []):
         game = to_game(row, now)
-        if game and game["id"] not in seen:  # un juego con varias fechas sale una sola vez (la primera)
+        if game and game["id"] not in seen:
             seen.add(game["id"])
             games.append(game)
     return games

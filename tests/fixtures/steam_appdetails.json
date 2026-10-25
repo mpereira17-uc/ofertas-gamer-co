@@ -24,7 +24,18 @@
    "release_date": {
     "coming_soon": true,
     "date": "14 Nov, 2030"
-   }
+   },
+   "movies": [
+    {
+     "id": 1,
+     "name": "Tráiler de lanzamiento",
+     "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1001/movie.jpg",
+     "mp4": {
+      "480": "http://video.akamai.steamstatic.com/store_trailers/1001/movie480.mp4",
+      "max": "http://video.akamai.steamstatic.com/store_trailers/1001/movie_max.mp4"
+     }
+    }
+   ]
   }
  },
  "1002": {

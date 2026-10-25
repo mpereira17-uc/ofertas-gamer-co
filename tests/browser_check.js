@@ -56,6 +56,11 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     if (favCount !== 1) errors.push(`${width}px: favoritos muestra ${favCount} tarjetas`);
     const cd = await page.$$eval("[data-countdown] span", (els) => els.map((e) => e.textContent));
     if (cd.some((t) => !/^(Termina en|Disponible hasta|Terminó)/.test(t))) errors.push(`${width}px: contador con texto raro`);
+    await page.goto(base + "juego-nave-estelar.html");
+    await page.route(/\.mp4$/, (r) => r.fulfill({ status: 200, contentType: "video/mp4", body: "" }));
+    if (!(await page.isVisible(".play-btn"))) errors.push(`${width}px: falta el botón de tráiler`);
+    await page.click(".play-btn");
+    if (!(await page.$("#trailer video.trailer-player"))) errors.push(`${width}px: el tráiler no se abre`);
     await page.goto(base + "whatsapp.html");
     await page.click("#copy-wa");
     const copied = await page.evaluate(() => navigator.clipboard.readText());

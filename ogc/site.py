@@ -35,6 +35,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
     "store": '<path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16"/><path d="M9 20v-6h6v6"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
     "star": '<path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>',
+    "play": '<path d="M8 5v14l11-7z" fill="currentColor"/>',
     "bell": '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
 }.items()}
 
@@ -56,6 +57,7 @@ FOOTER = [
 ]
 CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; "
        "connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
+       "media-src 'self' https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com; "
        "upgrade-insecure-requests")
 
 e = html.escape
@@ -463,6 +465,21 @@ class Site:
 {notice}</div></article>""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
 
+    @staticmethod
+    def trailer_link(g):
+        """Botón de play sobre la portada. Sin JavaScript abre el tráiler en Steam o YouTube."""
+        t = g.get("trailer") or {}
+        if t.get("video") or t.get("hls"):
+            attrs = f'data-video="{e(t.get("video", ""))}" data-hls="{e(t.get("hls", ""))}" data-poster="{e(t.get("poster", ""))}"'
+            href = g["url"]
+        elif g.get("youtube"):
+            attrs = f'data-yt="{e(g["youtube"])}"'
+            href = f"https://www.youtube.com/watch?v={g['youtube']}"
+        else:
+            return ""
+        return (f'<a class="play-btn" href="{e(href)}" target="_blank" rel="noopener noreferrer" {attrs} '
+                f'aria-label="Ver el tráiler de {e(g["title"])}"><span class="play-ico">{ICONS["play"]}</span><span>Ver tráiler</span></a>')
+
     def game_pages(self, games, now):
         for g in games:
             name = self.detail.get(g["id"])
@@ -484,7 +501,7 @@ class Site:
             self.layout(name, f"{g['title']}: fecha de lanzamiento" + ("" if consoles else " en PC"),
                         f"Fecha de lanzamiento de {g['title']} ({', '.join(g.get('platforms', []))}): {when}. Plataformas, géneros y enlace.",
                         f"""<article class="detail">
-<div class="detail-media">{img}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+<div class="detail-media" id="trailer">{img}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}{self.trailer_link(g)}</div>
 <div class="detail-info"><p class="eyebrow">Lanzamiento{" en Steam" if src == "Steam" else ""}</p>
 <h1>{e(g['title'])}</h1>
 <p class="detail-date">📅 {e(when)}</p>
@@ -512,6 +529,12 @@ class Site:
         label = text or f"Ver en {where}"
         return ext_link(g["url"], label, cls=cls, label=f"Ver {g['title']} en {where} (abre en otra pestaña)")
 
+    def trailer_chip(self, g):
+        page = self.detail.get(g["id"])
+        if not page or not ((g.get("trailer") or {}).get("video") or (g.get("trailer") or {}).get("hls") or g.get("youtube")):
+            return ""
+        return f'<a class="trailer-chip" href="{page}#trailer" aria-label="Tráiler de {e(g["title"])}">{ICONS["play"]}</a>'
+
     def rank(self, g):
         return getattr(self, "ranks", {}).get(g["id"], 9999)
 
@@ -525,7 +548,7 @@ class Site:
         when = date_label(g.get("date"), g.get("precision"))
         link = self.game_link(g, g.get("store") or "Steam")
         return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
-<div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}</div>
+<div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
@@ -573,7 +596,7 @@ class Site:
             desc = desc[:(257 if main else 117)].rsplit(" ", 1)[0] + "…"
         link = self.game_link(g)
         bg = f'<img class="spot-bg" src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async">' if main else ""
-        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}<img class="spot-fg" src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}<img class="spot-fg" src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{self.trailer_chip(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 
