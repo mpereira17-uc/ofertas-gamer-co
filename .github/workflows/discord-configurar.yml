@@ -1,0 +1,24 @@
+name: Configurar servidor de Discord
+
+# Se ejecuta solo a mano (Actions → Configurar servidor de Discord → Run workflow).
+# Crea los canales y mensajes que falten; no borra nada.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  configurar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Crear canales, reglas y bienvenida
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID || '1563909166064599193' }}
+        run: python scripts/discord_setup.py

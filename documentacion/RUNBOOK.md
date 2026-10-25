@@ -30,3 +30,7 @@ En @BotFather: `/revoke` → nuevo token → actualízalo en **Settings → Secr
 - **Mastodon** (opcional): variable `MASTODON_URL` (ej. `https://mastodon.social`) y secreto `MASTODON_TOKEN`, con un token de app con permiso `write:statuses`.
 - **Discord** (opcional): en el canal, Editar canal → Integraciones → Webhooks → Nuevo webhook → Copiar URL. Guárdala como secreto `DISCORD_WEBHOOK_URL` (nunca en el repositorio: quien la tenga puede escribir en el canal).
 - En cada red se publican como máximo 3 ofertas por ejecución, solo las mejores (gratis, o 60 % de descuento con Metacritic de 70 o más). Cada post enlaza a la página propia de la oferta.
+
+## Servidor de Discord
+
+`scripts/discord_setup.py` (workflow manual "Configurar servidor de Discord") crea categorías, canales, reglas y bienvenida con la API oficial de bots. Solo crea lo que falta y nunca borra. Necesita el secreto `DISCORD_BOT_TOKEN` (bot invitado al servidor con permiso de administrador) y, opcionalmente, la variable `DISCORD_GUILD_ID`.
