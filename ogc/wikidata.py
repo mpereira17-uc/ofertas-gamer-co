@@ -14,23 +14,26 @@ from .model import iso, slugify
 
 ENDPOINT = "https://query.wikidata.org/sparql"
 MIN_LANGS = 3  # un juego con artículo en 3 o más Wikipedias ya es conocido
-LIMIT = 6000  # filas (un juego sale en varias filas: una por plataforma y género)
+LIMIT = 250
 PLATFORMS = (("playstation", "PlayStation"), ("xbox", "Xbox"), ("nintendo switch", "Switch"),
              ("microsoft windows", "Windows"), ("macos", "Mac"), ("linux", "Linux"))
 
-QUERY = """SELECT ?g ?gLabel ?date ?prec ?links ?steam ?es ?en ?yt ?platL ?genL WHERE {
+# p:/ps: (no wdt:) para traer todas las plataformas: con wdt: Wikidata solo da la "preferida" (GTA VI salía solo en Xbox)
+QUERY = """SELECT ?g ?gLabel ?links (SAMPLE(?steam0) AS ?steam) (SAMPLE(?es0) AS ?es) (SAMPLE(?en0) AS ?en) (SAMPLE(?yt0) AS ?yt)
+  (GROUP_CONCAT(DISTINCT CONCAT(STR(?date), "#", STR(?prec)); separator="|") AS ?dates)
+  (GROUP_CONCAT(DISTINCT ?platL; separator="|") AS ?plats) (GROUP_CONCAT(DISTINCT ?genL; separator="|") AS ?gens) WHERE {
   ?g wdt:P31 wd:Q7889; p:P577/psv:P577 [wikibase:timeValue ?date; wikibase:timePrecision ?prec];
      wikibase:sitelinks ?links.
   FILTER(?links >= %(min)d && ?date >= "%(start)sT00:00:00Z"^^xsd:dateTime && ?date <= "%(end)sT00:00:00Z"^^xsd:dateTime)
   FILTER NOT EXISTS { ?g wdt:P577 ?old FILTER(?old < "%(start)sT00:00:00Z"^^xsd:dateTime) }
-  OPTIONAL { ?g wdt:P400 ?p. ?p rdfs:label ?platL FILTER(lang(?platL) = "en") }
-  OPTIONAL { ?g wdt:P136 ?ge. ?ge rdfs:label ?genL FILTER(lang(?genL) = "es") }
-  OPTIONAL { ?g wdt:P1733 ?steam }
-  OPTIONAL { ?g wdt:P1651 ?yt }
-  OPTIONAL { ?es schema:about ?g; schema:isPartOf <https://es.wikipedia.org/> }
-  OPTIONAL { ?en schema:about ?g; schema:isPartOf <https://en.wikipedia.org/> }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". }
-} ORDER BY DESC(?links) LIMIT %(limit)d"""
+  OPTIONAL { ?g p:P400/ps:P400 ?p. ?p rdfs:label ?platL FILTER(lang(?platL) = "en") }
+  OPTIONAL { ?g p:P136/ps:P136 ?ge. ?ge rdfs:label ?genL FILTER(lang(?genL) = "es") }
+  OPTIONAL { ?g wdt:P1733 ?steam0 }
+  OPTIONAL { ?g wdt:P1651 ?yt0 }
+  OPTIONAL { ?es0 schema:about ?g; schema:isPartOf <https://es.wikipedia.org/> }
+  OPTIONAL { ?en0 schema:about ?g; schema:isPartOf <https://en.wikipedia.org/> }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en,mul". }
+} GROUP BY ?g ?gLabel ?links ORDER BY DESC(?links) LIMIT %(limit)d"""
 
 
 def val(row, key):
@@ -51,7 +54,8 @@ def to_game(row, now):
     title = val(row, "gLabel").strip()
     if not qid.startswith("Q") or not title or title == qid:
         return None
-    day, prec = val(row, "date")[:10], int(val(row, "prec") or 0)
+    date_text, prec_text = first_date(val(row, "dates"))
+    day, prec = date_text[:10], int(prec_text or 0)
     if prec >= 11:
         date, precision, text = day, "day", day
     elif prec == 10:
@@ -85,27 +89,10 @@ def to_game(row, now):
     }
 
 
-def group_rows(rows):
-    """Wikidata da una fila por cada plataforma, género y fecha: se juntan por juego."""
-    out = {}
-    for row in rows:
-        qid = val(row, "g")
-        g = out.get(qid)
-        if g is None:
-            g = out[qid] = dict(row)
-            g["_plats"], g["_gens"] = [], []
-        if val(row, "date") < val(g, "date"):  # la primera fecha del rango
-            g["date"], g["prec"] = row.get("date"), row.get("prec")
-        for key, bucket in (("platL", "_plats"), ("genL", "_gens")):
-            v = val(row, key)
-            if v and v not in g[bucket]:
-                g[bucket].append(v)
-        for key in ("steam", "es", "en", "yt"):
-            if not val(g, key) and val(row, key):
-                g[key] = row[key]
-    for g in out.values():
-        g["plats"], g["gens"] = {"value": "|".join(g["_plats"])}, {"value": "|".join(g["_gens"])}
-    return list(out.values())  # en el orden de popularidad (más idiomas primero)
+def first_date(text):
+    """De "2026-11-19T00:00:00Z#11|2027-..." toma la fecha más temprana con su precisión."""
+    pairs = sorted(p.split("#") for p in text.split("|") if "#" in p)
+    return (pairs[0][0], pairs[0][1]) if pairs else ("", "0")
 
 
 def fetch_games(now, fetch):
@@ -114,7 +101,7 @@ def fetch_games(now, fetch):
     query = QUERY % {"min": MIN_LANGS, "start": start, "end": end, "limit": LIMIT}
     data = fetch(f"{ENDPOINT}?{urllib.parse.urlencode({'query': query, 'format': 'json'})}") or {}
     games, seen = [], set()
-    for row in group_rows((data.get("results") or {}).get("bindings") or []):
+    for row in (data.get("results") or {}).get("bindings") or []:
         game = to_game(row, now)
         if game and game["id"] not in seen:
             seen.add(game["id"])

@@ -6,23 +6,23 @@ from ogc import wikidata
 NOW = datetime(2026, 10, 25, 12, tzinfo=timezone.utc)
 
 
-def row(qid, name, date, prec, links, plats, steam="", es=""):
+def row(qid, name, dates, links, plats, steam="", es="", yt=""):
     r = {"g": {"value": f"http://www.wikidata.org/entity/{qid}"}, "gLabel": {"value": name},
-         "date": {"value": date + "T00:00:00Z"}, "prec": {"value": str(prec)}, "links": {"value": str(links)},
-         "platL": {"value": plats}, "genL": {"value": "videojuego de acción"}}
-    if steam:
-        r["steam"] = {"value": steam}
-    if es:
-        r["es"] = {"value": es}
+         "dates": {"value": dates}, "links": {"value": str(links)},
+         "plats": {"value": plats}, "gens": {"value": "videojuego de acción"}}
+    for key, value in (("steam", steam), ("es", es), ("yt", yt)):
+        if value:
+            r[key] = {"value": value}
     return r
 
 
 DATA = {"results": {"bindings": [
-    dict(row("Q1", "Grand Theft Auto VI", "2026-11-19", 11, 80, "PlayStation 5", es="https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI"), yt={"value": "QdBZY2fkU-0"}),
-    row("Q2", "Juego Compartido", "2026-12-01", 10, 30, "Microsoft Windows|PlayStation 5", steam="555"),
-    row("Q3", "Solo Año", "2027-01-01", 9, 20, "Nintendo Switch 2"),
-    row("Q1", "Grand Theft Auto VI", "2027-05-01", 11, 80, "Xbox Series X and Series S"),
-    row("Q4", "Q4", "2026-12-01", 11, 10, ""),
+    row("Q1", "Grand Theft Auto VI", "2027-05-01T00:00:00Z#11|2026-11-19T00:00:00Z#11", 80, "PlayStation 5|Xbox Series X and Series S",
+        es="https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI", yt="QdBZY2fkU-0"),
+    row("Q2", "Juego Compartido", "2026-12-01T00:00:00Z#10", 30, "Microsoft Windows|PlayStation 5", steam="555"),
+    row("Q3", "Solo Año", "2027-01-01T00:00:00Z#9", 20, "Nintendo Switch 2"),
+    row("Q1", "Grand Theft Auto VI", "2026-11-19T00:00:00Z#11", 80, "PlayStation 5"),
+    row("Q4", "Q4", "2026-12-01T00:00:00Z#11", 10, ""),
 ]}}
 
 

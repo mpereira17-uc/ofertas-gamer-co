@@ -56,8 +56,8 @@ FOOTER = [
     ("fuentes.html", "Fuentes de información"), ("whatsapp.html", "Resumen para WhatsApp"),
 ]
 CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; "
-       "connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
-       "media-src 'self' https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com; "
+       "connect-src 'self' https://*.steamstatic.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
+       "media-src 'self' blob: https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com; "
        "upgrade-insecure-requests")
 
 e = html.escape

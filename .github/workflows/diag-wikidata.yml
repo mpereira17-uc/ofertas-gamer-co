@@ -10,21 +10,11 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           python - <<'P'
-          import json, urllib.parse
-          from datetime import datetime, timezone, timedelta
+          from datetime import datetime, timezone
           from ogc import sources, wikidata
-          now = datetime.now(timezone.utc)
-          start = (now - timedelta(days=30)).strftime("%Y-%m-%d"); end = (now + timedelta(days=730)).strftime("%Y-%m-%d")
-          q = wikidata.QUERY % {"min": 3, "start": start, "end": end, "limit": 6000}
-          d = sources.get_json(f"{wikidata.ENDPOINT}?{urllib.parse.urlencode({'query': q, 'format': 'json'})}")
-          rows = d["results"]["bindings"]
-          print("filas", len(rows), "juegos", len({r['g']['value'] for r in rows}))
-          for r in rows:
-              if "Grand Theft" in r.get("gLabel", {}).get("value", ""):
-                  print({k: v["value"] for k, v in r.items()})
-          names = []
-          for r in rows:
-              n = r["gLabel"]["value"]
-              if n not in names: names.append(n)
-          print(names[:80])
+          games = wikidata.fetch_games(datetime.now(timezone.utc), sources.get_json)
+          print("juegos", len(games))
+          for g in games[:40]:
+              print(g["title"], g["date"], g["precision"], g["platforms"], "yt" if g.get("youtube") else "")
           P
+          curl -sSI -H "Origin: https://ofertas-gamer-co.pages.dev" "https://video.akamai.steamstatic.com/store_trailers/2719590/638113/b903ce00335979c0f603dca735f39df10aac0d56/1750893914/hls_264_master.m3u8?t=1717149384" | grep -i "HTTP/\|access-control\|content-type"
