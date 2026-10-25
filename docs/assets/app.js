@@ -92,10 +92,95 @@
   }
   if (form) {
     form.hidden = false;
+    var wanted = new URLSearchParams(location.search).get("tienda");
+    if (wanted && form.store.querySelector('option[value="' + wanted.replace(/[^a-z0-9-]/gi, "") + '"]')) form.store.value = wanted;
     form.addEventListener("input", applyFilters);
     form.addEventListener("submit", function (e) { e.preventDefault(); applyFilters(); });
     applyFilters();
   }
+
+  // Calendario de lanzamientos: pestañas de periodo, chips de sistema y género, seguir juegos
+  var relBar = document.getElementById("rel-toolbar");
+  if (relBar) {
+    relBar.hidden = false;
+    var relCount = document.getElementById("rel-count"), relEmpty = document.getElementById("rel-empty");
+    var follows = [];
+    try { follows = JSON.parse(store("ogc-follow") || "[]"); } catch (e) { follows = []; }
+    var view = "hot", qInput = document.getElementById("rel-q");
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    var dayStr = function (d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); };
+    var now = new Date(), today = dayStr(now);
+    var plus = function (days) { var d = new Date(now); d.setDate(d.getDate() + days); return dayStr(d); };
+    var pressed = function (sel) {
+      return Array.prototype.map.call(relBar.querySelectorAll(sel + '[aria-pressed="true"]'), function (b) {
+        return b.getAttribute(sel === ".chip[data-platform]" ? "data-platform" : "data-genre");
+      });
+    };
+    var inView = function (d) {
+      var date = d.date, exact = d.precision === "day";
+      if (view === "all") return true;
+      if (view === "follow") return follows.indexOf(d.id) >= 0;
+      if (!date) return false;
+      if (view === "week") return exact && date >= today && date <= plus(7);
+      if (view === "month") return date.slice(0, 7) === today.slice(0, 7) && (!exact || date >= today);
+      return date >= plus(-7) && date <= plus(30);
+    };
+    var applyRel = function () {
+      var q = (qInput.value || "").toLowerCase().trim(), plats = pressed(".chip[data-platform]"), gens = pressed(".chip[data-genre]");
+      var shown = 0;
+      document.querySelectorAll("#rel-list .rel-card").forEach(function (li) {
+        var d = li.dataset, ps = d.platforms.split("|"), gs = d.genres.split("|");
+        var ok = inView(d) && (!q || d.title.indexOf(q) >= 0) &&
+          plats.every(function (p) { return ps.indexOf(p) >= 0; }) &&
+          (!gens.length || gens.some(function (g) { return gs.indexOf(g) >= 0; }));
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      document.querySelectorAll("#rel-list .rel-day").forEach(function (day) {
+        day.hidden = !day.querySelector(".rel-card:not([hidden])");
+      });
+      document.querySelectorAll("#rel-list .rel-block").forEach(function (blk) {
+        blk.hidden = !blk.querySelector(".rel-day:not([hidden])");
+      });
+      if (relCount) relCount.textContent = shown + (shown === 1 ? " juego" : " juegos");
+      if (relEmpty) relEmpty.hidden = shown > 0;
+    };
+    relBar.querySelectorAll(".tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        view = tab.getAttribute("data-view");
+        relBar.querySelectorAll(".tab").forEach(function (t) { t.setAttribute("aria-pressed", t === tab ? "true" : "false"); });
+        applyRel();
+      });
+    });
+    relBar.querySelectorAll(".chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        chip.setAttribute("aria-pressed", chip.getAttribute("aria-pressed") === "true" ? "false" : "true");
+        applyRel();
+      });
+    });
+    qInput.addEventListener("input", applyRel);
+    if (location.hash) {
+      view = "all";
+      relBar.querySelectorAll(".tab").forEach(function (t) { t.setAttribute("aria-pressed", t.getAttribute("data-view") === "all" ? "true" : "false"); });
+    }
+    applyRel();
+    window.__applyRel = applyRel;
+  }
+  // Seguir lanzamientos (se guarda solo en este navegador)
+  document.querySelectorAll("[data-follow]").forEach(function (btn) {
+    var id = btn.getAttribute("data-follow"), list = [];
+    try { list = JSON.parse(store("ogc-follow") || "[]"); } catch (e) { list = []; }
+    btn.hidden = false;
+    btn.setAttribute("aria-pressed", list.indexOf(id) >= 0 ? "true" : "false");
+    btn.addEventListener("click", function () {
+      try { list = JSON.parse(store("ogc-follow") || "[]"); } catch (e) { list = []; }
+      var i = list.indexOf(id);
+      if (i >= 0) list.splice(i, 1); else list.push(id);
+      store("ogc-follow", JSON.stringify(list));
+      document.querySelectorAll('[data-follow="' + id + '"]').forEach(function (b) { b.setAttribute("aria-pressed", i >= 0 ? "false" : "true"); });
+      if (relBar && typeof follows !== "undefined") { follows = list; }
+    });
+  });
 
   // Copiar el resumen de WhatsApp como texto limpio
   var copyBtn = document.getElementById("copy-wa");
@@ -199,7 +284,7 @@
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    document.querySelectorAll("main h2, main .card, .stores li, .faq details, .stats li, .ticker, .filters, .prose > *").forEach(function (el) {
+    document.querySelectorAll("main h2, main .card, main .rel-card, .stores li, .faq details, .stats li, .ticker, .filters, .prose > *").forEach(function (el) {
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.classList.add("reveal");
       el.style.transitionDelay = Math.min(siblings % 6, 5) * 70 + "ms";
