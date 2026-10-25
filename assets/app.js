@@ -72,12 +72,14 @@
     var q = (form.q.value || "").toLowerCase().trim();
     var st = form.store.value, type = form.type.value, sort = form.sort.value;
     var min = parseInt(form.min.value || "0", 10), onlyFavs = form.favs && form.favs.checked;
+    var max = form.max ? parseInt(form.max.value || "0", 10) : 0;
     var cards = Array.prototype.slice.call(list.children);
     var shown = 0;
     cards.forEach(function (li) {
       var d = li.dataset;
       var ok = (!q || d.title.indexOf(q) >= 0) && (!st || d.store === st) &&
         (!type || d.type === type) && (parseInt(d.discount || "0", 10) >= min) &&
+        (!max || (d.cop !== undefined && parseInt(d.cop || "0", 10) < max && (d.type === "gratis" || parseInt(d.cop || "0", 10) > 0))) &&
         (!onlyFavs || favs.indexOf(d.id) >= 0);
       li.hidden = !ok;
       if (ok) shown++;
@@ -92,8 +94,21 @@
   }
   if (form) {
     form.hidden = false;
-    var wanted = new URLSearchParams(location.search).get("tienda");
-    if (wanted && form.store.querySelector('option[value="' + wanted.replace(/[^a-z0-9-]/gi, "") + '"]')) form.store.value = wanted;
+    // Filtros desde la dirección (enlaces rápidos de la portada): ?q= ?tipo= ?min= ?max= ?orden= ?tienda=
+    var params = new URLSearchParams(location.search);
+    var setIf = function (field, value) {
+      if (!field || value === null) return;
+      var clean = String(value).replace(/[^a-z0-9 \-áéíóúñü]/gi, "");
+      if (field.tagName === "SELECT") { if (field.querySelector('option[value="' + clean + '"]')) field.value = clean; }
+      else field.value = String(value).slice(0, 80);
+    };
+    setIf(form.q, params.get("q"));
+    setIf(form.store, params.get("tienda"));
+    setIf(form.type, params.get("tipo"));
+    setIf(form.min, params.get("min"));
+    setIf(form.max, params.get("max"));
+    var orden = params.get("orden");
+    setIf(form.sort, orden === "vence" ? "expires" : orden === "precio" ? "price" : orden);
     form.addEventListener("input", applyFilters);
     form.addEventListener("submit", function (e) { e.preventDefault(); applyFilters(); });
     applyFilters();
@@ -182,6 +197,118 @@
     });
   });
 
+  // Cuenta regresiva en vivo (hora del navegador; el servidor ya la escribió en hora Colombia)
+  var MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+  function leftText(iso) {
+    var end = new Date(iso), ms = end - new Date();
+    if (isNaN(ms)) return null;
+    if (ms <= 0) return "Terminó";
+    var min = Math.floor(ms / 60000), h = Math.floor(min / 60), d = Math.floor(h / 24);
+    if (d > 30) {
+      var co = new Date(end.getTime() - 5 * 3600000);
+      return "Disponible hasta el " + co.getUTCDate() + " de " + MESES[co.getUTCMonth()];
+    }
+    if (d >= 1) return "Termina en " + d + (d === 1 ? " día" : " días") + ", " + (h % 24) + " h";
+    if (h >= 1) return "Termina en " + h + " h " + (min % 60) + " min";
+    return "Termina en " + Math.max(1, min) + " min";
+  }
+  function tick() {
+    document.querySelectorAll("[data-countdown]").forEach(function (el) {
+      var iso = el.getAttribute("data-countdown"), txt = leftText(iso), span = el.querySelector("span");
+      if (!txt || !span) return;
+      span.textContent = txt;
+      var ms = new Date(iso) - new Date();
+      el.classList.toggle("urgent", ms < 86400000);
+      el.classList.toggle("ended", ms <= 0);
+    });
+  }
+  tick();
+  setInterval(tick, 60000);
+
+  // Página "Mis favoritos": arma las tarjetas con los datos públicos de las ofertas
+  var favRoot = document.getElementById("fav-root");
+  if (favRoot && window.fetch) {
+    var el = function (tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text) n.textContent = text;
+      return n;
+    };
+    var empty = function () {
+      favRoot.textContent = "";
+      var box = el("div", "fav-empty");
+      box.appendChild(el("p", "", "Todavía no tienes favoritos. Toca la estrella de una oferta para guardarla aquí."));
+      var a = el("a", "btn btn-primary", "Ver ofertas");
+      a.href = "ofertas.html";
+      box.appendChild(a);
+      favRoot.appendChild(box);
+    };
+    var money = function (v, cur) {
+      if (cur === "COP") return "$" + Math.round(v).toLocaleString("es-CO") + " COP";
+      return "US$" + Number(v).toFixed(2);
+    };
+    if (!favs.length) empty();
+    else fetch(favRoot.getAttribute("data-src")).then(function (r) { return r.json(); }).then(function (data) {
+      var mine = (data.offers || []).filter(function (o) { return favs.indexOf(o.id) >= 0; });
+      if (!mine.length) return empty();
+      favRoot.textContent = "";
+      favRoot.appendChild(el("p", "count", mine.length + (mine.length === 1 ? " oferta guardada" : " ofertas guardadas")));
+      var ul = el("ul", "grid");
+      mine.forEach(function (o) {
+        var free = o.currentPrice === 0, li = el("li", "card" + (free ? " is-free" : ""));
+        var media = el("a", "media");
+        media.href = o.page || o.destinationUrl;
+        var img = el("img");
+        img.src = /^https:\/\//.test(o.image || "") ? o.image : "assets/placeholder.svg";
+        img.alt = "Imagen de " + o.title;
+        img.loading = "lazy";
+        media.appendChild(img);
+        media.appendChild(el("span", "badge" + (free ? " free" : ""), free ? "GRATIS" : "-" + (o.discountPercentage || 0) + "%"));
+        li.appendChild(media);
+        var body = el("div", "body");
+        body.appendChild(el("span", "store-chip", o.store));
+        var h = el("h3", "clamp2"), link = el("a", "", o.title);
+        link.href = o.page || o.destinationUrl;
+        h.appendChild(link);
+        body.appendChild(h);
+        var box = el("div", "pricebox");
+        box.appendChild(el("span", "now" + (free ? " free" : ""), free ? "Gratis" : money(o.currentPrice, o.currency)));
+        if (o.originalPrice) box.appendChild(el("s", "", "Antes " + money(o.originalPrice, o.currency)));
+        body.appendChild(box);
+        if (o.saving) body.appendChild(el("p", "save", o.saving));
+        if (o.expiresAt) {
+          var left = el("p", "left");
+          left.setAttribute("data-countdown", o.expiresAt);
+          left.appendChild(el("span", "", leftText(o.expiresAt) || ""));
+          body.appendChild(left);
+        }
+        var acts = el("div", "actions"), go = el("a", "btn btn-primary" + (free && o.action !== "Buscar en la tienda" ? " btn-free" : ""), o.action || "Ver oferta");
+        go.href = o.destinationUrl;
+        go.target = "_blank";
+        go.rel = o.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer";
+        acts.appendChild(go);
+        var rm = el("button", "btn", "Quitar");
+        rm.type = "button";
+        rm.addEventListener("click", function () {
+          var i = favs.indexOf(o.id);
+          if (i >= 0) favs.splice(i, 1);
+          store("ogc-favs", JSON.stringify(favs));
+          li.remove();
+          if (!ul.children.length) empty();
+        });
+        acts.appendChild(rm);
+        body.appendChild(acts);
+        li.appendChild(body);
+        ul.appendChild(li);
+      });
+      favRoot.appendChild(ul);
+      tick();
+    }).catch(function () {
+      favRoot.textContent = "";
+      favRoot.appendChild(el("p", "notice", "No se pudieron cargar tus favoritos. Intenta de nuevo en un momento."));
+    });
+  }
+
   // Copiar el resumen de WhatsApp como texto limpio
   var copyBtn = document.getElementById("copy-wa");
   var waText = document.getElementById("wa-text");
@@ -199,63 +326,6 @@
   // ---------- Efectos visuales (se apagan si el usuario prefiere menos movimiento) ----------
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var root = document.documentElement;
-
-  // Carrusel de ofertas destacadas: pasa solo, con flechas, puntos y deslizamiento
-  var slider = document.querySelector(".slider");
-  if (slider) {
-    var track = slider.querySelector(".slides");
-    var slides = Array.prototype.slice.call(track.children);
-    var dotsEls = Array.prototype.slice.call(slider.querySelectorAll(".s-dots a"));
-    var bar = slider.querySelector(".s-bar span");
-    var prev = slider.querySelector(".prev"), next = slider.querySelector(".next");
-    var current = 0, timer = null, paused = false, DELAY = 6000;
-    prev.hidden = next.hidden = slides.length < 2;
-    function mark(i) {
-      current = i;
-      slides.forEach(function (s, k) { s.classList.toggle("active", k === i); });
-      dotsEls.forEach(function (d, k) { if (k === i) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
-      if (bar && !calm) {
-        bar.classList.remove("run");
-        void bar.offsetWidth;
-        if (!paused) bar.classList.add("run");
-      }
-    }
-    function go(i) {
-      var n = (i + slides.length) % slides.length;
-      track.scrollTo({ left: slides[n].offsetLeft, behavior: calm ? "auto" : "smooth" });
-      mark(n);
-      restart();
-    }
-    function restart() {
-      clearTimeout(timer);
-      if (!calm && !paused && slides.length > 1) timer = setTimeout(function () { go(current + 1); }, DELAY);
-    }
-    prev.addEventListener("click", function () { go(current - 1); });
-    next.addEventListener("click", function () { go(current + 1); });
-    dotsEls.forEach(function (d, k) {
-      d.addEventListener("click", function (ev) { ev.preventDefault(); go(k); });
-    });
-    track.addEventListener("keydown", function (ev) {
-      if (ev.key === "ArrowRight") { ev.preventDefault(); go(current + 1); }
-      if (ev.key === "ArrowLeft") { ev.preventDefault(); go(current - 1); }
-    });
-    var scrollEnd = null;
-    track.addEventListener("scroll", function () {
-      clearTimeout(scrollEnd);
-      scrollEnd = setTimeout(function () {
-        var i = Math.round(track.scrollLeft / track.clientWidth);
-        if (i !== current && slides[i]) { mark(i); restart(); }
-      }, 120);
-    }, { passive: true });
-    function pause(on) { paused = on; if (on) { clearTimeout(timer); if (bar) bar.classList.remove("run"); } else mark(current), restart(); }
-    slider.addEventListener("mouseenter", function () { pause(true); });
-    slider.addEventListener("mouseleave", function () { pause(false); });
-    slider.addEventListener("focusin", function () { pause(true); });
-    slider.addEventListener("focusout", function () { pause(false); });
-    document.addEventListener("visibilitychange", function () { pause(document.hidden); });
-    mark(0);
-    restart();
-  }
 
   // Barra de progreso y cabecera al bajar
   var progress = document.createElement("div");
@@ -284,7 +354,7 @@
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    document.querySelectorAll("main h2, main .card, main .rel-card, .stores li, .faq details, .stats li, .ticker, .filters, .prose > *").forEach(function (el) {
+    document.querySelectorAll("main h2, main .card, main .rel-card, .stores li, .faq details, .stats li, .filters, .prose > *").forEach(function (el) {
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.classList.add("reveal");
       el.style.transitionDelay = Math.min(siblings % 6, 5) * 70 + "ms";
@@ -338,7 +408,7 @@
       W = window.innerWidth; H = window.innerHeight;
       canvas.width = W * dpr; canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.max(24, Math.min(90, Math.round(W * H / 16000)));
+      var n = W < 760 ? Math.max(10, Math.round(W * H / 40000)) : Math.max(24, Math.min(90, Math.round(W * H / 16000)));
       dots = [];
       for (var i = 0; i < n; i++) {
         dots.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.35,

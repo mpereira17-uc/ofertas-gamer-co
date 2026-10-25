@@ -2,7 +2,7 @@
 const { chromium } = require("playwright");
 const base = process.argv[2] || "http://127.0.0.1:8765/";
 const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html", "guias.html", "contacto.html",
-  "privacidad.html", "afiliados.html", "whatsapp.html", "404.html", "estado.html", "guia-que-es-drm.html"];
+  "privacidad.html", "afiliados.html", "whatsapp.html", "404.html", "estado.html", "guia-que-es-drm.html", "favoritos.html"];
 
 (async () => {
   const browser = await chromium.launch();
@@ -22,11 +22,14 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
       if (small < 16) errors.push(`${width}px ${p}: letra base ${small}px`);
     }
     await page.goto(base + "index.html");
+    if (width === 360 && !(await page.isVisible("nav.bottom-nav"))) errors.push("360px: falta el menú inferior");
+    if (width === 1280 && (await page.isVisible("nav.bottom-nav"))) errors.push("1280px: el menú inferior no debería verse");
     if (width === 360) {
       if (await page.isVisible("#main-nav")) errors.push("360px: el menú debería estar plegado");
       await page.click("#menu-toggle");
       if (!(await page.isVisible("#main-nav"))) errors.push("360px: el menú no se abre");
     }
+    await page.goto(base + "ofertas.html");
     const total = await page.$$eval("#offers > li", (els) => els.length);
     await page.fill("#filters input[name=q]", "hollow");
     const visible = await page.$$eval("#offers > li:not([hidden])", (els) => els.length);
@@ -39,6 +42,20 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     await page.selectOption("#filters select[name=sort]", "discount");
     const discounts = await page.$$eval("#offers > li", (els) => els.map((e) => +e.dataset.discount));
     if (discounts.join() !== [...discounts].sort((a, b) => b - a).join()) errors.push(`${width}px: orden por descuento falla`);
+    await page.goto(base + "ofertas.html?max=20000&orden=vence");
+    const cheap = await page.$$eval("#offers > li:not([hidden])", (els) => els.map((e) => +e.dataset.cop));
+    if (await page.inputValue("#filters select[name=sort]") !== "expires") errors.push(`${width}px: ?orden=vence no aplica`);
+    if (cheap.some((c) => c >= 20000)) errors.push(`${width}px: filtro de precio máximo falla`);
+    await page.goto(base + "favoritos.html");
+    await page.waitForSelector("#fav-root .fav-empty");
+    await page.goto(base + "ofertas.html");
+    await page.click("#offers > li:first-child [data-fav]");
+    await page.goto(base + "favoritos.html");
+    await page.waitForSelector("#fav-root .card");
+    const favCount = await page.$$eval("#fav-root .card", (els) => els.length);
+    if (favCount !== 1) errors.push(`${width}px: favoritos muestra ${favCount} tarjetas`);
+    const cd = await page.$$eval("[data-countdown] span", (els) => els.map((e) => e.textContent));
+    if (cd.some((t) => !/^(Termina en|Disponible hasta|Terminó)/.test(t))) errors.push(`${width}px: contador con texto raro`);
     await page.goto(base + "whatsapp.html");
     await page.click("#copy-wa");
     const copied = await page.evaluate(() => navigator.clipboard.readText());

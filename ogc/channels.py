@@ -6,6 +6,7 @@ import os
 import sys
 import urllib.parse
 import urllib.request
+from datetime import timedelta, timezone
 
 from .model import parse_iso
 
@@ -35,9 +36,38 @@ def price_line(offer):
     return " · ".join(parts)
 
 
+CO_TZ = timezone(timedelta(hours=-5))  # Colombia no tiene horario de verano
+MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+         "septiembre", "octubre", "noviembre", "diciembre"]
+
+
+def co_time(dt):
+    """Fecha y hora en hora Colombia: '29 de octubre de 2026, 10:00 a. m. (hora Colombia)'."""
+    d = dt.astimezone(CO_TZ)
+    hour = d.hour % 12 or 12
+    return f"{d.day} de {MESES[d.month - 1]} de {d.year}, {hour}:{d.minute:02d} {'a. m.' if d.hour < 12 else 'p. m.'} (hora Colombia)"
+
+
 def date_es(value):
     dt = parse_iso(value)
-    return dt.strftime("%d/%m/%Y %H:%M UTC") if dt else ""
+    return co_time(dt) if dt else ""
+
+
+def time_left(value, now):
+    """Texto corto del tiempo que le queda a una oferta, o '' si no hay fecha."""
+    dt = parse_iso(value)
+    if not dt:
+        return ""
+    mins = int((dt - now).total_seconds() // 60)
+    if mins <= 0:
+        return "Terminó"
+    days, hours = mins // 1440, mins % 1440 // 60
+    if days > 30:
+        d = dt.astimezone(CO_TZ)
+        return f"Disponible hasta el {d.day} de {MESES[d.month - 1]}"
+    if days >= 1:
+        return f"Termina en {days} {'día' if days == 1 else 'días'}" + (f", {hours} h" if hours else "")
+    return f"Termina en {hours} h {mins % 60} min" if hours else f"Termina en {mins} min"
 
 
 def region_text(offer):

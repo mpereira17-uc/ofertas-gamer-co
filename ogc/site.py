@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
 
-from .channels import cop_text, date_es, money, region_text, whatsapp_text
+from .channels import co_time, cop_text, date_es, money, time_left, whatsapp_text
 from .content import FAQ, GUIDES, LEGAL_REVIEW, LEGAL_UPDATED
 from .model import parse_iso
 from .releases import date_label, relative_label, MONTHS_ES
@@ -18,13 +18,33 @@ REPO = "https://github.com/mpereira17-uc/ofertas-gamer-co"
 DISCLOSURE = ("Algunos enlaces publicados pueden ser enlaces de afiliados. Si realizas una compra mediante "
               "ellos podemos recibir una comisión sin costo adicional para ti.")
 
+_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{}</svg>'
+ICONS = {k: _SVG.format(v) for k, v in {
+    "home": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
+    "gift": '<rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8S10 3 7.5 4.5 9 8 12 8zm0 0s2-5 4.5-3.5S15 8 12 8z"/>',
+    "flame": '<path d="M12 22c4 0 7-3 7-7 0-5-4-7-5-12-3 3-4 5-4 8-1-1-2-2-2-4-2 2-3 5-3 8 0 4 3 7 7 7z"/>',
+    "news": '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+    "calendar": '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    "sparkle": '<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>',
+    "question": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>',
+    "book": '<path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
+    "chat": '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/>',
+    "check": '<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',
+    "store": '<path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16"/><path d="M9 20v-6h6v6"/>',
+    "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+    "star": '<path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>',
+    "bell": '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
+}.items()}
+
 NAV = [
-    ("Ofertas", [("index.html", "Inicio", "⌂"), ("juegos-gratis.html", "Juegos gratis", "🎁"),
-                 ("ofertas.html", "Ofertas", "🔥"), ("noticias.html", "Novedades", "📰")]),
-    ("Lanzamientos", [("lanzamientos.html", "Calendario", "📅"), ("lanzamientos.html#proximos", "Próximos", "⏳"),
-                      ("lanzamientos.html#recientes", "Recientes", "🆕"), ("lanzamientos.html#por-confirmar", "Por confirmar", "❔")]),
-    ("Ayuda", [("guias.html", "Guías", "📘"), ("preguntas-frecuentes.html", "Preguntas", "💬"),
-               ("como-verificamos.html", "Cómo verificamos", "✔")]),
+    ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"),
+                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"),
+                 ("noticias.html", "Novedades", "news")]),
+    ("Lanzamientos", [("lanzamientos.html", "Calendario", "calendar"), ("lanzamientos.html#proximos", "Próximos", "clock"),
+                      ("lanzamientos.html#recientes", "Recientes", "sparkle"), ("lanzamientos.html#por-confirmar", "Por confirmar", "question")]),
+    ("Ayuda", [("guias.html", "Guías", "book"), ("preguntas-frecuentes.html", "Preguntas", "chat"),
+               ("como-verificamos.html", "Cómo verificamos", "check")]),
 ]
 FOOTER = [
     ("como-verificamos.html", "Cómo verificamos"), ("quienes-somos.html", "Quiénes somos"),
@@ -59,17 +79,19 @@ class Site:
         self.base = cfg["url_web"].rstrip("/") + "/"
         self.pages = []
         self.detail = {}  # id de oferta o juego -> nombre de su página propia
+        self.now = datetime.now(timezone.utc)
+        self.rate = None  # pesos por dólar, deducido de las ofertas
 
     # ---------- plantilla común ----------
     def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website", og_image=None):
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
-        stores_nav = [(f"ofertas.html?tienda={st['id']}", st["name"], "🏬") for st in self.stores.values() if st["active"]]
+        stores_nav = [(f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"]]
         groups = NAV[:1] + [("Tiendas", stores_nav)] + NAV[1:]
         nav = "".join(
             f'<div class="side-group"><p class="side-title">{e(title)}</p><ul>' + "".join(
                 f'<li><a href="{href}"{" aria-current=\"page\"" if href == name else ""}>'
-                f'<span class="side-ico" aria-hidden="true">{ico}</span>{e(label)}</a></li>' for href, label, ico in links) + "</ul></div>"
+                f'{self.nav_icon(ico)}{e(label)}</a></li>' for href, label, ico in links) + "</ul></div>"
             for title, links in groups)
         foot = "".join(f'<li><a href="{href}">{e(label)}</a></li>' for href, label in FOOTER)
         tg = self.cfg.get("enlace_canal_telegram")
@@ -118,7 +140,7 @@ class Site:
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(description)}">
 <meta name="twitter:image" content="{e(og_image or self.base + 'assets/og-image.png')}">
-<meta name="theme-color" content="#07070d">
+<meta name="theme-color" content="#080a12">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -150,6 +172,7 @@ class Site:
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
 <p>Ofertas Gamer CO no vende productos ni procesa pagos. Los precios y la disponibilidad pueden cambiar sin previo aviso.</p>
 </div></footer>
+{self.bottom_nav(name)}
 </body>
 </html>
 """
@@ -175,39 +198,120 @@ class Site:
         return (f'<aside class="ad" aria-label="{e(slot["label"])}"><p class="meta">{e(slot["label"])}</p>'
                 f'{ext_link(slot["destination"], img, affiliate=True, cls="")}</aside>')
 
+    # ---------- piezas de las tarjetas ----------
+    def nav_icon(self, key):
+        if key.startswith("store-"):
+            return f'<span class="side-ico store-dot {e(key)}" aria-hidden="true"></span>'
+        return f'<span class="side-ico">{ICONS.get(key, "")}</span>'
+
+    def bottom_nav(self, name):
+        items = [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Gratis", "gift"),
+                 ("ofertas.html#filters", "Buscar", "search"), ("favoritos.html", "Favoritos", "star")]
+        links = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h.split("#")[0] == name else ""}>{ICONS[i]}<span>{t}</span></a>'
+                        for h, t, i in items)
+        tg = self.cfg.get("enlace_canal_telegram")
+        if tg:
+            links += f'<a href="{e(tg)}" target="_blank" rel="noopener noreferrer">{ICONS["bell"]}<span>Alertas</span></a>'
+        return f'<nav class="bottom-nav" aria-label="Accesos rápidos">{links}</nav>'
+
+    def is_search(self, o):
+        """True si no hay enlace directo al producto y el botón lleva a la búsqueda de la tienda."""
+        tpl = (self.stores.get(o["storeId"]) or {}).get("searchUrl") or ""
+        prefix = tpl.split("{")[0]
+        return bool(prefix) and (o.get("officialUrl") or "").startswith(prefix)
+
+    def rate_for(self, o):
+        if o.get("copApproximation") and o.get("currentPrice"):
+            return o["copApproximation"] / o["currentPrice"]
+        return self.rate
+
+    def cop_value(self, amount, o):
+        if amount is None:
+            return None
+        if o["currency"] == "COP":
+            return amount
+        rate = self.rate_for(o)
+        return amount * rate if rate else None
+
+    @staticmethod
+    def pesos(value):
+        return "$" + f"{round(value, -2):,.0f}".replace(",", ".")
+
+    def saving_text(self, o):
+        if not o.get("originalPrice"):
+            return ""
+        saved = self.cop_value((o["originalPrice"] or 0) - (o.get("currentPrice") or 0), o)
+        return f"Ahorras ≈ {self.pesos(saved)} COP" if saved and saved >= 100 else ""
+
+    def trust_chips(self, o, full=False):
+        chips = []
+        if "CO" in (o.get("regions") or []):
+            chips.append('<span class="st ok">Precio para Colombia</span>')
+        elif o["currency"] == "USD":
+            chips.append('<span class="st ref">Precio de referencia en USD</span>')
+        else:
+            chips.append('<span class="st warn">Región por confirmar</span>')
+        if not o.get("expiresAt"):
+            chips.append('<span class="st muted">Vigencia por confirmar</span>')
+        if o.get("status") == "Vencido":
+            chips.append('<span class="st bad">Oferta terminada</span>')
+        if full and o.get("drm"):
+            chips.append(f'<span class="st muted">Se activa en {e(o["drm"])}</span>')
+        if o.get("affiliate"):
+            chips.append('<span class="st aff">Enlace de afiliado</span>')
+        if o.get("sponsored"):
+            chips.append('<span class="st aff">Patrocinado</span>')
+        return '<div class="chips-st">' + "".join(chips) + "</div>"
+
+    def countdown(self, o, cls="left"):
+        if not o.get("expiresAt"):
+            return ""
+        txt = time_left(o["expiresAt"], self.now)
+        soon = (parse_iso(o["expiresAt"]) - self.now).total_seconds() < 86400
+        return (f'<p class="{cls}{" urgent" if soon else ""}" data-countdown="{e(o["expiresAt"])}" '
+                f'title="Hasta el {e(date_es(o["expiresAt"]))}">{ICONS["clock"]}<span>{e(txt)}</span></p>')
+
+    def action_label(self, o):
+        if self.is_search(o):
+            return "Buscar en la tienda"
+        return "Reclamar gratis" if o.get("currentPrice") == 0 else "Ver oferta"
+
+    def offer_button(self, o, cls="btn btn-primary"):
+        free = o.get("currentPrice") == 0
+        label = self.action_label(o)
+        return ext_link(o["destinationUrl"], label, o.get("affiliate"), cls=cls + (" btn-free" if free and not self.is_search(o) else ""),
+                        label=f"{label}: {o['title']} en {o['store']} (abre en otra pestaña)")
+
+    def price_html(self, o, big=False):
+        free = o.get("currentPrice") == 0
+        now = "Gratis" if free else money(o["currentPrice"], o["currency"])
+        old = f'<s>Antes {e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+        cop = "" if free or o["currency"] == "COP" or not cop_text(o) else f'<span class="cop">{e(cop_text(o))}</span>'
+        save = self.saving_text(o)
+        return (f'<div class="pricebox{" big" if big else ""}"><span class="now{" free" if free else ""}">{e(now)}</span>{old}</div>'
+                + (f'<p class="cop-line">{cop}</p>' if cop else "")
+                + (f'<p class="save">{e(save)}</p>' if save else ""))
+
+    def store_chip(self, o):
+        return f'<span class="store-chip"><span class="store-dot store-{e(o["storeId"])}" aria-hidden="true"></span>{e(o["store"])}</span>'
+
+    def badge(self, o):
+        if o.get("currentPrice") == 0:
+            return '<span class="badge free">GRATIS</span>'
+        return f'<span class="badge">-{o["discountPercentage"]}%</span>' if o.get("discountPercentage") else ""
+
     def card(self, o):
         free = o.get("currentPrice") == 0
-        badge = '<span class="badge free">GRATIS</span>' if free else \
-            (f'<span class="badge">-{o["discountPercentage"]}%</span>' if o.get("discountPercentage") else "")
         img = o.get("image") or "assets/placeholder.svg"
         alt = f"Imagen de {o['title']}" if o.get("image") else ""
-        if free:
-            price = '<p class="price">Gratis' + (f' <s>{e(money(o.get("originalPrice"), o["currency"]))}</s>' if o.get("originalPrice") else "") + "</p>"
-        else:
-            price = f'<p class="price">{e(money(o["currentPrice"], o["currency"]))}' + \
-                    (f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else "") + "</p>"
-            if cop_text(o):
-                price += f'<p class="meta">{e(cop_text(o))}</p>'
-        tags = [f'<span class="tag">{e(o.get("platform") or "PC")}</span>']
-        if o.get("drm"):
-            tags.append(f'<span class="tag">Activación: {e(o["drm"])}</span>')
-        if o.get("affiliate"):
-            tags.append('<span class="tag aff">Enlace de afiliado</span>')
-        if o.get("sponsored"):
-            tags.append('<span class="tag aff">Patrocinado</span>')
-        expires = f"Hasta el {date_es(o['expiresAt'])}" if o.get("expiresAt") else "Vigencia: fecha desconocida"
-        btn = ext_link(o["destinationUrl"], "Ver oferta", o.get("affiliate"),
-                       label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
-        return f"""<li class="card" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}">
-<div class="thumb"><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{badge}</div>
-<div class="body"><h3>{self.title_link(o)}</h3>
-<p class="meta">Tienda: {e(o['store'])}</p>
-{price}
-<div class="tags">{''.join(tags)}</div>
-<p class="meta"><span class="status">{e(o['status'])}</span> · {e(expires)}</p>
-<p class="meta">Región: {e(region_text(o))}</p>
-<p class="meta">Verificado: {e(date_es(o['verifiedAt']))}</p>
-<div class="actions">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>★</button><button class="btn icon-btn" type="button" data-share="{e(o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>↗</button></div>
+        cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
+        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}">
+<div class="thumb"><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}</div>
+<div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
+{self.price_html(o)}
+{self.countdown(o)}
+{self.trust_chips(o)}
+<div class="actions">{self.offer_button(o)}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>↗</button></div>
 </div></li>"""
 
     def offer_list(self, offers, with_filters=True, list_id="offers"):
@@ -229,6 +333,7 @@ class Site:
 <label>Tienda<select name="store"><option value="">Todas</option>{store_opts}</select></label>
 <label>Tipo<select name="type"><option value="">Todos</option><option value="gratis">Gratis</option><option value="descuento">Descuento</option></select></label>
 <label>Descuento mínimo<select name="min"><option value="0">Cualquiera</option><option value="50">50% o más</option><option value="75">75% o más</option><option value="90">90% o más</option></select></label>
+<label>Precio máximo<select name="max"><option value="">Cualquiera</option><option value="20000">Menos de $20.000</option><option value="40000">Menos de $40.000</option></select></label>
 <label>Ordenar por<select name="sort"><option value="discount">Mayor descuento</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
 <label><span>Favoritos</span><span><input type="checkbox" name="favs"> Solo mis favoritos</span></label>
 </form>
@@ -253,41 +358,56 @@ class Site:
         parts.append('<a class="btn" href="whatsapp.html">Resumen para WhatsApp</a>')
         return '<div class="cta">' + "".join(parts) + "</div>"
 
-    def slider(self, offers):
+    def feature(self, offers):
+        """Portada: una oferta principal grande y tres secundarias."""
         seen, picks = set(), []
         for o in offers:
             if o["id"] not in seen and o.get("image"):
                 seen.add(o["id"])
                 picks.append(o)
-        picks = picks[:8]
+        picks = picks[:4]
         if not picks:
             return ""
-        slides = []
-        for i, o in enumerate(picks):
-            free = o.get("currentPrice") == 0
-            badge = "GRATIS" if free else f"-{o.get('discountPercentage') or 0}%"
-            if free:
-                price = "Gratis"
-            else:
-                price = e(money(o["currentPrice"], o["currency"]))
-            old = f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
-            cop = f'<span class="s-cop">{e(cop_text(o))}</span>' if not free and cop_text(o) else ""
-            until = f'<span class="s-until">Hasta el {e(date_es(o["expiresAt"]))}</span>' if o.get("expiresAt") else ""
-            btn = ext_link(o["destinationUrl"], "Ver oferta", o.get("affiliate"),
-                           label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
-            slides.append(f"""<li class="slide{' free' if free else ''}" id="slide-{i + 1}" aria-roledescription="diapositiva" aria-label="{i + 1} de {len(picks)}">
-<img src="{e(o['image'])}"{fallback(o)} alt="" width="1280" height="600"{' fetchpriority="high"' if i == 0 else ' loading="lazy"'} decoding="async">
-<div class="slide-info"><span class="s-badge">{badge}</span><p class="s-store">{e(o['store'])}</p>
-<h2 class="s-title">{e(o['title'])}</h2>
-<p class="s-price">{price}{old}</p><p class="s-meta">{cop}{until}</p>
-<div class="s-cta">{btn}</div></div></li>""")
-        dots = "".join(f'<a href="#slide-{i + 1}" aria-label="Ir a la oferta {i + 1}"></a>' for i in range(len(picks)))
-        return (f'<section class="slider" aria-roledescription="carrusel" aria-label="Ofertas destacadas">'
-                f'<ul class="slides" id="slides" tabindex="0">{"".join(slides)}</ul>'
-                f'<button class="s-nav prev" type="button" aria-label="Oferta anterior" hidden>‹</button>'
-                f'<button class="s-nav next" type="button" aria-label="Oferta siguiente" hidden>›</button>'
-                f'<nav class="s-dots" aria-label="Elegir oferta">{dots}</nav>'
-                f'<div class="s-bar" aria-hidden="true"><span></span></div></section>')
+        m = picks[0]
+        main = f"""<article class="f-main{' is-free' if m.get('currentPrice') == 0 else ''}">
+<img src="{e(m['image'])}"{fallback(m)} alt="" width="1280" height="600" fetchpriority="high" decoding="async">
+<div class="f-info"><div class="f-top">{self.store_chip(m)}{self.badge(m)}</div>
+<h2 class="f-title">{self.title_link(m)}</h2>
+{self.price_html(m, big=True)}
+{self.countdown(m, "left f-left")}
+<div class="cta">{self.offer_button(m)}<button class="btn icon-btn" type="button" data-fav="{e(m['id'])}" aria-pressed="false" aria-label="Guardar {e(m['title'])} en favoritos" hidden>{ICONS['star']}</button></div></div></article>"""
+        side = "".join(f"""<li class="f-item"><img src="{e(o['image'])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">
+<div class="f-item-info">{self.badge(o)}<h3 class="clamp2">{self.title_link(o)}</h3><p class="f-price{' free' if o.get('currentPrice') == 0 else ''}">{'Gratis' if o.get('currentPrice') == 0 else e(money(o['currentPrice'], o['currency']))}</p>{self.countdown(o)}</div></li>"""
+                       for o in picks[1:])
+        return f'<section class="feature" aria-label="Ofertas destacadas">{main}<ul class="f-side">{side}</ul></section>'
+
+    def soon_strip(self, offers):
+        """Franja horizontal con lo que termina en las próximas 72 horas."""
+        soon = sorted((o for o in offers if o.get("expiresAt") and
+                       0 < (parse_iso(o["expiresAt"]) - self.now).total_seconds() < 72 * 3600),
+                      key=lambda o: o["expiresAt"])[:12]
+        if not soon:
+            return ""
+        items = "".join(f"""<li class="soon-item"><img src="{e(o.get('image') or 'assets/placeholder.svg')}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">
+<div>{self.badge(o)}<p class="soon-title clamp2">{self.title_link(o)}</p>{self.countdown(o)}</div></li>""" for o in soon)
+        return (f'<section class="soon" aria-labelledby="soon-h"><h2 id="soon-h">{ICONS["clock"]} Terminan pronto</h2>'
+                f'<ul class="soon-strip">{items}</ul></section>')
+
+    def quick_search(self):
+        stores = "".join(f'<a class="chip" href="ofertas.html?tienda={e(st["id"])}"><span class="store-dot store-{e(st["id"])}" aria-hidden="true"></span>{e(st["name"])}</a>'
+                         for st in self.stores.values() if st["active"])
+        return f"""<section class="quick" aria-label="Buscar ofertas">
+<form class="quick-form" action="ofertas.html" method="get" role="search"><label class="sr-only" for="qs">Buscar un juego</label>
+<input id="qs" name="q" type="search" placeholder="Busca un juego…" autocomplete="off"><button class="btn btn-primary" type="submit">{ICONS['search']} Buscar</button></form>
+<nav class="chips quick-chips" aria-label="Filtros rápidos"><a class="chip hot" href="juegos-gratis.html">Gratis</a><a class="chip" href="ofertas.html?orden=vence">Terminan pronto</a><a class="chip" href="ofertas.html?max=20000">Menos de $20.000</a><a class="chip" href="ofertas.html?min=75">-75% o más</a>{stores}</nav>
+</section>"""
+
+    def how_we_verify(self):
+        return """<section class="how" aria-labelledby="how-h"><h2 id="how-h">Cómo verificamos los precios</h2><ol class="how-steps">
+<li><strong>Tiendas oficiales</strong><span>Solo Steam, Epic, GOG, Humble, Green Man Gaming y Fanatical. Nada de claves de reventa.</span></li>
+<li><strong>Revisión cada 4 horas</strong><span>Un sistema automático consulta los precios y retira las ofertas que ya terminaron.</span></li>
+<li><strong>Estados claros</strong><span><span class="st ok">Precio para Colombia</span> <span class="st ref">Referencia en USD</span> <span class="st muted">Vigencia por confirmar</span></span></li>
+</ol><p><a href="como-verificamos.html">Leer el método completo</a></p></section>"""
 
     # ---------- páginas propias por oferta y por juego (para buscadores) ----------
     def assign_pages(self, offers, games):
@@ -312,13 +432,11 @@ class Site:
                 continue
             free = o.get("currentPrice") == 0
             what = "gratis" if free else f"con {o.get('discountPercentage') or 0}% de descuento"
-            price = "Gratis" if free else e(money(o["currentPrice"], o["currency"]))
-            old = f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
-            cop = f'<p class="meta">{e(cop_text(o))}</p>' if not free and cop_text(o) else ""
-            until = f"Hasta el {date_es(o['expiresAt'])}" if o.get("expiresAt") else "Vigencia: fecha desconocida"
+            until = f"Hasta el {date_es(o['expiresAt'])}" if o.get("expiresAt") else ""
             img = f'<img src="{e(o["image"])}"{fallback(o)} alt="Imagen de {e(o["title"])}" width="920" height="430" decoding="async">' if o.get("image") else ""
-            btn = ext_link(o["destinationUrl"], f"Ver oferta en {e(o['store'])}", o.get("affiliate"),
-                           label=f"Ver oferta de {o['title']} en {o['store']} (abre en otra pestaña)")
+            btn = self.offer_button(o)
+            search_note = ('<p class="meta">La tienda no da un enlace directo a este juego: el botón abre su buscador con el nombre.</p>'
+                           if self.is_search(o) else "")
             ld = {"@context": "https://schema.org", "@type": "Product", "name": o["title"], "image": o.get("image") or None,
                   "offers": {"@type": "Offer", "price": o.get("currentPrice"), "priceCurrency": o["currency"],
                              "url": o["officialUrl"], "availability": "https://schema.org/InStock",
@@ -328,13 +446,14 @@ class Site:
             self.layout(name, f"{o['title']} {what} en {o['store']}",
                         f"{o['title']} está {what} en {o['store']}. Precio, vigencia y enlace oficial verificados por Ofertas Gamer CO.",
                         f"""<article class="detail">
-<div class="detail-media">{img}<span class="badge{' free' if free else ''}">{'GRATIS' if free else '-' + str(o.get('discountPercentage') or 0) + '%'}</span></div>
-<div class="detail-info"><p class="eyebrow">{e(o['store'])}</p>
+<div class="detail-media">{img}{self.badge(o)}</div>
+<div class="detail-info">{self.store_chip(o)}
 <h1>{e(o['title'])}</h1>
-<p class="s-price detail-price">{price}{old}</p>{cop}
-<p class="meta"><span class="status">{e(o['status'])}</span> · {e(until)}</p>
-<p class="meta">Región: {e(region_text(o))} · Verificado: {e(date_es(o['verifiedAt']))}</p>
-<div class="cta">{btn}<a class="btn" href="ofertas.html">Ver más ofertas</a></div>
+{self.price_html(o, big=True)}
+{self.countdown(o)}{f'<p class="meta">{e(until)}</p>' if until else ''}
+{self.trust_chips(o, full=True)}
+<div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a></div>
+{search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
 {notice}</div></article>""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
 
@@ -466,15 +585,6 @@ class Site:
                 "".join(self.release_card(g, now, compact=False) for g in upcoming) +
                 '</ul><p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
 
-    def ticker(self, offers):
-        if not offers:
-            return ""
-        items = "".join(
-            f'<li><span class="t-badge">{"GRATIS" if o.get("currentPrice") == 0 else "-" + str(o.get("discountPercentage") or 0) + "%"}</span>{e(o["title"])}</li>'
-            for o in offers[:12])
-        return (f'<div class="ticker" aria-label="Destacados de hoy"><ul class="ticker-track">{items}</ul>'
-                f'<ul class="ticker-track" aria-hidden="true">{items}</ul></div>')
-
     def item_list_ld(self, offers):
         return {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": o["title"], "url": o["officialUrl"]}
@@ -489,16 +599,21 @@ class Site:
                 shutil.rmtree(child) if child.is_dir() else child.unlink()
         self.out.mkdir(parents=True, exist_ok=True)
         shutil.copytree(ASSETS, self.out / "assets")
-        updated = updated_dt.strftime("%d/%m/%Y %H:%M UTC")
+        self.now = updated_dt
+        updated = co_time(updated_dt)
         live = [o for o in offers if o["status"] != "Vencido"]
+        rates = sorted(o["copApproximation"] / o["currentPrice"] for o in live
+                       if o.get("copApproximation") and o.get("currentPrice") and o["currency"] == "USD")
+        self.rate = rates[len(rates) // 2] if rates else None
         self.assign_pages(live, games or [])
         free = [o for o in live if o.get("currentPrice") == 0]
         deals = [o for o in live if o.get("currentPrice")]
         soon = sorted([o for o in live if o.get("expiresAt")], key=lambda o: o["expiresAt"])[:6]
-        top = sorted(deals, key=lambda o: -(o.get("discountPercentage") or 0))[:6]
+        top = sorted(deals, key=lambda o: (-("CO" in (o.get("regions") or [])), -(o.get("metacritic") or 0) // 10,
+                                           -(o.get("discountPercentage") or 0)))[:12]
         notice = ('<p class="notice">Los precios y promociones pueden haber cambiado desde la última verificación. '
                   'Confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>')
-        updated_line = f'<p class="meta">Última actualización: <time datetime="{updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ")}">{updated}</time> · se actualiza cada {self.cfg["intervalo_horas"]} horas</p>'
+        updated_line = f'<p class="meta">Actualizado el <time datetime="{updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ")}">{updated}</time> · se revisa cada {self.cfg["intervalo_horas"]} horas</p>'
 
         guides_html = '<ul class="stores">' + "".join(
             f'<li><a href="{g["slug"]}.html"><strong>{e(g["title"])}</strong></a><p class="meta">{e(g["description"])}</p></li>'
@@ -518,39 +633,30 @@ class Site:
 
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
-                    f"""{self.slider(free + top)}
-<section class="hero">
-<p class="eyebrow">Juegos de PC · Colombia y Latinoamérica</p>
-<h1>Juegos <span class="grad">gratis</span> y ofertas de PC en tiendas oficiales</h1>
-<p class="lead">Ofertas Gamer CO reúne juegos gratuitos y descuentos verificados de tiendas oficiales para Colombia y Latinoamérica. Te mostramos la tienda, el precio, la vigencia y el enlace, y tú compras directamente en la tienda.</p>
-{self.channels_cta()}
-<ul class="stats">
-<li><strong data-count="{len(free)}">{len(free)}</strong><span>juegos gratis ahora</span></li>
+                    f"""<section class="hero compact">
+<p class="eyebrow">Radar de ofertas gamer · Colombia</p>
+<h1>Juegos <span class="grad">gratis</span> y ofertas de PC, verificados</h1>
+<ul class="stats mini">
+<li><strong data-count="{len(free)}">{len(free)}</strong><span>gratis ahora</span></li>
 <li><strong data-count="{len(deals)}">{len(deals)}</strong><span>ofertas activas</span></li>
-<li><strong data-count="{len({o['storeId'] for o in live})}">{len({o['storeId'] for o in live})}</strong><span>tiendas oficiales</span></li>
 <li><strong data-count="{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}" data-suffix="%">{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}%</strong><span>mayor descuento</span></li>
 </ul>
 {updated_line}
 </section>
-{self.ticker(free + top)}
+{self.feature(free + top)}
+{self.soon_strip(live)}
+{self.quick_search()}
 {self.ad_slot("banner_after_hero")}
-{notice}
-<h2>Juegos gratis disponibles</h2>
-{self.offer_list(free, with_filters=False, list_id="free-home") if free else '<p>No hay juegos gratis activos en este momento.</p>'}
-<h2>Mejores descuentos</h2>
+<h2>{ICONS['gift']} Gratis esta semana</h2>
+{self.offer_list(free[:8], with_filters=False, list_id="free-home") if free else '<p>No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
+{f'<p><a class="btn" href="juegos-gratis.html">Ver los {len(free)} juegos gratis</a></p>' if len(free) > 8 else ''}
+<h2>{ICONS['flame']} Mejores ofertas verificadas</h2>
 {self.offer_list(top, with_filters=False, list_id="top-home")}
-{'<h2>Próximas a vencer</h2>' + self.offer_list(soon, with_filters=False, list_id="soon-home") if soon else ''}
+<p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
 {self.upcoming_home(games or [], updated_dt)}
-<h2>Buscar entre las mejores ofertas</h2>
-{self.offer_list(live[:60])}
-{f'<p><a class="btn btn-primary" href="ofertas.html">Ver las {len(deals)} ofertas</a></p>' if len(live) > 60 else ''}
-<h2>Tiendas</h2>
-{stores_html}
-<p><a href="tiendas.html">Ver detalles de las tiendas</a></p>
-<h2>Guías recientes</h2>
-{guides_html}
-<h2>Preguntas frecuentes</h2>
-{faq_short}""", jsonld=[org, website, self.item_list_ld(live)])
+{self.how_we_verify()}
+<section class="channels"><h2>{ICONS['bell']} Recibe las ofertas al instante</h2><p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky cada 4 horas.</p>{self.channels_cta()}</section>
+<p class="meta small-notice">Los precios pueden cambiar en cualquier momento: confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>""", jsonld=[org, website, self.item_list_ld(live)])
 
         self.layout("juegos-gratis.html", "Juegos gratis para PC hoy",
                     "Juegos gratuitos para PC disponibles ahora en tiendas oficiales como Epic Games Store, con la fecha en que termina cada promoción.",
@@ -559,8 +665,14 @@ class Site:
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
                     "Descuentos de juegos de PC en Steam, GOG, Humble Store, Green Man Gaming, Fanatical y Epic, con precio original, precio actual y porcentaje de descuento.",
-                    f"<h1>Ofertas y descuentos</h1><p class=\"lead\">Descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en juegos con buena crítica, en tiendas oficiales.</p>{updated_line}{notice}{self.offer_list(deals)}",
-                    crumbs=[("ofertas.html", "Ofertas")], jsonld=[self.item_list_ld(deals)])
+                    f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}",
+                    crumbs=[("ofertas.html", "Ofertas")], jsonld=[self.item_list_ld(free + deals)])
+        self.layout("favoritos.html", "Mis favoritos",
+                    "Las ofertas que guardaste con la estrella. Se guardan solo en este navegador.",
+                    '<h1>Mis favoritos</h1><p class="lead">Las ofertas que guardaste con la estrella ★. Se guardan solo en este navegador, sin cuenta.</p>'
+                    '<div id="fav-root" data-src="data/offers.json"><p class="notice">Activa JavaScript para ver tus favoritos.</p></div>'
+                    '<p><a class="btn btn-primary" href="ofertas.html">Buscar más ofertas</a></p>',
+                    crumbs=[("favoritos.html", "Mis favoritos")], noindex=True)
 
         rows = "".join(
             f"<tr><td>{e(s['name'])}</td><td>{', '.join(e(d) for d in s['domains'])}</td>"
@@ -620,7 +732,8 @@ class Site:
             self.write("BingSiteAuth.xml", f'<?xml version="1.0"?>\n<users>\n\t<user>{e(self.cfg["verificacion_bing"])}</user>\n</users>\n')
         shutil.copy(ROOT / "config" / "_headers", self.out / "_headers")
         (self.out / "data").mkdir(exist_ok=True)
-        public = [{k: o[k] for k in o if k != "telegramPublishedAt"} for o in live]
+        public = [dict({k: o[k] for k in o if k != "telegramPublishedAt"}, page=self.detail.get(o["id"]),
+                       action=self.action_label(o), saving=self.saving_text(o)) for o in live]
         self.write("data/offers.json", json.dumps({"updatedAt": updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                                    "offers": public}, ensure_ascii=False, indent=1))
 
