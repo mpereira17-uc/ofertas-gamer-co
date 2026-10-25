@@ -13,6 +13,24 @@
   // Antes había un tema claro: se borra la preferencia vieja para que todos vean el diseño propio.
   try { localStorage.removeItem("ogc-theme"); } catch (e) { /* sin almacenamiento */ }
 
+  // Opciones de lectura: letra grande, alto contraste y ahorro de datos (se guardan en este navegador)
+  var PREFS = ["big", "contrast", "lite"];
+  var prefs = {};
+  try { prefs = JSON.parse(store("ogc-prefs") || "{}") || {}; } catch (e) { prefs = {}; }
+  PREFS.forEach(function (k) { document.documentElement.classList.toggle("pref-" + k, !!prefs[k]); });
+  document.querySelectorAll("[data-pref]").forEach(function (btn) {
+    var k = btn.getAttribute("data-pref");
+    btn.hidden = false;
+    btn.setAttribute("aria-pressed", prefs[k] ? "true" : "false");
+    btn.addEventListener("click", function () {
+      prefs[k] = !prefs[k];
+      document.documentElement.classList.toggle("pref-" + k, prefs[k]);
+      btn.setAttribute("aria-pressed", prefs[k] ? "true" : "false");
+      store("ogc-prefs", JSON.stringify(prefs));
+      if (k === "lite" && prefs[k]) { var c = document.querySelector(".bg-particles"); if (c) c.remove(); }
+    });
+  });
+
   // Menú móvil
   var menuBtn = document.getElementById("menu-toggle");
   var nav = document.getElementById("main-nav");
@@ -249,6 +267,78 @@
     });
   }
 
+  // Buscador de todo el sitio (ofertas + lanzamientos) y página "Mis seguidos"
+  var norm = function (t) { return String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); };
+  // "gta" encuentra "Grand Theft Auto VI": también se busca por las iniciales de las palabras
+  var initials = function (t) { return norm(t).split(/[^a-z0-9]+/).filter(Boolean).map(function (w) { return w[0]; }).join(""); };
+  var row = function (item) {
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.className = "srow"; a.href = item.page || item.url || "#";
+    var img = document.createElement("img");
+    img.src = /^https:\/\//.test(item.image || "") ? item.image : "assets/placeholder.svg";
+    img.alt = ""; img.loading = "lazy"; img.width = 120; img.height = 56;
+    var box = document.createElement("span"), t = document.createElement("strong"), m = document.createElement("span");
+    t.textContent = item.title; m.className = "meta"; m.textContent = item.meta || "";
+    box.appendChild(t); box.appendChild(m); a.appendChild(img); a.appendChild(box); li.appendChild(a);
+    return li;
+  };
+  var siteData = null;
+  var loadSite = function () {
+    if (siteData) return Promise.resolve(siteData);
+    return Promise.all([fetch("data/offers.json").then(function (r) { return r.json(); }),
+      fetch("data/juegos.json").then(function (r) { return r.json(); })]).then(function (d) {
+      var offers = (d[0].offers || []).map(function (o) {
+        return { title: o.title, page: o.page, image: o.image, k: norm(o.title) + " " + initials(o.title),
+          meta: (o.currentPrice === 0 ? "Gratis" : "-" + (o.discountPercentage || 0) + "%") + " · " + o.store };
+      });
+      var games = (d[1].games || []).map(function (g) {
+        return { id: g.id, title: g.title, page: g.page, image: g.image, k: norm(g.title) + " " + initials(g.title), meta: "Lanzamiento · " + (g.when || "") };
+      });
+      siteData = { offers: offers, games: games };
+      return siteData;
+    });
+  };
+  var sRoot = document.getElementById("search-root");
+  if (sRoot && window.fetch) {
+    sRoot.hidden = false;
+    var sInput = document.getElementById("site-q"), sOut = document.getElementById("search-out");
+    var run = function () {
+      var q = norm(sInput.value).trim();
+      loadSite().then(function (d) {
+        sOut.textContent = "";
+        if (q.length < 2) return;
+        [["Ofertas", d.offers], ["Lanzamientos", d.games]].forEach(function (pair) {
+          var hits = pair[1].filter(function (x) { return x.k.indexOf(q) >= 0; }).slice(0, 30);
+          var h = document.createElement("h2"); h.textContent = pair[0] + " (" + hits.length + ")";
+          sOut.appendChild(h);
+          var ul = document.createElement("ul"); ul.className = "srows";
+          hits.forEach(function (x) { ul.appendChild(row(x)); });
+          sOut.appendChild(ul);
+        });
+      });
+    };
+    var q0 = new URLSearchParams(location.search).get("q");
+    if (q0) sInput.value = q0.slice(0, 80);
+    sInput.addEventListener("input", run);
+    run();
+  }
+  var fRoot = document.getElementById("follow-root");
+  if (fRoot && window.fetch) {
+    var ids = [];
+    try { ids = JSON.parse(store("ogc-follow") || "[]"); } catch (e) { ids = []; }
+    loadSite().then(function (d) {
+      var mine = d.games.filter(function (g) { return ids.indexOf(g.id) >= 0; });
+      fRoot.textContent = "";
+      if (!mine.length) {
+        var p = document.createElement("p"); p.textContent = "Todavía no sigues ningún juego. Toca la campana de un lanzamiento para seguirlo.";
+        fRoot.appendChild(p); return;
+      }
+      var ul = document.createElement("ul"); ul.className = "srows";
+      mine.forEach(function (g) { ul.appendChild(row(g)); });
+      fRoot.appendChild(ul);
+    });
+  }
+
   // Página "Mis favoritos": arma las tarjetas con los datos públicos de las ofertas
   var favRoot = document.getElementById("fav-root");
   if (favRoot && window.fetch) {
@@ -426,7 +516,7 @@
     });
   }
   // ---------- Efectos visuales (se apagan si el usuario prefiere menos movimiento) ----------
-  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches || !!prefs.lite;
   var root = document.documentElement;
 
   // Barra de progreso y cabecera al bajar
