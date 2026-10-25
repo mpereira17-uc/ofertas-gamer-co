@@ -6,6 +6,7 @@ import json
 import shutil
 from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
+from urllib.parse import quote
 from pathlib import Path
 
 from .channels import CO_TZ, co_time, cop_text, date_es, money, time_left, whatsapp_text
@@ -669,6 +670,25 @@ class Site:
                 ld["image"] = g["image"]
             if g.get("precision") == "day":
                 ld["datePublished"] = g["date"]
+            faq = self.game_faq(g, when)
+            faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+                {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+            faq_html = ('<section class="faq game-faq"><h2>Preguntas sobre ' + e(g["title"]) + '</h2>'
+                        + "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq) + "</section>")
+            launch = ""
+            if g.get("precision") == "day" and g["date"] >= now.astimezone(CO_TZ).strftime("%Y-%m-%d"):
+                start = g["date"] + "T05:00:00Z"  # medianoche en Colombia
+                gcal = ("https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + quote(f"Sale {g['title']}")
+                        + f"&dates={g['date'].replace('-', '')}/{(datetime.strptime(g['date'], '%Y-%m-%d') + timedelta(days=1)).strftime('%Y%m%d')}"
+                        + "&details=" + quote(self.base + name))
+                launch = (f'<div class="launch" data-launch="{start}" hidden><span class="launch-label">Faltan</span>'
+                          f'<span class="launch-num" data-u="d">0</span><small>días</small><span class="launch-num" data-u="h">0</span><small>h</small>'
+                          f'<span class="launch-num" data-u="m">0</span><small>min</small><span class="launch-num" data-u="s">0</span><small>s</small></div>'
+                          + ext_link(gcal, f"{ICONS['calendar']} Agregar a Google Calendar", cls="btn btn-sm", label=f"Agregar el lanzamiento de {g['title']} a Google Calendar"))
+            moved = ""
+            if (g.get("dateChanged") or {}).get("from"):
+                ch = g["dateChanged"]
+                moved = f'<p class="notice moved">📆 <strong>Cambió la fecha.</strong> Antes: {e(date_label(ch["from"], ch.get("fromPrecision")))}. Ahora: {e(when)}.</p>'
             self.layout(name, f"{g['title']}: fecha de lanzamiento" + ("" if consoles else " en PC"),
                         f"Fecha de lanzamiento de {g['title']} ({', '.join(g.get('platforms', []))}): {when}. Plataformas, géneros y enlace.",
                         f"""<article class="detail">
@@ -676,12 +696,33 @@ class Site:
 <div class="detail-info"><p class="eyebrow">Lanzamiento{" en Steam" if src == "Steam" else ""}</p>
 <h1>{e(g['title'])}</h1>
 <p class="detail-date">📅 {e(when)}</p>
+{launch}{moved}
 <div class="tags">{tags}</div>
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
-<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
-                        crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld], og_image=g.get("image"))
+<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{faq_html}""",
+                        crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld, faq_ld], og_image=g.get("image"))
+
+    def game_faq(self, g, when):
+        """Preguntas frecuentes de un juego, respondidas solo con los datos que tenemos."""
+        t = g["title"]
+        plats = g.get("platforms", [])
+        names = {"Windows": "PC (Windows)", "PlayStation": "PlayStation", "Xbox": "Xbox", "Switch": "Nintendo Switch", "Mac": "Mac", "Linux": "Linux"}
+        nice = [names.get(p, p) for p in plats]
+        src = "Steam" if g.get("source") != "wikidata" or g.get("store") == "Steam" else "Wikipedia"
+        out = [(f"¿Cuándo sale {t}?", (f"La fecha publicada es: {when}. " if g.get("date") else "Todavía no tiene una fecha exacta confirmada. ")
+                + f"Dato de {src}; las fechas pueden cambiar y aquí se actualizan cada 4 horas.")]
+        if nice:
+            out.append((f"¿En qué plataformas sale {t}?", f"Según los datos publicados: {', '.join(nice)}."))
+            out.append((f"¿{t} sale en PC?", "Sí, aparece para PC (Windows)." if "Windows" in plats else
+                        "Por ahora no aparece una versión para PC en los datos publicados. Si se anuncia, se verá aquí."))
+        if g.get("genres"):
+            out.append((f"¿Qué tipo de juego es {t}?", f"Es un juego de {', '.join(x.lower() for x in g['genres'])}."))
+        t2 = g.get("trailer") or {}
+        if t2 or g.get("youtube"):
+            out.append((f"¿Dónde veo el tráiler de {t}?", "Arriba en esta página: toca el botón de play sobre la imagen."))
+        return out
 
     # ---------- calendario de lanzamientos ----------
     @staticmethod
@@ -825,12 +866,21 @@ class Site:
 {updated_line}</div></div>
 {self.spotlight(games, now)}
 {self.anticipated(games, now)}
+{self.calendar_links()}
 <h2 class="all-rel">Calendario completo</h2>
 {toolbar}
 <p class="count" id="rel-count" aria-live="polite">{len(games)} juegos</p>
 <div id="rel-list">{body or '<p class="notice">Todavía no hay lanzamientos cargados. Vuelve en unas horas.</p>'}</div>
 <p class="notice" id="rel-empty" hidden>No hay juegos con estos filtros. Prueba con «Todo» o quita algún filtro.</p>{credit}""",
                     crumbs=[("lanzamientos.html", "Lanzamientos")], jsonld=[ld])
+
+    def today_releases(self, games, now):
+        today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        hoy = sorted([g for g in games if g.get("precision") == "day" and g.get("date") == today], key=self.rank)[:8]
+        if not hoy:
+            return ""
+        return (f'<section class="today-rel"><h2>{ICONS["sparkle"]} Salen hoy</h2><ul class="spot-grid small">'
+                + "".join(self.spot_card(g, now) for g in hoy) + "</ul></section>")
 
     def upcoming_home(self, games, now):
         limit = (now + timedelta(days=30)).strftime("%Y-%m-%d")
@@ -970,6 +1020,109 @@ class Site:
                         f"Calendario de próximos juegos para {label}: fechas de lanzamiento, géneros y tráileres.",
                         body, crumbs=[("lanzamientos.html", "Lanzamientos"), (name, label)])
 
+    def release_extra_pages(self, games, now, updated_line):
+        """Páginas por mes, por año y por género, y el calendario para el celular (.ics). Solo fechas publicadas."""
+        from .model import slugify
+        today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        links = []
+        # por mes: el mes actual y los 5 siguientes
+        y, m = int(today[:4]), int(today[5:7])
+        for i in range(6):
+            yy, mm = y + (m - 1 + i) // 12, (m - 1 + i) % 12 + 1
+            key = f"{yy}-{mm:02d}"
+            mine = [g for g in games if (g.get("date") or "")[:7] == key]
+            if not mine:
+                continue
+            month = MONTHS_ES[mm - 1]
+            name = f"juegos-que-salen-en-{month}-{yy}.html"
+            links.append((name, f"{month.capitalize()} {yy}", len(mine)))
+            dated = sorted([g for g in mine if g.get("precision") == "day"], key=lambda g: (g["date"], self.rank(g)))
+            undated = sorted([g for g in mine if g.get("precision") != "day"], key=self.rank)
+            top = sorted(mine, key=self.rank)[:8]
+            spot = (f'<section class="spot"><div class="sec-head"><h2>{ICONS["flame"]} Los más esperados de {e(month)}</h2></div>'
+                    f'<ul class="spot-grid small">{"".join(self.spot_card(g, now) for g in top)}</ul></section>')
+            body = (f'<h1>Juegos que salen en {e(month)} de {yy}</h1><p class="lead">{len(mine)} lanzamientos de PC y consolas en {e(month)}, '
+                    f'día por día, con tráiler cuando lo hay. Las fechas son las que publican las tiendas y Wikipedia, y pueden cambiar.</p>'
+                    f'{updated_line}{spot}' + self.release_groups(dated, now, f"Calendario de {month}", f"cal-{key}", compact=False)
+                    + self.release_groups(undated, now, f"En {month}, día por confirmar", f"mes-{key}", compact=False)
+                    + '<p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
+            self.layout(name, f"Juegos que salen en {month} de {yy}: lanzamientos de PC y consolas",
+                        f"Todos los juegos que salen en {month} de {yy} para PC, PlayStation, Xbox y Nintendo Switch: fechas, tráileres y los más esperados.",
+                        body, crumbs=[("lanzamientos.html", "Lanzamientos"), (name, f"{month.capitalize()} {yy}")],
+                        jsonld=[self.games_list_ld(top)])
+        # por año: los más esperados de este año y del siguiente
+        for yy in (y, y + 1):
+            mine = [g for g in games if (g.get("date") or "")[:4] == str(yy) or (not g.get("date") and str(yy) in (g.get("releaseText") or ""))]
+            mine = [g for g in mine if (g.get("date") or "9999") >= today]
+            if len(mine) < 4:
+                continue
+            name = f"juegos-mas-esperados-{yy}.html"
+            links.append((name, f"Más esperados de {yy}", len(mine)))
+            top = sorted(mine, key=self.rank)[:40]
+            self.layout(name, f"Los juegos más esperados de {yy} (PC y consolas)",
+                        f"Los juegos más esperados que salen en {yy}: GTA, Nintendo, PlayStation, Xbox y PC, con fecha y tráiler.",
+                        f'<h1>Los juegos más esperados de {yy}</h1><p class="lead">Ordenados por cuánta gente los espera (listas de deseos de Steam '
+                        f'y cuántas Wikipedias hablan de ellos). Con fecha, plataformas y tráiler.</p>{updated_line}'
+                        f'<ul class="spot-grid">{"".join(self.spot_card(g, now, main=(i == 0)) for i, g in enumerate(top))}</ul>'
+                        '<p><a class="btn" href="lanzamientos.html">Ver el calendario día por día</a></p>',
+                        crumbs=[("lanzamientos.html", "Lanzamientos"), (name, f"Más esperados {yy}")], jsonld=[self.games_list_ld(top)])
+        # por género
+        upcoming = [g for g in games if g.get("comingSoon") or (g.get("date") or "") >= today]
+        counts = {}
+        for g in upcoming:
+            for gen in g.get("genres", []):
+                counts[gen] = counts.get(gen, 0) + 1
+        for gen, n in sorted(counts.items(), key=lambda kv: -kv[1]):
+            name = f"lanzamientos-{slugify(gen)}.html"
+            if n < 6 or name in self.pages:
+                continue
+            mine = [g for g in upcoming if gen in g.get("genres", [])]
+            links.append((name, gen, n))
+            dated = sorted([g for g in mine if g.get("date")], key=lambda g: (g["date"], self.rank(g)))
+            tba = sorted([g for g in mine if not g.get("date")], key=self.rank)
+            self.layout(name, f"Próximos juegos de {gen.lower()}: calendario de lanzamientos",
+                        f"Los próximos juegos de {gen.lower()} para PC y consolas: fechas de lanzamiento, tráileres y los más esperados.",
+                        f'<h1>Próximos juegos de {e(gen.lower())}</h1><p class="lead">{n} juegos de {e(gen.lower())} que vienen, del más cercano al más lejano.</p>'
+                        f'{updated_line}' + self.release_groups(dated, now, "Calendario", "cal-gen", compact=False)
+                        + self.release_groups(tba, now, "Fecha por confirmar", "tba-gen", compact=False),
+                        crumbs=[("lanzamientos.html", "Lanzamientos"), (name, gen)])
+        self.release_links = links
+        self.calendar_ics(games, now)
+
+    def games_list_ld(self, games):
+        return {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": g["title"], "url": self.base + self.detail[g["id"]]}
+            for i, g in enumerate(games[:30]) if g["id"] in self.detail]}
+
+    def calendar_ics(self, games, now):
+        """calendario.ics: los próximos lanzamientos con día exacto, para suscribirse desde Google Calendar o el celular."""
+        today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        esc = lambda t: t.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;").replace("\n", " ")
+        stamp = now.strftime("%Y%m%dT%H%M%SZ")
+        events = []
+        for g in sorted((g for g in games if g.get("precision") == "day" and g.get("date", "") >= today), key=lambda g: g["date"])[:300]:
+            d = g["date"].replace("-", "")
+            nxt = (datetime.strptime(g["date"], "%Y-%m-%d") + timedelta(days=1)).strftime("%Y%m%d")
+            url = self.base + self.detail.get(g["id"], "lanzamientos.html")
+            plats = ", ".join(g.get("platforms", []))
+            events.append("\r\n".join([
+                "BEGIN:VEVENT", f"UID:{g['id']}@ofertas-gamer-co", f"DTSTAMP:{stamp}", f"DTSTART;VALUE=DATE:{d}", f"DTEND;VALUE=DATE:{nxt}",
+                f"SUMMARY:{esc('🎮 Sale ' + g['title'])}", f"DESCRIPTION:{esc((plats + '. ' if plats else '') + 'La fecha puede cambiar. ' + url)}",
+                f"URL:{url}", "TRANSP:TRANSPARENT", "END:VEVENT"]))
+        self.write("calendario.ics", "\r\n".join(["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Ofertas Gamer CO//Lanzamientos//ES",
+                                                   "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "X-WR-CALNAME:Lanzamientos de juegos (Ofertas Gamer CO)",
+                                                   "X-WR-TIMEZONE:America/Bogota", "REFRESH-INTERVAL;VALUE=DURATION:PT12H"] + events + ["END:VCALENDAR"]) + "\r\n")
+
+    def calendar_links(self):
+        links = getattr(self, "release_links", [])
+        chips = "".join(f'<a class="chip" href="{n}">{e(label)} <span class="meta">({c})</span></a>' for n, label, c in links)
+        webcal = self.base.replace("https://", "webcal://") + "calendario.ics"
+        return (f'<section class="cal-links"><h2>{ICONS["calendar"]} Explora el calendario</h2><nav class="chips" aria-label="Calendario por mes, año y género">{chips}</nav>'
+                f'<div class="cta"><a class="btn" href="{e(webcal)}">{ICONS["calendar"]} Agregar a mi calendario</a>'
+                f'<a class="btn" href="calendario.ics" download>Descargar .ics</a></div>'
+                f'<p class="meta">Con «Agregar a mi calendario» los estrenos aparecen solos en el calendario de tu celular o en Google Calendar '
+                f'(en Google: Otros calendarios → Desde URL → pega <code>{e(self.base)}calendario.ics</code>).</p></section>')
+
     def alerts_page(self):
         bot = getattr(self, "bot", "")
         start = (ext_link(f"https://t.me/{bot}?start=ayuda", f"{ICONS['bell']} Abrir el bot de alertas", cls="btn btn-primary",
@@ -1108,6 +1261,7 @@ class Site:
 <h2>{ICONS['flame']} Mejores ofertas verificadas</h2>
 {self.offer_list(top, with_filters=False, list_id="top-home")}
 <p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
+{self.today_releases(games or [], updated_dt)}
 {self.upcoming_home(games or [], updated_dt)}
 {self.how_we_verify()}
 <section class="channels"><h2>{ICONS['bell']} Recibe las ofertas al instante</h2><p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky cada 4 horas.</p>{self.channels_cta()}</section>
@@ -1165,6 +1319,7 @@ class Site:
                     + f'{notice}<p><a class="btn" href="ofertas.html">Ver todas las ofertas</a></p>',
                     crumbs=[("oferta-del-dia.html", "Oferta del día")])
 
+        self.release_extra_pages(games or [], updated_dt, updated_line)
         self.releases_page(games or [], updated_dt, updated_line)
         self.collection_pages(live, games or [], updated_dt, updated_line, notice)
         self.f2p_page(getattr(self, "f2p", []), updated_line)

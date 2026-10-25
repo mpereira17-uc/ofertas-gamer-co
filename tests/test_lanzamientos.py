@@ -64,3 +64,19 @@ class TestLanzamientos(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCambioDeFecha(unittest.TestCase):
+    def test_marca_el_retraso_y_lo_olvida(self):
+        from datetime import datetime, timedelta, timezone
+        from ogc.releases import mark_date_changes
+        now = datetime(2026, 10, 25, tzinfo=timezone.utc)
+        old = [{"id": "a", "date": "2026-11-01", "precision": "day"}, {"id": "b", "date": "2026-12-01", "precision": "day"}]
+        new = [{"id": "a", "date": "2027-02-01", "precision": "day"}, {"id": "b", "date": "2026-12-01", "precision": "day"}]
+        out = mark_date_changes(new, old, now)
+        self.assertEqual(out[0]["dateChanged"]["from"], "2026-11-01")
+        self.assertNotIn("dateChanged", out[1])
+        later = mark_date_changes([dict(new[0])], out, now + timedelta(days=10))
+        self.assertEqual(later[0]["dateChanged"]["from"], "2026-11-01")  # se mantiene unas semanas
+        gone = mark_date_changes([dict(new[0])], out, now + timedelta(days=60))
+        self.assertNotIn("dateChanged", gone[0])

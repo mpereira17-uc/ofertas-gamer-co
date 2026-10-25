@@ -217,6 +217,24 @@ def steam_releases(now, fetch, previous=()):
     return games
 
 
+def mark_date_changes(games, previous, now, keep_days=45):
+    """Marca los juegos cuya fecha publicada cambió (retrasos o adelantos). La marca dura unas semanas."""
+    old = {g["id"]: g for g in previous}
+    cutoff = iso(now - timedelta(days=keep_days))
+    out = []
+    for g in games:
+        prev = old.get(g["id"]) or {}
+        change = prev.get("dateChanged")
+        if prev and prev.get("date") and g.get("date") != prev.get("date"):
+            change = {"from": prev["date"], "fromPrecision": prev.get("precision"), "at": iso(now)}
+        if change and (change.get("at") or "") >= cutoff and change.get("from") != g.get("date"):
+            g = dict(g, dateChanged=change)
+        else:
+            g = {k: v for k, v in g.items() if k != "dateChanged"}
+        out.append(g)
+    return out
+
+
 def update(previous, now, fetch):
     """Devuelve (juegos, estado). Si Steam falla se conserva la última versión válida."""
     try:

@@ -142,6 +142,7 @@ def run(args):
     previous_releases = load_json(RELEASES_FILE, {}).get("games", [])
     games, status["Fuente lanzamientos (Steam)"] = releases.update(previous_releases, now, sources.get_json)
     games, status["Fuente juegos grandes y de consola (Wikidata)"] = wikidata.add_consoles(games, previous_releases, now, sources.get_json)
+    games = releases.mark_date_changes(games, previous_releases, now)
     save_json(RELEASES_FILE, {"updatedAt": iso(now), "games": games})
     f2p, status["Fuente gratis para siempre (Steam)"] = releases.free_to_play(sources.get_json, load_json(F2P_FILE, {}).get("games", []))
     save_json(F2P_FILE, {"updatedAt": iso(now), "games": f2p})

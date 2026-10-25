@@ -97,7 +97,7 @@ def main():
                     errors.append(f"{name}: enlace externo sin noopener noreferrer: {href}")
                 if href.startswith("http://"):
                     errors.append(f"{name}: enlace inseguro {href}")
-            elif not href.startswith(("#", "mailto:")):
+            elif not href.startswith(("#", "mailto:", "webcal://")):
                 target = DOCS / href.split("#")[0].split("?")[0]
                 if not target.exists():
                     errors.append(f"{name}: enlace interno roto {href}")
