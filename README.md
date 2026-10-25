@@ -2,7 +2,7 @@
 
 Juegos gratis y ofertas de PC de tiendas oficiales para Colombia y Latinoamérica.
 
-- Sitio: https://mpereira17-uc.github.io/ofertas-gamer-co/
+- Sitio: https://ofertas-gamer-co.pages.dev/
 - Telegram: https://t.me/ofertasgamerco
 
 ## Cómo funciona
