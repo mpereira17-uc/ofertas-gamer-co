@@ -17,6 +17,7 @@ import urllib.parse
 import urllib.request
 
 API = "https://api.tumblr.com/v2/blog/{blog}/posts"
+LAST_ERROR = ""
 KEYS = ("TUMBLR_CONSUMER_KEY", "TUMBLR_CONSUMER_SECRET", "TUMBLR_TOKEN", "TUMBLR_TOKEN_SECRET")
 
 
@@ -75,6 +76,15 @@ def post(text, link, title, description, image=None, tags=("videojuegos", "ofert
         with urllib.request.urlopen(req, timeout=30) as resp:
             return 200 <= resp.status < 300
     except Exception as exc:  # nunca imprimir claves
+        global LAST_ERROR
         code = getattr(exc, "code", "")
-        print(f"Tumblr falló con '{title}': {type(exc).__name__} {code}", file=sys.stderr)
+        detail = ""
+        try:  # el mensaje de error de Tumblr no lleva claves
+            body = json.loads(exc.read())
+            detail = "; ".join(str(e.get("detail") or e.get("title") or "") for e in body.get("errors", []))[:200] \
+                or str(body.get("meta", {}).get("msg", ""))[:100]
+        except Exception:
+            pass
+        LAST_ERROR = f"{type(exc).__name__} {code} {detail}".strip()
+        print(f"Tumblr falló con '{title}': {LAST_ERROR}", file=sys.stderr)
         return False
