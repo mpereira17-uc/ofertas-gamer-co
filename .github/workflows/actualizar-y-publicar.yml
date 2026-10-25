@@ -44,6 +44,11 @@ jobs:
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           MASTODON_URL: ${{ vars.MASTODON_URL || secrets.MASTODON_URL }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          TUMBLR_BLOG: ${{ vars.TUMBLR_BLOG }}
+          TUMBLR_CONSUMER_KEY: ${{ secrets.TUMBLR_CONSUMER_KEY }}
+          TUMBLR_CONSUMER_SECRET: ${{ secrets.TUMBLR_CONSUMER_SECRET }}
+          TUMBLR_TOKEN: ${{ secrets.TUMBLR_TOKEN }}
+          TUMBLR_TOKEN_SECRET: ${{ secrets.TUMBLR_TOKEN_SECRET }}
           FANATICAL_AFFILIATE_URL: ${{ vars.FANATICAL_AFFILIATE_URL }}
           GMG_AFFILIATE_URL: ${{ vars.GMG_AFFILIATE_URL }}
       - name: Comprobaciones críticas del sitio

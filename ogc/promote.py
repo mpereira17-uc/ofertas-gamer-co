@@ -3,6 +3,7 @@
 - IndexNow: avisa a Bing, Yandex y otros buscadores de las páginas nuevas (no necesita cuenta).
 - Bluesky: publica con la API oficial (AT Protocol) si existen BLUESKY_HANDLE y BLUESKY_APP_PASSWORD.
 - Mastodon: publica con la API oficial si existen MASTODON_URL y MASTODON_TOKEN.
+- Tumblr: publica con la API oficial (ver ogc/tumblr.py) si existen TUMBLR_BLOG y sus cuatro secretos.
 
 Sin los secretos no se publica nada. Nunca se imprimen tokens ni contraseñas.
 """
@@ -14,6 +15,7 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+from . import tumblr
 from .channels import price_line
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
@@ -105,6 +107,12 @@ def bluesky_post(text, link, title, description, image=None):
 def send_bluesky(offer, page_url):
     text, link = post_text(offer, page_url)
     return bluesky_post(text, link, offer["title"], price_line(offer), offer.get("image"))
+
+
+def send_tumblr(offer, page_url):
+    text, link = post_text(offer, page_url)
+    text = text.split("#")[0]  # en Tumblr las etiquetas van aparte
+    return tumblr.post(text, link, offer["title"], price_line(offer), offer.get("image"))
 
 
 def send_mastodon(offer, page_url):
