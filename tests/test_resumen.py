@@ -35,6 +35,8 @@ class TestResumen(unittest.TestCase):
         self.assertIn("Gratis &lt;b&gt;", text)
         self.assertNotIn("Gratis <b>", text)
         self.assertEqual(weekly.page_name(snap), "resumen-2026-s44.html")
+        self.assertNotIn("Ko-fi", text)
+        self.assertIn("ko-fi.com/x", weekly.telegram_text(snap, "https://sitio/r.html", "https://ko-fi.com/x"))
 
     def test_publica_en_cada_red(self):
         snap = weekly.snapshot(FRI_10AM_CO, *weekly.pick(OFFERS, GAMES, FRI_10AM_CO))

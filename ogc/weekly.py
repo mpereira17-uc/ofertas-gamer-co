@@ -57,7 +57,7 @@ def page_name(snap):
     return f"resumen-{snap['week'].lower()}.html"
 
 
-def telegram_text(snap, link):
+def telegram_text(snap, link, support=None):
     e = html.escape
     lines = [f"<b>🗓️ Resumen semanal · {e(snap['label'])}</b>", ""]
     if snap["free"]:
@@ -73,6 +73,8 @@ def telegram_text(snap, link):
         lines += [f"• {e(g['title'])} ({e(g['date'][8:10])}/{e(g['date'][5:7])})" for g in snap["games"]]
         lines.append("")
     lines.append(f'Todo con enlaces: <a href="{e(link)}">{e(link)}</a>')
+    if support:
+        lines.append(f'☕ ¿Te sirvió? Apóyanos en <a href="{e(support)}">Ko-fi</a>')
     lines.append("<i>Los precios pueden cambiar: confirma en la tienda.</i>")
     return "\n".join(lines)[:4000]
 
@@ -87,7 +89,7 @@ def short_text(snap):
     return "\n".join(parts) + "\n"
 
 
-def discord_embed(snap, link):
+def discord_embed(snap, link, support=None):
     fields = []
     if snap["free"]:
         fields.append({"name": "🎁 Gratis", "value": "\n".join(f"• {o['title']} ({o['store']})" for o in snap["free"])[:1024]})
@@ -97,6 +99,8 @@ def discord_embed(snap, link):
     if snap["games"]:
         fields.append({"name": "📅 Salen esta semana", "value": "\n".join(
             f"• {g['title']} ({g['date'][8:10]}/{g['date'][5:7]})" for g in snap["games"])[:1024]})
+    if support:
+        fields.append({"name": "☕ Apóyanos", "value": f"Si el canal te ahorra plata, invítanos un café: {support}"})
     embed = {"title": f"🗓️ Resumen semanal · {snap['label']}", "url": link, "color": 0x5B8CFF, "fields": fields,
              "footer": {"text": "Ofertas Gamer CO · confirma el precio en la tienda"}}
     image = next((o.get("image") for o in snap["deals"] + snap["free"] if (o.get("image") or "").startswith("https://")), None)
@@ -119,12 +123,12 @@ def send_telegram_text(text):
         return False
 
 
-def publish(snap, link, dc=None, bluesky=None):
+def publish(snap, link, dc=None, bluesky=None, support=None):
     """Envía el resumen a cada red. Devuelve la lista de redes donde salió."""
     done = []
-    if send_telegram_text(telegram_text(snap, link)):
+    if send_telegram_text(telegram_text(snap, link, support)):
         done.append("Telegram")
-    if dc is not None and dc.ready and dc.post("ofertas", [discord_embed(snap, link)]):
+    if dc is not None and dc.ready and dc.post("ofertas", [discord_embed(snap, link, support)]):
         done.append("Discord")
     if bluesky is not None:
         image = next((o.get("image") for o in snap["deals"] + snap["free"] if o.get("image")), None)

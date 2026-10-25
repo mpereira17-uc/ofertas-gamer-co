@@ -52,6 +52,9 @@ header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
 .btn-tg{background:linear-gradient(135deg,#2563eb,#0891b2);border-color:transparent;color:#fff}
 .btn-wa{background:#128c4b;border-color:#128c4b;color:#fff}
 .btn-dc{background:#5865f2;border-color:#5865f2;color:#fff}
+.btn-kofi{background:#ff5e5b;border-color:#ff5e5b;color:#fff}
+.support{margin:0 0 1.2rem;padding:1rem 1.1rem;border:1px solid rgba(255,200,61,.35);border-radius:16px;background:rgba(255,200,61,.07)}
+.support p{margin:0 0 .7rem}
 .btn-primary::after,.btn-tg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
 .btn-primary:hover::after,.btn-tg:hover::after{transform:translateX(120%)}
 

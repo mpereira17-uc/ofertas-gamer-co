@@ -240,7 +240,7 @@ class Site:
 <button class="chip" type="button" data-pref="contrast" aria-pressed="false" hidden>Alto contraste</button>
 <button class="chip" type="button" data-pref="lite" aria-pressed="false" hidden>Ahorro de datos</button></div>
 <p class="install" id="install-box" hidden><button class="btn btn-primary" type="button" id="install-app">Instalar la app en tu celular</button></p>
-<p>{e(DISCLOSURE)}</p>
+{self.support_box()}<p>{e(DISCLOSURE)}</p>
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
 <p>Ofertas Gamer CO no vende productos ni procesa pagos. Los precios y la disponibilidad pueden cambiar sin previo aviso.</p>
 </div></footer>
@@ -440,10 +440,17 @@ class Site:
 <p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
         return filters + f'<ul class="grid" id="{list_id}">' + "".join(cards) + "</ul>"
 
+    def support_box(self):
+        url = self.cfg.get("enlace_kofi")
+        if not url:
+            return ""
+        return ('<div class="support"><p><strong>¿Te ahorramos plata?</strong> El sitio es gratis y sin anuncios. '
+                'Si quieres, invítanos un café para mantenerlo.</p>' + ext_link(url, "☕ Apóyanos en Ko-fi", cls="btn btn-kofi") + "</div>")
+
     def side_channels(self):
         links = [ext_link(self.cfg[k], label, cls=f"btn {cls}") for k, label, cls in
                  (("enlace_canal_telegram", "Canal de Telegram", "btn-tg"), ("enlace_canal_whatsapp", "Canal de WhatsApp", "btn-wa"),
-                  ("enlace_discord", "Servidor de Discord", "btn-dc"))
+                  ("enlace_discord", "Servidor de Discord", "btn-dc"), ("enlace_kofi", "☕ Apóyanos en Ko-fi", "btn-kofi"))
                  if self.cfg.get(k)]
         return '<div class="side-group side-cta">' + "".join(links) + "</div>" if links else ""
 

@@ -221,7 +221,7 @@ def run(args):
     if weekly.is_due(now, history) and not args.no_send:
         snap = weekly.snapshot(now, *weekly.pick(offers, games, now))
         done = weekly.publish(snap, base + "resumen-semanal.html", discord.Discord(guild=str(cfg.get("discord_servidor", ""))),
-                              promote.bluesky_post)
+                              promote.bluesky_post, cfg.get("enlace_kofi"))
         history = [snap] + history[: weekly.KEEP - 1]
         save_json(WEEKLY_FILE, {"semanas": history})
         polls = load_json(POLL_FILE, {})
