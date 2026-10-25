@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T13:29:29Z",
+ "updatedAt": "2026-10-25T13:48:32Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -222,29 +222,6 @@
    "verifiedAt": "2026-10-25T11:56:36Z"
   },
   {
-   "id": "steam-2320980",
-   "slug": "loftia",
-   "title": "Loftia",
-   "description": "Descubre el acogedor mundo de Loftia, un videojuego cozy multijugador donde construir un futuro mejor y más sostenible. Conecta con colegas y entabla nuevas amistades para cultivar, fabricar, explorar, decorar y, sobre todo, dejar una huella imperecedera juntos.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2320980/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2320980/header.jpg?t=1792760665",
-   "platforms": [
-    "Windows",
-    "Mac"
-   ],
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "3 Nov, 2026",
-   "date": "2026-11-03",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z"
-  },
-  {
    "id": "steam-3459340",
    "slug": "lacey-s-flash-games",
    "title": "Lacey's Flash Games",
@@ -263,6 +240,29 @@
    ],
    "releaseText": "27 Oct, 2026",
    "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T11:56:36Z"
+  },
+  {
+   "id": "steam-2320980",
+   "slug": "loftia",
+   "title": "Loftia",
+   "description": "Descubre el acogedor mundo de Loftia, un videojuego cozy multijugador donde construir un futuro mejor y más sostenible. Conecta con colegas y entabla nuevas amistades para cultivar, fabricar, explorar, decorar y, sobre todo, dejar una huella imperecedera juntos.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2320980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2320980/header.jpg?t=1792760665",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "3 Nov, 2026",
+   "date": "2026-11-03",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z"
@@ -2250,28 +2250,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-3758950",
-   "slug": "death-at-fleming-manor",
-   "title": "Death at Fleming Manor",
-   "description": "Tu trabajo es rellenar el certificado de defunción. Investiga una muerte misteriosa en una mansión británica en 1959. Explora escenas inquietantes, analiza pruebas y completa certificados de defunción e informes de emergencia. Misterio forense con arte inspirado en cómics europeos de los años 60.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3758950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/30b155b0452ba4b8d69fd2ba081a7237bca92606/header.jpg?t=1792722536",
-   "platforms": [
-    "Windows",
-    "Mac"
-   ],
-   "genres": [
-    "Aventura",
-    "Indie"
-   ],
-   "releaseText": "3 Nov, 2026",
-   "date": "2026-11-03",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-3548510",
    "slug": "dig",
    "title": "DIG",
@@ -2289,6 +2267,28 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-3758950",
+   "slug": "death-at-fleming-manor",
+   "title": "Death at Fleming Manor",
+   "description": "Tu trabajo es rellenar el certificado de defunción. Investiga una muerte misteriosa en una mansión británica en 1959. Explora escenas inquietantes, analiza pruebas y completa certificados de defunción e informes de emergencia. Misterio forense con arte inspirado en cómics europeos de los años 60.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3758950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/30b155b0452ba4b8d69fd2ba081a7237bca92606/header.jpg?t=1792722536",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "3 Nov, 2026",
+   "date": "2026-11-03",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
