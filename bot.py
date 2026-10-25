@@ -10,6 +10,7 @@ Solo usa la librería estándar de Python.
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -146,7 +147,11 @@ def run(args):
                     posted[net] += 1
         social = {k: v[-3000:] for k, v in social.items()}
         save_json(SOCIAL_FILE, social)
-    status["Publicadas en Bluesky / Mastodon en esta ejecución"] = f"{posted['bluesky']} / {posted['mastodon']}"
+    ready = {"bluesky": bool(os.environ.get("BLUESKY_HANDLE") and os.environ.get("BLUESKY_APP_PASSWORD")),
+             "mastodon": bool(os.environ.get("MASTODON_URL") and os.environ.get("MASTODON_TOKEN"))}
+    for net, label in (("bluesky", "Bluesky"), ("mastodon", "Mastodon")):
+        status[f"{label} en esta ejecución"] = f"{posted[net]} publicadas" if ready[net] else "no configurado"
+        print(f"{label}: {status[f'{label} en esta ejecución']}")
 
     site.build(offers, status, now, games)
 
