@@ -1,13 +1,14 @@
 """Genera el sitio estático (docs/), los feeds, el sitemap y el resumen de WhatsApp."""
 
+import hashlib
 import html
 import json
 import shutil
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
 from pathlib import Path
 
-from .channels import co_time, cop_text, date_es, money, time_left, whatsapp_text
+from .channels import CO_TZ, co_time, cop_text, date_es, money, time_left, whatsapp_text
 from .content import FAQ, GUIDES, LEGAL_REVIEW, LEGAL_UPDATED
 from .model import parse_iso
 from .releases import date_label, relative_label, MONTHS_ES
@@ -58,6 +59,11 @@ CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; styl
        "upgrade-insecure-requests")
 
 e = html.escape
+
+
+def asset_version(name):
+    """Huella corta del archivo: cambia cuando el archivo cambia, así el navegador no usa una copia vieja."""
+    return hashlib.sha256((Path(__file__).resolve().parent.parent / "assets" / name).read_bytes()).hexdigest()[:10]
 
 
 def ext_link(url, text, affiliate=False, cls="btn btn-primary", label=None):
@@ -147,8 +153,8 @@ class Site:
 <link rel="alternate" type="application/rss+xml" title="Ofertas Gamer CO (RSS)" href="rss.xml">
 <link rel="alternate" type="application/atom+xml" title="Ofertas Gamer CO (Atom)" href="atom.xml">
 <link rel="alternate" type="application/feed+json" title="Ofertas Gamer CO (JSON)" href="feed.json">
-<link rel="stylesheet" href="assets/styles.css">
-<script src="assets/app.js" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v={asset_version("styles.css")}">
+<script src="assets/app.js?v={asset_version("app.js")}" defer></script>
 {ld_html}
 </head>
 <body>
@@ -498,7 +504,11 @@ class Site:
         tba = sorted([g for g in games if not g.get("date")], key=lambda g: g["title"])
         return upcoming, recent, tba
 
+    def rank(self, g):
+        return getattr(self, "ranks", {}).get(g["id"], 9999)
+
     def release_card(self, g, now, compact=True):
+        hot = self.rank(g) <= 25
         img = g.get("image") or "assets/placeholder.svg"
         alt = f"Imagen de {g['title']}" if g.get("image") else ""
         plats = "".join(f'<span class="ver">{e(p)}</span>' for p in g.get("platforms", []))
@@ -506,8 +516,8 @@ class Site:
         rel = relative_label(g.get("date"), g.get("precision"), now)
         when = date_label(g.get("date"), g.get("precision"))
         link = ext_link(g["url"], "Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
-        return f"""<li class="rel-card" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
-<div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}</div>
+        return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
+<div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
@@ -526,7 +536,7 @@ class Site:
             groups[key].append(g)
         out = []
         for key in order:
-            items = groups[key]
+            items = sorted(groups[key], key=self.rank)  # dentro del día, primero los más esperados
             if key == "tba":
                 big, label, rel = "Por confirmar", "Fecha por confirmar", ""
             elif len(key) == 7:
@@ -544,6 +554,31 @@ class Site:
                        f'<span class="rel-crumb">Juegos · {len(items)}</span></h3>'
                        f'<ul class="rel-grid">{"".join(self.release_card(g, now, compact) for g in items)}</ul></section>')
         return f'<div class="rel-block" id="{anchor}"><h2>{e(title)}</h2>' + "".join(out) + "</div>"
+
+    def spot_card(self, g, now, main=False):
+        img = g.get("image") or "assets/placeholder.svg"
+        rel = relative_label(g.get("date"), g.get("precision"), now)
+        when = date_label(g.get("date"), g.get("precision"))
+        genres = "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])[:3])
+        desc = g.get("description") or ""
+        if len(desc) > (260 if main else 120):
+            desc = desc[:(257 if main else 117)].rsplit(" ", 1)[0] + "…"
+        link = ext_link(g["url"], "Ver en Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
+        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img"><img src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+<div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
+<div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
+
+    def spotlight(self, games, now, days=30, count=8):
+        """Los más esperados que salen en los próximos días (orden de popularidad de Steam)."""
+        today = now.strftime("%Y-%m-%d")
+        limit = (now + timedelta(days=days)).strftime("%Y-%m-%d")
+        soon = sorted([g for g in games if g.get("date") and g.get("precision") == "day" and today <= g["date"] <= limit],
+                      key=self.rank)[:count]
+        if not soon:
+            return ""
+        return (f'<section class="spot" aria-labelledby="spot-h"><div class="sec-head"><h2 id="spot-h">{ICONS["flame"]} Lo más esperado del mes</h2>'
+                f'<p class="meta">Los {len(soon)} lanzamientos más populares en Steam de los próximos {days} días.</p></div>'
+                f'<ul class="spot-grid">{"".join(self.spot_card(g, now, i == 0) for i, g in enumerate(soon))}</ul></section>')
 
     def releases_page(self, games, now, updated_line):
         upcoming, recent, tba = self.split_releases(games, now)
@@ -571,6 +606,8 @@ class Site:
                     f"""<div class="rel-top"><div><h1>Calendario de <span class="grad">lanzamientos</span></h1>
 <p class="lead">Los próximos juegos de PC y los estrenos recientes en Steam, día por día. Las fechas son las que publica cada tienda y pueden cambiar.</p>
 {updated_line}</div></div>
+{self.spotlight(games, now)}
+<h2 class="all-rel">Calendario completo</h2>
 {toolbar}
 <p class="count" id="rel-count" aria-live="polite">{len(games)} juegos</p>
 <div id="rel-list">{body or '<p class="notice">Todavía no hay lanzamientos cargados. Vuelve en unas horas.</p>'}</div>
@@ -578,12 +615,81 @@ class Site:
                     crumbs=[("lanzamientos.html", "Lanzamientos")], jsonld=[ld])
 
     def upcoming_home(self, games, now):
-        upcoming = self.split_releases(games, now)[0][:6]
+        limit = (now + timedelta(days=30)).strftime("%Y-%m-%d")
+        upcoming = sorted([g for g in self.split_releases(games, now)[0] if g.get("precision") == "day" and g["date"] <= limit],
+                          key=self.rank)[:6]
+        upcoming.sort(key=lambda g: g["date"])
         if not upcoming:
             return ""
-        return ('<h2>Próximos lanzamientos</h2><ul class="rel-grid">' +
+        return ('<h2>Próximos lanzamientos más esperados</h2><ul class="rel-grid">' +
                 "".join(self.release_card(g, now, compact=False) for g in upcoming) +
                 '</ul><p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
+
+    def note_row(self, it, kind, now):
+        """Una línea de las notas de novedades: miniatura, nombre, etiqueta y enlace."""
+        img = it.get("imageSmall") or it.get("image") or "assets/placeholder.svg"
+        if kind == "game":
+            tag = '<span class="n-tag rel">Estreno</span>' if it["date"] <= now.strftime("%Y-%m-%d") else '<span class="n-tag soon">Próximamente</span>'
+            sub = e(" · ".join(["Steam"] + it.get("genres", [])[:2]))
+            go = ext_link(it["url"], "Steam", cls="btn btn-sm", label=f"Ver {it['title']} en Steam (abre en otra pestaña)")
+        else:
+            free = it.get("currentPrice") == 0
+            tag = '<span class="n-tag free">GRATIS</span>' if free else f'<span class="n-tag">-{it.get("discountPercentage") or 0}%</span>'
+            price = "Gratis" if free else money(it["currentPrice"], it["currency"])
+            sub = f'{e(it["store"])} · <strong>{e(price)}</strong>' + (f' <s>{e(money(it["originalPrice"], it["currency"]))}</s>' if it.get("originalPrice") and not free else "")
+            go = ext_link(it["destinationUrl"], self.action_label(it), it.get("affiliate"), cls="btn btn-sm" + (" btn-free" if free else ""),
+                          label=f"{self.action_label(it)}: {it['title']} (abre en otra pestaña)")
+        return (f'<li class="n-row"><img src="{e(img)}" alt="" width="120" height="56" loading="lazy" decoding="async">'
+                f'<div class="n-main"><p class="n-title">{tag}{self.title_link(it)}</p><p class="n-sub">{sub}</p></div>{go}</li>')
+
+    def news_page(self, live, games, now, updated_line):
+        def co_day(value):
+            dt = parse_iso(value) if value else None
+            return dt.astimezone(CO_TZ).strftime("%Y-%m-%d") if dt else ""
+
+        def day_name(key):
+            y, m, d = (int(x) for x in key.split("-"))
+            return f"{d} de {MONTHS_ES[m - 1]} de {y}"
+        today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        days = {}
+        for o in live:
+            days.setdefault(co_day(o.get("createdAt")), {"free": [], "deals": [], "games": []})[
+                "free" if o.get("currentPrice") == 0 else "deals"].append(o)
+        for g in games:
+            if g.get("precision") == "day" and g.get("date") and g["date"] <= today:
+                days.setdefault(g["date"], {"free": [], "deals": [], "games": []})["games"].append(g)
+        notes = []
+        for key in sorted((k for k in days if k), reverse=True)[:10]:
+            d = days[key]
+            deals = sorted(d["deals"], key=lambda o: -(o.get("discountPercentage") or 0))
+            rel = sorted(d["games"], key=self.rank)
+            parts = []
+            if d["free"]:
+                parts.append(f'<section class="n-sec"><h3>{ICONS["gift"]} Juegos gratis nuevos</h3><ul>' +
+                             "".join(self.note_row(o, "offer", now) for o in d["free"]) + "</ul></section>")
+            if rel:
+                parts.append(f'<section class="n-sec"><h3>{ICONS["sparkle"]} Estrenos</h3><ul>' +
+                             "".join(self.note_row(g, "game", now) for g in rel[:8]) + "</ul></section>")
+            if deals:
+                more = f'<p class="n-more"><a href="ofertas.html">Y {len(deals) - 10} ofertas más</a></p>' if len(deals) > 10 else ""
+                parts.append(f'<section class="n-sec"><h3>{ICONS["flame"]} Nuevas ofertas</h3><ul>' +
+                             "".join(self.note_row(o, "offer", now) for o in deals[:10]) + f"</ul>{more}</section>")
+            counts = " · ".join(x for x in (
+                f"{len(d['free'])} gratis" if d["free"] else "", f"{len(rel)} estrenos" if rel else "",
+                f"{len(deals)} ofertas" if deals else "") if x)
+            label = "Hoy" if key == today else day_name(key)
+            notes.append(f'<article class="note"><header class="note-head"><span class="note-ver">{ICONS["news"]}</span>'
+                         f'<div><h2>{e(label)}</h2><p class="meta">{e(day_name(key)) if key == today else ""}{" · " if key == today else ""}{e(counts)}</p></div></header>{"".join(parts)}</article>')
+        week_end = (now + timedelta(days=7)).strftime("%Y-%m-%d")
+        coming = sorted([g for g in games if g.get("precision") == "day" and g.get("date") and today < g["date"] <= week_end], key=self.rank)[:6]
+        coming_html = (f'<section class="spot" aria-labelledby="coming-h"><div class="sec-head"><h2 id="coming-h">{ICONS["calendar"]} Llegan esta semana</h2>'
+                       f'<p class="meta">Los más esperados de los próximos 7 días. <a href="lanzamientos.html">Ver el calendario</a></p></div>'
+                       f'<ul class="spot-grid small">{"".join(self.spot_card(g, now) for g in coming)}</ul></section>') if coming else ""
+        self.layout("noticias.html", "Novedades: juegos gratis, ofertas nuevas y estrenos de PC",
+                    "Las novedades de cada día en Ofertas Gamer CO: juegos gratis nuevos, estrenos de PC y las ofertas que acaban de aparecer.",
+                    f'<h1>Novedades</h1><p class="lead">Cada día, como unas notas de parche: juegos gratis nuevos, estrenos y las ofertas que acaban de aparecer.</p>{updated_line}'
+                    f'{coming_html}<div class="notes">{"".join(notes) or "<p>Todavía no hay novedades registradas.</p>"}</div>',
+                    crumbs=[("noticias.html", "Novedades")])
 
     def item_list_ld(self, offers):
         return {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
@@ -606,6 +712,7 @@ class Site:
                        if o.get("copApproximation") and o.get("currentPrice") and o["currency"] == "USD")
         self.rate = rates[len(rates) // 2] if rates else None
         self.assign_pages(live, games or [])
+        self.ranks = {g["id"]: g.get("rank") or i + 1 for i, g in enumerate(games or [])}
         free = [o for o in live if o.get("currentPrice") == 0]
         deals = [o for o in live if o.get("currentPrice")]
         soon = sorted([o for o in live if o.get("expiresAt")], key=lambda o: o["expiresAt"])[:6]
@@ -701,17 +808,7 @@ class Site:
                         f'<article class="prose"><h1>{e(g["title"])}</h1><p class="meta">Publicado el <time datetime="{g["date"]}">{g["date"]}</time></p>{g["body"]}{self.ad_slot("article_end")}</article><p><a href="guias.html">Ver todas las guías</a></p>',
                         crumbs=[("guias.html", "Guías"), (f"{g['slug']}.html", g["title"])], jsonld=[art], og_type="article")
 
-        by_day = {}
-        for o in sorted(live, key=lambda o: o.get("createdAt") or "", reverse=True)[:40]:
-            by_day.setdefault((o.get("createdAt") or "")[:10], []).append(o)
-        news = "".join(f"<h2>{e(day)}</h2><ul>" + "".join(
-            f"<li>{e(o['title'])} en {e(o['store'])}: {'gratis' if o.get('currentPrice') == 0 else str(o.get('discountPercentage') or '') + '% de descuento'}"
-            f" · {ext_link(o['destinationUrl'], 'ver', o.get('affiliate'), cls='')}</li>" for o in items) + "</ul>"
-            for day, items in by_day.items())
-        self.layout("noticias.html", "Noticias de ofertas: lo nuevo detectado",
-                    "Registro de las ofertas y juegos gratis nuevos que detectó Ofertas Gamer CO, ordenados por fecha de detección.",
-                    f"<h1>Noticias de ofertas</h1><p class=\"lead\">Ofertas nuevas detectadas por nuestro sistema, de la más reciente a la más antigua.</p>{news or '<p>Todavía no hay novedades registradas.</p>'}",
-                    crumbs=[("noticias.html", "Noticias de ofertas")])
+        self.news_page(live, games or [], updated_dt, updated_line)
 
         self.releases_page(games or [], updated_dt, updated_line)
         self.offer_pages(live, notice)

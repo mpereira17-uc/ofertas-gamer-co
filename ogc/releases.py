@@ -151,7 +151,7 @@ def steam_releases(now, fetch, previous=()):
         elif game is None:
             game = cached  # se actualizará en una próxima ejecución
         if game and not (game.get("date") and game["date"] < oldest):
-            games.append(game)
+            games.append(dict(game, rank=len(games) + 1))  # 1 = el más popular/esperado en Steam
     return games
 
 
