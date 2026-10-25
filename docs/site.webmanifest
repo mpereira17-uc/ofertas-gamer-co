@@ -4,8 +4,10 @@
  "lang": "es",
  "start_url": "./index.html",
  "display": "standalone",
- "background_color": "#0f1115",
- "theme_color": "#0f1115",
+ "background_color": "#080a12",
+ "theme_color": "#080a12",
+ "id": "./",
+ "description": "Juegos gratis, ofertas de PC verificadas y calendario de lanzamientos para Colombia.",
  "icons": [
   {
    "src": "assets/icon-192.png",
@@ -15,7 +17,22 @@
   {
    "src": "assets/icon-512.png",
    "sizes": "512x512",
-   "type": "image/png"
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Juegos gratis",
+   "url": "./juegos-gratis.html"
+  },
+  {
+   "name": "Ofertas",
+   "url": "./ofertas.html"
+  },
+  {
+   "name": "Lanzamientos",
+   "url": "./lanzamientos.html"
   }
  ]
 }

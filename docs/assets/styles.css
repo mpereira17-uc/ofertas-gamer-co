@@ -369,3 +369,10 @@ h2.f-title::after{display:none}
 .no-cover.big strong{font-size:2rem}
 .spot-main .no-cover strong{font-size:1.6rem}
 .spot-main .spot-img .no-cover.spot-fg{position:relative;z-index:1}
+/* Comparar tiendas, archivo de resúmenes, instalar app */
+.compare{margin:26px 0 10px}
+.compare h2{display:flex;align-items:center;gap:8px}
+.archive{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.archive a{display:block;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);font-weight:700}
+.archive a:hover{border-color:var(--neon-1)}
+.install{margin:8px 0 14px}
