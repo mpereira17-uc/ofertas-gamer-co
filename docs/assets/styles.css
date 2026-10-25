@@ -469,3 +469,10 @@ img.poster{position:relative;z-index:1;object-fit:contain!important}
 .epic-timer .launch{margin:8px 0}
 .epic-next{margin-top:30px}
 #f2p-genres{margin:10px 0 16px}
+/* Resultado de la encuesta: barras sin estilos en línea (CSP), en pasos de 5% */
+.poll-bars{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;max-width:720px}
+.poll-bars li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 48px;gap:10px;align-items:center}
+.pv-bar{height:14px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.pv-fill{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--gold),var(--neon-1))}
+.pv-num{font-weight:800;text-align:right}
+.pv-0{width:0%}.pv-5{width:5%}.pv-10{width:10%}.pv-15{width:15%}.pv-20{width:20%}.pv-25{width:25%}.pv-30{width:30%}.pv-35{width:35%}.pv-40{width:40%}.pv-45{width:45%}.pv-50{width:50%}.pv-55{width:55%}.pv-60{width:60%}.pv-65{width:65%}.pv-70{width:70%}.pv-75{width:75%}.pv-80{width:80%}.pv-85{width:85%}.pv-90{width:90%}.pv-95{width:95%}.pv-100{width:100%}
