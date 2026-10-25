@@ -5,7 +5,7 @@ No se inventan fechas: si Steam no da un día exacto se muestra "por confirmar" 
 
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from .model import iso, slugify
 
@@ -16,6 +16,7 @@ NON_GAMES = {"Utilidades", "Diseño e ilustración", "Edición de vídeo", "Edic
 DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=spanish"
 DETAILS_DATE_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=english&filters=release_date"
 MAX_GAMES = 40
+RECENT_DAYS = 45  # los estrenos más viejos no son "recientes"
 
 MONTHS_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
              "septiembre", "octubre", "noviembre", "diciembre"]
@@ -110,6 +111,8 @@ def steam_releases(now, fetch):
             continue
         raw = ((dates.get("data") or {}).get("release_date") or {}).get("date") or ""
         date, precision = parse_release(raw)
+        if date and date < (now - timedelta(days=RECENT_DAYS)).strftime("%Y-%m-%d"):
+            continue
         image = info.get("header_image") or ""
         platforms = [n for k, n in (("windows", "Windows"), ("mac", "Mac"), ("linux", "Linux"))
                      if (info.get("platforms") or {}).get(k)]

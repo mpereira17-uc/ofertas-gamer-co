@@ -34,7 +34,7 @@ class TestBot(unittest.TestCase):
             self.assertTrue((tmp / "docs" / "lanzamientos.html").exists())
             games = json.loads((tmp / "rel.json").read_text())["games"]
             self.assertEqual({g["title"] for g in games},
-                             {"Nave Estelar", "Granja Tranquila", "Misterio <script>", "Clásico Reciente"})
+                             {"Nave Estelar", "Granja Tranquila", "Misterio <script>"})
 
 
 if __name__ == "__main__":

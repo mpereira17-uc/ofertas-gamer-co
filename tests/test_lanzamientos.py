@@ -35,7 +35,8 @@ class TestLanzamientos(unittest.TestCase):
         games = releases.steam_releases(self.now, fetch)
         titles = {g["title"] for g in games}
         self.assertNotIn("Pack de Trajes", titles)
-        self.assertEqual(len(games), 4)
+        self.assertNotIn("Clásico Reciente", titles)  # salió hace más de 45 días
+        self.assertEqual(len(games), 3)
         misterio = next(g for g in games if g["title"].startswith("Misterio"))
         self.assertEqual(misterio["image"], "")
         self.assertIsNone(misterio["date"])
