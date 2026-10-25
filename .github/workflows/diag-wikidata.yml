@@ -1,0 +1,30 @@
+name: diag-wikidata (temporal)
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python - <<'P'
+          import json, urllib.parse
+          from datetime import datetime, timezone, timedelta
+          from ogc import sources, wikidata
+          now = datetime.now(timezone.utc)
+          start = (now - timedelta(days=30)).strftime("%Y-%m-%d"); end = (now + timedelta(days=730)).strftime("%Y-%m-%d")
+          q = wikidata.QUERY % {"min": 3, "start": start, "end": end, "limit": 6000}
+          d = sources.get_json(f"{wikidata.ENDPOINT}?{urllib.parse.urlencode({'query': q, 'format': 'json'})}")
+          rows = d["results"]["bindings"]
+          print("filas", len(rows), "juegos", len({r['g']['value'] for r in rows}))
+          for r in rows:
+              if "Grand Theft" in r.get("gLabel", {}).get("value", ""):
+                  print({k: v["value"] for k, v in r.items()})
+          names = []
+          for r in rows:
+              n = r["gLabel"]["value"]
+              if n not in names: names.append(n)
+          print(names[:80])
+          P
