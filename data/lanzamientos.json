@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T15:45:19Z",
+ "updatedAt": "2026-10-25T15:53:31Z",
  "games": [
   {
    "id": "steam-1422450",
@@ -20,7 +20,33 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 1
+   "rank": 1,
+   "steamRank": 1
+  },
+  {
+   "id": "wd-Q23648408",
+   "slug": "grand-theft-auto-vi",
+   "title": "Grand Theft Auto VI",
+   "description": "",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+   "image": "",
+   "platforms": [
+    "Xbox"
+   ],
+   "genres": [
+    "Acción-aventura",
+    "Disparos en tercera persona"
+   ],
+   "releaseText": "2026-11-19",
+   "date": "2026-11-19",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "source": "wikidata",
+   "languages": 68,
+   "wdRank": 1,
+   "rank": 2
   },
   {
    "id": "steam-2719590",
@@ -42,7 +68,34 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 2
+   "rank": 3,
+   "steamRank": 2
+  },
+  {
+   "id": "steam-3216600",
+   "slug": "kingdom-hearts-iv",
+   "title": "KINGDOM HEARTS IV",
+   "description": "Nuestro héroe Sora despierta en Quadratum, un mundo desconocido. Mientras busca cómo volver a su mundo, sus amigos Donald y Goofy van al Inframundo para intentar localizarlo. Blande la llave espada en combates veloces que se adaptan a tu estilo de juego.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3216600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3216600/cb9efcc0c932cb31f32d4f89c0709bcc805798eb/header.jpg?t=1788158325",
+   "platforms": [
+    "Windows",
+    "Xbox"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 4,
+   "steamRank": 194,
+   "wdRank": 2
   },
   {
    "id": "steam-4534960",
@@ -65,7 +118,33 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 3
+   "rank": 5,
+   "steamRank": 3
+  },
+  {
+   "id": "steam-2288340",
+   "slug": "ace-combat-8-wings-of-theve",
+   "title": "Ace Combat 8: Wings of Theve",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2288340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/header.jpg",
+   "platforms": [
+    "Xbox",
+    "Windows"
+   ],
+   "genres": [
+    "Simulador de vuelo de combate"
+   ],
+   "releaseText": "2026-10-02",
+   "date": "2026-10-02",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "source": "wikidata",
+   "languages": 13,
+   "wdRank": 3,
+   "rank": 6
   },
   {
    "id": "steam-2769570",
@@ -76,7 +155,8 @@
    "url": "https://store.steampowered.com/app/2769570/",
    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2769570/d2ffd7e15a91f3e5485601d3d876988ba3a859d7/header.jpg?t=1788984944",
    "platforms": [
-    "Windows"
+    "Windows",
+    "Xbox"
    ],
    "genres": [
     "Acción",
@@ -88,7 +168,9 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 4
+   "rank": 7,
+   "steamRank": 4,
+   "wdRank": 4
   },
   {
    "id": "steam-1774880",
@@ -111,7 +193,34 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 5
+   "rank": 8,
+   "steamRank": 5
+  },
+  {
+   "id": "steam-4260840",
+   "slug": "stranger-than-heaven",
+   "title": "STRANGER THAN HEAVEN",
+   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4260840/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
+   "platforms": [
+    "Windows",
+    "Xbox"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "14 Jan, 2027",
+   "date": "2027-01-14",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:28:23Z",
+   "rank": 9,
+   "steamRank": 55,
+   "wdRank": 5
   },
   {
    "id": "steam-4115450",
@@ -133,7 +242,33 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 6
+   "rank": 10,
+   "steamRank": 6
+  },
+  {
+   "id": "steam-2963950",
+   "slug": "persona-4-revival",
+   "title": "Persona 4 Revival",
+   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2963950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
+   "platforms": [
+    "Windows",
+    "Xbox"
+   ],
+   "genres": [
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "17 Feb, 2027",
+   "date": "2027-02-17",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:28:23Z",
+   "rank": 11,
+   "steamRank": 16,
+   "wdRank": 6
   },
   {
    "id": "steam-4199910",
@@ -154,7 +289,35 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 7
+   "rank": 12,
+   "steamRank": 7
+  },
+  {
+   "id": "steam-1912410",
+   "slug": "minecraft-dungeons-ii",
+   "title": "Minecraft Dungeons II",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1912410/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1912410/header.jpg",
+   "platforms": [
+    "Xbox",
+    "Windows"
+   ],
+   "genres": [
+    "Videojuego de aventura",
+    "Videojuego de acción",
+    "Videojuego de rol"
+   ],
+   "releaseText": "2026-09-29",
+   "date": "2026-09-29",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "source": "wikidata",
+   "languages": 7,
+   "wdRank": 7,
+   "rank": 13
   },
   {
    "id": "steam-4824610",
@@ -176,7 +339,33 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 8
+   "rank": 14,
+   "steamRank": 8
+  },
+  {
+   "id": "wd-Q116734043",
+   "slug": "el-profesor-layton-y-el-nuevo-mundo-a-vapor",
+   "title": "El profesor Layton y el Nuevo Mundo a vapor",
+   "description": "",
+   "store": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
+   "image": "",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Videojuego de lógica",
+    "Videojuego de aventura"
+   ],
+   "releaseText": "2026-12-10",
+   "date": "2026-12-10",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "source": "wikidata",
+   "languages": 6,
+   "wdRank": 8,
+   "rank": 15
   },
   {
    "id": "steam-2109770",
@@ -199,7 +388,33 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 9
+   "rank": 16,
+   "steamRank": 9
+  },
+  {
+   "id": "steam-1551980",
+   "slug": "clive-barker-s-hellraiser-revival",
+   "title": "Clive Barker's Hellraiser: Revival",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1551980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/header.jpg",
+   "platforms": [
+    "Xbox",
+    "Windows"
+   ],
+   "genres": [
+    "Videojuego de terror"
+   ],
+   "releaseText": "2026-10-08",
+   "date": "2026-10-08",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "source": "wikidata",
+   "languages": 6,
+   "wdRank": 9,
+   "rank": 17
   },
   {
    "id": "steam-1846700",
@@ -222,7 +437,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 10
+   "rank": 18,
+   "steamRank": 10
   },
   {
    "id": "steam-1757350",
@@ -244,7 +460,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 11
+   "rank": 19,
+   "steamRank": 11
   },
   {
    "id": "steam-2050420",
@@ -267,7 +484,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 12
+   "rank": 20,
+   "steamRank": 12
   },
   {
    "id": "steam-4095380",
@@ -290,7 +508,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 13
+   "rank": 21,
+   "steamRank": 13
   },
   {
    "id": "steam-2590240",
@@ -312,7 +531,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 14
+   "rank": 22,
+   "steamRank": 14
   },
   {
    "id": "steam-2381520",
@@ -335,29 +555,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 15
-  },
-  {
-   "id": "steam-2963950",
-   "slug": "persona-4-revival",
-   "title": "Persona 4 Revival",
-   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2963950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Rol"
-   ],
-   "releaseText": "17 Feb, 2027",
-   "date": "2027-02-17",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 16
+   "rank": 23,
+   "steamRank": 15
   },
   {
    "id": "steam-2272360",
@@ -379,7 +578,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 17
+   "rank": 24,
+   "steamRank": 17
   },
   {
    "id": "steam-3292470",
@@ -401,7 +601,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 18
+   "rank": 25,
+   "steamRank": 18
   },
   {
    "id": "steam-3727390",
@@ -424,7 +625,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 19
+   "rank": 26,
+   "steamRank": 19
   },
   {
    "id": "steam-3558670",
@@ -446,7 +648,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 20
+   "rank": 27,
+   "steamRank": 20
   },
   {
    "id": "steam-2873440",
@@ -469,7 +672,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 21
+   "rank": 28,
+   "steamRank": 21
   },
   {
    "id": "steam-3710600",
@@ -492,7 +696,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 22
+   "rank": 29,
+   "steamRank": 22
   },
   {
    "id": "steam-1340720",
@@ -514,7 +719,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 23
+   "rank": 30,
+   "steamRank": 23
   },
   {
    "id": "steam-2582960",
@@ -537,7 +743,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 24
+   "rank": 31,
+   "steamRank": 24
   },
   {
    "id": "steam-2814860",
@@ -560,7 +767,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 25
+   "rank": 32,
+   "steamRank": 25
   },
   {
    "id": "steam-2231020",
@@ -583,7 +791,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 26
+   "rank": 33,
+   "steamRank": 26
   },
   {
    "id": "steam-4077740",
@@ -604,7 +813,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 27
+   "rank": 34,
+   "steamRank": 27
   },
   {
    "id": "steam-2340970",
@@ -626,7 +836,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 28
+   "rank": 35,
+   "steamRank": 28
   },
   {
    "id": "steam-1940080",
@@ -649,7 +860,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 29
+   "rank": 36,
+   "steamRank": 29
   },
   {
    "id": "steam-3016620",
@@ -672,7 +884,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 30
+   "rank": 37,
+   "steamRank": 30
   },
   {
    "id": "steam-3978820",
@@ -695,7 +908,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 31
+   "rank": 38,
+   "steamRank": 31
   },
   {
    "id": "steam-2649560",
@@ -718,7 +932,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 32
+   "rank": 39,
+   "steamRank": 32
   },
   {
    "id": "steam-1687540",
@@ -741,7 +956,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 33
+   "rank": 40,
+   "steamRank": 33
   },
   {
    "id": "steam-1280190",
@@ -763,7 +979,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 34
+   "rank": 41,
+   "steamRank": 34
   },
   {
    "id": "steam-2179480",
@@ -787,7 +1004,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 35
+   "rank": 42,
+   "steamRank": 35
   },
   {
    "id": "steam-2295170",
@@ -810,7 +1028,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 36
+   "rank": 43,
+   "steamRank": 36
   },
   {
    "id": "steam-4743930",
@@ -833,7 +1052,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 37
+   "rank": 44,
+   "steamRank": 37
   },
   {
    "id": "steam-1313230",
@@ -856,7 +1076,8 @@
    "precision": "month",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 38
+   "rank": 45,
+   "steamRank": 38
   },
   {
    "id": "steam-2861080",
@@ -878,7 +1099,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 39
+   "rank": 46,
+   "steamRank": 39
   },
   {
    "id": "steam-2724650",
@@ -901,7 +1123,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 40
+   "rank": 47,
+   "steamRank": 40
   },
   {
    "id": "steam-5072600",
@@ -924,7 +1147,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 41
+   "rank": 48,
+   "steamRank": 41
   },
   {
    "id": "steam-2161710",
@@ -947,7 +1171,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 42
+   "rank": 49,
+   "steamRank": 42
   },
   {
    "id": "steam-2956040",
@@ -972,7 +1197,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 43
+   "rank": 50,
+   "steamRank": 43
   },
   {
    "id": "steam-3255110",
@@ -995,7 +1221,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 44
+   "rank": 51,
+   "steamRank": 44
   },
   {
    "id": "steam-3161310",
@@ -1016,7 +1243,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 45
+   "rank": 52,
+   "steamRank": 45
   },
   {
    "id": "steam-3864580",
@@ -1039,7 +1267,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 46
+   "rank": 53,
+   "steamRank": 46
   },
   {
    "id": "steam-1752080",
@@ -1062,7 +1291,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 47
+   "rank": 54,
+   "steamRank": 47
   },
   {
    "id": "steam-2439280",
@@ -1084,7 +1314,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 48
+   "rank": 55,
+   "steamRank": 48
   },
   {
    "id": "steam-2610770",
@@ -1106,7 +1337,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 49
+   "rank": 56,
+   "steamRank": 49
   },
   {
    "id": "steam-4354570",
@@ -1129,7 +1361,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 50
+   "rank": 57,
+   "steamRank": 50
   },
   {
    "id": "steam-3230960",
@@ -1152,7 +1385,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 51
+   "rank": 58,
+   "steamRank": 51
   },
   {
    "id": "steam-2318330",
@@ -1177,7 +1411,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 52
+   "rank": 59,
+   "steamRank": 52
   },
   {
    "id": "steam-2692660",
@@ -1200,7 +1435,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 53
+   "rank": 60,
+   "steamRank": 53
   },
   {
    "id": "steam-4150720",
@@ -1223,30 +1459,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 54
-  },
-  {
-   "id": "steam-4260840",
-   "slug": "stranger-than-heaven",
-   "title": "STRANGER THAN HEAVEN",
-   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4260840/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ],
-   "releaseText": "14 Jan, 2027",
-   "date": "2027-01-14",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 55
+   "rank": 61,
+   "steamRank": 54
   },
   {
    "id": "steam-3218230",
@@ -1269,7 +1483,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 56
+   "rank": 62,
+   "steamRank": 56
   },
   {
    "id": "steam-1228610",
@@ -1294,7 +1509,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 57
+   "rank": 63,
+   "steamRank": 57
   },
   {
    "id": "steam-1952620",
@@ -1315,7 +1531,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 58
+   "rank": 64,
+   "steamRank": 58
   },
   {
    "id": "steam-3337850",
@@ -1339,7 +1556,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 59
+   "rank": 65,
+   "steamRank": 59
   },
   {
    "id": "steam-3073940",
@@ -1362,7 +1580,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 60
+   "rank": 66,
+   "steamRank": 60
   },
   {
    "id": "steam-1373910",
@@ -1383,7 +1602,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 61
+   "rank": 67,
+   "steamRank": 61
   },
   {
    "id": "steam-2153760",
@@ -1406,7 +1626,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 62
+   "rank": 68,
+   "steamRank": 62
   },
   {
    "id": "steam-3642910",
@@ -1429,7 +1650,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 63
+   "rank": 69,
+   "steamRank": 63
   },
   {
    "id": "steam-3517740",
@@ -1452,7 +1674,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 64
+   "rank": 70,
+   "steamRank": 64
   },
   {
    "id": "steam-2239770",
@@ -1475,7 +1698,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 65
+   "rank": 71,
+   "steamRank": 65
   },
   {
    "id": "steam-1586260",
@@ -1498,7 +1722,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 66
+   "rank": 72,
+   "steamRank": 66
   },
   {
    "id": "steam-2454980",
@@ -1522,7 +1747,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 67
+   "rank": 73,
+   "steamRank": 67
   },
   {
    "id": "steam-3281420",
@@ -1545,7 +1771,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 68
+   "rank": 74,
+   "steamRank": 68
   },
   {
    "id": "steam-3629430",
@@ -1568,7 +1795,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 69
+   "rank": 75,
+   "steamRank": 69
   },
   {
    "id": "steam-3371050",
@@ -1591,7 +1819,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 70
+   "rank": 76,
+   "steamRank": 70
   },
   {
    "id": "steam-2090210",
@@ -1612,7 +1841,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 71
+   "rank": 77,
+   "steamRank": 71
   },
   {
    "id": "steam-2849490",
@@ -1635,7 +1865,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 72
+   "rank": 78,
+   "steamRank": 72
   },
   {
    "id": "steam-4228810",
@@ -1657,7 +1888,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 73
+   "rank": 79,
+   "steamRank": 73
   },
   {
    "id": "steam-4031890",
@@ -1680,7 +1912,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:28:23Z",
-   "rank": 74
+   "rank": 80,
+   "steamRank": 74
   },
   {
    "id": "steam-3788800",
@@ -1703,7 +1936,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 75
+   "rank": 81,
+   "steamRank": 75
   },
   {
    "id": "steam-1818140",
@@ -1724,7 +1958,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 76
+   "rank": 82,
+   "steamRank": 76
   },
   {
    "id": "steam-4348910",
@@ -1747,7 +1982,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 77
+   "rank": 83,
+   "steamRank": 77
   },
   {
    "id": "steam-2235430",
@@ -1769,7 +2005,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 78
+   "rank": 84,
+   "steamRank": 78
   },
   {
    "id": "steam-4767480",
@@ -1792,7 +2029,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 79
+   "rank": 85,
+   "steamRank": 79
   },
   {
    "id": "steam-2924520",
@@ -1815,7 +2053,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 80
+   "rank": 86,
+   "steamRank": 80
   },
   {
    "id": "steam-2165810",
@@ -1840,7 +2079,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 81
+   "rank": 87,
+   "steamRank": 81
   },
   {
    "id": "steam-3283240",
@@ -1862,7 +2102,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 82
+   "rank": 88,
+   "steamRank": 82
   },
   {
    "id": "steam-1257610",
@@ -1884,7 +2125,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 83
+   "rank": 89,
+   "steamRank": 83
   },
   {
    "id": "steam-1416070",
@@ -1908,7 +2150,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 84
+   "rank": 90,
+   "steamRank": 84
   },
   {
    "id": "steam-1614330",
@@ -1933,7 +2176,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 85
+   "rank": 91,
+   "steamRank": 85
   },
   {
    "id": "steam-3669620",
@@ -1956,7 +2200,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 86
+   "rank": 92,
+   "steamRank": 86
   },
   {
    "id": "steam-3714800",
@@ -1978,7 +2223,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 87
+   "rank": 93,
+   "steamRank": 87
   },
   {
    "id": "steam-1731290",
@@ -2000,7 +2246,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 88
+   "rank": 94,
+   "steamRank": 88
   },
   {
    "id": "steam-4258290",
@@ -2022,7 +2269,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 89
+   "rank": 95,
+   "steamRank": 89
   },
   {
    "id": "steam-4614080",
@@ -2045,7 +2293,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 90
+   "rank": 96,
+   "steamRank": 90
   },
   {
    "id": "steam-3078150",
@@ -2068,7 +2317,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 91
+   "rank": 97,
+   "steamRank": 91
   },
   {
    "id": "steam-1579420",
@@ -2091,7 +2341,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 92
+   "rank": 98,
+   "steamRank": 92
   },
   {
    "id": "steam-4814120",
@@ -2114,7 +2365,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 93
+   "rank": 99,
+   "steamRank": 93
   },
   {
    "id": "steam-2208810",
@@ -2136,7 +2388,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 94
+   "rank": 100,
+   "steamRank": 94
   },
   {
    "id": "steam-2437390",
@@ -2159,7 +2412,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 95
+   "rank": 101,
+   "steamRank": 95
   },
   {
    "id": "steam-2838950",
@@ -2180,7 +2434,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 96
+   "rank": 102,
+   "steamRank": 96
   },
   {
    "id": "steam-2141130",
@@ -2202,7 +2457,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 97
+   "rank": 103,
+   "steamRank": 97
   },
   {
    "id": "steam-2800370",
@@ -2225,7 +2481,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 98
+   "rank": 104,
+   "steamRank": 98
   },
   {
    "id": "steam-3669200",
@@ -2249,7 +2506,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 99
+   "rank": 105,
+   "steamRank": 99
   },
   {
    "id": "steam-2855590",
@@ -2272,7 +2530,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 100
+   "rank": 106,
+   "steamRank": 100
   },
   {
    "id": "steam-4369620",
@@ -2295,7 +2554,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 101
+   "rank": 107,
+   "steamRank": 101
   },
   {
    "id": "steam-4293910",
@@ -2318,7 +2578,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 102
+   "rank": 108,
+   "steamRank": 102
   },
   {
    "id": "steam-1667040",
@@ -2341,7 +2602,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 103
+   "rank": 109,
+   "steamRank": 103
   },
   {
    "id": "steam-2376260",
@@ -2364,7 +2626,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 104
+   "rank": 110,
+   "steamRank": 104
   },
   {
    "id": "steam-3426150",
@@ -2386,7 +2649,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 105
+   "rank": 111,
+   "steamRank": 105
   },
   {
    "id": "steam-3092530",
@@ -2409,7 +2673,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 106
+   "rank": 112,
+   "steamRank": 106
   },
   {
    "id": "steam-3199500",
@@ -2432,7 +2697,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 107
+   "rank": 113,
+   "steamRank": 107
   },
   {
    "id": "steam-1573550",
@@ -2453,7 +2719,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 108
+   "rank": 114,
+   "steamRank": 108
   },
   {
    "id": "steam-3401960",
@@ -2476,7 +2743,8 @@
    "precision": "month",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 109
+   "rank": 115,
+   "steamRank": 109
   },
   {
    "id": "steam-1572000",
@@ -2498,7 +2766,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 110
+   "rank": 116,
+   "steamRank": 110
   },
   {
    "id": "steam-3633680",
@@ -2521,7 +2790,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 111
+   "rank": 117,
+   "steamRank": 111
   },
   {
    "id": "steam-3126410",
@@ -2544,7 +2814,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 112
+   "rank": 118,
+   "steamRank": 112
   },
   {
    "id": "steam-2055770",
@@ -2565,7 +2836,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 113
+   "rank": 119,
+   "steamRank": 113
   },
   {
    "id": "steam-1388550",
@@ -2588,7 +2860,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 114
+   "rank": 120,
+   "steamRank": 114
   },
   {
    "id": "steam-2254950",
@@ -2611,7 +2884,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 115
+   "rank": 121,
+   "steamRank": 115
   },
   {
    "id": "steam-4348760",
@@ -2634,7 +2908,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 116
+   "rank": 122,
+   "steamRank": 116
   },
   {
    "id": "steam-1701840",
@@ -2657,7 +2932,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 117
+   "rank": 123,
+   "steamRank": 117
   },
   {
    "id": "steam-388860",
@@ -2679,7 +2955,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 118
+   "rank": 124,
+   "steamRank": 118
   },
   {
    "id": "steam-2063390",
@@ -2701,7 +2978,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 119
+   "rank": 125,
+   "steamRank": 119
   },
   {
    "id": "steam-1798230",
@@ -2724,7 +3002,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 120
+   "rank": 126,
+   "steamRank": 120
   },
   {
    "id": "steam-3230430",
@@ -2747,7 +3026,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 121
+   "rank": 127,
+   "steamRank": 121
   },
   {
    "id": "steam-3751230",
@@ -2768,7 +3048,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 122
+   "rank": 128,
+   "steamRank": 122
   },
   {
    "id": "steam-2617340",
@@ -2791,7 +3072,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 123
+   "rank": 129,
+   "steamRank": 123
   },
   {
    "id": "steam-3260750",
@@ -2813,7 +3095,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 124
+   "rank": 130,
+   "steamRank": 124
   },
   {
    "id": "steam-2708860",
@@ -2836,7 +3119,8 @@
    "precision": "month",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 125
+   "rank": 131,
+   "steamRank": 125
   },
   {
    "id": "steam-3581230",
@@ -2859,7 +3143,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 126
+   "rank": 132,
+   "steamRank": 126
   },
   {
    "id": "steam-1400830",
@@ -2882,7 +3167,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 127
+   "rank": 133,
+   "steamRank": 127
   },
   {
    "id": "steam-3767320",
@@ -2905,7 +3191,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 128
+   "rank": 134,
+   "steamRank": 128
   },
   {
    "id": "steam-3516100",
@@ -2928,7 +3215,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 129
+   "rank": 135,
+   "steamRank": 129
   },
   {
    "id": "steam-4665290",
@@ -2949,7 +3237,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 130
+   "rank": 136,
+   "steamRank": 130
   },
   {
    "id": "steam-3563080",
@@ -2974,7 +3263,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 131
+   "rank": 137,
+   "steamRank": 131
   },
   {
    "id": "steam-1728620",
@@ -2997,7 +3287,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 132
+   "rank": 138,
+   "steamRank": 132
   },
   {
    "id": "steam-2320980",
@@ -3021,7 +3312,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 133
+   "rank": 139,
+   "steamRank": 133
   },
   {
    "id": "steam-1203170",
@@ -3044,7 +3336,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 134
+   "rank": 140,
+   "steamRank": 134
   },
   {
    "id": "steam-2595260",
@@ -3066,7 +3359,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 135
+   "rank": 141,
+   "steamRank": 135
   },
   {
    "id": "steam-1977610",
@@ -3089,7 +3383,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 136
+   "rank": 142,
+   "steamRank": 136
   },
   {
    "id": "steam-4198090",
@@ -3111,7 +3406,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 137
+   "rank": 143,
+   "steamRank": 137
   },
   {
    "id": "steam-1209970",
@@ -3134,7 +3430,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 138
+   "rank": 144,
+   "steamRank": 138
   },
   {
    "id": "steam-1963680",
@@ -3156,7 +3453,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 139
+   "rank": 145,
+   "steamRank": 139
   },
   {
    "id": "steam-3970690",
@@ -3181,7 +3479,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 140
+   "rank": 146,
+   "steamRank": 140
   },
   {
    "id": "steam-1967610",
@@ -3203,7 +3502,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 141
+   "rank": 147,
+   "steamRank": 141
   },
   {
    "id": "steam-2705130",
@@ -3224,7 +3524,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 142
+   "rank": 148,
+   "steamRank": 142
   },
   {
    "id": "steam-4576490",
@@ -3247,7 +3548,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 143
+   "rank": 149,
+   "steamRank": 143
   },
   {
    "id": "steam-3209660",
@@ -3270,7 +3572,8 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 144
+   "rank": 150,
+   "steamRank": 144
   },
   {
    "id": "steam-1637460",
@@ -3292,7 +3595,31 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T15:45:19Z",
-   "rank": 145
+   "rank": 151,
+   "steamRank": 145
+  },
+  {
+   "id": "steam-2947860",
+   "slug": "untitled-john-wick-game",
+   "title": "Untitled John Wick Game",
+   "description": "Be Seeing You",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2947860/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2947860/441f7236790fe6a02ee0f1441be8f5563c488db5/header.jpg?t=1771511145",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 152,
+   "steamRank": 146
   },
   {
    "id": "steam-5160800",
@@ -3315,7 +3642,409 @@
    "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 146
+   "rank": 153,
+   "steamRank": 147
+  },
+  {
+   "id": "steam-2339840",
+   "slug": "enter-the-gungeon-2",
+   "title": "Enter the Gungeon 2",
+   "description": "Enter the Gungeon 2 is a reloaded, high-caliber sequel to the iconic bullet hell dungeon crawler, reinforced with a new 3D art style, new weapons and enemies, and new gameplay tricks.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2339840/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2339840/0029b9784bc1185e7cae8da5b6c85705131d9e5e/header.jpg?t=1765368609",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 154,
+   "steamRank": 148
+  },
+  {
+   "id": "steam-1373530",
+   "slug": "militsioner",
+   "title": "Militsioner",
+   "description": "Cada movimiento que haces es seguido por un Policía Colosal. Enfada, adula, defrauda, miente o incluso seduce a un gigante para escapar en este inmersivo simulador kafkiano.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1373530/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/ab9a2c7ad1f60db59a73b7938809248e764fd5ee/header.jpg?t=1792518049",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 155,
+   "steamRank": 149
+  },
+  {
+   "id": "steam-4146000",
+   "slug": "gang-of-dragon",
+   "title": "GANG OF DRAGON",
+   "description": "A new action-adventure game from game creator Toshihiro Nagoshi, set in the streets of Shinjuku, Tokyo. Starring Ma Dong-seok as Shin Ji-seong, the story unfolds with heated and intense human drama across Shinjuku, including Kabukicho — one of Japan’s largest entertainment districts.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4146000/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4146000/ea3dd5bef379dc1a5fcd78fe25b6f359bc767efc/header.jpg?t=1768993098",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 156,
+   "steamRank": 150
+  },
+  {
+   "id": "steam-3942260",
+   "slug": "kingfish",
+   "title": "KingFish",
+   "description": "Un juego cooperativo asimétrico para 2 jugadores donde un Rey y un Pez Gigante, una isla viviente, construyen una ciudad, viajan entre islas y defienden juntos su reino. Uno planifica desde las alturas. El otro lucha en tierra. Juntos resisten.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3942260/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3942260/13e615a1bbe0baecb6e9a84bf5e10a8c91449d8c/header.jpg?t=1782304034",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 157,
+   "steamRank": 151
+  },
+  {
+   "id": "steam-1173980",
+   "slug": "shadow-of-the-road",
+   "title": "Shadow of the Road",
+   "description": "Shadow of the Road es un RPG por turnos centrado en una narrativa en la que el Japón tradicional se combina con la magia y la tecnología. Enfrenta a tu equipo de personajes contra yokai mágicos y máquinas letales y crea tu propio camino en una historia profunda que cambiará el destino del Imperio.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1173980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1173980/6c1ef91b03a8585504ec3606088adccc6514d4d7/header.jpg?t=1791558499",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie",
+    "Rol"
+   ],
+   "releaseText": "10 Mar, 2027",
+   "date": "2027-03-10",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 158,
+   "steamRank": 152
+  },
+  {
+   "id": "steam-1857810",
+   "slug": "dragon-ball-xenoverse-3",
+   "title": "DRAGON BALL XENOVERSE 3",
+   "description": "DRAGON BALL XENOVERSE 3 es una experiencia totalmente nueva ambientada en el mundo de Dragon Ball, en la que tú decides qué clase de héroe quieres ser en un futuro inexplorado: el AÑO 1000.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1857810/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1857810/490f0970c1a2e15663100ae2a265a4b694832e46/header.jpg?t=1788505202",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 159,
+   "steamRank": 153
+  },
+  {
+   "id": "steam-4910490",
+   "slug": "ignite-the-depths",
+   "title": "Ignite the Depths",
+   "description": "Ignite the Depths es un evocador juego JcE de fantasía oscura y exploración de mazmorras ambientado en un enorme laberinto creado a mano. Desciende hacia la oscuridad en solitario o únete a hasta 4 jugadores en una aventura cooperativa. ¿Conquistarás el abismo?",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4910490/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910490/75cd79326152c5a254e1b966b7629568cdf27198/header.jpg?t=1792425330",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 160,
+   "steamRank": 154
+  },
+  {
+   "id": "steam-1559720",
+   "slug": "we-harvest-shadows",
+   "title": "We Harvest Shadows",
+   "description": "Una alegoría de terror en primera persona en medio de una granja. Encarna la vida de un ermitaño, construye tu granja y sobrevive a noches solitarias.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1559720/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1559720/header.jpg?t=1741805295",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Simuladores"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 161,
+   "steamRank": 155
+  },
+  {
+   "id": "steam-2017940",
+   "slug": "pony-island-2-panda-circus",
+   "title": "Pony Island 2: Panda Circus",
+   "description": "Pony Island 2: Panda Circus es una fantasmagórica odisea a través del tiempo, la mitología, la divinidad y los videojuegos. Escapa de las sumas deidades del inframundo con tu alma y tu cordura intactas. El juego no va de ponis.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2017940/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2017940/header.jpg?t=1792018624",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "27 Apr, 2027",
+   "date": "2027-04-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 162,
+   "steamRank": 156
+  },
+  {
+   "id": "steam-3184960",
+   "slug": "the-defiant",
+   "title": "The Defiant",
+   "description": "Las historias heroicas del campo de batalla de China durante la Segunda Guerra Mundial se desarrollarán en forma de juego de disparos en primera persona.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3184960/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3184960/daf3468e52296bead72ad56ae362f7bfcaa5909c/header.jpg?t=1788319819",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 163,
+   "steamRank": 157
+  },
+  {
+   "id": "steam-3620480",
+   "slug": "palworld-more-than-just-pals",
+   "title": "Pal♡world! ~More Than Just Pals~",
+   "description": "What lies inside the mysterious World Tree? An exciting school life filled with cute Pals! Will you remain friends or fall in love? Or dismantle and eat them...🍴 Your dream school romance starts here in this Palworld dating sim!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3620480/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3620480/eb1cab22a0869d9105774f5a0bce7ba51f9b3926/header.jpg?t=1774968128",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 164,
+   "steamRank": 158
+  },
+  {
+   "id": "steam-3571870",
+   "slug": "darkhaven",
+   "title": "Darkhaven",
+   "description": "Darkhaven es el APRG de siguiente generación producido para ti por muchos creadores originales de Diablo y Diablo II. Explora a fondo mapas generados procedimentalmente y totalmente destructibles a diferencia de otras aventuras solo o multijugador.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3571870/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3571870/70e60ea26011cc7ce87da08ab542ab4e3d6894e0/header.jpg?t=1782247893",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Rol"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 165,
+   "steamRank": 159
+  },
+  {
+   "id": "steam-2177510",
+   "slug": "ethra",
+   "title": "EthrA",
+   "description": "EthrA is an RPG/Adventure and open world game that revolves around the misadventures of two characters: Bob and Veil. Both will explore the land of EthrA and uncover a thousand year lie the world already forgot about.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2177510/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2177510/header.jpg?t=1791632579",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 166,
+   "steamRank": 160
+  },
+  {
+   "id": "steam-3809850",
+   "slug": "heroes-of-might-and-magic-iii-remake",
+   "title": "Heroes of Might and Magic III Remake",
+   "description": "Redescubre este clásico de la estrategia por turnos alabado por la crítica y sus dos expansiones, reconstruidas al detalle en 3D y 4K. Explora un mundo de fantasía lleno de vida y lidera a poderosos héroes en batallas épicas.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3809850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3809850/0f932dbebfe08d21b495450a3fa4e08da2d7dc4a/header.jpg?t=1791465457",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Rol",
+    "Estrategia"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 167,
+   "steamRank": 161
+  },
+  {
+   "id": "steam-2885380",
+   "slug": "gold-mining-simulator-2",
+   "title": "Gold Mining Simulator 2",
+   "description": "Conviértete en minero de oro. Trabaja duro, excava profundo, explora el mundo y conviértete en la persona más rica de Alaska. Utiliza una gran variedad de máquinas especializadas y, sobre todo, ¡coopera con otros en el modo Multijugador!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2885380/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2885380/header.jpg?t=1792832640",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Simuladores"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 168,
+   "steamRank": 162
+  },
+  {
+   "id": "steam-1670650",
+   "slug": "espiocracy",
+   "title": "Espiocracy",
+   "description": "Espiocracy, el juego de gran estrategia y espionaje donde manejarás el servicio de inteligencia de uno de los 74 países jugables. Reescribe la historia desde las sombras, influye con ideologías, golpes de estado y guerras subsidiarias. Cambia el mundo a través del subterfugio.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1670650/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1670650/header.jpg?t=1792742997",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 169,
+   "steamRank": 163
+  },
+  {
+   "id": "steam-2828020",
+   "slug": "citystate-metropolis",
+   "title": "Citystate Metropolis",
+   "description": "El city-builder creativo, pragmático y sin límites. Crea una obra maestra de diseño urbano, una pequeña ciudad sostenible o una metrópolis futurista. Con edificios generados proceduralmente, zonificación sin cuadrícula y potentes herramientas de edición, todo es personalizable: la ciudad es tuya.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2828020/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2828020/202d4765edcc3372f2a406cee58d38cc63139d5a/header.jpg?t=1787758641",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia",
+    "Acceso anticipado"
+   ],
+   "releaseText": "2026",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 170,
+   "steamRank": 164
   },
   {
    "id": "steam-2223980",
@@ -3338,7 +4067,431 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 147
+   "rank": 171,
+   "steamRank": 165
+  },
+  {
+   "id": "steam-4096780",
+   "slug": "the-missing-tail",
+   "title": "The Missing Tail",
+   "description": "The Missing Tail es una acogedora aventura cooperativa en la que juegas como dos gatos que exploran un animado patio medieval y un castillo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4096780/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096780/54734143a7d48b8ba6d825d402ecefb7d2fdde4d/header.jpg?t=1789141296",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 172,
+   "steamRank": 166
+  },
+  {
+   "id": "steam-3041680",
+   "slug": "coven-of-the-chicken-foot",
+   "title": "Coven of the Chicken Foot",
+   "description": "After the dungeons have been plundered and the monsters all killed, an elderly witch quietly gets to work. In this emotionally-rich, stylized, single-player adventure - Gert will need to build a bond with a peculiar creature if she’s to fulfill a coven’s oath.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3041680/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3041680/da2d620b6b86484b8ed1ea4b45f1ba8d2c6395d3/header.jpg?t=1774980325",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 173,
+   "steamRank": 167
+  },
+  {
+   "id": "steam-1739080",
+   "slug": "sword-hero",
+   "title": "Sword Hero",
+   "description": "A truly interactive open-world RPG, packed with dozens of dynamic systems like NPCs with Daily Routines and memory system, Crime and Reputation, a limb-based Directional Combat system and many more. Become a well-known Hero, a feared Villain or anything in-between.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1739080/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1739080/f34c257c6bd2793ce06a01537a89e8c37b393451/header.jpg?t=1758573293",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Rol"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 174,
+   "steamRank": 168
+  },
+  {
+   "id": "steam-2470010",
+   "slug": "defect",
+   "title": "DEFECT",
+   "description": "DEFECT is a CYBERPUNK SWAT SIM set in a destructible dystopian world. Play in Single-player, Co-op, or against others in 4v4v4v4 PvP.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2470010/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2470010/header.jpg?t=1792621203",
+   "platforms": [
+    "Windows",
+    "Linux"
+   ],
+   "genres": [
+    "Acción"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 175,
+   "steamRank": 169
+  },
+  {
+   "id": "steam-3590650",
+   "slug": "oku",
+   "title": "OKU",
+   "description": "Sin arte, nuestro mundo se desvanece. Como el último discípulo de un maestro de haiku desaparecido, recorrerás paisajes inspirados en Japón y capturarás su belleza en poemas para devolver la vida a senderos olvidados. Descubre tu legado y el poder del arte y la naturaleza.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3590650/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3590650/cea92a63fc537b892f2856793af4e2ba50977e05/header.jpg?t=1788426627",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 176,
+   "steamRank": 170
+  },
+  {
+   "id": "steam-306910",
+   "slug": "vaultbreakers",
+   "title": "Vaultbreakers",
+   "description": "Vaultbreakers es un RPG de extracción con vista superior, centrado en PvE o PvPvE. Construye tu refugio, saquea artefactos antiguos que definen tu estilo y explora un mundo corrompido, en solitario o con amigos, camino al Dragonvault.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/306910/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/306910/12ec53b666d5b70839ac2e612b674bedaa82a3af/header_spanish.jpg?t=1792094351",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 177,
+   "steamRank": 171
+  },
+  {
+   "id": "steam-1685310",
+   "slug": "the-wayward-realms",
+   "title": "The Wayward Realms",
+   "description": "Under the direction of Ted Peterson and Julian LeFay, lead developers of the team behind the original Elder Scrolls, Arena and Daggerfall, OnceLost Games is creating a new open-world fantasy RPG where choice and consequence are experienced on a scale never attempted before.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1685310/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1685310/b8b2f79b4d625470c60919ff69f8045d99d7d8c3/header.jpg?t=1745270250",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 178,
+   "steamRank": 172
+  },
+  {
+   "id": "steam-3079190",
+   "slug": "post-apocalypse-courier-service-simulador-de-conduccion-y-reparto",
+   "title": "Post Apocalypse Courier Service - Simulador de Conducción y Reparto",
+   "description": "1-4 players in the postiepocalypse! Drive across treacherous environments, customize your delivery vehicles, and secure 5 star reviews for corporate by supplying the apocalyptic miracle of a package delivered on time.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3079190/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3079190/d70472700ba2c1e6bcd6f54697581f15657ee49b/header.jpg?t=1791327204",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 179,
+   "steamRank": 173
+  },
+  {
+   "id": "steam-1723610",
+   "slug": "the-parasites",
+   "title": "The Parasites",
+   "description": "You are one of those who managed to survive after the fall of a giant meteorite. Build, explore, survive, upgrade your character by fighting against parasites that have invaded the earth. And then you may be able to hold out for some more time.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1723610/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1723610/header.jpg?t=1732171721",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 180,
+   "steamRank": 174
+  },
+  {
+   "id": "steam-2024600",
+   "slug": "into-the-unwell",
+   "title": "Into The Unwell",
+   "description": "¡Arrea y trocea tus demonios internos en este roguelite en tercera persona! ¡Un mundo de estilo &quot;rubber hose&quot; impulsado por sueños febriles! Hasta 3 jugadores pueden jugar manejando a varios inadaptados imperfectos y fuertemente medicados.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2024600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2024600/d08b7b6166af9867fb65aae0b06794fc6e2e78b6/header.jpg?t=1791189403",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 181,
+   "steamRank": 175
+  },
+  {
+   "id": "steam-4045720",
+   "slug": "squadron-42",
+   "title": "Squadron 42",
+   "description": "Alístate en la Armada del UEE y vive una aventura espacial cinemática para un jugador. Pilota cazas espaciales, lucha en tierra y explora naves capitales, estaciones espaciales y puestos fronterizos. Vive y trabaja como parte de una tripulación en el frente de batalla de una guerra galáctica.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4045720/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4045720/bb659b93138f2881c155b84c8896463acc041e9f/header.jpg?t=1792672730",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Simuladores"
+   ],
+   "releaseText": "Q2 2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 182,
+   "steamRank": 176
+  },
+  {
+   "id": "steam-2768300",
+   "slug": "scp",
+   "title": "SCP",
+   "description": "Infíltrate en las instalaciones de SCP que han sido vulneradas en este juego de disparos y extracción táctico y cooperativo de terror. Sobrevive a anomalías surrealistas, recupera información prohibida y escapa... o piérdelo todo. Cuanto más te adentras, más extraño y mortal se vuelve.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2768300/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2768300/28e1418b8f61a92bf974c0040e3434a52848602f/header.jpg?t=1788981681",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Casual"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 183,
+   "steamRank": 177
+  },
+  {
+   "id": "steam-3524720",
+   "slug": "haex",
+   "title": "HAEX",
+   "description": "Se ha detectado una anomalía en el norte subártico. El equipo científico enviado a investigar ha desaparecido. Sobrevive en un entorno salvaje asolado por alienígenas, ya sea en solitario o con hasta 3 amigos más. Disipa la niebla, transforma el mundo, crea armas y equipamiento y lucha para averiguar lo que ocurrió.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3524720/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3524720/f2b2f31e99d12986502485d9cebff05a10c5c2ac/header.jpg?t=1787250680",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Acceso anticipado"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 184,
+   "steamRank": 178
+  },
+  {
+   "id": "steam-3424730",
+   "slug": "ormod-directive",
+   "title": "ORMOD: Directive",
+   "description": "ORMOD: Directive es un sandbox de supervivencia duro y completo ambientado en un mundo dominado por ORMOD. Vive de forma nómada y decide si colaborar o cazar a otros jugadores. Reúne suministros, construye y vuélvete autosuficiente. Personaliza por completo mundos infinitos a tu gusto — la elección es tuya.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3424730/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3424730/53e7a3f14b3c3ece452a3ca63829994e0f1ed5cf/header.jpg?t=1791023734",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "2026",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 185,
+   "steamRank": 179
+  },
+  {
+   "id": "steam-2359600",
+   "slug": "perfect-new-world",
+   "title": "Perfect New World",
+   "description": "Perfect New World is a Boundless World MMO Action RPG, where you shall become a Soul Tamer and search for the reincarnated Prime! Immerse yourself in the experience without loading screens as you overcome the dangerous challenges and unveil the mysteries this world has to offer!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2359600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2359600/header.jpg?t=1698896750",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 186,
+   "steamRank": 180
+  },
+  {
+   "id": "steam-1401370",
+   "slug": "viking-city-builder",
+   "title": "Viking City Builder",
+   "description": "¡Levanta un nuevo poblado sobre las cenizas de los europeos! Construye y defiende un asentamiento vikingo en tierras hostiles. Administra a tu gente, sobrevive a los duros inviernos y envía a tus feroces guerreros a saquear las aldeas vecinas.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1401370/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1401370/d3a6d98cd76277de6f6be06b0f8c5f3b1d20812e/header.jpg?t=1777992248",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie",
+    "Estrategia"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 187,
+   "steamRank": 181
+  },
+  {
+   "id": "steam-3973300",
+   "slug": "dark-craft",
+   "title": "Dark Craft",
+   "description": "Dark Craft is the first MMORPG in the Souls-like genre! Explore an open world filled with ruined castles, forgotten temples, and enemies waiting for their prey. Play solo or with friends, hunt bosses, join guilds, fight other players, and prove your right to reign supreme.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3973300/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3973300/daf01a01b00195b4fa87a81b770dcd3ad9be95dd/header.jpg?t=1769544183",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 188,
+   "steamRank": 182
+  },
+  {
+   "id": "steam-3327430",
+   "slug": "carcass-clad",
+   "title": "Carcass Clad",
+   "description": "Un juego cooperativo de terror, tanques y vísceras de los creadores de MOUTHWASHING. Conduce el Yksiö con controles físicos y un equipo de 3 personas. El combustible es limitado; la munición, escasa. El santo de la ciudad, enterrado hace tiempo, regresa profanado y bañado en oro.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3327430/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3327430/f710162086f20d487da02f761235bb0f61f9d9d9/header.jpg?t=1790854542",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 189,
+   "steamRank": 183
   },
   {
    "id": "steam-1799840",
@@ -3361,7 +4514,129 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 148
+   "rank": 190,
+   "steamRank": 184
+  },
+  {
+   "id": "steam-895160",
+   "slug": "autonomica",
+   "title": "Autonomica",
+   "description": "Autonomica combina supervivencia en mundo abierto y automatización en un tiempo fracturado por experimentos fallidos. Conecta agricultura, química, minería e industria. Juega en solitario o en cooperativo y extrae de futuros inestables tecnología que aún no debería existir.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/895160/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/895160/6b647ccf150ad5d2b5a17f12f4fc26df858054d0/header.jpg?t=1790648044",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 191,
+   "steamRank": 185
+  },
+  {
+   "id": "steam-4210060",
+   "slug": "zero-sievert-2",
+   "title": "ZERO Sievert 2",
+   "description": "ZERO Sievert 2 es un juego de disparos y extracción JcE con perspectiva cenital ubicado en las ruinas del país de Zakov. Caza en solitario o en equipo, enfréntate a anomalías, bandidos y mutantes... y sobrevive.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4210060/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4210060/29513774a11dce37cd7e3144d73fea15505e05df/header.jpg?t=1792571113",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 192,
+   "steamRank": 186
+  },
+  {
+   "id": "steam-4879420",
+   "slug": "beltfed",
+   "title": "BELTFED",
+   "description": "Eres una IA rebelde con una única misión: AUTOMATIZAR LA MUERTE. Tritura, quema y vaporiza hordas de insectos hambrientos mientras tu fábrica, mitad máquina de guerra, arrasa un mundo tras otro. En BELTFED, la fábrica es tu arma.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4879420/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4879420/0c866810e91c1c69304342c35e8a67b086d34e3d/header.jpg?t=1792743931",
+   "platforms": [
+    "Windows",
+    "Mac",
+    "Linux"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 193,
+   "steamRank": 187
+  },
+  {
+   "id": "steam-1327040",
+   "slug": "truck-world-australia",
+   "title": "Truck World: Australia",
+   "description": "Un simulador de camiones ambientado en Australia. Transporta cargas por carretera y fuera de ella, baja de la cabina, engancha remolques, conecta mangueras, reposta y mantén tu camión a mano. Aquí no solo conduces - trabajas como camionero.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1327040/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1327040/header.jpg?t=1792577650",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Carreras",
+    "Simuladores"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 194,
+   "steamRank": 188
+  },
+  {
+   "id": "steam-3875690",
+   "slug": "totally-legit-wheeler-seller",
+   "title": "Totally Legit Wheeler Seller",
+   "description": "¡Gestiona tu propio concesionario turbio! Compra barato, haz reparaciones rápidas y vende con beneficio. Regatea, manipula el kilometraje y conviértete en el rey de los negocios sospechosos. Si alguna vez soñaste con vender un montón de óxido por mil pavos, este es tu momento.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3875690/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3875690/adef7ce1b3eec060fce1a3527d84aa8b21b27460/header.jpg?t=1792399049",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie",
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 195,
+   "steamRank": 189
   },
   {
    "id": "steam-3884860",
@@ -3384,7 +4659,77 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 149
+   "rank": 196,
+   "steamRank": 190
+  },
+  {
+   "id": "steam-3333850",
+   "slug": "arkheron",
+   "title": "Arkheron",
+   "description": "Un frenético JcJ isométrico en el que el botín que saqueas lo cambia todo. Adapta tu estilo de juego, modifica tu configuración sobre la marcha y ábrete paso luchando hasta la última planta de la Torre.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3333850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3333850/30aa0db1b4ee4eb19c72add82f8453f17053d309/header.jpg?t=1790710825",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 197,
+   "steamRank": 191
+  },
+  {
+   "id": "steam-1672320",
+   "slug": "fragile-existence",
+   "title": "Fragile Existence",
+   "description": "Salva a la humanidad de su extinción en este juego de ciencia ficción, estrategia y supervivencia. Surca el espacio en busca de recursos, establece colonias, cubre las necesidades de la civilización y aumenta tus defensas militares para luchar contra una amenaza inminente.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1672320/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1672320/header.jpg?t=1792743524",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 198,
+   "steamRank": 192
+  },
+  {
+   "id": "steam-4328440",
+   "slug": "cat-parents",
+   "title": "Cat Parents",
+   "description": "DE CALLEJERO A HOGAR: simulador de rescate de gatos. Las calles están llenas de peligros para estas criaturas indefensas. Rescata gatos, cuídalos y dales amor. Crea un verdadero hogar y conviértete en un padre gatuno, solo o con un amigo. Descubre la verdadera felicidad.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4328440/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4328440/c70e704ad9ea230fa3ae0fff0fac55369bf7fb3b/header.jpg?t=1774263285",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T15:53:31Z",
+   "rank": 199,
+   "steamRank": 193
   },
   {
    "id": "steam-4312190",
@@ -3408,7 +4753,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 150
+   "rank": 200,
+   "steamRank": 195
   },
   {
    "id": "steam-5117550",
@@ -3431,7 +4777,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 151
+   "rank": 201,
+   "steamRank": 196
   },
   {
    "id": "steam-4661070",
@@ -3454,7 +4801,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 152
+   "rank": 202,
+   "steamRank": 197
   },
   {
    "id": "steam-3459340",
@@ -3478,7 +4826,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 153
+   "rank": 203,
+   "steamRank": 198
   },
   {
    "id": "steam-4530370",
@@ -3502,7 +4851,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 154
+   "rank": 204,
+   "steamRank": 199
   },
   {
    "id": "steam-4395870",
@@ -3524,7 +4874,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 155
+   "rank": 205,
+   "steamRank": 200
   },
   {
    "id": "steam-4251460",
@@ -3546,7 +4897,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 156
+   "rank": 206,
+   "steamRank": 201
   },
   {
    "id": "steam-3024130",
@@ -3569,7 +4921,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 157
+   "rank": 207,
+   "steamRank": 202
   },
   {
    "id": "steam-2523740",
@@ -3590,7 +4943,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 158
+   "rank": 208,
+   "steamRank": 203
   },
   {
    "id": "steam-4017880",
@@ -3612,7 +4966,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 159
+   "rank": 209,
+   "steamRank": 204
   },
   {
    "id": "steam-5088440",
@@ -3635,7 +4990,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 160
+   "rank": 210,
+   "steamRank": 205
   },
   {
    "id": "steam-3447280",
@@ -3658,7 +5014,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 161
+   "rank": 211,
+   "steamRank": 206
   },
   {
    "id": "steam-4760480",
@@ -3679,7 +5036,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 162
+   "rank": 212,
+   "steamRank": 207
   },
   {
    "id": "steam-5088140",
@@ -3702,7 +5060,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 163
+   "rank": 213,
+   "steamRank": 208
   },
   {
    "id": "steam-3370490",
@@ -3725,7 +5084,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 164
+   "rank": 214,
+   "steamRank": 209
   },
   {
    "id": "steam-3335310",
@@ -3747,7 +5107,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 165
+   "rank": 215,
+   "steamRank": 210
   },
   {
    "id": "steam-2920220",
@@ -3770,7 +5131,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 166
+   "rank": 216,
+   "steamRank": 211
   },
   {
    "id": "steam-4096830",
@@ -3793,7 +5155,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 167
+   "rank": 217,
+   "steamRank": 212
   },
   {
    "id": "steam-4779470",
@@ -3816,7 +5179,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 168
+   "rank": 218,
+   "steamRank": 213
   },
   {
    "id": "steam-4487060",
@@ -3839,7 +5203,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 169
+   "rank": 219,
+   "steamRank": 214
   },
   {
    "id": "steam-3965430",
@@ -3863,7 +5228,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z",
-   "rank": 170
+   "rank": 220,
+   "steamRank": 215
   },
   {
    "id": "steam-5037200",
@@ -3886,30 +5252,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 171
-  },
-  {
-   "id": "steam-2548880",
-   "slug": "divine-frequency",
-   "title": "Divine Frequency",
-   "description": "Una historia desconcertante sobre el ascenso de un vagabundo de los contenedores de basura hasta convertirse en el software de seguridad más eficaz del universo.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2548880/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2548880/7af521bd86bf645d46b49691c5afe67fa4ea37d0/header.jpg?t=1791206947",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Indie"
-   ],
-   "releaseText": "26 Oct, 2026",
-   "date": "2026-10-26",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 172
+   "rank": 221,
+   "steamRank": 216
   },
   {
    "id": "steam-5072430",
@@ -3932,7 +5276,32 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 173
+   "rank": 222,
+   "steamRank": 217
+  },
+  {
+   "id": "steam-2548880",
+   "slug": "divine-frequency",
+   "title": "Divine Frequency",
+   "description": "Una historia desconcertante sobre el ascenso de un vagabundo de los contenedores de basura hasta convertirse en el software de seguridad más eficaz del universo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2548880/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2548880/7af521bd86bf645d46b49691c5afe67fa4ea37d0/header.jpg?t=1791206947",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z",
+   "rank": 223,
+   "steamRank": 218
   },
   {
    "id": "steam-3841580",
@@ -3955,7 +5324,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 174
+   "rank": 224,
+   "steamRank": 219
   },
   {
    "id": "steam-5019180",
@@ -3978,7 +5348,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 175
+   "rank": 225,
+   "steamRank": 220
   },
   {
    "id": "steam-3471290",
@@ -4002,7 +5373,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 176
+   "rank": 226,
+   "steamRank": 221
   },
   {
    "id": "steam-4715160",
@@ -4025,7 +5397,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 177
+   "rank": 227,
+   "steamRank": 222
   },
   {
    "id": "steam-4287040",
@@ -4050,7 +5423,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 178
+   "rank": 228,
+   "steamRank": 223
   },
   {
    "id": "steam-4704520",
@@ -4074,7 +5448,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 179
+   "rank": 229,
+   "steamRank": 224
   },
   {
    "id": "steam-3705900",
@@ -4096,7 +5471,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 180
+   "rank": 230,
+   "steamRank": 225
   },
   {
    "id": "steam-4398500",
@@ -4119,7 +5495,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 181
+   "rank": 231,
+   "steamRank": 226
   },
   {
    "id": "steam-4202430",
@@ -4142,7 +5519,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 182
+   "rank": 232,
+   "steamRank": 227
   },
   {
    "id": "steam-5037510",
@@ -4165,7 +5543,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 183
+   "rank": 233,
+   "steamRank": 228
   },
   {
    "id": "steam-4236650",
@@ -4189,7 +5568,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 184
+   "rank": 234,
+   "steamRank": 229
   },
   {
    "id": "steam-2665020",
@@ -4212,7 +5592,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 185
+   "rank": 235,
+   "steamRank": 230
   },
   {
    "id": "steam-5031210",
@@ -4236,7 +5617,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 186
+   "rank": 236,
+   "steamRank": 231
   },
   {
    "id": "steam-2440760",
@@ -4259,7 +5641,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 187
+   "rank": 237,
+   "steamRank": 232
   },
   {
    "id": "steam-3347910",
@@ -4282,7 +5665,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 188
+   "rank": 238,
+   "steamRank": 233
   },
   {
    "id": "steam-940230",
@@ -4305,7 +5689,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 189
+   "rank": 239,
+   "steamRank": 234
   },
   {
    "id": "steam-3322630",
@@ -4328,7 +5713,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 190
+   "rank": 240,
+   "steamRank": 235
   },
   {
    "id": "steam-5313470",
@@ -4351,7 +5737,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 191
+   "rank": 241,
+   "steamRank": 236
   },
   {
    "id": "steam-4984870",
@@ -4373,7 +5760,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 192
+   "rank": 242,
+   "steamRank": 237
   },
   {
    "id": "steam-3144010",
@@ -4397,7 +5785,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 193
+   "rank": 243,
+   "steamRank": 238
   },
   {
    "id": "steam-2482760",
@@ -4418,7 +5807,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 194
+   "rank": 244,
+   "steamRank": 239
   },
   {
    "id": "steam-2257440",
@@ -4442,7 +5832,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 195
+   "rank": 245,
+   "steamRank": 240
   },
   {
    "id": "steam-5352720",
@@ -4465,7 +5856,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 196
+   "rank": 246,
+   "steamRank": 241
   },
   {
    "id": "steam-2747660",
@@ -4488,7 +5880,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 197
+   "rank": 247,
+   "steamRank": 242
   },
   {
    "id": "steam-2562390",
@@ -4511,7 +5904,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 198
+   "rank": 248,
+   "steamRank": 243
   },
   {
    "id": "steam-3743260",
@@ -4533,7 +5927,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 199
+   "rank": 249,
+   "steamRank": 244
   },
   {
    "id": "steam-2434930",
@@ -4556,7 +5951,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 200
+   "rank": 250,
+   "steamRank": 245
   },
   {
    "id": "steam-5133900",
@@ -4579,7 +5975,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 201
+   "rank": 251,
+   "steamRank": 246
   },
   {
    "id": "steam-3010170",
@@ -4602,7 +5999,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 202
+   "rank": 252,
+   "steamRank": 247
   },
   {
    "id": "steam-5274500",
@@ -4624,7 +6022,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 203
+   "rank": 253,
+   "steamRank": 248
   },
   {
    "id": "steam-5138990",
@@ -4646,7 +6045,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 204
+   "rank": 254,
+   "steamRank": 249
   },
   {
    "id": "steam-2379350",
@@ -4670,7 +6070,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 205
+   "rank": 255,
+   "steamRank": 250
   },
   {
    "id": "steam-1167820",
@@ -4693,7 +6094,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 206
+   "rank": 256,
+   "steamRank": 251
   },
   {
    "id": "steam-5189500",
@@ -4717,7 +6119,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 207
+   "rank": 257,
+   "steamRank": 252
   },
   {
    "id": "steam-4476390",
@@ -4740,7 +6143,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 208
+   "rank": 258,
+   "steamRank": 253
   },
   {
    "id": "steam-3818450",
@@ -4765,7 +6169,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 209
+   "rank": 259,
+   "steamRank": 254
   },
   {
    "id": "steam-2551970",
@@ -4789,7 +6194,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 210
+   "rank": 260,
+   "steamRank": 255
   },
   {
    "id": "steam-4715430",
@@ -4813,7 +6219,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 211
+   "rank": 261,
+   "steamRank": 256
   },
   {
    "id": "steam-4272370",
@@ -4836,7 +6243,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 212
+   "rank": 262,
+   "steamRank": 257
   },
   {
    "id": "steam-3832030",
@@ -4861,7 +6269,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z",
-   "rank": 213
+   "rank": 263,
+   "steamRank": 258
   },
   {
    "id": "steam-2870790",
@@ -4884,7 +6293,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 214
+   "rank": 264,
+   "steamRank": 259
   },
   {
    "id": "steam-3401570",
@@ -4907,7 +6317,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 215
+   "rank": 265,
+   "steamRank": 260
   },
   {
    "id": "steam-4776500",
@@ -4930,7 +6341,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 216
+   "rank": 266,
+   "steamRank": 261
   },
   {
    "id": "steam-3310570",
@@ -4953,7 +6365,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 217
+   "rank": 267,
+   "steamRank": 262
   },
   {
    "id": "steam-4087940",
@@ -4976,7 +6389,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 218
+   "rank": 268,
+   "steamRank": 263
   },
   {
    "id": "steam-3204330",
@@ -5000,7 +6414,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 219
+   "rank": 269,
+   "steamRank": 264
   },
   {
    "id": "steam-4958460",
@@ -5023,7 +6438,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 220
+   "rank": 270,
+   "steamRank": 265
   },
   {
    "id": "steam-5211290",
@@ -5046,7 +6462,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 221
+   "rank": 271,
+   "steamRank": 266
   },
   {
    "id": "steam-2498890",
@@ -5069,7 +6486,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 222
+   "rank": 272,
+   "steamRank": 267
   },
   {
    "id": "steam-3274710",
@@ -5092,7 +6510,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 223
+   "rank": 273,
+   "steamRank": 268
   },
   {
    "id": "steam-4306070",
@@ -5113,7 +6532,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 224
+   "rank": 274,
+   "steamRank": 269
   },
   {
    "id": "steam-2988120",
@@ -5136,7 +6556,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 225
+   "rank": 275,
+   "steamRank": 270
   },
   {
    "id": "steam-4834840",
@@ -5158,7 +6579,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 226
+   "rank": 276,
+   "steamRank": 271
   },
   {
    "id": "steam-3859180",
@@ -5180,7 +6602,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 227
+   "rank": 277,
+   "steamRank": 272
   },
   {
    "id": "steam-2899240",
@@ -5203,7 +6626,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 228
+   "rank": 278,
+   "steamRank": 273
   },
   {
    "id": "steam-4193010",
@@ -5226,7 +6650,8 @@
    "precision": "month",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 229
+   "rank": 279,
+   "steamRank": 274
   },
   {
    "id": "steam-3927170",
@@ -5248,7 +6673,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 230
+   "rank": 280,
+   "steamRank": 275
   },
   {
    "id": "steam-3166230",
@@ -5271,7 +6697,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 231
+   "rank": 281,
+   "steamRank": 276
   },
   {
    "id": "steam-3577020",
@@ -5296,7 +6723,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 232
+   "rank": 282,
+   "steamRank": 277
   },
   {
    "id": "steam-4926310",
@@ -5319,7 +6747,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 233
+   "rank": 283,
+   "steamRank": 278
   },
   {
    "id": "steam-5062910",
@@ -5343,7 +6772,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 234
+   "rank": 284,
+   "steamRank": 279
   },
   {
    "id": "steam-4171130",
@@ -5368,7 +6798,8 @@
    "precision": "month",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 235
+   "rank": 285,
+   "steamRank": 280
   },
   {
    "id": "steam-3758950",
@@ -5391,7 +6822,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 236
+   "rank": 286,
+   "steamRank": 281
   },
   {
    "id": "steam-3548510",
@@ -5414,7 +6846,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 237
+   "rank": 287,
+   "steamRank": 282
   },
   {
    "id": "steam-4024120",
@@ -5437,7 +6870,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 238
+   "rank": 288,
+   "steamRank": 283
   },
   {
    "id": "steam-3901850",
@@ -5459,7 +6893,8 @@
    "precision": "month",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 239
+   "rank": 289,
+   "steamRank": 284
   },
   {
    "id": "steam-4485570",
@@ -5482,7 +6917,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 240
+   "rank": 290,
+   "steamRank": 285
   },
   {
    "id": "steam-3712150",
@@ -5505,7 +6941,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 241
+   "rank": 291,
+   "steamRank": 286
   },
   {
    "id": "steam-4719390",
@@ -5527,7 +6964,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 242
+   "rank": 292,
+   "steamRank": 287
   },
   {
    "id": "steam-5226940",
@@ -5550,7 +6988,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 243
+   "rank": 293,
+   "steamRank": 288
   },
   {
    "id": "steam-4466850",
@@ -5574,7 +7013,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 244
+   "rank": 294,
+   "steamRank": 289
   },
   {
    "id": "steam-5112880",
@@ -5596,7 +7036,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 245
+   "rank": 295,
+   "steamRank": 290
   },
   {
    "id": "steam-3891200",
@@ -5617,7 +7058,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 246
+   "rank": 296,
+   "steamRank": 291
   },
   {
    "id": "steam-4339680",
@@ -5638,7 +7080,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 247
+   "rank": 297,
+   "steamRank": 292
   },
   {
    "id": "steam-4755250",
@@ -5661,7 +7104,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 248
+   "rank": 298,
+   "steamRank": 293
   },
   {
    "id": "steam-3375990",
@@ -5684,7 +7128,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 249
+   "rank": 299,
+   "steamRank": 294
   },
   {
    "id": "steam-2606850",
@@ -5707,7 +7152,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 250
+   "rank": 300,
+   "steamRank": 295
   },
   {
    "id": "steam-4058120",
@@ -5730,7 +7176,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 251
+   "rank": 301,
+   "steamRank": 296
   },
   {
    "id": "steam-5096020",
@@ -5754,7 +7201,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 252
+   "rank": 302,
+   "steamRank": 297
   },
   {
    "id": "steam-5123900",
@@ -5776,7 +7224,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 253
+   "rank": 303,
+   "steamRank": 298
   },
   {
    "id": "steam-4538080",
@@ -5799,7 +7248,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 254
+   "rank": 304,
+   "steamRank": 299
   },
   {
    "id": "steam-4198360",
@@ -5821,7 +7271,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 255
+   "rank": 305,
+   "steamRank": 300
   },
   {
    "id": "steam-1932910",
@@ -5844,7 +7295,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 256
+   "rank": 306,
+   "steamRank": 301
   },
   {
    "id": "steam-4356780",
@@ -5866,7 +7318,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 257
+   "rank": 307,
+   "steamRank": 302
   },
   {
    "id": "steam-1686230",
@@ -5888,7 +7341,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 258
+   "rank": 308,
+   "steamRank": 303
   },
   {
    "id": "steam-3891160",
@@ -5910,7 +7364,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z",
-   "rank": 259
+   "rank": 309,
+   "steamRank": 304
   },
   {
    "id": "steam-3383450",
@@ -5933,7 +7388,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 260
+   "rank": 310,
+   "steamRank": 305
   },
   {
    "id": "steam-3929570",
@@ -5956,7 +7412,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 261
+   "rank": 311,
+   "steamRank": 306
   },
   {
    "id": "steam-4570020",
@@ -5978,7 +7435,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 262
+   "rank": 312,
+   "steamRank": 307
   },
   {
    "id": "steam-4065440",
@@ -6002,7 +7460,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 263
+   "rank": 313,
+   "steamRank": 308
   },
   {
    "id": "steam-5030570",
@@ -6024,7 +7483,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 264
+   "rank": 314,
+   "steamRank": 309
   },
   {
    "id": "steam-4834850",
@@ -6046,7 +7506,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 265
+   "rank": 315,
+   "steamRank": 310
   },
   {
    "id": "steam-3572090",
@@ -6068,7 +7529,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 266
+   "rank": 316,
+   "steamRank": 311
   },
   {
    "id": "steam-4261080",
@@ -6090,7 +7552,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 267
+   "rank": 317,
+   "steamRank": 312
   },
   {
    "id": "steam-4689770",
@@ -6112,7 +7575,8 @@
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z",
-   "rank": 268
+   "rank": 318,
+   "steamRank": 313
   }
  ]
 }
