@@ -10,6 +10,7 @@ from pathlib import Path
 from .channels import cop_text, date_es, money, region_text, whatsapp_text
 from .content import FAQ, GUIDES, LEGAL_REVIEW, LEGAL_UPDATED
 from .model import parse_iso
+from .releases import date_label, relative_label, MONTHS_ES
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
@@ -18,9 +19,12 @@ DISCLOSURE = ("Algunos enlaces publicados pueden ser enlaces de afiliados. Si re
               "ellos podemos recibir una comisión sin costo adicional para ti.")
 
 NAV = [
-    ("index.html", "Inicio"), ("juegos-gratis.html", "Juegos gratis"), ("ofertas.html", "Ofertas"),
-    ("tiendas.html", "Tiendas"), ("guias.html", "Guías"), ("noticias.html", "Noticias"),
-    ("preguntas-frecuentes.html", "Preguntas"),
+    ("Ofertas", [("index.html", "Inicio", "⌂"), ("juegos-gratis.html", "Juegos gratis", "🎁"),
+                 ("ofertas.html", "Ofertas", "🔥"), ("noticias.html", "Novedades", "📰")]),
+    ("Lanzamientos", [("lanzamientos.html", "Calendario", "📅"), ("lanzamientos.html#proximos", "Próximos", "⏳"),
+                      ("lanzamientos.html#recientes", "Recientes", "🆕"), ("lanzamientos.html#por-confirmar", "Por confirmar", "❔")]),
+    ("Ayuda", [("guias.html", "Guías", "📘"), ("preguntas-frecuentes.html", "Preguntas", "💬"),
+               ("como-verificamos.html", "Cómo verificamos", "✔")]),
 ]
 FOOTER = [
     ("como-verificamos.html", "Cómo verificamos"), ("quienes-somos.html", "Quiénes somos"),
@@ -52,9 +56,13 @@ class Site:
     def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website"):
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
+        stores_nav = [(f"ofertas.html?tienda={st['id']}", st["name"], "🏬") for st in self.stores.values() if st["active"]]
+        groups = NAV[:1] + [("Tiendas", stores_nav)] + NAV[1:]
         nav = "".join(
-            f'<li><a href="{href}"{" aria-current=\"page\"" if href == name else ""}>{e(label)}</a></li>'
-            for href, label in NAV)
+            f'<div class="side-group"><p class="side-title">{e(title)}</p><ul>' + "".join(
+                f'<li><a href="{href}"{" aria-current=\"page\"" if href == name else ""}>'
+                f'<span class="side-ico" aria-hidden="true">{ico}</span>{e(label)}</a></li>' for href, label, ico in links) + "</ul></div>"
+            for title, links in groups)
         foot = "".join(f'<li><a href="{href}">{e(label)}</a></li>' for href, label in FOOTER)
         tg = self.cfg.get("enlace_canal_telegram")
         if tg:
@@ -117,12 +125,14 @@ class Site:
 <div class="bar"><a class="brand" href="index.html"><img src="assets/logo-72.png" alt="" width="36" height="36">Ofertas Gamer CO</a>
 <div class="bar-actions"><button class="btn" id="theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro">Tema</button>
 <button class="btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button></div></div>
-<nav class="main" id="main-nav" aria-label="Principal"><ul>{nav}</ul></nav>
 </div></header>
+<div class="shell">
+<nav class="side" id="main-nav" aria-label="Principal">{nav}{self.side_channels()}</nav>
 <main id="contenido"><div class="wrap">
 {crumb_html}
 {body}
 </div></main>
+</div>
 <footer class="site"><div class="wrap">
 <p class="foot-brand"><img src="assets/logo-72.png" alt="" width="32" height="32"> Ofertas Gamer CO</p>
 <p>{e(DISCLOSURE)}</p>
@@ -214,6 +224,12 @@ class Site:
 <p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
         return filters + f'<ul class="grid" id="{list_id}">' + "".join(cards) + "</ul>"
 
+    def side_channels(self):
+        tg = self.cfg.get("enlace_canal_telegram")
+        if not tg:
+            return ""
+        return '<div class="side-group side-cta">' + ext_link(tg, "Canal de Telegram", cls="btn btn-tg") + "</div>"
+
     def channels_cta(self):
         parts = []
         if self.cfg.get("enlace_canal_telegram"):
@@ -259,6 +275,104 @@ class Site:
                 f'<nav class="s-dots" aria-label="Elegir oferta">{dots}</nav>'
                 f'<div class="s-bar" aria-hidden="true"><span></span></div></section>')
 
+    # ---------- calendario de lanzamientos ----------
+    @staticmethod
+    def split_releases(games, now):
+        today = now.strftime("%Y-%m-%d")
+        dated = [g for g in games if g.get("date")]
+        upcoming = sorted([g for g in dated if g["date"] >= today or g.get("precision") == "month" and g["date"][:7] >= today[:7]],
+                          key=lambda g: (g["date"], g.get("precision") != "day", g["title"]))
+        recent = sorted([g for g in dated if g not in upcoming], key=lambda g: g["date"], reverse=True)
+        tba = sorted([g for g in games if not g.get("date")], key=lambda g: g["title"])
+        return upcoming, recent, tba
+
+    def release_card(self, g, now, compact=True):
+        img = g.get("image") or "assets/placeholder.svg"
+        alt = f"Imagen de {g['title']}" if g.get("image") else ""
+        plats = "".join(f'<span class="ver">{e(p)}</span>' for p in g.get("platforms", []))
+        genres = "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])[:2])
+        rel = relative_label(g.get("date"), g.get("precision"), now)
+        when = date_label(g.get("date"), g.get("precision"))
+        link = ext_link(g["url"], "Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
+        return f"""<li class="rel-card" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
+<div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}</div>
+<p class="rel-name">{e(g['title'])}</p>
+<p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
+{'' if compact else f'<p class="meta">{e(when)}</p>'}
+<div class="tags">{genres}</div>
+<div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔</button></div></li>"""
+
+    def release_groups(self, games, now, title, anchor, compact=True):
+        if not games:
+            return ""
+        groups, order = {}, []
+        for g in games:
+            key = g.get("date") if g.get("precision") == "day" else (g.get("date") or "")[:7] or "tba"
+            if key not in groups:
+                groups[key] = []
+                order.append(key)
+            groups[key].append(g)
+        out = []
+        for key in order:
+            items = groups[key]
+            if key == "tba":
+                big, label, rel = "Por confirmar", "Fecha por confirmar", ""
+            elif len(key) == 7:
+                y, m = int(key[:4]), int(key[5:7])
+                big = f"{MONTHS_ES[m - 1].capitalize()} {y}"
+                label, rel = f"{MONTHS_ES[m - 1].capitalize()} de {y}", "día por confirmar"
+            else:
+                d, m = int(key[8:10]), int(key[5:7])
+                big = f"{d} {MONTHS_ES[m - 1][:3]}"
+                label, rel = date_label(key, "day"), relative_label(key, "day", now)
+            kind = "past" if rel.startswith("hace") or rel == "ayer" else "today" if rel == "hoy" else "future"
+            out.append(f'<section class="rel-day {kind}" aria-label="{e(label)}"><h3 class="rel-head">'
+                       f'<span class="rel-dot" aria-hidden="true"></span><span class="rel-big">{e(big)}</span>'
+                       f'<span class="rel-sub">{e(rel)}</span><span class="rel-line" aria-hidden="true"></span>'
+                       f'<span class="rel-crumb">Juegos · {len(items)}</span></h3>'
+                       f'<ul class="rel-grid">{"".join(self.release_card(g, now, compact) for g in items)}</ul></section>')
+        return f'<div class="rel-block" id="{anchor}"><h2>{e(title)}</h2>' + "".join(out) + "</div>"
+
+    def releases_page(self, games, now, updated_line):
+        upcoming, recent, tba = self.split_releases(games, now)
+        genres = sorted({x for g in games for x in g.get("genres", [])})
+        chip = lambda kind, v: f'<button type="button" class="chip" data-{kind}="{e(v)}" aria-pressed="false">{e(v)}</button>'
+        toolbar = f"""<div class="rel-toolbar" id="rel-toolbar" hidden>
+<div class="tabs" role="group" aria-label="Periodo">
+<button type="button" class="tab" data-view="hot" aria-pressed="true">🔥 Destacados</button>
+<button type="button" class="tab" data-view="week" aria-pressed="false">Esta semana</button>
+<button type="button" class="tab" data-view="month" aria-pressed="false">Este mes</button>
+<button type="button" class="tab" data-view="all" aria-pressed="false">Todo</button>
+<button type="button" class="tab" data-view="follow" aria-pressed="false">🔔 Siguiendo</button>
+</div>
+<label class="rel-search"><span class="sr-only">Buscar juego</span><input type="search" id="rel-q" placeholder="Buscar juego…" autocomplete="off"></label>
+<div class="chips" role="group" aria-label="Sistema">{''.join(chip('platform', x) for x in ('Windows', 'Mac', 'Linux'))}</div>
+<div class="chips" role="group" aria-label="Género">{''.join(chip('genre', x) for x in genres)}</div>
+</div>"""
+        body = (self.release_groups(upcoming, now, "Próximos lanzamientos", "proximos") +
+                self.release_groups(recent, now, "Lanzados recientemente", "recientes") +
+                self.release_groups(tba, now, "Fecha por confirmar", "por-confirmar"))
+        ld = {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": g["title"], "url": g["url"]} for i, g in enumerate(upcoming[:30])]}
+        self.layout("lanzamientos.html", "Calendario de lanzamientos de juegos de PC",
+                    "Próximos lanzamientos y estrenos recientes de juegos de PC en Steam, con la fecha que publica la tienda, sistemas y géneros.",
+                    f"""<div class="rel-top"><div><h1>Calendario de <span class="grad">lanzamientos</span></h1>
+<p class="lead">Los próximos juegos de PC y los estrenos recientes en Steam, día por día. Las fechas son las que publica cada tienda y pueden cambiar.</p>
+{updated_line}</div></div>
+{toolbar}
+<p class="count" id="rel-count" aria-live="polite">{len(games)} juegos</p>
+<div id="rel-list">{body or '<p class="notice">Todavía no hay lanzamientos cargados. Vuelve en unas horas.</p>'}</div>
+<p class="notice" id="rel-empty" hidden>No hay juegos con estos filtros. Prueba con «Todo» o quita algún filtro.</p>""",
+                    crumbs=[("lanzamientos.html", "Lanzamientos")], jsonld=[ld])
+
+    def upcoming_home(self, games, now):
+        upcoming = self.split_releases(games, now)[0][:6]
+        if not upcoming:
+            return ""
+        return ('<h2>Próximos lanzamientos</h2><ul class="rel-grid">' +
+                "".join(self.release_card(g, now, compact=False) for g in upcoming) +
+                '</ul><p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
+
     def ticker(self, offers):
         if not offers:
             return ""
@@ -274,7 +388,7 @@ class Site:
             for i, o in enumerate(offers[:30])]}
 
     # ---------- páginas ----------
-    def build(self, offers, status, updated_dt):
+    def build(self, offers, status, updated_dt, games=None):
         if self.out.exists():
             for child in self.out.iterdir():
                 if child.name in ("CNAME",):
@@ -332,6 +446,7 @@ class Site:
 <h2>Mejores descuentos</h2>
 {self.offer_list(top, with_filters=False, list_id="top-home")}
 {'<h2>Próximas a vencer</h2>' + self.offer_list(soon, with_filters=False, list_id="soon-home") if soon else ''}
+{self.upcoming_home(games or [], updated_dt)}
 <h2>Buscar entre todas las ofertas</h2>
 {self.offer_list(live)}
 <h2>Tiendas</h2>
@@ -391,6 +506,7 @@ class Site:
                     f"<h1>Noticias de ofertas</h1><p class=\"lead\">Ofertas nuevas detectadas por nuestro sistema, de la más reciente a la más antigua.</p>{news or '<p>Todavía no hay novedades registradas.</p>'}",
                     crumbs=[("noticias.html", "Noticias de ofertas")])
 
+        self.releases_page(games or [], updated_dt, updated_line)
         self.static_pages(status, updated)
         self.whatsapp_page(live, updated)
         self.feeds(live, updated_dt)

@@ -1,0 +1,130 @@
+{
+ "1001": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Nave Estelar",
+   "short_description": "<b>Nave Estelar</b> es un juego de prueba.",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1001/header.jpg",
+   "platforms": {
+    "windows": true,
+    "mac": true,
+    "linux": true
+   },
+   "genres": [
+    {
+     "id": "1",
+     "description": "Acción"
+    },
+    {
+     "id": "1",
+     "description": "Aventura"
+    }
+   ],
+   "release_date": {
+    "coming_soon": true,
+    "date": "14 Nov, 2030"
+   }
+  }
+ },
+ "1002": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Granja Tranquila",
+   "short_description": "<b>Granja Tranquila</b> es un juego de prueba.",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1002/header.jpg",
+   "platforms": {
+    "windows": true,
+    "mac": false,
+    "linux": false
+   },
+   "genres": [
+    {
+     "id": "1",
+     "description": "Simulación"
+    }
+   ],
+   "release_date": {
+    "coming_soon": true,
+    "date": "March 2031"
+   }
+  }
+ },
+ "1003": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Misterio <script>",
+   "short_description": "<b>Misterio <script></b> es un juego de prueba.",
+   "header_image": "http://inseguro.example/x.jpg",
+   "platforms": {
+    "windows": true,
+    "mac": false,
+    "linux": false
+   },
+   "genres": [
+    {
+     "id": "1",
+     "description": "Indie"
+    },
+    {
+     "id": "1",
+     "description": "RPG"
+    }
+   ],
+   "release_date": {
+    "coming_soon": true,
+    "date": "Coming soon"
+   }
+  }
+ },
+ "1004": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Clásico Reciente",
+   "short_description": "<b>Clásico Reciente</b> es un juego de prueba.",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1004/header.jpg",
+   "platforms": {
+    "windows": true,
+    "mac": false,
+    "linux": false
+   },
+   "genres": [
+    {
+     "id": "1",
+     "description": "Estrategia"
+    }
+   ],
+   "release_date": {
+    "coming_soon": false,
+    "date": "Jan 5, 2026"
+   }
+  }
+ },
+ "1005": {
+  "success": true,
+  "data": {
+   "type": "dlc",
+   "name": "Pack de Trajes",
+   "short_description": "<b>Pack de Trajes</b> es un juego de prueba.",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1005/header.jpg",
+   "platforms": {
+    "windows": true,
+    "mac": false,
+    "linux": false
+   },
+   "genres": [
+    {
+     "id": "1",
+     "description": "Acción"
+    }
+   ],
+   "release_date": {
+    "coming_soon": true,
+    "date": "Dec 1, 2030"
+   }
+  }
+ }
+}

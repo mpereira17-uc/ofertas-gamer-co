@@ -13,7 +13,7 @@ import json
 import sys
 from pathlib import Path
 
-from ogc import channels, sources
+from ogc import channels, releases, sources
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
 from ogc.site import Site
 
@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 OFFERS_FILE = DATA / "offers.json"
 PUBLISHED_FILE = DATA / "telegram_publicados.json"
+RELEASES_FILE = DATA / "lanzamientos.json"
 DOCS = ROOT / "docs"
 
 
@@ -37,7 +38,12 @@ def save_json(path, data):
 
 def fixture_fetch(folder):
     def fetch(url):
-        name = "epic.json" if "epicgames" in url else "cheapshark.json" if "cheapshark" in url else "rate.json"
+        if "featuredcategories" in url:
+            name = "steam_featured.json"
+        elif "appdetails" in url:
+            name = "steam_appdetails.json"
+        else:
+            name = "epic.json" if "epicgames" in url else "cheapshark.json" if "cheapshark" in url else "rate.json"
         return json.loads((Path(folder) / name).read_text(encoding="utf-8"))
     return fetch
 
@@ -106,7 +112,10 @@ def run(args):
     DATA.mkdir(exist_ok=True)
     save_json(OFFERS_FILE, {"updatedAt": iso(now), "offers": offers})
     save_json(PUBLISHED_FILE, {"enviados": sorted(published)[-3000:]})
-    Site(cfg, stores, ads, DOCS).build(offers, status, now)
+    previous_releases = load_json(RELEASES_FILE, {}).get("games", [])
+    games, status["Fuente lanzamientos (Steam)"] = releases.update(previous_releases, now, sources.get_json)
+    save_json(RELEASES_FILE, {"updatedAt": iso(now), "games": games})
+    Site(cfg, stores, ads, DOCS).build(offers, status, now, games)
     print(f"{len(offers)} ofertas; {rejected} rechazadas; {sent_now} enviadas a Telegram; fuentes con error: {sorted(failed) or 'ninguna'}")
     return 0
 
