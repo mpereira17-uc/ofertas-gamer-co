@@ -1,0 +1,17 @@
+{
+  "_ayuda": "Configuración central de tiendas. Los enlaces de afiliado aprobados se ponen SOLO aquí, en affiliateUrl (por ejemplo FANATICAL_AFFILIATE_URL o GMG_AFFILIATE_URL). Mientras approved sea false se usa el enlace oficial normal.",
+  "stores": [
+    {"id": "steam", "name": "Steam", "cheapsharkId": "1", "domains": ["store.steampowered.com"], "currency": "USD", "affiliateNetwork": null, "approved": false, "affiliateUrl": "", "affiliateUrlVar": null, "allowedTrackingParams": [], "priority": 1, "active": true,
+     "searchUrl": "https://store.steampowered.com/search/?term={query}", "productUrl": "https://store.steampowered.com/app/{steamAppID}/"},
+    {"id": "epic", "name": "Epic Games Store", "cheapsharkId": "25", "domains": ["store.epicgames.com"], "currency": "USD", "affiliateNetwork": null, "approved": false, "affiliateUrl": "", "affiliateUrlVar": null, "allowedTrackingParams": [], "priority": 2, "active": true,
+     "searchUrl": "https://store.epicgames.com/es-ES/browse?q={query}"},
+    {"id": "gog", "name": "GOG", "cheapsharkId": "7", "domains": ["www.gog.com"], "currency": "USD", "affiliateNetwork": null, "approved": false, "affiliateUrl": "", "affiliateUrlVar": null, "allowedTrackingParams": [], "priority": 3, "active": true,
+     "searchUrl": "https://www.gog.com/en/games?query={query}"},
+    {"id": "humble", "name": "Humble Store", "cheapsharkId": "11", "domains": ["www.humblebundle.com"], "currency": "USD", "affiliateNetwork": null, "approved": false, "affiliateUrl": "", "affiliateUrlVar": null, "allowedTrackingParams": [], "priority": 4, "active": true,
+     "searchUrl": "https://www.humblebundle.com/store/search?search={query}"},
+    {"id": "gmg", "name": "Green Man Gaming", "cheapsharkId": "3", "domains": ["www.greenmangaming.com"], "currency": "USD", "affiliateNetwork": "Impact", "approved": false, "affiliateUrl": "", "affiliateUrlVar": "GMG_AFFILIATE_URL", "allowedTrackingParams": [], "priority": 5, "active": true,
+     "searchUrl": "https://www.greenmangaming.com/search/?query={query}"},
+    {"id": "fanatical", "name": "Fanatical", "cheapsharkId": "15", "domains": ["www.fanatical.com"], "currency": "USD", "affiliateNetwork": "Awin", "approved": false, "affiliateUrl": "", "affiliateUrlVar": "FANATICAL_AFFILIATE_URL", "allowedTrackingParams": [], "priority": 6, "active": true,
+     "searchUrl": "https://www.fanatical.com/en/search?search={query}"}
+  ]
+}

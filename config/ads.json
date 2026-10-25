@@ -1,0 +1,15 @@
+{
+  "_ayuda": "Espacios publicitarios. Todos desactivados hasta que exista aprobación de una red o un patrocinador. Ver documentacion/MONETIZATION.md.",
+  "ads_enabled": false,
+  "paid_ads_enabled": false,
+  "adsense_client": "",
+  "slots": [
+    {"id": "banner_after_hero", "enabled": false, "provider": "", "type": "banner", "label": "Publicidad", "desktopSize": "728x90", "mobileSize": "320x100", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true},
+    {"id": "inline_after_card_6", "enabled": false, "provider": "", "type": "banner", "label": "Publicidad", "desktopSize": "728x90", "mobileSize": "300x250", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true},
+    {"id": "inline_after_card_12", "enabled": false, "provider": "", "type": "banner", "label": "Publicidad", "desktopSize": "728x90", "mobileSize": "300x250", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true},
+    {"id": "desktop_sidebar", "enabled": false, "provider": "", "type": "banner", "label": "Publicidad", "desktopSize": "300x600", "mobileSize": "", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true},
+    {"id": "article_middle", "enabled": false, "provider": "", "type": "banner", "label": "Publicidad", "desktopSize": "728x90", "mobileSize": "300x250", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true},
+    {"id": "article_end", "enabled": false, "provider": "", "type": "banner", "label": "Publicidad", "desktopSize": "728x90", "mobileSize": "300x250", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true},
+    {"id": "footer_sponsor", "enabled": false, "provider": "", "type": "sponsor", "label": "Enlace patrocinado", "desktopSize": "728x90", "mobileSize": "320x100", "startsAt": null, "expiresAt": null, "destination": "", "image": "", "alt": "", "sponsored": true}
+  ]
+}

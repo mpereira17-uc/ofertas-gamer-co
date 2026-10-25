@@ -1,0 +1,21 @@
+{
+  "nombre": "Ofertas Gamer CO",
+  "url_web": "https://mpereira17-uc.github.io/ofertas-gamer-co/",
+  "idioma": "es",
+  "region": "CO",
+  "moneda_local": "COP",
+  "intervalo_horas": 4,
+  "enlace_canal_telegram": "https://t.me/ofertasgamerco",
+  "enlace_canal_whatsapp": "",
+  "verificacion_google": "SfqW4gNJQ7LpoMNd2yARuzY9ALVVET1EUWIoHQh-Ciw",
+  "verificacion_impact": "dc82b7b9-8030-4498-8219-c3262f230d50",
+  "filtros_ofertas": {
+    "precio_maximo_usd": 20,
+    "descuento_minimo": 60,
+    "metacritic_minimo": 70
+  },
+  "maximo_mensajes_telegram_por_ejecucion": 6,
+  "ofertas_en_whatsapp": 8,
+  "dias_proximo_a_vencer": 2,
+  "horas_retener_oferta_sin_confirmar": 24
+}
