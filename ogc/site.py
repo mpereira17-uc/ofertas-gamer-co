@@ -89,8 +89,9 @@ class Site:
             for x in ld)
         verif = ""
         if name == "index.html":
-            if self.cfg.get("verificacion_google"):
-                verif += f'<meta name="google-site-verification" content="{e(self.cfg["verificacion_google"])}">\n'
+            google = self.cfg.get("verificacion_google") or []
+            for token in [google] if isinstance(google, str) else google:  # una por dirección registrada
+                verif += f'<meta name="google-site-verification" content="{e(token)}">\n'
             if self.cfg.get("verificacion_bing"):
                 verif += f'<meta name="msvalidate.01" content="{e(self.cfg["verificacion_bing"])}">\n'
             if self.cfg.get("verificacion_impact"):
@@ -236,7 +237,8 @@ class Site:
 
     def side_channels(self):
         links = [ext_link(self.cfg[k], label, cls=f"btn {cls}") for k, label, cls in
-                 (("enlace_canal_telegram", "Canal de Telegram", "btn-tg"), ("enlace_canal_whatsapp", "Canal de WhatsApp", "btn-wa"))
+                 (("enlace_canal_telegram", "Canal de Telegram", "btn-tg"), ("enlace_canal_whatsapp", "Canal de WhatsApp", "btn-wa"),
+                  ("enlace_discord", "Servidor de Discord", "btn-dc"))
                  if self.cfg.get(k)]
         return '<div class="side-group side-cta">' + "".join(links) + "</div>" if links else ""
 
@@ -246,6 +248,8 @@ class Site:
             parts.append(ext_link(self.cfg["enlace_canal_telegram"], "Recibe las ofertas en Telegram", cls="btn btn-tg"))
         if self.cfg.get("enlace_canal_whatsapp"):
             parts.append(ext_link(self.cfg["enlace_canal_whatsapp"], "Canal de WhatsApp", cls="btn btn-wa"))
+        if self.cfg.get("enlace_discord"):
+            parts.append(ext_link(self.cfg["enlace_discord"], "Únete al Discord", cls="btn btn-dc"))
         parts.append('<a class="btn" href="whatsapp.html">Resumen para WhatsApp</a>')
         return '<div class="cta">' + "".join(parts) + "</div>"
 
