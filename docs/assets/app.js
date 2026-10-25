@@ -309,6 +309,38 @@
     });
   }
 
+  // Tráiler: se carga solo cuando la persona toca play (no gasta datos antes)
+  document.querySelectorAll(".play-btn").forEach(function (btn) {
+    btn.addEventListener("click", function (ev) {
+      var box = btn.parentElement, video = btn.getAttribute("data-video"), hls = btn.getAttribute("data-hls");
+      var yt = btn.getAttribute("data-yt"), player;
+      if (yt && /^[A-Za-z0-9_-]{11}$/.test(yt)) {
+        player = document.createElement("iframe");
+        player.src = "https://www.youtube-nocookie.com/embed/" + yt + "?autoplay=1&rel=0";
+        player.title = btn.getAttribute("aria-label") || "Tráiler";
+        player.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        player.setAttribute("allowfullscreen", "");
+        player.referrerPolicy = "strict-origin-when-cross-origin";
+      } else {
+        player = document.createElement("video");
+        var native = hls && player.canPlayType("application/vnd.apple.mpegurl");
+        var src = video || (native ? hls : "");
+        if (!src) return; // sin formato compatible: se abre el enlace normal (Steam)
+        player.src = src;
+        player.controls = true;
+        player.autoplay = true;
+        player.playsInline = true;
+        if (btn.getAttribute("data-poster")) player.poster = btn.getAttribute("data-poster");
+      }
+      ev.preventDefault();
+      player.className = "trailer-player";
+      box.textContent = "";
+      box.classList.add("playing");
+      box.appendChild(player);
+      if (player.focus) player.focus();
+    });
+  });
+
   // Copiar el resumen de WhatsApp como texto limpio
   var copyBtn = document.getElementById("copy-wa");
   var waText = document.getElementById("wa-text");
