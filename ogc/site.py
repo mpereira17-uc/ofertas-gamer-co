@@ -468,6 +468,8 @@ class Site:
             name = self.detail.get(g["id"])
             if not name:
                 continue
+            src = "Steam" if g.get("store", "Steam") == "Steam" else "RAWG"
+            consoles = any(p in g.get("platforms", []) for p in ("PlayStation", "Xbox", "Switch"))
             when = date_label(g.get("date"), g.get("precision"))
             rel = relative_label(g.get("date"), g.get("precision"), now)
             img = f'<img src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">' if g.get("image") else ""
@@ -479,18 +481,18 @@ class Site:
                 ld["image"] = g["image"]
             if g.get("precision") == "day":
                 ld["datePublished"] = g["date"]
-            self.layout(name, f"{g['title']}: fecha de lanzamiento en PC",
-                        f"Fecha de lanzamiento de {g['title']} en Steam: {when}. Sistemas, géneros y enlace oficial.",
+            self.layout(name, f"{g['title']}: fecha de lanzamiento" + ("" if consoles else " en PC"),
+                        f"Fecha de lanzamiento de {g['title']} ({', '.join(g.get('platforms', []))}): {when}. Plataformas, géneros y enlace.",
                         f"""<article class="detail">
 <div class="detail-media">{img}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
-<div class="detail-info"><p class="eyebrow">Lanzamiento en Steam</p>
+<div class="detail-info"><p class="eyebrow">Lanzamiento{" en Steam" if src == "Steam" else ""}</p>
 <h1>{e(g['title'])}</h1>
 <p class="detail-date">📅 {e(when)}</p>
 <div class="tags">{tags}</div>
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
-<div class="cta">{ext_link(g["url"], "Ver en Steam", cls="btn btn-primary", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")}<a class="btn" href="lanzamientos.html">Ver calendario</a>
+<div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
-<p class="meta">La fecha es la que publica Steam y puede cambiar. Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
+<p class="meta">La fecha es la que publica {src} y puede cambiar. Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld], og_image=g.get("image"))
 
     # ---------- calendario de lanzamientos ----------
@@ -504,6 +506,13 @@ class Site:
         tba = sorted([g for g in games if not g.get("date")], key=lambda g: g["title"])
         return upcoming, recent, tba
 
+    @staticmethod
+    def game_link(g, text=None, cls="btn btn-primary btn-sm"):
+        steam = g.get("store", "Steam") == "Steam"
+        label = text or ("Ver en Steam" if steam else "Ver ficha")
+        where = "Steam" if steam else "RAWG"
+        return ext_link(g["url"], label, cls=cls, label=f"Ver {g['title']} en {where} (abre en otra pestaña)")
+
     def rank(self, g):
         return getattr(self, "ranks", {}).get(g["id"], 9999)
 
@@ -515,7 +524,7 @@ class Site:
         genres = "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])[:2])
         rel = relative_label(g.get("date"), g.get("precision"), now)
         when = date_label(g.get("date"), g.get("precision"))
-        link = ext_link(g["url"], "Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
+        link = self.game_link(g, "Steam" if g.get("store", "Steam") == "Steam" else "Ver ficha")
         return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
 <div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}</div>
 <p class="rel-name">{self.title_link(g)}</p>
@@ -563,14 +572,14 @@ class Site:
         desc = g.get("description") or ""
         if len(desc) > (260 if main else 120):
             desc = desc[:(257 if main else 117)].rsplit(" ", 1)[0] + "…"
-        link = ext_link(g["url"], "Ver en Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
+        link = self.game_link(g)
         bg = f'<img class="spot-bg" src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async">' if main else ""
         return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}<img class="spot-fg" src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 
     def spotlight(self, games, now, days=30, count=8):
-        """Los más esperados que salen en los próximos días (orden de popularidad de Steam)."""
+        """Los más esperados que salen en los próximos días (popularidad de Steam y RAWG)."""
         today = now.strftime("%Y-%m-%d")
         limit = (now + timedelta(days=days)).strftime("%Y-%m-%d")
         soon = sorted([g for g in games if g.get("date") and g.get("precision") == "day" and today <= g["date"] <= limit],
@@ -578,11 +587,23 @@ class Site:
         if not soon:
             return ""
         return (f'<section class="spot" aria-labelledby="spot-h"><div class="sec-head"><h2 id="spot-h">{ICONS["flame"]} Lo más esperado del mes</h2>'
-                f'<p class="meta">Los {len(soon)} lanzamientos más populares en Steam de los próximos {days} días.</p></div>'
+                f'<p class="meta">Los {len(soon)} lanzamientos más populares de los próximos {days} días (PC y consolas).</p></div>'
                 f'<ul class="spot-grid">{"".join(self.spot_card(g, now, i == 0) for i, g in enumerate(soon))}</ul></section>')
+
+    def anticipated(self, games, now, count=8):
+        """Los grandes que vienen después de este mes (o sin fecha exacta), por popularidad."""
+        limit = (now + timedelta(days=30)).strftime("%Y-%m-%d")
+        later = sorted([g for g in games if g.get("comingSoon") and (not g.get("date") or g["date"] > limit)], key=self.rank)[:count]
+        if not later:
+            return ""
+        return (f'<section class="spot" aria-labelledby="ant-h"><div class="sec-head"><h2 id="ant-h">{ICONS["star"]} Los más esperados que vienen</h2>'
+                f'<p class="meta">Los juegos más populares de los próximos meses. Algunos aún no tienen fecha exacta.</p></div>'
+                f'<ul class="spot-grid small">{"".join(self.spot_card(g, now) for g in later)}</ul></section>')
 
     def releases_page(self, games, now, updated_line):
         upcoming, recent, tba = self.split_releases(games, now)
+        credit = ('<p class="meta">Datos de PC: Steam. Datos de consolas: '
+                  '<a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a>.</p>') if any(g.get("source") == "rawg" for g in games) else ""
         genres = sorted({x for g in games for x in g.get("genres", [])})
         chip = lambda kind, v: f'<button type="button" class="chip" data-{kind}="{e(v)}" aria-pressed="false">{e(v)}</button>'
         toolbar = f"""<div class="rel-toolbar" id="rel-toolbar" hidden>
@@ -594,7 +615,7 @@ class Site:
 <button type="button" class="tab" data-view="follow" aria-pressed="false">🔔 Siguiendo</button>
 </div>
 <label class="rel-search"><span class="sr-only">Buscar juego</span><input type="search" id="rel-q" placeholder="Buscar juego…" autocomplete="off"></label>
-<div class="chips" role="group" aria-label="Sistema">{''.join(chip('platform', x) for x in ('Windows', 'Mac', 'Linux'))}</div>
+<div class="chips" role="group" aria-label="Sistema">{''.join(chip('platform', x) for x in ('Windows', 'PlayStation', 'Xbox', 'Switch', 'Mac', 'Linux') if any(x in g.get('platforms', []) for g in games))}</div>
 <div class="chips" role="group" aria-label="Género">{''.join(chip('genre', x) for x in genres)}</div>
 </div>"""
         body = (self.release_groups(upcoming, now, "Próximos lanzamientos", "proximos") +
@@ -603,16 +624,17 @@ class Site:
         ld = {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": g["title"], "url": g["url"]} for i, g in enumerate(upcoming[:30])]}
         self.layout("lanzamientos.html", "Calendario de lanzamientos de juegos de PC",
-                    "Próximos lanzamientos y estrenos recientes de juegos de PC en Steam, con la fecha que publica la tienda, sistemas y géneros.",
+                    "Próximos lanzamientos y estrenos recientes de juegos de PC y consolas, con la fecha que publica la tienda, plataformas y géneros.",
                     f"""<div class="rel-top"><div><h1>Calendario de <span class="grad">lanzamientos</span></h1>
-<p class="lead">Los próximos juegos de PC y los estrenos recientes en Steam, día por día. Las fechas son las que publica cada tienda y pueden cambiar.</p>
+<p class="lead">Los próximos juegos de PC y consolas y los estrenos recientes, día por día. Las fechas son las que publica cada tienda y pueden cambiar.</p>
 {updated_line}</div></div>
 {self.spotlight(games, now)}
+{self.anticipated(games, now)}
 <h2 class="all-rel">Calendario completo</h2>
 {toolbar}
 <p class="count" id="rel-count" aria-live="polite">{len(games)} juegos</p>
 <div id="rel-list">{body or '<p class="notice">Todavía no hay lanzamientos cargados. Vuelve en unas horas.</p>'}</div>
-<p class="notice" id="rel-empty" hidden>No hay juegos con estos filtros. Prueba con «Todo» o quita algún filtro.</p>""",
+<p class="notice" id="rel-empty" hidden>No hay juegos con estos filtros. Prueba con «Todo» o quita algún filtro.</p>{credit}""",
                     crumbs=[("lanzamientos.html", "Lanzamientos")], jsonld=[ld])
 
     def upcoming_home(self, games, now):
@@ -631,8 +653,8 @@ class Site:
         img = it.get("imageSmall") or it.get("image") or "assets/placeholder.svg"
         if kind == "game":
             tag = '<span class="n-tag rel">Estreno</span>' if it["date"] <= now.strftime("%Y-%m-%d") else '<span class="n-tag soon">Próximamente</span>'
-            sub = e(" · ".join(["Steam"] + it.get("genres", [])[:2]))
-            go = ext_link(it["url"], "Steam", cls="btn btn-sm", label=f"Ver {it['title']} en Steam (abre en otra pestaña)")
+            sub = e(" · ".join(it.get("platforms", [])[:3] + it.get("genres", [])[:2]))
+            go = self.game_link(it, cls="btn btn-sm")
         else:
             free = it.get("currentPrice") == 0
             tag = '<span class="n-tag free">GRATIS</span>' if free else f'<span class="n-tag">-{it.get("discountPercentage") or 0}%</span>'
@@ -976,6 +998,7 @@ class Site:
 <ul>
 <li><strong>Epic Games Store</strong>: listado público de juegos gratis, consultado para Colombia. Enlace a la ficha oficial del juego.</li>
 <li><strong><a href="https://www.cheapshark.com" target="_blank" rel="noopener noreferrer">CheapShark</a></strong>: API pública de precios de tiendas de juegos de PC. La usamos para encontrar descuentos; el enlace lleva a la tienda oficial (ficha de Steam o búsqueda oficial de la tienda). Gracias a CheapShark por ofrecer estos datos.</li>
+<li><strong><a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a></strong>: base de datos de videojuegos. La usamos para las fechas de lanzamiento de juegos de consola (PlayStation, Xbox y Switch). Gracias a RAWG por ofrecer estos datos.</li>
 <li><strong><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong>: tasa de cambio del día para el valor aproximado en pesos.</li>
 </ul>
 <p>No copiamos textos protegidos de las tiendas. Las imágenes de los juegos son las promocionales que publican las propias tiendas o fuentes. Si eres titular de derechos y quieres que retiremos una imagen, escríbenos desde <a href="contacto.html">Contacto</a>.</p></div>""",
