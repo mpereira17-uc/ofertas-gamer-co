@@ -19,17 +19,14 @@ DISCLOSURE = ("Algunos enlaces publicados pueden ser enlaces de afiliados. Si re
 
 NAV = [
     ("index.html", "Inicio"), ("juegos-gratis.html", "Juegos gratis"), ("ofertas.html", "Ofertas"),
-    ("tiendas.html", "Tiendas"), ("guias.html", "Guías"), ("noticias.html", "Noticias de ofertas"),
-    ("como-verificamos.html", "Cómo verificamos"), ("quienes-somos.html", "Quiénes somos"),
-    ("contacto.html", "Contacto"), ("preguntas-frecuentes.html", "Preguntas frecuentes"),
-    ("privacidad.html", "Política de privacidad"), ("cookies.html", "Política de cookies"),
-    ("afiliados.html", "Aviso de afiliados"), ("publicidad.html", "Publicidad y patrocinios"),
-    ("terminos.html", "Términos de uso"),
+    ("tiendas.html", "Tiendas"), ("guias.html", "Guías"), ("noticias.html", "Noticias"),
+    ("preguntas-frecuentes.html", "Preguntas"),
 ]
 FOOTER = [
-    ("quienes-somos.html", "Quiénes somos"), ("contacto.html", "Contacto"), ("privacidad.html", "Privacidad"),
-    ("cookies.html", "Cookies"), ("afiliados.html", "Afiliados"), ("publicidad.html", "Publicidad"),
-    ("terminos.html", "Términos"), ("anunciate.html", "Anúnciate"), ("estado.html", "Estado del sistema"),
+    ("como-verificamos.html", "Cómo verificamos"), ("quienes-somos.html", "Quiénes somos"),
+    ("contacto.html", "Contacto"), ("privacidad.html", "Privacidad"), ("cookies.html", "Cookies"),
+    ("afiliados.html", "Aviso de afiliados"), ("publicidad.html", "Publicidad y patrocinios"),
+    ("terminos.html", "Términos de uso"), ("anunciate.html", "Anúnciate"), ("estado.html", "Estado del sistema"),
     ("fuentes.html", "Fuentes de información"), ("whatsapp.html", "Resumen para WhatsApp"),
 ]
 CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; "
@@ -102,7 +99,7 @@ class Site:
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(description)}">
 <meta name="twitter:image" content="{self.base}assets/og-image.png">
-<meta name="theme-color" content="#0f1115">
+<meta name="theme-color" content="#07070d">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -114,6 +111,7 @@ class Site:
 {ld_html}
 </head>
 <body>
+<div class="bg-decor" aria-hidden="true"></div>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site"><div class="wrap">
 <div class="bar"><a class="brand" href="index.html"><img src="assets/logo-72.png" alt="" width="36" height="36">Ofertas Gamer CO</a>
@@ -126,6 +124,7 @@ class Site:
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
+<p class="foot-brand"><img src="assets/logo-72.png" alt="" width="32" height="32"> Ofertas Gamer CO</p>
 <p>{e(DISCLOSURE)}</p>
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
 <p>Ofertas Gamer CO no vende productos ni procesa pagos. Los precios y la disponibilidad pueden cambiar sin previo aviso.</p>
@@ -224,6 +223,15 @@ class Site:
         parts.append('<a class="btn" href="whatsapp.html">Resumen para WhatsApp</a>')
         return '<div class="cta">' + "".join(parts) + "</div>"
 
+    def ticker(self, offers):
+        if not offers:
+            return ""
+        items = "".join(
+            f'<li><span class="t-badge">{"GRATIS" if o.get("currentPrice") == 0 else "-" + str(o.get("discountPercentage") or 0) + "%"}</span>{e(o["title"])}</li>'
+            for o in offers[:12])
+        return (f'<div class="ticker" aria-label="Destacados de hoy"><ul class="ticker-track">{items}</ul>'
+                f'<ul class="ticker-track" aria-hidden="true">{items}</ul></div>')
+
     def item_list_ld(self, offers):
         return {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": o["title"], "url": o["officialUrl"]}
@@ -266,10 +274,20 @@ class Site:
 
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
-                    f"""<h1>Juegos gratis y ofertas de PC en tiendas oficiales</h1>
+                    f"""<section class="hero">
+<p class="eyebrow">Juegos de PC · Colombia y Latinoamérica</p>
+<h1>Juegos <span class="grad">gratis</span> y ofertas de PC en tiendas oficiales</h1>
 <p class="lead">Ofertas Gamer CO reúne juegos gratuitos y descuentos verificados de tiendas oficiales para Colombia y Latinoamérica. Te mostramos la tienda, el precio, la vigencia y el enlace, y tú compras directamente en la tienda.</p>
-{updated_line}
 {self.channels_cta()}
+<ul class="stats">
+<li><strong data-count="{len(free)}">{len(free)}</strong><span>juegos gratis ahora</span></li>
+<li><strong data-count="{len(deals)}">{len(deals)}</strong><span>ofertas activas</span></li>
+<li><strong data-count="{len({o['storeId'] for o in live})}">{len({o['storeId'] for o in live})}</strong><span>tiendas oficiales</span></li>
+<li><strong data-count="{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}" data-suffix="%">{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}%</strong><span>mayor descuento</span></li>
+</ul>
+{updated_line}
+</section>
+{self.ticker(free + top)}
 {self.ad_slot("banner_after_hero")}
 {notice}
 <h2>Juegos gratis disponibles</h2>
