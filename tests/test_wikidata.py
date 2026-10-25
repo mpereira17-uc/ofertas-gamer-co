@@ -62,9 +62,26 @@ class TestWikidata(unittest.TestCase):
         gta = out[0]
         self.assertEqual(gta["image"], "https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg")  # primero el tráiler oficial
         self.assertEqual(gta["description"], "Un juego de mundo abierto.")
-        self.assertEqual(len(asked), 1)  # solo el que tiene artículo en español
+        # el artículo en español y la ficha oficial de Steam (para la portada real del juego con id de Steam)
+        self.assertEqual([u.split("?")[0].rsplit("/", 1)[-1] for u in asked], ["Grand_Theft_Auto_VI", "appdetails"])
         again = wikidata.enrich(wikidata.fetch_games(NOW, lambda url: DATA), out, lambda url: 1 / 0)
         self.assertEqual(again[0]["description"], "Un juego de mundo abierto.")  # se reutiliza sin volver a pedir
+
+    def test_portada_de_wikipedia_en_ingles(self):
+        game = {"id": "wd-Q9", "title": "Witcher", "store": "Wikipedia", "url": "https://es.wikipedia.org/wiki/W",
+                "enwiki": "https://en.wikipedia.org/wiki/The_Witcher_IV", "image": "", "youtube": ""}
+        asked = []
+
+        def fetch(url):
+            asked.append(url)
+            if "es.wikipedia" in url:
+                return {"extract": "Un juego."}  # sin imagen en español
+            return {"originalimage": {"source": "https://upload.wikimedia.org/w.jpg"}}
+        out = wikidata.enrich([game], [], fetch)[0]
+        self.assertEqual(out["image"], "https://upload.wikimedia.org/w.jpg")
+        self.assertTrue(out["enChecked"])
+        again = wikidata.enrich([dict(game)], [out], lambda url: 1 / 0)[0]
+        self.assertEqual(again["image"], "https://upload.wikimedia.org/w.jpg")
 
     def test_caido_conserva_lo_anterior(self):
         def broken(url):

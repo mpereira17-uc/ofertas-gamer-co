@@ -18,6 +18,7 @@ from ogc import alerts, channels, discord, promote, releases, sources, weekly, w
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
+from ogc import history as price_log
 from ogc.site import Site
 
 ROOT = Path(__file__).resolve().parent
@@ -30,6 +31,8 @@ F2P_FILE = DATA / "gratis_para_siempre.json"
 WEEKLY_FILE = DATA / "resumenes.json"
 ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
 BOT_FILE = DATA / "telegram_bot.json"
+HISTORY_FILE = DATA / "historial_precios.json"
+DAILY_FILE = DATA / "oferta_del_dia.json"
 DOCS = ROOT / "docs"
 
 
@@ -42,6 +45,12 @@ def load_json(path, default):
 
 def save_json(path, data):
     Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+def save_history(path, hist):
+    """Un juego por línea: el archivo crece poco y los cambios se leen fácil en GitHub."""
+    lines = [f"{json.dumps(k, ensure_ascii=False)}: {json.dumps(v, ensure_ascii=False, separators=(',', ':'))}" for k, v in sorted(hist.items())]
+    Path(path).write_text("{\n" + ",\n".join(lines) + "\n}\n", encoding="utf-8")
 
 
 def fixture_fetch(folder):
@@ -137,7 +146,13 @@ def run(args):
     f2p, status["Fuente gratis para siempre (Steam)"] = releases.free_to_play(sources.get_json, load_json(F2P_FILE, {}).get("games", []))
     save_json(F2P_FILE, {"updatedAt": iso(now), "games": f2p})
 
+    price_history = price_log.record(load_json(HISTORY_FILE, {}), offers, now)
+    save_history(HISTORY_FILE, price_history)
+    status["Historial de precios"] = f"{len(price_history)} juegos seguidos"
+
     site = Site(cfg, stores, ads, DOCS)
+    site.history = price_history
+    site.daily = load_json(DAILY_FILE, {})
     site.assign_pages(offers, games)
     base = cfg["url_web"].rstrip("/") + "/"
     social = load_json(SOCIAL_FILE, {"bluesky": [], "mastodon": [], "discord": []})
@@ -189,6 +204,8 @@ def run(args):
         print(f"Alertas: {status['Alertas de Telegram']}")
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
     site.build(offers, status, now, games)
+    if getattr(site, "daily", None):
+        save_json(DAILY_FILE, site.daily)
 
     if not args.no_send and not args.fixtures and cfg.get("indexnow_key"):
         new_ids = {o["id"] for o in offers if (o.get("createdAt") or "") >= iso(now)[:13]} | \

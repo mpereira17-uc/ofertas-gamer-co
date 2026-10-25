@@ -77,6 +77,7 @@ def to_game(row, now):
         image = f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{steam}/header.jpg"
     else:
         url, image = val(row, "es") or val(row, "en") or f"https://www.wikidata.org/wiki/{qid}", ""
+    en = val(row, "en")
     return {
         "id": f"steam-{steam}" if steam.isdigit() else f"wd-{qid}",
         "slug": slugify(title),
@@ -95,6 +96,7 @@ def to_game(row, now):
         "source": "wikidata",
         "youtube": val(row, "yt") if re.fullmatch(r"[A-Za-z0-9_-]{11}", val(row, "yt")) else "",
         "languages": int(val(row, "links") or 0),
+        **({"enwiki": en} if en.startswith("https://en.wikipedia.org/wiki/") else {}),
     }
 
 
@@ -139,42 +141,75 @@ def merge(steam, extra):
 
 
 SUMMARY = "https://es.wikipedia.org/api/rest_v1/page/summary/{}"
+SUMMARY_EN = "https://en.wikipedia.org/api/rest_v1/page/summary/{}"
+DETAILS = "https://store.steampowered.com/api/appdetails?appids={}&cc=co&l=spanish&filters=basic"
 
 
 def enrich(games, previous, fetch, limit=80):
     """Portada y resumen para los juegos que no vienen de Steam.
-    Portada: la miniatura del tráiler oficial en YouTube; si no hay, la imagen de Wikipedia en español
-    (allí solo se permiten imágenes libres). Resumen: el primer párrafo del artículo de Wikipedia en español.
-    Lo ya conseguido en ejecuciones anteriores se reutiliza."""
+    Portada: la miniatura del tráiler oficial en YouTube; si no hay, la imagen principal del artículo de Wikipedia
+    (primero en español, luego en inglés: allí suele estar la carátula oficial del juego). Resumen: el primer
+    párrafo del artículo de Wikipedia en español. Lo ya conseguido en ejecuciones anteriores se reutiliza."""
     old = {g["id"]: g for g in previous}
     asked = 0
+
+    def summary(url):
+        try:
+            return fetch(url) or {}
+        except Exception as exc:
+            print(f"Wikipedia: resumen falló: {type(exc).__name__}", file=sys.stderr)
+            return None
+
+    def picture(info):
+        thumb = ((info.get("originalimage") or info.get("thumbnail") or {}).get("source") or "")
+        return thumb if thumb.startswith("https://upload.wikimedia.org/") else ""
+
     for g in games:
-        if g.get("store") == "Steam":
-            continue
         prev = old.get(g["id"]) or {}
+        if g.get("store") == "Steam":
+            # la ruta fija header.jpg no existe en los juegos nuevos de Steam: se pide la portada a la ficha oficial
+            if prev.get("headerChecked"):
+                g["image"], g["headerChecked"] = prev.get("image") or g["image"], True
+            elif asked < limit:
+                asked += 1
+                app = g["id"].split("-", 1)[1]
+                info = summary(DETAILS.format(app)) or {}
+                data = info.get(app) or {}
+                header = ((data.get("data") or {}).get("header_image") or "") if data.get("success") else ""
+                if header.startswith("https://"):
+                    g["image"] = header
+                if info:
+                    g["headerChecked"] = True
+            continue
         for key in ("image", "imageSmall", "description"):
             if prev.get(key) and not g.get(key):
                 g[key] = prev[key]
+        for flag in ("summaryChecked", "enChecked"):
+            if prev.get(flag):
+                g[flag] = True
         if g.get("youtube") and not g.get("image"):
             g["image"] = f"https://i.ytimg.com/vi/{g['youtube']}/maxresdefault.jpg"
-            g["imageSmall"] = f"https://i.ytimg.com/vi/{g['youtube']}/hqdefault.jpg"
+            g["imageSmall"] = f"https://i.ytimg.com/vi/{g['youtube']}/mqdefault.jpg"
+        # hqdefault trae franjas negras (es 4:3); mqdefault es 16:9 como la portada
+        if (g.get("imageSmall") or "").endswith("/hqdefault.jpg"):
+            g["imageSmall"] = g["imageSmall"][:-len("hqdefault.jpg")] + "mqdefault.jpg"
         page = g["url"].split("/wiki/", 1)[1] if g["url"].startswith("https://es.wikipedia.org/wiki/") else ""
-        if page and (not g.get("description") or not g.get("image")) and asked < limit and not prev.get("summaryChecked"):
+        if page and (not g.get("description") or not g.get("image")) and asked < limit and not g.get("summaryChecked"):
             asked += 1
-            try:
-                info = fetch(SUMMARY.format(page)) or {}
-            except Exception as exc:
-                print(f"Wikipedia: resumen de {page} falló: {type(exc).__name__}", file=sys.stderr)
-                continue
-            text = re.sub(r"\s+", " ", info.get("extract") or "").strip()
-            if text and not g.get("description"):
-                g["description"] = text[:400]
-            thumb = ((info.get("originalimage") or info.get("thumbnail") or {}).get("source") or "")
-            if thumb.startswith("https://upload.wikimedia.org/") and not g.get("image"):
-                g["image"] = thumb
-            g["summaryChecked"] = True
-        elif prev.get("summaryChecked"):
-            g["summaryChecked"] = True
+            info = summary(SUMMARY.format(page))
+            if info is not None:
+                text = re.sub(r"\s+", " ", info.get("extract") or "").strip()
+                if text and not g.get("description"):
+                    g["description"] = text[:400]
+                g["image"] = g.get("image") or picture(info)
+                g["summaryChecked"] = True
+        en = (g.get("enwiki") or "").split("/wiki/", 1)[-1] if g.get("enwiki") else ""
+        if en and not g.get("image") and asked < limit and not g.get("enChecked"):
+            asked += 1
+            info = summary(SUMMARY_EN.format(en))
+            if info is not None:
+                g["image"] = picture(info)
+                g["enChecked"] = True
     return games
 
 

@@ -10,18 +10,8 @@
     } catch (e) { return null; }
   }
 
-  // Tema claro / oscuro
-  var saved = store("ogc-theme");
-  if (saved === "light" || saved === "dark") document.documentElement.setAttribute("data-theme", saved);
-  var themeBtn = document.getElementById("theme-toggle");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", function () {
-      var current = document.documentElement.getAttribute("data-theme") || "dark";
-      var next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      store("ogc-theme", next);
-    });
-  }
+  // Antes había un tema claro: se borra la preferencia vieja para que todos vean el diseño propio.
+  try { localStorage.removeItem("ogc-theme"); } catch (e) { /* sin almacenamiento */ }
 
   // Menú móvil
   var menuBtn = document.getElementById("menu-toggle");
@@ -71,7 +61,7 @@
     if (!list || !form) return;
     var q = (form.q.value || "").toLowerCase().trim();
     var st = form.store.value, type = form.type.value, sort = form.sort.value;
-    var min = parseInt(form.min.value || "0", 10), onlyFavs = form.favs && form.favs.checked;
+    var min = parseInt(form.min.value || "0", 10), onlyFavs = form.favs && form.favs.checked, onlyLow = form.low && form.low.checked;
     var max = form.max ? parseInt(form.max.value || "0", 10) : 0;
     var cards = Array.prototype.slice.call(list.children);
     var shown = 0;
@@ -80,7 +70,7 @@
       var ok = (!q || d.title.indexOf(q) >= 0) && (!st || d.store === st) &&
         (!type || d.type === type) && (parseInt(d.discount || "0", 10) >= min) &&
         (!max || (d.cop !== undefined && parseInt(d.cop || "0", 10) < max && (d.type === "gratis" || parseInt(d.cop || "0", 10) > 0))) &&
-        (!onlyFavs || favs.indexOf(d.id) >= 0);
+        (!onlyFavs || favs.indexOf(d.id) >= 0) && (!onlyLow || d.low === "1");
       li.hidden = !ok;
       if (ok) shown++;
     });
@@ -88,6 +78,8 @@
       if (sort === "expires") return (a.dataset.expires || "9999") < (b.dataset.expires || "9999") ? -1 : 1;
       if (sort === "price") return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
       if (sort === "title") return a.dataset.title < b.dataset.title ? -1 : 1;
+      if (sort === "score") return parseInt(b.dataset.score || "0", 10) - parseInt(a.dataset.score || "0", 10);
+      if (sort === "saved") return parseInt(b.dataset.saved || "0", 10) - parseInt(a.dataset.saved || "0", 10);
       return parseInt(b.dataset.discount || "0", 10) - parseInt(a.dataset.discount || "0", 10);
     }).forEach(function (li) { list.appendChild(li); });
     if (countEl) countEl.textContent = shown + (shown === 1 ? " oferta" : " ofertas");
@@ -480,7 +472,7 @@
     document.body.insertBefore(canvas, document.body.firstChild);
     var ctx = canvas.getContext("2d");
     var dots = [], W = 0, H = 0, dpr = 1, mouse = { x: -9999, y: -9999 }, running = true;
-    var colors = ["139,92,246", "6,182,212", "34,197,94"];
+    var colors = ["255,200,61", "255,61,129", "77,124,255"];
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       W = window.innerWidth; H = window.innerHeight;
@@ -495,8 +487,7 @@
     }
     function frame() {
       if (!running) return;
-      var light = root.getAttribute("data-theme") === "light";
-      var alpha = light ? 0.5 : 0.8;
+      var alpha = 0.8;
       ctx.clearRect(0, 0, W, H);
       for (var i = 0; i < dots.length; i++) {
         var d = dots[i];

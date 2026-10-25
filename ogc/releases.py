@@ -104,16 +104,34 @@ F2P_URL = "https://store.steampowered.com/search/results/?json=1&filter=topselle
 
 
 def free_to_play(fetch, previous=()):
-    """Los juegos gratis para siempre más jugados/vendidos en Steam (búsqueda oficial). Si falla, se conserva la lista."""
+    """Los juegos gratis para siempre más jugados/vendidos en Steam (búsqueda oficial). Si falla, se conserva la lista.
+    La portada sale de la ficha oficial (header_image): los juegos nuevos de Steam ya no tienen la ruta fija header.jpg."""
+    cache = {g["id"]: g for g in previous if g.get("headerChecked")}
     try:
-        games = []
+        games, asked = [], 0
         for item in (fetch(F2P_URL) or {}).get("items", []):
-            m = re.search(r"/apps/(\d+)/", item.get("logo") or "")
+            logo = item.get("logo") or ""
+            m = re.search(r"/apps/(\d+)/", logo)
             name = (item.get("name") or "").strip()
-            if m and name:
-                app = m.group(1)
-                games.append({"id": f"steam-{app}", "title": name, "url": f"https://store.steampowered.com/app/{app}/",
-                              "image": f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{app}/header.jpg"})
+            if not (m and name):
+                continue
+            app = m.group(1)
+            game = {"id": f"steam-{app}", "title": name, "url": f"https://store.steampowered.com/app/{app}/",
+                    "image": "", "imageSmall": logo if logo.startswith("https://") else ""}
+            old = cache.get(game["id"])
+            if old:
+                game["image"], game["headerChecked"] = old.get("image") or "", True
+            elif asked < 45:
+                asked += 1
+                try:
+                    data = (fetch(DETAILS_URL.format(id=app)) or {}).get(app) or {}
+                    header = ((data.get("data") or {}).get("header_image") or "") if data.get("success") else ""
+                    game["image"], game["headerChecked"] = (header if header.startswith("https://") else ""), True
+                except Exception as exc:
+                    print(f"Gratis para siempre: ficha {app} falló: {type(exc).__name__}", file=sys.stderr)
+            game["image"] = game["image"] or game["imageSmall"]
+            if game["image"]:
+                games.append(game)
         if len(games) < 5:
             raise ValueError("muy pocos juegos")
         return games[:40], f"OK, {len(games[:40])} juegos"

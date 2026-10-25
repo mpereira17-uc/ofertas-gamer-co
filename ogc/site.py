@@ -42,7 +42,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
 NAV = [
     ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"),
                  ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"),
-                 ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
+                 ("oferta-del-dia.html", "Oferta del día", "sparkle"), ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
                  ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift")]),
     ("Lanzamientos", [("lanzamientos.html", "Calendario", "calendar"), ("lanzamientos.html#proximos", "Próximos", "clock"),
                       ("lanzamientos.html#recientes", "Recientes", "sparkle"), ("lanzamientos.html#por-confirmar", "Por confirmar", "question"),
@@ -112,6 +112,16 @@ def no_cover(g, cls="no-cover"):
             f'{f"<span>{e(plats)}</span>" if plats else ""}</div>')
 
 
+def day_es(day):
+    """"2026-10-25" -> "25 de octubre de 2026" (sin hora: el historial guarda días)."""
+    return f"{int(day[8:10])} de {MONTHS_ES[int(day[5:7]) - 1]} de {day[:4]}"
+
+
+def slugify_words(text):
+    from .model import slugify
+    return slugify(text).split("-")
+
+
 def fallback(o):
     """Miniatura de respaldo por si la portada grande no existe (app.js la cambia al fallar)."""
     small = o.get("imageSmall") or ""
@@ -126,12 +136,13 @@ class Site:
         self.detail = {}  # id de oferta o juego -> nombre de su página propia
         self.now = datetime.now(timezone.utc)
         self.rate = None  # pesos por dólar, deducido de las ofertas
+        self.history = {}  # historial de precios propio (ogc/history.py)
 
     # ---------- plantilla común ----------
     def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website", og_image=None):
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
-        stores_nav = [(f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"]]
+        stores_nav = [(f"ofertas-{st['id']}.html" if getattr(self, "store_counts", {}).get(st["id"]) else f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"]]
         groups = NAV[:1] + [("Tiendas", stores_nav)] + NAV[1:]
         nav = "".join(
             f'<div class="side-group"><p class="side-title">{e(title)}</p><ul>' + "".join(
@@ -201,7 +212,7 @@ class Site:
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site"><div class="wrap">
 <div class="bar"><a class="brand" href="index.html"><img src="assets/logo-72.png" alt="" width="36" height="36">Ofertas Gamer CO</a>
-<div class="bar-actions"><button class="btn" id="theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro">Tema</button>
+<div class="bar-actions"><a class="btn btn-search" href="ofertas.html#filters" aria-label="Buscar un juego en las ofertas">{ICONS['search']}<span>Buscar</span></a>
 <button class="btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button></div></div>
 </div></header>
 <div class="shell">
@@ -286,8 +297,35 @@ class Site:
         saved = self.cop_value((o["originalPrice"] or 0) - (o.get("currentPrice") or 0), o)
         return f"Ahorras ≈ {self.pesos(saved)} COP" if saved and saved >= 100 else ""
 
+    def price_stats(self, o):
+        from . import history
+        return history.stats(self.history, o, self.now) if self.history else None
+
+    def value_score(self, o):
+        """Puntaje "Vale la pena" de 0 a 100: descuento (50), nota de la crítica (30) y precio en pesos (20).
+        Se calcula solo con datos reales de la oferta; sin nota de la crítica esa parte cuenta a la mitad."""
+        if not o.get("currentPrice"):
+            return None
+        disc = (o.get("discountPercentage") or 0) / 100
+        mc = o.get("metacritic")
+        critic = (mc / 100) if mc else 0.5
+        cop = self.cop_value(o["currentPrice"], o)
+        cheap = max(0.0, 1 - cop / 120000) if cop else 0.5
+        return round(50 * disc + 30 * critic + 20 * cheap)
+
+    def cop_saved(self, o):
+        if not o.get("originalPrice"):
+            return 0
+        return round(self.cop_value((o["originalPrice"] or 0) - (o.get("currentPrice") or 0), o) or 0)
+
     def trust_chips(self, o, full=False):
         chips = []
+        ps = self.price_stats(o)
+        if ps and ps["isLow"]:
+            chips.append(f'<span class="st low" title="El más bajo que hemos visto desde el {e(day_es(ps["first"]))}">Mínimo histórico</span>')
+        if len(o.get("otherStores") or []) and not full:
+            n = len(o["otherStores"])
+            chips.append(f'<span class="st muted">+{n} {"tienda" if n == 1 else "tiendas"}</span>')
         if "CO" in (o.get("regions") or []):
             chips.append('<span class="st ok">Precio para Colombia</span>')
         elif o["currency"] == "USD":
@@ -348,7 +386,7 @@ class Site:
         img = o.get("image") or "assets/placeholder.svg"
         alt = f"Imagen de {o['title']}" if o.get("image") else ""
         cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
-        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}">
+        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
 <div class="thumb"><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}</div>
 <div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
 {self.price_html(o)}
@@ -377,9 +415,11 @@ class Site:
 <label>Tipo<select name="type"><option value="">Todos</option><option value="gratis">Gratis</option><option value="descuento">Descuento</option></select></label>
 <label>Descuento mínimo<select name="min"><option value="0">Cualquiera</option><option value="50">50% o más</option><option value="75">75% o más</option><option value="90">90% o más</option></select></label>
 <label>Precio máximo<select name="max"><option value="">Cualquiera</option><option value="20000">Menos de $20.000</option><option value="40000">Menos de $40.000</option></select></label>
-<label>Ordenar por<select name="sort"><option value="discount">Mayor descuento</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
+<label>Ordenar por<select name="sort"><option value="discount">Mayor descuento</option><option value="score">Vale la pena</option><option value="saved">Más ahorro en pesos</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
 <label><span>Favoritos</span><span><input type="checkbox" name="favs"> Solo mis favoritos</span></label>
+<label><span>Precio</span><span><input type="checkbox" name="low"> Solo mínimos históricos</span></label>
 </form>
+<nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav>
 <p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
         return filters + f'<ul class="grid" id="{list_id}">' + "".join(cards) + "</ul>"
 
@@ -423,6 +463,30 @@ class Site:
 <div class="f-item-info">{self.badge(o)}<h3 class="clamp2">{self.title_link(o)}</h3><p class="f-price{' free' if o.get('currentPrice') == 0 else ''}">{'Gratis' if o.get('currentPrice') == 0 else e(money(o['currentPrice'], o['currency']))}</p>{self.countdown(o)}</div></li>"""
                        for o in picks[1:])
         return f'<section class="feature" aria-label="Ofertas destacadas">{main}<ul class="f-side">{side}</ul></section>'
+
+    def deal_of_day(self, live):
+        """Una oferta por día (hora Colombia), la que más vale la pena. Se guarda para que no cambie en el día."""
+        today = self.now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        prev = getattr(self, "daily", None) or {}
+        by_id = {o["id"]: o for o in live}
+        if prev.get("date") == today and prev.get("id") in by_id:
+            return by_id[prev["id"]]
+        recent = set(prev.get("recent", []))
+        cands = [o for o in live if o.get("currentPrice") and o.get("image") and o["id"] in self.detail and o["id"] not in recent]
+        if not cands:
+            return None
+        pick = max(cands, key=lambda o: (self.value_score(o) or 0, "CO" in (o.get("regions") or [])))
+        self.daily = {"date": today, "id": pick["id"], "title": pick["title"], "recent": ([pick["id"]] + prev.get("recent", []))[:30]}
+        return pick
+
+    def dotd_block(self, o, page=False):
+        if not o:
+            return ""
+        score = self.value_score(o)
+        return f"""<section class="dotd" aria-labelledby="dotd-h"><div class="dotd-media"><img src="{e(o['image'])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}</div>
+<div class="dotd-info"><p class="dotd-kicker">{ICONS['sparkle']} Oferta del día</p><h2 id="dotd-h" class="dotd-title">{self.title_link(o)}</h2>
+{self.price_html(o)}{self.countdown(o)}<p class="meta">{self.store_chip(o)} · Vale la pena: <strong>{score}/100</strong></p>
+<div class="cta">{self.offer_button(o)}{'' if page else '<a class="btn" href="oferta-del-dia.html">¿Por qué esta?</a>'}</div></div></section>"""
 
     def soon_strip(self, offers):
         """Franja horizontal con lo que termina en las próximas 72 horas."""
@@ -490,6 +554,54 @@ class Site:
                 f'<p class="meta">El mismo juego en otras tiendas oficiales, del más barato al más caro.</p>'
                 f'<div class="note"><section class="n-sec"><ul>{rows}</ul></section></div></section>')
 
+    def share_whatsapp(self, o, name):
+        import urllib.parse
+        what = "gratis" if o.get("currentPrice") == 0 else f"-{o.get('discountPercentage') or 0}%"
+        text = f"🎮 {o['title']} {what} en {o['store']}: {self.base + name}"
+        return ('<p class="share-row">' + ext_link("https://wa.me/?text=" + urllib.parse.quote(text), "Compartir por WhatsApp", cls="btn btn-wa btn-sm",
+                                                    label=f"Compartir {o['title']} por WhatsApp (abre WhatsApp)") + "</p>")
+
+    def score_block(self, o):
+        score = self.value_score(o)
+        if score is None:
+            return ""
+        word = "Excelente" if score >= 75 else "Muy buena" if score >= 60 else "Buena" if score >= 45 else "Normal"
+        mc = f"nota de la crítica {o['metacritic']}" if o.get("metacritic") else "sin nota de la crítica"
+        return (f'<section class="score-box" aria-labelledby="score-h"><div class="score-num" aria-hidden="true">{score}</div>'
+                f'<div><h2 id="score-h">Vale la pena: {word} ({score}/100)</h2><p class="meta">Nuestro puntaje combina el descuento '
+                f'({o.get("discountPercentage") or 0}%), la {mc} y el precio en pesos. Es una guía rápida, no una reseña.</p></div></section>')
+
+    def history_block(self, o):
+        from . import history
+        ps = self.price_stats(o)
+        if not ps:
+            return ""
+        fmt = lambda v, cur: "Gratis" if v == 0 else money(v, cur)
+        chart = history.chart_svg(ps["points"], o["currency"], fmt)
+        since = day_es(ps["first"])
+        if ps["days"] < history.MIN_DAYS_FOR_LOW:
+            text = (f"Empezamos a seguir este precio el {e(since)}. En unas semanas aquí verás si el precio de hoy es bueno "
+                    f"comparado con lo que hemos visto.")
+        else:
+            text = (f"Lo seguimos desde el {e(since)}. El precio más bajo que hemos visto en {e(o['store'])} es "
+                    f"<strong>{e(fmt(ps['low'], o['currency']))}</strong> (el {e(day_es(ps['lowDate']))})."
+                    + (" <strong>Hoy está en ese mínimo.</strong>" if ps["isLow"] else ""))
+        return (f'<section class="history" aria-labelledby="hist-h"><h2 id="hist-h">{ICONS["clock"]} Historial de precio</h2>'
+                f'<p>{text}</p>{chart}<p class="meta">Datos propios: guardamos el precio en cada revisión (cada 4 horas). '
+                f'Antes de esa fecha no tenemos datos.</p></section>')
+
+    def similar_offers(self, o, offers):
+        """Otras ofertas parecidas: misma tienda o descuento parecido, con imagen (enlaces internos)."""
+        words = {w for w in slugify_words(o["title"]) if len(w) > 3}
+        def score(x):
+            common = len(words & set(slugify_words(x["title"])))
+            return (-common, x["storeId"] != o["storeId"], abs((x.get("discountPercentage") or 0) - (o.get("discountPercentage") or 0)))
+        picks = sorted((x for x in offers if x["id"] != o["id"] and x["id"] in self.detail and x.get("image")), key=score)[:4]
+        if not picks:
+            return ""
+        return (f'<section aria-labelledby="sim-h"><h2 id="sim-h">{ICONS["sparkle"]} También te puede interesar</h2>'
+                f'<ul class="grid">{"".join(self.card(x) for x in picks)}</ul></section>')
+
     def offer_pages(self, offers, notice):
 
         for o in offers:
@@ -520,7 +632,8 @@ class Site:
 {self.trust_chips(o, full=True)}
 <div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a>{self.alert_button(o, "offer")}</div>
 {search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
-{notice}</div></article>{self.compare_block(o)}""",
+{self.share_whatsapp(o, name)}
+{notice}</div></article>{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
 
     @staticmethod
@@ -804,14 +917,33 @@ class Site:
         huge = sorted([o for o in deals if (o.get("discountPercentage") or 0) >= 90], key=lambda o: -(o.get("discountPercentage") or 0))
         soon_limit = (now + timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
         ending = sorted([o for o in live if o.get("expiresAt") and o["expiresAt"] <= soon_limit], key=lambda o: o["expiresAt"])
+        under = lambda limit: sorted([o for o in deals if cop(o) and cop(o) < limit], key=lambda o: -(self.value_score(o) or 0))
+        rated = sorted([o for o in deals if (o.get("metacritic") or 0) >= 75], key=lambda o: (-(o.get("metacritic") or 0), -(o.get("discountPercentage") or 0)))
+        lows = [o for o in deals if (self.price_stats(o) or {}).get("isLow")]
         pages = [
             ("juegos-baratos.html", "Juegos de PC baratos en pesos colombianos", "Juegos de PC por menos de $20.000 COP",
              "Juegos de PC en oferta que cuestan menos de $20.000 pesos colombianos (valor aproximado), en tiendas oficiales.", cheap),
+            ("juegos-menos-de-5000-pesos.html", "Juegos de PC por menos de $5.000 pesos", "Juegos por menos de $5.000 COP",
+             "Juegos de PC en oferta por menos de $5.000 pesos colombianos (valor aproximado), en tiendas oficiales.", under(5000)),
+            ("juegos-menos-de-10000-pesos.html", "Juegos de PC por menos de $10.000 pesos", "Juegos por menos de $10.000 COP",
+             "Juegos de PC en oferta por menos de $10.000 pesos colombianos (valor aproximado), en tiendas oficiales.", under(10000)),
+            ("juegos-menos-de-40000-pesos.html", "Juegos de PC por menos de $40.000 pesos", "Juegos por menos de $40.000 COP",
+             "Juegos de PC en oferta por menos de $40.000 pesos colombianos (valor aproximado), ordenados por los que más valen la pena.", under(40000)),
+            ("ofertas-mejor-valoradas.html", "Ofertas de juegos con mejor nota de la crítica", "Ofertas con mejor nota de la crítica",
+             "Juegos en oferta con nota de Metacritic de 75 o más: buenos juegos a buen precio.", rated),
+            ("minimos-historicos.html", "Juegos en su precio más bajo", "Juegos en su precio más bajo visto",
+             "Ofertas que hoy están en el precio más bajo que hemos visto desde que las seguimos (con al menos dos semanas de datos propios).", lows),
             ("ofertas-90-por-ciento.html", "Juegos con 90% de descuento o más", "Juegos con 90% de descuento o más",
              "Los descuentos más grandes del día en tiendas oficiales de PC: 90% o más.", huge),
             ("ofertas-terminan-pronto.html", "Ofertas de juegos que terminan pronto", "Ofertas que terminan esta semana",
              "Juegos gratis y descuentos con fecha de fin en los próximos 7 días. Aprovecha antes de que terminen.", ending),
         ]
+        for st in self.stores.values():
+            mine = [o for o in live if o["storeId"] == st["id"]]
+            if st["active"] and mine:
+                extra = " Los juegos de GOG no tienen DRM: el instalador es tuyo para siempre." if st["id"] == "gog" else ""
+                pages.append((f"ofertas-{st['id']}.html", f"Ofertas de {st['name']} hoy", f"Ofertas de {st['name']}",
+                              f"Juegos gratis y descuentos de {st['name']} verificados, con precio en pesos aproximado.{extra}", mine))
         for name, title, h1, desc, items in pages:
             body = (f'<h1>{e(h1)}</h1><p class="lead">{e(desc)}</p>{updated_line}{notice}'
                     + (self.offer_list(items) if items else '<p class="notice">Hoy no hay ofertas en esta categoría. Se revisa cada 4 horas.</p>')
@@ -861,7 +993,7 @@ class Site:
     def f2p_page(self, f2p, updated_line):
         if f2p:
             cards = "".join(
-                f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async"></div>'
+                f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async"></div>'
                 f'<div class="spot-body"><h3 class="clamp2">{e(g["title"])}</h3><div class="rel-actions">'
                 f'{ext_link(g["url"], "Jugar gratis en Steam", cls="btn btn-primary btn-sm btn-free", label=f"Jugar {g["title"]} gratis en Steam (abre en otra pestaña)")}</div></div></li>'
                 for g in f2p)
@@ -925,12 +1057,14 @@ class Site:
                        if o.get("copApproximation") and o.get("currentPrice") and o["currency"] == "USD")
         self.rate = rates[len(rates) // 2] if rates else None
         self.assign_pages(live, games or [])
+        self.store_counts = {st: sum(1 for o in live if o["storeId"] == st) for st in self.stores}
         self.ranks = {g["id"]: g.get("rank") or i + 1 for i, g in enumerate(games or [])}
         free = [o for o in live if o.get("currentPrice") == 0]
         deals = [o for o in live if o.get("currentPrice")]
         soon = sorted([o for o in live if o.get("expiresAt")], key=lambda o: o["expiresAt"])[:6]
         top = sorted(deals, key=lambda o: (-("CO" in (o.get("regions") or [])), -(o.get("metacritic") or 0) // 10,
                                            -(o.get("discountPercentage") or 0)))[:12]
+        dotd = self.deal_of_day(live)
         notice = ('<p class="notice">Los precios y promociones pueden haber cambiado desde la última verificación. '
                   'Confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>')
         updated_line = f'<p class="meta">Actualizado el <time datetime="{updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ")}">{updated}</time> · se revisa cada {self.cfg["intervalo_horas"]} horas</p>'
@@ -964,6 +1098,7 @@ class Site:
 {updated_line}
 </section>
 {self.feature(free + top)}
+{self.dotd_block(dotd)}
 {self.soon_strip(live)}
 {self.quick_search()}
 {self.ad_slot("banner_after_hero")}
@@ -1022,6 +1157,13 @@ class Site:
                         crumbs=[("guias.html", "Guías"), (f"{g['slug']}.html", g["title"])], jsonld=[art], og_type="article")
 
         self.news_page(live, games or [], updated_dt, updated_line)
+        self.layout("oferta-del-dia.html", "Oferta del día: el juego de PC que más vale la pena hoy",
+                    "Cada día elegimos la oferta de PC que más vale la pena por descuento, nota de la crítica y precio en pesos.",
+                    f'<h1>Oferta del día</h1><p class="lead">Cada mañana elegimos una sola oferta: la que más vale la pena según el descuento, '
+                    f'la nota de la crítica y el precio en pesos. No es publicidad: nadie paga por salir aquí.</p>{updated_line}'
+                    + (self.dotd_block(dotd, page=True) + self.score_block(dotd) if dotd else '<p class="notice">Hoy no hay una oferta destacada. Vuelve mañana.</p>')
+                    + f'{notice}<p><a class="btn" href="ofertas.html">Ver todas las ofertas</a></p>',
+                    crumbs=[("oferta-del-dia.html", "Oferta del día")])
 
         self.releases_page(games or [], updated_dt, updated_line)
         self.collection_pages(live, games or [], updated_dt, updated_line, notice)
@@ -1136,7 +1278,7 @@ class Site:
         P("cookies.html", "Política de cookies", "Ofertas Gamer CO no usa cookies de seguimiento. Qué guardamos en tu navegador y cómo borrarlo.",
           f"""<div class="prose"><h1>Política de cookies</h1><p class="meta">Última actualización: {LEGAL_UPDATED}</p>
 <p>Ofertas Gamer CO no instala cookies propias ni de terceros para analítica o publicidad.</p>
-<p>Usamos el almacenamiento local del navegador solo para dos preferencias opcionales: los favoritos (<code>ogc-favs</code>) y el tema claro u oscuro (<code>ogc-theme</code>). No se envían a ningún servidor.</p>
+<p>Usamos el almacenamiento local del navegador solo para preferencias opcionales, como los favoritos (<code>ogc-favs</code>). No se envían a ningún servidor.</p>
 <p>Las tiendas a las que enlazamos pueden usar sus propias cookies cuando visitas su sitio.</p>
 <p>Si en el futuro activamos analítica o anuncios, actualizaremos esta política y pediremos tu consentimiento cuando la ley lo requiera.</p>
 {LEGAL_REVIEW}</div>""", crumbs=[("cookies.html", "Cookies")])
