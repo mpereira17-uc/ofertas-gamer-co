@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T17:44:28Z",
+ "updatedAt": "2026-10-25T17:47:02Z",
  "games": [
   {
    "id": "steam-1422450",
@@ -54,7 +54,7 @@
    "date": "2026-11-19",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "QdBZY2fkU-0",
    "languages": 68,
@@ -123,7 +123,7 @@
    "date": "2026-10-23",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "jLbst85USN8",
    "languages": 19,
@@ -192,7 +192,7 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 15,
@@ -243,7 +243,7 @@
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 22H2\nProcesador: AMD Ryzen 5 2600 / Intel i7‐6850K\nMemoria: 12 GB de RAM\nGráficos: AMD Radeon RX 6600 / Nvidia RTX 5050 / NVIDIA GeForce RTX 2060 / Intel A580\nDirectX: Versión 12\nAlmacenamiento: 135 GB de espacio disponible\nNotas adicionales: SSD required",
    "rank": 7,
    "steamRank": 4,
-   "wdRank": 8
+   "wdRank": 7
   },
   {
    "id": "steam-4824610",
@@ -413,30 +413,31 @@
    "wdRank": 20
   },
   {
-   "id": "wd-Q140140365",
-   "slug": "the-legend-of-zelda-ocarina-of-time",
-   "title": "The Legend of Zelda: Ocarina of Time",
-   "description": "The Legend of Zelda: Ocarina of Time es un próximo juego de acción y aventura publicado por Nintendo. Es un remake del juego The Legend of Zelda: Ocarina of Time de 1998 lanzado para la Nintendo 64. Fue anunciado durante el Nintendo Direct del 9 de junio de 2026 y programado para salir a la venta para la Nintendo Switch 2 el 5 de noviembre de 2026.",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_(videojuego_de_2026)",
-   "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/OcarinaofTime2026.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "id": "steam-2288340",
+   "slug": "ace-combat-8-wings-of-theve",
+   "title": "Ace Combat 8: Wings of Theve",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2288340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/13dea8084135fd130605b78189c82e39bf944c35/header.jpg?t=1792128424",
    "platforms": [
-    "Switch"
+    "Xbox",
+    "PlayStation",
+    "Windows"
    ],
    "genres": [
-    "Acción-aventura"
+    "Simulador de vuelo de combate"
    ],
-   "releaseText": "2026-11-05",
-   "date": "2026-11-05",
+   "releaseText": "2026-10-02",
+   "date": "2026-10-02",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "JQYx_867ua0",
    "languages": 13,
-   "enwiki": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_(2026_video_game)",
-   "summaryChecked": true,
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Ace_Combat_8:_Wings_of_Theve",
+   "headerChecked": true,
    "wdRank": 6,
    "rank": 12
   },
@@ -479,32 +480,31 @@
    "steamRank": 7
   },
   {
-   "id": "steam-2288340",
-   "slug": "ace-combat-8-wings-of-theve",
-   "title": "Ace Combat 8: Wings of Theve",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2288340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/13dea8084135fd130605b78189c82e39bf944c35/header.jpg?t=1792128424",
+   "id": "wd-Q140140365",
+   "slug": "the-legend-of-zelda-ocarina-of-time",
+   "title": "The Legend of Zelda: Ocarina of Time",
+   "description": "The Legend of Zelda: Ocarina of Time es un próximo juego de acción y aventura publicado por Nintendo. Es un remake del juego The Legend of Zelda: Ocarina of Time de 1998 lanzado para la Nintendo 64. Fue anunciado durante el Nintendo Direct del 9 de junio de 2026 y programado para salir a la venta para la Nintendo Switch 2 el 5 de noviembre de 2026.",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_(videojuego_de_2026)",
+   "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/OcarinaofTime2026.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
+    "Switch"
    ],
    "genres": [
-    "Simulador de vuelo de combate"
+    "Acción-aventura"
    ],
-   "releaseText": "2026-10-02",
-   "date": "2026-10-02",
+   "releaseText": "2026-11-05",
+   "date": "2026-11-05",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "JQYx_867ua0",
+   "youtube": "",
    "languages": 13,
-   "enwiki": "https://en.wikipedia.org/wiki/Ace_Combat_8:_Wings_of_Theve",
-   "headerChecked": true,
-   "wdRank": 7,
+   "enwiki": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_(2026_video_game)",
+   "summaryChecked": true,
+   "enChecked": true,
+   "wdRank": 8,
    "rank": 14
   },
   {
@@ -649,7 +649,7 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "N2yLZQFPSLo",
    "languages": 11,
@@ -801,7 +801,7 @@
    "date": "2026-10-06",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "12m0bw1W_tk",
    "languages": 9,
@@ -851,34 +851,47 @@
    "steamRank": 13
   },
   {
-   "id": "steam-3493540",
-   "slug": "transport-fever-3",
-   "title": "Transport Fever 3",
-   "description": "",
+   "id": "steam-4260840",
+   "slug": "stranger-than-heaven",
+   "title": "STRANGER THAN HEAVEN",
+   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3493540/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3493540/6c4506fe585629dd2676db0ae957445471d8d926/header_alt_assets_0_spanish.jpg?t=1791359026",
+   "url": "https://store.steampowered.com/app/4260840/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
    "platforms": [
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de simulación económica",
-    "Videojuego de simulación"
+    "Acción",
+    "Aventura",
+    "Rol"
    ],
-   "releaseText": "2026-09-29",
-   "date": "2026-09-29",
+   "releaseText": "14 Jan, 2027",
+   "date": "2027-01-14",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "HcI60a6PbdI",
-   "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/Transport_Fever_3",
-   "headerChecked": true,
-   "wdRank": 13,
-   "rank": 24
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:15:38Z",
+   "trailer": {
+    "name": " STRANGER THAN HEAVEN | Cast & Story Reveal Trailer (EN)_202607",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383005/257828cfabad647bc01d69f6d79ef7ec8278216d/movie_600x337.jpg?t=1784823062",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4260840/856039096/49b54c9b61e6d6f1ed834fb60a9cbcd86bc4d27e/1784791368/hls_264_master.m3u8?t=1784823062"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/f65464e2f5e566b75133e70b66835eaa1426b346/ss_f65464e2f5e566b75133e70b66835eaa1426b346.600x338.jpg?t=1792676075",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/b5e06a575d1056516057e17f5480df5469025eab/ss_b5e06a575d1056516057e17f5480df5469025eab.600x338.jpg?t=1792676075",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/34f79225201d7b3101c919ff4f54f6b3a66d7997/ss_34f79225201d7b3101c919ff4f54f6b3a66d7997.600x338.jpg?t=1792676075",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/7bba5e7ff5f318e7e53aba322b45a4b47b69aecc/ss_7bba5e7ff5f318e7e53aba322b45a4b47b69aecc.600x338.jpg?t=1792676075",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e647a8f13db648173828e0ab5f98361b3695617/ss_3e647a8f13db648173828e0ab5f98361b3695617.600x338.jpg?t=1792676075",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/fa52330262734f26bca624c886fbd50ab0995dc1/ss_fa52330262734f26bca624c886fbd50ab0995dc1.600x338.jpg?t=1792676075"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows\nNotas adicionales: TBD",
+   "rank": 24,
+   "steamRank": 55,
+   "wdRank": 13
   },
   {
    "id": "steam-2590240",
@@ -920,49 +933,37 @@
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits",
    "rank": 25,
    "steamRank": 14,
-   "wdRank": 17
+   "wdRank": 18
   },
   {
-   "id": "steam-2963950",
-   "slug": "persona-4-revival",
-   "title": "Persona 4 Revival",
-   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
+   "id": "steam-3493540",
+   "slug": "transport-fever-3",
+   "title": "Transport Fever 3",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2963950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
+   "url": "https://store.steampowered.com/app/3493540/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3493540/6c4506fe585629dd2676db0ae957445471d8d926/header_alt_assets_0_spanish.jpg?t=1791359026",
    "platforms": [
-    "Windows",
-    "Switch",
     "Xbox",
-    "PlayStation"
+    "PlayStation",
+    "Windows"
    ],
    "genres": [
-    "Aventura",
-    "Rol"
+    "Videojuego de simulación económica",
+    "Videojuego de simulación"
    ],
-   "releaseText": "17 Feb, 2027",
-   "date": "2027-02-17",
+   "releaseText": "2026-09-29",
+   "date": "2026-09-29",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:15:38Z",
-   "trailer": {
-    "name": "Story Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415069/729b1a2bc6dfab5aa3d1a5389f3abe4b7f858505/movie_600x337.jpg?t=1788989520",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/2963950/1023138812/3d571e248075a9715bcaee91999186898650cd2b/1788980111/hls_264_master.m3u8?t=1788989520"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/553029204f0bef1ba1bfd1542091b299fd8b9075/ss_553029204f0bef1ba1bfd1542091b299fd8b9075.600x338.jpg?t=1788989521",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/ec30bb3d1c237eaf9676d37f06193aea2dfd6aa2/ss_ec30bb3d1c237eaf9676d37f06193aea2dfd6aa2.600x338.jpg?t=1788989521",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/1b25c89e192c3c1ae7636543adea5229e2938553/ss_1b25c89e192c3c1ae7636543adea5229e2938553.600x338.jpg?t=1788989521",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/7273be1b6a0a1e762f56983a676e4235fc7bad49/ss_7273be1b6a0a1e762f56983a676e4235fc7bad49.600x338.jpg?t=1788989521",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/8a7ca2c4bcee42c742d4435d43bb965dea1a3b33/ss_8a7ca2c4bcee42c742d4435d43bb965dea1a3b33.600x338.jpg?t=1788989521"
-   ],
-   "spanish": true,
-   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: TBD",
-   "rank": 26,
-   "steamRank": 16,
-   "wdRank": 14
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "HcI60a6PbdI",
+   "languages": 9,
+   "enwiki": "https://en.wikipedia.org/wiki/Transport_Fever_3",
+   "headerChecked": true,
+   "wdRank": 14,
+   "rank": 26
   },
   {
    "id": "steam-2381520",
@@ -1005,6 +1006,48 @@
    "steamRank": 15
   },
   {
+   "id": "steam-2963950",
+   "slug": "persona-4-revival",
+   "title": "Persona 4 Revival",
+   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2963950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
+   "platforms": [
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "17 Feb, 2027",
+   "date": "2027-02-17",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:15:38Z",
+   "trailer": {
+    "name": "Story Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415069/729b1a2bc6dfab5aa3d1a5389f3abe4b7f858505/movie_600x337.jpg?t=1788989520",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2963950/1023138812/3d571e248075a9715bcaee91999186898650cd2b/1788980111/hls_264_master.m3u8?t=1788989520"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/553029204f0bef1ba1bfd1542091b299fd8b9075/ss_553029204f0bef1ba1bfd1542091b299fd8b9075.600x338.jpg?t=1788989521",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/ec30bb3d1c237eaf9676d37f06193aea2dfd6aa2/ss_ec30bb3d1c237eaf9676d37f06193aea2dfd6aa2.600x338.jpg?t=1788989521",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/1b25c89e192c3c1ae7636543adea5229e2938553/ss_1b25c89e192c3c1ae7636543adea5229e2938553.600x338.jpg?t=1788989521",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/7273be1b6a0a1e762f56983a676e4235fc7bad49/ss_7273be1b6a0a1e762f56983a676e4235fc7bad49.600x338.jpg?t=1788989521",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/8a7ca2c4bcee42c742d4435d43bb965dea1a3b33/ss_8a7ca2c4bcee42c742d4435d43bb965dea1a3b33.600x338.jpg?t=1788989521"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: TBD",
+   "rank": 28,
+   "steamRank": 16,
+   "wdRank": 15
+  },
+  {
    "id": "steam-4078430",
    "slug": "star-wars-galactic-racer",
    "title": "Star Wars: Galactic Racer",
@@ -1024,41 +1067,11 @@
    "date": "2026-10-06",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "XDBc-kbL-Ic",
    "languages": 9,
    "enwiki": "https://en.wikipedia.org/wiki/Star_Wars:_Galactic_Racer",
-   "headerChecked": true,
-   "wdRank": 15,
-   "rank": 28
-  },
-  {
-   "id": "steam-4231820",
-   "slug": "castlevania-belmont-s-curse",
-   "title": "Castlevania: Belmont's Curse",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4231820/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/6b65aec2c398006aea8b76e1463cc34d0e4ba68b/header.jpg?t=1792036946",
-   "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Switch",
-    "Windows"
-   ],
-   "genres": [
-    "Metroidvania"
-   ],
-   "releaseText": "2026-10-15",
-   "date": "2026-10-15",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/Castlevania:_Belmont%27s_Curse",
    "headerChecked": true,
    "wdRank": 16,
    "rank": 29
@@ -1101,7 +1114,37 @@
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Coming soon",
    "rank": 30,
    "steamRank": 17,
-   "wdRank": 48
+   "wdRank": 45
+  },
+  {
+   "id": "steam-4231820",
+   "slug": "castlevania-belmont-s-curse",
+   "title": "Castlevania: Belmont's Curse",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4231820/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/6b65aec2c398006aea8b76e1463cc34d0e4ba68b/header.jpg?t=1792036946",
+   "platforms": [
+    "Xbox",
+    "PlayStation",
+    "Switch",
+    "Windows"
+   ],
+   "genres": [
+    "Metroidvania"
+   ],
+   "releaseText": "2026-10-15",
+   "date": "2026-10-15",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 9,
+   "enwiki": "https://en.wikipedia.org/wiki/Castlevania:_Belmont%27s_Curse",
+   "headerChecked": true,
+   "wdRank": 17,
+   "rank": 31
   },
   {
    "id": "steam-3727390",
@@ -1140,37 +1183,8 @@
    ],
    "spanish": true,
    "requirements": "SO: Windows 10",
-   "rank": 31,
+   "rank": 32,
    "steamRank": 18
-  },
-  {
-   "id": "wd-Q140036783",
-   "slug": "god-of-war-laufey",
-   "title": "God of War Laufey",
-   "description": "God of War Laufey es un próximo videojuego de acción y aventura en desarrollo por Santa Monica Studio y será publicado por Sony Interactive Entertainment. Está programado para ser lanzado el 16 de febrero de 2027, para PlayStation 5. La undécima entrega de la serie God of War, será el primer juego principal en el que el protagonista de la serie Kratos no es el personaje principal, sino que present",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/God_of_War_Laufey",
-   "image": "https://upload.wikimedia.org/wikipedia/en/0/0b/God_of_War_Laufey_cover.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-   "platforms": [
-    "PlayStation"
-   ],
-   "genres": [
-    "Acción-aventura",
-    "Hack and slash"
-   ],
-   "releaseText": "2027-02-16",
-   "date": "2027-02-16",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/God_of_War_Laufey",
-   "summaryChecked": true,
-   "enChecked": true,
-   "wdRank": 18,
-   "rank": 32
   },
   {
    "id": "steam-3292470",
@@ -1212,47 +1226,33 @@
    "steamRank": 19
   },
   {
-   "id": "steam-4260840",
-   "slug": "stranger-than-heaven",
-   "title": "STRANGER THAN HEAVEN",
-   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4260840/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
+   "id": "wd-Q140036783",
+   "slug": "god-of-war-laufey",
+   "title": "God of War Laufey",
+   "description": "God of War Laufey es un próximo videojuego de acción y aventura en desarrollo por Santa Monica Studio y será publicado por Sony Interactive Entertainment. Está programado para ser lanzado el 16 de febrero de 2027, para PlayStation 5. La undécima entrega de la serie God of War, será el primer juego principal en el que el protagonista de la serie Kratos no es el personaje principal, sino que present",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/God_of_War_Laufey",
+   "image": "https://upload.wikimedia.org/wikipedia/en/0/0b/God_of_War_Laufey_cover.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Windows",
-    "Xbox",
     "PlayStation"
    ],
    "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
+    "Acción-aventura",
+    "Hack and slash"
    ],
-   "releaseText": "14 Jan, 2027",
-   "date": "2027-01-14",
+   "releaseText": "2027-02-16",
+   "date": "2027-02-16",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:15:38Z",
-   "trailer": {
-    "name": " STRANGER THAN HEAVEN | Cast & Story Reveal Trailer (EN)_202607",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383005/257828cfabad647bc01d69f6d79ef7ec8278216d/movie_600x337.jpg?t=1784823062",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4260840/856039096/49b54c9b61e6d6f1ed834fb60a9cbcd86bc4d27e/1784791368/hls_264_master.m3u8?t=1784823062"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/f65464e2f5e566b75133e70b66835eaa1426b346/ss_f65464e2f5e566b75133e70b66835eaa1426b346.600x338.jpg?t=1792676075",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/b5e06a575d1056516057e17f5480df5469025eab/ss_b5e06a575d1056516057e17f5480df5469025eab.600x338.jpg?t=1792676075",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/34f79225201d7b3101c919ff4f54f6b3a66d7997/ss_34f79225201d7b3101c919ff4f54f6b3a66d7997.600x338.jpg?t=1792676075",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/7bba5e7ff5f318e7e53aba322b45a4b47b69aecc/ss_7bba5e7ff5f318e7e53aba322b45a4b47b69aecc.600x338.jpg?t=1792676075",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e647a8f13db648173828e0ab5f98361b3695617/ss_3e647a8f13db648173828e0ab5f98361b3695617.600x338.jpg?t=1792676075",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/fa52330262734f26bca624c886fbd50ab0995dc1/ss_fa52330262734f26bca624c886fbd50ab0995dc1.600x338.jpg?t=1792676075"
-   ],
-   "spanish": true,
-   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows\nNotas adicionales: TBD",
-   "rank": 34,
-   "steamRank": 55,
-   "wdRank": 19
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 9,
+   "enwiki": "https://en.wikipedia.org/wiki/God_of_War_Laufey",
+   "summaryChecked": true,
+   "enChecked": true,
+   "wdRank": 19,
+   "rank": 34
   },
   {
    "id": "steam-2873440",
@@ -1295,35 +1295,44 @@
    "steamRank": 21
   },
   {
-   "id": "steam-4245560",
-   "slug": "spyro-a-realm-beyond",
-   "title": "Spyro: A Realm Beyond",
-   "description": "",
+   "id": "steam-4354570",
+   "slug": "final-fantasy-vii-revelation",
+   "title": "FINAL FANTASY VII REVELATION",
+   "description": "Ha comenzado la batalla final que decidirá el destino del mundo. Surca los cielos, decide el rumbo y enfréntate a Sefirot por última vez con la ayuda de tus aliados. Un enorme planeta te espera. Todo conduce hasta aquí.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4245560/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4245560/09b109726c8458478e4c2f36f3784a9a4c24edac/header.jpg?t=1781623703",
+   "url": "https://store.steampowered.com/app/4354570/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/e1750093047ef96e99879977810c9b4c774bab68/header.jpg?t=1791260852",
    "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
     "Windows"
    ],
    "genres": [
-    "Acción-aventura",
-    "Videojuego de plataformas"
+    "Acción",
+    "Aventura",
+    "Rol"
    ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
+   "releaseText": "8 Apr, 2027",
+   "date": "2027-04-08",
+   "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "vHFW16_mDbo",
-   "languages": 8,
-   "enwiki": "https://en.wikipedia.org/wiki/Spyro:_A_Realm_Beyond",
-   "headerChecked": true,
-   "wdRank": 21,
-   "rank": 36
+   "verifiedAt": "2026-10-25T17:15:38Z",
+   "trailer": {
+    "name": "3rd_Trailer_Steam_ES_PEGI16(Prov)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257446874/8930b06e7ba98a8207bec5d0ed99d999d07e6f6b/movie_600x337.jpg?t=1791260845",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4354570/491997898/ad7db182962c1cfa4e8c0f282b9cc3250d29d905/1791189988/hls_264_master.m3u8?t=1791260845"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/c166a76890654e65af2842070c8e88c660c16d23/ss_c166a76890654e65af2842070c8e88c660c16d23.600x338.jpg?t=1791260852",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/b45d7c95b3a0baa977ac85eb040cf060bae2158f/ss_b45d7c95b3a0baa977ac85eb040cf060bae2158f.600x338.jpg?t=1791260852",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/e8b071864ef73eedcb686f1a7b42989e6ff50d72/ss_e8b071864ef73eedcb686f1a7b42989e6ff50d72.600x338.jpg?t=1791260852",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/817f2d12a76bb86248bd5ae82dc3dade37707d09/ss_817f2d12a76bb86248bd5ae82dc3dade37707d09.600x338.jpg?t=1791260852",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/08ac266ff651e59f3af6021e46ce7391b60fdeae/ss_08ac266ff651e59f3af6021e46ce7391b60fdeae.600x338.jpg?t=1791260852"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: TBD",
+   "rank": 36,
+   "steamRank": 50,
+   "wdRank": 21
   },
   {
    "id": "steam-3710600",
@@ -1366,44 +1375,35 @@
    "steamRank": 22
   },
   {
-   "id": "steam-4354570",
-   "slug": "final-fantasy-vii-revelation",
-   "title": "FINAL FANTASY VII REVELATION",
-   "description": "Ha comenzado la batalla final que decidirá el destino del mundo. Surca los cielos, decide el rumbo y enfréntate a Sefirot por última vez con la ayuda de tus aliados. Un enorme planeta te espera. Todo conduce hasta aquí.",
+   "id": "steam-4245560",
+   "slug": "spyro-a-realm-beyond",
+   "title": "Spyro: A Realm Beyond",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4354570/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/e1750093047ef96e99879977810c9b4c774bab68/header.jpg?t=1791260852",
+   "url": "https://store.steampowered.com/app/4245560/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4245560/09b109726c8458478e4c2f36f3784a9a4c24edac/header.jpg?t=1781623703",
    "platforms": [
+    "Switch",
+    "Xbox",
+    "PlayStation",
     "Windows"
    ],
    "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
+    "Acción-aventura",
+    "Videojuego de plataformas"
    ],
-   "releaseText": "8 Apr, 2027",
-   "date": "2027-04-08",
-   "precision": "day",
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:15:38Z",
-   "trailer": {
-    "name": "3rd_Trailer_Steam_ES_PEGI16(Prov)",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257446874/8930b06e7ba98a8207bec5d0ed99d999d07e6f6b/movie_600x337.jpg?t=1791260845",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4354570/491997898/ad7db182962c1cfa4e8c0f282b9cc3250d29d905/1791189988/hls_264_master.m3u8?t=1791260845"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/c166a76890654e65af2842070c8e88c660c16d23/ss_c166a76890654e65af2842070c8e88c660c16d23.600x338.jpg?t=1791260852",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/b45d7c95b3a0baa977ac85eb040cf060bae2158f/ss_b45d7c95b3a0baa977ac85eb040cf060bae2158f.600x338.jpg?t=1791260852",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/e8b071864ef73eedcb686f1a7b42989e6ff50d72/ss_e8b071864ef73eedcb686f1a7b42989e6ff50d72.600x338.jpg?t=1791260852",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/817f2d12a76bb86248bd5ae82dc3dade37707d09/ss_817f2d12a76bb86248bd5ae82dc3dade37707d09.600x338.jpg?t=1791260852",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354570/08ac266ff651e59f3af6021e46ce7391b60fdeae/ss_08ac266ff651e59f3af6021e46ce7391b60fdeae.600x338.jpg?t=1791260852"
-   ],
-   "spanish": true,
-   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: TBD",
-   "rank": 38,
-   "steamRank": 50,
-   "wdRank": 22
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "vHFW16_mDbo",
+   "languages": 8,
+   "enwiki": "https://en.wikipedia.org/wiki/Spyro:_A_Realm_Beyond",
+   "headerChecked": true,
+   "wdRank": 22,
+   "rank": 38
   },
   {
    "id": "steam-1340720",
@@ -1444,7 +1444,7 @@
    "requirements": "SO: Windows 10",
    "rank": 39,
    "steamRank": 23,
-   "wdRank": 35
+   "wdRank": 33
   },
   {
    "id": "steam-2439280",
@@ -1528,30 +1528,34 @@
    "steamRank": 24
   },
   {
-   "id": "wd-Q141391458",
-   "slug": "metroid-ravenous",
-   "title": "Metroid Ravenous",
-   "description": "Metroid Ravenous, también conocido como 'Metroid 6', es un próximo juego de acción y aventura desarrollado por MercurySteam y Nintendo EPD y publicado por Nintendo para Nintendo Switch 2. Es la sexta entrega principal de la serie Metroid, y tiene lugar después de Metroid Dread (2021).",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/Metroid_Ravenous",
-   "image": "https://upload.wikimedia.org/wikipedia/en/9/93/MetroidRavenous.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "id": "steam-1912410",
+   "slug": "minecraft-dungeons-ii",
+   "title": "Minecraft Dungeons II",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1912410/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1912410/86cbba83c1aaffa0b0efa4197ce29c2264ea9dc2/header.jpg?t=1791536987",
    "platforms": [
-    "Switch"
+    "Switch",
+    "Xbox",
+    "PlayStation",
+    "Windows"
    ],
    "genres": [
-    "Metroidvania"
+    "Videojuego de aventura",
+    "Videojuego de acción",
+    "Videojuego de rol"
    ],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
+   "releaseText": "2026-09-29",
+   "date": "2026-09-29",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Metroid_Ravenous",
-   "summaryChecked": true,
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Minecraft_Dungeons_II",
+   "headerChecked": true,
    "wdRank": 24,
    "rank": 42
   },
@@ -1596,33 +1600,30 @@
    "steamRank": 25
   },
   {
-   "id": "steam-1912410",
-   "slug": "minecraft-dungeons-ii",
-   "title": "Minecraft Dungeons II",
+   "id": "steam-4084710",
+   "slug": "rayman-legends-retold",
+   "title": "Rayman Legends Retold",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/1912410/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1912410/86cbba83c1aaffa0b0efa4197ce29c2264ea9dc2/header.jpg?t=1791536987",
+   "url": "https://store.steampowered.com/app/4084710/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4084710/4fc23980ce04f33d7dc91bf38d74591ec00015cb/header.jpg?t=1790860160",
    "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
     "Windows"
    ],
    "genres": [
     "Videojuego de aventura",
     "Videojuego de acción",
-    "Videojuego de rol"
+    "Videojuego casual"
    ],
-   "releaseText": "2026-09-29",
-   "date": "2026-09-29",
+   "releaseText": "2026-10-01",
+   "date": "2026-10-01",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "TKfG9hiueak",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Minecraft_Dungeons_II",
+   "enwiki": "https://en.wikipedia.org/wiki/Rayman_Legends_Retold",
    "headerChecked": true,
    "wdRank": 25,
    "rank": 44
@@ -1668,31 +1669,28 @@
    "steamRank": 26
   },
   {
-   "id": "steam-4084710",
-   "slug": "rayman-legends-retold",
-   "title": "Rayman Legends Retold",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4084710/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4084710/4fc23980ce04f33d7dc91bf38d74591ec00015cb/header.jpg?t=1790860160",
+   "id": "wd-Q140036775",
+   "slug": "until-dawn-2",
+   "title": "Until Dawn 2",
+   "description": "Until Dawn 2 es un próximo videojuego de terror interactivo desarrollado por Firesprite y publicado por Sony Interactive Entertainment para PlayStation 5. Es la secuela de Until Dawn (2015), aunque fue concebido como una experiencia independiente, con un nuevo elenco de personajes y un escenario diferente. Su lanzamiento está previsto para el 28 de enero de 2027.",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/Until_Dawn_2",
+   "image": "https://upload.wikimedia.org/wikipedia/en/4/4a/Until_Dawn_2_cover_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Windows"
+    "PlayStation"
    ],
-   "genres": [
-    "Videojuego de aventura",
-    "Videojuego de acción",
-    "Videojuego casual"
-   ],
-   "releaseText": "2026-10-01",
-   "date": "2026-10-01",
+   "genres": [],
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "TKfG9hiueak",
+   "youtube": "",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Rayman_Legends_Retold",
-   "headerChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Until_Dawn_2",
+   "summaryChecked": true,
+   "enChecked": true,
    "wdRank": 26,
    "rank": 46
   },
@@ -1735,26 +1733,28 @@
    "steamRank": 27
   },
   {
-   "id": "wd-Q140036775",
-   "slug": "until-dawn-2",
-   "title": "Until Dawn 2",
-   "description": "Until Dawn 2 es un próximo videojuego de terror interactivo desarrollado por Firesprite y publicado por Sony Interactive Entertainment para PlayStation 5. Es la secuela de Until Dawn (2015), aunque fue concebido como una experiencia independiente, con un nuevo elenco de personajes y un escenario diferente. Su lanzamiento está previsto para el 28 de enero de 2027.",
+   "id": "wd-Q141391458",
+   "slug": "metroid-ravenous",
+   "title": "Metroid Ravenous",
+   "description": "Metroid Ravenous, también conocido como 'Metroid 6', es un próximo juego de acción y aventura desarrollado por MercurySteam y Nintendo EPD y publicado por Nintendo para Nintendo Switch 2. Es la sexta entrega principal de la serie Metroid, y tiene lugar después de Metroid Dread (2021).",
    "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/Until_Dawn_2",
-   "image": "https://upload.wikimedia.org/wikipedia/en/4/4a/Until_Dawn_2_cover_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "url": "https://es.wikipedia.org/wiki/Metroid_Ravenous",
+   "image": "https://upload.wikimedia.org/wikipedia/en/9/93/MetroidRavenous.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "PlayStation"
+    "Switch"
    ],
-   "genres": [],
+   "genres": [
+    "Metroidvania"
+   ],
    "releaseText": "2027-01-28",
    "date": "2027-01-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Until_Dawn_2",
+   "enwiki": "https://en.wikipedia.org/wiki/Metroid_Ravenous",
    "summaryChecked": true,
    "enChecked": true,
    "wdRank": 27,
@@ -1820,7 +1820,7 @@
    "date": "2026-12-11",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "9OosC1E8TVM",
    "languages": 6,
@@ -1883,14 +1883,14 @@
     "Windows"
    ],
    "genres": [
-    "Videojuego de aventura",
-    "Videojuego de lógica"
+    "Videojuego de lógica",
+    "Videojuego de aventura"
    ],
    "releaseText": "2026-12-10",
    "date": "2026-12-10",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
@@ -1940,26 +1940,27 @@
    "steamRank": 30
   },
   {
-   "id": "wd-Q140139769",
-   "slug": "nintendo-switch-sports-resort",
-   "title": "Nintendo Switch Sports Resort",
-   "description": "Nintendo Switch Sports Resort es un próximo videojuego de deportes desarrollado y publicado por Nintendo para la Nintendo Switch 2. Es una secuela de Nintendo Switch Sports, con elementos basados en Wii Sports y Wii Sports Resort.",
+   "id": "wd-Q131436074",
+   "slug": "virtua-fighter-crossroads",
+   "title": "Virtua Fighter Crossroads",
+   "description": "Virtua Fighter Crossroads es un próximo videojuego de lucha desarrollado por RGG Studio y publicado por Sega. Será la sexta entrega principal de la serie Virtua Fighter y la primera entrega original en dos décadas.",
    "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/Nintendo_Switch_Sports_Resort",
-   "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Nintendo_Switch_Sports_Resort_cover_art.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-   "platforms": [
-    "Switch"
+   "url": "https://es.wikipedia.org/wiki/Virtua_Fighter_Crossroads",
+   "image": "",
+   "platforms": [],
+   "genres": [
+    "Acción-aventura",
+    "Videojuego de lucha en tres dimensiones"
    ],
-   "genres": [],
-   "releaseText": "2026-10-22",
-   "date": "2026-10-22",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Nintendo_Switch_Sports_Resort",
+   "enwiki": "https://en.wikipedia.org/wiki/Virtua_Fighter_Crossroads",
    "summaryChecked": true,
    "enChecked": true,
    "wdRank": 30,
@@ -2006,27 +2007,32 @@
    "steamRank": 31
   },
   {
-   "id": "wd-Q141391404",
-   "slug": "kirby-and-the-world-beyond",
-   "title": "Kirby and the World Beyond",
+   "id": "steam-1551980",
+   "slug": "clive-barker-s-hellraiser-revival",
+   "title": "Clive Barker's Hellraiser: Revival",
    "description": "",
-   "store": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Kirby_and_the_World_Beyond",
-   "image": "https://upload.wikimedia.org/wikipedia/en/6/6a/Kirby_and_the_World_Beyond_banner.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1551980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/d1e7111b93b6a8b3eb029908887648348c2c55e6/header.jpg?t=1791462446",
    "platforms": [
-    "Switch"
+    "Switch",
+    "Xbox",
+    "PlayStation",
+    "Windows"
    ],
-   "genres": [],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "genres": [
+    "Videojuego de terror"
+   ],
+   "releaseText": "2026-10-08",
+   "date": "2026-10-08",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "E_4kAp6gsZE",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Kirby_and_the_World_Beyond",
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Clive_Barker%27s_Hellraiser:_Revival",
+   "headerChecked": true,
    "wdRank": 31,
    "rank": 56
   },
@@ -2070,30 +2076,31 @@
    "steamRank": 32
   },
   {
-   "id": "wd-Q141440705",
-   "slug": "world-of-warcraft-forever",
-   "title": "World of Warcraft: Forever",
+   "id": "steam-3061930",
+   "slug": "clutch",
+   "title": "Clutch",
    "description": "",
-   "store": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/World_of_Warcraft:_Forever",
-   "image": "https://i.ytimg.com/vi/ubf2XFWyPfk/maxresdefault.jpg",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3061930/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061930/26691256a0032fe27b2cd378db0ea07656ab9f1c/header.jpg?t=1792599379",
    "platforms": [
-    "Mac",
+    "Xbox",
+    "PlayStation",
     "Windows"
    ],
    "genres": [
-    "Videojuego de rol multijugador masivo en línea"
+    "Videojuego de conducción"
    ],
-   "releaseText": "2026-11-04",
-   "date": "2026-11-04",
-   "precision": "day",
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "ubf2XFWyPfk",
+   "youtube": "",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/World_of_Warcraft:_Forever",
-   "imageSmall": "https://i.ytimg.com/vi/ubf2XFWyPfk/mqdefault.jpg",
+   "enwiki": "https://en.wikipedia.org/wiki/Clutch_(video_game)",
+   "headerChecked": true,
    "wdRank": 32,
    "rank": 58
   },
@@ -2138,36 +2145,6 @@
    "steamRank": 33
   },
   {
-   "id": "steam-1551980",
-   "slug": "clive-barker-s-hellraiser-revival",
-   "title": "Clive Barker's Hellraiser: Revival",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1551980/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/d1e7111b93b6a8b3eb029908887648348c2c55e6/header.jpg?t=1791462446",
-   "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Videojuego de terror"
-   ],
-   "releaseText": "2026-10-08",
-   "date": "2026-10-08",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "E_4kAp6gsZE",
-   "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Clive_Barker%27s_Hellraiser:_Revival",
-   "headerChecked": true,
-   "wdRank": 33,
-   "rank": 60
-  },
-  {
    "id": "steam-1280190",
    "slug": "falling-frontier",
    "title": "Falling Frontier",
@@ -2203,37 +2180,34 @@
    ],
    "spanish": true,
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows® 10 (64-bit)\nProcesador: Intel® Core™ i5-4670 (quad-core) / AMD® FX-Series™ FX-8300 (quad-core)\nMemoria: 4 GB de RAM\nGráficos: NVIDIA® GeForce® GTX 960 (4 GB) / AMD® Radeon™ R9 380 (4 GB)\nDirectX: Versión 11\nAlmacenamiento: 20 GB de espacio disponible",
-   "rank": 61,
+   "rank": 60,
    "steamRank": 34
   },
   {
-   "id": "steam-3061930",
-   "slug": "clutch",
-   "title": "Clutch",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3061930/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061930/26691256a0032fe27b2cd378db0ea07656ab9f1c/header.jpg?t=1792599379",
+   "id": "wd-Q140139769",
+   "slug": "nintendo-switch-sports-resort",
+   "title": "Nintendo Switch Sports Resort",
+   "description": "Nintendo Switch Sports Resort es un próximo videojuego de deportes desarrollado y publicado por Nintendo para la Nintendo Switch 2. Es una secuela de Nintendo Switch Sports, con elementos basados en Wii Sports y Wii Sports Resort.",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/Nintendo_Switch_Sports_Resort",
+   "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Nintendo_Switch_Sports_Resort_cover_art.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
+    "Switch"
    ],
-   "genres": [
-    "Videojuego de conducción"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "genres": [],
+   "releaseText": "2026-10-22",
+   "date": "2026-10-22",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Clutch_(video_game)",
-   "headerChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Nintendo_Switch_Sports_Resort",
+   "summaryChecked": true,
+   "enChecked": true,
    "wdRank": 34,
-   "rank": 62
+   "rank": 61
   },
   {
    "id": "steam-2179480",
@@ -2273,8 +2247,33 @@
    ],
    "spanish": true,
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10/11 64-bit\nProcesador: Intel Core i7-7700K / AMD Ryzen 5 1600X\nMemoria: 16 GB de RAM\nGráficos: Nvidia RTX 2060 / AMD Radeon RX 5600 XT\nDirectX: Versión 12\nAlmacenamiento: 50 GB de espacio disponible\nNotas adicionales: Se requiere una conexión a Internet estable para jugar en línea.",
-   "rank": 63,
+   "rank": 62,
    "steamRank": 35
+  },
+  {
+   "id": "wd-Q141391404",
+   "slug": "kirby-and-the-world-beyond",
+   "title": "Kirby and the World Beyond",
+   "description": "",
+   "store": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kirby_and_the_World_Beyond",
+   "image": "https://upload.wikimedia.org/wikipedia/en/6/6a/Kirby_and_the_World_Beyond_banner.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "platforms": [
+    "Switch"
+   ],
+   "genres": [],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 6,
+   "enwiki": "https://en.wikipedia.org/wiki/Kirby_and_the_World_Beyond",
+   "enChecked": true,
+   "wdRank": 35,
+   "rank": 63
   },
   {
    "id": "steam-2295170",
@@ -2317,29 +2316,30 @@
    "steamRank": 36
   },
   {
-   "id": "wd-Q131436074",
-   "slug": "virtua-fighter-crossroads",
-   "title": "Virtua Fighter Crossroads",
-   "description": "Virtua Fighter Crossroads es un próximo videojuego de lucha desarrollado por RGG Studio y publicado por Sega. Será la sexta entrega principal de la serie Virtua Fighter y la primera entrega original en dos décadas.",
+   "id": "wd-Q141440705",
+   "slug": "world-of-warcraft-forever",
+   "title": "World of Warcraft: Forever",
+   "description": "",
    "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/Virtua_Fighter_Crossroads",
-   "image": "",
-   "platforms": [],
-   "genres": [
-    "Acción-aventura",
-    "Videojuego de lucha en tres dimensiones"
+   "url": "https://en.wikipedia.org/wiki/World_of_Warcraft:_Forever",
+   "image": "https://i.ytimg.com/vi/ubf2XFWyPfk/maxresdefault.jpg",
+   "platforms": [
+    "Mac",
+    "Windows"
    ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
+   "genres": [
+    "Videojuego de rol multijugador masivo en línea"
+   ],
+   "releaseText": "2026-11-04",
+   "date": "2026-11-04",
+   "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "ubf2XFWyPfk",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Virtua_Fighter_Crossroads",
-   "summaryChecked": true,
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/World_of_Warcraft:_Forever",
+   "imageSmall": "https://i.ytimg.com/vi/ubf2XFWyPfk/mqdefault.jpg",
    "wdRank": 36,
    "rank": 65
   },
@@ -2441,7 +2441,7 @@
    "date": "2027-01-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 5,
@@ -2490,29 +2490,30 @@
    "steamRank": 39
   },
   {
-   "id": "steam-3259780",
-   "slug": "final-fantasy-resonance",
-   "title": "Final Fantasy Resonance",
+   "id": "steam-3219030",
+   "slug": "planet-zoo-2",
+   "title": "Planet Zoo 2",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3259780/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3259780/710da43babb2043f9f6ad0e50023e31167d94708/header.jpg?t=1792758611",
+   "url": "https://store.steampowered.com/app/3219030/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/a5131aa4b84d04a55e3b9c561d7c886cc22bbe1c/header.jpg?t=1792660647",
    "platforms": [
-    "Switch",
     "Xbox",
     "PlayStation",
     "Windows"
    ],
-   "genres": [],
-   "releaseText": "2026-10-22",
-   "date": "2026-10-22",
+   "genres": [
+    "Videojuego de construcción y gestión"
+   ],
+   "releaseText": "2026-10-13",
+   "date": "2026-10-13",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 5,
-   "enwiki": "https://en.wikipedia.org/wiki/Final_Fantasy_Resonance",
+   "enwiki": "https://en.wikipedia.org/wiki/Planet_Zoo_2",
    "headerChecked": true,
    "wdRank": 39,
    "rank": 70
@@ -2558,33 +2559,46 @@
    "steamRank": 40
   },
   {
-   "id": "steam-3219030",
-   "slug": "planet-zoo-2",
-   "title": "Planet Zoo 2",
-   "description": "",
+   "id": "steam-1373530",
+   "slug": "militsioner",
+   "title": "Militsioner",
+   "description": "Cada movimiento que haces es seguido por un Policía Colosal. Enfada, adula, defrauda, miente o incluso seduce a un gigante para escapar en este inmersivo simulador kafkiano.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3219030/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/a5131aa4b84d04a55e3b9c561d7c886cc22bbe1c/header.jpg?t=1792660647",
+   "url": "https://store.steampowered.com/app/1373530/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/ab9a2c7ad1f60db59a73b7938809248e764fd5ee/header.jpg?t=1792518049",
    "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
+    "Windows",
+    "Xbox"
    ],
    "genres": [
-    "Videojuego de construcción y gestión"
+    "Acción",
+    "Aventura",
+    "Indie"
    ],
-   "releaseText": "2026-10-13",
-   "date": "2026-10-13",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 5,
-   "enwiki": "https://en.wikipedia.org/wiki/Planet_Zoo_2",
-   "headerChecked": true,
-   "wdRank": 40,
-   "rank": 72
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:36:39Z",
+   "trailer": {
+    "name": "Teaser Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257471046/e38a443457e6823566a53a2b0adb1352b407c450/movie_600x337.jpg?t=1792518048",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1373530/2147352873/2b85b390b2b99b512ea144754a38974824c81390/1792511195/hls_264_master.m3u8?t=1792518048"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/fe533708d6d80a871faa307e13b89c5bebd2d1d7/ss_fe533708d6d80a871faa307e13b89c5bebd2d1d7.600x338.jpg?t=1792518049",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/2ff874fc68f9b4ac46c2cb161fdf840159a07a79/ss_2ff874fc68f9b4ac46c2cb161fdf840159a07a79.600x338.jpg?t=1792518049",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/534d6a391421c00acb29a089d3db81bdd862e1d6/ss_534d6a391421c00acb29a089d3db81bdd862e1d6.600x338.jpg?t=1792518049",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/2b451bbfeb280aa447b586c4565df426883207bf/ss_2b451bbfeb280aa447b586c4565df426883207bf.600x338.jpg?t=1792518049",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/5db40e708d65d80f34374c4f45f997ab8444330f/ss_5db40e708d65d80f34374c4f45f997ab8444330f.600x338.jpg?t=1792518049",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/b850b64849fdff59befb66f5fde49e2bdbed8399/ss_b850b64849fdff59befb66f5fde49e2bdbed8399.600x338.jpg?t=1792518049"
+   ],
+   "spanish": true,
+   "requirements": "SO *: Windows 7/8/10 64bit\nAlmacenamiento: 20 GB de espacio disponible",
+   "rank": 72,
+   "steamRank": 149,
+   "wdRank": 40
   },
   {
    "id": "steam-5072600",
@@ -2626,46 +2640,32 @@
    "steamRank": 41
   },
   {
-   "id": "steam-1373530",
-   "slug": "militsioner",
-   "title": "Militsioner",
-   "description": "Cada movimiento que haces es seguido por un Policía Colosal. Enfada, adula, defrauda, miente o incluso seduce a un gigante para escapar en este inmersivo simulador kafkiano.",
+   "id": "steam-3259780",
+   "slug": "final-fantasy-resonance",
+   "title": "Final Fantasy Resonance",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/1373530/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/ab9a2c7ad1f60db59a73b7938809248e764fd5ee/header.jpg?t=1792518049",
+   "url": "https://store.steampowered.com/app/3259780/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3259780/710da43babb2043f9f6ad0e50023e31167d94708/header.jpg?t=1792758611",
    "platforms": [
-    "Windows",
-    "Xbox"
+    "Switch",
+    "Xbox",
+    "PlayStation",
+    "Windows"
    ],
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Indie"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:36:39Z",
-   "trailer": {
-    "name": "Teaser Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257471046/e38a443457e6823566a53a2b0adb1352b407c450/movie_600x337.jpg?t=1792518048",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/1373530/2147352873/2b85b390b2b99b512ea144754a38974824c81390/1792511195/hls_264_master.m3u8?t=1792518048"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/fe533708d6d80a871faa307e13b89c5bebd2d1d7/ss_fe533708d6d80a871faa307e13b89c5bebd2d1d7.600x338.jpg?t=1792518049",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/2ff874fc68f9b4ac46c2cb161fdf840159a07a79/ss_2ff874fc68f9b4ac46c2cb161fdf840159a07a79.600x338.jpg?t=1792518049",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/534d6a391421c00acb29a089d3db81bdd862e1d6/ss_534d6a391421c00acb29a089d3db81bdd862e1d6.600x338.jpg?t=1792518049",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/2b451bbfeb280aa447b586c4565df426883207bf/ss_2b451bbfeb280aa447b586c4565df426883207bf.600x338.jpg?t=1792518049",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/5db40e708d65d80f34374c4f45f997ab8444330f/ss_5db40e708d65d80f34374c4f45f997ab8444330f.600x338.jpg?t=1792518049",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373530/b850b64849fdff59befb66f5fde49e2bdbed8399/ss_b850b64849fdff59befb66f5fde49e2bdbed8399.600x338.jpg?t=1792518049"
-   ],
-   "spanish": true,
-   "requirements": "SO *: Windows 7/8/10 64bit\nAlmacenamiento: 20 GB de espacio disponible",
-   "rank": 74,
-   "steamRank": 149,
-   "wdRank": 41
+   "genres": [],
+   "releaseText": "2026-10-22",
+   "date": "2026-10-22",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 5,
+   "enwiki": "https://en.wikipedia.org/wiki/Final_Fantasy_Resonance",
+   "headerChecked": true,
+   "wdRank": 41,
+   "rank": 74
   },
   {
    "id": "steam-2161710",
@@ -2707,7 +2707,7 @@
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: TBD\nProcesador: TBD\nMemoria: TBD MB de RAM\nGráficos: TBD\nDirectX: Versión 12\nAlmacenamiento: TBD MB de espacio disponible\nTarjeta de sonido: TBD",
    "rank": 75,
    "steamRank": 42,
-   "wdRank": 58
+   "wdRank": 57
   },
   {
    "id": "steam-1952620",
@@ -2812,7 +2812,7 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "ePi8tDdKuWw",
    "languages": 4,
@@ -2862,31 +2862,30 @@
    "steamRank": 44
   },
   {
-   "id": "steam-4507990",
-   "slug": "wo-long-2-wings-of-ember",
-   "title": "Wo Long 2: Wings of Ember",
+   "id": "steam-2828710",
+   "slug": "valor-mortis",
+   "title": "Valor Mortis",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4507990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4507990/7e7746ce07e19dc3a0e7f9b08546b9ffb9cbefd0/header.jpg?t=1790813604",
+   "url": "https://store.steampowered.com/app/2828710/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2828710/e729c7f909db5c52ea780923d9b258517162866a/header.jpg?t=1792608118",
    "platforms": [
-    "Switch",
     "Xbox",
     "PlayStation",
     "Windows"
    ],
    "genres": [
-    "Videojuego de rol de acción"
+    "Soulslike"
    ],
-   "releaseText": "2027-03-04",
-   "date": "2027-03-04",
+   "releaseText": "2026-10-13",
+   "date": "2026-10-13",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "cIF7cL0KRDU",
    "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Wo_Long_2:_Wings_of_Ember",
+   "enwiki": "https://en.wikipedia.org/wiki/Valor_Mortis",
    "headerChecked": true,
    "wdRank": 44,
    "rank": 80
@@ -2930,35 +2929,6 @@
    "steamRank": 45
   },
   {
-   "id": "steam-3676410",
-   "slug": "senua",
-   "title": "Senua",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3676410/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3676410/75370f45cdab9ada45b18804cd27d0897dd4c727/header.jpg?t=1781189123",
-   "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Acción-aventura"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Senua_(video_game)",
-   "headerChecked": true,
-   "wdRank": 45,
-   "rank": 82
-  },
-  {
    "id": "steam-3864580",
    "slug": "p-o-n",
    "title": "P.O.N.",
@@ -2994,35 +2964,50 @@
    ],
    "spanish": true,
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10/11\nProcesador: Intel Core i5-4590 / AMD Ryzen 5 2600\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GTX 970 / AMD Radeon R9 390\nDirectX: Versión 11\nAlmacenamiento: 16 GB de espacio disponible",
-   "rank": 83,
+   "rank": 82,
    "steamRank": 46
   },
   {
-   "id": "wd-Q140139664",
-   "slug": "xenoblade-genesis",
-   "title": "Xenoblade Genesis",
-   "description": "",
-   "store": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Xenoblade_Genesis",
-   "image": "",
+   "id": "steam-3751230",
+   "slug": "danganronpa-2x2",
+   "title": "Danganronpa 2x2",
+   "description": "While on a school trip to Jabberwock Island, students are ensnared in Monokuma’s deadly game, forced into mutual killing and Class Trials to expose the culprit. Break through contradictions with high-speed detective action. Includes both a brand-new scenario and the enhanced original!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3751230/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/fc422cd5527bbb4a9386edabd75f5280593c164c/header.jpg?t=1792734384",
    "platforms": [
-    "Switch"
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de rol de acción"
+    "Aventura"
    ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
+   "releaseText": "13 Jan, 2027",
+   "date": "2027-01-13",
+   "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Xenoblade_Genesis",
-   "enChecked": true,
-   "wdRank": 46,
-   "rank": 84
+   "verifiedAt": "2026-10-25T17:28:33Z",
+   "trailer": {
+    "name": "Introduction Trailer (English)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420377/0bd29134d016113900dc9a7d2f89345397045058/movie_600x337.jpg?t=1788973211",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3751230/1642899568/f7858d30fd8f6661238bcc234c898da3164c7e0b/1788924730/hls_264_master.m3u8?t=1788973211"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/1fdcdd17dd960bb8aa40ecef7795097ee20bd0e9/ss_1fdcdd17dd960bb8aa40ecef7795097ee20bd0e9.600x338.jpg?t=1792734384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/96cea1b7ba544c48781c9df4a50e9220d8c0b538/ss_96cea1b7ba544c48781c9df4a50e9220d8c0b538.600x338.jpg?t=1792734384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/05e5b0e3d7db3ea731fa1aafece942c08328a30c/ss_05e5b0e3d7db3ea731fa1aafece942c08328a30c.600x338.jpg?t=1792734384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/a7a1250201ef399eae0d2f39087647a7c650f3d0/ss_a7a1250201ef399eae0d2f39087647a7c650f3d0.600x338.jpg?t=1792734384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/b456f8dfb19b4dec1f10345f8a843332687e48b1/ss_b456f8dfb19b4dec1f10345f8a843332687e48b1.600x338.jpg?t=1792734384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/5a7a24e93507c34fb6080623c370316ed51f4bbe/ss_5a7a24e93507c34fb6080623c370316ed51f4bbe.600x338.jpg?t=1792734384"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 11 (64-bit)\nProcesador: Core i5-10500 or Ryzen 5 2600X\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GeForce GTX 1660 or AMD Radeon RX 5600 XT (Full HD)\nDirectX: Versión 12\nAlmacenamiento: 30 GB de espacio disponible\nNotas adicionales: *SSD storage is recommended. *Storage requirement becomes 40 GB if the digital deluxe edition contents app is also installed.",
+   "rank": 83,
+   "steamRank": 122,
+   "wdRank": 46
   },
   {
    "id": "steam-1752080",
@@ -3061,36 +3046,65 @@
    ],
    "spanish": false,
    "requirements": "SO: Por confirmar\nProcesador: Por confirmar\nGráficos: Por confirmar",
-   "rank": 85,
+   "rank": 84,
    "steamRank": 47
   },
   {
-   "id": "steam-2828710",
-   "slug": "valor-mortis",
-   "title": "Valor Mortis",
+   "id": "steam-4223290",
+   "slug": "mega-man-dual-override",
+   "title": "Mega Man: Dual Override",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2828710/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2828710/e729c7f909db5c52ea780923d9b258517162866a/header.jpg?t=1792608118",
+   "url": "https://store.steampowered.com/app/4223290/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4223290/08af2430e76e5a61a26f5678348f5e1ace2c4b2b/header.jpg?t=1792127306",
    "platforms": [
+    "Switch",
+    "Xbox",
+    "PlayStation",
+    "Windows"
+   ],
+   "genres": [],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "8i97QCOWSC4",
+   "languages": 4,
+   "enwiki": "https://en.wikipedia.org/wiki/Mega_Man:_Dual_Override",
+   "headerChecked": true,
+   "wdRank": 47,
+   "rank": 85
+  },
+  {
+   "id": "steam-4507990",
+   "slug": "wo-long-2-wings-of-ember",
+   "title": "Wo Long 2: Wings of Ember",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4507990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4507990/7e7746ce07e19dc3a0e7f9b08546b9ffb9cbefd0/header.jpg?t=1790813604",
+   "platforms": [
+    "Switch",
     "Xbox",
     "PlayStation",
     "Windows"
    ],
    "genres": [
-    "Soulslike"
+    "Videojuego de rol de acción"
    ],
-   "releaseText": "2026-10-13",
-   "date": "2026-10-13",
+   "releaseText": "2027-03-04",
+   "date": "2027-03-04",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "cIF7cL0KRDU",
+   "youtube": "",
    "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Valor_Mortis",
+   "enwiki": "https://en.wikipedia.org/wiki/Wo_Long_2:_Wings_of_Ember",
    "headerChecked": true,
-   "wdRank": 47,
+   "wdRank": 48,
    "rank": 86
   },
   {
@@ -3133,72 +3147,58 @@
    "steamRank": 49
   },
   {
-   "id": "steam-3751230",
-   "slug": "danganronpa-2x2",
-   "title": "Danganronpa 2x2",
-   "description": "While on a school trip to Jabberwock Island, students are ensnared in Monokuma’s deadly game, forced into mutual killing and Class Trials to expose the culprit. Break through contradictions with high-speed detective action. Includes both a brand-new scenario and the enhanced original!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3751230/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/fc422cd5527bbb4a9386edabd75f5280593c164c/header.jpg?t=1792734384",
-   "platforms": [
-    "Windows",
-    "Switch",
-    "Xbox",
-    "PlayStation"
-   ],
-   "genres": [
-    "Aventura"
-   ],
-   "releaseText": "13 Jan, 2027",
-   "date": "2027-01-13",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:28:33Z",
-   "trailer": {
-    "name": "Introduction Trailer (English)",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420377/0bd29134d016113900dc9a7d2f89345397045058/movie_600x337.jpg?t=1788973211",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/3751230/1642899568/f7858d30fd8f6661238bcc234c898da3164c7e0b/1788924730/hls_264_master.m3u8?t=1788973211"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/1fdcdd17dd960bb8aa40ecef7795097ee20bd0e9/ss_1fdcdd17dd960bb8aa40ecef7795097ee20bd0e9.600x338.jpg?t=1792734384",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/96cea1b7ba544c48781c9df4a50e9220d8c0b538/ss_96cea1b7ba544c48781c9df4a50e9220d8c0b538.600x338.jpg?t=1792734384",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/05e5b0e3d7db3ea731fa1aafece942c08328a30c/ss_05e5b0e3d7db3ea731fa1aafece942c08328a30c.600x338.jpg?t=1792734384",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/a7a1250201ef399eae0d2f39087647a7c650f3d0/ss_a7a1250201ef399eae0d2f39087647a7c650f3d0.600x338.jpg?t=1792734384",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/b456f8dfb19b4dec1f10345f8a843332687e48b1/ss_b456f8dfb19b4dec1f10345f8a843332687e48b1.600x338.jpg?t=1792734384",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751230/5a7a24e93507c34fb6080623c370316ed51f4bbe/ss_5a7a24e93507c34fb6080623c370316ed51f4bbe.600x338.jpg?t=1792734384"
-   ],
-   "spanish": false,
-   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 11 (64-bit)\nProcesador: Core i5-10500 or Ryzen 5 2600X\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GeForce GTX 1660 or AMD Radeon RX 5600 XT (Full HD)\nDirectX: Versión 12\nAlmacenamiento: 30 GB de espacio disponible\nNotas adicionales: *SSD storage is recommended. *Storage requirement becomes 40 GB if the digital deluxe edition contents app is also installed.",
-   "rank": 88,
-   "steamRank": 122,
-   "wdRank": 49
-  },
-  {
-   "id": "steam-4223290",
-   "slug": "mega-man-dual-override",
-   "title": "Mega Man: Dual Override",
+   "id": "steam-3676410",
+   "slug": "senua",
+   "title": "Senua",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4223290/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4223290/08af2430e76e5a61a26f5678348f5e1ace2c4b2b/header.jpg?t=1792127306",
+   "url": "https://store.steampowered.com/app/3676410/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3676410/75370f45cdab9ada45b18804cd27d0897dd4c727/header.jpg?t=1781189123",
    "platforms": [
-    "Switch",
     "Xbox",
     "PlayStation",
     "Windows"
    ],
-   "genres": [],
+   "genres": [
+    "Acción-aventura"
+   ],
    "releaseText": "2027",
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
-   "youtube": "8i97QCOWSC4",
+   "youtube": "",
    "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Mega_Man:_Dual_Override",
+   "enwiki": "https://en.wikipedia.org/wiki/Senua_(video_game)",
    "headerChecked": true,
+   "wdRank": 49,
+   "rank": 88
+  },
+  {
+   "id": "wd-Q140139664",
+   "slug": "xenoblade-genesis",
+   "title": "Xenoblade Genesis",
+   "description": "",
+   "store": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Xenoblade_Genesis",
+   "image": "",
+   "platforms": [
+    "Switch"
+   ],
+   "genres": [
+    "Videojuego de rol de acción"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 4,
+   "enwiki": "https://en.wikipedia.org/wiki/Xenoblade_Genesis",
+   "enChecked": true,
    "wdRank": 50,
    "rank": 89
   },
@@ -3298,9 +3298,9 @@
    "platforms": [
     "Switch",
     "PlayStation",
-    "Linux",
     "Mac",
-    "Windows"
+    "Windows",
+    "Linux"
    ],
    "genres": [
     "Videojuego de aventura",
@@ -3311,7 +3311,7 @@
    "date": "2026-09-29",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 3,
@@ -3361,34 +3361,45 @@
    "steamRank": 53
   },
   {
-   "id": "steam-4532500",
-   "slug": "atelier-karia-the-night-kingdom-the-guide-of-memories",
-   "title": "Atelier Karia: The Night Kingdom & the Guide of Memories",
-   "description": "",
+   "id": "steam-1586260",
+   "slug": "blackfrost-the-long-dark-2",
+   "title": "BLACKFROST: The Long Dark 2",
+   "description": "A year after the Aurora’s appearance &amp; the world went dark, the people of Harmont &amp; its vast wild environs struggle to survive the Quiet Apocalypse. Survive alone or with others against a host of new hazards &amp; a fresh new survival sandbox from a pioneer of the genre. Live together. Die alone.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4532500/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4532500/0c905c115349cbf0200c722b92081f24d6359033/header_spanish.jpg?t=1791261032",
+   "url": "https://store.steampowered.com/app/1586260/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/header.jpg?t=1784314335",
    "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
     "Windows"
    ],
    "genres": [
-    "Videojuego de rol"
+    "Acción",
+    "Indie",
+    "Simuladores"
    ],
-   "releaseText": "2027-02-25",
-   "date": "2027-02-25",
-   "precision": "day",
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 3,
-   "enwiki": "https://en.wikipedia.org/wiki/Atelier_Karia:_The_Night_Kingdom_%26_the_Guide_of_Memories",
-   "headerChecked": true,
-   "wdRank": 53,
-   "rank": 94
+   "verifiedAt": "2026-10-25T17:15:38Z",
+   "trailer": {
+    "name": "BLACKFROST Announcement Teaser",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257079407/78683c098e4f6303e55ceb361647b4641e2b65b1/movie_600x337.jpg?t=1734054953",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1586260/795794/b6447c6b11a410e09845cb9e763b6744af42c459/1751006602/hls_264_master.m3u8?t=1734054953"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_e5378287fdd892338b443571a5a758374ae7739a.600x338.jpg?t=1784314335",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_648223251dff8a82a61a44012b03d781052ed32e.600x338.jpg?t=1784314335",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_9b5c817e88291c0fbaa6b9af5e9565aa25a249fc.600x338.jpg?t=1784314335",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_eaeb0c04df28e8506b90fdf59fc8d449856bbb67.600x338.jpg?t=1784314335",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_40f114a22efd2e091cada59fd46e9c9ddb9858df.600x338.jpg?t=1784314335",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_64496beb07de3088513d094eb6d2927cc9069982.600x338.jpg?t=1784314335"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10",
+   "rank": 94,
+   "steamRank": 66,
+   "wdRank": 53
   },
   {
    "id": "steam-4150720",
@@ -3431,47 +3442,6 @@
    "steamRank": 54
   },
   {
-   "id": "steam-1586260",
-   "slug": "blackfrost-the-long-dark-2",
-   "title": "BLACKFROST: The Long Dark 2",
-   "description": "A year after the Aurora’s appearance &amp; the world went dark, the people of Harmont &amp; its vast wild environs struggle to survive the Quiet Apocalypse. Survive alone or with others against a host of new hazards &amp; a fresh new survival sandbox from a pioneer of the genre. Live together. Die alone.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1586260/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/header.jpg?t=1784314335",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Indie",
-    "Simuladores"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:15:38Z",
-   "trailer": {
-    "name": "BLACKFROST Announcement Teaser",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257079407/78683c098e4f6303e55ceb361647b4641e2b65b1/movie_600x337.jpg?t=1734054953",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/1586260/795794/b6447c6b11a410e09845cb9e763b6744af42c459/1751006602/hls_264_master.m3u8?t=1734054953"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_e5378287fdd892338b443571a5a758374ae7739a.600x338.jpg?t=1784314335",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_648223251dff8a82a61a44012b03d781052ed32e.600x338.jpg?t=1784314335",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_9b5c817e88291c0fbaa6b9af5e9565aa25a249fc.600x338.jpg?t=1784314335",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_eaeb0c04df28e8506b90fdf59fc8d449856bbb67.600x338.jpg?t=1784314335",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_40f114a22efd2e091cada59fd46e9c9ddb9858df.600x338.jpg?t=1784314335",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/ss_64496beb07de3088513d094eb6d2927cc9069982.600x338.jpg?t=1784314335"
-   ],
-   "spanish": false,
-   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10",
-   "rank": 96,
-   "steamRank": 66,
-   "wdRank": 54
-  },
-  {
    "id": "steam-2838950",
    "slug": "juego-de-tronos-war-for-westeros",
    "title": "Juego de Tronos: War for Westeros",
@@ -3506,8 +3476,52 @@
    ],
    "spanish": true,
    "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nRed: Conexión de banda ancha a Internet\nNotas adicionales: Coming Soon",
-   "rank": 97,
+   "rank": 96,
    "steamRank": 96,
+   "wdRank": 54
+  },
+  {
+   "id": "steam-4767480",
+   "slug": "lords-of-the-fallen-ii",
+   "title": "Lords of the Fallen II",
+   "description": "«Lords of the Fallen II» es un RPG de acción y fantasía oscura en el que el combate brutal al estilo Souls se desarrolla en un mundo que se desmorona desde dentro. Enfréntate a la oscuridad en una aventura épica a través de un reino devastado. Un mundo. Dos reinos. Sin piedad.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4767480/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/a34e3c4d4088e71c7d2cdc5445dc950abd2521db/header.jpg?t=1782480305",
+   "platforms": [
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:28:33Z",
+   "trailer": {
+    "name": "Lords of the Fallen II - Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257343218/34384ffc18ddfa4dc7645784bb4c01b85e44ebdb/movie_600x337.jpg?t=1780695018",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4767480/2011808760/f619196186462cc51aba33f8fbea0e6027196c9f/1779784237/hls_264_master.m3u8?t=1780695018"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/6e300b19df2d25ee2435c848dca5da277ce7ebff/ss_6e300b19df2d25ee2435c848dca5da277ce7ebff.600x338.jpg?t=1782480305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/138071247c92a87f61720e1af1633b74d65c44ae/ss_138071247c92a87f61720e1af1633b74d65c44ae.600x338.jpg?t=1782480305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/1df7433ccf5ee36dafdbdeec00cd2cb9d4780457/ss_1df7433ccf5ee36dafdbdeec00cd2cb9d4780457.600x338.jpg?t=1782480305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/99933823fb7642ccbc6fa1a0ff5fe954dc5e7b70/ss_99933823fb7642ccbc6fa1a0ff5fe954dc5e7b70.600x338.jpg?t=1782480305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/ce438a786985d27fcf69f2f3ecb87b8b49767b82/ss_ce438a786985d27fcf69f2f3ecb87b8b49767b82.600x338.jpg?t=1782480305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/33d45ec0816f2a7187af197e57b93a353c0e9256/ss_33d45ec0816f2a7187af197e57b93a353c0e9256.600x338.jpg?t=1782480305"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 11\nProcesador: Intel i5 8400 / AMD Ryzen 5 2600\nMemoria: 12 GB de RAM\nGráficos: NVIDIA RTX-2060 / AMD Radeon RX 5700",
+   "rank": 97,
+   "steamRank": 79,
    "wdRank": 55
   },
   {
@@ -3551,48 +3565,34 @@
    "steamRank": 56
   },
   {
-   "id": "steam-4767480",
-   "slug": "lords-of-the-fallen-ii",
-   "title": "Lords of the Fallen II",
-   "description": "«Lords of the Fallen II» es un RPG de acción y fantasía oscura en el que el combate brutal al estilo Souls se desarrolla en un mundo que se desmorona desde dentro. Enfréntate a la oscuridad en una aventura épica a través de un reino devastado. Un mundo. Dos reinos. Sin piedad.",
+   "id": "steam-1853440",
+   "slug": "tropico-7",
+   "title": "Tropico 7",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4767480/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/a34e3c4d4088e71c7d2cdc5445dc950abd2521db/header.jpg?t=1782480305",
+   "url": "https://store.steampowered.com/app/1853440/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1853440/cfa41f10c2e878497d77e100f9be08224eb686b9/header.jpg?t=1792422518",
    "platforms": [
-    "Windows",
     "Switch",
     "Xbox",
-    "PlayStation"
+    "PlayStation",
+    "Windows"
    ],
    "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
+    "Videojuego de construcción de ciudades"
    ],
-   "releaseText": "Coming soon",
-   "date": null,
-   "precision": null,
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
+   "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:28:33Z",
-   "trailer": {
-    "name": "Lords of the Fallen II - Announcement Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257343218/34384ffc18ddfa4dc7645784bb4c01b85e44ebdb/movie_600x337.jpg?t=1780695018",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4767480/2011808760/f619196186462cc51aba33f8fbea0e6027196c9f/1779784237/hls_264_master.m3u8?t=1780695018"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/6e300b19df2d25ee2435c848dca5da277ce7ebff/ss_6e300b19df2d25ee2435c848dca5da277ce7ebff.600x338.jpg?t=1782480305",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/138071247c92a87f61720e1af1633b74d65c44ae/ss_138071247c92a87f61720e1af1633b74d65c44ae.600x338.jpg?t=1782480305",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/1df7433ccf5ee36dafdbdeec00cd2cb9d4780457/ss_1df7433ccf5ee36dafdbdeec00cd2cb9d4780457.600x338.jpg?t=1782480305",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/99933823fb7642ccbc6fa1a0ff5fe954dc5e7b70/ss_99933823fb7642ccbc6fa1a0ff5fe954dc5e7b70.600x338.jpg?t=1782480305",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/ce438a786985d27fcf69f2f3ecb87b8b49767b82/ss_ce438a786985d27fcf69f2f3ecb87b8b49767b82.600x338.jpg?t=1782480305",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4767480/33d45ec0816f2a7187af197e57b93a353c0e9256/ss_33d45ec0816f2a7187af197e57b93a353c0e9256.600x338.jpg?t=1782480305"
-   ],
-   "spanish": true,
-   "requirements": "SO: Windows 11\nProcesador: Intel i5 8400 / AMD Ryzen 5 2600\nMemoria: 12 GB de RAM\nGráficos: NVIDIA RTX-2060 / AMD Radeon RX 5700",
-   "rank": 99,
-   "steamRank": 79,
-   "wdRank": 56
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 3,
+   "enwiki": "https://en.wikipedia.org/wiki/Tropico_7",
+   "headerChecked": true,
+   "wdRank": 56,
+   "rank": 99
   },
   {
    "id": "steam-1228610",
@@ -3637,13 +3637,13 @@
    "steamRank": 57
   },
   {
-   "id": "steam-1853440",
-   "slug": "tropico-7",
-   "title": "Tropico 7",
+   "id": "steam-4532500",
+   "slug": "atelier-karia-the-night-kingdom-the-guide-of-memories",
+   "title": "Atelier Karia: The Night Kingdom & the Guide of Memories",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/1853440/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1853440/cfa41f10c2e878497d77e100f9be08224eb686b9/header.jpg?t=1792422518",
+   "url": "https://store.steampowered.com/app/4532500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4532500/0c905c115349cbf0200c722b92081f24d6359033/header_spanish.jpg?t=1791261032",
    "platforms": [
     "Switch",
     "Xbox",
@@ -3651,19 +3651,19 @@
     "Windows"
    ],
    "genres": [
-    "Videojuego de construcción de ciudades"
+    "Videojuego de rol"
    ],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
+   "releaseText": "2027-02-25",
+   "date": "2027-02-25",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:44:28Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 3,
-   "enwiki": "https://en.wikipedia.org/wiki/Tropico_7",
+   "enwiki": "https://en.wikipedia.org/wiki/Atelier_Karia:_The_Night_Kingdom_%26_the_Guide_of_Memories",
    "headerChecked": true,
-   "wdRank": 57,
+   "wdRank": 58,
    "rank": 101
   },
   {
@@ -11419,13 +11419,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Night Plane | Reveal Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409407/0ac63da8456938c7024fbe8829b794d8dc71fe4b/movie_600x337.jpg?t=1792492026",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3310570/376727707/8b6fe5a3fb782d4cd8b5516255a6454728b502e7/1787769470/hls_264_master.m3u8?t=1792492026"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3310570/20cd80827b98e358d3e538ac74a8045a683bbf3f/ss_20cd80827b98e358d3e538ac74a8045a683bbf3f.600x338.jpg?t=1792492027",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3310570/8d010daafb11b0b8857522922d64d7756b9c1855/ss_8d010daafb11b0b8857522922d64d7756b9c1855.600x338.jpg?t=1792492027",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3310570/5bee286983be616531f8fdedae174c6bb941a3ca/ss_5bee286983be616531f8fdedae174c6bb941a3ca.600x338.jpg?t=1792492027",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3310570/64b053df6a1e3107ae07cdca5bf8f60ed6583d63/ss_64b053df6a1e3107ae07cdca5bf8f60ed6583d63.600x338.jpg?t=1792492027",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3310570/5901b67e7fb496842f3595251aea6fa808e6c9f5/ss_5901b67e7fb496842f3595251aea6fa808e6c9f5.600x338.jpg?t=1792492027",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3310570/6caf98bd8991fcb36980eb2c3b0901102f1f73f3/ss_6caf98bd8991fcb36980eb2c3b0901102f1f73f3.600x338.jpg?t=1792492027"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10 or later\nProcesador: Intel i3 2100K (3.1 GHz) / AMD FX 6300 (3.5 GHz)\nMemoria: 4 GB de RAM\nGráficos: NVIDIA GeForce GTX 750 (2 GB) / AMD Radeon R5 260X (2 GB)\nDirectX: Versión 12\nAlmacenamiento: 4 GB de espacio disponible\nTarjeta de sonido: Yes",
    "rank": 297,
    "steamRank": 261
   },
@@ -11449,13 +11459,23 @@
    "date": "2026-10-25",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257296175/ef4ba471e625a14fc37e961c24e0ce364bcdcb52/movie_600x337.jpg?t=1779266337",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4087940/957518148/0c7cb6053357f94b9e33728742f44ee150fda081/1779266010/hls_264_master.m3u8?t=1779266337"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4087940/bc4aaea639cf85dabe6004edcca0a8bbb0ec06c3/ss_bc4aaea639cf85dabe6004edcca0a8bbb0ec06c3.600x338.jpg?t=1792556682",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4087940/bb94771ee238247fc277cd4c1a17bed39ee36fc8/ss_bb94771ee238247fc277cd4c1a17bed39ee36fc8.600x338.jpg?t=1792556682",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4087940/ef4741a4c80c344d8217ff0601db009703c8ba9f/ss_ef4741a4c80c344d8217ff0601db009703c8ba9f.600x338.jpg?t=1792556682",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4087940/eb98855a4e1aa7f6efa13c84153dbd1265907aad/ss_eb98855a4e1aa7f6efa13c84153dbd1265907aad.600x338.jpg?t=1792556682",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4087940/0d5b4d496b5983390088fbd56f8a362202c98728/ss_0d5b4d496b5983390088fbd56f8a362202c98728.600x338.jpg?t=1792556682",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4087940/b25e0c4c42c49ff8fb08ecb105cea8927711cda1/ss_b25e0c4c42c49ff8fb08ecb105cea8927711cda1.600x338.jpg?t=1792556682"
+   ],
+   "spanish": false,
+   "requirements": "SO: Windows 10 64-Bit\nProcesador: Intel Core i5-10400 / AMD Ryzen 5 3600\nMemoria: 16 GB de RAM\nGráficos: NVIDIA GeForce GTX 1660 SUPER / AMD Radeon RX 5600 XT\nDirectX: Versión 11\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 8000 MB de espacio disponible\nNotas adicionales: SSD strongly recommended. Lower graphics settings may be required for stable performance.",
    "rank": 298,
    "steamRank": 262
   },
@@ -11479,13 +11499,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Touhou Bansho Cards Trailer en",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383440/8e604d59fedc3dbf0ec4978ca26244b536d226cd/movie_600x337.jpg?t=1791889330",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4958460/1453158139/30ef3ddc4e7557d6214869149aa1b79227f49fe2/1791888995/hls_264_master.m3u8?t=1791889330"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958460/0672f322ddc443d81affcd9ff1055d7e58bf1ce2/ss_0672f322ddc443d81affcd9ff1055d7e58bf1ce2.600x338.jpg?t=1791889331",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958460/a97f9b569141c2b6de21b9e4a27daf6b48b73849/ss_a97f9b569141c2b6de21b9e4a27daf6b48b73849.600x338.jpg?t=1791889331",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958460/a84392c58882f302df3e9505e841bfc8cb4b20fd/ss_a84392c58882f302df3e9505e841bfc8cb4b20fd.600x338.jpg?t=1791889331",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958460/65fe70a3081cca6082a7572ea986b636bf9a7676/ss_65fe70a3081cca6082a7572ea986b636bf9a7676.600x338.jpg?t=1791889331",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958460/d90888173ba8c80097b08bc819a28383b6a85ebd/ss_d90888173ba8c80097b08bc819a28383b6a85ebd.600x338.jpg?t=1791889331",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958460/8e8bc7488f50c284d997976c161e9d07f1b6001f/ss_8e8bc7488f50c284d997976c161e9d07f1b6001f.600x338.jpg?t=1791889331"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Intel Core i3-6100 / AMD Ryzen 3 1200 or equivalent\nMemoria: 4 GB de RAM\nGráficos: DirectX 12-compatible graphics card with 1 GB VRAM\nDirectX: Versión 12\nAlmacenamiento: 2 GB de espacio disponible\nTarjeta de sonido: DirectX-compatible sound card",
    "rank": 299,
    "steamRank": 263
   },
@@ -11510,13 +11540,23 @@
    "date": "2026-11-05",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "County of Fortune x AQ Ann Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257325072/4d68f53887a8e9685e46e84fac0eeceb795b9372/movie_600x337.jpg?t=1779102301",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3204330/1217368133/85eeb461ba247e20beccbfbd6804fc4c6c3f7de9/1776959896/hls_264_master.m3u8?t=1779102301"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3204330/fea8b377c3f537371b299cd1b9d96aa5832ff5ad/ss_fea8b377c3f537371b299cd1b9d96aa5832ff5ad.600x338.jpg?t=1792589442",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3204330/3bfcb767e4987afa3fbc5abcdfcf0a7e9a326311/ss_3bfcb767e4987afa3fbc5abcdfcf0a7e9a326311.600x338.jpg?t=1792589442",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3204330/d606017dbbfa0bac87e6e7f16144f0ebadc5f1c5/ss_d606017dbbfa0bac87e6e7f16144f0ebadc5f1c5.600x338.jpg?t=1792589442",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3204330/522875f1e65de0d3a443c02816d7ab129d9462a0/ss_522875f1e65de0d3a443c02816d7ab129d9462a0.600x338.jpg?t=1792589442",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3204330/0c118ae0043674adb74695bc3f2a2105b0357a01/ss_0c118ae0043674adb74695bc3f2a2105b0357a01.600x338.jpg?t=1792589442",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3204330/a03b66a5135d05a5b2b34336a65317d6c707f844/ss_a03b66a5135d05a5b2b34336a65317d6c707f844.600x338.jpg?t=1792589442"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO *: Windows 7 and higher\nProcesador: Intel i3+ and equivalents\nMemoria: 3 GB de RAM\nGráficos: NVIDIA GeForce 770 / AMD R9 290\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 300,
    "steamRank": 264
   },
@@ -11540,13 +11580,23 @@
    "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425055/2fc091e8a471b7d470f41fa45aa87ee8f6475bb7/movie_600x337.jpg?t=1792740403",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5211290/1404377585/3f45786275b35d7ec01f4737aad2b936aba5ab1d/1789417699/hls_264_master.m3u8?t=1792740403"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211290/706d0be94afaae7516052d9d1fb1a348ba2476b6/ss_706d0be94afaae7516052d9d1fb1a348ba2476b6.600x338.jpg?t=1792740404",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211290/f9c5ed8de603db76a6fd701a3e42cd243e6d2661/ss_f9c5ed8de603db76a6fd701a3e42cd243e6d2661.600x338.jpg?t=1792740404",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211290/b993febb7e709f4b18a99adccebedd90c5016e54/ss_b993febb7e709f4b18a99adccebedd90c5016e54.600x338.jpg?t=1792740404",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211290/618848e5eebc44cd391fe01434cfe22f813b599e/ss_618848e5eebc44cd391fe01434cfe22f813b599e.600x338.jpg?t=1792740404",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211290/1faeca04be9247edbfad42afd9a1676df37346bb/ss_1faeca04be9247edbfad42afd9a1676df37346bb.600x338.jpg?t=1792740404",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211290/88db8c3bac21ebb5bc2ef672b0857f9087aaac76/ss_88db8c3bac21ebb5bc2ef672b0857f9087aaac76.600x338.jpg?t=1792740404"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: i3-8100\nMemoria: 6 GB de RAM\nGráficos: With support Vulkan 1.0 / D3D12, 2 ГБ video memory — GTX 1050 / RX 560 / Iris Xe\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 301,
    "steamRank": 265
   },
@@ -11570,13 +11620,23 @@
    "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "BOOM! BUSTER 2024 Kickstarter Demo",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256986261/movie.293x165.jpg?t=1721146607",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2498890/636030/c794eb2ed521bc3c1703394f0d258aea7505eee1/1750925318/hls_264_master.m3u8?t=1721146607"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2498890/ss_aff85da1f42af86041cf48caba89b71ead1456a0.600x338.jpg?t=1791498512",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2498890/ss_8c29f394fa12ebf1e771d84953f161cdf201b947.600x338.jpg?t=1791498512",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2498890/ss_7d4fe9aa2a54ab1e8432c935c3da539af9ef2c7f.600x338.jpg?t=1791498512",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2498890/ss_902d447c64c7bd8d2fc57c4c3e43788ce8183515.600x338.jpg?t=1791498512",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2498890/ss_5cbe67d318f828ef59c3a5b2ebe297a36fdadafc.600x338.jpg?t=1791498512",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2498890/ss_97718420046b76273457d54edb65c5313b2c35f2.600x338.jpg?t=1791498512"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO *: Windows 7\nProcesador: Intel or AMD Dual Core CPU\nMemoria: 512 MB de RAM\nGráficos: Intel HD Graphics",
    "rank": 302,
    "steamRank": 266
   },
@@ -11600,13 +11660,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257411209/50ad097363b3dcd5a6ada59f562bea19c6243bf7/movie_600x337.jpg?t=1787927381",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3274710/2049195039/cb05ed45133d0ce18c15a7638263114068863cdf/1787923374/hls_264_master.m3u8?t=1787927381"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3274710/b128b80fe4790f31df0a55a40374d12b4d337711/ss_b128b80fe4790f31df0a55a40374d12b4d337711.600x338.jpg?t=1792429877",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3274710/274972e07737db39f20b5ae2c433bc0c73f3aebd/ss_274972e07737db39f20b5ae2c433bc0c73f3aebd.600x338.jpg?t=1792429877",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3274710/cc77e724db01f09d6e47efd2b20599bd02fb569d/ss_cc77e724db01f09d6e47efd2b20599bd02fb569d.600x338.jpg?t=1792429877",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3274710/3f902c874a40a7bd540ba7acd50e7967cb2a9b18/ss_3f902c874a40a7bd540ba7acd50e7967cb2a9b18.600x338.jpg?t=1792429877",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3274710/fccddb13ce39affe37a1061808e03faa7f7b3cfc/ss_fccddb13ce39affe37a1061808e03faa7f7b3cfc.600x338.jpg?t=1792429877",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3274710/651b72af4988b08f6a255ddd9e10f11d3083d0c9/ss_651b72af4988b08f6a255ddd9e10f11d3083d0c9.600x338.jpg?t=1792429877"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10\nProcesador: Intel Core i5 @ 2.5 GHz or equivalent\nMemoria: 8 GB de RAM\nGráficos: Intel UHD Graphics or equivalent\nDirectX: Versión 12\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 3 GB de espacio disponible\nNotas adicionales: For players on lower-end hardware, we recommend disabling bloom settings to maintain an optimal visual experience.",
    "rank": 303,
    "steamRank": 267
   },
@@ -11630,13 +11700,23 @@
    "date": "2026-12-08",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Never Be Alone - Official Release Date Announcement Trailer ",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257348835/9443d36c76a2037d67a35b2f8881e996dfd39933/movie_600x337.jpg?t=1780430202",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2988120/215983738/eef5f1171d9c3cd9bd078d5cdca52823ba054ade/1780429883/hls_264_master.m3u8?t=1780430202"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2988120/b9cb4336086dfd70997b5edaabd74ff09f8389fd/ss_b9cb4336086dfd70997b5edaabd74ff09f8389fd.600x338.jpg?t=1788694890",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2988120/cd83a14ea3fa9e18d54ac932396f3bde49bec806/ss_cd83a14ea3fa9e18d54ac932396f3bde49bec806.600x338.jpg?t=1788694890",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2988120/f4dcb11a373ea86e93cb184221dc5580f3ff2b11/ss_f4dcb11a373ea86e93cb184221dc5580f3ff2b11.600x338.jpg?t=1788694890",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2988120/fb6849ef08f22f1f172557242fa99bf1d071c84c/ss_fb6849ef08f22f1f172557242fa99bf1d071c84c.600x338.jpg?t=1788694890",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2988120/c16fd390981487f94921e90d663489dd5a753c03/ss_c16fd390981487f94921e90d663489dd5a753c03.600x338.jpg?t=1788694890",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2988120/39f19d6aff057dc563080eecb24aacf6e11a1378/ss_39f19d6aff057dc563080eecb24aacf6e11a1378.600x338.jpg?t=1788694890"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10\nProcesador: I7 10300\nMemoria: 8 GB de RAM\nGráficos: GTX 1660ti\nAlmacenamiento: 3 GB de espacio disponible",
    "rank": 304,
    "steamRank": 268
   },
@@ -11658,13 +11738,23 @@
    "date": "2026-10-29",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "CatchMeow_Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257331111/2e719e5e5818d5ab99e50bb0239c9fb4da3e9f79/movie_600x337.jpg?t=1788951619",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4306070/1314252792/01586b7b93293aac29de1511c2f16fbcb3a0939f/1788950770/hls_264_master.m3u8?t=1788951619"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4306070/bd45b94d089bc3e041604ba35f56cabd28522177/ss_bd45b94d089bc3e041604ba35f56cabd28522177.600x338.jpg?t=1792564410",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4306070/5d453107f81fa71e517fadcc2287f6453203b0ce/ss_5d453107f81fa71e517fadcc2287f6453203b0ce.600x338.jpg?t=1792564410",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4306070/94e63d350953409451eff8f95787562ec383e5f5/ss_94e63d350953409451eff8f95787562ec383e5f5.600x338.jpg?t=1792564410",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4306070/7ed5085bba4531e9e16310d561f53e3f40c0cbf1/ss_7ed5085bba4531e9e16310d561f53e3f40c0cbf1.600x338.jpg?t=1792564410",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4306070/0a4c171b391d697b9d33835d3e94cd8713228dff/ss_0a4c171b391d697b9d33835d3e94cd8713228dff.600x338.jpg?t=1792564410",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4306070/92447973b7cf3933bb45e58701c658f7f42f4592/ss_92447973b7cf3933bb45e58701c658f7f42f4592.600x338.jpg?t=1792564410"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10\nProcesador: Core i5 6600\nMemoria: 8 GB de RAM\nGráficos: GTX 970\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 4 GB de espacio disponible",
    "rank": 305,
    "steamRank": 269
   },
@@ -11687,13 +11777,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Official Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257463750/8ecd068f2ccf09510205920f75cccff15b134dad/movie_600x337.jpg?t=1792689496",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3859180/1513117298/155017a256a215fa3af9dc5f0d2fdb1a085b28b2/1792112397/hls_264_master.m3u8?t=1792689496"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3859180/050781a6b5bdb5fb11e7937f0ac0eda3049599c0/ss_050781a6b5bdb5fb11e7937f0ac0eda3049599c0.600x338.jpg?t=1792796468",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3859180/c762ac1c48b7a414471503484c0fd91cced6d3d2/ss_c762ac1c48b7a414471503484c0fd91cced6d3d2.600x338.jpg?t=1792796468",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3859180/d679d112f8b9287658ead7a8b3d5487e5aa5111f/ss_d679d112f8b9287658ead7a8b3d5487e5aa5111f.600x338.jpg?t=1792796468",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3859180/f8ed397904a392555293368f155c2b094c5f9326/ss_f8ed397904a392555293368f155c2b094c5f9326.600x338.jpg?t=1792796468",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3859180/6c31a04ff5fa110eb8f1ebf63d4237853292cb61/ss_6c31a04ff5fa110eb8f1ebf63d4237853292cb61.600x338.jpg?t=1792796468",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3859180/3207edf2e01d3a42ef2455e99293b54eed1257e2/ss_3207edf2e01d3a42ef2455e99293b54eed1257e2.600x338.jpg?t=1792796468"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10 (64-bit)\nProcesador: 2 GHz Dual-Core Processor\nMemoria: 4 GB de RAM\nGráficos: DirectX 11-compatible GPU with Shader Model 5.0 support\nDirectX: Versión 11\nAlmacenamiento: 10 GB de espacio disponible",
    "rank": 306,
    "steamRank": 270
   },
@@ -11716,13 +11816,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438266/900b6b1dc367fa0117f12963888b26da1cfa1e19/movie_600x337.jpg?t=1792430607",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4834840/2076307793/9e89b72f88d7ef35c5153cd21c33b40af1376a0f/1792430163/hls_264_master.m3u8?t=1792430607"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834840/d4e8cee6e5b5440036af991a6d25d1216b10bb02/ss_d4e8cee6e5b5440036af991a6d25d1216b10bb02.600x338.jpg?t=1792478898",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834840/56f4149ad622bbc7171c0816bff838a2a198c549/ss_56f4149ad622bbc7171c0816bff838a2a198c549.600x338.jpg?t=1792478898",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834840/cf7149ea342526aeaa9a27499d59d4d5af5be27b/ss_cf7149ea342526aeaa9a27499d59d4d5af5be27b.600x338.jpg?t=1792478898",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834840/674b236b98bbed37257c970d965ccba59773c353/ss_674b236b98bbed37257c970d965ccba59773c353.600x338.jpg?t=1792478898",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834840/ee6213071d5f54187d00ed84019402574ce984ef/ss_ee6213071d5f54187d00ed84019402574ce984ef.600x338.jpg?t=1792478898",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834840/5acdff3c079bf852fadb920f7a6e9536abf1b182/ss_5acdff3c079bf852fadb920f7a6e9536abf1b182.600x338.jpg?t=1792478898"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10/11\nProcesador: 1.8 GHz\nMemoria: 2 GB de RAM\nGráficos: The game runs on CPU\nAlmacenamiento: 500 MB de espacio disponible\nTarjeta de sonido: DirectX Compatible",
    "rank": 307,
    "steamRank": 271
   },
@@ -11746,13 +11856,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "BUZZorDIE2nd EN",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257455441/0cc58d34ef188ab6d813183ecc515c043b58e74a/movie_600x337.jpg?t=1791859758",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2899240/1081956928/cca8707a3f83804028025210e5357820095cb219/1791617109/hls_264_master.m3u8?t=1791859758"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2899240/6a8f97ab16ba89adb795402f624ad696c07b8e93/ss_6a8f97ab16ba89adb795402f624ad696c07b8e93.600x338.jpg?t=1792402396",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2899240/70d1495fedbef134fd82196ad11e2cd73faf9bcd/ss_70d1495fedbef134fd82196ad11e2cd73faf9bcd.600x338.jpg?t=1792402396",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2899240/78f93739c781728515455f93beea1b31a5f65efb/ss_78f93739c781728515455f93beea1b31a5f65efb.600x338.jpg?t=1792402396",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2899240/a4b65a92d9b7f1c6663ad4ff17d6d97ddb2277d2/ss_a4b65a92d9b7f1c6663ad4ff17d6d97ddb2277d2.600x338.jpg?t=1792402396",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2899240/46eaedce810f9453daca42d07155b547e4737d00/ss_46eaedce810f9453daca42d07155b547e4737d00.600x338.jpg?t=1792402396",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2899240/bb89d2446f1a93ff66a34c2e80280129cc431f99/ss_bb89d2446f1a93ff66a34c2e80280129cc431f99.600x338.jpg?t=1792402396"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows10\nProcesador: Intel Core i3\nGráficos: Intel HD Graphics 4000\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 308,
    "steamRank": 272
   },
@@ -11776,13 +11896,23 @@
    "date": "2026-10-01",
    "precision": "month",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Launch date trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257459092/1649cbafc18e9d379c3755bff1761452faf7e6b7/movie_600x337.jpg?t=1791879439",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4193010/241481755/9ff48bd85de90375696923950846530fb5b1aecb/1791877265/hls_264_master.m3u8?t=1791879439"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4193010/763497e359469d4c055b894d901feea5921dbf23/ss_763497e359469d4c055b894d901feea5921dbf23.600x338.jpg?t=1792540378",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4193010/14dac5048e3af22e25ead434933cf41735de0e06/ss_14dac5048e3af22e25ead434933cf41735de0e06.600x338.jpg?t=1792540378",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4193010/6b49f9a94f400ea0570d7820a6677dab055ff24f/ss_6b49f9a94f400ea0570d7820a6677dab055ff24f.600x338.jpg?t=1792540378",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4193010/b0b12a1f70af03beb33b08af8d8df05cffc0b50d/ss_b0b12a1f70af03beb33b08af8d8df05cffc0b50d.600x338.jpg?t=1792540378",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4193010/4e3686998a3a28b71d4a981d32c1aa4bfb576d95/ss_4e3686998a3a28b71d4a981d32c1aa4bfb576d95.600x338.jpg?t=1792540378",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4193010/a8fd0d782a9175aefd0cb9039d9ce1a3d5e4bbd9/ss_a8fd0d782a9175aefd0cb9039d9ce1a3d5e4bbd9.600x338.jpg?t=1792540378"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO *: Windows 8/8.1/10/11 (64-bit)\nProcesador: Intel Core i3-3220 / AMD FX-4300 (dual core, 2.5 GHz+) or better\nMemoria: 8 GB de RAM\nGráficos: GPU with WebGL 2 support (DirectX 11 / OpenGL 4.1 or better)\nDirectX: Versión 11\nAlmacenamiento: 6000 MB de espacio disponible",
    "rank": 309,
    "steamRank": 273
   },
@@ -11805,13 +11935,23 @@
    "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "CH13: Rest Stop - Official Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257452117/9f0530dbe9c4bf0ae7ff7091e6730bc0aeb5e41f/movie_600x337.jpg?t=1791471650",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3927170/2013248110/9128f6edff758bda4fae51923bb54b2ec54fc35a/1791454323/hls_264_master.m3u8?t=1791471650"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3927170/474e5067cb6ecb445c4a70b2d5b84eaf78508ea0/ss_474e5067cb6ecb445c4a70b2d5b84eaf78508ea0.600x338.jpg?t=1792871110",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3927170/9b1bc160d57d4102f531eaa548e5030798f06de9/ss_9b1bc160d57d4102f531eaa548e5030798f06de9.600x338.jpg?t=1792871110",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3927170/39d4b1e04185742f243fe8becd9fcc87d396c5df/ss_39d4b1e04185742f243fe8becd9fcc87d396c5df.600x338.jpg?t=1792871110",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3927170/9d2a7f70c487cff1203aaf6e834677b5bc289ed4/ss_9d2a7f70c487cff1203aaf6e834677b5bc289ed4.600x338.jpg?t=1792871110",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3927170/735c3786b819fc379d48f8b9e088e8c320fc337e/ss_735c3786b819fc379d48f8b9e088e8c320fc337e.600x338.jpg?t=1792871110",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3927170/4560c8c591557e5b0f589748590b47db1d67cd52/ss_4560c8c591557e5b0f589748590b47db1d67cd52.600x338.jpg?t=1792871110"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Intel Core i5-8400 / AMD Ryzen 3 3100\nMemoria: 8 GB de RAM\nGráficos: GTX 970 / RX 570\nDirectX: Versión 11\nAlmacenamiento: 4 GB de espacio disponible\nNotas adicionales: Mouse and keyboard required",
    "rank": 310,
    "steamRank": 274
   },
@@ -11835,13 +11975,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Announce Gameplay Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417611/bc55997faea033b1bc8c0868c3613fff57a710ef/movie_600x337.jpg?t=1790609256",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3166230/830101652/7a4afd3adebb195fbda0b7f0e6df4a5f15dafb87/1790193303/hls_264_master.m3u8?t=1790609256"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3166230/1883d80f80f784a83fd7378b79059aed9ff7a7a9/ss_1883d80f80f784a83fd7378b79059aed9ff7a7a9.600x338.jpg?t=1792000203",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3166230/20609d24c127ed21234cc7fc41272735f8b23106/ss_20609d24c127ed21234cc7fc41272735f8b23106.600x338.jpg?t=1792000203",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3166230/a846218ebbc99016f12b600071a097f7856d6d7a/ss_a846218ebbc99016f12b600071a097f7856d6d7a.600x338.jpg?t=1792000203",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3166230/0489544a8a8cd6cd605c65e6a55139754c102025/ss_0489544a8a8cd6cd605c65e6a55139754c102025.600x338.jpg?t=1792000203",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3166230/b5db40bd8a8c157ea8c089057b151e9f9698574a/ss_b5db40bd8a8c157ea8c089057b151e9f9698574a.600x338.jpg?t=1792000203",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3166230/61ecd90004c4dfdee55cc4f8b63853dcbd00cad1/ss_61ecd90004c4dfdee55cc4f8b63853dcbd00cad1.600x338.jpg?t=1792000203"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10/11\nProcesador: AMD Ryzen 3 3100 or Intel Core i5-8400\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GTX 1070 / AMD RX 5600\nDirectX: Versión 12\nAlmacenamiento: 10 GB de espacio disponible\nNotas adicionales: targeting 1080p/30 at Low settings",
    "rank": 311,
    "steamRank": 275
   },
@@ -11867,13 +12017,23 @@
    "date": "2026-11-05",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Launch Trailer with Wishlist now",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257463324/552c58e5427d77468d3c0d8db5165994b779dc90/movie_600x337.jpg?t=1792087766",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3577020/1214970835/e92fc72c60525d198f87e395ff076ea24d4ac836/1792086957/hls_264_master.m3u8?t=1792087766"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3577020/ca4f62695ba239fa913ad17a6927cc6db751bdda/ss_ca4f62695ba239fa913ad17a6927cc6db751bdda.600x338.jpg?t=1792829299",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3577020/2aa7ddff637de029d914f0d173fca5b37c4f3428/ss_2aa7ddff637de029d914f0d173fca5b37c4f3428.600x338.jpg?t=1792829299",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3577020/57da019ef693058c9cfd3501d7799ccd3d3d0305/ss_57da019ef693058c9cfd3501d7799ccd3d3d0305.600x338.jpg?t=1792829299",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3577020/63fb4f4624335ae4319599cc04eee98cb3a3bedf/ss_63fb4f4624335ae4319599cc04eee98cb3a3bedf.600x338.jpg?t=1792829299",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3577020/be2b61ab1b167ac26b026400679e2d2f63da1356/ss_be2b61ab1b167ac26b026400679e2d2f63da1356.600x338.jpg?t=1792829299",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3577020/02ec91678c62e1b922017c70a550a82b2ebc091c/ss_02ec91678c62e1b922017c70a550a82b2ebc091c.600x338.jpg?t=1792829299"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10/11 64-bit\nProcesador: Intel Core i3-10320 or AMD Ryzen 3 3100\nMemoria: 4 GB de RAM\nGráficos: Intel(R) UHD Graphics or AMD Radeon Graphics\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 312,
    "steamRank": 276
   },
@@ -11897,13 +12057,22 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Berserk Heroes Online Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257378169/228b9ff1d515caebb54228837f9e9d34f79c9265/movie_600x337.jpg?t=1785314485",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4926310/490442805/82b11ded09ac494595a441f228a5ad5b93652510/1785260036/hls_264_master.m3u8?t=1785314485"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4926310/79b3781eb44874c49485a3f17536b6d309abba48/ss_79b3781eb44874c49485a3f17536b6d309abba48.600x338.jpg?t=1792494195",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4926310/bc0e8f2e3e33bd7c43873799a97426cdf4577cf6/ss_bc0e8f2e3e33bd7c43873799a97426cdf4577cf6.600x338.jpg?t=1792494195",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4926310/c0590a76941789592323049d1bfe319ade4ab86a/ss_c0590a76941789592323049d1bfe319ade4ab86a.600x338.jpg?t=1792494195",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4926310/43007ab9d27f7b13e7c72cd731ffb437501e08b2/ss_43007ab9d27f7b13e7c72cd731ffb437501e08b2.600x338.jpg?t=1792494195",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4926310/60c3f34a879efee6718c143f84718d2fc1052e41/ss_60c3f34a879efee6718c143f84718d2fc1052e41.600x338.jpg?t=1792494195"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 version 21H1 (build 19043) or newer / Windows 11 64-bit\nProcesador: Intel Core i3-8100 / Ryzen 3 2200G or Equivalent\nMemoria: 8 GB de RAM\nGráficos: DX11/DX12-compatible, 2 GB VRAM\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 3 GB de espacio disponible",
    "rank": 313,
    "steamRank": 277
   },
@@ -11928,13 +12097,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay Trailer ES",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257414496/038458ba9daba4ca2bc35dcac76ff580ddafc20d/movie_600x337.jpg?t=1788768271",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5062910/298881749/feee69a687e8eed3dbb5241972289b3684164d66/1788243689/hls_264_master.m3u8?t=1788768271"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5062910/8f15b835af59beea43f1a60c76e119ad29e1f84c/ss_8f15b835af59beea43f1a60c76e119ad29e1f84c.600x338.jpg?t=1791884098",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5062910/dbd39ab7b718d3618898fbe2bc1f40272ed4c508/ss_dbd39ab7b718d3618898fbe2bc1f40272ed4c508.600x338.jpg?t=1791884098",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5062910/061c5f7a23fad356bfc1e4f2791898eb15568593/ss_061c5f7a23fad356bfc1e4f2791898eb15568593.600x338.jpg?t=1791884098",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5062910/b9ae6c096a367c8319af7807bbed3dfa9d960de3/ss_b9ae6c096a367c8319af7807bbed3dfa9d960de3.600x338.jpg?t=1791884098",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5062910/47d5e851d85be6fdc383e5f7a8a9df20a23aa281/ss_47d5e851d85be6fdc383e5f7a8a9df20a23aa281.600x338.jpg?t=1791884098",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5062910/e34b085aa78309f516f8f22e4fb8bc99cea9956c/ss_e34b085aa78309f516f8f22e4fb8bc99cea9956c.600x338.jpg?t=1791884098"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 de 64 bits\nProcesador: Intel Core i3-6100 / AMD Ryzen 3 1200 o equivalente\nMemoria: 4 GB de RAM\nGráficos: Tarjeta gráfica compatible con OpenGL 3.3\nAlmacenamiento: 2 GB de espacio disponible\nTarjeta de sonido: Tarjeta de sonido compatible con Windows",
    "rank": 314,
    "steamRank": 278
   },
@@ -11958,13 +12137,23 @@
    "date": "2026-11-03",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Death at Fleming Manor",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257142896/06b15d5bf203429a3b0d651b9c95f6f2c4e0f0ef/movie_600x337.jpg?t=1788440321",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3758950/1160802732/95b03f0fdaa229713945c3a03eef1d38d884a65e/1788438004/hls_264_master.m3u8?t=1788440321"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/9b18639ad741b854b3212248c5345b2ef382a2ed/ss_9b18639ad741b854b3212248c5345b2ef382a2ed.600x338.jpg?t=1792722536",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/c1ced4edef2ec191d15040b512d9729af07f8303/ss_c1ced4edef2ec191d15040b512d9729af07f8303.600x338.jpg?t=1792722536",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/3ecb44bf92893852d7423f22fd62e338cfe96f42/ss_3ecb44bf92893852d7423f22fd62e338cfe96f42.600x338.jpg?t=1792722536",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/44c1f17318f49017546dd77bfeb0007aa9860fde/ss_44c1f17318f49017546dd77bfeb0007aa9860fde.600x338.jpg?t=1792722536",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/71033d0a1469d001681d3f47e9979ef92437fd61/ss_71033d0a1469d001681d3f47e9979ef92437fd61.600x338.jpg?t=1792722536",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3758950/926b3c3bf70eaf60901cb9a0446aa76e3d169a8e/ss_926b3c3bf70eaf60901cb9a0446aa76e3d169a8e.600x338.jpg?t=1792722536"
+   ],
+   "spanish": false,
+   "requirements": "SO: Windows 10 or later (64-bit)\nProcesador: Intel Core i5 3.0 GHz or equivalent\nMemoria: 8 GB de RAM\nGráficos: Intel HD Graphics 530 or equivalent\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 315,
    "steamRank": 279
   },
@@ -11988,13 +12177,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Build_Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257470513/eb49ceee882e2b437fb573ebebcf2ad2a4a8feb2/movie_600x337.jpg?t=1792488527",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3548510/1631596791/b33f33ebf93c04652748129781461a844e16e21b/1792487885/hls_264_master.m3u8?t=1792488527"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3548510/db99a449c27de6dd7d16d8295371a211ce05834b/ss_db99a449c27de6dd7d16d8295371a211ce05834b.600x338.jpg?t=1792500616",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3548510/75964a8a6297d25601ea8e4b5bc560f4037a18e8/ss_75964a8a6297d25601ea8e4b5bc560f4037a18e8.600x338.jpg?t=1792500616",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3548510/06d47ec2c0c96b2645a6d5ff668596f2795da16b/ss_06d47ec2c0c96b2645a6d5ff668596f2795da16b.600x338.jpg?t=1792500616",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3548510/0c2cda4d1e917611c17c26a936f76190ffd9a070/ss_0c2cda4d1e917611c17c26a936f76190ffd9a070.600x338.jpg?t=1792500616",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3548510/9693221fb48a02ef0bd824923cd8df056aef965a/ss_9693221fb48a02ef0bd824923cd8df056aef965a.600x338.jpg?t=1792500616",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3548510/5f42fd71c2ec43ada94c46370befebbb2e43ec2a/ss_5f42fd71c2ec43ada94c46370befebbb2e43ec2a.600x338.jpg?t=1792500616"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 11",
    "rank": 316,
    "steamRank": 280
   },
@@ -12020,13 +12219,23 @@
    "date": "2026-10-01",
    "precision": "month",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Isekai Guardians Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257453368/7f8bd586c62f3a5894ed3f5229a6e8607bd28521/movie_600x337.jpg?t=1791508572",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4171130/377347863/31ef823429ff23c6620cfedc5e9fb470290f5bf3/1791505837/hls_264_master.m3u8?t=1791508572"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171130/1cd0e86c2751910c360f6145bec524473f0297b1/ss_1cd0e86c2751910c360f6145bec524473f0297b1.600x338.jpg?t=1792786531",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171130/495ef1950bbbd642d4387de69b4e1fd104e7a848/ss_495ef1950bbbd642d4387de69b4e1fd104e7a848.600x338.jpg?t=1792786531",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171130/e06316780b1472da9fb4626ba7900ddcf1ba6e97/ss_e06316780b1472da9fb4626ba7900ddcf1ba6e97.600x338.jpg?t=1792786531",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171130/b8c10e12279a19bf62499400d899c66ea21c2a3c/ss_b8c10e12279a19bf62499400d899c66ea21c2a3c.600x338.jpg?t=1792786531",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171130/58baa39f5c6e05b1bd8ed77fab77411c24d5b62e/ss_58baa39f5c6e05b1bd8ed77fab77411c24d5b62e.600x338.jpg?t=1792786531",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171130/6241d79ce3e63e5c766249b6d454704acedeaeee/ss_6241d79ce3e63e5c766249b6d454704acedeaeee.600x338.jpg?t=1792786531"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Intel Core i3 / AMD Ryzen 3 o equivalente\nMemoria: 4 GB de RAM\nGráficos: Intel HD Graphics 4000 / gráficos integrados AMD Radeon Vega o equivalente\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 500 MB de espacio disponible\nTarjeta de sonido: No requerida\nNotas adicionales: Requiere conexión a Internet. El rendimiento puede variar según el número de pestañas abiertas y el contenido web que se muestre.",
    "rank": 317,
    "steamRank": 281
   },
@@ -12050,13 +12259,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "颂声·市井小神仙",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257209355/62b1e76dd253bb77ded6b8ec0cf890821b583875/movie_600x337.jpg?t=1759908645",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4024120/2063668649/3386ad169a441fd594018891855dc04f1a5e12f7/1759244580/hls_264_master.m3u8?t=1759908645"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4024120/d63c15466e7f27a6f127837235060995eabf3788/ss_d63c15466e7f27a6f127837235060995eabf3788.600x338.jpg?t=1792644948",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4024120/10afbc734c974cab15b6909c046829b3a67b3817/ss_10afbc734c974cab15b6909c046829b3a67b3817.600x338.jpg?t=1792644948",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4024120/09cf1036e6ee64d6d88110b77b707f96163a8880/ss_09cf1036e6ee64d6d88110b77b707f96163a8880.600x338.jpg?t=1792644948",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4024120/6b44312969c1128d91c783ad88667c0d462130de/ss_6b44312969c1128d91c783ad88667c0d462130de.600x338.jpg?t=1792644948",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4024120/3ba417861a618b0624708d17eb34dda7dccda24f/ss_3ba417861a618b0624708d17eb34dda7dccda24f.600x338.jpg?t=1792644948",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4024120/b699f8731203b6a5ca94e35d5b136553d2d9a269/ss_b699f8731203b6a5ca94e35d5b136553d2d9a269.600x338.jpg?t=1792644948"
+   ],
+   "spanish": false,
+   "requirements": "SO:\nProcesador:\nMemoria: 4 GB de RAM\nGráficos:\nDirectX: Versión 11\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 8 GB de espacio disponible\nTarjeta de sonido:\nCompatibilidad con RV:\nNotas adicionales:",
    "rank": 318,
    "steamRank": 282
   },
@@ -12080,13 +12299,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "beta trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410181/09401042e33b32f15d2eaa287c2282081e8a4b0d/movie_600x337.jpg?t=1787902854",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4485570/947134887/cd6946e5dcb79b35903c576b44b777ee7024e322/1787865892/hls_264_master.m3u8?t=1787902854"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4485570/551d5651f6cff6c8455febd4e9b20a57fa24cecc/ss_551d5651f6cff6c8455febd4e9b20a57fa24cecc.600x338.jpg?t=1792913105",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4485570/310c6e733c31372cb159d27981e5719a30707df5/ss_310c6e733c31372cb159d27981e5719a30707df5.600x338.jpg?t=1792913105",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4485570/424b98c730c47b6dfea2761e9c4aac72ac3a56a3/ss_424b98c730c47b6dfea2761e9c4aac72ac3a56a3.600x338.jpg?t=1792913105",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4485570/2ae3e7711333378c028b490f6282d16fbba8d505/ss_2ae3e7711333378c028b490f6282d16fbba8d505.600x338.jpg?t=1792913105",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4485570/c144621d420098d377d043b540632ef32017be8a/ss_c144621d420098d377d043b540632ef32017be8a.600x338.jpg?t=1792913105",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4485570/21feccd7bf5ffbd1029b2333e84360366c239eb6/ss_21feccd7bf5ffbd1029b2333e84360366c239eb6.600x338.jpg?t=1792913105"
+   ],
+   "spanish": false,
+   "requirements": "SO: Windows 10 (64-bit)\nProcesador: Dual-core 2.0 GHz\nMemoria: 4 GB de RAM\nGráficos: 1.6 GHz, 1 GB VRAM\nDirectX: Versión 12\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 6 GB de espacio disponible",
    "rank": 319,
    "steamRank": 283
   },
@@ -12109,13 +12338,23 @@
    "date": "2026-10-01",
    "precision": "month",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Duck Main Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257434362/e207d1880250014cd1f048b1427d6d408639d3c6/movie_600x337.jpg?t=1792437038",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3901850/274866820/8c41010b61764274827a52349c95cf67771f5b3d/1792431633/hls_264_master.m3u8?t=1792437038"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3901850/3765c5d39597c33bec01b53f71c029bafbae50be/ss_3765c5d39597c33bec01b53f71c029bafbae50be.600x338.jpg?t=1792437349",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3901850/0ff3f02025c5153dfca19fb4998cc10ee959b77b/ss_0ff3f02025c5153dfca19fb4998cc10ee959b77b.600x338.jpg?t=1792437349",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3901850/e7dd719f8e51a19e85a60d4ebf06e49979f0d944/ss_e7dd719f8e51a19e85a60d4ebf06e49979f0d944.600x338.jpg?t=1792437349",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3901850/2b88d983c8c3765f653a19d5b90322ed7ab06967/ss_2b88d983c8c3765f653a19d5b90322ed7ab06967.600x338.jpg?t=1792437349",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3901850/5ed9ea51e20243170717e13a87b60e9ec80c9949/ss_5ed9ea51e20243170717e13a87b60e9ec80c9949.600x338.jpg?t=1792437349",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3901850/0bbd011d023fbc8b08ed3de386d18eccd9453edc/ss_0bbd011d023fbc8b08ed3de386d18eccd9453edc.600x338.jpg?t=1792437349"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10 64-bit, version 2004 (build 19041) or later\nProcesador: 1 GHz 64-bit dual-core (x64)\nGráficos: Any DirectX 11 capable GPU, including integrated\nAlmacenamiento: 500 MB de espacio disponible",
    "rank": 320,
    "steamRank": 284
   },
@@ -12139,13 +12378,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "General",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417539/8069760f7586b09d1cd06562da8c377d232f06ef/movie_600x337.jpg?t=1788557420",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3712150/1651973592/ef37c2347a6893be30327660da8fb16520d85cae/1788557016/hls_264_master.m3u8?t=1788557420"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3712150/dda5c0a120be98f407a05ec5571c4b19c3db3781/ss_dda5c0a120be98f407a05ec5571c4b19c3db3781.600x338.jpg?t=1792758632",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3712150/a97f43f8045485287a5ea3570f9b9dfdc7576a47/ss_a97f43f8045485287a5ea3570f9b9dfdc7576a47.600x338.jpg?t=1792758632",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3712150/4132ebcc009e92174662ab559308fd5e2a4a4e11/ss_4132ebcc009e92174662ab559308fd5e2a4a4e11.600x338.jpg?t=1792758632",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3712150/2117062dd5c797c827d4bb247e2991406a1b8eb8/ss_2117062dd5c797c827d4bb247e2991406a1b8eb8.600x338.jpg?t=1792758632",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3712150/465c6c3ec418e35469f9344ce296d88beb9a9eca/ss_465c6c3ec418e35469f9344ce296d88beb9a9eca.600x338.jpg?t=1792758632",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3712150/a8d722d4fcf849a1471681392d37ff6947c45b87/ss_a8d722d4fcf849a1471681392d37ff6947c45b87.600x338.jpg?t=1792758632"
+   ],
+   "spanish": true,
+   "requirements": "SO: TBA\nProcesador: TBA\nGráficos: TBA",
    "rank": 321,
    "steamRank": 285
   },
@@ -12168,13 +12417,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Release Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257473087/3b42e8b85c8a2a6baf05fa277623688fe1a66a14/movie_600x337.jpg?t=1792611702",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4719390/1215647456/d3eb7f469fccc614cfaf8043d4b9fabd01853789/1792611127/hls_264_master.m3u8?t=1792611702"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/aafeac931c8a750281ce90c84b7ddb712a26b73e/ss_aafeac931c8a750281ce90c84b7ddb712a26b73e.600x338.jpg?t=1792611704",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/1335bd9011e28cfe9e8b0f538719c8e2f8df84ac/ss_1335bd9011e28cfe9e8b0f538719c8e2f8df84ac.600x338.jpg?t=1792611704",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/0aa7a4d1d13fe1bb209aff4f17a2cc36aa837cb7/ss_0aa7a4d1d13fe1bb209aff4f17a2cc36aa837cb7.600x338.jpg?t=1792611704",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/7a1078d6432f5452ab9dcbe15a56723fac39931e/ss_7a1078d6432f5452ab9dcbe15a56723fac39931e.600x338.jpg?t=1792611704",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/bdd59aa5e14e0cc78d48e8f1efc4b27e979073aa/ss_bdd59aa5e14e0cc78d48e8f1efc4b27e979073aa.600x338.jpg?t=1792611704",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/504cb0ee61a1b1f65948e1ac994aac56347dcd64/ss_504cb0ee61a1b1f65948e1ac994aac56347dcd64.600x338.jpg?t=1792611704"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 (64-bit)\nProcesador: Intel Core i5-4460 / AMD FX-8300 (or any 4-core processor with a clock speed of 2.5 GHz or higher)\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580 8GB (DirectX 12 required)\nDirectX: Versión 12\nAlmacenamiento: 3 GB de espacio disponible\nNotas adicionales: Installation on an SSD is recommended.",
    "rank": 322,
    "steamRank": 286
   },
@@ -12198,13 +12457,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Announcement Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430933/97296e8c04c36a81b06c13aa82d7239bc2260c5b/movie_600x337.jpg?t=1790021426",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5226940/1540437607/719cccb17e64cf09311163653ae64301a5dfed87/1790018040/hls_264_master.m3u8?t=1790021426"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226940/258ebd5baf6ab8510f339f67b5e34d54510681bf/ss_258ebd5baf6ab8510f339f67b5e34d54510681bf.600x338.jpg?t=1792928566",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226940/6cda1907e6735160dee1f48e09f8345771db439d/ss_6cda1907e6735160dee1f48e09f8345771db439d.600x338.jpg?t=1792928566",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226940/78bc20371c58ef8b1365f079142f457eae7e6008/ss_78bc20371c58ef8b1365f079142f457eae7e6008.600x338.jpg?t=1792928566",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226940/711aa5ee4487e5dc719f915d5fff7b380aa8070c/ss_711aa5ee4487e5dc719f915d5fff7b380aa8070c.600x338.jpg?t=1792928566",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226940/92ae1646934d74b11c7c44108c53803704308ceb/ss_92ae1646934d74b11c7c44108c53803704308ceb.600x338.jpg?t=1792928566",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226940/2076f6cc5e1171e72773b39d9dd3a3621a0067f0/ss_2076f6cc5e1171e72773b39d9dd3a3621a0067f0.600x338.jpg?t=1792928566"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: Intel Core 7\nMemoria: 4 GB de RAM\nGráficos: GeForce GTX 1060\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 323,
    "steamRank": 287
   },
@@ -12229,13 +12498,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257301987/388c430dcd303af7d9a1a6963cdcfebc082f2466/movie_600x337.jpg?t=1789443433",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4466850/808609689/078a5d6f36cfea0fb40e362459caa705fb84d73b/1789443080/hls_264_master.m3u8?t=1789443433"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4466850/7ec97f90b4048ffd728b47d8d3d9368177d3551d/ss_7ec97f90b4048ffd728b47d8d3d9368177d3551d.600x338.jpg?t=1792661305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4466850/9576382dd7e1f4b6da61e8cf236ca7dfa300e8c8/ss_9576382dd7e1f4b6da61e8cf236ca7dfa300e8c8.600x338.jpg?t=1792661305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4466850/92fbf55566e37a34023e21e6cbaaba594c4fce97/ss_92fbf55566e37a34023e21e6cbaaba594c4fce97.600x338.jpg?t=1792661305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4466850/d6ca66a94c079a0da86ef04bcf30e72f71467f45/ss_d6ca66a94c079a0da86ef04bcf30e72f71467f45.600x338.jpg?t=1792661305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4466850/3145e61e77a0200dce927261183a08d77318352e/ss_3145e61e77a0200dce927261183a08d77318352e.600x338.jpg?t=1792661305",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4466850/24b2a02fd86aeda178a934c571f2e4b9f214f9e7/ss_24b2a02fd86aeda178a934c571f2e4b9f214f9e7.600x338.jpg?t=1792661305"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: Intel Pentium CPU G860\nMemoria: 2 GB de RAM\nGráficos: NVIDIA GeForce 840M\nDirectX: Versión 8.0\nAlmacenamiento: 300 MB de espacio disponible\nNotas adicionales: 64 Bit Only",
    "rank": 324,
    "steamRank": 288
   },
@@ -12258,13 +12537,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "en",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257414585/2b9e519e0e5b5e33a4b72fc9ed384c292cda4870/movie_600x337.jpg?t=1788251867",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5112880/1898124687/474c4d76f81fe45f029e033c06ff7664e388da45/1788250830/hls_264_master.m3u8?t=1788251867"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5112880/0d4e771abd56bb1b5192fb2f42bd1fb5d19d1cf1/ss_0d4e771abd56bb1b5192fb2f42bd1fb5d19d1cf1.600x338.jpg?t=1792600610",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5112880/256e4b9fb8f4bc092d8fb8c4aa4aa49337ba95a7/ss_256e4b9fb8f4bc092d8fb8c4aa4aa49337ba95a7.600x338.jpg?t=1792600610",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5112880/2f1c97bd4d2038d397d69a78440cd7070bba3d69/ss_2f1c97bd4d2038d397d69a78440cd7070bba3d69.600x338.jpg?t=1792600610",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5112880/0101aa89094e75864faa6f7284af1dc3cdc0401b/ss_0101aa89094e75864faa6f7284af1dc3cdc0401b.600x338.jpg?t=1792600610",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5112880/58b8f0b8c0afd202a2bb4ce487cbfca8890142e5/ss_58b8f0b8c0afd202a2bb4ce487cbfca8890142e5.600x338.jpg?t=1792600610",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5112880/7411d3560c26d4fcd6e7f59570dbe9525c989fe2/ss_7411d3560c26d4fcd6e7f59570dbe9525c989fe2.600x338.jpg?t=1792600610"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: 2GHz 듀얼 코어 이상\nMemoria: 2048 MB de RAM\nGráficos: OpenGL 2.0 지원 그래픽 카드 (내장 그래픽 포함)\nAlmacenamiento: 2 GB de espacio disponible\nTarjeta de sonido: DirectX 호환 사운드 카드\nNotas adicionales:",
    "rank": 325,
    "steamRank": 289
   },
@@ -12286,13 +12575,23 @@
    "date": "2026-10-30",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Launch Trailer Short",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257464558/50b84c4acb06c191dce3d8f5f95e39fa106fddd6/movie_600x337.jpg?t=1792222891",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4339680/1451941993/28edeac62edc747c1f77ae82d170d95cbe3ac6dd/1792154728/hls_264_master.m3u8?t=1792222891"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4339680/6730115ad2eae82001c1d08f7af1e87e519bbead/ss_6730115ad2eae82001c1d08f7af1e87e519bbead.600x338.jpg?t=1792680617",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4339680/4acbace3cb43f8093ea9df85ae6c18afc1f9c265/ss_4acbace3cb43f8093ea9df85ae6c18afc1f9c265.600x338.jpg?t=1792680617",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4339680/7a86088cbfc235e23603fb79eaab6dddb2a2e13c/ss_7a86088cbfc235e23603fb79eaab6dddb2a2e13c.600x338.jpg?t=1792680617",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4339680/0462efbb743ef99605df21754329d0fa1333380b/ss_0462efbb743ef99605df21754329d0fa1333380b.600x338.jpg?t=1792680617",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4339680/b0fba0a74a3711fbc5c81e67dc79f3bbb468ecc8/ss_b0fba0a74a3711fbc5c81e67dc79f3bbb468ecc8.600x338.jpg?t=1792680617",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4339680/ced9bea60ea039d0a78afa9e19059218e49b6c48/ss_ced9bea60ea039d0a78afa9e19059218e49b6c48.600x338.jpg?t=1792680617"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: Intel Core i5 @ 2.5 GHz\nMemoria: 8000 MB de RAM\nGráficos: GTX 1060 or RX 6600 XT\nDirectX: Versión 12\nAlmacenamiento: 4000 MB de espacio disponible\nNotas adicionales: Requires a 64-bit processor and operating system",
    "rank": 326,
    "steamRank": 290
   },
@@ -12314,13 +12613,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Cosplaying in Costalia Gameplay (English)",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257186463/4b2e62ed024bcb55683c2e2e46c42562ae50129b/movie_600x337.jpg?t=1758848457",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3891200/932454485/fb040bbd773c17f787e0004b1db5f1788ccc9300/1755754684/hls_264_master.m3u8?t=1758848457"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891200/e78c6faf19963b2ed9cae3830185e0bb7e6d7284/ss_e78c6faf19963b2ed9cae3830185e0bb7e6d7284.600x338.jpg?t=1787101659",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891200/7f094b3666e325b22be8bceafdf2b9571409b189/ss_7f094b3666e325b22be8bceafdf2b9571409b189.600x338.jpg?t=1787101659",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891200/7f9afd1a0e536d2916972975704acc21e2dc72e6/ss_7f9afd1a0e536d2916972975704acc21e2dc72e6.600x338.jpg?t=1787101659",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891200/68fb6594a651708cbaaeefc08728312588da0601/ss_68fb6594a651708cbaaeefc08728312588da0601.600x338.jpg?t=1787101659",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891200/b77ace5b344a44774e1e85edd3d044137a27df0a/ss_b77ace5b344a44774e1e85edd3d044137a27df0a.600x338.jpg?t=1787101659",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891200/cbf234fe9591b4c08e0150740a3aa5785590368c/ss_cbf234fe9591b4c08e0150740a3aa5785590368c.600x338.jpg?t=1787101659"
+   ],
+   "spanish": false,
+   "requirements": "SO *: Windows 8.1\nProcesador: Core2Duo 1.8GHz\nMemoria: 1 GB de RAM\nDirectX: Versión 9.0c",
    "rank": 327,
    "steamRank": 291
   },
@@ -12344,13 +12653,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "PC Cafe Simulator - Gameplay",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257428974/d85518ce4b6d50dbbffc2f8155285bbb25b5d9e8/movie_600x337.jpg?t=1791108364",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3375990/135998100/d65226cc8aa2706e9110d7e770e52859f0eceef6/1789832426/hls_264_master.m3u8?t=1791108364"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375990/15212f03ef925b609eb1e1e47a0d93eabb23659a/ss_15212f03ef925b609eb1e1e47a0d93eabb23659a.600x338.jpg?t=1792732544",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375990/1124db12fd79fece327f842072802ed19bb0801e/ss_1124db12fd79fece327f842072802ed19bb0801e.600x338.jpg?t=1792732544",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375990/771116fd40d7cc48ea29f05eac1faf676a4cbb2f/ss_771116fd40d7cc48ea29f05eac1faf676a4cbb2f.600x338.jpg?t=1792732544",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375990/c68ed72298c72822cd12a711c396ec3622f87cb4/ss_c68ed72298c72822cd12a711c396ec3622f87cb4.600x338.jpg?t=1792732544",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375990/52cf5b2830ac38ea98e40c61da9c08f69c4ac444/ss_52cf5b2830ac38ea98e40c61da9c08f69c4ac444.600x338.jpg?t=1792732544",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375990/6e87b2762788207097724e90b43f8ae4c40658c6/ss_6e87b2762788207097724e90b43f8ae4c40658c6.600x338.jpg?t=1792732544"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 (64-bit)\nProcesador: Intel Core i5-8400 / AMD Ryzen 5 2600\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GTX 1060 / AMD RX 580\nDirectX: Versión 11\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 10 GB de espacio disponible",
    "rank": 328,
    "steamRank": 292
   },
@@ -12374,13 +12693,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Teaser Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257377465/926af1e564e34fbe961289bfb26f801d1b50e07b/movie_600x337.jpg?t=1787572641",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4755250/748169596/772089fe441502c23e298f508efa81ebec2c3a2f/1787571797/hls_264_master.m3u8?t=1787572641"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4755250/9da04287ee6f2efa6a5fc8e0bd979d85e6eb1451/ss_9da04287ee6f2efa6a5fc8e0bd979d85e6eb1451.600x338.jpg?t=1792721241",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4755250/18f0a1920e5d6992726a9426c7b2fc3d0cda4999/ss_18f0a1920e5d6992726a9426c7b2fc3d0cda4999.600x338.jpg?t=1792721241",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4755250/116c7a15f3e54d29768d8594d8f7ebcf5432c5f9/ss_116c7a15f3e54d29768d8594d8f7ebcf5432c5f9.600x338.jpg?t=1792721241",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4755250/85e097c0ebe5ff1fa8b60aa8b302b7e7494cfe41/ss_85e097c0ebe5ff1fa8b60aa8b302b7e7494cfe41.600x338.jpg?t=1792721241",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4755250/23dffaeb8f33cda51f890dbaed63ffdc6fd81fc0/ss_23dffaeb8f33cda51f890dbaed63ffdc6fd81fc0.600x338.jpg?t=1792721241",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4755250/cb08fda3770074724e3a0c26d05432ac74dfdfd7/ss_cb08fda3770074724e3a0c26d05432ac74dfdfd7.600x338.jpg?t=1792721241"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: Intel Core i5-8400 / AMD Ryzen 5 2600\nMemoria: 16 GB de RAM\nGráficos: NVIDIA GeForce GTX 1070 8 GB / AMD Radeon RX Vega 56 8 GB\nDirectX: Versión 12\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 20 GB de espacio disponible",
    "rank": 329,
    "steamRank": 293
   },
@@ -12404,13 +12733,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Early Access Release Date Announcement",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257395211/3e2d75e6aa5ad689d1b188a7bcc48dc74acc2836/movie_600x337.jpg?t=1786309013",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2606850/1023465836/4fdf0242e013c68a2d7169d29aaf508fc2353af9/1786308050/hls_264_master.m3u8?t=1786309013"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2606850/0395d3c43c88d533af2e6606d2fe6ba35a6d0788/ss_0395d3c43c88d533af2e6606d2fe6ba35a6d0788.600x338.jpg?t=1792482903",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2606850/17f4a99dc6034a8fc94d579f4c914d17421554ec/ss_17f4a99dc6034a8fc94d579f4c914d17421554ec.600x338.jpg?t=1792482903",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2606850/67677e02413c7d257ed2f711955276e422ae6a4c/ss_67677e02413c7d257ed2f711955276e422ae6a4c.600x338.jpg?t=1792482903",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2606850/964ce5d86041e87afc131662e322dc8a2ced80f3/ss_964ce5d86041e87afc131662e322dc8a2ced80f3.600x338.jpg?t=1792482903",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2606850/c17a05062e7a6a9f1860704ca68936263eceea61/ss_c17a05062e7a6a9f1860704ca68936263eceea61.600x338.jpg?t=1792482903",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2606850/ss_1673114d11c3eda9fe27710f1b353df031587bbe.600x338.jpg?t=1792482903"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Intel® Core™ i5-6600 (3.30 GHz) | AMD Ryzen™ 3 3100 (3.60 GHz) or Ryzen™ 5 2600 (3.40 GHz)\nMemoria: 8 GB de RAM\nGráficos: Nvidia GeForce® GTX 980 | AMD Radeon™ RX 470 | Intel® Arc™ A750\nDirectX: Versión 11\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 10 GB de espacio disponible",
    "rank": 330,
    "steamRank": 294
   },
@@ -12434,13 +12773,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Drive UP: Together Gameplay Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435804/a22574dd5da3046ddae73b8fac9c2406becaec4c/movie_600x337.jpg?t=1791891559",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4058120/1528738833/0d4b60cde60fd93b6998bd6c980155c43b068363/1790404063/hls_264_master.m3u8?t=1791891559"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4058120/ea55fedb6a6388b117165ba036a25527cf333663/ss_ea55fedb6a6388b117165ba036a25527cf333663.600x338.jpg?t=1792833112",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4058120/991ea94f08a5ab51df881d86b3bd79c5efda1edc/ss_991ea94f08a5ab51df881d86b3bd79c5efda1edc.600x338.jpg?t=1792833112",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4058120/ebca95be15aed67d594277caf6d6121cc4407931/ss_ebca95be15aed67d594277caf6d6121cc4407931.600x338.jpg?t=1792833112",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4058120/2ceb293a62c9628de76fc877731c820cbed61296/ss_2ceb293a62c9628de76fc877731c820cbed61296.600x338.jpg?t=1792833112",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4058120/d5c5da9775ca99b444d29c632fd474e9b6415e0b/ss_d5c5da9775ca99b444d29c632fd474e9b6415e0b.600x338.jpg?t=1792833112",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4058120/7c88140c626b01a97909f2b5a7b2ac6f63a5432a/ss_7c88140c626b01a97909f2b5a7b2ac6f63a5432a.600x338.jpg?t=1792833112"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10\nProcesador: Intel Core i3-5500 o superior\nMemoria: 6 GB de RAM\nGráficos: Nvidia GTX 920M o equivalente\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 10 GB de espacio disponible",
    "rank": 331,
    "steamRank": 295
   },
@@ -12463,13 +12812,23 @@
    "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Release Date Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257413793/4375f5ad4785a334591a2b319b2395eb9dfbaa56/movie_600x337.jpg?t=1792069474",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5123900/1213073323/a672e33f8c08a11b48064a2f2845ad000a85967b/1792069047/hls_264_master.m3u8?t=1792069474"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5123900/49de2665d447e24b0447bff434ab789f057dcaf2/ss_49de2665d447e24b0447bff434ab789f057dcaf2.600x338.jpg?t=1792496340",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5123900/e7dc00fb13eb11e9919ea780a260959abb65fe0e/ss_e7dc00fb13eb11e9919ea780a260959abb65fe0e.600x338.jpg?t=1792496340",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5123900/dd8d937f18cded660656acc6113b69cb9148b184/ss_dd8d937f18cded660656acc6113b69cb9148b184.600x338.jpg?t=1792496340",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5123900/f5077fbe75a4ee03586819630856aefc3717192a/ss_f5077fbe75a4ee03586819630856aefc3717192a.600x338.jpg?t=1792496340",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5123900/8abfb9883fdfd178daa6301d5d0f180410c4f5bf/ss_8abfb9883fdfd178daa6301d5d0f180410c4f5bf.600x338.jpg?t=1792496340",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5123900/ab03cb449ebab3f62740b986c85d96ea7c60326e/ss_ab03cb449ebab3f62740b986c85d96ea7c60326e.600x338.jpg?t=1792496340"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Intel Core i5-7500 / AMD Ryzen 5 1600\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GeForce GTX 1060 3GB / AMD Radeon RX 580 4GB\nDirectX: Versión 12\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 332,
    "steamRank": 296
   },
@@ -12494,13 +12853,23 @@
    "date": "2026-11-05",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "LYSSA Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422819/fd330bf5113c5ebda658922398ce253b83272a93/movie_600x337.jpg?t=1789139550",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5096020/1358069392/3233a0885aae687034c4beb6a8dbe498d4890389/1789138334/hls_264_master.m3u8?t=1789139550"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/d2149fc1d2f755c85d990b7fd0ede288cc1bbf89/ss_d2149fc1d2f755c85d990b7fd0ede288cc1bbf89.600x338.jpg?t=1792676222",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/eefaa42f940a875bbf42208135bf091b9657d70f/ss_eefaa42f940a875bbf42208135bf091b9657d70f.600x338.jpg?t=1792676222",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/c84f86111cad356ccffe10831e071aa9f659c550/ss_c84f86111cad356ccffe10831e071aa9f659c550.600x338.jpg?t=1792676222",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/a6d6ba3531efda37f9ca251c325bfa1f958b2c8b/ss_a6d6ba3531efda37f9ca251c325bfa1f958b2c8b.600x338.jpg?t=1792676222",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/1569fd924269bf66f4d2a8a3a70437c32cbc45d9/ss_1569fd924269bf66f4d2a8a3a70437c32cbc45d9.600x338.jpg?t=1792676222",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/44fbd5a6b57037582403031174f93e8247944ddb/ss_44fbd5a6b57037582403031174f93e8247944ddb.600x338.jpg?t=1792676222"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO *: Windows 7\nDirectX: Versión 9.0\nAlmacenamiento: 4 GB de espacio disponible",
    "rank": 333,
    "steamRank": 297
   },
@@ -12524,13 +12893,23 @@
    "date": "2026-10-29",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Gameplay Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257323115/3d6be3a820d5cc28e343f2d02583220e676d9a45/movie_600x337.jpg?t=1790782689",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4538080/64918781/e5fe133e99b6c3a7db96f7d2dfec6ad1b7e37d44/1790684568/hls_264_master.m3u8?t=1790782689"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4538080/42ff4fdd0cc86ac61348aec84b4d59f4be3984fd/ss_42ff4fdd0cc86ac61348aec84b4d59f4be3984fd.600x338.jpg?t=1792705663",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4538080/ce1000ea97c5f2616358618bc7c3d09e449e904b/ss_ce1000ea97c5f2616358618bc7c3d09e449e904b.600x338.jpg?t=1792705663",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4538080/4b4d0dac3acfdb33ef649d7cf510035057df1456/ss_4b4d0dac3acfdb33ef649d7cf510035057df1456.600x338.jpg?t=1792705663",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4538080/b6cacb3021dc0649c356f8525d4f156ea3ee3e63/ss_b6cacb3021dc0649c356f8525d4f156ea3ee3e63.600x338.jpg?t=1792705663",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4538080/06f8e01e001a050db461fa6e6c180927e8648c86/ss_06f8e01e001a050db461fa6e6c180927e8648c86.600x338.jpg?t=1792705663",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4538080/ab0ef9b781de693989b1a0899589d77994d18328/ss_ab0ef9b781de693989b1a0899589d77994d18328.600x338.jpg?t=1792705663"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10/11\nProcesador: x64 architecture with SSE2 instruction set support\nMemoria: 8 GB de RAM\nGráficos: DX11, DX12 capable integrated graphics\nNotas adicionales: Should run fine on most laptops built in the last 5+ years",
    "rank": 334,
    "steamRank": 298
   },
@@ -12553,13 +12932,23 @@
    "date": "2026-10-29",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Announcement Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257376286/7d7eab155f8632717bbeb1929ef3a853c0ba545a/movie_600x337.jpg?t=1785415630",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4198360/38812909/4d07d25c6b9e8198630767b42f65e35c2a181f8f/1785188185/hls_264_master.m3u8?t=1785415630"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4198360/6ae6d0b196067f512b9a1ccdcff4ca6d1f827ada/ss_6ae6d0b196067f512b9a1ccdcff4ca6d1f827ada.600x338.jpg?t=1790876418",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4198360/5c94c4ad5d66cc1db37b5c00c6cc704de5c6f319/ss_5c94c4ad5d66cc1db37b5c00c6cc704de5c6f319.600x338.jpg?t=1790876418",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4198360/f7300573a73df226f974dd6fc1fbceee0d78b9d1/ss_f7300573a73df226f974dd6fc1fbceee0d78b9d1.600x338.jpg?t=1790876418",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4198360/e560c70af421603ece73d566981276f510f75538/ss_e560c70af421603ece73d566981276f510f75538.600x338.jpg?t=1790876418",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4198360/043207f21c4f2c4506e382c8de9627ff1a3e8931/ss_043207f21c4f2c4506e382c8de9627ff1a3e8931.600x338.jpg?t=1790876418",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4198360/a389a30b571ed39c7ad0ec3d5a2df4ef2fdc4353/ss_a389a30b571ed39c7ad0ec3d5a2df4ef2fdc4353.600x338.jpg?t=1790876418"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: Requires a 64-bit processor and operating system\nMemoria: 16 GB de RAM",
    "rank": 335,
    "steamRank": 299
   },
@@ -12583,13 +12972,23 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Cardopolis Announcement Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257188064/2e5c8e4f3967e36c02aee7e8779d8da9e325b6fe/movie_600x337.jpg?t=1786263085",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/1932910/772843024/7481e089f5476f446866ad14a8aacda1b1c8c4c1/1786262749/hls_264_master.m3u8?t=1786263085"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1932910/e270e44b727979061aa1edd6df983cebf78b9855/ss_e270e44b727979061aa1edd6df983cebf78b9855.600x338.jpg?t=1791877559",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1932910/d287a0de606ee7f5bf2dd882d602a26e864f1b20/ss_d287a0de606ee7f5bf2dd882d602a26e864f1b20.600x338.jpg?t=1791877559",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1932910/7e90b7d3533c9171601bebcca9084fd84453a961/ss_7e90b7d3533c9171601bebcca9084fd84453a961.600x338.jpg?t=1791877559",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1932910/befe4ded0c1c12a0c4d9a9e220e726ede1956fc1/ss_befe4ded0c1c12a0c4d9a9e220e726ede1956fc1.600x338.jpg?t=1791877559",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1932910/c8e149f026fcbc4d3435669dc5ef68b623696a30/ss_c8e149f026fcbc4d3435669dc5ef68b623696a30.600x338.jpg?t=1791877559",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1932910/4bceebf628d8f911bcb429b01041fdd73765d30a/ss_4bceebf628d8f911bcb429b01041fdd73765d30a.600x338.jpg?t=1791877559"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10 o posterior\nProcesador: Intel Core I3 / AMD Ryzen 3\nMemoria: 4 GB de RAM\nGráficos: NVidia GeForce GTX 1050 o equivalente\nDirectX: Versión 11\nAlmacenamiento: 1 GB de espacio disponible\nTarjeta de sonido: Integrada o superior\nNotas adicionales:",
    "rank": 336,
    "steamRank": 300
   },
@@ -12612,13 +13011,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Screen Stocks | Release Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438035/74b4a87543269623eeed2c3c01179c5e00b6394c/movie_600x337.jpg?t=1790600203",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4356780/999984417/eef70fca612873e09be1a621ba3d617c764e2f04/1790576386/hls_264_master.m3u8?t=1790600203"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/b81c194a329ab7ea56e0faa484a9a3f36b295993/ss_b81c194a329ab7ea56e0faa484a9a3f36b295993.600x338.jpg?t=1790600209",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/8ecb5dd31f59053afa49cdfa3f39b5e8331e6ffd/ss_8ecb5dd31f59053afa49cdfa3f39b5e8331e6ffd.600x338.jpg?t=1790600209",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/9e6308d03db234580ffb8dfa4bd1a437cdadb960/ss_9e6308d03db234580ffb8dfa4bd1a437cdadb960.600x338.jpg?t=1790600209",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/e9807fbed250f8458844eac6c4cd3ce29704847f/ss_e9807fbed250f8458844eac6c4cd3ce29704847f.600x338.jpg?t=1790600209",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/cb110b1cfab13029e962d3ec7612dd1b10a9338b/ss_cb110b1cfab13029e962d3ec7612dd1b10a9338b.600x338.jpg?t=1790600209",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/1e25d148ff27e3264959cff6060ae467f06d2730/ss_1e25d148ff27e3264959cff6060ae467f06d2730.600x338.jpg?t=1790600209"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: AMD FX-4350 / Intel® Core™ i3-3210\nMemoria: 2 GB de RAM\nGráficos: AMD Radeon™ R7 260X (2GB VRAM) / NVIDIA® GeForce® GTX 750(2GB VRAM)\nAlmacenamiento: 200 MB de espacio disponible\nTarjeta de sonido: DirectX Compatible Sound Card",
    "rank": 337,
    "steamRank": 301
   },
@@ -12641,13 +13050,23 @@
    "date": "2026-11-02",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "RDA Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416702/588351ee8f7726558c7fcbbd77255b298b952068/movie_600x337.jpg?t=1792527390",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/1686230/1756191026/6784a529827ad7ad1e6586ebaad4fd5af8600252/1788460803/hls_264_master.m3u8?t=1792527390"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1686230/f41d2fb11694d40e93b2e29aad4af1324508516a/ss_f41d2fb11694d40e93b2e29aad4af1324508516a.600x338.jpg?t=1792527391",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1686230/684d53aaa80559a73f3ea026a47905eda1b3b167/ss_684d53aaa80559a73f3ea026a47905eda1b3b167.600x338.jpg?t=1792527391",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1686230/f31a4aaead5aad295bb13fe1a3e954c8dffc0c11/ss_f31a4aaead5aad295bb13fe1a3e954c8dffc0c11.600x338.jpg?t=1792527391",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1686230/8a5fb457aa9fb0252b28384bf19c673c0673567b/ss_8a5fb457aa9fb0252b28384bf19c673c0673567b.600x338.jpg?t=1792527391",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1686230/909c102e7cb00c74ce700f7e0a08005311d806f9/ss_909c102e7cb00c74ce700f7e0a08005311d806f9.600x338.jpg?t=1792527391",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1686230/c0a6ee3f88f430946e95cb692c01a7deec0c362c/ss_c0a6ee3f88f430946e95cb692c01a7deec0c362c.600x338.jpg?t=1792527391"
+   ],
+   "spanish": true,
+   "requirements": "SO: Windows 10 (64-bit)\nProcesador: Intel Core2 Duo E6400 or AMD Phenom X2 Dual-Core GP-7730 or equivalent\nMemoria: 6 GB de RAM\nGráficos: NVIDIA GeForce GTX 460 (1GB) or AMD Radeon R7 240 (1GB) or better\nDirectX: Versión 11\nAlmacenamiento: 500 MB de espacio disponible",
    "rank": 338,
    "steamRank": 302
   },
@@ -12671,13 +13090,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "RPG Chess - Official Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257245721/0ae9633635b7a59434f5fa14f62c026a882b3592/movie_600x337.jpg?t=1789651209",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3383450/871493879/11e198c56450bdbfe5291467ace92fd30557f852/1789650653/hls_264_master.m3u8?t=1789651209"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3383450/c9be4951ee1607c3ad70d4d084349b84d113341a/ss_c9be4951ee1607c3ad70d4d084349b84d113341a.600x338.jpg?t=1792568569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3383450/07cb6d0388fe2b6485d2eb4623fbc7b77e5b32b2/ss_07cb6d0388fe2b6485d2eb4623fbc7b77e5b32b2.600x338.jpg?t=1792568569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3383450/a85836bcbb3ecd7b57a196ee61084c126b9711ba/ss_a85836bcbb3ecd7b57a196ee61084c126b9711ba.600x338.jpg?t=1792568569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3383450/67f26d653c4f7532bcfa747ce1a869606212b556/ss_67f26d653c4f7532bcfa747ce1a869606212b556.600x338.jpg?t=1792568569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3383450/2c74a11cd4005302fed55737b8c0b7852919592c/ss_2c74a11cd4005302fed55737b8c0b7852919592c.600x338.jpg?t=1792568569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3383450/31d927220643d50d0b9f69dcb6a6486676f23d95/ss_31d927220643d50d0b9f69dcb6a6486676f23d95.600x338.jpg?t=1792568569"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 (64-bit)\nProcesador: Intel Core i5-4460 / AMD FX-6300\nMemoria: 4 GB de RAM\nGráficos: NVIDIA GeForce GTX 750 Ti / AMD Radeon R7 260X (DirectX 11 compatible, 2 GB VRAM)\nDirectX: Versión 11\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 339,
    "steamRank": 303
   },
@@ -12701,13 +13130,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "GeneralTactics_eng",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257343850/27857d0b5fbfd79e60765c8be8aa583238a425dc/movie_600x337.jpg?t=1779864517",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3929570/629191783/53e8340d917d7e237a9217e128b77eb148db0902/1779864248/hls_264_master.m3u8?t=1779864517"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929570/9143799c41f0ad1c9d9272e35b4dbe0c456df2a2/ss_9143799c41f0ad1c9d9272e35b4dbe0c456df2a2.600x338.jpg?t=1792424252",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929570/92da50acd5c50e26cb38cf5b4e5e60001d55452c/ss_92da50acd5c50e26cb38cf5b4e5e60001d55452c.600x338.jpg?t=1792424252",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929570/3800ca39f0903ddb03edf735b6f42926a8edec91/ss_3800ca39f0903ddb03edf735b6f42926a8edec91.600x338.jpg?t=1792424252",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929570/1e1d15bc6952b42fa6d01f0a12e0488d6c1a20fa/ss_1e1d15bc6952b42fa6d01f0a12e0488d6c1a20fa.600x338.jpg?t=1792424252",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929570/6d8ab424030d064eed23c59d107bc5200f0d5214/ss_6d8ab424030d064eed23c59d107bc5200f0d5214.600x338.jpg?t=1792424252",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929570/a78ad7410275d6f1fdc2270e757e98e280e24e8c/ss_a78ad7410275d6f1fdc2270e757e98e280e24e8c.600x338.jpg?t=1792424252"
+   ],
+   "spanish": false,
+   "requirements": "SO: win10, 11\nProcesador: i3",
    "rank": 340,
    "steamRank": 304
   },
@@ -12730,13 +13169,23 @@
    "date": "2026-11-04",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Opening Movie",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427050/96bf647e2257a6bdc505b7c94a21698d13c44859/movie_600x337.jpg?t=1792604886",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3891160/1577178689/80f012a39adf401b61b29594c8fafa84575e5e7d/1789607692/hls_264_master.m3u8?t=1792604886"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891160/af5f2cd96929aaa48cb90417dea1a71fdf70f13a/ss_af5f2cd96929aaa48cb90417dea1a71fdf70f13a.600x338.jpg?t=1792609042",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891160/5dd652fe4656e364d2356d42759d40f136325d34/ss_5dd652fe4656e364d2356d42759d40f136325d34.600x338.jpg?t=1792609042",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891160/312ab1c084effccdcc289b55bf76cc8d7d91b412/ss_312ab1c084effccdcc289b55bf76cc8d7d91b412.600x338.jpg?t=1792609042",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891160/3ca2d82c1664475fc45cad6abf94a09a8e335ff5/ss_3ca2d82c1664475fc45cad6abf94a09a8e335ff5.600x338.jpg?t=1792609042",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891160/1927f62fd769efdd64b992e6800dadabd66ba1e4/ss_1927f62fd769efdd64b992e6800dadabd66ba1e4.600x338.jpg?t=1792609042",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3891160/92b5ca187958f363d956f1d5492003ab862e79a8/ss_92b5ca187958f363d956f1d5492003ab862e79a8.600x338.jpg?t=1792609042"
+   ],
+   "spanish": false,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Core i7-6700／Ryzen 5 1600\nMemoria: 16 GB de RAM\nGráficos: ク：GeForce RTX 2060 6GB／Radeon RX 5600\nDirectX: Versión 11\nAlmacenamiento: 10 GB de espacio disponible",
    "rank": 341,
    "steamRank": 305
   },
@@ -12761,13 +13210,23 @@
    "date": "2026-10-30",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "trailer_en",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438509/7339f03b89c52d61ae8744138a2c04697cc2e458/movie_600x337.jpg?t=1790601280",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4065440/319037725/c9f1784bef507965b8b62b011921c49a2fc07a65/1790600177/hls_264_master.m3u8?t=1790601280"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4065440/7339f03b89c52d61ae8744138a2c04697cc2e458/ss_7339f03b89c52d61ae8744138a2c04697cc2e458.600x338.jpg?t=1792863439",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4065440/40aacaf83a24abc219a39d15c3f49d33d01e2deb/ss_40aacaf83a24abc219a39d15c3f49d33d01e2deb.600x338.jpg?t=1792863439",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4065440/9e30983476eb1d1b49c32307f4a5b5072afa6dcc/ss_9e30983476eb1d1b49c32307f4a5b5072afa6dcc.600x338.jpg?t=1792863439",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4065440/261c68ea401de8acb4918ba4174f4a35717ad1e7/ss_261c68ea401de8acb4918ba4174f4a35717ad1e7.600x338.jpg?t=1792863439",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4065440/f6997eeedb062417b21e754e286e7c74db7a8764/ss_f6997eeedb062417b21e754e286e7c74db7a8764.600x338.jpg?t=1792863439",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4065440/3c685b6301b25745158e1d4c2039d0809473dde9/ss_3c685b6301b25745158e1d4c2039d0809473dde9.600x338.jpg?t=1792863439"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows10\nProcesador: Intel Core i3 or equivalent\nMemoria: 4 GB de RAM\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 342,
    "steamRank": 306
   },
@@ -12790,13 +13249,23 @@
    "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "FOURSAVENT TRAILER 1",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257398711/ea36a9dfca269b66a5a4349bd583074449b6eec9/movie_600x337.jpg?t=1786663559",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4570020/1241358270/c06544b93f53bfbf2af40ee7d3ae232627029cde/1786662866/hls_264_master.m3u8?t=1786663559"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570020/7ceb22f02bf9e8100495937c278612aaa1d7dd4d/ss_7ceb22f02bf9e8100495937c278612aaa1d7dd4d.600x338.jpg?t=1792429971",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570020/e776a5b1fb4f2a07b45d6061a3782a7926a2a612/ss_e776a5b1fb4f2a07b45d6061a3782a7926a2a612.600x338.jpg?t=1792429971",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570020/aa135983bbe05389814866f09a36a14cacb1e652/ss_aa135983bbe05389814866f09a36a14cacb1e652.600x338.jpg?t=1792429971",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570020/d19fbd397b8ef16d7e4b649b318252ed3bd2df17/ss_d19fbd397b8ef16d7e4b649b318252ed3bd2df17.600x338.jpg?t=1792429971",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570020/db80c4aee538d8074f2f841a072cd5a6046e7b92/ss_db80c4aee538d8074f2f841a072cd5a6046e7b92.600x338.jpg?t=1792429971",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570020/fd3977c4405c729a5d1d0bcaa08a3916de74d786/ss_fd3977c4405c729a5d1d0bcaa08a3916de74d786.600x338.jpg?t=1792429971"
+   ],
+   "spanish": false,
+   "requirements": "SO: Windows 10 64-bit\nProcesador: Intel Core i5-8400 / AMD Ryzen 5 2600\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GTX 1060 (6GB) / AMD RX 580\nDirectX: Versión 12\nRed: Conexión de banda ancha a Internet\nAlmacenamiento: 20 GB de espacio disponible\nTarjeta de sonido: DirectX Compatible",
    "rank": 343,
    "steamRank": 307
   },
@@ -12819,13 +13288,23 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Trailer",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257388272/e0de1acf34c7915e29e7fbeb212075e582d4a71f/movie_600x337.jpg?t=1785901139",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5030570/162280739/f2c9b49741ba2c1aead010d6b9040419b8000602/1785404639/hls_264_master.m3u8?t=1785901139"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/2279681920eb31ff210088a1f5caaf143c7ee291/ss_2279681920eb31ff210088a1f5caaf143c7ee291.600x338.jpg?t=1792865569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/24014fbd7804f260b1aa104e16379e779d8ec761/ss_24014fbd7804f260b1aa104e16379e779d8ec761.600x338.jpg?t=1792865569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/c180ca8f2ed9e8a5686462bf7ddb92b0dbf1eab4/ss_c180ca8f2ed9e8a5686462bf7ddb92b0dbf1eab4.600x338.jpg?t=1792865569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/2cd656aef5e3a83e43e16d77cbe9215a10d45fc5/ss_2cd656aef5e3a83e43e16d77cbe9215a10d45fc5.600x338.jpg?t=1792865569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/79cc01521eb1ed9c5aa466e059d8be5919c74d69/ss_79cc01521eb1ed9c5aa466e059d8be5919c74d69.600x338.jpg?t=1792865569",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/ec89de65d2071666fc66927e22cda14314e77c84/ss_ec89de65d2071666fc66927e22cda14314e77c84.600x338.jpg?t=1792865569"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: Intel Core i7-4790k / AMD Ryzen 5 1500X\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GeForce GTX 980 Ti 6GB / AMD Radeon RX 6500XT\nDirectX: Versión 12\nAlmacenamiento: 2 GB de espacio disponible",
    "rank": 344,
    "steamRank": 308
   },
@@ -12848,8 +13327,18 @@
    "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {},
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834850/93686516e70bae44996dbb4b045dca85dcd4bd30/ss_93686516e70bae44996dbb4b045dca85dcd4bd30.600x338.jpg?t=1792429565",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834850/27ac387b22e521e890e7f87213f0df24c9179ff3/ss_27ac387b22e521e890e7f87213f0df24c9179ff3.600x338.jpg?t=1792429565",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834850/2e3125133af0f2c7c92df2ed0126113f04f7a1f2/ss_2e3125133af0f2c7c92df2ed0126113f04f7a1f2.600x338.jpg?t=1792429565",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834850/8f6f521426127a6bdba74a71a72a242b53bbc5c1/ss_8f6f521426127a6bdba74a71a72a242b53bbc5c1.600x338.jpg?t=1792429565",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834850/05fe2f3947ba59551094861e15621a499080c79e/ss_05fe2f3947ba59551094861e15621a499080c79e.600x338.jpg?t=1792429565",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4834850/b50f2e3cff76e8566d25e59d1bf3f5f810d0fa9e/ss_b50f2e3cff76e8566d25e59d1bf3f5f810d0fa9e.600x338.jpg?t=1792429565"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10/11\nProcesador: 1.8 GHz\nMemoria: 2 GB de RAM\nGráficos: The game runs on CPU\nAlmacenamiento: 2 GB de espacio disponible\nTarjeta de sonido: DirectX Compatible",
    "rank": 345,
    "steamRank": 309
   },
@@ -12872,13 +13361,23 @@
    "date": "2026-10-30",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Playtest_en",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257339440/bf116345e9bfaef18a15cf99d0d0d041d9e40095/movie_600x337.jpg?t=1779245819",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4261080/1699770413/09ae05024fbd40019caffa21671bc3dfb55f5532/1779197034/hls_264_master.m3u8?t=1779245819"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4261080/6c69d1d16894b8a8a3c2b8557f8e7c942bb9542c/ss_6c69d1d16894b8a8a3c2b8557f8e7c942bb9542c.600x338.jpg?t=1792662840",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4261080/f72d03090696a4ef7f7ff20ed1736b5c5b140234/ss_f72d03090696a4ef7f7ff20ed1736b5c5b140234.600x338.jpg?t=1792662840",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4261080/5c021eff78a5c898f0ec623ae6a9bae1284e979c/ss_5c021eff78a5c898f0ec623ae6a9bae1284e979c.600x338.jpg?t=1792662840",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4261080/6dcf80c068a868f52ceae71f651a436cff3df3b5/ss_6dcf80c068a868f52ceae71f651a436cff3df3b5.600x338.jpg?t=1792662840",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4261080/9dd57986fd2b67e43c95a70ec29d6653b9c57506/ss_9dd57986fd2b67e43c95a70ec29d6653b9c57506.600x338.jpg?t=1792662840",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4261080/52e101f82b3783f17ee7a8a09ebe39d765b783f9/ss_52e101f82b3783f17ee7a8a09ebe39d765b783f9.600x338.jpg?t=1792662840"
+   ],
+   "spanish": false,
+   "requirements": "SO: Windows 10 or newer\nProcesador: Intel Core i5-4440\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GTX 1060\nAlmacenamiento: 5 GB de espacio disponible",
    "rank": 346,
    "steamRank": 310
   },
@@ -12901,44 +13400,25 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "Main",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433590/4e8a5b2ae46c2a562504268c25dfe4287ad543cc/movie_600x337.jpg?t=1792854284",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4689770/325365339/531e08f34a5d02007eaded3c026789f44dbac381/1790246194/hls_264_master.m3u8?t=1792854284"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4689770/c4a54b33d64dbc5a67ee51568d0c0ddafef7d4dd/ss_c4a54b33d64dbc5a67ee51568d0c0ddafef7d4dd.600x338.jpg?t=1792854286",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4689770/a629823b73c262a3810560caacb121432efdb66f/ss_a629823b73c262a3810560caacb121432efdb66f.600x338.jpg?t=1792854286",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4689770/86100823918e31ec5dff5eb3cee3f4948463f729/ss_86100823918e31ec5dff5eb3cee3f4948463f729.600x338.jpg?t=1792854286",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4689770/930826a343505cddc0680f0a648dc02f734a026f/ss_930826a343505cddc0680f0a648dc02f734a026f.600x338.jpg?t=1792854286",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4689770/c610b7c9c05fdbb8ad4b7dffaff99e5e6a870588/ss_c610b7c9c05fdbb8ad4b7dffaff99e5e6a870588.600x338.jpg?t=1792854286",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4689770/6d01c973760369cec32746d3d1d3d3d6f18a1cdb/ss_6d01c973760369cec32746d3d1d3d3d6f18a1cdb.600x338.jpg?t=1792854286"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10\nProcesador: 2.0 Ghz\nMemoria: 2 GB de RAM\nGráficos: 1Gb Video Memory, Opengl and Pixel Shader 3.0 support\nAlmacenamiento: 1 GB de espacio disponible",
    "rank": 347,
    "steamRank": 311
-  },
-  {
-   "id": "steam-3572090",
-   "slug": "dominus-gladiatus",
-   "title": "Dominus Gladiatus",
-   "description": "Dominus Gladiatus es un brutal simulador de gestión de gladiadores en el que reclutas, entrenas y equipas gladiadores y tomas decisiones de vida o muerte durante un torneo mortal de 160 días contra Domini rivales.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3572090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/33270aae739a218f5062c2050d139efa1c807d47/header.jpg?t=1792350270",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Simuladores",
-    "Estrategia"
-   ],
-   "releaseText": "5 Nov, 2026",
-   "date": "2026-11-05",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
-   "trailer": {
-    "name": "Announcement",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257339354/6defe793fb45754ff37bee36003ecc5b26ed3184/movie_600x337.jpg?t=1780077392",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/3572090/756157563/43397e35480ad243f97b34b2aa6d683430f4d954/1779189474/hls_264_master.m3u8?t=1780077392"
-   },
-   "rank": 348,
-   "steamRank": 312
   },
   {
    "id": "steam-5042370",
@@ -12961,13 +13441,62 @@
    "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:14:32Z",
+   "verifiedAt": "2026-10-25T17:47:02Z",
    "trailer": {
     "name": "What makes Octbuster different",
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257398569/2bfebb374a5bea70549e09d47ce3e278df3d1bb0/movie_600x337.jpg?t=1791988174",
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/5042370/1913083537/03f3d0097b974fb6657fa8f9d21d0b1055951a1f/1788891369/hls_264_master.m3u8?t=1791988174"
    },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042370/468a4a308b8d433cd9fd2d553c9db43e870bd88a/ss_468a4a308b8d433cd9fd2d553c9db43e870bd88a.600x338.jpg?t=1792766147",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042370/e6b85a86002501646a2cedf3fb9673689dfac170/ss_e6b85a86002501646a2cedf3fb9673689dfac170.600x338.jpg?t=1792766147",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042370/88b0256f347c7c7fde396395390be014506ee84b/ss_88b0256f347c7c7fde396395390be014506ee84b.600x338.jpg?t=1792766147",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042370/aa9a5f3882d24024a95b2e748378cd3e95ad993e/ss_aa9a5f3882d24024a95b2e748378cd3e95ad993e.600x338.jpg?t=1792766147",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042370/6745de59ce38af5530ee1103d01f917c51f96ad5/ss_6745de59ce38af5530ee1103d01f917c51f96ad5.600x338.jpg?t=1792766147",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042370/12f71e5fd83fe4f527a4982d089d63526235203e/ss_12f71e5fd83fe4f527a4982d089d63526235203e.600x338.jpg?t=1792766147"
+   ],
+   "spanish": false,
+   "requirements": "SO: Windows 10 64-bit (21H2+)\nProcesador: Intel Core i5-8400 / AMD Ryzen 5 2600\nMemoria: 8 GB de RAM\nGráficos: NVIDIA GTX 1060 6GB / AMD RX 580 8GB (Shader Model 5.0)\nDirectX: Versión 11\nAlmacenamiento: 6 GB de espacio disponible",
+   "rank": 348,
+   "steamRank": 312
+  },
+  {
+   "id": "steam-3572090",
+   "slug": "dominus-gladiatus",
+   "title": "Dominus Gladiatus",
+   "description": "Dominus Gladiatus es un brutal simulador de gestión de gladiadores en el que reclutas, entrenas y equipas gladiadores y tomas decisiones de vida o muerte durante un torneo mortal de 160 días contra Domini rivales.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3572090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/33270aae739a218f5062c2050d139efa1c807d47/header.jpg?t=1792350270",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "5 Nov, 2026",
+   "date": "2026-11-05",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:47:02Z",
+   "trailer": {
+    "name": "Announcement",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257339354/6defe793fb45754ff37bee36003ecc5b26ed3184/movie_600x337.jpg?t=1780077392",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3572090/756157563/43397e35480ad243f97b34b2aa6d683430f4d954/1779189474/hls_264_master.m3u8?t=1780077392"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/d65fa1a57cba591ffcfe94e37b11931f84617ed3/ss_d65fa1a57cba591ffcfe94e37b11931f84617ed3.600x338.jpg?t=1792350270",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/feb7f4b0d35aff7287612390b8ac5d7c1bd21aff/ss_feb7f4b0d35aff7287612390b8ac5d7c1bd21aff.600x338.jpg?t=1792350270",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/6e3fe8cabcee23d08face0c034d9b270529d1683/ss_6e3fe8cabcee23d08face0c034d9b270529d1683.600x338.jpg?t=1792350270",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/d5bff1e5d336e39627a973e4bd47f2246f8d31e8/ss_d5bff1e5d336e39627a973e4bd47f2246f8d31e8.600x338.jpg?t=1792350270",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/1ccbd7bfaef40a53976c7ee72318ec3bb7a790e4/ss_1ccbd7bfaef40a53976c7ee72318ec3bb7a790e4.600x338.jpg?t=1792350270",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/564a6b6c48fcab67a345ab36bf326bb885e8b084/ss_564a6b6c48fcab67a345ab36bf326bb885e8b084.600x338.jpg?t=1792350270"
+   ],
+   "spanish": true,
+   "requirements": "Requiere un procesador y un sistema operativo de 64 bits\nSO: Windows 10 64-bit\nProcesador: Intel Core2 Duo E8400 or AMD Phenom II x2 550\nMemoria: 8 GB de RAM\nGráficos: DX 11 Compatible GPU\nDirectX: Versión 11\nAlmacenamiento: 1 GB de espacio disponible",
    "rank": 349,
    "steamRank": 313
   }
