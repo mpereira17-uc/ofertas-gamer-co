@@ -564,7 +564,8 @@ class Site:
         if len(desc) > (260 if main else 120):
             desc = desc[:(257 if main else 117)].rsplit(" ", 1)[0] + "…"
         link = ext_link(g["url"], "Ver en Steam", cls="btn btn-primary btn-sm", label=f"Ver {g['title']} en Steam (abre en otra pestaña)")
-        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img"><img src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+        bg = f'<img class="spot-bg" src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async">' if main else ""
+        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}<img class="spot-fg" src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 
