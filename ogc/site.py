@@ -91,6 +91,8 @@ class Site:
         if name == "index.html":
             if self.cfg.get("verificacion_google"):
                 verif += f'<meta name="google-site-verification" content="{e(self.cfg["verificacion_google"])}">\n'
+            if self.cfg.get("verificacion_bing"):
+                verif += f'<meta name="msvalidate.01" content="{e(self.cfg["verificacion_bing"])}">\n'
             if self.cfg.get("verificacion_impact"):
                 verif += f"<meta name='impact-site-verification' value='{e(self.cfg['verificacion_impact'])}'>\n"
         robots = '<meta name="robots" content="noindex">\n' if noindex else ""
