@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T17:02:15Z",
+ "updatedAt": "2026-10-25T17:04:57Z",
  "games": [
   {
    "id": "steam-1422450",
@@ -33,9 +33,9 @@
    "url": "https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI",
    "image": "https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg",
    "platforms": [
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
     "Acción-aventura",
@@ -45,7 +45,7 @@
    "date": "2026-11-19",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "QdBZY2fkU-0",
    "languages": 68,
@@ -93,10 +93,10 @@
    "url": "https://store.steampowered.com/app/4435490/",
    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1792806931",
    "platforms": [
+    "Windows",
     "Switch",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
     "Disparos en primera persona"
@@ -105,7 +105,7 @@
    "date": "2026-10-23",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "jLbst85USN8",
    "languages": 19,
@@ -145,34 +145,37 @@
    "steamRank": 3
   },
   {
-   "id": "wd-Q111023388",
-   "slug": "the-witcher-iv",
-   "title": "The Witcher IV",
-   "description": "The Witcher IV es un próximo videojuego de rol de acción desarrollado por CD Projekt Red y publicado por CD Projekt. Es la primera entrega planeada de una nueva trilogía en la serie The Witcher, que se basa en la serie de libros del mismo nombre de Andrzej Sapkowski. El juego se sitúa después de los eventos de The Witcher 3: Wild Hunt (2015). A diferencia de la trilogía original, que presentaba al",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/The_Witcher_IV",
-   "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/The_Witcher_IV_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "id": "steam-4824610",
+   "slug": "resident-evil-veronica",
+   "title": "Resident Evil Veronica",
+   "description": "Resident Evil Veronica es una nueva versión de Resident Evil Code: Veronica del año 2000. En 2027, la locura y la intriga, el amor y el odio se combinan para crear una nueva y escalofriante entrega de survival horror.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4824610/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4824610/28045d733a3ada082858b5b1a5149e33ee40f378/header.jpg?t=1780990195",
    "platforms": [
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "Switch",
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de rol de acción"
+    "Acción",
+    "Aventura"
    ],
-   "releaseText": "2028",
+   "releaseText": "2027",
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 15,
-   "enwiki": "https://en.wikipedia.org/wiki/The_Witcher_IV",
-   "summaryChecked": true,
-   "enChecked": true,
-   "wdRank": 3,
-   "rank": 6
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "05_PV_Announcement_Multi_EN-ASIA_NoRating_1080p",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257351860/7024f8f46d4efcd93f0c181f69ea2d53edba9def/movie_600x337.jpg?t=1780721673",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4824610/1282050082/69307ebd73cf2431f41042380aaa225e67a1324e/1780718184/hls_264_master.m3u8?t=1780721673"
+   },
+   "rank": 6,
+   "steamRank": 8,
+   "wdRank": 3
   },
   {
    "id": "steam-2769570",
@@ -208,37 +211,34 @@
    "wdRank": 7
   },
   {
-   "id": "steam-4824610",
-   "slug": "resident-evil-veronica",
-   "title": "Resident Evil Veronica",
-   "description": "Resident Evil Veronica es una nueva versión de Resident Evil Code: Veronica del año 2000. En 2027, la locura y la intriga, el amor y el odio se combinan para crear una nueva y escalofriante entrega de survival horror.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4824610/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4824610/28045d733a3ada082858b5b1a5149e33ee40f378/header.jpg?t=1780990195",
+   "id": "wd-Q111023388",
+   "slug": "the-witcher-iv",
+   "title": "The Witcher IV",
+   "description": "The Witcher IV es un próximo videojuego de rol de acción desarrollado por CD Projekt Red y publicado por CD Projekt. Es la primera entrega planeada de una nueva trilogía en la serie The Witcher, que se basa en la serie de libros del mismo nombre de Andrzej Sapkowski. El juego se sitúa después de los eventos de The Witcher 3: Wild Hunt (2015). A diferencia de la trilogía original, que presentaba al",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/The_Witcher_IV",
+   "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/The_Witcher_IV_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
     "Windows",
     "Xbox",
-    "Switch",
     "PlayStation"
    ],
    "genres": [
-    "Acción",
-    "Aventura"
+    "Videojuego de rol de acción"
    ],
-   "releaseText": "2027",
+   "releaseText": "2028",
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "05_PV_Announcement_Multi_EN-ASIA_NoRating_1080p",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257351860/7024f8f46d4efcd93f0c181f69ea2d53edba9def/movie_600x337.jpg?t=1780721673",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4824610/1282050082/69307ebd73cf2431f41042380aaa225e67a1324e/1780718184/hls_264_master.m3u8?t=1780721673"
-   },
-   "rank": 8,
-   "steamRank": 8,
-   "wdRank": 4
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 15,
+   "enwiki": "https://en.wikipedia.org/wiki/The_Witcher_IV",
+   "summaryChecked": true,
+   "enChecked": true,
+   "wdRank": 4,
+   "rank": 8
   },
   {
    "id": "steam-1774880",
@@ -333,7 +333,7 @@
    },
    "rank": 11,
    "steamRank": 6,
-   "wdRank": 20
+   "wdRank": 22
   },
   {
    "id": "wd-Q140140365",
@@ -353,7 +353,7 @@
    "date": "2026-11-05",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 13,
@@ -400,9 +400,9 @@
    "url": "https://store.steampowered.com/app/2288340/",
    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/13dea8084135fd130605b78189c82e39bf944c35/header.jpg?t=1792128424",
    "platforms": [
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
     "Simulador de vuelo de combate"
@@ -411,7 +411,7 @@
    "date": "2026-10-02",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "JQYx_867ua0",
    "languages": 13,
@@ -522,9 +522,9 @@
    "url": "https://en.wikipedia.org/wiki/Tomb_Raider:_Catalyst",
    "image": "https://i.ytimg.com/vi/N2yLZQFPSLo/maxresdefault.jpg",
    "platforms": [
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
     "Acción-aventura"
@@ -533,7 +533,7 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "N2yLZQFPSLo",
    "languages": 11,
@@ -572,39 +572,37 @@
    },
    "rank": 19,
    "steamRank": 11,
-   "wdRank": 37
+   "wdRank": 39
   },
   {
-   "id": "steam-4814120",
-   "slug": "ananta",
-   "title": "ANANTA",
-   "description": "Bienvenido a Ananta, un RPG urbano de mundo abierto. Encarna a distintos personajes y explora sin límites: distritos financieros, callejones secretos, plantaciones de té y el casco antiguo, de Chongxiao a Ciudad Nova. Rodéate de compañeros con personalidad y forma tu propio equipo.",
+   "id": "steam-3493540",
+   "slug": "transport-fever-3",
+   "title": "Transport Fever 3",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4814120/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4814120/3bd40cfd93dfe6e7a21d9f825fa3b82ee1c57105/header.jpg?t=1790579282",
+   "url": "https://store.steampowered.com/app/3493540/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3493540/6c4506fe585629dd2676db0ae957445471d8d926/header_alt_assets_0_spanish.jpg?t=1791359026",
    "platforms": [
     "Windows",
+    "Xbox",
     "PlayStation"
    ],
    "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
+    "Videojuego de simulación",
+    "Videojuego de simulación económica"
    ],
-   "releaseText": "15 Jan, 2027",
-   "date": "2027-01-15",
+   "releaseText": "2026-09-29",
+   "date": "2026-09-29",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:09:58Z",
-   "trailer": {
-    "name": "ANANTA Launch Date Trailer | Global Release January 15th, 2027",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408424/de7e7513efa8e13833d59724248c01eb547c4489/movie_600x337.jpg?t=1787691848",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4814120/1843987309/e39710bccbe8725c28e86b2081877f8ac66368a5/1787688709/hls_264_master.m3u8?t=1787691848"
-   },
-   "rank": 20,
-   "steamRank": 93,
-   "wdRank": 11
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "HcI60a6PbdI",
+   "languages": 9,
+   "enwiki": "https://en.wikipedia.org/wiki/Transport_Fever_3",
+   "headerChecked": true,
+   "wdRank": 11,
+   "rank": 20
   },
   {
    "id": "steam-2050420",
@@ -637,32 +635,37 @@
    "steamRank": 12
   },
   {
-   "id": "steam-3010850",
-   "slug": "gears-of-war-e-day",
-   "title": "Gears of War: E-Day",
-   "description": "",
+   "id": "steam-2963950",
+   "slug": "persona-4-revival",
+   "title": "Persona 4 Revival",
+   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3010850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3010850/1abb0c5ef76c14f463dd6e3964adb64f984237d2/header.jpg?t=1792692888",
+   "url": "https://store.steampowered.com/app/2963950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
    "platforms": [
+    "Windows",
     "Xbox",
-    "Windows"
+    "Switch",
+    "PlayStation"
    ],
    "genres": [
-    "Disparos en tercera persona"
+    "Aventura",
+    "Rol"
    ],
-   "releaseText": "2026-10-06",
-   "date": "2026-10-06",
+   "releaseText": "17 Feb, 2027",
+   "date": "2027-02-17",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "12m0bw1W_tk",
-   "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/Gears_of_War:_E-Day",
-   "headerChecked": true,
-   "wdRank": 12,
-   "rank": 22
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "Story Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415069/729b1a2bc6dfab5aa3d1a5389f3abe4b7f858505/movie_600x337.jpg?t=1788989520",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2963950/1023138812/3d571e248075a9715bcaee91999186898650cd2b/1788980111/hls_264_master.m3u8?t=1788989520"
+   },
+   "rank": 22,
+   "steamRank": 16,
+   "wdRank": 12
   },
   {
    "id": "steam-4095380",
@@ -695,31 +698,31 @@
    "steamRank": 13
   },
   {
-   "id": "steam-3493540",
-   "slug": "transport-fever-3",
-   "title": "Transport Fever 3",
+   "id": "steam-4231820",
+   "slug": "castlevania-belmont-s-curse",
+   "title": "Castlevania: Belmont's Curse",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3493540/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3493540/6c4506fe585629dd2676db0ae957445471d8d926/header_alt_assets_0_spanish.jpg?t=1791359026",
+   "url": "https://store.steampowered.com/app/4231820/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/6b65aec2c398006aea8b76e1463cc34d0e4ba68b/header.jpg?t=1792036946",
    "platforms": [
+    "Windows",
     "Xbox",
     "PlayStation",
-    "Windows"
+    "Switch"
    ],
    "genres": [
-    "Videojuego de simulación económica",
-    "Videojuego de simulación"
+    "Metroidvania"
    ],
-   "releaseText": "2026-09-29",
-   "date": "2026-09-29",
+   "releaseText": "2026-10-15",
+   "date": "2026-10-15",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "HcI60a6PbdI",
+   "youtube": "",
    "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/Transport_Fever_3",
+   "enwiki": "https://en.wikipedia.org/wiki/Castlevania:_Belmont%27s_Curse",
    "headerChecked": true,
    "wdRank": 13,
    "rank": 24
@@ -754,39 +757,6 @@
    },
    "rank": 25,
    "steamRank": 14,
-   "wdRank": 16
-  },
-  {
-   "id": "steam-2963950",
-   "slug": "persona-4-revival",
-   "title": "Persona 4 Revival",
-   "description": "Embárcate en una aventura JRPG sobrenatural Resuelve misterios, forja vínculos y despierta tu Persona",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2963950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/e83b7da1c2e9ddbed1a27038bd86e9714b2aa893/header.jpg?t=1788989521",
-   "platforms": [
-    "Windows",
-    "Xbox",
-    "Switch",
-    "PlayStation"
-   ],
-   "genres": [
-    "Aventura",
-    "Rol"
-   ],
-   "releaseText": "17 Feb, 2027",
-   "date": "2027-02-17",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "Story Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415069/729b1a2bc6dfab5aa3d1a5389f3abe4b7f858505/movie_600x337.jpg?t=1788989520",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/2963950/1023138812/3d571e248075a9715bcaee91999186898650cd2b/1788980111/hls_264_master.m3u8?t=1788989520"
-   },
-   "rank": 26,
-   "steamRank": 16,
    "wdRank": 14
   },
   {
@@ -816,38 +786,69 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2381520/556728/e4abf998ed6c084ca9a1cda5d588a54e2b01ca68/1750913258/hls_264_master.m3u8?t=1681919348"
    },
-   "rank": 27,
+   "rank": 26,
    "steamRank": 15
   },
   {
-   "id": "steam-4231820",
-   "slug": "castlevania-belmont-s-curse",
-   "title": "Castlevania: Belmont's Curse",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4231820/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/6b65aec2c398006aea8b76e1463cc34d0e4ba68b/header.jpg?t=1792036946",
+   "id": "wd-Q140036783",
+   "slug": "god-of-war-laufey",
+   "title": "God of War Laufey",
+   "description": "God of War Laufey es un próximo videojuego de acción y aventura en desarrollo por Santa Monica Studio y será publicado por Sony Interactive Entertainment. Está programado para ser lanzado el 16 de febrero de 2027, para PlayStation 5. La undécima entrega de la serie God of War, será el primer juego principal en el que el protagonista de la serie Kratos no es el personaje principal, sino que present",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/God_of_War_Laufey",
+   "image": "https://upload.wikimedia.org/wikipedia/en/0/0b/God_of_War_Laufey_cover.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Switch",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
-    "Metroidvania"
+    "Hack and slash",
+    "Acción-aventura"
    ],
-   "releaseText": "2026-10-15",
-   "date": "2026-10-15",
+   "releaseText": "2027-02-16",
+   "date": "2027-02-16",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/Castlevania:_Belmont%27s_Curse",
-   "headerChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/God_of_War_Laufey",
+   "summaryChecked": true,
+   "enChecked": true,
    "wdRank": 15,
-   "rank": 28
+   "rank": 27
+  },
+  {
+   "id": "steam-4814120",
+   "slug": "ananta",
+   "title": "ANANTA",
+   "description": "Bienvenido a Ananta, un RPG urbano de mundo abierto. Encarna a distintos personajes y explora sin límites: distritos financieros, callejones secretos, plantaciones de té y el casco antiguo, de Chongxiao a Ciudad Nova. Rodéate de compañeros con personalidad y forma tu propio equipo.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4814120/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4814120/3bd40cfd93dfe6e7a21d9f825fa3b82ee1c57105/header.jpg?t=1790579282",
+   "platforms": [
+    "Windows",
+    "PlayStation"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ],
+   "releaseText": "15 Jan, 2027",
+   "date": "2027-01-15",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "ANANTA Launch Date Trailer | Global Release January 15th, 2027",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408424/de7e7513efa8e13833d59724248c01eb547c4489/movie_600x337.jpg?t=1787691848",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4814120/1843987309/e39710bccbe8725c28e86b2081877f8ac66368a5/1787688709/hls_264_master.m3u8?t=1787691848"
+   },
+   "rank": 28,
+   "steamRank": 93,
+   "wdRank": 16
   },
   {
    "id": "steam-2272360",
@@ -877,34 +878,33 @@
    },
    "rank": 29,
    "steamRank": 17,
-   "wdRank": 45
+   "wdRank": 43
   },
   {
-   "id": "wd-Q140036783",
-   "slug": "god-of-war-laufey",
-   "title": "God of War Laufey",
-   "description": "God of War Laufey es un próximo videojuego de acción y aventura en desarrollo por Santa Monica Studio y será publicado por Sony Interactive Entertainment. Está programado para ser lanzado el 16 de febrero de 2027, para PlayStation 5. La undécima entrega de la serie God of War, será el primer juego principal en el que el protagonista de la serie Kratos no es el personaje principal, sino que present",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/God_of_War_Laufey",
-   "image": "https://upload.wikimedia.org/wikipedia/en/0/0b/God_of_War_Laufey_cover.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "id": "steam-3010850",
+   "slug": "gears-of-war-e-day",
+   "title": "Gears of War: E-Day",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3010850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3010850/1abb0c5ef76c14f463dd6e3964adb64f984237d2/header.jpg?t=1792692888",
    "platforms": [
-    "PlayStation"
+    "Windows",
+    "Xbox"
    ],
    "genres": [
-    "Acción-aventura",
-    "Hack and slash"
+    "Disparos en tercera persona"
    ],
-   "releaseText": "2027-02-16",
-   "date": "2027-02-16",
+   "releaseText": "2026-10-06",
+   "date": "2026-10-06",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "12m0bw1W_tk",
    "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/God_of_War_Laufey",
-   "summaryChecked": true,
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Gears_of_War:_E-Day",
+   "headerChecked": true,
    "wdRank": 17,
    "rank": 30
   },
@@ -938,37 +938,33 @@
    "steamRank": 18
   },
   {
-   "id": "steam-4260840",
-   "slug": "stranger-than-heaven",
-   "title": "STRANGER THAN HEAVEN",
-   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
+   "id": "steam-4078430",
+   "slug": "star-wars-galactic-racer",
+   "title": "Star Wars: Galactic Racer",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4260840/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
+   "url": "https://store.steampowered.com/app/4078430/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4078430/97215eb609882139ce6a28419116be23fcf5ac86/header.jpg?t=1791388584",
    "platforms": [
     "Windows",
     "Xbox",
     "PlayStation"
    ],
    "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
+    "Carreras"
    ],
-   "releaseText": "14 Jan, 2027",
-   "date": "2027-01-14",
+   "releaseText": "2026-10-06",
+   "date": "2026-10-06",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": " STRANGER THAN HEAVEN | Cast & Story Reveal Trailer (EN)_202607",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383005/257828cfabad647bc01d69f6d79ef7ec8278216d/movie_600x337.jpg?t=1784823062",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4260840/856039096/49b54c9b61e6d6f1ed834fb60a9cbcd86bc4d27e/1784791368/hls_264_master.m3u8?t=1784823062"
-   },
-   "rank": 32,
-   "steamRank": 55,
-   "wdRank": 18
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "XDBc-kbL-Ic",
+   "languages": 9,
+   "enwiki": "https://en.wikipedia.org/wiki/Star_Wars:_Galactic_Racer",
+   "headerChecked": true,
+   "wdRank": 18,
+   "rank": 32
   },
   {
    "id": "steam-3727390",
@@ -1001,124 +997,37 @@
    "steamRank": 19
   },
   {
-   "id": "steam-4078430",
-   "slug": "star-wars-galactic-racer",
-   "title": "Star Wars: Galactic Racer",
-   "description": "",
+   "id": "steam-4260840",
+   "slug": "stranger-than-heaven",
+   "title": "STRANGER THAN HEAVEN",
+   "description": "Una saga de cincuenta años repleta de acción y aventura sobre aquellos que no tienen adónde ir y su lucha desesperada por encontrar un hogar. Emplea la violencia extrema por sobrevivir y el talento musical para triunfar como representante en cinco ciudades y épocas del Japón moderno.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4078430/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4078430/97215eb609882139ce6a28419116be23fcf5ac86/header.jpg?t=1791388584",
+   "url": "https://store.steampowered.com/app/4260840/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260840/3e40b76faf9a3eafb4397dd51308eb2e48ac3660/header.jpg?t=1792676075",
    "platforms": [
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Carreras"
-   ],
-   "releaseText": "2026-10-06",
-   "date": "2026-10-06",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "XDBc-kbL-Ic",
-   "languages": 9,
-   "enwiki": "https://en.wikipedia.org/wiki/Star_Wars:_Galactic_Racer",
-   "headerChecked": true,
-   "wdRank": 19,
-   "rank": 34
-  },
-  {
-   "id": "steam-2873440",
-   "slug": "chrono-odyssey",
-   "title": "Chrono Odyssey",
-   "description": "Chrono Odyssey: un MMORPG de acción de próxima generación. Las características del juego incluyen imágenes impresionantes creadas con Unreal Engine 5, un vasto e intrincado mundo abierto, dinámicas mecánicas de combate de acción basadas en la manipulación del tiempo y una amplia personalización.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2873440/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873440/de48f2d77db5eb14226739d563fdd68332c39e30/header.jpg?t=1788925974",
-   "platforms": [
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
     "Acción",
     "Aventura",
-    "Multijugador masivo"
-   ],
-   "releaseText": "To be announced",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "Chrono Odyssey | Gameplay Walkthrough",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257155991/957924f1adfc83961b24809a1e76164c68c0d9ef/movie_600x337.jpg?t=1749773557",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/2873440/1862722235/30a55ee0b9ece193f61a3752cecf7c3815352e5f/1750965157/hls_264_master.m3u8?t=1749773557"
-   },
-   "rank": 35,
-   "steamRank": 21
-  },
-  {
-   "id": "steam-4245560",
-   "slug": "spyro-a-realm-beyond",
-   "title": "Spyro: A Realm Beyond",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4245560/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4245560/09b109726c8458478e4c2f36f3784a9a4c24edac/header.jpg?t=1781623703",
-   "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Acción-aventura",
-    "Videojuego de plataformas"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "vHFW16_mDbo",
-   "languages": 8,
-   "enwiki": "https://en.wikipedia.org/wiki/Spyro:_A_Realm_Beyond",
-   "headerChecked": true,
-   "wdRank": 21,
-   "rank": 36
-  },
-  {
-   "id": "steam-3710600",
-   "slug": "warhammer-40-000-dark-heresy",
-   "title": "Warhammer 40,000: Dark Heresy",
-   "description": "Conviértete en acólito de la Inquisición en este cRPG oscuro y narrativo. Investiga, descubre conspiraciones, lucha tácticamente y combate la herejía. Toma decisiones difíciles como instrumento del Emperador.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3710600/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3710600/c9cff4a2e091c0590909762a6d4296eeee5859a1/header.jpg?t=1792622669",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Indie",
     "Rol"
    ],
-   "releaseText": "Coming soon",
-   "date": null,
-   "precision": null,
+   "releaseText": "14 Jan, 2027",
+   "date": "2027-01-14",
+   "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T16:07:54Z",
    "trailer": {
-    "name": "Announcement trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257142240/f0ca7e7d845b273aebf537cbb49a315ae967007b/movie_600x337.jpg?t=1747928456",
+    "name": " STRANGER THAN HEAVEN | Cast & Story Reveal Trailer (EN)_202607",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383005/257828cfabad647bc01d69f6d79ef7ec8278216d/movie_600x337.jpg?t=1784823062",
     "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/3710600/299273963/d202fcdda27a7e3a8d7d5f2b2fbb86657640e0c6/1750428064/hls_264_master.m3u8?t=1747928456"
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4260840/856039096/49b54c9b61e6d6f1ed834fb60a9cbcd86bc4d27e/1784791368/hls_264_master.m3u8?t=1784823062"
    },
-   "rank": 37,
-   "steamRank": 22
+   "rank": 34,
+   "steamRank": 55,
+   "wdRank": 19
   },
   {
    "id": "steam-4354570",
@@ -1147,9 +1056,100 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4354570/491997898/ad7db182962c1cfa4e8c0f282b9cc3250d29d905/1791189988/hls_264_master.m3u8?t=1791260845"
    },
-   "rank": 38,
+   "rank": 35,
    "steamRank": 50,
-   "wdRank": 22
+   "wdRank": 20
+  },
+  {
+   "id": "steam-2873440",
+   "slug": "chrono-odyssey",
+   "title": "Chrono Odyssey",
+   "description": "Chrono Odyssey: un MMORPG de acción de próxima generación. Las características del juego incluyen imágenes impresionantes creadas con Unreal Engine 5, un vasto e intrincado mundo abierto, dinámicas mecánicas de combate de acción basadas en la manipulación del tiempo y una amplia personalización.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2873440/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873440/de48f2d77db5eb14226739d563fdd68332c39e30/header.jpg?t=1788925974",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ],
+   "releaseText": "To be announced",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "Chrono Odyssey | Gameplay Walkthrough",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257155991/957924f1adfc83961b24809a1e76164c68c0d9ef/movie_600x337.jpg?t=1749773557",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2873440/1862722235/30a55ee0b9ece193f61a3752cecf7c3815352e5f/1750965157/hls_264_master.m3u8?t=1749773557"
+   },
+   "rank": 36,
+   "steamRank": 21
+  },
+  {
+   "id": "steam-4245560",
+   "slug": "spyro-a-realm-beyond",
+   "title": "Spyro: A Realm Beyond",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4245560/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4245560/09b109726c8458478e4c2f36f3784a9a4c24edac/header.jpg?t=1781623703",
+   "platforms": [
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Acción-aventura",
+    "Videojuego de plataformas"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "vHFW16_mDbo",
+   "languages": 8,
+   "enwiki": "https://en.wikipedia.org/wiki/Spyro:_A_Realm_Beyond",
+   "headerChecked": true,
+   "wdRank": 21,
+   "rank": 37
+  },
+  {
+   "id": "steam-3710600",
+   "slug": "warhammer-40-000-dark-heresy",
+   "title": "Warhammer 40,000: Dark Heresy",
+   "description": "Conviértete en acólito de la Inquisición en este cRPG oscuro y narrativo. Investiga, descubre conspiraciones, lucha tácticamente y combate la herejía. Toma decisiones difíciles como instrumento del Emperador.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3710600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3710600/c9cff4a2e091c0590909762a6d4296eeee5859a1/header.jpg?t=1792622669",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie",
+    "Rol"
+   ],
+   "releaseText": "Coming soon",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "Announcement trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257142240/f0ca7e7d845b273aebf537cbb49a315ae967007b/movie_600x337.jpg?t=1747928456",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3710600/299273963/d202fcdda27a7e3a8d7d5f2b2fbb86657640e0c6/1750428064/hls_264_master.m3u8?t=1747928456"
+   },
+   "rank": 38,
+   "steamRank": 22
   },
   {
    "id": "steam-1340720",
@@ -1184,35 +1184,36 @@
    "wdRank": 35
   },
   {
-   "id": "steam-2439280",
-   "slug": "clockwork-revolution",
-   "title": "Clockwork Revolution",
-   "description": "CAMBIA EL PASADO. CONTROLA EL FUTURO. Altera el curso de la historia y reescribe el futuro en este RPG en primera persona tipo steampunk.",
+   "id": "steam-1912410",
+   "slug": "minecraft-dungeons-ii",
+   "title": "Minecraft Dungeons II",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2439280/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2439280/19eb8ba017772920c7c6bf4287c0403b9675425d/header.jpg?t=1788707156",
+   "url": "https://store.steampowered.com/app/1912410/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1912410/86cbba83c1aaffa0b0efa4197ce29c2264ea9dc2/header.jpg?t=1791536987",
    "platforms": [
     "Windows",
-    "Xbox"
+    "Switch",
+    "Xbox",
+    "PlayStation"
    ],
    "genres": [
-    "Acción",
-    "Rol"
+    "Videojuego de aventura",
+    "Videojuego de acción",
+    "Videojuego de rol"
    ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "Clockwork Revolution Xbox Games Showcase 2026",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257353705/66a702ce655176a27b24bc97fc504d2ec14bbd33/movie_600x337.jpg?t=1780944067",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/2439280/1063503474/7815be5602d2deede6dde5dae9bb2637a94efa49/1780941088/hls_264_master.m3u8?t=1780944067"
-   },
-   "rank": 40,
-   "steamRank": 48,
-   "wdRank": 23
+   "releaseText": "2026-09-29",
+   "date": "2026-09-29",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 7,
+   "enwiki": "https://en.wikipedia.org/wiki/Minecraft_Dungeons_II",
+   "headerChecked": true,
+   "wdRank": 23,
+   "rank": 40
   },
   {
    "id": "steam-2582960",
@@ -1245,30 +1246,31 @@
    "steamRank": 24
   },
   {
-   "id": "wd-Q141391458",
-   "slug": "metroid-ravenous",
-   "title": "Metroid Ravenous",
-   "description": "Metroid Ravenous, también conocido como 'Metroid 6', es un próximo juego de acción y aventura desarrollado por MercurySteam y Nintendo EPD y publicado por Nintendo para Nintendo Switch 2. Es la sexta entrega principal de la serie Metroid, y tiene lugar después de Metroid Dread (2021).",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/Metroid_Ravenous",
-   "image": "https://upload.wikimedia.org/wikipedia/en/9/93/MetroidRavenous.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "id": "steam-4084710",
+   "slug": "rayman-legends-retold",
+   "title": "Rayman Legends Retold",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4084710/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4084710/4fc23980ce04f33d7dc91bf38d74591ec00015cb/header.jpg?t=1790860160",
    "platforms": [
-    "Switch"
+    "Windows"
    ],
    "genres": [
-    "Metroidvania"
+    "Videojuego de aventura",
+    "Videojuego de acción",
+    "Videojuego casual"
    ],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
+   "releaseText": "2026-10-01",
+   "date": "2026-10-01",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "TKfG9hiueak",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Metroid_Ravenous",
-   "summaryChecked": true,
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Rayman_Legends_Retold",
+   "headerChecked": true,
    "wdRank": 24,
    "rank": 42
   },
@@ -1303,34 +1305,28 @@
    "steamRank": 25
   },
   {
-   "id": "steam-1912410",
-   "slug": "minecraft-dungeons-ii",
-   "title": "Minecraft Dungeons II",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1912410/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1912410/86cbba83c1aaffa0b0efa4197ce29c2264ea9dc2/header.jpg?t=1791536987",
+   "id": "wd-Q140036775",
+   "slug": "until-dawn-2",
+   "title": "Until Dawn 2",
+   "description": "Until Dawn 2 es un próximo videojuego de terror interactivo desarrollado por Firesprite y publicado por Sony Interactive Entertainment para PlayStation 5. Es la secuela de Until Dawn (2015), aunque fue concebido como una experiencia independiente, con un nuevo elenco de personajes y un escenario diferente. Su lanzamiento está previsto para el 28 de enero de 2027.",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/Until_Dawn_2",
+   "image": "https://upload.wikimedia.org/wikipedia/en/4/4a/Until_Dawn_2_cover_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
-   "genres": [
-    "Videojuego de aventura",
-    "Videojuego de acción",
-    "Videojuego de rol"
-   ],
-   "releaseText": "2026-09-29",
-   "date": "2026-09-29",
+   "genres": [],
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Minecraft_Dungeons_II",
-   "headerChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Until_Dawn_2",
+   "summaryChecked": true,
+   "enChecked": true,
    "wdRank": 25,
    "rank": 44
   },
@@ -1365,31 +1361,30 @@
    "steamRank": 26
   },
   {
-   "id": "steam-4084710",
-   "slug": "rayman-legends-retold",
-   "title": "Rayman Legends Retold",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4084710/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4084710/4fc23980ce04f33d7dc91bf38d74591ec00015cb/header.jpg?t=1790860160",
+   "id": "wd-Q141391458",
+   "slug": "metroid-ravenous",
+   "title": "Metroid Ravenous",
+   "description": "Metroid Ravenous, también conocido como 'Metroid 6', es un próximo juego de acción y aventura desarrollado por MercurySteam y Nintendo EPD y publicado por Nintendo para Nintendo Switch 2. Es la sexta entrega principal de la serie Metroid, y tiene lugar después de Metroid Dread (2021).",
+   "store": "Wikipedia",
+   "url": "https://es.wikipedia.org/wiki/Metroid_Ravenous",
+   "image": "https://upload.wikimedia.org/wikipedia/en/9/93/MetroidRavenous.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "platforms": [
-    "Windows"
+    "Switch"
    ],
    "genres": [
-    "Videojuego de aventura",
-    "Videojuego de acción",
-    "Videojuego casual"
+    "Metroidvania"
    ],
-   "releaseText": "2026-10-01",
-   "date": "2026-10-01",
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "TKfG9hiueak",
+   "youtube": "",
    "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Rayman_Legends_Retold",
-   "headerChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Metroid_Ravenous",
+   "summaryChecked": true,
+   "enChecked": true,
    "wdRank": 26,
    "rank": 46
   },
@@ -1422,30 +1417,35 @@
    "steamRank": 27
   },
   {
-   "id": "wd-Q140036775",
-   "slug": "until-dawn-2",
-   "title": "Until Dawn 2",
-   "description": "Until Dawn 2 es un próximo videojuego de terror interactivo desarrollado por Firesprite y publicado por Sony Interactive Entertainment para PlayStation 5. Es la secuela de Until Dawn (2015), aunque fue concebido como una experiencia independiente, con un nuevo elenco de personajes y un escenario diferente. Su lanzamiento está previsto para el 28 de enero de 2027.",
-   "store": "Wikipedia",
-   "url": "https://es.wikipedia.org/wiki/Until_Dawn_2",
-   "image": "https://upload.wikimedia.org/wikipedia/en/4/4a/Until_Dawn_2_cover_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "id": "steam-2439280",
+   "slug": "clockwork-revolution",
+   "title": "Clockwork Revolution",
+   "description": "CAMBIA EL PASADO. CONTROLA EL FUTURO. Altera el curso de la historia y reescribe el futuro en este RPG en primera persona tipo steampunk.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2439280/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2439280/19eb8ba017772920c7c6bf4287c0403b9675425d/header.jpg?t=1788707156",
    "platforms": [
-    "PlayStation"
+    "Windows",
+    "Xbox"
    ],
-   "genres": [],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
-   "precision": "day",
+   "genres": [
+    "Acción",
+    "Rol"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 7,
-   "enwiki": "https://en.wikipedia.org/wiki/Until_Dawn_2",
-   "summaryChecked": true,
-   "enChecked": true,
-   "wdRank": 27,
-   "rank": 48
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "Clockwork Revolution Xbox Games Showcase 2026",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257353705/66a702ce655176a27b24bc97fc504d2ec14bbd33/movie_600x337.jpg?t=1780944067",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2439280/1063503474/7815be5602d2deede6dde5dae9bb2637a94efa49/1780941088/hls_264_master.m3u8?t=1780944067"
+   },
+   "rank": 48,
+   "steamRank": 48,
+   "wdRank": 27
   },
   {
    "id": "steam-2340970",
@@ -1485,10 +1485,10 @@
    "url": "https://store.steampowered.com/app/2694490/",
    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/24eeddcbda17903f03d819588757e40845f8115f/header.jpg?t=1787697213",
    "platforms": [
-    "Xbox",
-    "PlayStation",
     "Mac",
-    "Windows"
+    "Windows",
+    "Xbox",
+    "PlayStation"
    ],
    "genres": [
     "Videojuego de rol de acción"
@@ -1497,7 +1497,7 @@
    "date": "2026-12-11",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "9OosC1E8TVM",
    "languages": 6,
@@ -1537,32 +1537,32 @@
    "steamRank": 29
   },
   {
-   "id": "wd-Q116734043",
-   "slug": "el-profesor-layton-y-el-nuevo-mundo-a-vapor",
-   "title": "El profesor Layton y el Nuevo Mundo a vapor",
+   "id": "steam-1551980",
+   "slug": "clive-barker-s-hellraiser-revival",
+   "title": "Clive Barker's Hellraiser: Revival",
    "description": "",
-   "store": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
-   "image": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1551980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/d1e7111b93b6a8b3eb029908887648348c2c55e6/header.jpg?t=1791462446",
    "platforms": [
+    "Windows",
     "Switch",
-    "PlayStation",
-    "Windows"
+    "Xbox",
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de aventura",
-    "Videojuego de lógica"
+    "Videojuego de terror"
    ],
-   "releaseText": "2026-12-10",
-   "date": "2026-12-10",
+   "releaseText": "2026-10-08",
+   "date": "2026-10-08",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "",
+   "youtube": "E_4kAp6gsZE",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
-   "enChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Clive_Barker%27s_Hellraiser:_Revival",
+   "headerChecked": true,
    "wdRank": 29,
    "rank": 52
   },
@@ -1597,31 +1597,30 @@
    "steamRank": 30
   },
   {
-   "id": "steam-1551980",
-   "slug": "clive-barker-s-hellraiser-revival",
-   "title": "Clive Barker's Hellraiser: Revival",
+   "id": "steam-3061930",
+   "slug": "clutch",
+   "title": "Clutch",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/1551980/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/d1e7111b93b6a8b3eb029908887648348c2c55e6/header.jpg?t=1791462446",
+   "url": "https://store.steampowered.com/app/3061930/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061930/26691256a0032fe27b2cd378db0ea07656ab9f1c/header.jpg?t=1792599379",
    "platforms": [
-    "Switch",
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de terror"
+    "Videojuego de conducción"
    ],
-   "releaseText": "2026-10-08",
-   "date": "2026-10-08",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "E_4kAp6gsZE",
+   "youtube": "",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Clive_Barker%27s_Hellraiser:_Revival",
+   "enwiki": "https://en.wikipedia.org/wiki/Clutch_(video_game)",
    "headerChecked": true,
    "wdRank": 30,
    "rank": 54
@@ -1672,7 +1671,7 @@
    "date": "2026-10-22",
    "precision": "day",
    "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
@@ -1728,7 +1727,7 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
@@ -1786,7 +1785,7 @@
    "date": "2026-11-04",
    "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "ubf2XFWyPfk",
    "languages": 6,
@@ -1825,31 +1824,32 @@
    "steamRank": 34
   },
   {
-   "id": "steam-3061930",
-   "slug": "clutch",
-   "title": "Clutch",
+   "id": "wd-Q116734043",
+   "slug": "el-profesor-layton-y-el-nuevo-mundo-a-vapor",
+   "title": "El profesor Layton y el Nuevo Mundo a vapor",
    "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3061930/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061930/26691256a0032fe27b2cd378db0ea07656ab9f1c/header.jpg?t=1792599379",
+   "store": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
+   "image": "",
    "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
+    "Windows",
+    "Switch",
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de conducción"
+    "Videojuego de aventura",
+    "Videojuego de lógica"
    ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
+   "releaseText": "2026-12-10",
+   "date": "2026-12-10",
+   "precision": "day",
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
-   "enwiki": "https://en.wikipedia.org/wiki/Clutch_(video_game)",
-   "headerChecked": true,
+   "enwiki": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_New_World_of_Steam",
+   "enChecked": true,
    "wdRank": 34,
    "rank": 62
   },
@@ -1931,7 +1931,7 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 6,
@@ -1972,6 +1972,35 @@
    "steamRank": 37
   },
   {
+   "id": "steam-3219030",
+   "slug": "planet-zoo-2",
+   "title": "Planet Zoo 2",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3219030/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/a5131aa4b84d04a55e3b9c561d7c886cc22bbe1c/header.jpg?t=1792660647",
+   "platforms": [
+    "Windows",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Videojuego de construcción y gestión"
+   ],
+   "releaseText": "2026-10-13",
+   "date": "2026-10-13",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 5,
+   "enwiki": "https://en.wikipedia.org/wiki/Planet_Zoo_2",
+   "headerChecked": true,
+   "wdRank": 37,
+   "rank": 67
+  },
+  {
    "id": "steam-1313230",
    "slug": "beautiful-light",
    "title": "Beautiful Light",
@@ -1998,35 +2027,36 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/1313230/1033069903/b8abfb232495feb789a37099a1979522c346d703/1767885149/hls_264_master.m3u8?t=1767907877"
    },
-   "rank": 67,
+   "rank": 68,
    "steamRank": 38
   },
   {
-   "id": "steam-2155070",
-   "slug": "fate-extra-record",
-   "title": "Fate/EXTRA Record",
+   "id": "steam-3259780",
+   "slug": "final-fantasy-resonance",
+   "title": "Final Fantasy Resonance",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2155070/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2155070/be0b6645d5593ad4b38feaa57ebb6a324c7d04cf/header.jpg?t=1789712401",
+   "url": "https://store.steampowered.com/app/3259780/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3259780/710da43babb2043f9f6ad0e50023e31167d94708/header.jpg?t=1792758611",
    "platforms": [
+    "Windows",
     "Switch",
-    "PlayStation",
-    "Windows"
+    "Xbox",
+    "PlayStation"
    ],
    "genres": [],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
+   "releaseText": "2026-10-22",
+   "date": "2026-10-22",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 5,
-   "enwiki": "https://en.wikipedia.org/wiki/Fate/Extra_Record",
+   "enwiki": "https://en.wikipedia.org/wiki/Final_Fantasy_Resonance",
    "headerChecked": true,
    "wdRank": 38,
-   "rank": 68
+   "rank": 69
   },
   {
    "id": "steam-2861080",
@@ -2054,36 +2084,8 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2861080/1987033432/0e629ecbc8cf1657312405c4fd5999caf08687ec/1791481357/hls_264_master.m3u8?t=1791481975"
    },
-   "rank": 69,
+   "rank": 70,
    "steamRank": 39
-  },
-  {
-   "id": "steam-3259780",
-   "slug": "final-fantasy-resonance",
-   "title": "Final Fantasy Resonance",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3259780/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3259780/710da43babb2043f9f6ad0e50023e31167d94708/header.jpg?t=1792758611",
-   "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [],
-   "releaseText": "2026-10-22",
-   "date": "2026-10-22",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 5,
-   "enwiki": "https://en.wikipedia.org/wiki/Final_Fantasy_Resonance",
-   "headerChecked": true,
-   "wdRank": 39,
-   "rank": 70
   },
   {
    "id": "steam-2724650",
@@ -2116,30 +2118,28 @@
    "steamRank": 40
   },
   {
-   "id": "steam-3219030",
-   "slug": "planet-zoo-2",
-   "title": "Planet Zoo 2",
+   "id": "steam-2155070",
+   "slug": "fate-extra-record",
+   "title": "Fate/EXTRA Record",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/3219030/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/a5131aa4b84d04a55e3b9c561d7c886cc22bbe1c/header.jpg?t=1792660647",
+   "url": "https://store.steampowered.com/app/2155070/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2155070/be0b6645d5593ad4b38feaa57ebb6a324c7d04cf/header.jpg?t=1789712401",
    "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
+    "Windows",
+    "Switch",
+    "PlayStation"
    ],
-   "genres": [
-    "Videojuego de construcción y gestión"
-   ],
-   "releaseText": "2026-10-13",
-   "date": "2026-10-13",
+   "genres": [],
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
    "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 5,
-   "enwiki": "https://en.wikipedia.org/wiki/Planet_Zoo_2",
+   "enwiki": "https://en.wikipedia.org/wiki/Fate/Extra_Record",
    "headerChecked": true,
    "wdRank": 40,
    "rank": 72
@@ -2240,33 +2240,33 @@
    "wdRank": 58
   },
   {
-   "id": "steam-1952620",
-   "slug": "the-lost-wild",
-   "title": "The Lost Wild",
-   "description": "El miedo es primitivo. Adéntrate en esta experiencia de terror, supervivencia y evasión mientras te enfrentas a los cazadores más fieros: los dinosaurios. Explora instalaciones abandonadas, recoge recursos, lucha por sobrevivir y resuelve el misterio que oculta la isla.",
+   "id": "steam-2828710",
+   "slug": "valor-mortis",
+   "title": "Valor Mortis",
+   "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/1952620/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1952620/c4a4cc62ec8b70700df7aa8f981513f17d170a89/header.jpg?t=1781547914",
+   "url": "https://store.steampowered.com/app/2828710/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2828710/e729c7f909db5c52ea780923d9b258517162866a/header.jpg?t=1792608118",
    "platforms": [
-    "Windows"
+    "Windows",
+    "Xbox",
+    "PlayStation"
    ],
    "genres": [
-    "Aventura"
+    "Soulslike"
    ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "Official Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257335786/d0583e478bb5d02f2e04ef4d27fe854b5e937921/movie_600x337.jpg?t=1780438190",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/1952620/2135989364/9230b105bf24c0c02895d0e3ea49f2fcef1bec57/1780372818/hls_264_master.m3u8?t=1780438190"
-   },
-   "rank": 76,
-   "steamRank": 58,
-   "wdRank": 42
+   "releaseText": "2026-10-13",
+   "date": "2026-10-13",
+   "precision": "day",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "cIF7cL0KRDU",
+   "languages": 4,
+   "enwiki": "https://en.wikipedia.org/wiki/Valor_Mortis",
+   "headerChecked": true,
+   "wdRank": 42,
+   "rank": 76
   },
   {
    "id": "steam-2956040",
@@ -2301,38 +2301,6 @@
    "steamRank": 43
   },
   {
-   "id": "steam-2924540",
-   "slug": "crazy-taxi-world-tour",
-   "title": "Crazy Taxi: World Tour",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2924540/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2924540/7ccfd3f4ac88238c6719e5e161d57b0524e18bce/header.jpg?t=1789596114",
-   "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Videojuego de aventura",
-    "Videojuego de acción",
-    "Carreras"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "ePi8tDdKuWw",
-   "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Crazy_Taxi:_World_Tour",
-   "headerChecked": true,
-   "wdRank": 43,
-   "rank": 78
-  },
-  {
    "id": "steam-3255110",
    "slug": "grave-seasons",
    "title": "Grave Seasons",
@@ -2359,37 +2327,36 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3255110/2027701530/795df69b78a14e4e25127a81b8f51bf5e8b0ab71/1791483787/hls_264_master.m3u8?t=1791484581"
    },
-   "rank": 79,
+   "rank": 78,
    "steamRank": 44
   },
   {
-   "id": "steam-2828710",
-   "slug": "valor-mortis",
-   "title": "Valor Mortis",
+   "id": "steam-4223290",
+   "slug": "mega-man-dual-override",
+   "title": "Mega Man: Dual Override",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2828710/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2828710/e729c7f909db5c52ea780923d9b258517162866a/header.jpg?t=1792608118",
+   "url": "https://store.steampowered.com/app/4223290/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4223290/08af2430e76e5a61a26f5678348f5e1ace2c4b2b/header.jpg?t=1792127306",
    "platforms": [
+    "Windows",
+    "Switch",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
-   "genres": [
-    "Soulslike"
-   ],
-   "releaseText": "2026-10-13",
-   "date": "2026-10-13",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "genres": [],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "cIF7cL0KRDU",
+   "youtube": "8i97QCOWSC4",
    "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Valor_Mortis",
+   "enwiki": "https://en.wikipedia.org/wiki/Mega_Man:_Dual_Override",
    "headerChecked": true,
    "wdRank": 44,
-   "rank": 80
+   "rank": 79
   },
   {
    "id": "steam-3161310",
@@ -2416,8 +2383,38 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3161310/538360371/9211592f8686206c58eed808fb018026578f7b70/1791818203/hls_264_master.m3u8?t=1791819277"
    },
-   "rank": 81,
+   "rank": 80,
    "steamRank": 45
+  },
+  {
+   "id": "steam-4507990",
+   "slug": "wo-long-2-wings-of-ember",
+   "title": "Wo Long 2: Wings of Ember",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4507990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4507990/7e7746ce07e19dc3a0e7f9b08546b9ffb9cbefd0/header.jpg?t=1790813604",
+   "platforms": [
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Videojuego de rol de acción"
+   ],
+   "releaseText": "2027-03-04",
+   "date": "2027-03-04",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 4,
+   "enwiki": "https://en.wikipedia.org/wiki/Wo_Long_2:_Wings_of_Ember",
+   "headerChecked": true,
+   "wdRank": 45,
+   "rank": 81
   },
   {
    "id": "steam-3864580",
@@ -2450,31 +2447,30 @@
    "steamRank": 46
   },
   {
-   "id": "steam-4507990",
-   "slug": "wo-long-2-wings-of-ember",
-   "title": "Wo Long 2: Wings of Ember",
+   "id": "steam-3676410",
+   "slug": "senua",
+   "title": "Senua",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4507990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4507990/7e7746ce07e19dc3a0e7f9b08546b9ffb9cbefd0/header.jpg?t=1790813604",
+   "url": "https://store.steampowered.com/app/3676410/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3676410/75370f45cdab9ada45b18804cd27d0897dd4c727/header.jpg?t=1781189123",
    "platforms": [
-    "Switch",
+    "Windows",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
    "genres": [
-    "Videojuego de rol de acción"
+    "Acción-aventura"
    ],
-   "releaseText": "2027-03-04",
-   "date": "2027-03-04",
-   "precision": "day",
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Wo_Long_2:_Wings_of_Ember",
+   "enwiki": "https://en.wikipedia.org/wiki/Senua_(video_game)",
    "headerChecked": true,
    "wdRank": 46,
    "rank": 83
@@ -2510,35 +2506,6 @@
    "steamRank": 47
   },
   {
-   "id": "steam-3676410",
-   "slug": "senua",
-   "title": "Senua",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3676410/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3676410/75370f45cdab9ada45b18804cd27d0897dd4c727/header.jpg?t=1781189123",
-   "platforms": [
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Acción-aventura"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Senua_(video_game)",
-   "headerChecked": true,
-   "wdRank": 47,
-   "rank": 85
-  },
-  {
    "id": "wd-Q140139664",
    "slug": "xenoblade-genesis",
    "title": "Xenoblade Genesis",
@@ -2556,14 +2523,43 @@
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 4,
    "enwiki": "https://en.wikipedia.org/wiki/Xenoblade_Genesis",
    "enChecked": true,
-   "wdRank": 48,
-   "rank": 86
+   "wdRank": 47,
+   "rank": 85
+  },
+  {
+   "id": "steam-1952620",
+   "slug": "the-lost-wild",
+   "title": "The Lost Wild",
+   "description": "El miedo es primitivo. Adéntrate en esta experiencia de terror, supervivencia y evasión mientras te enfrentas a los cazadores más fieros: los dinosaurios. Explora instalaciones abandonadas, recoge recursos, lucha por sobrevivir y resuelve el misterio que oculta la isla.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1952620/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1952620/c4a4cc62ec8b70700df7aa8f981513f17d170a89/header.jpg?t=1781547914",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "Official Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257335786/d0583e478bb5d02f2e04ef4d27fe854b5e937921/movie_600x337.jpg?t=1780438190",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1952620/2135989364/9230b105bf24c0c02895d0e3ea49f2fcef1bec57/1780372818/hls_264_master.m3u8?t=1780438190"
+   },
+   "rank": 86,
+   "steamRank": 58,
+   "wdRank": 48
   },
   {
    "id": "steam-2610770",
@@ -2595,29 +2591,33 @@
    "steamRank": 49
   },
   {
-   "id": "steam-4223290",
-   "slug": "mega-man-dual-override",
-   "title": "Mega Man: Dual Override",
+   "id": "steam-2924540",
+   "slug": "crazy-taxi-world-tour",
+   "title": "Crazy Taxi: World Tour",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4223290/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4223290/08af2430e76e5a61a26f5678348f5e1ace2c4b2b/header.jpg?t=1792127306",
+   "url": "https://store.steampowered.com/app/2924540/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2924540/7ccfd3f4ac88238c6719e5e161d57b0524e18bce/header.jpg?t=1789596114",
    "platforms": [
+    "Windows",
     "Switch",
     "Xbox",
-    "PlayStation",
-    "Windows"
+    "PlayStation"
    ],
-   "genres": [],
+   "genres": [
+    "Videojuego de aventura",
+    "Videojuego de acción",
+    "Carreras"
+   ],
    "releaseText": "2027",
    "date": null,
    "precision": null,
    "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
-   "youtube": "8i97QCOWSC4",
+   "youtube": "ePi8tDdKuWw",
    "languages": 4,
-   "enwiki": "https://en.wikipedia.org/wiki/Mega_Man:_Dual_Override",
+   "enwiki": "https://en.wikipedia.org/wiki/Crazy_Taxi:_World_Tour",
    "headerChecked": true,
    "wdRank": 49,
    "rank": 88
@@ -2685,6 +2685,37 @@
    },
    "rank": 90,
    "steamRank": 51,
+   "wdRank": 56
+  },
+  {
+   "id": "steam-1586260",
+   "slug": "blackfrost-the-long-dark-2",
+   "title": "BLACKFROST: The Long Dark 2",
+   "description": "A year after the Aurora’s appearance &amp; the world went dark, the people of Harmont &amp; its vast wild environs struggle to survive the Quiet Apocalypse. Survive alone or with others against a host of new hazards &amp; a fresh new survival sandbox from a pioneer of the genre. Live together. Die alone.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1586260/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/header.jpg?t=1784314335",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "BLACKFROST Announcement Teaser",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257079407/78683c098e4f6303e55ceb361647b4641e2b65b1/movie_600x337.jpg?t=1734054953",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1586260/795794/b6447c6b11a410e09845cb9e763b6744af42c459/1751006602/hls_264_master.m3u8?t=1734054953"
+   },
+   "rank": 91,
+   "steamRank": 66,
    "wdRank": 51
   },
   {
@@ -2716,41 +2747,37 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2318330/1950562636/646b2427be9b5b0d3f933513aab1b03bcf130f78/1790724918/hls_264_master.m3u8?t=1790726659"
    },
-   "rank": 91,
+   "rank": 92,
    "steamRank": 52
   },
   {
-   "id": "steam-2900640",
-   "slug": "toem-2",
-   "title": "TOEM 2",
-   "description": "",
+   "id": "steam-2838950",
+   "slug": "juego-de-tronos-war-for-westeros",
+   "title": "Juego de Tronos: War for Westeros",
+   "description": "Estrategia clásica en tiempo real en el mundo de Poniente. Conquista los Siete Reinos en solitario o domina a tus enemigos para reclamar el Trono de Hierro en escaramuzas multijugador. Dirige a las grandes casas, reúne a héroes emblemáticos y reescribe el destino de esta tierra.",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/2900640/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2900640/499ae31f4d74c4c41e61058259fca32ccd73c93c/header.jpg?t=1790697404",
+   "url": "https://store.steampowered.com/app/2838950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2838950/91ecd6742ce83635e3a2fab5553fdd9e2a74483b/header.jpg?t=1791436369",
    "platforms": [
-    "Switch",
-    "PlayStation",
-    "Mac",
-    "Linux",
     "Windows"
    ],
    "genres": [
-    "Videojuego de aventura",
-    "Videojuego casual",
-    "Videojuego de fotografía"
+    "Estrategia"
    ],
-   "releaseText": "2026-09-29",
-   "date": "2026-09-29",
-   "precision": "day",
-   "comingSoon": false,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 3,
-   "enwiki": "https://en.wikipedia.org/wiki/Toem_2",
-   "headerChecked": true,
-   "wdRank": 52,
-   "rank": 92
+   "releaseText": "2027",
+   "date": null,
+   "precision": null,
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:09:58Z",
+   "trailer": {
+    "name": "GOT: Gameplay Reveal Trailer (Aug, 2026)",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257406773/ab460e7810265165f6c8c187f520d2b3bbb0208f/movie_600x337.jpg?t=1787683248",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/2838950/1292475594/aa25590eabff6be9cd555757f82f60e855409aee/1787531536/hls_264_master.m3u8?t=1787683248"
+   },
+   "rank": 93,
+   "steamRank": 96,
+   "wdRank": 52
   },
   {
    "id": "steam-2692660",
@@ -2779,98 +2806,8 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/2692660/439555736/833353cd57baf07615213749b01a37f944946a1c/1792491305/hls_264_master.m3u8?t=1792511692"
    },
-   "rank": 93,
-   "steamRank": 53
-  },
-  {
-   "id": "steam-1586260",
-   "slug": "blackfrost-the-long-dark-2",
-   "title": "BLACKFROST: The Long Dark 2",
-   "description": "A year after the Aurora’s appearance &amp; the world went dark, the people of Harmont &amp; its vast wild environs struggle to survive the Quiet Apocalypse. Survive alone or with others against a host of new hazards &amp; a fresh new survival sandbox from a pioneer of the genre. Live together. Die alone.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1586260/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1586260/header.jpg?t=1784314335",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Indie",
-    "Simuladores"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "BLACKFROST Announcement Teaser",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257079407/78683c098e4f6303e55ceb361647b4641e2b65b1/movie_600x337.jpg?t=1734054953",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/1586260/795794/b6447c6b11a410e09845cb9e763b6744af42c459/1751006602/hls_264_master.m3u8?t=1734054953"
-   },
    "rank": 94,
-   "steamRank": 66,
-   "wdRank": 53
-  },
-  {
-   "id": "steam-4150720",
-   "slug": "pukey-goddess-shot-trick",
-   "title": "PUKEY GODDESS SHOT TRICK",
-   "description": "Juega a una ruleta rusa de chupitos con una diablilla que siente por ti un amor de los que matan. Se trata de un juego de supervivencia donde o provocas que ella vomite su alma o será la tuya la que potes. Cuanto más bebas, más reglas podrás saltarte... te lo pasarás de muerte.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4150720/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150720/7d4ab50bd6073a912094cb2b17d0617415e002d3/header.jpg?t=1792768849",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "8 Dec, 2026",
-   "date": "2026-12-08",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:07:54Z",
-   "trailer": {
-    "name": "Drunken Goddess Reflux_2nd Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257475337/bc82cfa57d50a0d54fe89ee970274030befa92dd/movie_600x337.jpg?t=1792758286",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4150720/1305757145/0509265759baa92af331ef79967d9906872f2fc0/1792757320/hls_264_master.m3u8?t=1792758286"
-   },
-   "rank": 95,
-   "steamRank": 54
-  },
-  {
-   "id": "steam-2838950",
-   "slug": "juego-de-tronos-war-for-westeros",
-   "title": "Juego de Tronos: War for Westeros",
-   "description": "Estrategia clásica en tiempo real en el mundo de Poniente. Conquista los Siete Reinos en solitario o domina a tus enemigos para reclamar el Trono de Hierro en escaramuzas multijugador. Dirige a las grandes casas, reúne a héroes emblemáticos y reescribe el destino de esta tierra.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2838950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2838950/91ecd6742ce83635e3a2fab5553fdd9e2a74483b/header.jpg?t=1791436369",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Estrategia"
-   ],
-   "releaseText": "2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T16:09:58Z",
-   "trailer": {
-    "name": "GOT: Gameplay Reveal Trailer (Aug, 2026)",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257406773/ab460e7810265165f6c8c187f520d2b3bbb0208f/movie_600x337.jpg?t=1787683248",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/2838950/1292475594/aa25590eabff6be9cd555757f82f60e855409aee/1787531536/hls_264_master.m3u8?t=1787683248"
-   },
-   "rank": 96,
-   "steamRank": 96,
-   "wdRank": 54
+   "steamRank": 53
   },
   {
    "id": "steam-4767480",
@@ -2902,9 +2839,99 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4767480/2011808760/f619196186462cc51aba33f8fbea0e6027196c9f/1779784237/hls_264_master.m3u8?t=1780695018"
    },
-   "rank": 97,
+   "rank": 95,
    "steamRank": 79,
-   "wdRank": 55
+   "wdRank": 53
+  },
+  {
+   "id": "steam-4150720",
+   "slug": "pukey-goddess-shot-trick",
+   "title": "PUKEY GODDESS SHOT TRICK",
+   "description": "Juega a una ruleta rusa de chupitos con una diablilla que siente por ti un amor de los que matan. Se trata de un juego de supervivencia donde o provocas que ella vomite su alma o será la tuya la que potes. Cuanto más bebas, más reglas podrás saltarte... te lo pasarás de muerte.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4150720/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150720/7d4ab50bd6073a912094cb2b17d0617415e002d3/header.jpg?t=1792768849",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "8 Dec, 2026",
+   "date": "2026-12-08",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T16:07:54Z",
+   "trailer": {
+    "name": "Drunken Goddess Reflux_2nd Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257475337/bc82cfa57d50a0d54fe89ee970274030befa92dd/movie_600x337.jpg?t=1792758286",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4150720/1305757145/0509265759baa92af331ef79967d9906872f2fc0/1792757320/hls_264_master.m3u8?t=1792758286"
+   },
+   "rank": 96,
+   "steamRank": 54
+  },
+  {
+   "id": "steam-1853440",
+   "slug": "tropico-7",
+   "title": "Tropico 7",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/1853440/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1853440/cfa41f10c2e878497d77e100f9be08224eb686b9/header.jpg?t=1792422518",
+   "platforms": [
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Videojuego de construcción de ciudades"
+   ],
+   "releaseText": "2027-01-28",
+   "date": "2027-01-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 3,
+   "enwiki": "https://en.wikipedia.org/wiki/Tropico_7",
+   "headerChecked": true,
+   "wdRank": 54,
+   "rank": 97
+  },
+  {
+   "id": "steam-4532500",
+   "slug": "atelier-karia-the-night-kingdom-the-guide-of-memories",
+   "title": "Atelier Karia: The Night Kingdom & the Guide of Memories",
+   "description": "",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4532500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4532500/0c905c115349cbf0200c722b92081f24d6359033/header_spanish.jpg?t=1791261032",
+   "platforms": [
+    "Windows",
+    "Switch",
+    "Xbox",
+    "PlayStation"
+   ],
+   "genres": [
+    "Videojuego de rol"
+   ],
+   "releaseText": "2027-02-25",
+   "date": "2027-02-25",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T17:04:57Z",
+   "source": "wikidata",
+   "youtube": "",
+   "languages": 3,
+   "enwiki": "https://en.wikipedia.org/wiki/Atelier_Karia:_The_Night_Kingdom_%26_the_Guide_of_Memories",
+   "headerChecked": true,
+   "wdRank": 55,
+   "rank": 98
   },
   {
    "id": "steam-3218230",
@@ -2933,38 +2960,8 @@
     "video": "",
     "hls": "https://video.akamai.steamstatic.com/store_trailers/3218230/653650303/f51e9605c82a355bbdf5563ce23569ef1655a2d6/1788347791/hls_264_master.m3u8?t=1788349610"
    },
-   "rank": 98,
+   "rank": 99,
    "steamRank": 56
-  },
-  {
-   "id": "steam-1853440",
-   "slug": "tropico-7",
-   "title": "Tropico 7",
-   "description": "",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/1853440/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1853440/cfa41f10c2e878497d77e100f9be08224eb686b9/header.jpg?t=1792422518",
-   "platforms": [
-    "Switch",
-    "Xbox",
-    "PlayStation",
-    "Windows"
-   ],
-   "genres": [
-    "Videojuego de construcción de ciudades"
-   ],
-   "releaseText": "2027-01-28",
-   "date": "2027-01-28",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
-   "source": "wikidata",
-   "youtube": "",
-   "languages": 3,
-   "enwiki": "https://en.wikipedia.org/wiki/Tropico_7",
-   "headerChecked": true,
-   "wdRank": 56,
-   "rank": 99
   },
   {
    "id": "steam-1228610",
@@ -2999,31 +2996,34 @@
    "steamRank": 57
   },
   {
-   "id": "steam-4532500",
-   "slug": "atelier-karia-the-night-kingdom-the-guide-of-memories",
-   "title": "Atelier Karia: The Night Kingdom & the Guide of Memories",
+   "id": "steam-2900640",
+   "slug": "toem-2",
+   "title": "TOEM 2",
    "description": "",
    "store": "Steam",
-   "url": "https://store.steampowered.com/app/4532500/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4532500/0c905c115349cbf0200c722b92081f24d6359033/header_spanish.jpg?t=1791261032",
+   "url": "https://store.steampowered.com/app/2900640/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2900640/499ae31f4d74c4c41e61058259fca32ccd73c93c/header.jpg?t=1790697404",
    "platforms": [
+    "Mac",
+    "Windows",
     "Switch",
-    "Xbox",
     "PlayStation",
-    "Windows"
+    "Linux"
    ],
    "genres": [
-    "Videojuego de rol"
+    "Videojuego de aventura",
+    "Videojuego de fotografía",
+    "Videojuego casual"
    ],
-   "releaseText": "2027-02-25",
-   "date": "2027-02-25",
+   "releaseText": "2026-09-29",
+   "date": "2026-09-29",
    "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T17:02:15Z",
+   "comingSoon": false,
+   "verifiedAt": "2026-10-25T17:04:57Z",
    "source": "wikidata",
    "youtube": "",
    "languages": 3,
-   "enwiki": "https://en.wikipedia.org/wiki/Atelier_Karia:_The_Night_Kingdom_%26_the_Guide_of_Memories",
+   "enwiki": "https://en.wikipedia.org/wiki/Toem_2",
    "headerChecked": true,
    "wdRank": 57,
    "rank": 101

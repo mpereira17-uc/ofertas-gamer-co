@@ -465,3 +465,7 @@ img.poster{position:relative;z-index:1;object-fit:contain!important}
 .card:hover .thumb img.poster,.rel-card:hover .rel-img img.poster{transform:none}
 .no-cover strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .rel-img .no-cover,.spot-img .no-cover{padding:34px 14px 12px}
+.epic-timer{margin:16px 0;padding:16px;border-radius:20px;border:1px solid rgba(37,224,154,.35);background:linear-gradient(120deg,rgba(37,224,154,.1),transparent 60%),var(--surface)}
+.epic-timer .launch{margin:8px 0}
+.epic-next{margin-top:30px}
+#f2p-genres{margin:10px 0 16px}

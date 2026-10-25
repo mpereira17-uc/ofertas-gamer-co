@@ -225,13 +225,28 @@
         var ms = new Date(el.getAttribute("data-launch")) - new Date();
         if (isNaN(ms)) return;
         el.hidden = false;
-        if (ms <= 0) { el.querySelector(".launch-label").textContent = "¡Ya salió!"; ms = 0; }
+        if (ms <= 0) { el.querySelector(".launch-label").textContent = el.getAttribute("data-done") || "¡Ya salió!"; ms = 0; }
         var sec = Math.floor(ms / 1000), parts = { d: Math.floor(sec / 86400), h: Math.floor(sec / 3600) % 24, m: Math.floor(sec / 60) % 60, s: sec % 60 };
         el.querySelectorAll("[data-u]").forEach(function (n) { n.textContent = parts[n.getAttribute("data-u")]; });
       });
     };
     launchTick();
     setInterval(launchTick, 1000);
+  }
+
+  // Gratis para siempre: filtro por género
+  var f2pBar = document.getElementById("f2p-genres"), f2pList = document.getElementById("f2p-list");
+  if (f2pBar && f2pList) {
+    f2pBar.hidden = false;
+    f2pBar.addEventListener("click", function (ev) {
+      var btn = ev.target.closest("button[data-g]");
+      if (!btn) return;
+      var g = btn.getAttribute("data-g");
+      f2pBar.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+      Array.prototype.forEach.call(f2pList.children, function (li) {
+        li.hidden = !!g && (li.getAttribute("data-genres") || "").split("|").indexOf(g) < 0;
+      });
+    });
   }
 
   // Página "Mis favoritos": arma las tarjetas con los datos públicos de las ofertas
