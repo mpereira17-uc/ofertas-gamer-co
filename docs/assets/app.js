@@ -217,6 +217,23 @@
   tick();
   setInterval(tick, 60000);
 
+  // Cuenta regresiva grande en la página de cada juego que todavía no sale
+  var launches = document.querySelectorAll("[data-launch]");
+  if (launches.length) {
+    var launchTick = function () {
+      launches.forEach(function (el) {
+        var ms = new Date(el.getAttribute("data-launch")) - new Date();
+        if (isNaN(ms)) return;
+        el.hidden = false;
+        if (ms <= 0) { el.querySelector(".launch-label").textContent = "¡Ya salió!"; ms = 0; }
+        var sec = Math.floor(ms / 1000), parts = { d: Math.floor(sec / 86400), h: Math.floor(sec / 3600) % 24, m: Math.floor(sec / 60) % 60, s: sec % 60 };
+        el.querySelectorAll("[data-u]").forEach(function (n) { n.textContent = parts[n.getAttribute("data-u")]; });
+      });
+    };
+    launchTick();
+    setInterval(launchTick, 1000);
+  }
+
   // Página "Mis favoritos": arma las tarjetas con los datos públicos de las ofertas
   var favRoot = document.getElementById("fav-root");
   if (favRoot && window.fetch) {

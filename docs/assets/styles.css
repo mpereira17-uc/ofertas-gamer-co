@@ -450,3 +450,11 @@ footer.site::before{background:var(--flag);height:3px;opacity:.85}
 .share-row{margin:8px 0}
 @media (max-width:760px){.dotd{grid-template-columns:1fr}.score-box{flex-direction:column;align-items:flex-start}}
 @media (max-width:560px){.filters{grid-template-columns:1fr 1fr;gap:8px;padding:12px}.filters label:first-child{grid-column:1/-1}.filters label{font-size:.82rem}}
+/* Cuenta regresiva de lanzamiento, cambio de fecha, calendario */
+.launch{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 6px;margin:6px 0 12px;padding:12px 16px;border-radius:16px;border:1px solid rgba(255,200,61,.4);background:linear-gradient(120deg,rgba(255,200,61,.1),rgba(255,61,129,.08));width:max-content;max-width:100%}
+.launch-label{font:800 .8rem var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-right:6px}
+.launch-num{font:800 1.9rem/1 var(--display);color:var(--text);font-variant-numeric:tabular-nums;min-width:1.3em;text-align:right}
+.launch small{color:var(--muted);margin-right:8px}
+.moved{border-color:rgba(255,61,129,.4)}
+.cal-links .chip .meta{font-size:.75rem}
+.game-faq{margin-top:28px;max-width:860px}
