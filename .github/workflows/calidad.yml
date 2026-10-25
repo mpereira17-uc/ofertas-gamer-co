@@ -1,0 +1,38 @@
+name: Calidad
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar JSON de configuración y datos
+        run: for f in config/*.json data/*.json; do python -m json.tool "$f" > /dev/null || exit 1; done
+      - name: Pruebas unitarias
+        run: python -m unittest discover -s tests -t . -v
+      - name: Generar el sitio con datos de prueba (sin internet ni Telegram)
+        run: python bot.py --fixtures tests/fixtures --no-send
+      - name: Comprobaciones críticas (enlaces, SEO, secretos, publicidad)
+        run: python scripts/check_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Prueba en navegador (360 px y 1280 px)
+        run: |
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
+          python -m http.server 8765 -d docs > /dev/null 2>&1 &
+          sleep 2
+          node tests/browser_check.js http://127.0.0.1:8765/

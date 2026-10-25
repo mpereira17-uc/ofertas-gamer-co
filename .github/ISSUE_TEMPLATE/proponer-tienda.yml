@@ -1,0 +1,16 @@
+name: Proponer una tienda
+description: Sugerir una tienda oficial de videojuegos para incluir
+title: "[Tienda] "
+labels: ["tiendas"]
+body:
+  - type: input
+    id: tienda
+    attributes:
+      label: Nombre y sitio web oficial (https)
+    validations:
+      required: true
+  - type: textarea
+    id: oficial
+    attributes:
+      label: ¿Por qué es una tienda oficial?
+      description: Por ejemplo, la editorial la menciona como punto de venta autorizado.

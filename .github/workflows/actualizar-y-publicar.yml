@@ -1,0 +1,75 @@
+name: Actualizar y publicar ofertas
+
+# Un solo flujo coordinado: actualiza, valida, guarda y despliega en la misma ejecución.
+on:
+  schedule:
+    - cron: "17 */4 * * *"   # cada 4 horas, minuto 17, en UTC
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ofertas-produccion
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write   # para guardar data/ y docs/ cuando cambian
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pruebas unitarias
+        run: python -m unittest discover -s tests -t .
+      - name: Obtener, validar y publicar ofertas
+        run: python bot.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          FANATICAL_AFFILIATE_URL: ${{ vars.FANATICAL_AFFILIATE_URL }}
+          GMG_AFFILIATE_URL: ${{ vars.GMG_AFFILIATE_URL }}
+      - name: Comprobaciones críticas del sitio
+        run: python scripts/check_site.py
+      - name: Guardar cambios solo si existen
+        run: |
+          git config user.name "ofertas-bot"
+          git config user.email "ofertas-bot@users.noreply.github.com"
+          git add data/ docs/
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "chore: actualizar ofertas automáticamente"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  desplegar:
+    needs: actualizar
+    runs-on: ubuntu-latest
+    # Mientras Settings → Pages siga en "Deploy from a branch", este paso falla sin afectar la
+    # página (GitHub sigue publicando docs/ desde main). Cuando cambies la fuente a
+    # "GitHub Actions", elimina la línea continue-on-error.
+    continue-on-error: true
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4
