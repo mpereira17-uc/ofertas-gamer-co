@@ -110,6 +110,8 @@ def send_bluesky(offer, page_url):
 
 
 def send_tumblr(offer, page_url):
+    if tumblr.LAST_ERROR:  # si Tumblr ya rechazó una, no insistir en esta ejecución
+        return False
     text, link = post_text(offer, page_url)
     text = text.split("#")[0]  # en Tumblr las etiquetas van aparte
     return tumblr.post(text, link, offer["title"], price_line(offer), offer.get("image"))
