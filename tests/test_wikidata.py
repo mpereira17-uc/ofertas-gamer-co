@@ -51,6 +51,21 @@ class TestWikidata(unittest.TestCase):
         self.assertIn("PlayStation", games[0]["platforms"])
         self.assertEqual([g["rank"] for g in games], list(range(1, len(games) + 1)))
 
+    def test_portada_y_resumen(self):
+        games = wikidata.fetch_games(NOW, lambda url: DATA)
+        asked = []
+
+        def fetch(url):
+            asked.append(url)
+            return {"extract": "Un  juego de mundo abierto.", "originalimage": {"source": "https://upload.wikimedia.org/a.png"}}
+        out = wikidata.enrich(games, [], fetch)
+        gta = out[0]
+        self.assertEqual(gta["image"], "https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg")  # primero el tráiler oficial
+        self.assertEqual(gta["description"], "Un juego de mundo abierto.")
+        self.assertEqual(len(asked), 1)  # solo el que tiene artículo en español
+        again = wikidata.enrich(wikidata.fetch_games(NOW, lambda url: DATA), out, lambda url: 1 / 0)
+        self.assertEqual(again[0]["description"], "Un juego de mundo abierto.")  # se reutiliza sin volver a pedir
+
     def test_caido_conserva_lo_anterior(self):
         def broken(url):
             raise OSError("sin red")

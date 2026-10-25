@@ -138,6 +138,46 @@ def merge(steam, extra):
     return [dict(g, rank=i + 1) for i, g in enumerate(ordered)]
 
 
+SUMMARY = "https://es.wikipedia.org/api/rest_v1/page/summary/{}"
+
+
+def enrich(games, previous, fetch, limit=80):
+    """Portada y resumen para los juegos que no vienen de Steam.
+    Portada: la miniatura del tráiler oficial en YouTube; si no hay, la imagen de Wikipedia en español
+    (allí solo se permiten imágenes libres). Resumen: el primer párrafo del artículo de Wikipedia en español.
+    Lo ya conseguido en ejecuciones anteriores se reutiliza."""
+    old = {g["id"]: g for g in previous}
+    asked = 0
+    for g in games:
+        if g.get("store") == "Steam":
+            continue
+        prev = old.get(g["id"]) or {}
+        for key in ("image", "imageSmall", "description"):
+            if prev.get(key) and not g.get(key):
+                g[key] = prev[key]
+        if g.get("youtube") and not g.get("image"):
+            g["image"] = f"https://i.ytimg.com/vi/{g['youtube']}/maxresdefault.jpg"
+            g["imageSmall"] = f"https://i.ytimg.com/vi/{g['youtube']}/hqdefault.jpg"
+        page = g["url"].split("/wiki/", 1)[1] if g["url"].startswith("https://es.wikipedia.org/wiki/") else ""
+        if page and (not g.get("description") or not g.get("image")) and asked < limit and not prev.get("summaryChecked"):
+            asked += 1
+            try:
+                info = fetch(SUMMARY.format(page)) or {}
+            except Exception as exc:
+                print(f"Wikipedia: resumen de {page} falló: {type(exc).__name__}", file=sys.stderr)
+                continue
+            text = re.sub(r"\s+", " ", info.get("extract") or "").strip()
+            if text and not g.get("description"):
+                g["description"] = text[:400]
+            thumb = ((info.get("originalimage") or info.get("thumbnail") or {}).get("source") or "")
+            if thumb.startswith("https://upload.wikimedia.org/") and not g.get("image"):
+                g["image"] = thumb
+            g["summaryChecked"] = True
+        elif prev.get("summaryChecked"):
+            g["summaryChecked"] = True
+    return games
+
+
 def add_consoles(steam, previous, now, fetch):
     """Devuelve (juegos, estado). Si Wikidata falla se usan los juegos de Wikidata de la vez anterior."""
     old = [g for g in previous if g.get("source") == "wikidata"]
@@ -145,7 +185,7 @@ def add_consoles(steam, previous, now, fetch):
         extra = fetch_games(now, fetch)
         if not extra:
             raise ValueError("Wikidata no devolvió juegos")
-        return merge(steam, extra), f"OK, {len(extra)} juegos"
+        return merge(steam, enrich(extra, previous, fetch)), f"OK, {len(extra)} juegos"
     except Exception as exc:
         print(f"Wikidata falló: {type(exc).__name__}: {exc}", file=sys.stderr)
         return merge(steam, old) if old else steam, f"Falló ({type(exc).__name__}); se conservan los anteriores"

@@ -75,6 +75,13 @@ def ext_link(url, text, affiliate=False, cls="btn btn-primary", label=None):
 
 
 
+def no_cover(g, cls="no-cover"):
+    """Tarjeta con el nombre del juego cuando no hay ninguna imagen libre (mejor que un gris vacío)."""
+    plats = " · ".join(g.get("platforms", [])[:3])
+    return (f'<div class="{cls}" role="img" aria-label="{e(g["title"])}"><strong>{e(g["title"])}</strong>'
+            f'{f"<span>{e(plats)}</span>" if plats else ""}</div>')
+
+
 def fallback(o):
     """Miniatura de respaldo por si la portada grande no existe (app.js la cambia al fallar)."""
     small = o.get("imageSmall") or ""
@@ -489,7 +496,7 @@ class Site:
             consoles = any(p in g.get("platforms", []) for p in ("PlayStation", "Xbox", "Switch"))
             when = date_label(g.get("date"), g.get("precision"))
             rel = relative_label(g.get("date"), g.get("precision"), now)
-            img = f'<img src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">' if g.get("image") else ""
+            img = f'<img src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">' if g.get("image") else no_cover(g, "no-cover big")
             tags = "".join(f'<span class="tag">{e(x)}</span>' for x in g.get("platforms", [])) + \
                 "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", []))
             ld = {"@context": "https://schema.org", "@type": "VideoGame", "name": g["title"], "url": g["url"],
@@ -509,7 +516,7 @@ class Site:
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
-<p class="meta">La fecha es la que publica {src} y puede cambiar. Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
+<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld], og_image=g.get("image"))
 
     # ---------- calendario de lanzamientos ----------
@@ -548,7 +555,7 @@ class Site:
         when = date_label(g.get("date"), g.get("precision"))
         link = self.game_link(g, g.get("store") or "Steam")
         return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
-<div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
+<div class="rel-img">{f'<img src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">' if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
@@ -595,8 +602,10 @@ class Site:
         if len(desc) > (260 if main else 120):
             desc = desc[:(257 if main else 117)].rsplit(" ", 1)[0] + "…"
         link = self.game_link(g)
-        bg = f'<img class="spot-bg" src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async">' if main else ""
-        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}<img class="spot-fg" src="{e(img)}" alt="Imagen de {e(g['title'])}" width="460" height="215" loading="lazy" decoding="async"><span class="spot-rank">#{self.rank(g)}</span>{self.trailer_chip(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+        bg = f'<img class="spot-bg" src="{e(img)}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async">' if main and g.get("image") else ""
+        fg = (f'<img class="spot-fg" src="{e(img)}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">'
+              if g.get("image") else no_cover(g, "no-cover spot-fg"))
+        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}{fg}<span class="spot-rank">#{self.rank(g)}</span>{self.trailer_chip(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 
