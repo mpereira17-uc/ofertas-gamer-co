@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T13:51:17Z",
+ "updatedAt": "2026-10-25T13:57:05Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -2337,28 +2337,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-5072600",
-   "slug": "family-time",
-   "title": "Family Time",
-   "description": "Build a family of thousands of wolf children with your own wolf partner!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5072600/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072600/4584069ef5af5221d75a0e82de25155ea32a61d7/header.jpg?t=1789744534",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "Q1 2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-4024120",
    "slug": "oferta",
    "title": "颂声·市井小神仙",
@@ -2377,6 +2355,28 @@
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
    "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-5072600",
+   "slug": "family-time",
+   "title": "Family Time",
+   "description": "Build a family of thousands of wolf children with your own wolf partner!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5072600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072600/4584069ef5af5221d75a0e82de25155ea32a61d7/header.jpg?t=1789744534",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "Q1 2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
@@ -2425,6 +2425,27 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
+   "id": "steam-4719390",
+   "slug": "oferta",
+   "title": "Смена",
+   "description": "Atmospheric simulator of the seller in a night stall of the 1993 model. Immerse yourself in the melancholy of the sleeping area: sell goods, count the change and communicate with customers.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4719390/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/57cb9b029984e075845a6df383fdf1fdbda2bd6a/header.jpg?t=1792611704",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
    "id": "steam-4576490",
    "slug": "casualties-unknown",
    "title": "Casualties: Unknown",
@@ -2442,27 +2463,6 @@
    ],
    "releaseText": "9 Nov, 2026",
    "date": "2026-11-09",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
-   "id": "steam-4719390",
-   "slug": "oferta",
-   "title": "Смена",
-   "description": "Atmospheric simulator of the seller in a night stall of the 1993 model. Immerse yourself in the melancholy of the sleeping area: sell goods, count the change and communicate with customers.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4719390/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4719390/57cb9b029984e075845a6df383fdf1fdbda2bd6a/header.jpg?t=1792611704",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Indie",
-    "Simuladores"
-   ],
-   "releaseText": "26 Oct, 2026",
-   "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
