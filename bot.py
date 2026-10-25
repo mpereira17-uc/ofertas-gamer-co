@@ -14,7 +14,7 @@ import os
 import sys
 from pathlib import Path
 
-from ogc import channels, discord, promote, rawg, releases, sources
+from ogc import channels, discord, promote, releases, sources, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -128,7 +128,7 @@ def run(args):
     save_json(PUBLISHED_FILE, {"enviados": published_list[-3000:]})  # en orden de envío: se olvidan los más viejos
     previous_releases = load_json(RELEASES_FILE, {}).get("games", [])
     games, status["Fuente lanzamientos (Steam)"] = releases.update(previous_releases, now, sources.get_json)
-    games, status["Fuente lanzamientos de consola (RAWG)"] = rawg.add_consoles(games, previous_releases, now, sources.get_json)
+    games, status["Fuente juegos grandes y de consola (Wikidata)"] = wikidata.add_consoles(games, previous_releases, now, sources.get_json)
     save_json(RELEASES_FILE, {"updatedAt": iso(now), "games": games})
 
     site = Site(cfg, stores, ads, DOCS)

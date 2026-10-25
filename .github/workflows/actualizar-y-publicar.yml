@@ -42,7 +42,6 @@ jobs:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           FANATICAL_AFFILIATE_URL: ${{ vars.FANATICAL_AFFILIATE_URL }}
           GMG_AFFILIATE_URL: ${{ vars.GMG_AFFILIATE_URL }}
-          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
       - name: Comprobaciones críticas del sitio
         run: python scripts/check_site.py
       - name: Guardar cambios solo si existen

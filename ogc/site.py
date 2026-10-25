@@ -468,7 +468,7 @@ class Site:
             name = self.detail.get(g["id"])
             if not name:
                 continue
-            src = "Steam" if g.get("store", "Steam") == "Steam" else "RAWG"
+            src = "Steam" if g.get("source") != "wikidata" else "Wikidata"
             consoles = any(p in g.get("platforms", []) for p in ("PlayStation", "Xbox", "Switch"))
             when = date_label(g.get("date"), g.get("precision"))
             rel = relative_label(g.get("date"), g.get("precision"), now)
@@ -508,9 +508,8 @@ class Site:
 
     @staticmethod
     def game_link(g, text=None, cls="btn btn-primary btn-sm"):
-        steam = g.get("store", "Steam") == "Steam"
-        label = text or ("Ver en Steam" if steam else "Ver ficha")
-        where = "Steam" if steam else "RAWG"
+        where = g.get("store") or "Steam"
+        label = text or f"Ver en {where}"
         return ext_link(g["url"], label, cls=cls, label=f"Ver {g['title']} en {where} (abre en otra pestaña)")
 
     def rank(self, g):
@@ -524,7 +523,7 @@ class Site:
         genres = "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])[:2])
         rel = relative_label(g.get("date"), g.get("precision"), now)
         when = date_label(g.get("date"), g.get("precision"))
-        link = self.game_link(g, "Steam" if g.get("store", "Steam") == "Steam" else "Ver ficha")
+        link = self.game_link(g, g.get("store") or "Steam")
         return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
 <div class="rel-img"><img src="{e(img)}" alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}</div>
 <p class="rel-name">{self.title_link(g)}</p>
@@ -579,7 +578,7 @@ class Site:
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 
     def spotlight(self, games, now, days=30, count=8):
-        """Los más esperados que salen en los próximos días (popularidad de Steam y RAWG)."""
+        """Los más esperados que salen en los próximos días (popularidad de Steam y Wikidata)."""
         today = now.strftime("%Y-%m-%d")
         limit = (now + timedelta(days=days)).strftime("%Y-%m-%d")
         soon = sorted([g for g in games if g.get("date") and g.get("precision") == "day" and today <= g["date"] <= limit],
@@ -602,8 +601,8 @@ class Site:
 
     def releases_page(self, games, now, updated_line):
         upcoming, recent, tba = self.split_releases(games, now)
-        credit = ('<p class="meta">Datos de PC: Steam. Datos de consolas: '
-                  '<a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a>.</p>') if any(g.get("source") == "rawg" for g in games) else ""
+        credit = ('<p class="meta">Fuentes: Steam y <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a> '
+                  '(la base de datos de Wikipedia).</p>') if any(g.get("source") == "wikidata" for g in games) else ""
         genres = sorted({x for g in games for x in g.get("genres", [])})
         chip = lambda kind, v: f'<button type="button" class="chip" data-{kind}="{e(v)}" aria-pressed="false">{e(v)}</button>'
         toolbar = f"""<div class="rel-toolbar" id="rel-toolbar" hidden>
@@ -998,7 +997,7 @@ class Site:
 <ul>
 <li><strong>Epic Games Store</strong>: listado público de juegos gratis, consultado para Colombia. Enlace a la ficha oficial del juego.</li>
 <li><strong><a href="https://www.cheapshark.com" target="_blank" rel="noopener noreferrer">CheapShark</a></strong>: API pública de precios de tiendas de juegos de PC. La usamos para encontrar descuentos; el enlace lleva a la tienda oficial (ficha de Steam o búsqueda oficial de la tienda). Gracias a CheapShark por ofrecer estos datos.</li>
-<li><strong><a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a></strong>: base de datos de videojuegos. La usamos para las fechas de lanzamiento de juegos de consola (PlayStation, Xbox y Switch). Gracias a RAWG por ofrecer estos datos.</li>
+<li><strong><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a></strong>: la base de datos libre de Wikipedia. La usamos para los juegos grandes y de consola (PlayStation, Xbox y Switch) y sus fechas; los ordenamos por en cuántos idiomas de Wikipedia tienen artículo.</li>
 <li><strong><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong>: tasa de cambio del día para el valor aproximado en pesos.</li>
 </ul>
 <p>No copiamos textos protegidos de las tiendas. Las imágenes de los juegos son las promocionales que publican las propias tiendas o fuentes. Si eres titular de derechos y quieres que retiremos una imagen, escríbenos desde <a href="contacto.html">Contacto</a>.</p></div>""",
