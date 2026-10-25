@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T14:40:43Z",
+ "updatedAt": "2026-10-25T14:57:32Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -1035,28 +1035,6 @@
    "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
-   "id": "steam-2665020",
-   "slug": "milo",
-   "title": "Milo",
-   "description": "Fight alone or beside others trapped in the same nightmare. Survive waves of deranged cultists and grow your mischief of rats. The longer you stay, the more you can save, and the more you risk losing before reaching Traang, Milo’s Arcade.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2665020/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2665020/adeede75839fae152e3e0fb43145182bd427c367/header.jpg?t=1792866550",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Indie",
-    "Acceso anticipado"
-   ],
-   "releaseText": "29 Oct, 2026",
-   "date": "2026-10-29",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z"
-  },
-  {
    "id": "steam-4236650",
    "slug": "oferta",
    "title": "不良婚姻惩罚师",
@@ -1075,6 +1053,28 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-2665020",
+   "slug": "milo",
+   "title": "Milo",
+   "description": "Fight alone or beside others trapped in the same nightmare. Survive waves of deranged cultists and grow your mischief of rats. The longer you stay, the more you can save, and the more you risk losing before reaching Traang, Milo’s Arcade.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2665020/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2665020/adeede75839fae152e3e0fb43145182bd427c367/header.jpg?t=1792866550",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Indie",
+    "Acceso anticipado"
+   ],
+   "releaseText": "29 Oct, 2026",
+   "date": "2026-10-29",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z"
@@ -1213,6 +1213,27 @@
    "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
+   "id": "steam-4984870",
+   "slug": "selkie-s-salvage-co",
+   "title": "Selkie's Salvage&Co.",
+   "description": "Selkie’s Salvage&amp;Co. is a first-person physics based incremental fishing game. Your task is to clean up the flooded planet! Fish up scrap, grind all of it down and collect trinkets of the past. Expand your salvaging operation and go beyond!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4984870/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4984870/7c53ff84a05f4fbb9f85fe1a1fc61125ad587a0b/header.jpg?t=1792643786",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
    "id": "steam-5160800",
    "slug": "find-the-needle",
    "title": "Find The Needle",
@@ -1231,27 +1252,6 @@
    "releaseText": "Q4 2026",
    "date": null,
    "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z"
-  },
-  {
-   "id": "steam-4984870",
-   "slug": "selkie-s-salvage-co",
-   "title": "Selkie's Salvage&Co.",
-   "description": "Selkie’s Salvage&amp;Co. is a first-person physics based incremental fishing game. Your task is to clean up the flooded planet! Fish up scrap, grind all of it down and collect trinkets of the past. Expand your salvaging operation and go beyond!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4984870/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4984870/7c53ff84a05f4fbb9f85fe1a1fc61125ad587a0b/header.jpg?t=1792643786",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
-   "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z"
   },
@@ -1607,6 +1607,29 @@
    "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
+   "id": "steam-2551970",
+   "slug": "outcast-tales",
+   "title": "Outcast Tales",
+   "description": "Vive el inicio de una gran aventura en Outcast Tales: The First Journey. Libra combates donde prima la estrategia, toma decisiones difíciles y escoge tus propias aventuras: ¡escribe la historia de tu grupo de marginados!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2551970/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2551970/header.jpg?t=1792515580",
+   "platforms": [
+    "Windows",
+    "Linux"
+   ],
+   "genres": [
+    "Aventura",
+    "Indie",
+    "Rol"
+   ],
+   "releaseText": "26 Oct, 2026",
+   "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
    "id": "steam-3818450",
    "slug": "everlast-undying-tale",
    "title": "Everlast: Undying Tale",
@@ -1626,29 +1649,6 @@
    ],
    "releaseText": "28 Oct, 2026",
    "date": "2026-10-28",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z"
-  },
-  {
-   "id": "steam-2551970",
-   "slug": "outcast-tales",
-   "title": "Outcast Tales",
-   "description": "Vive el inicio de una gran aventura en Outcast Tales: The First Journey. Libra combates donde prima la estrategia, toma decisiones difíciles y escoge tus propias aventuras: ¡escribe la historia de tu grupo de marginados!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2551970/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2551970/header.jpg?t=1792515580",
-   "platforms": [
-    "Windows",
-    "Linux"
-   ],
-   "genres": [
-    "Aventura",
-    "Indie",
-    "Rol"
-   ],
-   "releaseText": "26 Oct, 2026",
-   "date": "2026-10-26",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z"
@@ -1789,28 +1789,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-4776500",
-   "slug": "carry-on-together",
-   "title": "Carry On Together",
-   "description": "Carry On Together es un juego de mudanzas cooperativo en línea basado en físicas para hasta 4 jugadores. Llevad una pequeña empresa de reparto con vuestros amigos: levantad muebles pesados, conducid el camión por la ciudad y entregadlo todo intacto… o no. ¿Lograréis mantener la empresa a flote?",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4776500/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4776500/dd821e9b25b83d4ec004b75c8933191b725578f8/header.jpg?t=1792874558",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "6 Nov, 2026",
-   "date": "2026-11-06",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-3310570",
    "slug": "night-plane",
    "title": "Night Plane",
@@ -1828,6 +1806,28 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-4776500",
+   "slug": "carry-on-together",
+   "title": "Carry On Together",
+   "description": "Carry On Together es un juego de mudanzas cooperativo en línea basado en físicas para hasta 4 jugadores. Llevad una pequeña empresa de reparto con vuestros amigos: levantad muebles pesados, conducid el camión por la ciudad y entregadlo todo intacto… o no. ¿Lograréis mantener la empresa a flote?",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4776500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4776500/dd821e9b25b83d4ec004b75c8933191b725578f8/header.jpg?t=1792874558",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "6 Nov, 2026",
+   "date": "2026-11-06",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
@@ -2403,28 +2403,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-5072600",
-   "slug": "family-time",
-   "title": "Family Time",
-   "description": "Build a family of thousands of wolf children with your own wolf partner!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5072600/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072600/4584069ef5af5221d75a0e82de25155ea32a61d7/header.jpg?t=1789744534",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "Q1 2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-5226940",
    "slug": "tidy-farm",
    "title": "Tidy Farm",
@@ -2443,6 +2421,28 @@
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
    "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-5072600",
+   "slug": "family-time",
+   "title": "Family Time",
+   "description": "Build a family of thousands of wolf children with your own wolf partner!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5072600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072600/4584069ef5af5221d75a0e82de25155ea32a61d7/header.jpg?t=1789744534",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "Q1 2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
@@ -2748,27 +2748,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-4356780",
-   "slug": "screen-stocks",
-   "title": "Screen Stocks",
-   "description": "Screem Stocks es un juego multijugador en linea con un mercado simulado en tiempo real. Compra, vende en corto y vende acciones para acumular una fortuna incomprensible. Manipula acciones junto con otros jugadores, o sé más listo que todos ellos. ¡Es hora de ganar un dineral!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4356780/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/11a372aceb4c330437ed9d8813555cc285f03a34/header.jpg?t=1790600209",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Simuladores",
-    "Estrategia"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-1932910",
    "slug": "cardopolis",
    "title": "Cardopolis",
@@ -2786,6 +2765,27 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-4356780",
+   "slug": "screen-stocks",
+   "title": "Screen Stocks",
+   "description": "Screem Stocks es un juego multijugador en linea con un mercado simulado en tiempo real. Compra, vende en corto y vende acciones para acumular una fortuna incomprensible. Manipula acciones junto con otros jugadores, o sé más listo que todos ellos. ¡Es hora de ganar un dineral!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4356780/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/11a372aceb4c330437ed9d8813555cc285f03a34/header.jpg?t=1790600209",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
@@ -2963,27 +2963,6 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
-   "id": "steam-3572090",
-   "slug": "dominus-gladiatus",
-   "title": "Dominus Gladiatus",
-   "description": "Dominus Gladiatus es un brutal simulador de gestión de gladiadores en el que reclutas, entrenas y equipas gladiadores y tomas decisiones de vida o muerte durante un torneo mortal de 160 días contra Domini rivales.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3572090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/33270aae739a218f5062c2050d139efa1c807d47/header.jpg?t=1792350270",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Simuladores",
-    "Estrategia"
-   ],
-   "releaseText": "5 Nov, 2026",
-   "date": "2026-11-05",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
    "id": "steam-4924750",
    "slug": "village-of-the-mirror",
    "title": "Village of the Mirror",
@@ -3001,6 +2980,27 @@
    ],
    "releaseText": "25 Oct, 2026",
    "date": "2026-10-25",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
+   "id": "steam-3572090",
+   "slug": "dominus-gladiatus",
+   "title": "Dominus Gladiatus",
+   "description": "Dominus Gladiatus es un brutal simulador de gestión de gladiadores en el que reclutas, entrenas y equipas gladiadores y tomas decisiones de vida o muerte durante un torneo mortal de 160 días contra Domini rivales.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3572090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572090/33270aae739a218f5062c2050d139efa1c807d47/header.jpg?t=1792350270",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "5 Nov, 2026",
+   "date": "2026-11-05",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"
@@ -3048,26 +3048,6 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
-   "id": "steam-3734220",
-   "slug": "guns-of-eschaton",
-   "title": "Guns of Eschaton",
-   "description": "Este FPS soulslike te arrastra al western apocalíptico del legendario Viktor Antonov: polvo, sangre y horror ocultista. Estudia lo que te da caza, cuenta tus balas y forja tu estilo con pólvora y plegarias. Solo o en coop, pistolero, pon rumbo al Oeste y muere con el país.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3734220/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3734220/c95dde537f010137456f53f406b1b706898746c3/header_alt_assets_1.jpg?t=1792693635",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción"
-   ],
-   "releaseText": "8 Dec, 2026",
-   "date": "2026-12-08",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
    "id": "steam-5042370",
    "slug": "octbuster-video-rental-store-cleanup",
    "title": "Octbuster: Video Rental Store Cleanup",
@@ -3086,6 +3066,26 @@
    ],
    "releaseText": "27 Oct, 2026",
    "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
+   "id": "steam-3734220",
+   "slug": "guns-of-eschaton",
+   "title": "Guns of Eschaton",
+   "description": "Este FPS soulslike te arrastra al western apocalíptico del legendario Viktor Antonov: polvo, sangre y horror ocultista. Estudia lo que te da caza, cuenta tus balas y forja tu estilo con pólvora y plegarias. Solo o en coop, pistolero, pon rumbo al Oeste y muere con el país.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3734220/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3734220/c95dde537f010137456f53f406b1b706898746c3/header_alt_assets_1.jpg?t=1792693635",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción"
+   ],
+   "releaseText": "8 Dec, 2026",
+   "date": "2026-12-08",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"
@@ -3242,28 +3242,6 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
-   "id": "steam-5393420",
-   "slug": "elya",
-   "title": "Elya",
-   "description": "Cría una compañera en este juego para un jugador de mascota de escritorio. Conversa, crea vínculos y recuerdos, y personalízala con personajes, aspectos, animaciones y creaciones del Workshop.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5393420/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5393420/a66d6a5fa0404cb0a6fa1559e7f97c1e8bb2af6e/header.jpg?t=1792611645",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Casual",
-    "Indie",
-    "Simuladores"
-   ],
-   "releaseText": "25 Oct, 2026",
-   "date": "2026-10-25",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
    "id": "steam-2710530",
    "slug": "rug-cleaning-simulator",
    "title": "Rug Cleaning Simulator",
@@ -3282,6 +3260,28 @@
    ],
    "releaseText": "28 Oct, 2026",
    "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
+   "id": "steam-5393420",
+   "slug": "elya",
+   "title": "Elya",
+   "description": "Cría una compañera en este juego para un jugador de mascota de escritorio. Conversa, crea vínculos y recuerdos, y personalízala con personajes, aspectos, animaciones y creaciones del Workshop.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5393420/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5393420/a66d6a5fa0404cb0a6fa1559e7f97c1e8bb2af6e/header.jpg?t=1792611645",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "25 Oct, 2026",
+   "date": "2026-10-25",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"

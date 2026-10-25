@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T14:40:43Z",
+ "updatedAt": "2026-10-25T14:57:32Z",
  "offers": [
   {
    "id": "epic-6aab3ddef4f84fbc9dd81c60f9d8549c-2026-10-29",
@@ -27,7 +27,7 @@
    "sponsored": false,
    "startsAt": "2026-10-22T15:00:00.000Z",
    "expiresAt": "2026-10-29T15:00:00.000Z",
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "epic",
    "sourceType": "api",
    "status": "Gratuito",
@@ -35,7 +35,10 @@
     "gratis"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z"
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "page": "oferta-sker-ritual.html",
+   "action": "Reclamar gratis",
+   "saving": "Ahorras ≈ $51.900 COP"
   },
   {
    "id": "epic-06190191cede42afb633fe89ef08c27e-2026-10-29",
@@ -63,7 +66,7 @@
    "sponsored": false,
    "startsAt": "2026-10-22T15:00:00.000Z",
    "expiresAt": "2026-10-29T15:00:00.000Z",
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "epic",
    "sourceType": "api",
    "status": "Gratuito",
@@ -71,7 +74,10 @@
     "gratis"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z"
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "page": "oferta-home-a-unique-horror-adventure.html",
+   "action": "Reclamar gratis",
+   "saving": "Ahorras ≈ $10.400 COP"
   },
   {
    "id": "cs-331788-25-0.00",
@@ -97,7 +103,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Gratuito",
@@ -105,8 +111,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-mafia-hotel.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $6.300 COP"
   },
   {
    "id": "cs-316632-25-0.00",
@@ -132,7 +141,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Gratuito",
@@ -140,8 +149,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-gethigh-exe.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $6.300 COP"
   },
   {
    "id": "cs-199102-3-1.19",
@@ -167,7 +179,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -176,9 +188,12 @@
     "metacritic-69"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774241/capsule_231x87.jpg?t=1778175102",
-   "metacritic": 69
+   "metacritic": 69,
+   "page": "oferta-warhammer-chaosbane.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $92.000 COP"
   },
   {
    "id": "cs-273928-25-3.49",
@@ -204,7 +219,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -213,9 +228,12 @@
     "metacritic-63"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/315210/capsule_231x87.jpg?t=1777940046",
-   "metacritic": 63
+   "metacritic": 63,
+   "page": "oferta-suicide-squad-kill-the-justice-league.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $211.500 COP"
   },
   {
    "id": "cs-219387-3-1.20",
@@ -241,7 +259,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -250,9 +268,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1095120/capsule_231x87.jpg?t=1728990639",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-helheim-hassle.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $59.500 COP"
   },
   {
    "id": "cs-249066-1-1.49",
@@ -278,7 +299,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -287,9 +308,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/889910/capsule_231x87.jpg?t=1764867573",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-hell-pie.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $74.100 COP"
   },
   {
    "id": "cs-198143-1-1.04",
@@ -315,7 +339,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -324,9 +348,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/940680/capsule_231x87.jpg?t=1754643092",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-the-textorcist-the-story-of-ray-bibbia.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $44.300 COP"
   },
   {
    "id": "cs-235448-3-7.20",
@@ -352,7 +379,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -360,8 +387,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-back-4-blood-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $263.300 COP"
   },
   {
    "id": "cs-235447-3-8.00",
@@ -387,7 +417,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -395,8 +425,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-back-4-blood-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $292.100 COP"
   },
   {
    "id": "cs-136-1-1.19",
@@ -422,7 +455,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -431,9 +464,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/40800/capsule_231x87.jpg?t=1700669950",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-super-meat-boy.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $44.100 COP"
   },
   {
    "id": "cs-196050-3-4.00",
@@ -459,7 +495,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -468,9 +504,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976310/capsule_231x87.jpg?t=1780429525",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-mortal-kombat11.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $146.000 COP"
   },
   {
    "id": "cs-343-3-0.82",
@@ -496,7 +535,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -505,9 +544,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/91200/capsule_231x87.jpg?t=1634818526",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-anomaly-warzone-earth.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $29.100 COP"
   },
   {
    "id": "cs-97298-3-1.23",
@@ -533,7 +575,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -542,9 +584,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236730/capsule_231x87.jpg?t=1716457749",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-anomaly-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $43.600 COP"
   },
   {
    "id": "cs-243884-3-1.64",
@@ -570,7 +615,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -579,9 +624,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1067540/capsule_231x87.jpg?t=1728376743",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-roki.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $58.200 COP"
   },
   {
    "id": "cs-216847-3-1.64",
@@ -607,7 +655,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -616,9 +664,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1108590/capsule_231x87.jpg?t=1728376679",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-eldest-souls.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $58.200 COP"
   },
   {
    "id": "cs-140084-3-1.58",
@@ -644,7 +695,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -653,9 +704,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/276810/capsule_231x87.jpg?t=1726153222",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-mordheim-city-of-the-damned.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $58.300 COP"
   },
   {
    "id": "cs-224258-3-4.80",
@@ -681,7 +735,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -690,9 +744,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/924970/capsule_231x87.jpg?t=1780594976",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-back-4-blood.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $175.900 COP"
   },
   {
    "id": "cs-165438-3-0.98",
@@ -718,7 +775,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -727,9 +784,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/530950/capsule_231x87.jpg?t=1727868949",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-tower-57.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $34.800 COP"
   },
   {
    "id": "cs-235190-3-1.98",
@@ -755,7 +815,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -764,9 +824,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1069690/capsule_231x87.jpg?t=1778174409",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-rogue-lords.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $73.200 COP"
   },
   {
    "id": "cs-228533-3-3.28",
@@ -792,7 +855,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -801,9 +864,12 @@
     "metacritic-73"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1338770/capsule_231x87.jpg?t=1747413239",
-   "metacritic": 73
+   "metacritic": 73,
+   "page": "oferta-sniper-ghost-warrior-contracts-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $116.400 COP"
   },
   {
    "id": "cs-111307-3-0.82",
@@ -829,7 +895,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -838,9 +904,12 @@
     "metacritic-70"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/294750/capsule_231x87.jpg?t=1636461805",
-   "metacritic": 70
+   "metacritic": 70,
+   "page": "oferta-anomaly-defenders.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $29.100 COP"
   },
   {
    "id": "cs-206721-3-2.46",
@@ -866,7 +935,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -875,9 +944,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/973580/capsule_231x87.jpg?t=1741954017",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-sniper-ghost-warrior-contracts.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $87.300 COP"
   },
   {
    "id": "cs-127539-3-0.82",
@@ -903,7 +975,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -912,9 +984,12 @@
     "metacritic-68"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/263860/capsule_231x87.jpg?t=1727869198",
-   "metacritic": 68
+   "metacritic": 68,
+   "page": "oferta-spacecom.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $29.100 COP"
   },
   {
    "id": "cs-265819-3-1.58",
@@ -940,7 +1015,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -949,9 +1024,12 @@
     "metacritic-68"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1234430/capsule_231x87.jpg?t=1778169586",
-   "metacritic": 68
+   "metacritic": 68,
+   "page": "oferta-ad-infinitum.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $58.300 COP"
   },
   {
    "id": "cs-223406-3-1.26",
@@ -977,7 +1055,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -986,9 +1064,12 @@
     "metacritic-67"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/979310/capsule_231x87.jpg?t=1650620592",
-   "metacritic": 67
+   "metacritic": 67,
+   "page": "oferta-disjunction.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $46.800 COP"
   },
   {
    "id": "cs-247590-3-2.37",
@@ -1014,7 +1095,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1023,9 +1104,12 @@
     "metacritic-68"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1283400/capsule_231x87.jpg?t=1778174679",
-   "metacritic": 68
+   "metacritic": 68,
+   "page": "oferta-steelrising.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $87.400 COP"
   },
   {
    "id": "cs-170871-7-1.99",
@@ -1051,7 +1135,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1060,9 +1144,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/617480/75e6dee24eecc1fb9f7d4f0b0f2b7a3a6ff207a0/capsule_231x87.jpg?t=1792690422",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-tower-of-time.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $72.800 COP"
   },
   {
    "id": "cs-246718-3-1.58",
@@ -1088,7 +1175,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1097,9 +1184,12 @@
     "metacritic-66"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1299510/capsule_231x87.jpg?t=1778175048",
-   "metacritic": 66
+   "metacritic": 66,
+   "page": "oferta-vampire-the-masquerade-swansong.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $58.300 COP"
   },
   {
    "id": "cs-174381-1-1.59",
@@ -1125,7 +1215,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1134,9 +1224,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/613470/capsule_231x87.jpg?t=1717679611",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-the-inner-world-the-last-wind-monk.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $59.000 COP"
   },
   {
    "id": "cs-242112-3-6.30",
@@ -1162,7 +1255,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1170,8 +1263,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-the-quarry-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $202.200 COP"
   },
   {
    "id": "cs-202932-3-7.04",
@@ -1197,7 +1293,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1205,8 +1301,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-code-vein-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $232.100 COP"
   },
   {
    "id": "cs-152578-3-5.40",
@@ -1232,7 +1331,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1241,9 +1340,12 @@
     "metacritic-88"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/289070/capsule_231x87.jpg?t=1792718069",
-   "metacritic": 88
+   "metacritic": 88,
+   "page": "oferta-sid-meiers-civilization-vi.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $173.900 COP"
   },
   {
    "id": "cs-98151-3-4.50",
@@ -1269,7 +1371,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1278,9 +1380,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/f4e714d0f5a6be6b76e4b7cfddd692ccc689884a/capsule_231x87.jpg?t=1790873960",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-europa-universalis-iv.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $144.600 COP"
   },
   {
    "id": "cs-235239-3-3.40",
@@ -1306,7 +1411,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1315,9 +1420,12 @@
     "metacritic-86"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1446780/capsule_231x87.jpg?t=1792548454",
-   "metacritic": 86
+   "metacritic": 86,
+   "page": "oferta-monster-hunter-rise.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $116.200 COP"
   },
   {
    "id": "cs-93923-3-0.85",
@@ -1343,7 +1451,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1352,9 +1460,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/209190/capsule_231x87.jpg?t=1747738814",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-stealth-bastard-deluxe.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $29.000 COP"
   },
   {
    "id": "cs-194665-3-1.28",
@@ -1380,7 +1491,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1389,9 +1500,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/638000/capsule_231x87.jpg?t=1743421609",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-when-ski-lifts-go-wrong.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $43.900 COP"
   },
   {
    "id": "cs-157807-3-2.70",
@@ -1417,7 +1531,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1426,9 +1540,12 @@
     "metacritic-81"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/507490/74b656b45cccba66e4e9c1175b560173e29a5041/capsule_231x87.jpg?t=1790866662",
-   "metacritic": 81
+   "metacritic": 81,
+   "page": "oferta-ashes-of-the-singularity-escalation.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $86.900 COP"
   },
   {
    "id": "cs-271977-3-0.90",
@@ -1454,7 +1571,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1463,9 +1580,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2060870/capsule_231x87.jpg?t=1731368197",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-invincible-presents-atom-eve.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $29.300 COP"
   },
   {
    "id": "cs-259706-3-2.25",
@@ -1491,7 +1611,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1500,9 +1620,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1701520/capsule_231x87.jpg?t=1787333685",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-afterimage.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $72.800 COP"
   },
   {
    "id": "cs-200621-3-5.40",
@@ -1528,7 +1651,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1537,9 +1660,12 @@
     "metacritic-81"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/397540/capsule_231x87.jpg?t=1750802377",
-   "metacritic": 81
+   "metacritic": 81,
+   "page": "oferta-borderlands-3.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $173.900 COP"
   },
   {
    "id": "cs-143575-3-1.28",
@@ -1565,7 +1691,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1574,9 +1700,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/329380/capsule_231x87.jpg?t=1747738919",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-stealth-inc-2-a-game-of-clones.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $43.900 COP"
   },
   {
    "id": "cs-268580-3-2.25",
@@ -1602,7 +1731,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1611,9 +1740,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1967260/fd4afeedc834928fb425d40aeecd3595443ab501/capsule_231x87_alt_assets_4.jpg?t=1791314996",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-double-dragon-gaiden-rise-of-the-dragons.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $72.800 COP"
   },
   {
    "id": "cs-147543-3-4.50",
@@ -1639,7 +1771,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1648,9 +1780,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/281610/capsule_231x87.jpg?t=1781819254",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-homeworld-deserts-of-kharak.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $144.600 COP"
   },
   {
    "id": "cs-242111-3-5.40",
@@ -1676,7 +1811,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1685,9 +1820,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1577120/capsule_231x87.jpg?t=1730303267",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-the-quarry.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $173.900 COP"
   },
   {
    "id": "cs-144703-3-4.40",
@@ -1713,7 +1851,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1722,9 +1860,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/351970/capsule_231x87.jpg?t=1718967588",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-tales-of-zestiria.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $145.100 COP"
   },
   {
    "id": "cs-163507-3-3.60",
@@ -1750,7 +1891,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1759,9 +1900,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/501590/capsule_231x87.jpg?t=1782157737",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-bulletstorm-full-clip-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $115.200 COP"
   },
   {
    "id": "cs-108359-3-3.60",
@@ -1787,7 +1931,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1796,9 +1940,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261640/capsule_231x87.jpg?t=1750081341",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-borderlands-the-pre-sequel.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $115.200 COP"
   },
   {
    "id": "cs-206964-3-3.60",
@@ -1824,7 +1971,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1833,9 +1980,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1079830/capsule_231x87.jpg?t=1725488072",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-cris-tales.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $115.200 COP"
   },
   {
    "id": "cs-172039-3-1.80",
@@ -1861,7 +2011,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1870,9 +2020,12 @@
     "metacritic-69"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534370/capsule_231x87.jpg?t=1639505951",
-   "metacritic": 69
+   "metacritic": 69,
+   "page": "oferta-pure-farming-2018.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.600 COP"
   },
   {
    "id": "cs-170170-3-5.28",
@@ -1898,7 +2051,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1907,9 +2060,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/678960/capsule_231x87.jpg?t=1766015412",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-code-vein.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $174.100 COP"
   },
   {
    "id": "cs-176534-1-0.89",
@@ -1935,7 +2091,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1944,9 +2100,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/684410/capsule_231x87.jpg?t=1717674640",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-bridge-constructor-portal.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $28.600 COP"
   },
   {
    "id": "cs-256277-25-6.99",
@@ -1972,7 +2131,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -1981,9 +2140,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1677350/capsule_231x87.jpg?t=1777395708",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-ea-sports-pga-tour.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $200.100 COP"
   },
   {
    "id": "cs-92629-11-6.99",
@@ -2009,7 +2171,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2017,8 +2179,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-painkiller-complete-pack.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $200.100 COP"
   },
   {
    "id": "cs-291857-11-6.99",
@@ -2044,7 +2209,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2052,8 +2217,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-synduality-echo-of-ada-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $200.100 COP"
   },
   {
    "id": "cs-203041-11-7.99",
@@ -2079,7 +2247,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2087,8 +2255,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-code-vein-digital-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $228.900 COP"
   },
   {
    "id": "cs-210040-11-7.99",
@@ -2114,7 +2285,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2122,8 +2293,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-one-punch-man-a-hero-nobody-knows-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $228.900 COP"
   },
   {
    "id": "cs-198716-11-8.99",
@@ -2149,7 +2323,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2157,8 +2331,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-one-piece-world-seeker-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $257.700 COP"
   },
   {
    "id": "cs-291858-11-9.99",
@@ -2184,7 +2361,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2192,8 +2369,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-synduality-echo-of-ada-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $286.500 COP"
   },
   {
    "id": "cs-258408-25-6.99",
@@ -2219,7 +2399,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2227,8 +2407,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-need-for-speed-unbound-standard-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $200.100 COP"
   },
   {
    "id": "cs-257291-25-6.99",
@@ -2254,7 +2437,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2262,8 +2445,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-wild-hearts-standard-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $200.100 COP"
   },
   {
    "id": "cs-154838-11-2.49",
@@ -2289,7 +2475,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2298,9 +2484,12 @@
     "metacritic-91"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/269710/capsule_231x87.jpg?t=1768587840",
-   "metacritic": 91
+   "metacritic": 91,
+   "page": "oferta-tumblestone.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $71.400 COP"
   },
   {
    "id": "cs-109746-1-1.99",
@@ -2326,7 +2515,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2335,9 +2524,12 @@
     "metacritic-90"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/e61b54b5c5ec0a610be1bd53e89b461c413e0e6b/capsule_231x87_alt_assets_1.jpg?t=1792681167",
-   "metacritic": 90
+   "metacritic": 90,
+   "page": "oferta-metro-2033-redux.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-456-11-0.89",
@@ -2363,7 +2555,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2372,9 +2564,12 @@
     "metacritic-83"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8000/capsule_231x87.jpg?t=1729009457",
-   "metacritic": 83
+   "metacritic": 83,
+   "page": "oferta-tomb-raider-anniversary.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $25.500 COP"
   },
   {
    "id": "cs-145517-11-5.99",
@@ -2400,7 +2595,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2409,9 +2604,12 @@
     "metacritic-86"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391220/d811b86e2960ea42903774f4ec447d79494e8ef4/capsule_231x87_alt_assets_0.jpg?t=1792675385",
-   "metacritic": 86
+   "metacritic": 86,
+   "page": "oferta-rise-of-the-tomb-raider.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $171.300 COP"
   },
   {
    "id": "cs-256932-3-2.00",
@@ -2437,7 +2635,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2446,9 +2644,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1815570/capsule_231x87.jpg?t=1731955791",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-aces-and-adventures.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.600 COP"
   },
   {
    "id": "cs-158443-11-3.99",
@@ -2474,7 +2675,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2483,9 +2684,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418240/capsule_231x87.jpg?t=1789475696",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-shadow-tactics-blades-of-the-shogun.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $114.600 COP"
   },
   {
    "id": "cs-643-11-0.89",
@@ -2511,7 +2715,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2520,9 +2724,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8140/capsule_231x87.jpg?t=1729009496",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-tomb-raider-underworld.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $25.500 COP"
   },
   {
    "id": "cs-141090-11-1.29",
@@ -2548,7 +2755,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2557,9 +2764,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332250/capsule_231x87.jpg?t=1781884634",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-the-next-penelope.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $37.200 COP"
   },
   {
    "id": "cs-99739-7-1.49",
@@ -2585,7 +2795,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2594,9 +2804,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/241600/capsule_231x87.jpg?t=1743078622",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-rogue-legacy.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-234770-3-2.46",
@@ -2622,7 +2835,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2631,9 +2844,12 @@
     "metacritic-81"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1283410/capsule_231x87.jpg?t=1737877432",
-   "metacritic": 81
+   "metacritic": 81,
+   "page": "oferta-tails-of-iron.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $71.400 COP"
   },
   {
    "id": "cs-93749-11-0.99",
@@ -2659,7 +2875,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2668,9 +2884,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/223730/capsule_231x87.jpg?t=1753954633",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-fly-n.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-101259-3-1.50",
@@ -2696,7 +2915,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2705,9 +2924,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238320/capsule_231x87.jpg?t=1666817106",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-outlast.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $43.200 COP"
   },
   {
    "id": "cs-109696-3-3.00",
@@ -2733,7 +2955,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2742,9 +2964,12 @@
     "metacritic-81"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261470/capsule_231x87.jpg?t=1726821290",
-   "metacritic": 81
+   "metacritic": 81,
+   "page": "oferta-distant-worlds-universe.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $85.500 COP"
   },
   {
    "id": "cs-101882-11-1.99",
@@ -2770,7 +2995,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2779,9 +3004,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/241910/capsule_231x87.jpg?t=1789474225",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-goodbye-deponia.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-3394-11-0.79",
@@ -2807,7 +3035,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2816,9 +3044,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/277110/capsule_231x87.jpg?t=1569852653",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-return-to-mysterious-island.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $22.800 COP"
   },
   {
    "id": "cs-334-1-0.89",
@@ -2844,7 +3075,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2853,9 +3084,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/6850/capsule_231x87.jpg?t=1732293077",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-hitman-2-silent-assassin.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $25.500 COP"
   },
   {
    "id": "cs-189778-11-1.29",
@@ -2881,7 +3115,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2890,9 +3124,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/811270/capsule_231x87.jpg?t=1722517971",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-impulsion.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $37.200 COP"
   },
   {
    "id": "cs-145115-11-1.49",
@@ -2918,7 +3155,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2927,9 +3164,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/446840/capsule_231x87.jpg?t=1656581950",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-splasher.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-154826-11-1.49",
@@ -2955,7 +3195,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -2964,9 +3204,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/390720/capsule_231x87.jpg?t=1781884646",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-anarcute.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-157493-11-1.99",
@@ -2992,7 +3235,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3001,9 +3244,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/396750/capsule_231x87.jpg?t=1784066303",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-everspace.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-93636-11-1.99",
@@ -3029,7 +3275,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3038,9 +3284,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220740/capsule_231x87.jpg?t=1789382953",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-chaos-on-deponia.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-172014-11-1.99",
@@ -3066,7 +3315,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3075,9 +3324,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/234270/capsule_231x87.jpg?t=1789476278",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-ken-follett-s-the-pillars-of-the-earth.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-250734-11-1.99",
@@ -3103,7 +3355,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3112,9 +3364,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/914890/capsule_231x87.jpg?t=1670340575",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-nine-noir-lives.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-258087-3-2.00",
@@ -3140,7 +3395,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3149,9 +3404,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1291860/capsule_231x87.jpg?t=1789478119",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-rough-justice-84.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.600 COP"
   },
   {
    "id": "cs-191469-1-2.49",
@@ -3177,7 +3435,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3186,9 +3444,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/815370/11b2c1dd531149d24a276ea0abae5f05b966f781/capsule_231x87.jpg?t=1783077147",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-green-hell.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $71.400 COP"
   },
   {
    "id": "cs-201617-11-2.49",
@@ -3214,7 +3475,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3223,8 +3484,11 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 78
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 78,
+   "page": "oferta-dark-future-blood-red-states.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $71.400 COP"
   },
   {
    "id": "cs-207006-11-1.49",
@@ -3250,7 +3514,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3259,9 +3523,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1045720/capsule_231x87.jpg?t=1783989609",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-the-coma-2-vicious-sisters.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-203450-11-2.99",
@@ -3287,7 +3554,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3296,9 +3563,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/807120/capsule_231x87.jpg?t=1789476763",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-iratus-lord-of-the-dead.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $85.800 COP"
   },
   {
    "id": "cs-173455-11-1.99",
@@ -3324,7 +3594,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3333,9 +3603,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493540/capsule_231x87.jpg?t=1729500541",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-figment.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-143325-1-2.99",
@@ -3361,7 +3634,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3370,9 +3643,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/232090/capsule_231x87.jpg?t=1774538987",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-killing-floor-2.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $85.800 COP"
   },
   {
    "id": "cs-265719-11-0.99",
@@ -3398,7 +3674,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3407,9 +3683,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2228030/capsule_231x87.jpg?t=1717679134",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-dr-fetus-mean-meat-machine.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-176105-11-5.99",
@@ -3435,7 +3714,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3444,9 +3723,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/544750/capsule_231x87.jpg?t=1718967845",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-soul-calibur-vi.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $171.300 COP"
   },
   {
    "id": "cs-242550-3-1.10",
@@ -3472,7 +3754,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3481,9 +3763,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1582680/capsule_231x87.jpg?t=1772556733",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-trolley-problem-inc.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $31.500 COP"
   },
   {
    "id": "cs-217962-1-2.99",
@@ -3509,7 +3794,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3518,9 +3803,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1267540/capsule_231x87.jpg?t=1725354407",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-wrc-9-fia-world-rally-championship.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $85.800 COP"
   },
   {
    "id": "cs-21-11-2.99",
@@ -3546,7 +3834,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3555,9 +3843,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/67370/capsule_231x87.jpg?t=1728674715",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-the-darkness-ii.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $85.800 COP"
   },
   {
    "id": "cs-259211-3-1.80",
@@ -3583,7 +3874,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3592,9 +3883,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1730080/capsule_231x87.jpg?t=1724771761",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-beyond-the-long-night.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $51.300 COP"
   },
   {
    "id": "cs-150170-3-2.00",
@@ -3620,7 +3914,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3629,9 +3923,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/421050/capsule_231x87.jpg?t=1789475469",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-deponia-doomsday.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.600 COP"
   },
   {
    "id": "cs-185881-11-0.49",
@@ -3657,7 +3954,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3666,9 +3963,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/809240/capsule_231x87.jpg?t=1789484168",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-vandals.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $14.700 COP"
   },
   {
    "id": "cs-258191-11-2.49",
@@ -3694,7 +3994,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3703,9 +4003,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085220/capsule_231x87.jpg?t=1729500878",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-figment-2-creed-valley.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $71.400 COP"
   },
   {
    "id": "cs-87946-11-1.99",
@@ -3731,7 +4034,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3740,9 +4043,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/203830/capsule_231x87.jpg?t=1789468914",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-the-dark-eye-chains-of-satinav.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-97671-11-1.99",
@@ -3768,7 +4074,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3777,9 +4083,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230820/capsule_231x87.jpg?t=1789474148",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-the-night-of-the-rabbit.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-93463-11-1.99",
@@ -3805,7 +4114,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3814,9 +4123,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219910/capsule_231x87.jpg?t=1789468966",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-edna-and-harvey-harvey-s-new-eyes.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-190701-11-1.99",
@@ -3842,7 +4154,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3851,9 +4163,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/626660/capsule_231x87.jpg?t=1587728311",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-flipping-death.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-233875-3-2.00",
@@ -3879,7 +4194,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3888,9 +4203,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1367590/capsule_231x87.jpg?t=1792075149",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-tormented-souls.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.600 COP"
   },
   {
    "id": "cs-164014-3-2.00",
@@ -3916,7 +4234,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3925,9 +4243,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/414700/capsule_231x87.jpg?t=1618944453",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-outlast-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.600 COP"
   },
   {
    "id": "cs-88328-3-1.00",
@@ -3953,7 +4274,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3962,9 +4283,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/214340/capsule_231x87.jpg?t=1789381815",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-deponia.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.800 COP"
   },
   {
    "id": "cs-140070-3-1.00",
@@ -3990,7 +4314,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -3999,9 +4323,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/314830/capsule_231x87.jpg?t=1789474808",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-blackguards-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.800 COP"
   },
   {
    "id": "cs-147350-11-1.19",
@@ -4027,7 +4354,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4036,9 +4363,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/337480/capsule_231x87.jpg?t=1707165692",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-zombie-vikings.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $34.500 COP"
   },
   {
    "id": "cs-127567-1-1.99",
@@ -4064,7 +4394,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4073,9 +4403,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242640/capsule_231x87.jpg?t=1778174590",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-styx-master-of-shadows.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-144487-11-1.99",
@@ -4101,7 +4434,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4110,9 +4443,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/327220/capsule_231x87.jpg?t=1789475103",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-anna-s-quest.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-165236-3-1.30",
@@ -4138,7 +4474,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4147,9 +4483,12 @@
     "metacritic-73"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/454950/capsule_231x87.jpg?t=1728313376",
-   "metacritic": 73
+   "metacritic": 73,
+   "page": "oferta-mainlining.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $36.900 COP"
   },
   {
    "id": "cs-229104-3-2.50",
@@ -4175,7 +4514,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4184,9 +4523,12 @@
     "metacritic-74"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1385100/capsule_231x87.jpg?t=1789476911",
-   "metacritic": 74
+   "metacritic": 74,
+   "page": "oferta-insurmountable.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $72.000 COP"
   },
   {
    "id": "cs-94063-11-0.99",
@@ -4212,7 +4554,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4221,9 +4563,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105000/capsule_231x87.jpg?t=1789469040",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-a-new-beginning-final-cut.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-222885-11-0.99",
@@ -4249,7 +4594,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4258,9 +4603,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1336120/capsule_231x87.jpg?t=1717675056",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-bridge-constructor-the-walking-dead.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-254390-11-0.99",
@@ -4286,7 +4634,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4295,9 +4643,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1620720/capsule_231x87.jpg?t=1729500913",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-the-forest-quartet.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-160033-11-1.99",
@@ -4323,7 +4674,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4332,8 +4683,11 @@
     "metacritic-73"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 73
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 73,
+   "page": "oferta-ladykiller-in-a-bind.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-212422-11-1.99",
@@ -4359,7 +4713,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4368,9 +4722,12 @@
     "metacritic-73"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/899310/capsule_231x87.jpg?t=1789476723",
-   "metacritic": 73
+   "metacritic": 73,
+   "page": "oferta-iron-danger.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-233736-11-1.99",
@@ -4396,7 +4753,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4405,9 +4762,12 @@
     "metacritic-73"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1502560/capsule_231x87.jpg?t=1743167767",
-   "metacritic": 73
+   "metacritic": 73,
+   "page": "oferta-the-smurfs-mission-vileaf.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-255076-11-1.99",
@@ -4433,7 +4793,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4442,9 +4802,12 @@
     "metacritic-73"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/265300/capsule_231x87.jpg?t=1728377554",
-   "metacritic": 73
+   "metacritic": 73,
+   "page": "oferta-lords-of-the-fallen-2014.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-109745-1-1.99",
@@ -4470,7 +4833,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4479,9 +4842,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/287390/e05aeffd3c09e19aec8128bf850dc2f39cc36e1d/capsule_231x87_alt_assets_1.jpg?t=1792681177",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-metro-last-light-redux.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-210-3-1.00",
@@ -4507,7 +4873,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4516,9 +4882,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/200550/capsule_231x87.jpg?t=1730284914",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-dungeons-the-dark-lord.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.800 COP"
   },
   {
    "id": "cs-101835-11-1.49",
@@ -4544,7 +4913,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4553,9 +4922,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251430/capsule_231x87.jpg?t=1717679220",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-the-inner-world.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-429-7-0.99",
@@ -4581,7 +4953,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4590,9 +4962,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/6860/capsule_231x87.jpg?t=1732283123",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-hitman-blood-money.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-101879-11-0.99",
@@ -4618,7 +4993,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4627,9 +5002,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/250030/capsule_231x87.jpg?t=1447358562",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-lilly-looking-through.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-155407-11-0.99",
@@ -4655,7 +5033,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4664,9 +5042,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/351920/capsule_231x87.jpg?t=1789475595",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-crazy-machines-3.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-206344-11-0.99",
@@ -4692,7 +5073,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4701,9 +5082,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/919410/capsule_231x87.jpg?t=1789476538",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-felix-the-reaper.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-220702-7-1.49",
@@ -4729,7 +5113,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4738,9 +5122,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1347780/capsule_231x87.jpg?t=1600704099",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-freedom-fighters.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-182-1-1.99",
@@ -4766,7 +5153,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4775,9 +5162,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1250/capsule_231x87.jpg?t=1789667388",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-killing-floor.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-108708-11-1.99",
@@ -4803,7 +5193,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4812,9 +5202,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/260160/capsule_231x87.jpg?t=1789474537",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-the-last-tinker-city-of-colors.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-164161-11-1.99",
@@ -4840,7 +5233,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4849,9 +5242,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/355790/capsule_231x87.jpg?t=1778174587",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-styx-shards-of-darkness.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-227619-11-1.49",
@@ -4877,7 +5273,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4886,9 +5282,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1141120/capsule_231x87.jpg?t=1717680129",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-scarlet-hood-and-the-wicked-wood.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-235242-1-1.49",
@@ -4914,7 +5313,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4923,9 +5322,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1252240/capsule_231x87.jpg?t=1731176057",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-aeon-drive.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-150918-11-0.99",
@@ -4951,7 +5353,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4960,9 +5362,12 @@
     "metacritic-70"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/368080/bb050eec9de839067d955958949c72a71694f28f/capsule_231x87.jpg?t=1772827105",
-   "metacritic": 70
+   "metacritic": 70,
+   "page": "oferta-aurion-legacy-of-the-kori-odan.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-173367-25-1.99",
@@ -4988,7 +5393,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -4997,9 +5402,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/628800/e7c5538273e2a62080e3469b10e6a9f61a19c7a0/capsule_231x87.jpg?t=1790694045",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-super-hydorah.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-258043-11-1.99",
@@ -5025,7 +5433,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5034,9 +5442,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1376760/capsule_231x87.jpg?t=1789478028",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-life-of-delta.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-259729-11-1.99",
@@ -5062,7 +5473,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5071,9 +5482,12 @@
     "metacritic-71"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1698220/capsule_231x87.jpg?t=1725488586",
-   "metacritic": 71
+   "metacritic": 71,
+   "page": "oferta-teslagrad-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-134579-3-1.00",
@@ -5099,7 +5513,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5108,9 +5522,12 @@
     "metacritic-70"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/294370/capsule_231x87.jpg?t=1629800473",
-   "metacritic": 70
+   "metacritic": 70,
+   "page": "oferta-crowntakers.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.800 COP"
   },
   {
    "id": "cs-142961-3-1.00",
@@ -5136,7 +5553,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5145,9 +5562,12 @@
     "metacritic-70"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/339190/capsule_231x87.jpg?t=1789475063",
-   "metacritic": 70
+   "metacritic": 70,
+   "page": "oferta-dead-synchronicity-tomorrow-comes-today.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.800 COP"
   },
   {
    "id": "cs-169772-3-1.00",
@@ -5173,7 +5593,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5182,9 +5602,12 @@
     "metacritic-70"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548370/capsule_231x87.jpg?t=1631541797",
-   "metacritic": 70
+   "metacritic": 70,
+   "page": "oferta-rezrog.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.800 COP"
   },
   {
    "id": "cs-205841-11-2.99",
@@ -5210,7 +5633,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5219,9 +5642,12 @@
     "metacritic-72"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1154790/capsule_231x87.jpg?t=1724164827",
-   "metacritic": 72
+   "metacritic": 72,
+   "page": "oferta-xiii.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $85.800 COP"
   },
   {
    "id": "cs-172063-1-1.19",
@@ -5247,7 +5673,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5256,9 +5682,12 @@
     "metacritic-66"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/639470/capsule_231x87.jpg?t=1779883080",
-   "metacritic": 66
+   "metacritic": 66,
+   "page": "oferta-original-journey.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $34.500 COP"
   },
   {
    "id": "cs-265818-1-3.99",
@@ -5284,7 +5713,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5293,9 +5722,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1681430/capsule_231x87.jpg?t=1778174302",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-robocop-rogue-city.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $114.600 COP"
   },
   {
    "id": "cs-176987-1-1.99",
@@ -5321,7 +5753,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5330,9 +5762,12 @@
     "metacritic-67"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/556740/capsule_231x87.jpg?t=1779872027",
-   "metacritic": 67
+   "metacritic": 67,
+   "page": "oferta-legrand-legacy-tale-of-the-fatebounds.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $57.000 COP"
   },
   {
    "id": "cs-151703-7-1.49",
@@ -5358,7 +5793,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5367,9 +5802,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/421740/capsule_231x87.jpg?t=1775042617",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-goetia.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-109515-11-0.99",
@@ -5395,7 +5833,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5404,9 +5842,12 @@
     "metacritic-69"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/297060/capsule_231x87.jpg?t=1781884616",
-   "metacritic": 69
+   "metacritic": 69,
+   "page": "oferta-freaking-meatbags.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-144875-11-0.99",
@@ -5432,7 +5873,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5441,9 +5882,12 @@
     "metacritic-69"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/363600/capsule_231x87.jpg?t=1789475246",
-   "metacritic": 69
+   "metacritic": 69,
+   "page": "oferta-holy-potatoes-a-weapon-shop.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $28.200 COP"
   },
   {
    "id": "cs-225164-11-1.49",
@@ -5469,7 +5913,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5478,9 +5922,12 @@
     "metacritic-76"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/889260/1280245e60f267a0e7560ab24bb92650f1cb96cb/capsule_231x87.jpg?t=1764080420",
-   "metacritic": 76
+   "metacritic": 76,
+   "page": "oferta-bonkies.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $42.600 COP"
   },
   {
    "id": "cs-157072-11-8.99",
@@ -5506,7 +5953,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5514,8 +5961,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-one-piece-burning-blood-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $210.000 COP"
   },
   {
    "id": "cs-173596-3-3.69",
@@ -5541,7 +5991,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5550,9 +6000,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/323190/45bfdc7f6b60b2acab44cc96c488f938219c42fd/capsule_231x87.jpg?t=1792058205",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-frostpunk.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $83.400 COP"
   },
   {
    "id": "cs-136930-3-2.46",
@@ -5578,7 +6031,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5587,9 +6040,12 @@
     "metacritic-83"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/282070/2d8bb6908a236a5b129a2445dcc1cab37d0f7a47/capsule_231x87.jpg?t=1792057984",
-   "metacritic": 83
+   "metacritic": 83,
+   "page": "oferta-this-war-of-mine.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $55.600 COP"
   },
   {
    "id": "cs-172626-3-2.71",
@@ -5615,7 +6071,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5624,9 +6080,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/330020/capsule_231x87.jpg?t=1765218667",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-children-of-morta.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $61.200 COP"
   },
   {
    "id": "cs-209670-3-2.09",
@@ -5652,7 +6111,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5661,8 +6120,11 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 79
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 79,
+   "page": "oferta-frostpunk-the-last-autumn.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $47.100 COP"
   },
   {
    "id": "cs-190757-3-3.60",
@@ -5688,7 +6150,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5697,9 +6159,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/673880/capsule_231x87.jpg?t=1747933345",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-warhammer-40-000-mechanicus.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $83.600 COP"
   },
   {
    "id": "cs-206602-3-5.10",
@@ -5725,7 +6190,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5734,8 +6199,11 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 87
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 87,
+   "page": "oferta-monster-hunter-world-iceborne.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $110.800 COP"
   },
   {
    "id": "cs-242048-3-5.10",
@@ -5761,7 +6229,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5770,8 +6238,11 @@
     "metacritic-86"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 86
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 86,
+   "page": "oferta-monster-hunter-rise-sunbreak.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $110.800 COP"
   },
   {
    "id": "cs-141408-3-3.19",
@@ -5797,7 +6268,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5806,9 +6277,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/262060/ab08721cad650a1a7aa2e57f9bdf318b71c43c38/capsule_231x87.jpg?t=1789168187",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-darkest-dungeon.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $69.000 COP"
   },
   {
    "id": "cs-193282-1-1.56",
@@ -5834,7 +6308,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5843,9 +6317,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/893680/9905f30c98caa941315f4e3c663f001fcf0fb4ba/capsule_231x87.jpg?t=1792858313",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-project-warlock.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $33.500 COP"
   },
   {
    "id": "cs-173850-3-2.04",
@@ -5871,7 +6348,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5880,9 +6357,12 @@
     "metacritic-75"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/537800/capsule_231x87.jpg?t=1768471106",
-   "metacritic": 75
+   "metacritic": 75,
+   "page": "oferta-bomber-crew.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $44.400 COP"
   },
   {
    "id": "cs-170046-3-9.45",
@@ -5908,7 +6388,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5916,8 +6396,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-origins-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $192.800 COP"
   },
   {
    "id": "cs-236635-3-9.45",
@@ -5943,7 +6426,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5951,8 +6434,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-watch-dogs-legion-deluxe-edition-ubisoft.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $192.800 COP"
   },
   {
    "id": "cs-211878-3-10.80",
@@ -5978,7 +6464,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -5986,8 +6472,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-borderlands-3-super-deluxe-edition-epic.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $219.700 COP"
   },
   {
    "id": "cs-200620-3-10.80",
@@ -6013,7 +6502,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6021,8 +6510,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-borderlands-3-super-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $219.700 COP"
   },
   {
    "id": "cs-153679-3-10.80",
@@ -6048,7 +6540,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6056,8 +6548,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-watch-dogs-2-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $219.700 COP"
   },
   {
    "id": "cs-169242-3-12.15",
@@ -6083,7 +6578,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6091,8 +6586,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-5-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $247.300 COP"
   },
   {
    "id": "cs-283720-3-12.15",
@@ -6118,7 +6616,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6126,8 +6624,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-for-honor-year-8-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $247.300 COP"
   },
   {
    "id": "cs-221822-3-13.50",
@@ -6153,7 +6654,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6161,8 +6662,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-new-dawn-complete-bundle.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $274.800 COP"
   },
   {
    "id": "cs-170045-3-13.50",
@@ -6188,7 +6692,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6196,8 +6700,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-origins-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $274.800 COP"
   },
   {
    "id": "cs-191458-3-12.67",
@@ -6223,7 +6730,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6231,8 +6738,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-soulcalibur-vi-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $245.900 COP"
   },
   {
    "id": "cs-221823-3-17.55",
@@ -6258,7 +6768,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6266,8 +6776,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-new-dawn-ultimate-bundle.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $357.500 COP"
   },
   {
    "id": "cs-192-3-0.98",
@@ -6293,7 +6806,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6302,9 +6815,12 @@
     "metacritic-86"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39190/capsule_231x87.jpg?t=1784217836",
-   "metacritic": 86
+   "metacritic": 86,
+   "page": "oferta-dungeon-siege.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $19.000 COP"
   },
   {
    "id": "cs-141243-3-4.73",
@@ -6330,7 +6846,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6339,9 +6855,12 @@
     "metacritic-86"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/244160/capsule_231x87.jpg?t=1781819205",
-   "metacritic": 86
+   "metacritic": 86,
+   "page": "oferta-homeworld-remastered-collection.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $96.000 COP"
   },
   {
    "id": "cs-502-11-0.97",
@@ -6367,7 +6886,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6376,9 +6895,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7000/capsule_231x87.jpg?t=1729009388",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-tomb-raider-legend.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $19.200 COP"
   },
   {
    "id": "cs-247663-3-8.10",
@@ -6404,7 +6926,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6413,9 +6935,12 @@
     "metacritic-83"
    ],
    "createdAt": "2026-10-25T13:18:29Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/368260/capsule_231x87.jpg?t=1732138093",
-   "metacritic": 83
+   "metacritic": 83,
+   "page": "oferta-marvels-midnight-suns.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $165.300 COP"
   },
   {
    "id": "cs-305-3-0.98",
@@ -6441,7 +6966,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6450,9 +6975,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39200/capsule_231x87.jpg?t=1779884923",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-dungeon-siege-ii.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $19.000 COP"
   },
   {
    "id": "cs-170047-3-8.10",
@@ -6478,7 +7006,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6487,9 +7015,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582160/capsule_231x87.jpg?t=1792778037",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-assassins-creed-origins.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $165.300 COP"
   },
   {
    "id": "cs-193595-7-12.59",
@@ -6515,7 +7046,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6523,8 +7054,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-battletech-mercenary-collection.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $245.900 COP"
   },
   {
    "id": "cs-204654-11-6.99",
@@ -6550,7 +7084,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6559,9 +7093,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/798460/capsule_231x87.jpg?t=1771958172",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-ni-no-kuni-wrath-of-the-white-witch-remastered.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $136.600 COP"
   },
   {
    "id": "cs-249354-3-8.45",
@@ -6587,7 +7124,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6596,9 +7133,12 @@
     "metacritic-83"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/871980/capsule_231x87.jpg?t=1792446567",
-   "metacritic": 83
+   "metacritic": 83,
+   "page": "oferta-digimon-survive.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $164.100 COP"
   },
   {
    "id": "cs-87210-3-0.98",
@@ -6624,7 +7164,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6633,9 +7173,12 @@
     "metacritic-77"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242940/capsule_231x87.jpg?t=1783003650",
-   "metacritic": 77
+   "metacritic": 77,
+   "page": "oferta-anachronox.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $19.000 COP"
   },
   {
    "id": "cs-217049-3-4.05",
@@ -6661,7 +7204,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6670,9 +7213,12 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/798490/capsule_231x87.jpg?t=1789047990",
-   "metacritic": 78
+   "metacritic": 78,
+   "page": "oferta-othercide.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $82.600 COP"
   },
   {
    "id": "cs-227495-11-11.99",
@@ -6698,7 +7244,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6706,8 +7252,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-scarlet-nexus-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $216.100 COP"
   },
   {
    "id": "cs-171780-11-11.99",
@@ -6733,7 +7282,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6741,8 +7290,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-ni-no-kuni-ii-revenant-kingdom-the-prince-s-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $216.100 COP"
   },
   {
    "id": "cs-324450-3-11.99",
@@ -6768,7 +7320,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6776,8 +7328,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-witch-it-4-pack.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $216.000 COP"
   },
   {
    "id": "cs-195476-3-12.00",
@@ -6803,7 +7358,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6811,8 +7366,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-darksiders-blades-and-whip-franchise-pack.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $216.400 COP"
   },
   {
    "id": "cs-237593-11-13.49",
@@ -6838,7 +7396,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6846,8 +7404,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-tekken-7-originals-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $243.300 COP"
   },
   {
    "id": "cs-198630-11-14.99",
@@ -6873,7 +7434,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6881,8 +7442,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-5-and-far-cry-new-dawn-deluxe-edition-bundle.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $270.500 COP"
   },
   {
    "id": "cs-237437-11-14.99",
@@ -6908,7 +7472,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6916,8 +7480,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-scarlet-nexus-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $270.500 COP"
   },
   {
    "id": "cs-237594-11-16.49",
@@ -6943,7 +7510,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6951,8 +7518,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-tekken-7-definitive-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $297.100 COP"
   },
   {
    "id": "cs-198638-11-19.49",
@@ -6978,7 +7548,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -6986,8 +7556,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-5-gold-edition-and-far-cry-new-dawn-deluxe-edition-bundle.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $351.500 COP"
   },
   {
    "id": "cs-186-11-2.99",
@@ -7013,7 +7586,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7022,9 +7595,12 @@
     "metacritic-88"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8850/capsule_231x87.jpg?t=1730174099",
-   "metacritic": 88
+   "metacritic": 88,
+   "page": "oferta-bioshock-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $54.000 COP"
   },
   {
    "id": "cs-141034-7-2.25",
@@ -7050,7 +7626,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7059,9 +7635,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T14:40:43Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/316790/capsule_231x87.jpg?t=1731602112",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-grim-fandango-remastered.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $40.800 COP"
   },
   {
    "id": "cs-102249-7-2.99",
@@ -7087,7 +7666,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7096,9 +7675,12 @@
     "metacritic-91"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
-   "metacritic": 91
+   "metacritic": 91,
+   "page": "oferta-deus-ex-human-revolution-director-s-cut.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $54.000 COP"
   },
   {
    "id": "cs-173440-11-2.99",
@@ -7124,7 +7706,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7133,9 +7715,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/571310/capsule_231x87.jpg?t=1726132098",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-steamworld-dig-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $54.000 COP"
   },
   {
    "id": "cs-164772-3-1.05",
@@ -7161,7 +7746,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7170,9 +7755,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/437390/capsule_231x87.jpg?t=1738067639",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-hopiko.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $18.700 COP"
   },
   {
    "id": "cs-215388-11-4.49",
@@ -7198,7 +7786,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7207,8 +7795,11 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 84
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 84,
+   "page": "oferta-spiritfarer.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $81.200 COP"
   },
   {
    "id": "cs-362-1-1.49",
@@ -7234,7 +7825,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7243,9 +7834,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/35130/capsule_231x87.jpg?t=1729009567",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-lara-croft-and-the-guardian-of-light.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $26.800 COP"
   },
   {
    "id": "cs-227775-11-2.24",
@@ -7271,7 +7865,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7280,9 +7874,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/829280/capsule_231x87.jpg?t=1751537005",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-kaze-and-the-wild-masks.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $40.400 COP"
   },
   {
    "id": "cs-264052-11-2.54",
@@ -7308,7 +7905,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7317,9 +7914,12 @@
     "metacritic-81"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1634080/b3a7303807116f47e723267e3fd4b8fa7e00a5b5/capsule_231x87.jpg?t=1782833654",
-   "metacritic": 81
+   "metacritic": 81,
+   "page": "oferta-nocturnal.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $46.100 COP"
   },
   {
    "id": "cs-250082-11-2.99",
@@ -7345,7 +7945,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7354,9 +7954,12 @@
     "metacritic-80"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1726120/capsule_231x87.jpg?t=1759331008",
-   "metacritic": 80
+   "metacritic": 80,
+   "page": "oferta-cursed-to-golf.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $54.000 COP"
   },
   {
    "id": "cs-165337-11-5.99",
@@ -7382,7 +7985,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7391,9 +7994,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/389730/capsule_231x87.jpg?t=1765812753",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-tekken-7.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $107.800 COP"
   },
   {
    "id": "cs-97932-7-1.49",
@@ -7419,7 +8025,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7428,9 +8034,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/245450/capsule_231x87.jpg?t=1774276664",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-wizardry-8.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $26.800 COP"
   },
   {
    "id": "cs-146254-11-2.24",
@@ -7456,7 +8065,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7465,8 +8074,11 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 79
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 79,
+   "page": "oferta-jotun.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $40.400 COP"
   },
   {
    "id": "cs-174490-11-1.49",
@@ -7492,7 +8104,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7501,8 +8113,11 @@
     "metacritic-78"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 78
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 78,
+   "page": "oferta-everspace-encounters.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $26.800 COP"
   },
   {
    "id": "cs-259830-11-2.99",
@@ -7528,7 +8143,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7537,9 +8152,12 @@
     "metacritic-79"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1470390/capsule_231x87.jpg?t=1771529129",
-   "metacritic": 79
+   "metacritic": 79,
+   "page": "oferta-city-of-beats.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $54.000 COP"
   },
   {
    "id": "cs-218851-11-13.59",
@@ -7565,7 +8183,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7573,8 +8191,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-captain-tsubasa-rise-of-new-champions-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $227.000 COP"
   },
   {
    "id": "cs-174472-11-14.39",
@@ -7600,7 +8221,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7608,8 +8229,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-dragon-ball-fighter-z-fighterz-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $240.600 COP"
   },
   {
    "id": "cs-287946-3-3.20",
@@ -7635,7 +8259,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7644,9 +8268,12 @@
     "metacritic-86"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466230/4ae8a46457c355cd85a58eb1346cd67c6e8538e8/capsule_231x87.jpg?t=1747993448",
-   "metacritic": 86
+   "metacritic": 86,
+   "page": "oferta-the-holy-gosh-darn.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $53.500 COP"
   },
   {
    "id": "cs-160047-3-4.80",
@@ -7672,7 +8299,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7681,9 +8308,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/128345/capsule_231x87.jpg?t=1698957925",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-mortal-kombat-xl.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $80.300 COP"
   },
   {
    "id": "cs-174454-11-9.59",
@@ -7709,7 +8339,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7718,9 +8348,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/678950/capsule_231x87.jpg?t=1776898545",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-dragon-ball-fighterz.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $160.300 COP"
   },
   {
    "id": "cs-144427-3-3.44",
@@ -7746,7 +8379,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7755,9 +8388,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379720/capsule_231x87.jpg?t=1750784856",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-doom.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $52.400 COP"
   },
   {
    "id": "cs-186651-3-3.48",
@@ -7783,7 +8419,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7792,9 +8428,12 @@
     "metacritic-84"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/334940/capsule_231x87.jpg?t=1763040310",
-   "metacritic": 84
+   "metacritic": 84,
+   "page": "oferta-yoku-s-island-express.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $52.700 COP"
   },
   {
    "id": "cs-247664-3-18.00",
@@ -7820,7 +8459,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7828,8 +8467,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T14:23:08Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-marvels-midnight-suns-legendary-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $260.500 COP"
   },
   {
    "id": "cs-188229-3-14.40",
@@ -7855,7 +8497,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7863,8 +8505,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassin-s-creed-odyssey-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $208.600 COP"
   },
   {
    "id": "cs-222843-3-17.90",
@@ -7890,7 +8535,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7898,8 +8543,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-borderlands-3-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $259.200 COP"
   },
   {
    "id": "cs-201292-3-18.00",
@@ -7925,7 +8573,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7933,8 +8581,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-tom-clancys-ghost-recon-breakpoint-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $260.500 COP"
   },
   {
    "id": "cs-188216-3-18.00",
@@ -7960,7 +8611,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -7968,8 +8619,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-odyssey-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $260.500 COP"
   },
   {
    "id": "cs-236637-3-18.00",
@@ -7995,7 +8649,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8003,8 +8657,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-watch-dogs-legion-gold-edition-ubisoft.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $260.500 COP"
   },
   {
    "id": "cs-206514-3-18.00",
@@ -8030,7 +8687,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8038,8 +8695,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-red-dead-redemption-2-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $260.500 COP"
   },
   {
    "id": "cs-188217-3-21.60",
@@ -8065,7 +8725,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8073,8 +8733,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-odyssey-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $312.900 COP"
   },
   {
    "id": "cs-236633-3-21.60",
@@ -8100,7 +8763,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8108,8 +8771,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-watch-dogs-legion-ultimate-edition-ubisoft.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $312.900 COP"
   },
   {
    "id": "cs-278-3-1.80",
@@ -8135,7 +8801,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8144,9 +8810,12 @@
     "metacritic-89"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13600/capsule_231x87.jpg?t=1720535333",
-   "metacritic": 89
+   "metacritic": 89,
+   "page": "oferta-prince-of-persia-the-sands-of-time.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $25.900 COP"
   },
   {
    "id": "cs-170812-3-3.60",
@@ -8172,7 +8841,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8181,8 +8850,11 @@
     "metacritic-88"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 88
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 88,
+   "page": "oferta-xcom-2-war-of-the-chosen.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $51.900 COP"
   },
   {
    "id": "cs-347-3-1.80",
@@ -8208,7 +8880,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8217,9 +8889,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13530/capsule_231x87.jpg?t=1720535330",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-prince-of-persia-the-two-thrones.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $25.900 COP"
   },
   {
    "id": "cs-215382-3-3.60",
@@ -8245,7 +8920,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8254,9 +8929,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/598550/capsule_231x87.jpg?t=1723637797",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-huntdown.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $51.900 COP"
   },
   {
    "id": "cs-549-3-1.80",
@@ -8282,7 +8960,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8291,9 +8969,12 @@
     "metacritic-82"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/19980/capsule_231x87.jpg?t=1720535332",
-   "metacritic": 82
+   "metacritic": 82,
+   "page": "oferta-prince-of-persia.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $25.900 COP"
   },
   {
    "id": "cs-191189-3-3.59",
@@ -8319,7 +9000,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8328,9 +9009,12 @@
     "metacritic-83"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/641080/capsule_231x87.jpg?t=1777995295",
-   "metacritic": 83
+   "metacritic": 83,
+   "page": "oferta-trials-rising.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $52.000 COP"
   },
   {
    "id": "cs-247685-11-15.99",
@@ -8356,7 +9040,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8364,8 +9048,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T14:40:43Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-marvels-midnight-suns-digital-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $203.300 COP"
   },
   {
    "id": "cs-272975-11-15.99",
@@ -8391,7 +9078,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8399,8 +9086,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-captain-tsubasa-rise-of-new-champions-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $203.300 COP"
   },
   {
    "id": "cs-272920-11-18.99",
@@ -8426,7 +9116,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8434,8 +9124,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-one-piece-pirate-warriors-4-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $241.700 COP"
   },
   {
    "id": "cs-202373-11-19.99",
@@ -8461,7 +9154,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8469,8 +9162,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-watch-dogs-legion-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $254.500 COP"
   },
   {
    "id": "cs-246995-11-19.99",
@@ -8496,7 +9192,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8504,8 +9200,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-ace-combat-7-skies-unknown-top-gun-maverick-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $254.500 COP"
   },
   {
    "id": "cs-201294-11-23.99",
@@ -8531,7 +9230,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8539,8 +9238,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-tom-clancys-ghost-recon-breakpoint-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $305.300 COP"
   },
   {
    "id": "cs-202374-11-23.99",
@@ -8566,7 +9268,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8574,8 +9276,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-watch-dogs-legion-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $305.300 COP"
   },
   {
    "id": "cs-221635-3-5.00",
@@ -8601,7 +9306,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8609,9 +9314,12 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1371690/capsule_231x87.jpg?t=1760108537",
-   "metacritic": 0
+   "metacritic": 0,
+   "page": "oferta-graven.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $63.600 COP"
   },
   {
    "id": "cs-313171-7-19.99",
@@ -8637,7 +9345,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8645,9 +9353,12 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://images.gog-statics.com/3a89c0b4831940f386859779e5221144b916e1d616d3861a54beb5210d57ee59_product_tile_117h.webp",
-   "metacritic": 0
+   "metacritic": 0,
+   "page": "oferta-warhammer-40k-bundle.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $254.500 COP"
   },
   {
    "id": "cs-146092-11-1.99",
@@ -8673,7 +9384,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8682,9 +9393,12 @@
     "metacritic-85"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/410710/capsule_231x87.jpg?t=1774275834",
-   "metacritic": 85
+   "metacritic": 85,
+   "page": "oferta-system-shock-enhanced-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $25.300 COP"
   },
   {
    "id": "cs-294704-11-2.99",
@@ -8710,7 +9424,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8719,9 +9433,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517180/capsule_231x87.jpg?t=1744981735",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-mindcop.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $38.100 COP"
   },
   {
    "id": "cs-232460-3-5.00",
@@ -8747,7 +9464,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8755,9 +9472,12 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1122690/capsule_231x87.jpg?t=1733585594",
-   "metacritic": 0
+   "metacritic": 0,
+   "page": "oferta-last-stop.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $63.600 COP"
   },
   {
    "id": "cs-107452-11-2.99",
@@ -8783,7 +9503,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8792,9 +9512,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251470/capsule_231x87.jpg?t=1715114308",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-towerfall-ascension.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $38.100 COP"
   },
   {
    "id": "cs-170096-1-3.99",
@@ -8820,7 +9543,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8829,9 +9552,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/393520/capsule_231x87.jpg?t=1745570624",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-iconoclasts.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $50.900 COP"
   },
   {
    "id": "cs-227290-3-3.15",
@@ -8857,7 +9583,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8866,9 +9592,12 @@
     "metacritic-87"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1395030/capsule_231x87.jpg?t=1747433081",
-   "metacritic": 87
+   "metacritic": 87,
+   "page": "oferta-kathy-rain-directors-cut.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $37.600 COP"
   },
   {
    "id": "cs-283174-3-24.20",
@@ -8894,7 +9623,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8902,8 +9631,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-dragon-ball-fighterz-legendary-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $273.000 COP"
   },
   {
    "id": "cs-233316-3-18.00",
@@ -8929,7 +9661,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8937,8 +9669,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-valhalla-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $197.000 COP"
   },
   {
    "id": "cs-251811-3-18.00",
@@ -8964,7 +9699,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -8972,8 +9707,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-6-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $197.000 COP"
   },
   {
    "id": "cs-296561-3-20.25",
@@ -8999,7 +9737,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9007,8 +9745,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-star-wars-outlaws-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $221.800 COP"
   },
   {
    "id": "cs-266303-11-19.54",
@@ -9034,7 +9775,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9042,8 +9783,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-sword-art-online-last-recollection-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $208.000 COP"
   },
   {
    "id": "cs-241096-3-22.50",
@@ -9069,7 +9813,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9077,8 +9821,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-valhalla-ragnarok-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $246.600 COP"
   },
   {
    "id": "cs-233327-3-22.50",
@@ -9104,7 +9851,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9112,8 +9859,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-6-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $246.600 COP"
   },
   {
    "id": "cs-93503-3-6.75",
@@ -9139,7 +9889,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9148,9 +9898,12 @@
     "metacritic-94"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8870/capsule_231x87.jpg?t=1728673518",
-   "metacritic": 94
+   "metacritic": 94,
+   "page": "oferta-bioshock-infinite.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $74.000 COP"
   },
   {
    "id": "cs-224-3-2.25",
@@ -9176,7 +9929,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9185,9 +9938,12 @@
     "metacritic-92"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13570/capsule_231x87.jpg?t=1764776065",
-   "metacritic": 92
+   "metacritic": 92,
+   "page": "oferta-tom-clancy-s-splinter-cell-chaos-theory.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $24.800 COP"
   },
   {
    "id": "cs-284777-3-24.75",
@@ -9213,7 +9969,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9221,8 +9977,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-star-wars-outlaws-gold-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $271.000 COP"
   },
   {
    "id": "cs-251813-3-27.00",
@@ -9248,7 +10007,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9256,8 +10015,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-far-cry-6-game-of-the-year-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $295.800 COP"
   },
   {
    "id": "cs-243-3-2.25",
@@ -9283,7 +10045,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9292,9 +10054,12 @@
     "metacritic-91"
    ],
    "createdAt": "2026-10-25T01:18:41Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13560/capsule_231x87.jpg?t=1764775959",
-   "metacritic": 91
+   "metacritic": 91,
+   "page": "oferta-tom-clancy-s-splinter-cell.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $24.800 COP"
   },
   {
    "id": "cs-284776-3-29.25",
@@ -9320,7 +10085,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9328,8 +10093,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-star-wars-outlaws-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $320.300 COP"
   },
   {
    "id": "cs-241097-3-31.50",
@@ -9355,7 +10123,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9363,8 +10131,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-assassins-creed-valhalla-complete-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $345.100 COP"
   },
   {
    "id": "cs-206516-3-13.50",
@@ -9390,7 +10161,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9399,9 +10170,12 @@
     "metacritic-93"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/capsule_231x87.jpg?t=1759502961",
-   "metacritic": 93
+   "metacritic": 93,
+   "page": "oferta-red-dead-redemption-2.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $147.700 COP"
   },
   {
    "id": "cs-88168-3-4.50",
@@ -9427,7 +10201,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9436,9 +10210,12 @@
     "metacritic-88"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220240/ba51d74a29dc4f6167ff9410d5fe8ae42235fd68/capsule_231x87.jpg?t=1785282057",
-   "metacritic": 88
+   "metacritic": 88,
+   "page": "oferta-far-cry-3.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $49.200 COP"
   },
   {
    "id": "cs-104-3-4.50",
@@ -9464,7 +10241,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9473,9 +10250,12 @@
     "metacritic-88"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/48190/capsule_231x87.jpg?t=1786611524",
-   "metacritic": 88
+   "metacritic": 88,
+   "page": "oferta-assassins-creed-brotherhood.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $49.200 COP"
   },
   {
    "id": "cs-246953-11-21.24",
@@ -9501,7 +10281,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9509,8 +10289,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-sd-gundam-battle-alliance-deluxe-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $202.600 COP"
   },
   {
    "id": "cs-275463-11-24.99",
@@ -9536,7 +10319,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9544,8 +10327,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-jujutsu-kaisen-cursed-clash-ultimate-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $238.600 COP"
   },
   {
    "id": "cs-225641-11-23.60",
@@ -9571,7 +10357,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9579,9 +10365,12 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://images.gog-statics.com/0e261916b320d930d36b9d200281ba7106631f467dfbeee00d980f61f9f56e92_product_tile_117h.webp",
-   "metacritic": 0
+   "metacritic": 0,
+   "page": "oferta-endless-space-2-definitive-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $225.000 COP"
   },
   {
    "id": "cs-128-1-4.99",
@@ -9607,7 +10396,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9616,9 +10405,12 @@
     "metacritic-96"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/capsule_231x87.jpg?t=1730172622",
-   "metacritic": 96
+   "metacritic": 96,
+   "page": "oferta-bioshock.html",
+   "action": "Ver oferta",
+   "saving": "Ahorras ≈ $47.800 COP"
   },
   {
    "id": "cs-281360-11-24.73",
@@ -9644,7 +10436,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9652,8 +10444,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-humankind-definitive-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $235.900 COP"
   },
   {
    "id": "cs-313816-11-25.39",
@@ -9679,7 +10474,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9687,8 +10482,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-endless-legend-definitive-edition.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $242.200 COP"
   },
   {
    "id": "cs-227942-11-9.99",
@@ -9714,7 +10512,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9723,9 +10521,12 @@
     "metacritic-97"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
-   "metacritic": 97
+   "metacritic": 97,
+   "page": "oferta-disco-elysium-the-final-cut.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $95.500 COP"
   },
   {
    "id": "cs-230833-3-26.65",
@@ -9751,7 +10552,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9759,8 +10560,11 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
-   "metacritic": 0
+   "updatedAt": "2026-10-25T14:57:32Z",
+   "metacritic": 0,
+   "page": "oferta-sid-meiers-civilization-vi-anthology.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $229.000 COP"
   },
   {
    "id": "cs-306449-3-23.23",
@@ -9786,7 +10590,7 @@
    "sponsored": false,
    "startsAt": null,
    "expiresAt": null,
-   "verifiedAt": "2026-10-25T14:40:43Z",
+   "verifiedAt": "2026-10-25T14:57:32Z",
    "source": "cheapshark",
    "sourceType": "api",
    "status": "Disponible",
@@ -9794,9 +10598,12 @@
     "descuento"
    ],
    "createdAt": "2026-10-25T12:16:11Z",
-   "updatedAt": "2026-10-25T14:40:43Z",
+   "updatedAt": "2026-10-25T14:57:32Z",
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2347080/a6b7b547d523b9fc2ef12ae0731156a30c0cb65f/capsule_231x87.jpg?t=1792089974",
-   "metacritic": 0
+   "metacritic": 0,
+   "page": "oferta-frosthaven.html",
+   "action": "Buscar en la tienda",
+   "saving": "Ahorras ≈ $53.300 COP"
   }
  ]
 }
