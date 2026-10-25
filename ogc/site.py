@@ -9,8 +9,8 @@ from email.utils import format_datetime
 from urllib.parse import quote
 from pathlib import Path
 
-from .channels import CO_TZ, co_time, cop_text, date_es, money, time_left, whatsapp_text
-from .content import FAQ, GUIDES, LEGAL_REVIEW, LEGAL_UPDATED
+from .channels import CO_TZ, co_time, cop_text, date_es, money, time_left
+from .content import FAQ, GLOSSARY, GUIDES, LEGAL_REVIEW, LEGAL_UPDATED
 from .model import parse_iso
 from .releases import date_label, relative_label, MONTHS_ES
 
@@ -42,14 +42,14 @@ ICONS = {k: _SVG.format(v) for k, v in {
 
 NAV = [
     ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"),
-                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"),
+                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("seguidos.html", "Mis seguidos", "bell"),
                  ("oferta-del-dia.html", "Oferta del día", "sparkle"), ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
                  ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift")]),
     ("Lanzamientos", [("lanzamientos.html", "Calendario", "calendar"), ("lanzamientos.html#proximos", "Próximos", "clock"),
                       ("lanzamientos.html#recientes", "Recientes", "sparkle"), ("lanzamientos.html#por-confirmar", "Por confirmar", "question"),
                       ("lanzamientos-playstation.html", "PlayStation", "store"), ("lanzamientos-xbox.html", "Xbox", "store"),
                       ("lanzamientos-switch.html", "Nintendo Switch", "store")]),
-    ("Ayuda", [("guias.html", "Guías", "book"), ("preguntas-frecuentes.html", "Preguntas", "chat"),
+    ("Ayuda", [("guias.html", "Guías", "book"), ("glosario.html", "Glosario gamer", "book"), ("estadisticas.html", "Estadísticas", "sparkle"), ("preguntas-frecuentes.html", "Preguntas", "chat"),
                ("como-verificamos.html", "Cómo verificamos", "check")]),
 ]
 FOOTER = [
@@ -57,7 +57,7 @@ FOOTER = [
     ("contacto.html", "Contacto"), ("privacidad.html", "Privacidad"), ("cookies.html", "Cookies"),
     ("afiliados.html", "Aviso de afiliados"), ("publicidad.html", "Publicidad y patrocinios"),
     ("terminos.html", "Términos de uso"), ("anunciate.html", "Anúnciate"), ("estado.html", "Estado del sistema"),
-    ("fuentes.html", "Fuentes de información"), ("whatsapp.html", "Resumen para WhatsApp"),
+    ("fuentes.html", "Fuentes de información"),
 ]
 CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; "
        "connect-src 'self' https://*.steamstatic.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
@@ -223,7 +223,7 @@ class Site:
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site"><div class="wrap">
 <div class="bar"><a class="brand" href="index.html"><img src="assets/logo-72.png" alt="" width="36" height="36">Ofertas Gamer CO</a>
-<div class="bar-actions"><a class="btn btn-search" href="ofertas.html#filters" aria-label="Buscar un juego en las ofertas">{ICONS['search']}<span>Buscar</span></a>
+<div class="bar-actions"><a class="btn btn-search" href="buscar.html" aria-label="Buscar un juego en las ofertas">{ICONS['search']}<span>Buscar</span></a>
 <button class="btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button></div></div>
 </div></header>
 <div class="shell">
@@ -235,6 +235,10 @@ class Site:
 </div>
 <footer class="site"><div class="wrap">
 <p class="foot-brand"><img src="assets/logo-72.png" alt="" width="32" height="32"> Ofertas Gamer CO</p>
+<div class="prefs" role="group" aria-label="Opciones de lectura"><span class="meta">Opciones de lectura:</span>
+<button class="chip" type="button" data-pref="big" aria-pressed="false" hidden>Letra grande</button>
+<button class="chip" type="button" data-pref="contrast" aria-pressed="false" hidden>Alto contraste</button>
+<button class="chip" type="button" data-pref="lite" aria-pressed="false" hidden>Ahorro de datos</button></div>
 <p class="install" id="install-box" hidden><button class="btn btn-primary" type="button" id="install-app">Instalar la app en tu celular</button></p>
 <p>{e(DISCLOSURE)}</p>
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
@@ -334,6 +338,8 @@ class Site:
         ps = self.price_stats(o)
         if ps and ps["isLow"]:
             chips.append(f'<span class="st low" title="El más bajo que hemos visto desde el {e(day_es(ps["first"]))}">Mínimo histórico</span>')
+        if o.get("metacritic"):
+            chips.append(f'<span class="st mc" title="Nota de la crítica en Metacritic">Crítica {int(o["metacritic"])}</span>')
         if len(o.get("otherStores") or []) and not full:
             n = len(o["otherStores"])
             chips.append(f'<span class="st muted">+{n} {"tienda" if n == 1 else "tiendas"}</span>')
@@ -449,7 +455,6 @@ class Site:
             parts.append(ext_link(self.cfg["enlace_canal_whatsapp"], "Canal de WhatsApp", cls="btn btn-wa"))
         if self.cfg.get("enlace_discord"):
             parts.append(ext_link(self.cfg["enlace_discord"], "Únete al Discord", cls="btn btn-dc"))
-        parts.append('<a class="btn" href="whatsapp.html">Resumen para WhatsApp</a>')
         return '<div class="cta">' + "".join(parts) + "</div>"
 
     def feature(self, offers):
@@ -674,7 +679,16 @@ class Site:
             rel = relative_label(g.get("date"), g.get("precision"), now)
             img = (poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(g["image"]) else ""} src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">') if g.get("image") else no_cover(g, "no-cover big")
             tags = "".join(f'<span class="tag">{e(x)}</span>' for x in g.get("platforms", [])) + \
-                "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", []))
+                "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])) + \
+                ('<span class="tag es">En español</span>' if g.get("spanish") else "")
+            shots = "".join(f'<li><a href="{e(u.replace(".600x338", ".1920x1080"))}" target="_blank" rel="noopener noreferrer">'
+                            f'<img src="{e(u)}" alt="Captura {i + 1} de {e(g["title"])}" width="600" height="338" loading="lazy" decoding="async"></a></li>'
+                            for i, u in enumerate(g.get("shots") or []))
+            extra = (f'<section class="shots"><h2>{ICONS["sparkle"]} Capturas oficiales</h2><ul class="shot-grid">{shots}</ul></section>' if shots else "")
+            if g.get("requirements"):
+                extra += (f'<section class="reqs"><h2>{ICONS["check"]} Requisitos mínimos de PC</h2><ul>'
+                          + "".join(f"<li>{e(ln)}</li>" for ln in g["requirements"].splitlines()) + '</ul><p class="meta">Según Steam. Pueden cambiar antes del lanzamiento.</p></section>')
+            extra += self.similar_games(g, games)
             ld = {"@context": "https://schema.org", "@type": "VideoGame", "name": g["title"], "url": g["url"],
                   "gamePlatform": g.get("platforms"), "genre": g.get("genres")}
             if g.get("image"):
@@ -712,8 +726,21 @@ class Site:
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
-<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{faq_html}""",
+<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{extra}{faq_html}""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld, faq_ld], og_image=g.get("image"))
+
+    def similar_games(self, g, games):
+        """Juegos parecidos: comparten género y plataforma; primero los más esperados."""
+        gens, plats = set(g.get("genres", [])), set(g.get("platforms", []))
+        if not gens:
+            return ""
+        pool = [x for x in games if x["id"] != g["id"] and x["id"] in self.detail and set(x.get("genres", [])) & gens]
+        pool.sort(key=lambda x: (-len(set(x.get("genres", [])) & gens), -len(set(x.get("platforms", [])) & plats), self.rank(x)))
+        picks = pool[:4]
+        if not picks:
+            return ""
+        return (f'<section class="similar"><h2>{ICONS["sparkle"]} Si te gusta {e(g["title"])}, mira estos</h2>'
+                f'<ul class="spot-grid small">{"".join(self.spot_card(x, self.now) for x in picks)}</ul></section>')
 
     def game_faq(self, g, when):
         """Preguntas frecuentes de un juego, respondidas solo con los datos que tenemos."""
@@ -730,6 +757,9 @@ class Site:
                         "Por ahora no aparece una versión para PC en los datos publicados. Si se anuncia, se verá aquí."))
         if g.get("genres"):
             out.append((f"¿Qué tipo de juego es {t}?", f"Es un juego de {', '.join(x.lower() for x in g['genres'])}."))
+        if "spanish" in g:
+            out.append((f"¿{t} está en español?", "Sí: Steam lo lista con idioma español." if g["spanish"] else
+                        "Por ahora Steam no lo lista con idioma español. Puede cambiar cuando salga."))
         t2 = g.get("trailer") or {}
         if t2 or g.get("youtube"):
             out.append((f"¿Dónde veo el tráiler de {t}?", "Arriba en esta página: toca el botón de play sobre la imagen."))
@@ -1098,6 +1128,16 @@ class Site:
                         f'{updated_line}' + self.release_groups(dated, now, "Calendario", "cal-gen", compact=False)
                         + self.release_groups(tba, now, "Fecha por confirmar", "tba-gen", compact=False),
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, gen)])
+        es = [g for g in upcoming if g.get("spanish")]
+        if es:
+            name = "lanzamientos-en-espanol.html"
+            links.append((name, "En español", len(es)))
+            dated = sorted([g for g in es if g.get("date")], key=lambda g: (g["date"], self.rank(g)))
+            self.layout(name, "Próximos juegos de PC en español", "Próximos lanzamientos de Steam que vienen con idioma español (textos o voces).",
+                        f'<h1>Próximos juegos en español</h1><p class="lead">Juegos que Steam lista con idioma español. {len(es)} en camino.</p>{updated_line}'
+                        + self.release_groups(dated, now, "Calendario", "cal-es", compact=False)
+                        + self.release_groups(sorted([g for g in es if not g.get("date")], key=self.rank), now, "Fecha por confirmar", "tba-es", compact=False),
+                        crumbs=[("lanzamientos.html", "Lanzamientos"), (name, "En español")])
         self.release_links = links
         self.calendar_ics(games, now)
 
@@ -1134,6 +1174,35 @@ class Site:
                 f'<a class="btn" href="calendario.ics" download>Descargar .ics</a></div>'
                 f'<p class="meta">Con «Agregar a mi calendario» los estrenos aparecen solos en el calendario de tu celular o en Google Calendar '
                 f'(en Google: Otros calendarios → Desde URL → pega <code>{e(self.base)}calendario.ics</code>).</p></section>')
+
+    def stats_page(self, live, games, updated_line):
+        """Estadísticas públicas con datos propios: nada inventado, todo sale de los archivos del bot."""
+        hist = self.history or {}
+        tracked = len(hist)
+        points = sum(len(v["points"]) for v in hist.values())
+        first = min((v["points"][0][0] for v in hist.values() if v["points"]), default="")
+        arch = list((getattr(self, "epic_archive", {}) or {}).values())
+        epic_value = sum(self.cop_value(g["originalPrice"], {"currency": g.get("currency") or "USD", "copApproximation": None, "currentPrice": None}) or 0
+                         for g in arch if g.get("originalPrice"))
+        saved_now = sum(self.cop_saved(o) for o in live)
+        by_store = sorted(((st["name"], sum(1 for o in live if o["storeId"] == sid)) for sid, st in self.stores.items() if st["active"]), key=lambda kv: -kv[1])
+        top = max(live, key=lambda o: o.get("discountPercentage") or 0, default=None)
+        lows = sum(1 for o in live if (self.price_stats(o) or {}).get("isLow"))
+        cards = [(len(live), "ofertas activas hoy"), (sum(1 for o in live if o.get("currentPrice") == 0), "juegos gratis ahora"),
+                 (self.pesos(saved_now) if saved_now else "$0", "de ahorro sumando todas las ofertas de hoy (aprox.)"),
+                 (tracked, "juegos con historial de precio"), (len(arch), "juegos gratis de Epic registrados"),
+                 (self.pesos(epic_value) if epic_value else "$0", "en juegos que regaló Epic (precio normal, aprox.)"),
+                 (len(games), "lanzamientos en el calendario"), (lows, "ofertas en su mínimo histórico")]
+        tiles = "".join(f'<li><strong>{e(str(v))}</strong><span>{e(t)}</span></li>' for v, t in cards)
+        stores = "".join(f"<tr><td>{e(n)}</td><td>{c}</td></tr>" for n, c in by_store)
+        self.layout("estadisticas.html", "Estadísticas de ofertas de juegos en Colombia",
+                    "Cuántas ofertas hay hoy, cuánto se ahorra, cuántos juegos regaló Epic y más, con datos propios de Ofertas Gamer CO.",
+                    f'<h1>Estadísticas</h1><p class="lead">Números reales sacados de nuestras propias revisiones (cada 4 horas)'
+                    + (f', desde el {e(day_es(first))}' if first else "") + f'. {points} precios guardados hasta hoy.</p>{updated_line}'
+                    f'<ul class="stats">{tiles}</ul>'
+                    + (f'<p>El descuento más grande de hoy: <strong>{self.title_link(top)}</strong> con -{top.get("discountPercentage") or 0}%.</p>' if top else "")
+                    + f'<h2>Ofertas activas por tienda</h2><table><thead><tr><th scope="col">Tienda</th><th scope="col">Ofertas</th></tr></thead><tbody>{stores}</tbody></table>',
+                    crumbs=[("estadisticas.html", "Estadísticas")])
 
     def alerts_page(self):
         bot = getattr(self, "bot", "")
@@ -1387,6 +1456,14 @@ class Site:
                         crumbs=[("guias.html", "Guías"), (f"{g['slug']}.html", g["title"])], jsonld=[art], og_type="article")
 
         self.news_page(live, games or [], updated_dt, updated_line)
+        terms = "".join(f'<div class="term"><dt id="{e(t.split()[0].lower())}">{e(t)}</dt><dd>{e(d)}</dd></div>' for t, d in GLOSSARY)
+        self.layout("glosario.html", "Glosario gamer: DLC, DRM, AAA, early access y más",
+                    "Qué significan las palabras que ves en las tiendas de juegos: DLC, DRM, AAA, free to play, early access, bundle y más.",
+                    f'<h1>Glosario gamer</h1><p class="lead">Las palabras que ves en las tiendas, explicadas en una línea.</p><dl class="glossary">{terms}</dl>',
+                    crumbs=[("glosario.html", "Glosario")],
+                    jsonld=[{"@context": "https://schema.org", "@type": "DefinedTermSet", "name": "Glosario gamer",
+                             "hasDefinedTerm": [{"@type": "DefinedTerm", "name": t, "description": d} for t, d in GLOSSARY]}])
+        self.stats_page(live, games or [], updated_line)
         self.layout("oferta-del-dia.html", "Oferta del día: el juego de PC que más vale la pena hoy",
                     "Cada día elegimos la oferta de PC que más vale la pena por descuento, nota de la crítica y precio en pesos.",
                     f'<h1>Oferta del día</h1><p class="lead">Cada mañana elegimos una sola oferta: la que más vale la pena según el descuento, '
@@ -1406,7 +1483,6 @@ class Site:
         self.offer_pages(live, notice)
         self.game_pages(games or [], updated_dt)
         self.static_pages(status, updated)
-        self.whatsapp_page(live, updated)
         self.feeds(live, updated_dt)
         self.sitemap(updated_dt)
         self.write("site.webmanifest", json.dumps({
@@ -1433,6 +1509,21 @@ class Site:
                        action=self.action_label(o), saving=self.saving_text(o)) for o in live]
         self.write("data/offers.json", json.dumps({"updatedAt": updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                                    "offers": public}, ensure_ascii=False, indent=1))
+        self.write("data/juegos.json", json.dumps({"games": [
+            {"id": g["id"], "title": g["title"], "page": self.detail.get(g["id"]), "image": g.get("image") or "",
+             "when": date_label(g.get("date"), g.get("precision"))} for g in (games or []) if g["id"] in self.detail]},
+            ensure_ascii=False, separators=(",", ":")))
+        self.layout("buscar.html", "Buscar juegos, ofertas y lanzamientos", "Busca cualquier juego en las ofertas y en el calendario de lanzamientos.",
+                    '<h1>Buscar</h1><div id="search-root" hidden><label class="sr-only" for="site-q">Nombre del juego</label>'
+                    '<input class="big-search" id="site-q" type="search" placeholder="Escribe un juego: GTA, Zelda, Hollow Knight…" autocomplete="off" autofocus>'
+                    '<div id="search-out" aria-live="polite"></div></div>'
+                    '<noscript><p>El buscador necesita JavaScript. Mira <a href="ofertas.html">todas las ofertas</a> o el <a href="lanzamientos.html">calendario</a>.</p></noscript>',
+                    crumbs=[("buscar.html", "Buscar")], noindex=True)
+        self.layout("seguidos.html", "Mis juegos seguidos", "Los lanzamientos que sigues con la campana. Se guardan solo en este navegador.",
+                    '<h1>Mis juegos seguidos</h1><p class="lead">Los lanzamientos que sigues con la campana 🔔. Se guardan solo en este navegador, sin cuenta. '
+                    'Para recibir un aviso cuando salgan, usa las <a href="alertas.html">alertas de Telegram</a>.</p>'
+                    '<div id="follow-root"><p class="notice">Activa JavaScript para ver tus juegos seguidos.</p></div>',
+                    crumbs=[("seguidos.html", "Mis seguidos")], noindex=True)
 
     def static_pages(self, status, updated):
         tg = self.cfg.get("enlace_canal_telegram")
@@ -1590,16 +1681,6 @@ class Site:
           '<h1>Sin conexión</h1><p>No hay internet en este momento. Cuando vuelva la conexión, las ofertas se actualizan solas.</p>'
           '<p><a class="btn btn-primary" href="index.html">Reintentar</a></p>', noindex=True)
 
-    def whatsapp_page(self, offers, updated):
-        text = whatsapp_text(offers, self.cfg, updated)
-        self.layout("whatsapp.html", "Resumen para WhatsApp", "Resumen de ofertas listo para copiar y pegar en un canal de WhatsApp.",
-                    f"""<h1>Resumen para WhatsApp</h1>
-<p class="lead">Toca "Copiar texto", abre tu canal de WhatsApp y pega. Actualizado: {e(updated)}.</p>
-<p><button class="btn btn-wa" id="copy-wa" type="button">Copiar texto</button></p>
-<label for="wa-text" class="meta">Texto del resumen</label>
-<textarea class="wa" id="wa-text" readonly>{e(text)}</textarea>""", noindex=True)
-        self.write("whatsapp.txt", text)
-
     def feeds(self, offers, updated_dt):
         latest = sorted(offers, key=lambda o: o.get("createdAt") or "", reverse=True)[:30]
 
@@ -1632,7 +1713,15 @@ class Site:
 
     def sitemap(self, updated_dt):
         day = updated_dt.strftime("%Y-%m-%d")
-        urls = "".join(f"<url><loc>{self.base}{'' if p == 'index.html' else p}</loc><lastmod>{day}</lastmod></url>" for p in self.pages)
-        self.write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-                                  f"{urls}</urlset>\n")
+        # Índice con tres mapas: así Google encuentra antes los lanzamientos y las ofertas nuevas.
+        groups = {"sitemap-ofertas.xml": [p for p in self.pages if p.startswith("oferta-")],
+                  "sitemap-lanzamientos.xml": [p for p in self.pages if p.startswith("juego-")]}
+        groups["sitemap-paginas.xml"] = [p for p in self.pages if not p.startswith(("oferta-", "juego-"))]
+        for fname, pages in groups.items():
+            urls = "".join(f"<url><loc>{self.base}{'' if p == 'index.html' else p}</loc><lastmod>{day}</lastmod></url>" for p in pages)
+            self.write(fname, '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                              f"{urls}</urlset>\n")
+        maps = "".join(f"<sitemap><loc>{self.base}{f}</loc><lastmod>{day}</lastmod></sitemap>" for f in groups)
+        self.write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                                  f"{maps}</sitemapindex>\n")
         self.write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {self.base}sitemap.xml\n")

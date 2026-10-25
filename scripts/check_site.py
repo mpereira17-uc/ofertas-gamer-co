@@ -102,14 +102,19 @@ def main():
                 if not target.exists():
                     errors.append(f"{name}: enlace interno roto {href}")
 
-    sitemap = (DOCS / "sitemap.xml").read_text()
     base = json.loads((ROOT / "config" / "site.json").read_text())["url_web"]
-    for loc in re.findall(r"<loc>([^<]+)</loc>", sitemap):
-        rel = loc.replace(base, "") or "index.html"
-        if not (DOCS / rel).exists():
-            errors.append(f"sitemap: no existe {rel}")
-        if rel in ("404.html", "whatsapp.html") or not rel.endswith(".html"):
-            errors.append(f"sitemap: incluye una página técnica {rel}")
+    index = (DOCS / "sitemap.xml").read_text()
+    maps = [loc.replace(base, "") for loc in re.findall(r"<loc>([^<]+)</loc>", index)] if "<sitemapindex" in index else ["sitemap.xml"]
+    for m in maps:
+        if not (DOCS / m).exists():
+            errors.append(f"sitemap: no existe {m}")
+            continue
+        for loc in re.findall(r"<loc>([^<]+)</loc>", (DOCS / m).read_text()):
+            rel = loc.replace(base, "") or "index.html"
+            if not (DOCS / rel).exists():
+                errors.append(f"sitemap: no existe {rel}")
+            if rel in ("404.html", "buscar.html", "seguidos.html") or not rel.endswith(".html"):
+                errors.append(f"sitemap: incluye una página técnica {rel}")
 
     offers = json.loads((DOCS / "data" / "offers.json").read_text())["offers"]
     for o in offers:

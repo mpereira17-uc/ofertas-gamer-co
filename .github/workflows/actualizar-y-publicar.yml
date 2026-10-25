@@ -20,6 +20,7 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: write   # para guardar data/ y docs/ cuando cambian
+      issues: write     # avisos automáticos si una fuente se cae e informe mensual
     steps:
       - uses: actions/checkout@v7
         with:
@@ -34,6 +35,7 @@ jobs:
       - name: Obtener, validar y publicar ofertas
         run: python bot.py
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

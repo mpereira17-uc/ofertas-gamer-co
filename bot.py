@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, channels, community, discord, images, promote, releases, sources, weekly, wikidata
+from ogc import alerts, channels, community, discord, health, images, promote, releases, sources, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -36,6 +36,7 @@ BOT_FILE = DATA / "telegram_bot.json"
 HISTORY_FILE = DATA / "historial_precios.json"
 EPIC_NEXT_FILE = DATA / "epic_proximos.json"
 POLL_FILE = DATA / "encuesta.json"
+HEALTH_FILE = DATA / "salud.json"
 IMG_DIR = DATA / "img"
 EPIC_ARCHIVE_FILE = DATA / "epic_regalados.json"
 DAILY_FILE = DATA / "oferta_del_dia.json"
@@ -243,6 +244,21 @@ def run(args):
         if polls:
             save_json(POLL_FILE, polls)
         print(f"Alertas: {status['Alertas de Telegram']}")
+    health_state = load_json(HEALTH_FILE, {})
+    if not args.no_send and not args.fixtures:
+        checks = {"Epic": "epic" not in failed, "CheapShark": "cheapshark" not in failed}
+        for key, label in (("Fuente lanzamientos (Steam)", "Steam (lanzamientos)"), ("Fuente juegos grandes y de consola (Wikidata)", "Wikidata"),
+                           ("Fuente gratis para siempre (Steam)", "Steam (gratis para siempre)")):
+            checks[label] = str(status.get(key, "")).startswith("OK")
+        health_state = health.track_sources(health_state, checks, now)
+        health_state = health.check_links(health_state, offers, now, health.head_status)
+        health_state = health.monthly_report(health_state, now, health.month_stats(
+            now, price_history, epic_archive, history, status.get("Alertas de Telegram"), offers))
+        save_json(HEALTH_FILE, health_state)
+    if "linksChecked" in health_state:
+        status["Enlaces revisados hoy"] = f"{health_state['linksChecked']} revisados, {len(health_state.get('linksBroken', []))} rotos"
+    down = [n for n, s in health_state.get("sources", {}).items() if s.get("fails")]
+    status["Fuentes con fallas seguidas"] = ", ".join(f"{n} ({health_state['sources'][n]['fails']})" for n in down) or "ninguna"
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
     site.epic_next, site.epic_archive = epic_next, epic_archive
     site.poll = load_json(POLL_FILE, {})

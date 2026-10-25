@@ -31,7 +31,7 @@ class TestBot(unittest.TestCase):
             self.assertEqual(len(set(first)), len(first))
             data = json.loads((tmp / "offers.json").read_text())
             self.assertTrue(all(o["telegramPublishedAt"] for o in data["offers"]))
-            self.assertTrue((tmp / "docs" / "whatsapp.html").exists())
+            self.assertFalse((tmp / "docs" / "whatsapp.html").exists())
             self.assertTrue((tmp / "docs" / "lanzamientos.html").exists())
             self.assertTrue(list((tmp / "docs").glob("oferta-*.html")))
             self.assertTrue(list((tmp / "docs").glob("juego-*.html")))

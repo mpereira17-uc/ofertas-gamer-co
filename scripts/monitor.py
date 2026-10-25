@@ -19,7 +19,7 @@ def get(url):
         return resp.status, resp.read()
 
 
-for page in ("", "ofertas.html", "juegos-gratis.html", "privacidad.html", "afiliados.html", "whatsapp.html"):
+for page in ("", "ofertas.html", "juegos-gratis.html", "privacidad.html", "afiliados.html"):
     try:
         status, _ = get(base + page)
         if status != 200:

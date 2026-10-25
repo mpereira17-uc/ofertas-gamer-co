@@ -194,7 +194,21 @@ def steam_game(app_id, now, fetch):
         "comingSoon": bool((info.get("release_date") or {}).get("coming_soon")),
         "verifiedAt": iso(now),
         "trailer": steam_trailer(info),
+        "shots": [x["path_thumbnail"] for x in info.get("screenshots") or [] if (x.get("path_thumbnail") or "").startswith("https://")][:6],
+        "spanish": "español" in (info.get("supported_languages") or "").lower() or "spanish" in (info.get("supported_languages") or "").lower(),
+        "requirements": requirements_text(info),
     }
+
+
+def requirements_text(info):
+    """Requisitos mínimos de PC como texto simple (sin HTML), tal como los publica Steam."""
+    req = info.get("pc_requirements") or {}
+    raw = req.get("minimum") if isinstance(req, dict) else ""
+    text = re.sub(r"<br\s*/?>|</li>", "\n", raw or "")
+    text = re.sub(r"<[^>]+>", "", text)
+    lines = [re.sub(r"\s+", " ", ln).strip() for ln in text.splitlines()]
+    lines = [ln for ln in lines if ln and ln.lower().rstrip(":") not in ("mínimo", "minimum", "requisitos mínimos")]
+    return "\n".join(lines)[:700]
 
 
 def steam_releases(now, fetch, previous=()):
@@ -205,7 +219,7 @@ def steam_releases(now, fetch, previous=()):
     for app_id in popular_ids(fetch):
         cached = cache.get(f"steam-{app_id}")
         # una ficha vieja sin el campo trailer se vuelve a pedir (así llegan los tráileres, primero los más populares)
-        game = cached if cached and "trailer" in cached and (cached.get("verifiedAt") or "") >= fresh_after else None
+        game = cached if cached and "shots" in cached and (cached.get("verifiedAt") or "") >= fresh_after else None
         if game is None and refreshed < MAX_REFRESH:
             refreshed += 1
             try:

@@ -2,9 +2,9 @@
 const { chromium } = require("playwright");
 const base = process.argv[2] || "http://127.0.0.1:8765/";
 const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html", "guias.html", "contacto.html",
-  "privacidad.html", "afiliados.html", "whatsapp.html", "404.html", "estado.html", "guia-que-es-drm.html", "favoritos.html",
+  "privacidad.html", "afiliados.html", "404.html", "estado.html", "guia-que-es-drm.html", "favoritos.html",
   "resumen-semanal.html", "juegos-baratos.html", "lanzamientos-playstation.html", "juegos-gratis-para-siempre.html", "alertas.html",
-  "oferta-del-dia.html", "minimos-historicos.html", "juegos-menos-de-10000-pesos.html", "ofertas-mejor-valoradas.html"];
+  "oferta-del-dia.html", "minimos-historicos.html", "buscar.html", "glosario.html", "estadisticas.html", "todos-los-juegos-gratis-de-epic.html", "juegos-menos-de-10000-pesos.html", "ofertas-mejor-valoradas.html"];
 
 (async () => {
   const browser = await chromium.launch();
@@ -63,10 +63,6 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     if (!(await page.isVisible(".play-btn"))) errors.push(`${width}px: falta el botón de tráiler`);
     await page.click(".play-btn");
     if (!(await page.$("#trailer video.trailer-player"))) errors.push(`${width}px: el tráiler no se abre`);
-    await page.goto(base + "whatsapp.html");
-    await page.click("#copy-wa");
-    const copied = await page.evaluate(() => navigator.clipboard.readText());
-    if (!copied.startsWith("*") || /&(lt|gt|amp|quot);|<\/?(a|b|br|p)\b/.test(copied)) errors.push(`${width}px: texto de WhatsApp no limpio`);
     await ctx.close();
   }
   await browser.close();
