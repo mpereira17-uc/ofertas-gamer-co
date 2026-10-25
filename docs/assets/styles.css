@@ -362,3 +362,10 @@ h2.f-title::after{display:none}
 .trailer-chip:hover{background:var(--neon-2);transform:scale(1.1)}
 .trailer-chip svg{width:16px;height:16px;margin-left:2px}
 .trailer-fallback{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+/* Juegos sin imagen libre: tarjeta con el nombre */
+.no-cover{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:100%;min-height:90px;aspect-ratio:460/215;padding:12px;text-align:center;color:#fff;background:radial-gradient(circle at 30% 20%,rgba(155,108,255,.55),transparent 60%),radial-gradient(circle at 80% 90%,rgba(91,140,255,.5),transparent 55%),#141a2c}
+.no-cover strong{font-size:1.05rem;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.no-cover span{font-size:.78rem;color:#cbd3e6;letter-spacing:.04em}
+.no-cover.big strong{font-size:2rem}
+.spot-main .no-cover strong{font-size:1.6rem}
+.spot-main .spot-img .no-cover.spot-fg{position:relative;z-index:1}
