@@ -216,6 +216,8 @@ def run(args):
              "discord": discord.Discord(guild=str(cfg.get("discord_servidor", ""))).ready, "tumblr": tumblr.ready()}
     for net, label in (("bluesky", "Bluesky"), ("mastodon", "Mastodon"), ("discord", "Discord"), ("tumblr", "Tumblr")):
         status[f"{label} en esta ejecución"] = f"{posted[net]} publicadas" if ready[net] else "no configurado"
+        if net == "tumblr" and not ready[net] and len(tumblr.missing()) < 5:
+            status[f"{label} en esta ejecución"] += " (falta " + ", ".join(tumblr.missing()) + ")"
         print(f"{label}: {status[f'{label} en esta ejecución']}")
 
     history = load_json(WEEKLY_FILE, {"semanas": []})["semanas"]

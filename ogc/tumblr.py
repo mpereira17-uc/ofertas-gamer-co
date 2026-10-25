@@ -35,6 +35,12 @@ def ready(env=os.environ):
     return bool(blog(env)) and all((env.get(k) or "").strip() for k in KEYS)
 
 
+def missing(env=os.environ):
+    """Nombres (nunca valores) de lo que falta configurar."""
+    names = [] if (env.get("TUMBLR_BLOG") or "").strip() else ["TUMBLR_BLOG (variable)"]
+    return names + [k for k in KEYS if not (env.get(k) or "").strip()]
+
+
 def oauth_header(method, url, ck, cs, tk, ts, nonce=None, stamp=None):
     """Cabecera OAuth 1.0a (HMAC-SHA1). El cuerpo JSON no entra en la firma."""
     params = {"oauth_consumer_key": ck, "oauth_nonce": nonce or secrets.token_hex(16),
