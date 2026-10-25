@@ -143,6 +143,29 @@ def epic_free_games(stores, rate, now, cfg, fetch=get_json):
     return offers
 
 
+def epic_upcoming(fetch=get_json):
+    """Los próximos juegos gratis que Epic ya anunció (con sus fechas oficiales)."""
+    out = []
+    for el in fetch(EPIC_URL)["data"]["Catalog"]["searchStore"]["elements"]:
+        promos = (el.get("promotions") or {}).get("upcomingPromotionalOffers") or []
+        free = [o for p in promos for o in p.get("promotionalOffers", [])
+                if (o.get("discountSetting") or {}).get("discountPercentage") == 0]
+        if not free:
+            continue
+        slug = el.get("productSlug") or ""
+        mappings = (el.get("catalogNs") or {}).get("mappings") or el.get("offerMappings") or []
+        if mappings:
+            slug = mappings[0].get("pageSlug") or slug
+        slug = slug.split("/")[0]
+        image = next((i["url"] for i in el.get("keyImages", [])
+                      if i["type"] in ("OfferImageWide", "DieselStoreFrontWide", "Thumbnail")), "")
+        out.append({"id": f"epic-{el['id']}-{free[0]['startDate'][:10]}", "title": el["title"],
+                    "url": f"https://store.epicgames.com/es-ES/p/{slug}" if slug else "https://store.epicgames.com/es-ES/free-games",
+                    "image": image if image.startswith("https://") else "",
+                    "startsAt": free[0].get("startDate"), "expiresAt": free[0].get("endDate")})
+    return sorted(out, key=lambda g: g.get("startsAt") or "")
+
+
 def cheapshark_deals(stores, rate, now, cfg, fetch=get_json):
     by_cs = {s["cheapsharkId"]: s for s in stores.values() if s.get("cheapsharkId") and s.get("active")}
     f = cfg["filtros_ofertas"]

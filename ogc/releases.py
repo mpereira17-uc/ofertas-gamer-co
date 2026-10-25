@@ -106,7 +106,7 @@ F2P_URL = "https://store.steampowered.com/search/results/?json=1&filter=topselle
 def free_to_play(fetch, previous=()):
     """Los juegos gratis para siempre más jugados/vendidos en Steam (búsqueda oficial). Si falla, se conserva la lista.
     La portada sale de la ficha oficial (header_image): los juegos nuevos de Steam ya no tienen la ruta fija header.jpg."""
-    cache = {g["id"]: g for g in previous if g.get("headerChecked")}
+    cache = {g["id"]: g for g in previous if g.get("headerChecked") and "genres" in g}
     try:
         games, asked = [], 0
         for item in (fetch(F2P_URL) or {}).get("items", []):
@@ -120,13 +120,16 @@ def free_to_play(fetch, previous=()):
                     "image": "", "imageSmall": logo if logo.startswith("https://") else ""}
             old = cache.get(game["id"])
             if old:
-                game["image"], game["headerChecked"] = old.get("image") or "", True
+                game["image"], game["headerChecked"], game["genres"] = old.get("image") or "", True, old["genres"]
             elif asked < 45:
                 asked += 1
                 try:
                     data = (fetch(DETAILS_URL.format(id=app)) or {}).get(app) or {}
-                    header = ((data.get("data") or {}).get("header_image") or "") if data.get("success") else ""
+                    info = (data.get("data") or {}) if data.get("success") else {}
+                    header = info.get("header_image") or ""
                     game["image"], game["headerChecked"] = (header if header.startswith("https://") else ""), True
+                    game["genres"] = [g["description"] for g in info.get("genres") or [] if g.get("description")
+                                      and g["description"] not in ("Free To Play", "Free to Play", "Gratuito", "Gratis")][:3]
                 except Exception as exc:
                     print(f"Gratis para siempre: ficha {app} falló: {type(exc).__name__}", file=sys.stderr)
             game["image"] = game["image"] or game["imageSmall"]

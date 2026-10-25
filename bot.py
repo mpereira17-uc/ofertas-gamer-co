@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import sys
+from datetime import timedelta
 from pathlib import Path
 
 from ogc import alerts, channels, discord, promote, releases, sources, weekly, wikidata
@@ -32,6 +33,8 @@ WEEKLY_FILE = DATA / "resumenes.json"
 ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
 BOT_FILE = DATA / "telegram_bot.json"
 HISTORY_FILE = DATA / "historial_precios.json"
+EPIC_NEXT_FILE = DATA / "epic_proximos.json"
+EPIC_ARCHIVE_FILE = DATA / "epic_regalados.json"
 DAILY_FILE = DATA / "oferta_del_dia.json"
 DOCS = ROOT / "docs"
 
@@ -135,6 +138,20 @@ def run(args):
             sent_now += 1
     status["Publicadas en Telegram en esta ejecución"] = str(sent_now)
 
+    # Última oportunidad: un recordatorio, una sola vez, de lo bueno que termina en menos de 24 horas
+    last_call = load_json(SOCIAL_FILE, {}).get("ultima", [])
+    reminded = 0
+    for offer in candidates:
+        ends = parse_iso(offer.get("expiresAt"))
+        big = offer.get("currentPrice") == 0 or (offer.get("discountPercentage") or 0) >= 75
+        if (args.no_send or reminded >= 2 or not big or not ends or offer["id"] in last_call or offer["id"] not in published
+                or not timedelta(hours=1) < ends - now <= timedelta(hours=24)):
+            continue
+        if channels.send_telegram(offer, prefix="⏰ <b>ÚLTIMA OPORTUNIDAD</b> · termina en menos de 24 horas\n"):
+            last_call.append(offer["id"])
+            reminded += 1
+    status["Recordatorios de última oportunidad"] = str(reminded)
+
     offers.sort(key=lambda o: (o.get("currentPrice") != 0, -(o.get("discountPercentage") or 0)))
     DATA.mkdir(exist_ok=True)
     save_json(OFFERS_FILE, {"updatedAt": iso(now), "offers": offers})
@@ -144,6 +161,18 @@ def run(args):
     games, status["Fuente juegos grandes y de consola (Wikidata)"] = wikidata.add_consoles(games, previous_releases, now, sources.get_json)
     games = releases.mark_date_changes(games, previous_releases, now)
     save_json(RELEASES_FILE, {"updatedAt": iso(now), "games": games})
+    try:
+        epic_next = sources.epic_upcoming(sources.get_json)
+        save_json(EPIC_NEXT_FILE, {"updatedAt": iso(now), "games": epic_next})
+        status["Próximos gratis de Epic"] = f"OK, {len(epic_next)} anunciados"
+    except Exception as exc:
+        epic_next = load_json(EPIC_NEXT_FILE, {}).get("games", [])
+        status["Próximos gratis de Epic"] = f"Falló ({type(exc).__name__}); se usa la lista anterior"
+    epic_archive = load_json(EPIC_ARCHIVE_FILE, {})
+    for o in offers:
+        if o["storeId"] == "epic" and o.get("currentPrice") == 0:
+            epic_archive[o["id"]] = {k: o.get(k) for k in ("title", "image", "officialUrl", "startsAt", "expiresAt", "originalPrice", "currency")}
+    save_json(EPIC_ARCHIVE_FILE, epic_archive)
     f2p, status["Fuente gratis para siempre (Steam)"] = releases.free_to_play(sources.get_json, load_json(F2P_FILE, {}).get("games", []))
     save_json(F2P_FILE, {"updatedAt": iso(now), "games": f2p})
 
@@ -157,6 +186,7 @@ def run(args):
     site.assign_pages(offers, games)
     base = cfg["url_web"].rstrip("/") + "/"
     social = load_json(SOCIAL_FILE, {"bluesky": [], "mastodon": [], "discord": []})
+    social["ultima"] = last_call
     posted = {"bluesky": 0, "mastodon": 0, "discord": 0}
     if not args.no_send:
         for offer in candidates:
@@ -204,6 +234,7 @@ def run(args):
         status["Alertas de Telegram"] = alerts.run(str(ALERTS_FILE), offers, games, link_for, now)
         print(f"Alertas: {status['Alertas de Telegram']}")
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
+    site.epic_next, site.epic_archive = epic_next, epic_archive
     site.build(offers, status, now, games)
     if getattr(site, "daily", None):
         save_json(DAILY_FILE, site.daily)

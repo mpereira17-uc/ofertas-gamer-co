@@ -74,10 +74,19 @@ def region_text(offer):
     return "Colombia" if "CO" in offer.get("regions", []) else "no verificada (precio de referencia)"
 
 
-def telegram_caption(offer):
+def is_big_free(offer):
+    """Un juego de pago caro que hoy está gratis (precio normal de US$20 o $70.000 o más)."""
+    if offer.get("currentPrice") != 0 or not offer.get("originalPrice"):
+        return False
+    return offer["originalPrice"] >= (70000 if offer.get("currency") == "COP" else 20)
+
+
+def telegram_caption(offer, prefix=""):
     title = html.escape(offer["title"])
-    head = f"🎁 <b>GRATIS</b> · {title}" if offer.get("currentPrice") == 0 else \
-        f"🔥 <b>-{offer['discountPercentage']}%</b> · {title}" if offer.get("discountPercentage") else f"🔥 {title}"
+    if not prefix and is_big_free(offer):
+        prefix = "🚨 <b>JUEGO GRANDE GRATIS</b>\n"
+    head = prefix + (f"🎁 <b>GRATIS</b> · {title}" if offer.get("currentPrice") == 0 else \
+        f"🔥 <b>-{offer['discountPercentage']}%</b> · {title}" if offer.get("discountPercentage") else f"🔥 {title}")
     lines = [head, f"🛒 {html.escape(offer['store'])}", f"💲 {html.escape(price_line(offer))}"]
     lines.append(f"⏰ Hasta el {date_es(offer['expiresAt'])}" if offer.get("expiresAt") else "⏰ Vigencia: no informada por la tienda")
     lines.append(f"🌎 Región: {region_text(offer)}")
@@ -87,12 +96,12 @@ def telegram_caption(offer):
     return "\n".join(lines)
 
 
-def send_telegram(offer, token=None, chat=None):
+def send_telegram(offer, token=None, chat=None, prefix=""):
     token = token or os.environ.get("TELEGRAM_BOT_TOKEN")
     chat = chat or os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat:
         return False
-    text = telegram_caption(offer)
+    text = telegram_caption(offer, prefix)
     if offer.get("image"):
         method, payload = "sendPhoto", {"chat_id": chat, "photo": offer["image"], "caption": text, "parse_mode": "HTML"}
     else:

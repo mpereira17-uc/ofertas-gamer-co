@@ -1154,14 +1154,67 @@ class Site:
 <p class="meta">Privacidad: solo guardamos tu número de chat de Telegram y tus alertas, cifrados, para poder escribirte. No guardamos tu nombre ni tu teléfono. Escribe <code>/borrar todo</code> para eliminar tus datos.</p>""",
                     crumbs=[("alertas.html", "Alertas")])
 
+    def epic_countdown(self, free):
+        epic = sorted([o for o in free if o["storeId"] == "epic" and o.get("expiresAt")], key=lambda o: o["expiresAt"])
+        if not epic:
+            return ""
+        o = epic[0]
+        names = " y ".join(x["title"] for x in epic if x["expiresAt"] == o["expiresAt"])
+        return (f'<section class="epic-timer"><p class="dotd-kicker">{ICONS["gift"]} Gratis en Epic ahora: {e(names)}</p>'
+                f'<div class="launch" data-launch="{e(o["expiresAt"])}" data-done="Terminó" hidden><span class="launch-label">Termina en</span>'
+                f'<span class="launch-num" data-u="d">0</span><small>días</small><span class="launch-num" data-u="h">0</span><small>h</small>'
+                f'<span class="launch-num" data-u="m">0</span><small>min</small><span class="launch-num" data-u="s">0</span><small>s</small></div>'
+                f'<p class="meta">Hasta el {e(date_es(o["expiresAt"]))}. Una vez lo reclamas, es tuyo para siempre.</p></section>')
+
+    def epic_next_block(self):
+        nxt = getattr(self, "epic_next", []) or []
+        if not nxt:
+            return ""
+        items = "".join(
+            f'<li class="spot-card"><div class="spot-img">'
+            + (f'<img class="spot-fg" src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">' if g.get("image") else no_cover({"title": g["title"]}, "no-cover spot-fg"))
+            + f'<span class="badge free">PRONTO</span></div><div class="spot-body"><h3 class="clamp2">{e(g["title"])}</h3>'
+            f'<p class="spot-date">{ICONS["calendar"]}Gratis desde el {e(day_es(g["startsAt"][:10]))}</p>'
+            + (f'<p class="meta">Hasta el {e(day_es(g["expiresAt"][:10]))}</p>' if g.get("expiresAt") else "")
+            + f'<div class="rel-actions">{ext_link(g["url"], "Ver en Epic", cls="btn btn-sm", label=f"Ver {g["title"]} en Epic Games Store (abre en otra pestaña)")}</div></div></li>'
+            for g in nxt)
+        return (f'<section class="epic-next"><h2>{ICONS["clock"]} Próximos juegos gratis en Epic</h2>'
+                f'<p class="meta">Anunciados por Epic Games Store. Todavía no se pueden reclamar: te avisamos en Telegram el día que empiecen.</p>'
+                f'<ul class="spot-grid small">{items}</ul></section>')
+
+    def epic_archive_page(self, updated_line):
+        arch = sorted((getattr(self, "epic_archive", {}) or {}).values(), key=lambda g: g.get("startsAt") or "", reverse=True)
+        rows = "".join(
+            f'<li class="spot-card"><div class="spot-img">'
+            + (f'<img class="spot-fg" src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">' if (g.get("image") or "").startswith("https://") else no_cover({"title": g["title"]}, "no-cover spot-fg"))
+            + f'</div><div class="spot-body"><h3 class="clamp2">{e(g["title"])}</h3><p class="spot-date">{ICONS["calendar"]}'
+            + (f'Del {e(day_es(g["startsAt"][:10]))} al {e(day_es(g["expiresAt"][:10]))}' if g.get("startsAt") and g.get("expiresAt") else "Fechas no informadas")
+            + "</p>" + (f'<p class="meta">Precio normal: {e(money(g["originalPrice"], g.get("currency") or "USD"))}</p>' if g.get("originalPrice") else "")
+            + "</div></li>" for g in arch)
+        total = sum(self.cop_value(g["originalPrice"], {"currency": g.get("currency") or "USD", "copApproximation": None, "currentPrice": None}) or 0
+                    for g in arch if g.get("originalPrice"))
+        self.layout("todos-los-juegos-gratis-de-epic.html", "Todos los juegos gratis que ha regalado Epic Games",
+                    "Lista de los juegos que Epic Games Store ha regalado, con fechas y precio normal, según nuestro propio registro.",
+                    f'<h1>Juegos que ha regalado Epic</h1><p class="lead">Nuestro registro de los juegos gratis de Epic Games Store desde que empezamos a revisar '
+                    f'(octubre de 2026). {len(arch)} juegos' + (f', que costaban en total unos {self.pesos(total)} COP' if total else "") + '.</p>'
+                    f'{updated_line}<ul class="spot-grid small">{rows}</ul><p><a class="btn btn-primary" href="juegos-gratis.html">Ver los juegos gratis de hoy</a></p>',
+                    crumbs=[("juegos-gratis.html", "Juegos gratis"), ("todos-los-juegos-gratis-de-epic.html", "Archivo de Epic")])
+
     def f2p_page(self, f2p, updated_line):
         if f2p:
             cards = "".join(
-                f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async"></div>'
+                f'<li class="spot-card" data-genres="{e("|".join(g.get("genres", [])))}"><div class="spot-img"><img class="spot-fg" src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async"></div>'
                 f'<div class="spot-body"><h3 class="clamp2">{e(g["title"])}</h3><div class="rel-actions">'
                 f'{ext_link(g["url"], "Jugar gratis en Steam", cls="btn btn-primary btn-sm btn-free", label=f"Jugar {g["title"]} gratis en Steam (abre en otra pestaña)")}</div></div></li>'
                 for g in f2p)
-            listing = f'<ul class="spot-grid small">{cards}</ul>'
+            gens = []
+            for g in f2p:
+                for x in g.get("genres", []):
+                    if x not in gens:
+                        gens.append(x)
+            chips = ('<nav class="chips" id="f2p-genres" aria-label="Filtrar por género" hidden><button class="chip" type="button" aria-pressed="true" data-g="">Todos</button>'
+                     + "".join(f'<button class="chip" type="button" aria-pressed="false" data-g="{e(x)}">{e(x)}</button>' for x in gens) + "</nav>") if gens else ""
+            listing = chips + f'<ul class="spot-grid small" id="f2p-list">{cards}</ul>'
         else:
             listing = '<p class="notice">Todavía no se cargó la lista. Vuelve en unas horas.</p>'
         self.layout("juegos-gratis-para-siempre.html", "Juegos gratis para siempre en PC (free to play)",
@@ -1280,7 +1333,7 @@ class Site:
 
         self.layout("juegos-gratis.html", "Juegos gratis para PC hoy",
                     "Juegos gratuitos para PC disponibles ahora en tiendas oficiales como Epic Games Store, con la fecha en que termina cada promoción.",
-                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{notice}{self.offer_list(free)}<p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
+                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{notice}{self.offer_list(free)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
                     crumbs=[("juegos-gratis.html", "Juegos gratis")], jsonld=[self.item_list_ld(free)])
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
@@ -1334,6 +1387,7 @@ class Site:
         self.releases_page(games or [], updated_dt, updated_line)
         self.collection_pages(live, games or [], updated_dt, updated_line, notice)
         self.f2p_page(getattr(self, "f2p", []), updated_line)
+        self.epic_archive_page(updated_line)
         self.alerts_page()
         self.weekly_pages(getattr(self, "weekly_history", []), live, games or [], updated_dt, updated_line)
         self.offer_pages(live, notice)
