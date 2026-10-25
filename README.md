@@ -1,32 +1,48 @@
-# Ofertas gamer Colombia
+# Ofertas Gamer CO
 
-Bot que cada 4 horas busca juegos gratis (Epic Games) y ofertas fuertes (Steam, GOG, Humble,
-Green Man Gaming) con el precio en pesos colombianos. Hace dos cosas:
+Juegos gratis y ofertas de PC de tiendas oficiales para Colombia y Latinoamérica.
 
-1. Publica las novedades en un canal de Telegram.
-2. Actualiza una página web (GitHub Pages) para que la gente llegue desde Google.
+- Sitio: https://mpereira17-uc.github.io/ofertas-gamer-co/
+- Telegram: https://t.me/ofertasgamerco
 
-Corre gratis en GitHub Actions. No hace falta tener el computador prendido.
+## Cómo funciona
 
-## Puesta en marcha (una sola vez)
+```
+GitHub Actions (cada 4 h, al cambiar main o a mano)
+  → bot.py: Epic + CheapShark → validación → data/offers.json
+  → Telegram (solo ofertas nuevas) y Discord opcional
+  → ogc/site.py genera docs/: páginas, feeds, sitemap, whatsapp.html
+  → scripts/check_site.py → commit si hay cambios → despliegue
+```
 
-1. **Canal de Telegram**: crea un canal público (por ejemplo `@ofertasgamerco`).
-2. **Bot**: en Telegram abre `@BotFather`, envía `/newbot` y guarda el *token* que te da.
-   Agrega el bot como administrador del canal.
-3. **Secretos en GitHub**: en el repositorio, ve a *Settings → Secrets and variables → Actions → New repository secret*:
-   - `TELEGRAM_BOT_TOKEN`: el token del bot (no lo compartas con nadie).
-   - `TELEGRAM_CHAT_ID`: el nombre del canal con `@`, por ejemplo `@ofertasgamerco`.
-4. **Página web**: *Settings → Pages → Branch: `main`, carpeta `/docs`*.
-5. **Probar**: pestaña *Actions → Buscar y publicar ofertas → Run workflow*.
+| Carpeta / archivo | Qué contiene |
+| --- | --- |
+| `bot.py` | Orquestador (no necesita dependencias externas) |
+| `ogc/` | Fuentes, modelo y validación, afiliados, canales, generador del sitio, textos |
+| `config/site.json` | Nombre, URL, canales, filtros de ofertas, verificación de Google e Impact |
+| `config/stores.json` | Tiendas autorizadas, dominios y estado de afiliación |
+| `config/ads.json` | Espacios publicitarios (todos desactivados) |
+| `data/offers.json` | Ofertas vigentes con todos sus campos |
+| `data/telegram_publicados.json` | Registro para no repetir publicaciones |
+| `docs/` | Sitio generado (no editar a mano) |
+| `documentacion/` | Monetización, Cloudflare, operación y fuentes |
 
-## Ajustes (`config.json`)
+## Secretos (Settings → Secrets and variables → Actions)
 
-- `precio_maximo_usd`, `descuento_minimo`, `metacritic_minimo`: qué ofertas cuentan.
-- `maximo_mensajes_por_ejecucion`: para no llenar el canal.
-- `enlace_canal_telegram`: pon `https://t.me/tucanal` y aparece un botón en la web.
-- `pie_de_mensaje`: texto al final de cada mensaje (por ejemplo, un enlace a Ko-fi).
-- `afiliados`: cuando te aprueben en un programa de afiliados, aquí van tus enlaces por tienda.
-  Mientras tanto, los enlaces pasan por CheapShark.
+| Nombre | Tipo | Obligatorio |
+| --- | --- | --- |
+| `TELEGRAM_BOT_TOKEN` | Secret | Sí |
+| `TELEGRAM_CHAT_ID` | Secret | Sí (`@ofertasgamerco`) |
+| `TELEGRAM_ALERT_CHAT_ID` | Secret | No: chat privado para alertas del monitoreo |
+| `DISCORD_WEBHOOK_URL` | Secret | No |
+| `GMG_AFFILIATE_URL`, `FANATICAL_AFFILIATE_URL` | Variable | Solo cuando la red apruebe |
 
-Fuentes: [CheapShark API](https://apidocs.cheapshark.com/), tienda de Epic Games y
-[ExchangeRate-API](https://www.exchangerate-api.com/) para la tasa del dólar.
+## Pruebas locales
+
+```
+python -m unittest discover -s tests -t .
+python bot.py --fixtures tests/fixtures --no-send
+python scripts/check_site.py
+```
+
+Para restaurar los datos reales después de una prueba local: `git checkout -- data docs`.
