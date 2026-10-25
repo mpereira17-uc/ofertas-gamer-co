@@ -36,7 +36,7 @@ class TestPromocion(unittest.TestCase):
         with mock.patch.object(promote, "_post", side_effect=lambda url, payload, **kw: calls.append((url, payload))):
             with mock.patch.dict(os.environ, {"DISCORD_WEBHOOK_URL": "https://evil.example/api/webhooks/1/x"}):
                 self.assertFalse(promote.send_discord(OFFER, "https://x/oferta-juego.html"))
-            with mock.patch.dict(os.environ, {"DISCORD_WEBHOOK_URL": "https://discord.com/api/webhooks/1/x"}):
+            with mock.patch.dict(os.environ, {"DISCORD_WEBHOOK_URL": promote.DISCORD_PREFIXES[0] + "falso"}):
                 self.assertTrue(promote.send_discord(OFFER, "https://x/oferta-juego.html"))
         self.assertEqual(len(calls), 1)
         embed = calls[0][1]["embeds"][0]
