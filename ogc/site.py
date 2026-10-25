@@ -106,6 +106,16 @@ def ext_link(url, text, affiliate=False, cls="btn btn-primary", label=None):
 
 
 
+def is_poster(url):
+    """Las carátulas de Wikipedia son verticales: se muestran completas sobre una copia desenfocada."""
+    return (url or "").startswith("https://upload.wikimedia.org/")
+
+
+def poster_bg(g):
+    return (f'<img class="poster-bg" src="{e(g["image"])}" alt="" width="460" height="215" loading="lazy" decoding="async">'
+            if is_poster(g.get("image")) else "")
+
+
 def no_cover(g, cls="no-cover"):
     """Tarjeta con el nombre del juego cuando no hay ninguna imagen libre (mejor que un gris vacío)."""
     plats = " · ".join(g.get("platforms", [])[:3])
@@ -661,7 +671,7 @@ class Site:
             consoles = any(p in g.get("platforms", []) for p in ("PlayStation", "Xbox", "Switch"))
             when = date_label(g.get("date"), g.get("precision"))
             rel = relative_label(g.get("date"), g.get("precision"), now)
-            img = f'<img src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">' if g.get("image") else no_cover(g, "no-cover big")
+            img = (poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(g["image"]) else ""} src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="920" height="430" decoding="async">') if g.get("image") else no_cover(g, "no-cover big")
             tags = "".join(f'<span class="tag">{e(x)}</span>' for x in g.get("platforms", [])) + \
                 "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", []))
             ld = {"@context": "https://schema.org", "@type": "VideoGame", "name": g["title"], "url": g["url"],
@@ -760,7 +770,7 @@ class Site:
         when = date_label(g.get("date"), g.get("precision"))
         link = self.game_link(g, g.get("store") or "Steam")
         return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
-<div class="rel-img">{f'<img src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">' if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
+<div class="rel-img">{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
@@ -807,8 +817,9 @@ class Site:
         if len(desc) > (260 if main else 120):
             desc = desc[:(257 if main else 117)].rsplit(" ", 1)[0] + "…"
         link = self.game_link(g)
-        bg = f'<img class="spot-bg" src="{e(img)}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async">' if main and g.get("image") else ""
-        fg = (f'<img class="spot-fg" src="{e(img)}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">'
+        bg = (f'<img class="spot-bg" src="{e(img)}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async">' if main and g.get("image")
+              else poster_bg(g))
+        fg = (f'<img class="spot-fg{' poster' if is_poster(img) else ''}" src="{e(img)}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">'
               if g.get("image") else no_cover(g, "no-cover spot-fg"))
         return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}{fg}<span class="spot-rank">#{self.rank(g)}</span>{self.trailer_chip(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
