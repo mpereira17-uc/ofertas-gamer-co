@@ -1,0 +1,44 @@
+name: Monitoreo del sitio
+
+on:
+  schedule:
+    - cron: "47 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write   # abre una incidencia si el sitio falla
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HAS_ALERT_CHAT: ${{ secrets.TELEGRAM_ALERT_CHAT_ID != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Revisar respuesta, datos y fecha de actualización
+        run: python scripts/monitor.py
+      - name: Avisar por Telegram (privado, opcional)
+        if: failure() && env.HAS_ALERT_CHAT == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ALERT_CHAT_ID: ${{ secrets.TELEGRAM_ALERT_CHAT_ID }}
+        run: |
+          curl -s -o /dev/null -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_ALERT_CHAT_ID}" \
+            --data-urlencode "text=Alerta Ofertas Gamer CO: el monitoreo falló. Revisa GitHub Actions."
+      - name: Abrir incidencia
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if ! gh issue list --label monitoreo --state open --json number --jq '.[0].number' | grep -q .; then
+            gh label create monitoreo --color B60205 --description "Fallos del monitoreo" 2>/dev/null || true
+            gh issue create --title "El monitoreo del sitio falló" --label monitoreo \
+              --body "La comprobación automática falló: $RUN_URL. La última versión válida sigue publicada."
+          fi
