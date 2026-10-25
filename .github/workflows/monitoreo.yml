@@ -17,7 +17,7 @@ jobs:
       HAS_ALERT_CHAT: ${{ secrets.TELEGRAM_ALERT_CHAT_ID != '' }}
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Revisar respuesta, datos y fecha de actualización
