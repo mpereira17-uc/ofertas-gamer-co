@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T14:03:34Z",
+ "updatedAt": "2026-10-25T14:06:52Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -2877,26 +2877,6 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
-   "id": "steam-3734220",
-   "slug": "guns-of-eschaton",
-   "title": "Guns of Eschaton",
-   "description": "Este FPS soulslike te arrastra al western apocalíptico del legendario Viktor Antonov: polvo, sangre y horror ocultista. Estudia lo que te da caza, cuenta tus balas y forja tu estilo con pólvora y plegarias. Solo o en coop, pistolero, pon rumbo al Oeste y muere con el país.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3734220/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3734220/c95dde537f010137456f53f406b1b706898746c3/header_alt_assets_1.jpg?t=1792693635",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción"
-   ],
-   "releaseText": "8 Dec, 2026",
-   "date": "2026-12-08",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
    "id": "steam-4570020",
    "slug": "foursavent",
    "title": "FOURSAVENT",
@@ -2913,6 +2893,26 @@
    ],
    "releaseText": "28 Oct, 2026",
    "date": "2026-10-28",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
+   "id": "steam-3734220",
+   "slug": "guns-of-eschaton",
+   "title": "Guns of Eschaton",
+   "description": "Este FPS soulslike te arrastra al western apocalíptico del legendario Viktor Antonov: polvo, sangre y horror ocultista. Estudia lo que te da caza, cuenta tus balas y forja tu estilo con pólvora y plegarias. Solo o en coop, pistolero, pon rumbo al Oeste y muere con el país.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3734220/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3734220/c95dde537f010137456f53f406b1b706898746c3/header_alt_assets_1.jpg?t=1792693635",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción"
+   ],
+   "releaseText": "8 Dec, 2026",
+   "date": "2026-12-08",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"
