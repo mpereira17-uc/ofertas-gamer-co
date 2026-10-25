@@ -1,4 +1,5 @@
 import argparse
+import os
 import json
 import tempfile
 import unittest
@@ -20,7 +21,7 @@ class TestBot(unittest.TestCase):
                                      PUBLISHED_FILE=tmp / "pub.json", RELEASES_FILE=tmp / "rel.json", SOCIAL_FILE=tmp / "soc.json",
                                      DOCS=tmp / "docs"), \
                     mock.patch.object(channels, "send_telegram", side_effect=lambda o: sent.append(o["id"]) or True), \
-                    mock.patch.object(channels, "send_discord", return_value=False):
+                    mock.patch.dict(os.environ, {"DISCORD_BOT_TOKEN": "", "DISCORD_WEBHOOK_URL": ""}):
                 args = argparse.Namespace(fixtures=FIX, no_send=False)
                 bot.run(args)
                 first = list(sent)

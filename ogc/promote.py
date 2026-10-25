@@ -3,7 +3,6 @@
 - IndexNow: avisa a Bing, Yandex y otros buscadores de las páginas nuevas (no necesita cuenta).
 - Bluesky: publica con la API oficial (AT Protocol) si existen BLUESKY_HANDLE y BLUESKY_APP_PASSWORD.
 - Mastodon: publica con la API oficial si existen MASTODON_URL y MASTODON_TOKEN.
-- Discord: publica con un webhook oficial del canal si existe DISCORD_WEBHOOK_URL.
 
 Sin los secretos no se publica nada. Nunca se imprimen tokens ni contraseñas.
 """
@@ -19,7 +18,6 @@ from .channels import price_line
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
 BSKY = "https://bsky.social/xrpc/"
-DISCORD_PREFIXES = ("https://discord.com/api/webhooks/", "https://discordapp.com/api/webhooks/")
 
 
 def _post(url, payload, headers=None, form=False):
@@ -54,6 +52,26 @@ def post_text(offer, page_url):
     return text, page_url
 
 
+def bluesky_thumb(image, jwt):
+    """Sube la portada del juego para que la tarjeta de Bluesky la muestre. Sin imagen, devuelve None."""
+    if not (image or "").startswith("https://"):
+        return None
+    try:
+        req = urllib.request.Request(image, headers={"User-Agent": "Mozilla/5.0 OfertasGamerCO"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            kind = resp.headers.get_content_type()
+            data = resp.read(1_000_001)
+        if not kind.startswith("image/") or len(data) > 976_000:
+            return None
+        req = urllib.request.Request(BSKY + "com.atproto.repo.uploadBlob", data=data, method="POST",
+                                     headers={"Content-Type": kind, "Authorization": f"Bearer {jwt}"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())["blob"]
+    except Exception as exc:
+        print(f"Bluesky: no se pudo subir la imagen ({type(exc).__name__})", file=sys.stderr)
+        return None
+
+
 def send_bluesky(offer, page_url):
     handle = (os.environ.get("BLUESKY_HANDLE") or "").strip().lstrip("@")
     password = (os.environ.get("BLUESKY_APP_PASSWORD") or "").strip()
@@ -72,6 +90,9 @@ def send_bluesky(offer, page_url):
             "embed": {"$type": "app.bsky.embed.external",
                       "external": {"uri": link, "title": offer["title"], "description": price_line(offer)}},
         }
+        thumb = bluesky_thumb(offer.get("image"), session["accessJwt"])
+        if thumb:
+            record["embed"]["external"]["thumb"] = thumb
         _post(BSKY + "com.atproto.repo.createRecord",
               {"repo": session["did"], "collection": "app.bsky.feed.post", "record": record},
               headers={"Authorization": f"Bearer {session['accessJwt']}"})
@@ -94,19 +115,3 @@ def send_mastodon(offer, page_url):
         print(f"Mastodon falló con '{offer['title']}': {type(exc).__name__}", file=sys.stderr)
         return False
 
-
-def send_discord(offer, page_url):
-    hook = (os.environ.get("DISCORD_WEBHOOK_URL") or "").strip()
-    if not hook.startswith(DISCORD_PREFIXES):
-        return False
-    text, link = post_text(offer, page_url)
-    embed = {"title": offer["title"][:250], "url": link, "description": text.strip()[:2000], "color": 0x22C55E}
-    if (offer.get("image") or "").startswith("https://"):
-        embed["image"] = {"url": offer["image"]}
-    try:
-        _post(hook, {"username": "Ofertas Gamer CO", "embeds": [embed], "allowed_mentions": {"parse": []}},
-              headers={"User-Agent": "OfertasGamerCO (https://ofertas-gamer-co.pages.dev, 1.0)"})
-        return True
-    except Exception as exc:
-        print(f"Discord falló con '{offer['title']}': {type(exc).__name__}", file=sys.stderr)
-        return False

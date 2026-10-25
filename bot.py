@@ -14,7 +14,9 @@ import os
 import sys
 from pathlib import Path
 
-from ogc import channels, promote, releases, sources
+from ogc import channels, discord, promote, releases, sources
+from ogc.channels import price_line
+from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
 from ogc.site import Site
 
@@ -138,18 +140,22 @@ def run(args):
             if not worth_sending(offer) or offer["id"] not in site.detail:
                 continue
             link = base + site.detail[offer["id"]]
-            for net, send in (("bluesky", promote.send_bluesky), ("mastodon", promote.send_mastodon),
-                              ("discord", promote.send_discord)):
+            for net, send in (("bluesky", promote.send_bluesky), ("mastodon", promote.send_mastodon)):
                 if offer["id"] in social.setdefault(net, []) or posted[net] >= cfg.get("maximo_posts_redes_por_ejecucion", 3):
                     continue
                 if send(offer, link):
                     social[net].append(offer["id"])
                     posted[net] += 1
+        dc = discord.Discord(guild=str(cfg.get("discord_servidor", "")))
+        if dc.ready:
+            counts = discord.publish(dc, candidates, games, lambda x: base + site.detail[x["id"]] if x["id"] in site.detail else "",
+                                     social, cfg.get("maximo_posts_redes_por_ejecucion", 3), price_line, date_label, worth_sending)
+            posted["discord"] = sum(counts.values())
         social = {k: v[-3000:] for k, v in social.items()}
         save_json(SOCIAL_FILE, social)
     ready = {"bluesky": bool(os.environ.get("BLUESKY_HANDLE", "").strip() and os.environ.get("BLUESKY_APP_PASSWORD", "").strip()),
              "mastodon": bool(os.environ.get("MASTODON_URL") and os.environ.get("MASTODON_TOKEN")),
-             "discord": (os.environ.get("DISCORD_WEBHOOK_URL") or "").strip().startswith(promote.DISCORD_PREFIXES)}
+             "discord": discord.Discord(guild=str(cfg.get("discord_servidor", ""))).ready}
     for net, label in (("bluesky", "Bluesky"), ("mastodon", "Mastodon"), ("discord", "Discord")):
         status[f"{label} en esta ejecución"] = f"{posted[net]} publicadas" if ready[net] else "no configurado"
         print(f"{label}: {status[f'{label} en esta ejecución']}")

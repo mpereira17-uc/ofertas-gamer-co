@@ -1,4 +1,4 @@
-"""Distribución: Telegram (automático), Discord (opcional) y texto para WhatsApp (manual)."""
+"""Distribución: Telegram (automático) y texto para WhatsApp (manual). Discord está en ogc/discord.py."""
 
 import html
 import json
@@ -75,24 +75,6 @@ def send_telegram(offer, token=None, chat=None):
     except Exception as exc:
         # Nunca imprimir la URL: contiene el token.
         print(f"Telegram falló con '{offer['title']}': {type(exc).__name__}", file=sys.stderr)
-        return False
-
-
-def send_discord(offer):
-    """Opcional: solo funciona si existe el secreto DISCORD_WEBHOOK_URL."""
-    url = os.environ.get("DISCORD_WEBHOOK_URL")
-    if not url or not url.startswith("https://discord.com/api/webhooks/"):
-        return False
-    content = f"**{offer['title']}** · {offer['store']} · {price_line(offer)}\n{offer['destinationUrl']}"
-    if offer.get("affiliate"):
-        content += "\n_Enlace de afiliado._"
-    req = urllib.request.Request(url, data=json.dumps({"content": content[:1900]}).encode(),
-                                 headers={"Content-Type": "application/json"}, method="POST")
-    try:
-        urllib.request.urlopen(req, timeout=30).read()
-        return True
-    except Exception as exc:
-        print(f"Discord falló: {type(exc).__name__}", file=sys.stderr)
         return False
 
 

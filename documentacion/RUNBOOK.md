@@ -34,3 +34,4 @@ En @BotFather: `/revoke` → nuevo token → actualízalo en **Settings → Secr
 ## Servidor de Discord
 
 `scripts/discord_setup.py` (workflow manual "Configurar servidor de Discord") crea categorías, canales, reglas y bienvenida con la API oficial de bots. Solo crea lo que falta y nunca borra. Necesita el secreto `DISCORD_BOT_TOKEN` (bot invitado al servidor con permiso de administrador) y, opcionalmente, la variable `DISCORD_GUILD_ID`.
+Con `DISCORD_BOT_TOKEN` el bot (`ogc/discord.py`) publica cada cosa en su canal: ofertas en 🔥・ofertas, gratis en 🎁・juegos-gratis y próximos lanzamientos en 📅・lanzamientos. La primera vez publica lo que ya existe y después solo lo nuevo (historial en `data/redes_publicados.json`, claves `discord_*`). Sin bot usa `DISCORD_WEBHOOK_URL` si existe.

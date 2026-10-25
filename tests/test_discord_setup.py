@@ -19,7 +19,9 @@ class FakeDiscord:
             return chan
         cid = path.split("/")[2]
         if method == "GET":
-            return self.messages.get(cid, [])
+            return [dict(m, id="m", author={"bot": True}) for m in self.messages.get(cid, [])]
+        if method == "PATCH":
+            return {}
         self.messages.setdefault(cid, []).append(payload)
         return {}
 
@@ -35,10 +37,23 @@ class TestDiscordSetup(unittest.TestCase):
         welcome = fake.messages[ids["👋・bienvenida"]][0]["embeds"][0]["description"]
         self.assertIn(f"<#{ids['🔥・ofertas']}>", welcome)
         self.assertNotIn("<#ofertas>", welcome)
+        self.assertIn("discord-banner.png", fake.messages[ids["👋・bienvenida"]][0]["embeds"][0]["image"]["url"])
 
         again = discord_setup.setup("t", "1", api=fake)
         self.assertEqual(again[:2], ([], []))
-        self.assertFalse([c for c in fake.calls if c[0] not in ("GET", "POST")])  # nunca borra ni edita
+        self.assertFalse([c for c in fake.calls if c[0] in ("DELETE", "PUT")])  # nunca borra
+
+    def test_imagenes_del_bot(self):
+        calls = []
+
+        def api(method, path, token, payload=None):
+            calls.append((method, path, payload))
+            return {"avatar": None, "banner": None} if path == "/users/@me" else {"icon": "x", "features": []}
+        done = discord_setup.branding("t", "1", api)
+        self.assertEqual(done, ["foto y banner del bot"])
+        patch = next(c for c in calls if c[0] == "PATCH")
+        self.assertTrue(patch[2]["avatar"].startswith("data:image/png;base64,"))
+
 
 
 if __name__ == "__main__":
