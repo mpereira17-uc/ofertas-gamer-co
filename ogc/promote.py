@@ -53,7 +53,8 @@ def post_text(offer, page_url):
 
 
 def send_bluesky(offer, page_url):
-    handle, password = os.environ.get("BLUESKY_HANDLE"), os.environ.get("BLUESKY_APP_PASSWORD")
+    handle = (os.environ.get("BLUESKY_HANDLE") or "").strip().lstrip("@")
+    password = (os.environ.get("BLUESKY_APP_PASSWORD") or "").strip()
     if not handle or not password:
         return False
     text, link = post_text(offer, page_url)
