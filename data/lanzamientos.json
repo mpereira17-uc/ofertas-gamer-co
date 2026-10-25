@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T13:57:05Z",
+ "updatedAt": "2026-10-25T14:03:34Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -526,6 +526,27 @@
    "verifiedAt": "2026-10-25T11:56:36Z"
   },
   {
+   "id": "steam-3335310",
+   "slug": "remothered-red-nun-s-legacy",
+   "title": "Remothered: Red Nun's Legacy",
+   "description": "Tu hija ha sido secuestrada. Adéntrate en una pesadilla para salvarla, sobrevive y descubre la verdad sobre la Monja Roja mediante la retrocognición, los poderes del espejo y la manipulación de las polillas. Un regreso moderno al terror de supervivencia clásico con un toque de neo-giallo italiano.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3335310/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3335310/36b0a83ca1f760fae7b0d063b89b2f5ad2e7115a/header.jpg?t=1792748869",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción",
+    "Aventura"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T11:56:36Z"
+  },
+  {
    "id": "steam-2920220",
    "slug": "terrible-lizards",
    "title": "Terrible Lizards",
@@ -543,27 +564,6 @@
    ],
    "releaseText": "29 Oct, 2026",
    "date": "2026-10-29",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z"
-  },
-  {
-   "id": "steam-3335310",
-   "slug": "remothered-red-nun-s-legacy",
-   "title": "Remothered: Red Nun's Legacy",
-   "description": "Tu hija ha sido secuestrada. Adéntrate en una pesadilla para salvarla, sobrevive y descubre la verdad sobre la Monja Roja mediante la retrocognición, los poderes del espejo y la manipulación de las polillas. Un regreso moderno al terror de supervivencia clásico con un toque de neo-giallo italiano.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3335310/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3335310/36b0a83ca1f760fae7b0d063b89b2f5ad2e7115a/header.jpg?t=1792748869",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción",
-    "Aventura"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z"
@@ -2855,26 +2855,6 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
-   "id": "steam-3734220",
-   "slug": "guns-of-eschaton",
-   "title": "Guns of Eschaton",
-   "description": "Este FPS soulslike te arrastra al western apocalíptico del legendario Viktor Antonov: polvo, sangre y horror ocultista. Estudia lo que te da caza, cuenta tus balas y forja tu estilo con pólvora y plegarias. Solo o en coop, pistolero, pon rumbo al Oeste y muere con el país.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/3734220/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3734220/c95dde537f010137456f53f406b1b706898746c3/header_alt_assets_1.jpg?t=1792693635",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Acción"
-   ],
-   "releaseText": "8 Dec, 2026",
-   "date": "2026-12-08",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
    "id": "steam-3929570",
    "slug": "oferta",
    "title": "节度使战略：安史之乱",
@@ -2892,6 +2872,26 @@
    ],
    "releaseText": "27 Oct, 2026",
    "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
+   "id": "steam-3734220",
+   "slug": "guns-of-eschaton",
+   "title": "Guns of Eschaton",
+   "description": "Este FPS soulslike te arrastra al western apocalíptico del legendario Viktor Antonov: polvo, sangre y horror ocultista. Estudia lo que te da caza, cuenta tus balas y forja tu estilo con pólvora y plegarias. Solo o en coop, pistolero, pon rumbo al Oeste y muere con el país.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/3734220/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3734220/c95dde537f010137456f53f406b1b706898746c3/header_alt_assets_1.jpg?t=1792693635",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Acción"
+   ],
+   "releaseText": "8 Dec, 2026",
+   "date": "2026-12-08",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"
