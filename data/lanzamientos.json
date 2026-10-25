@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T14:06:52Z",
+ "updatedAt": "2026-10-25T14:23:08Z",
  "games": [
   {
    "id": "steam-4115450",
@@ -111,28 +111,6 @@
    "verifiedAt": "2026-10-25T11:56:36Z"
   },
   {
-   "id": "steam-2223980",
-   "slug": "nomad-drive",
-   "title": "Nomad Drive",
-   "description": "Repara tu autocaravana deteriorada y sal a la carretera en solitario o en cooperativo de 1–4 jugadores a través de un mundo post-apocalíptico generado de manera procedimental. Recoge recursos, personaliza tu autocaravana y sobrevive tanto como puedas.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/2223980/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2223980/433d5727162af686f0e7d56de539f8476fb0cf0e/header.jpg?t=1792833611",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T11:56:36Z"
-  },
-  {
    "id": "steam-4312190",
    "slug": "crack",
    "title": "CRACK",
@@ -151,6 +129,28 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T11:56:36Z"
+  },
+  {
+   "id": "steam-2223980",
+   "slug": "nomad-drive",
+   "title": "Nomad Drive",
+   "description": "Repara tu autocaravana deteriorada y sal a la carretera en solitario o en cooperativo de 1–4 jugadores a través de un mundo post-apocalíptico generado de manera procedimental. Recoge recursos, personaliza tu autocaravana y sobrevive tanto como puedas.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/2223980/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2223980/433d5727162af686f0e7d56de539f8476fb0cf0e/header.jpg?t=1792833611",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T11:56:36Z"
@@ -1539,29 +1539,6 @@
    "verifiedAt": "2026-10-25T12:16:11Z"
   },
   {
-   "id": "steam-5189500",
-   "slug": "a-place-for-every-potion",
-   "title": "A Place for Every Potion",
-   "description": "Un relajante juego de ordenar pociones. Vierte los líquidos mezclados hasta que cada frasco contenga un solo color puro, luego coloca cada poción en su sitio. Llena 52 secciones con 4.160 pociones. Sin cronómetros, sin derrota, sin prisa.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5189500/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189500/29e3941dc7a7e665a2e908d1e3619d3f94db080a/header.jpg?t=1792173815",
-   "platforms": [
-    "Windows",
-    "Mac"
-   ],
-   "genres": [
-    "Casual",
-    "Indie",
-    "Simuladores"
-   ],
-   "releaseText": "28 Oct, 2026",
-   "date": "2026-10-28",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:16:11Z"
-  },
-  {
    "id": "steam-2379350",
    "slug": "scramble-knights-online",
    "title": "Scramble Knights Online",
@@ -1580,6 +1557,29 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:16:11Z"
+  },
+  {
+   "id": "steam-5189500",
+   "slug": "a-place-for-every-potion",
+   "title": "A Place for Every Potion",
+   "description": "Un relajante juego de ordenar pociones. Vierte los líquidos mezclados hasta que cada frasco contenga un solo color puro, luego coloca cada poción en su sitio. Llena 52 secciones con 4.160 pociones. Sin cronómetros, sin derrota, sin prisa.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5189500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189500/29e3941dc7a7e665a2e908d1e3619d3f94db080a/header.jpg?t=1792173815",
+   "platforms": [
+    "Windows",
+    "Mac"
+   ],
+   "genres": [
+    "Casual",
+    "Indie",
+    "Simuladores"
+   ],
+   "releaseText": "28 Oct, 2026",
+   "date": "2026-10-28",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:16:11Z"
@@ -2359,28 +2359,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-5072600",
-   "slug": "family-time",
-   "title": "Family Time",
-   "description": "Build a family of thousands of wolf children with your own wolf partner!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5072600/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072600/4584069ef5af5221d75a0e82de25155ea32a61d7/header.jpg?t=1789744534",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ],
-   "releaseText": "Q1 2027",
-   "date": null,
-   "precision": null,
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-3712150",
    "slug": "tcg-card-collection-tidy-up",
    "title": "TCG Card Collection: Tidy Up",
@@ -2399,6 +2377,28 @@
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
    "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-5072600",
+   "slug": "family-time",
+   "title": "Family Time",
+   "description": "Build a family of thousands of wolf children with your own wolf partner!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5072600/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072600/4584069ef5af5221d75a0e82de25155ea32a61d7/header.jpg?t=1789744534",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ],
+   "releaseText": "Q1 2027",
+   "date": null,
+   "precision": null,
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
@@ -2748,27 +2748,6 @@
    "verifiedAt": "2026-10-25T12:33:28Z"
   },
   {
-   "id": "steam-4356780",
-   "slug": "screen-stocks",
-   "title": "Screen Stocks",
-   "description": "Screem Stocks es un juego multijugador en linea con un mercado simulado en tiempo real. Compra, vende en corto y vende acciones para acumular una fortuna incomprensible. Manipula acciones junto con otros jugadores, o sé más listo que todos ellos. ¡Es hora de ganar un dineral!",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/4356780/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/11a372aceb4c330437ed9d8813555cc285f03a34/header.jpg?t=1790600209",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Simuladores",
-    "Estrategia"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:33:28Z"
-  },
-  {
    "id": "steam-1932910",
    "slug": "cardopolis",
    "title": "Cardopolis",
@@ -2786,6 +2765,27 @@
    ],
    "releaseText": "26 Oct, 2026",
    "date": "2026-10-26",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:33:28Z"
+  },
+  {
+   "id": "steam-4356780",
+   "slug": "screen-stocks",
+   "title": "Screen Stocks",
+   "description": "Screem Stocks es un juego multijugador en linea con un mercado simulado en tiempo real. Compra, vende en corto y vende acciones para acumular una fortuna incomprensible. Manipula acciones junto con otros jugadores, o sé más listo que todos ellos. ¡Es hora de ganar un dineral!",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/4356780/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4356780/11a372aceb4c330437ed9d8813555cc285f03a34/header.jpg?t=1790600209",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:33:28Z"
@@ -2939,6 +2939,27 @@
    "verifiedAt": "2026-10-25T12:34:38Z"
   },
   {
+   "id": "steam-5030570",
+   "slug": "supermarket-organizer",
+   "title": "Supermarket Organizer",
+   "description": "Transforma tiendas de conveniencia japonesas vacías en acogedores konbinis. Desembala muebles, organiza los productos y disfruta de la relajante satisfacción de crear la tienda perfecta.",
+   "store": "Steam",
+   "url": "https://store.steampowered.com/app/5030570/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/9f58634265467ee4fc42dbbe65b681ee407cf176/header.jpg?t=1792865569",
+   "platforms": [
+    "Windows"
+   ],
+   "genres": [
+    "Casual",
+    "Simuladores"
+   ],
+   "releaseText": "27 Oct, 2026",
+   "date": "2026-10-27",
+   "precision": "day",
+   "comingSoon": true,
+   "verifiedAt": "2026-10-25T12:34:38Z"
+  },
+  {
    "id": "steam-4065440",
    "slug": "underdeep-laberinto-de-las-profundidades",
    "title": "UNDERDEEP / Laberinto de las Profundidades",
@@ -2957,27 +2978,6 @@
    ],
    "releaseText": "30 Oct, 2026",
    "date": "2026-10-30",
-   "precision": "day",
-   "comingSoon": true,
-   "verifiedAt": "2026-10-25T12:34:38Z"
-  },
-  {
-   "id": "steam-5030570",
-   "slug": "supermarket-organizer",
-   "title": "Supermarket Organizer",
-   "description": "Transforma tiendas de conveniencia japonesas vacías en acogedores konbinis. Desembala muebles, organiza los productos y disfruta de la relajante satisfacción de crear la tienda perfecta.",
-   "store": "Steam",
-   "url": "https://store.steampowered.com/app/5030570/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5030570/9f58634265467ee4fc42dbbe65b681ee407cf176/header.jpg?t=1792865569",
-   "platforms": [
-    "Windows"
-   ],
-   "genres": [
-    "Casual",
-    "Simuladores"
-   ],
-   "releaseText": "27 Oct, 2026",
-   "date": "2026-10-27",
    "precision": "day",
    "comingSoon": true,
    "verifiedAt": "2026-10-25T12:34:38Z"
