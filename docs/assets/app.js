@@ -192,14 +192,21 @@
       if (view === "month") return date.slice(0, 7) === today.slice(0, 7) && (!exact || date >= today);
       return date >= plus(-7) && date <= plus(30);
     };
-    var applyRel = function () {
+    // carga infinita: se muestran los juegos por tandas y llegan más al bajar
+    var STEP = 48, limit = STEP, total = 0;
+    var more = document.getElementById("rel-more"), moreBtn = document.getElementById("rel-more-btn"), moreTxt = document.getElementById("rel-more-txt");
+    var applyRel = function (keep) {
+      if (keep !== true) limit = STEP;
       var q = (qInput.value || "").toLowerCase().trim(), plats = pressed(".chip[data-platform]"), gens = pressed(".chip[data-genre]");
       var shown = 0;
+      total = 0;
       document.querySelectorAll("#rel-list .rel-card").forEach(function (li) {
         var d = li.dataset, ps = d.platforms.split("|"), gs = d.genres.split("|");
         var ok = inView(d) && (!q || d.title.indexOf(q) >= 0) &&
           plats.every(function (p) { return ps.indexOf(p) >= 0; }) &&
           (!gens.length || gens.some(function (g) { return gs.indexOf(g) >= 0; }));
+        if (ok) total++;
+        if (ok && total > limit) ok = false;
         li.hidden = !ok;
         if (ok) shown++;
       });
@@ -209,9 +216,34 @@
       document.querySelectorAll("#rel-list .rel-block").forEach(function (blk) {
         blk.hidden = !blk.querySelector(".rel-day:not([hidden])");
       });
-      if (relCount) relCount.textContent = shown + (shown === 1 ? " juego" : " juegos");
+      if (relCount) relCount.textContent = total + (total === 1 ? " juego" : " juegos");
       if (relEmpty) relEmpty.hidden = shown > 0;
+      if (more) {
+        var left = total - shown;
+        more.hidden = !(left > 0 || (view !== "all" && view !== "follow" && shown > 0));
+        if (left > 0) {
+          moreTxt.textContent = "Viendo " + shown + " de " + total + " juegos";
+          moreBtn.textContent = "Cargar más juegos";
+        } else {
+          moreTxt.textContent = "Hay más lanzamientos en las próximas semanas y meses";
+          moreBtn.textContent = "Ver todos los lanzamientos";
+        }
+      }
     };
+    var loadMore = function () {
+      if (total > limit) { limit += STEP; applyRel(true); return; }
+      if (view === "all" || view === "follow") return;
+      view = "all";
+      relBar.querySelectorAll(".tab").forEach(function (t) { t.setAttribute("aria-pressed", t.getAttribute("data-view") === "all" ? "true" : "false"); });
+      applyRel(true);
+    };
+    if (moreBtn) moreBtn.addEventListener("click", loadMore);
+    if (more && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        // al llegar al final se carga la siguiente tanda sola (el cambio a «Todo» queda en el botón)
+        if (entries[0].isIntersecting && total > limit) { limit += STEP; applyRel(true); }
+      }, { rootMargin: "600px 0px" }).observe(more);
+    }
     relBar.querySelectorAll(".tab").forEach(function (tab) {
       tab.addEventListener("click", function () {
         view = tab.getAttribute("data-view");
