@@ -645,7 +645,13 @@ class Site:
         if not url:
             return
         top = sorted([o for o in live if o.get("currentPrice")], key=lambda o: -(o.get("discountPercentage") or 0))[:12]
-        rows = "".join(f'<li>{e(o["title"])} {ext_link(self.ig_url(o["title"]), "Comparar →", affiliate=True, cls="btn btn-sm btn-ig", label=f"Comparar {o["title"]} en Instant Gaming")}</li>' for o in top)
+        rows = "".join(
+            f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(o.get("image") or "assets/placeholder.svg")}"{fallback(o)} alt="Imagen de {e(o["title"])}" width="460" height="215" loading="lazy" decoding="async">'
+            f'<span class="badge">-{o.get("discountPercentage") or 0}%</span></div>'
+            f'<div class="spot-body"><h3 class="clamp2">{self.title_link(o)}</h3>'
+            f'<p class="meta">Oficial en {e(o["store"])}: <strong>{e(money(o["currentPrice"], o["currency"]))}</strong></p><div class="rel-actions">'
+            + ext_link(self.ig_url(o["title"]), "Comparar en Instant Gaming", affiliate=True, cls="btn btn-sm btn-ig", label=f"Comparar {o['title']} en Instant Gaming (enlace de afiliado)")
+            + '</div></div></li>' for o in top)
         self.layout("instant-gaming.html", "Instant Gaming: comprar claves de juegos más baratas de forma segura",
                     "Qué es Instant Gaming, cómo comparar el precio de un juego como clave y qué revisar antes de pagar desde Colombia.",
                     f"""<div class="prose"><p class="ig-hero"><img src="assets/brands/ig-logo.png" alt="Instant Gaming" width="320" height="91"></p><h1>Instant Gaming</h1>
@@ -657,7 +663,7 @@ class Site:
 <li><strong>Edición:</strong> estándar, deluxe o solo un DLC.</li>
 <li><strong>Precio final:</strong> compáralo con el de la oferta oficial en nuestro sitio.</li></ul>
 </div>{self.ig_banner("rpg")}{self.ig_banner("sim")}{self.ig_banner("deportes")}<div class="prose"><h2>Compara las mejores ofertas de hoy</h2><p>Estas son nuestras ofertas oficiales con más descuento. Toca «Comparar» para buscarlas en Instant Gaming.</p>
-<ul class="ig-list">{rows}</ul>
+</div><ul class="spot-grid small ig-grid">{rows}</ul><div class="prose">
 <p class="meta">Instant Gaming no es una tienda oficial de los juegos, sino un vendedor de claves. Los enlaces de esta página son de afiliado: si compras, recibimos una pequeña comisión sin costo para ti. No mostramos sus precios porque no tenemos una fuente oficial para verificarlos.</p></div>""",
                     crumbs=[("tiendas.html", "Tiendas"), ("instant-gaming.html", "Instant Gaming")])
 
