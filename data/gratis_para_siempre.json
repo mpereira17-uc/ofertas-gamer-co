@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-26T14:50:41Z",
+ "updatedAt": "2026-10-26T15:16:13Z",
  "games": [
   {
    "id": "steam-570",
@@ -140,22 +140,22 @@
    ]
   },
   {
-   "id": "steam-359550",
-   "title": "Tom Clancy's Rainbow Six Siege",
-   "url": "https://store.steampowered.com/app/359550/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ee838739b8241c6f58361b88ae769dfd64dc4b87/header_alt_assets_27_spanish.jpg?t=1792001976",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/28dbcdb6c9e7f0d490566f9ebe8a00abde6734b8/capsule_sm_120_alt_assets_27_spanish.jpg?t=1792001976",
+   "id": "steam-2357570",
+   "title": "Overwatch®",
+   "url": "https://store.steampowered.com/app/2357570/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2357570/5c208b2699cd38ed6125d039be388fa744db54a4/header_alt_assets_23.jpg?t=1791576843",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/7a96583919542b66a209172b945fb4e1e68137e4/capsule_sm_120_alt_assets_23.jpg?t=1791576843",
    "headerChecked": true,
    "genres": [
     "Acción"
    ]
   },
   {
-   "id": "steam-2357570",
-   "title": "Overwatch®",
-   "url": "https://store.steampowered.com/app/2357570/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2357570/5c208b2699cd38ed6125d039be388fa744db54a4/header_alt_assets_23.jpg?t=1791576843",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/7a96583919542b66a209172b945fb4e1e68137e4/capsule_sm_120_alt_assets_23.jpg?t=1791576843",
+   "id": "steam-359550",
+   "title": "Tom Clancy's Rainbow Six Siege",
+   "url": "https://store.steampowered.com/app/359550/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ee838739b8241c6f58361b88ae769dfd64dc4b87/header_alt_assets_27_spanish.jpg?t=1792001976",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/28dbcdb6c9e7f0d490566f9ebe8a00abde6734b8/capsule_sm_120_alt_assets_27_spanish.jpg?t=1792001976",
    "headerChecked": true,
    "genres": [
     "Acción"
@@ -199,6 +199,17 @@
    ]
   },
   {
+   "id": "steam-2141910",
+   "title": "Magic: The Gathering Arena",
+   "url": "https://store.steampowered.com/app/2141910/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2141910/3ba5b0f05a0dac4e184047699da0fece877bfb9f/header_spanish.jpg?t=1787780109",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2141910/b15710d69590d3e90ca54cf7f9790cb979e1828f/capsule_sm_120.jpg?t=1787780109",
+   "headerChecked": true,
+   "genres": [
+    "Estrategia"
+   ]
+  },
+  {
    "id": "steam-3564740",
    "title": "Where Winds Meet",
    "url": "https://store.steampowered.com/app/3564740/",
@@ -209,17 +220,6 @@
     "Acción",
     "Aventura",
     "Casual"
-   ]
-  },
-  {
-   "id": "steam-2141910",
-   "title": "Magic: The Gathering Arena",
-   "url": "https://store.steampowered.com/app/2141910/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2141910/3ba5b0f05a0dac4e184047699da0fece877bfb9f/header_spanish.jpg?t=1787780109",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2141910/b15710d69590d3e90ca54cf7f9790cb979e1828f/capsule_sm_120.jpg?t=1787780109",
-   "headerChecked": true,
-   "genres": [
-    "Estrategia"
    ]
   },
   {
@@ -249,11 +249,11 @@
    ]
   },
   {
-   "id": "steam-2073620",
-   "title": "Arena Breakout: Infinite",
-   "url": "https://store.steampowered.com/app/2073620/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073620/eccc13f9398a6af599a78ec7a437d6540f43a3c5/header.jpg?t=1791983571",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073620/4d7e3b2a565f2606a0a95494e064664b6d6e6949/capsule_sm_120.jpg?t=1791983571",
+   "id": "steam-2507950",
+   "title": "Delta Force",
+   "url": "https://store.steampowered.com/app/2507950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/09ef134458549352e5b5a06ed7f97cf00d729b62/header_alt_assets_14.jpg?t=1790238079",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2507950/c28c15e52fc6dd75dbf52653a8123930ec399478/capsule_sm_120_alt_assets_14.jpg?t=1790238079",
    "headerChecked": true,
    "genres": [
     "Acción",
@@ -262,11 +262,11 @@
    ]
   },
   {
-   "id": "steam-2507950",
-   "title": "Delta Force",
-   "url": "https://store.steampowered.com/app/2507950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/09ef134458549352e5b5a06ed7f97cf00d729b62/header_alt_assets_14.jpg?t=1790238079",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2507950/c28c15e52fc6dd75dbf52653a8123930ec399478/capsule_sm_120_alt_assets_14.jpg?t=1790238079",
+   "id": "steam-2073620",
+   "title": "Arena Breakout: Infinite",
+   "url": "https://store.steampowered.com/app/2073620/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073620/eccc13f9398a6af599a78ec7a437d6540f43a3c5/header.jpg?t=1791983571",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073620/4d7e3b2a565f2606a0a95494e064664b6d6e6949/capsule_sm_120.jpg?t=1791983571",
    "headerChecked": true,
    "genres": [
     "Acción",
@@ -440,19 +440,6 @@
    ]
   },
   {
-   "id": "steam-444200",
-   "title": "World of Tanks Blitz",
-   "url": "https://store.steampowered.com/app/444200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/2086620a57f48438d5d3889410643fead1122bfb/header_alt_assets_21.jpg?t=1792910839",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/0b44ccbbd098530deec42738e7d82c26c3da0934/capsule_sm_120_alt_assets_21.jpg?t=1792910839",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
-   ]
-  },
-  {
    "id": "steam-2325290",
    "title": "Sky: Niños de la Luz",
    "url": "https://store.steampowered.com/app/2325290/",
@@ -463,6 +450,19 @@
     "Aventura",
     "Casual",
     "Indie"
+   ]
+  },
+  {
+   "id": "steam-444200",
+   "title": "World of Tanks Blitz",
+   "url": "https://store.steampowered.com/app/444200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/2086620a57f48438d5d3889410643fead1122bfb/header_alt_assets_21.jpg?t=1792910839",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/0b44ccbbd098530deec42738e7d82c26c3da0934/capsule_sm_120_alt_assets_21.jpg?t=1792910839",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
