@@ -232,7 +232,7 @@ class Site:
 <button class="btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button></div></div>
 </div></header>
 <div class="shell">
-<nav class="side" id="main-nav" aria-label="Principal">{nav}{self.side_channels()}</nav>
+<nav class="side" id="main-nav" aria-label="Principal">{nav}{self.side_channels()}{self.ig_side(name)}</nav>
 <main id="contenido"><div class="wrap">
 {crumb_html}
 {body}
@@ -616,6 +616,19 @@ class Site:
         return (f'<section class="buy" aria-labelledby="buy-h"><h2 id="buy-h">{ICONS["store"]} Dónde comprarlo</h2><ul class="buy-list">{html_rows}</ul>'
                 '<p class="meta">Las tiendas de claves venden códigos de terceros: revisa la región y la plataforma antes de pagar. '
                 'Instant Gaming es enlace de afiliado (recibimos una pequeña comisión sin costo para ti). <a href="instant-gaming.html">Cómo comprar claves seguro</a>.</p></section>')
+
+    def ig_side(self, name):
+        """Banner vertical de Instant Gaming al final del menú lateral (solo en pantallas grandes), según la página."""
+        url = self.ig_url()
+        if not url or name == "instant-gaming.html":
+            return ""
+        pick = {"lanzamientos-indie.html": "indie", "lanzamientos-carreras.html": "carreras", "lanzamientos-simuladores.html": "simulacion",
+                "lanzamientos.html": "lanzamientos", "lanzamientos-pc.html": "lanzamientos"}.get(name)
+        if not pick:
+            pick = "generic-" + str(int(hashlib.md5(name.encode()).hexdigest(), 16) % 4 + 1)
+        return (f'<div class="side-ad"><a href="{e(url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">'
+                f'<img src="assets/brands/ig-v-{pick}.webp" alt="Instant Gaming: hasta -80% en videojuegos" width="320" height="450" loading="lazy" decoding="async"></a>'
+                '<p class="meta">Enlace de afiliado</p></div>')
 
     def ig_banner(self, which="rpg"):
         url = self.ig_url()
