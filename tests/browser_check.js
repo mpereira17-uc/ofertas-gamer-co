@@ -48,6 +48,17 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     const cheap = await page.$$eval("#offers > li:not([hidden])", (els) => els.map((e) => +e.dataset.cop));
     if (await page.inputValue("#filters select[name=sort]") !== "expires") errors.push(`${width}px: ?orden=vence no aplica`);
     if (cheap.some((c) => c >= 20000)) errors.push(`${width}px: filtro de precio máximo falla`);
+    await page.goto(base + "ofertas.html");
+    const before = page.url();
+    await page.click('.quick-chips a[href="?orden=score"]');
+    if (await page.inputValue("#filters select[name=sort]") !== "score") errors.push(`${width}px: el atajo Vale la pena no ordena`);
+    if (await page.getAttribute('.quick-chips a[href="?orden=score"]', "aria-pressed") !== "true") errors.push(`${width}px: el atajo no se marca`);
+    await page.click('.quick-chips a[href="?tipo=gratis"]');
+    const onlyFree = await page.$$eval("#offers > li:not([hidden])", (els) => els.every((e) => e.dataset.type === "gratis"));
+    if (!onlyFree || await page.getAttribute('.quick-chips a[href="?orden=score"]', "aria-pressed") !== "false") errors.push(`${width}px: cambiar de atajo falla`);
+    await page.click('.quick-chips a[href="?tipo=gratis"]');
+    if (await page.inputValue("#filters select[name=type]") !== "") errors.push(`${width}px: el atajo no se quita con otro clic`);
+    if (new URL(page.url()).pathname !== new URL(before).pathname) errors.push(`${width}px: el atajo recargó la página`);
     await page.goto(base + "favoritos.html");
     await page.waitForSelector("#fav-root .fav-empty");
     await page.goto(base + "ofertas.html");
