@@ -47,7 +47,7 @@ MAX_ANNOUNCE = 4  # por ejecución, para no llenar los canales
 # Nombres de recompensas comunes en español (como aparecen en la versión en español de los juegos)
 REWARDS_ES = [
     ("Primogems", "Protogemas"), ("Primogem", "Protogemas"), ("Hero's Wit", "Experiencia de héroe"),
-    ("Mystic Enhancement Ore", "Mineral de refinamiento místico"), ("Fine Enhancement Ore", "Mineral de refinamiento fino"),
+    ("Mora", "Mora"), ("Mystic Enhancement Ore", "Mineral de refinamiento místico"), ("Fine Enhancement Ore", "Mineral de refinamiento fino"),
     ("Adventurer's Experience", "Experiencia de aventurero"), ("Stellar Jade", "Jade Estelar"), ("Credits", "Créditos"),
     ("Credit", "Créditos"), ("Traveler's Guide", "Guía del viajero"), ("Adventure Log", "Diario de aventuras"),
     ("Refined Aether", "Éter refinado"), ("Lost Crystal", "Cristal perdido"), ("Condensed Aether", "Éter condensado"),
@@ -62,11 +62,18 @@ def get_json_default(url):
     return get_json(url)
 
 
+NUMBERS = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9", "ten": "10"}
+
+
 def translate(reward):
-    text = reward.strip()
+    text = re.sub(r"^(?:and|y)\s+", "", reward.strip(), flags=re.I)
+    text = re.sub(r"\b(" + "|".join(NUMBERS) + r")\b", lambda m: NUMBERS[m.group(1).lower()], text, flags=re.I)
     for en, es in REWARDS_ES:
-        text = re.sub(rf"\b{re.escape(en)}\b", es, text, flags=re.I)
-    return re.sub(r"\s*[×x]\s*(\d[\d,.]*)", r" ×\1", text)
+        pattern = re.escape(en).replace("'", "['’]")
+        text = re.sub(rf"\b{pattern}(?:e?s)?\b", es, text, flags=re.I)
+    text = re.sub(r"\s*[×x*]\s*(\d[\d,.]*k?)\b", r" ×\1", text)
+    text = re.sub(r"^(\d[\d,.]*k?)\s+(.+)$", r"\2 ×\1", text)  # "40 Protogemas" -> "Protogemas ×40"
+    return text[:1].upper() + text[1:]
 
 
 def rewards_list(value):
