@@ -610,7 +610,7 @@ class Site:
         rows.append(("Eneba", "Claves", "", self.eneba_url(title), False, "btn-eneba"))
         html_rows = "".join(
             f'<li class="buy-row"><span class="buy-store">{e(name)}</span><span class="buy-tag{" off" if tag == "Oficial" else ""}">{e(tag)}</span>'
-            (f'<span class="buy-price">{e(price)}</span>' if price else '<span class="buy-price none">Ver precio</span>')
+            + (f'<span class="buy-price">{e(price)}</span>' if price else '<span class="buy-price none">Ver precio</span>')
             + ext_link(url, "Ir →", affiliate=aff, cls=f"btn btn-sm {cls or 'btn-primary'}", label=f"Ver {title} en {name} (abre en otra pestaña)")
             + "</li>" for name, tag, price, url, aff, cls in rows)
         return (f'<section class="buy" aria-labelledby="buy-h"><h2 id="buy-h">{ICONS["store"]} Dónde comprarlo</h2><ul class="buy-list">{html_rows}</ul>'
