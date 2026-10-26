@@ -887,7 +887,7 @@ class Site:
     def rank(self, g):
         return getattr(self, "ranks", {}).get(g["id"], 9999)
 
-    def release_card(self, g, now, compact=True):
+    def release_card(self, g, now, compact=True, big=False):
         hot = self.rank(g) <= 25
         img = g.get("image") or "assets/placeholder.svg"
         alt = f"Imagen de {g['title']}" if g.get("image") else ""
@@ -896,13 +896,17 @@ class Site:
         rel = relative_label(g.get("date"), g.get("precision"), now)
         when = date_label(g.get("date"), g.get("precision"))
         link = self.game_link(g, g.get("store") or "Steam")
-        return f"""<li class="rel-card{' is-hot' if hot else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
+        return f"""<li class="rel-card{' is-hot' if hot else ''}{' is-big' if big else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
 <div class="rel-img">{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
 <div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔</button></div></li>"""
+
+    def is_big(self, g, pos, count):
+        """Estilo calendario de releases: el más esperado de cada día va en grande (y el segundo si es muy esperado)."""
+        return (pos == 0 and (count >= 3 or self.rank(g) <= 150)) or (pos == 1 and self.rank(g) <= 60)
 
     def release_groups(self, games, now, title, anchor, compact=True):
         if not games:
@@ -932,7 +936,7 @@ class Site:
                        f'<span class="rel-dot" aria-hidden="true"></span><span class="rel-big">{e(big)}</span>'
                        f'<span class="rel-sub">{e(rel)}</span><span class="rel-line" aria-hidden="true"></span>'
                        f'<span class="rel-crumb">Juegos · {len(items)}</span></h3>'
-                       f'<ul class="rel-grid">{"".join(self.release_card(g, now, compact) for g in items)}</ul></section>')
+                       f'<ul class="rel-grid">{"".join(self.release_card(g, now, compact, big=self.is_big(g, i, len(items))) for i, g in enumerate(items))}</ul></section>')
         return f'<div class="rel-block" id="{anchor}"><h2>{e(title)}</h2>' + "".join(out) + "</div>"
 
     def spot_card(self, g, now, main=False):
@@ -1009,7 +1013,10 @@ class Site:
 {toolbar}
 <p class="count" id="rel-count" aria-live="polite">{len(games)} juegos</p>
 <div id="rel-list">{body or '<p class="notice">Todavía no hay lanzamientos cargados. Vuelve en unas horas.</p>'}</div>
-<p class="notice" id="rel-empty" hidden>No hay juegos con estos filtros. Prueba con «Todo» o quita algún filtro.</p>{credit}""",
+<div class="rel-more" id="rel-more" hidden><p class="meta" id="rel-more-txt"></p><button type="button" class="btn btn-primary" id="rel-more-btn">Cargar más juegos</button></div>
+<p class="notice" id="rel-empty" hidden>No hay juegos con estos filtros. Prueba con «Todo» o quita algún filtro.</p>
+<section class="rel-end" id="rel-end"><h2>{ICONS["calendar"]} Sigue explorando</h2><p class="meta">Cada mes tiene su propia página con todos sus estrenos, y puedes pasar de un mes al siguiente.</p>
+<nav class="chips" aria-label="Más calendarios">{"".join(f'<a class="chip" href="{n}">{e(label)} <span class="meta">({c})</span></a>' for n, label, c in getattr(self, "release_links", []))}</nav></section>{credit}""",
                     crumbs=[("lanzamientos.html", "Lanzamientos")], jsonld=[ld])
 
     def today_releases(self, games, now):
@@ -1179,17 +1186,27 @@ class Site:
         from .model import slugify
         today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
         links = []
-        # por mes: el mes actual y los 5 siguientes
+        # por mes: el anterior, el actual y los siguientes (hasta 18), encadenados con «mes anterior / siguiente»
         y, m = int(today[:4]), int(today[5:7])
-        for i in range(6):
+        months = []
+        for i in range(-1, 18):
             yy, mm = y + (m - 1 + i) // 12, (m - 1 + i) % 12 + 1
             key = f"{yy}-{mm:02d}"
             mine = [g for g in games if (g.get("date") or "")[:7] == key]
-            if not mine:
-                continue
+            if mine:
+                months.append((yy, mm, key, mine, f"juegos-que-salen-en-{MONTHS_ES[mm - 1]}-{yy}.html"))
+        for idx, (yy, mm, key, mine, name) in enumerate(months):
             month = MONTHS_ES[mm - 1]
-            name = f"juegos-que-salen-en-{month}-{yy}.html"
             links.append((name, f"{month.capitalize()} {yy}", len(mine)))
+            pager = ""
+            for side, j in (("prev", idx - 1), ("next", idx + 1)):
+                if 0 <= j < len(months):
+                    py, pm, _, pmine, pname = months[j]
+                    arrow = "← " if side == "prev" else ""
+                    tail = " →" if side == "next" else ""
+                    pager += (f'<a class="month-{side}" href="{pname}"><span class="meta">{"Mes anterior" if side == "prev" else "Sigue explorando"}</span>'
+                              f'<strong>{arrow}{MONTHS_ES[pm - 1].capitalize()} {py}{tail}</strong><span class="meta">{len(pmine)} juegos</span></a>')
+            pager = f'<nav class="month-pager" aria-label="Otros meses">{pager}</nav>' if pager else ""
             dated = sorted([g for g in mine if g.get("precision") == "day"], key=lambda g: (g["date"], self.rank(g)))
             undated = sorted([g for g in mine if g.get("precision") != "day"], key=self.rank)
             top = sorted(mine, key=self.rank)[:8]
@@ -1199,7 +1216,7 @@ class Site:
                     f'día por día, con tráiler cuando lo hay. Las fechas son las que publican las tiendas y Wikipedia, y pueden cambiar.</p>'
                     f'{updated_line}{spot}' + self.release_groups(dated, now, f"Calendario de {month}", f"cal-{key}", compact=False)
                     + self.release_groups(undated, now, f"En {month}, día por confirmar", f"mes-{key}", compact=False)
-                    + '<p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
+                    + pager + '<p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
             self.layout(name, f"Juegos que salen en {month} de {yy}: lanzamientos de PC y consolas",
                         f"Todos los juegos que salen en {month} de {yy} para PC, PlayStation, Xbox y Nintendo Switch: fechas, tráileres y los más esperados.",
                         body, crumbs=[("lanzamientos.html", "Lanzamientos"), (name, f"{month.capitalize()} {yy}")],

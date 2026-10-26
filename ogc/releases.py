@@ -15,8 +15,8 @@ NON_GAMES = {"Utilidades", "Diseño e ilustración", "Edición de vídeo", "Edic
              "Desarrollo web", "Formación", "Software de entrenamiento", "Animación y modelado"}
 DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=spanish"
 DETAILS_DATE_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=english&filters=release_date"
-MAX_GAMES = 320
-MAX_REFRESH = 70  # fichas de Steam consultadas por ejecución; el resto se reutiliza
+MAX_GAMES = 700
+MAX_REFRESH = 90  # fichas de Steam consultadas por ejecución; el resto se reutiliza
 REFRESH_HOURS = 24
 RECENT_DAYS = 45  # los estrenos más viejos no son "recientes"
 
@@ -89,7 +89,9 @@ def popular_ids(fetch):
     ids = []
     # popularwishlist = los más deseados (los juegos grandes que aún no salen); popularcomingsoon = los que salen pronto
     for flt, count, start in (("popularwishlist", 100, 0), ("popularwishlist", 100, 100), ("popularcomingsoon", 100, 0),
-                              ("popularcomingsoon", 100, 100), ("popularnew", 50, 0)):
+                              ("popularcomingsoon", 100, 100), ("popularnew", 100, 0), ("popularwishlist", 100, 200),
+                              ("popularcomingsoon", 100, 200), ("popularwishlist", 100, 300), ("popularcomingsoon", 100, 300),
+                              ("popularnew", 100, 100)):
         try:
             url = SEARCH_URL.format(filter=flt, count=count) + f"&start={start}"
             ids += [i for i in search_ids(fetch(url)) if i not in ids]

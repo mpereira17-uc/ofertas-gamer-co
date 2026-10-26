@@ -13,8 +13,8 @@ from datetime import timedelta
 from .model import iso, slugify
 
 ENDPOINT = "https://query.wikidata.org/sparql"
-MIN_LANGS = 3  # un juego con artículo en 3 o más Wikipedias ya es conocido
-LIMIT = 250
+MIN_LANGS = 2  # un juego con artículo en 2 o más Wikipedias ya es conocido
+LIMIT = 400
 PLATFORMS = (("playstation", "PlayStation"), ("xbox", "Xbox"), ("nintendo switch", "Switch"),
              ("microsoft windows", "Windows"), ("macos", "Mac"), ("linux", "Linux"))
 
