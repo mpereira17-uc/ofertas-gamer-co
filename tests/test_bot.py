@@ -17,9 +17,11 @@ class TestBot(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp = Path(tmp)
             sent = []
-            with mock.patch.multiple(bot, DATA=tmp, OFFERS_FILE=tmp / "offers.json",
+            # Todos los archivos de data/ van a la carpeta temporal: la prueba corre en Actions antes del bot real
+            others = {k: tmp / getattr(bot, k).name for k in dir(bot) if k.endswith("_FILE") or k == "IMG_DIR"}
+            with mock.patch.multiple(bot, **dict(others, DATA=tmp, OFFERS_FILE=tmp / "offers.json",
                                      PUBLISHED_FILE=tmp / "pub.json", RELEASES_FILE=tmp / "rel.json", SOCIAL_FILE=tmp / "soc.json",
-                                     DOCS=tmp / "docs"), \
+                                     DOCS=tmp / "docs")), \
                     mock.patch.object(channels, "send_telegram", side_effect=lambda o: sent.append(o["id"]) or True), \
                     mock.patch.dict(os.environ, {"DISCORD_BOT_TOKEN": "", "DISCORD_WEBHOOK_URL": ""}):
                 args = argparse.Namespace(fixtures=FIX, no_send=False)
