@@ -9,6 +9,7 @@ from email.utils import format_datetime
 from urllib.parse import quote
 from pathlib import Path
 
+from . import giveaways
 from .channels import CO_TZ, co_time, cop_text, date_es, money, time_left
 from .content import FAQ, GLOSSARY, GUIDES, LEGAL_REVIEW, LEGAL_UPDATED
 from .model import parse_iso
@@ -41,7 +42,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
 }.items()}
 
 NAV = [
-    ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"),
+    ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"), ("juegos-gratis-en-todas-las-tiendas.html", "Regalos por tienda", "gift"),
                  ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("seguidos.html", "Mis seguidos", "bell"),
                  ("oferta-del-dia.html", "Oferta del día", "sparkle"), ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
                  ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift")]),
@@ -961,6 +962,16 @@ class Site:
         return (f'<li class="n-row"><img src="{e(img)}" alt="" width="120" height="56" loading="lazy" decoding="async">'
                 f'<div class="n-main"><p class="n-title">{tag}{self.title_link(it)}</p><p class="n-sub">{sub}</p></div>{go}</li>')
 
+    def gift_row(self, g):
+        img = g.get("image") if (g.get("image") or "").startswith("https://") else "assets/placeholder.svg"
+        name = dict((k, n) for k, n, _ in giveaways.GROUPS).get(g["group"], "")
+        sub = " · ".join(x for x in (name if g["group"] != "otros" else g.get("platforms", ""), giveaways.TYPES.get(g["type"], ""),
+                                      f"hasta el {day_es(g['endsOn'])}" if g.get("endsOn") else "") if x)
+        go = (ext_link(g["url"], "Reclamar", cls="btn btn-sm btn-free", label=f"Reclamar {g['title']} gratis (abre en otra pestaña)")
+              if g.get("active") else '<span class="n-tag">Terminó</span>')
+        return (f'<li class="n-row"><img src="{e(img)}" alt="" width="120" height="56" loading="lazy" decoding="async">'
+                f'<div class="n-main"><p class="n-title"><span class="n-tag free">GRATIS</span>{e(g["title"])}</p><p class="n-sub">{e(sub)}</p></div>{go}</li>')
+
     def news_page(self, live, games, now, updated_line):
         def co_day(value):
             dt = parse_iso(value) if value else None
@@ -977,6 +988,8 @@ class Site:
         for g in games:
             if g.get("precision") == "day" and g.get("date") and g["date"] <= today:
                 days.setdefault(g["date"], {"free": [], "deals": [], "games": []})["games"].append(g)
+        for g in getattr(self, "giveaways", []):
+            days.setdefault(co_day(g.get("firstSeen")), {"free": [], "deals": [], "games": []}).setdefault("gifts", []).append(g)
         notes = []
         for key in sorted((k for k in days if k), reverse=True)[:10]:
             d = days[key]
@@ -986,6 +999,10 @@ class Site:
             if d["free"]:
                 parts.append(f'<section class="n-sec"><h3>{ICONS["gift"]} Juegos gratis nuevos</h3><ul>' +
                              "".join(self.note_row(o, "offer", now) for o in d["free"]) + "</ul></section>")
+            gifts = d.get("gifts", [])
+            if gifts:
+                parts.append(f'<section class="n-sec"><h3>{ICONS["gift"]} Regalos en otras tiendas</h3><ul>' +
+                             "".join(self.gift_row(g) for g in gifts[:10]) + "</ul></section>")
             if rel:
                 parts.append(f'<section class="n-sec"><h3>{ICONS["sparkle"]} Estrenos</h3><ul>' +
                              "".join(self.note_row(g, "game", now) for g in rel[:8]) + "</ul></section>")
@@ -994,7 +1011,7 @@ class Site:
                 parts.append(f'<section class="n-sec"><h3>{ICONS["flame"]} Nuevas ofertas</h3><ul>' +
                              "".join(self.note_row(o, "offer", now) for o in deals[:10]) + f"</ul>{more}</section>")
             counts = " · ".join(x for x in (
-                f"{len(d['free'])} gratis" if d["free"] else "", f"{len(rel)} estrenos" if rel else "",
+                f"{len(d['free']) + len(gifts)} gratis" if d["free"] or gifts else "", f"{len(rel)} estrenos" if rel else "",
                 f"{len(deals)} ofertas" if deals else "") if x)
             label = "Hoy" if key == today else day_name(key)
             notes.append(f'<article class="note"><header class="note-head"><span class="note-ver">{ICONS["news"]}</span>'
@@ -1342,6 +1359,39 @@ class Site:
                     f'La lista se revisa sola cada {self.cfg["intervalo_horas"]} horas.</p><ul class="stores">{rows}</ul>',
                     crumbs=[("codigos.html", "Códigos")])
 
+    def giveaway_card(self, g):
+        kind = giveaways.TYPES.get(g["type"], "Juego")
+        bits = [kind] + ([f"Valía US{g['worth']}"] if g.get("worth") else []) + ([f"Hasta el {day_es(g['endsOn'])}"] if g.get("endsOn") else [])
+        img = (f'<img class="spot-fg" src="{e(g["image"])}" alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">'
+               if g.get("image", "").startswith("https://") else "")
+        return (f'<li class="spot-card"><div class="spot-img">{img}</div><div class="spot-body"><h3 class="clamp2">{e(g["title"])}</h3>'
+                f'<p class="meta">{e(" · ".join(bits))}</p><div class="rel-actions">'
+                f'{ext_link(g["url"], "Reclamar gratis", cls="btn btn-primary btn-sm btn-free", label=f"Reclamar {g["title"]} gratis (abre en otra pestaña)")}</div></div></li>')
+
+    def giveaways_page(self, items, updated_line):
+        active = [g for g in items if g.get("active")]
+        secs = []
+        for key, name, _ in giveaways.GROUPS:
+            rows = [g for g in active if g["group"] == key and g["type"] == "game"]
+            if rows:
+                secs.append(f'<section class="spot" id="{key}"><div class="sec-head"><h2>{ICONS["gift"]} Gratis en {e(name)}</h2>'
+                            f'<p class="meta">{len(rows)} {"juego" if len(rows) == 1 else "juegos"}</p></div><ul class="spot-grid small">{"".join(self.giveaway_card(g) for g in rows)}</ul></section>')
+        betas = [g for g in active if g["type"] != "game"]
+        if betas:
+            secs.append(f'<section class="spot" id="betas"><div class="sec-head"><h2>{ICONS["sparkle"]} Betas, pruebas y acceso anticipado</h2>'
+                        f'<p class="meta">Para probar juegos antes de que salgan.</p></div><ul class="spot-grid small">{"".join(self.giveaway_card(g) for g in betas)}</ul></section>')
+        body = "".join(secs) or '<p class="notice">Ahora mismo no hay regalos registrados. Vuelve en unas horas.</p>'
+        jump = " ".join(f'<a class="chip" href="#{k}">{e(n)}</a>' for k, n, _ in giveaways.GROUPS
+                        if any(g["group"] == k and g["type"] == "game" for g in active)) + (' <a class="chip" href="#betas">Betas</a>' if betas else "")
+        self.layout("juegos-gratis-en-todas-las-tiendas.html", "Juegos gratis hoy en Steam, Epic, GOG y Amazon Prime Gaming",
+                    "Todos los juegos que puedes reclamar gratis hoy en Steam, Epic Games, GOG, Amazon Prime Gaming y Luna, itch.io y más, más betas abiertas. Se actualiza cada 4 horas.",
+                    f'<h1>Juegos gratis en todas las tiendas</h1><p class="lead">Lo que puedes reclamar gratis hoy, tienda por tienda, más betas y pruebas abiertas. '
+                    f'Lo que reclamas mientras dura la promoción queda tuyo (en Amazon Luna y Prime Gaming puede pedir suscripción).</p>{updated_line}'
+                    f'<nav class="chips" aria-label="Ir a una tienda">{jump}</nav>{body}'
+                    f'<p class="meta">Datos de regalos: <a href="{giveaways.SOURCE_URL}" rel="noopener noreferrer" target="_blank">GamerPower</a>. '
+                    f'Los botones abren la página oficial del regalo; confirma ahí las condiciones antes de reclamar.</p>',
+                    crumbs=[("juegos-gratis.html", "Juegos gratis"), ("juegos-gratis-en-todas-las-tiendas.html", "En todas las tiendas")])
+
     def f2p_page(self, f2p, updated_line):
         if f2p:
             cards = "".join(
@@ -1486,7 +1536,7 @@ class Site:
 
         self.layout("juegos-gratis.html", "Juegos gratis para PC hoy",
                     "Juegos gratuitos para PC disponibles ahora en tiendas oficiales como Epic Games Store, con la fecha en que termina cada promoción.",
-                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{notice}{self.offer_list(free)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
+                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{notice}{self.offer_list(free)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a> <a class=\"btn btn-primary\" href=\"juegos-gratis-en-todas-las-tiendas.html\">Gratis en Steam, GOG, Amazon y más</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
                     crumbs=[("juegos-gratis.html", "Juegos gratis")], jsonld=[self.item_list_ld(free)])
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
@@ -1549,6 +1599,7 @@ class Site:
         self.releases_page(games or [], updated_dt, updated_line)
         self.collection_pages(live, games or [], updated_dt, updated_line, notice)
         self.f2p_page(getattr(self, "f2p", []), updated_line)
+        self.giveaways_page(getattr(self, "giveaways", []), updated_line)
         self.epic_archive_page(updated_line)
         self.codes_pages(getattr(self, "codes", {}) or {}, updated_dt)
         self.alerts_page()

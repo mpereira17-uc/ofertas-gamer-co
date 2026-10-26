@@ -4,7 +4,7 @@ const base = process.argv[2] || "http://127.0.0.1:8765/";
 const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html", "guias.html", "contacto.html",
   "privacidad.html", "afiliados.html", "404.html", "estado.html", "guia-que-es-drm.html", "favoritos.html",
   "resumen-semanal.html", "juegos-baratos.html", "lanzamientos-playstation.html", "juegos-gratis-para-siempre.html", "alertas.html",
-  "oferta-del-dia.html", "minimos-historicos.html", "buscar.html", "glosario.html", "estadisticas.html", "todos-los-juegos-gratis-de-epic.html", "juegos-menos-de-10000-pesos.html", "ofertas-mejor-valoradas.html"];
+  "oferta-del-dia.html", "minimos-historicos.html", "buscar.html", "glosario.html", "estadisticas.html", "todos-los-juegos-gratis-de-epic.html", "juegos-menos-de-10000-pesos.html", "ofertas-mejor-valoradas.html", "juegos-gratis-en-todas-las-tiendas.html", "noticias.html"];
 
 (async () => {
   const browser = await chromium.launch();

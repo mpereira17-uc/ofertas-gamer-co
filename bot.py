@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, channels, codes, community, discord, health, images, promote, releases, sources, tumblr, weekly, wikidata
+from ogc import alerts, channels, codes, community, discord, giveaways, health, images, promote, releases, sources, tumblr, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -30,6 +30,7 @@ PUBLISHED_FILE = DATA / "telegram_publicados.json"
 SOCIAL_FILE = DATA / "redes_publicados.json"
 RELEASES_FILE = DATA / "lanzamientos.json"
 F2P_FILE = DATA / "gratis_para_siempre.json"
+GIVEAWAYS_FILE = DATA / "regalos.json"
 WEEKLY_FILE = DATA / "resumenes.json"
 ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
 BOT_FILE = DATA / "telegram_bot.json"
@@ -67,6 +68,8 @@ def fixture_fetch(folder):
             name = "steam_featured.json"
         elif "appdetails" in url:
             name = "steam_appdetails.json"
+        elif "gamerpower" in url:
+            name = "gamerpower.json"
         elif "itunes.apple.com" in url:
             name = "codes_itunes.json"
         elif "seria.moe" in url or "ennead.cc" in url:
@@ -184,6 +187,8 @@ def run(args):
     save_json(EPIC_ARCHIVE_FILE, epic_archive)
     f2p, status["Fuente gratis para siempre (Steam)"] = releases.free_to_play(sources.get_json, load_json(F2P_FILE, {}).get("games", []))
     save_json(F2P_FILE, {"updatedAt": iso(now), "games": f2p})
+    gifts, status["Regalos en otras tiendas (GamerPower)"] = giveaways.update(sources.get_json, load_json(GIVEAWAYS_FILE, {}).get("items", []), now)
+    save_json(GIVEAWAYS_FILE, {"updatedAt": iso(now), "items": gifts})
 
     price_history = price_log.record(load_json(HISTORY_FILE, {}), offers, now)
     save_history(HISTORY_FILE, price_history)
@@ -284,6 +289,7 @@ def run(args):
     site.epic_next, site.epic_archive = epic_next, epic_archive
     site.poll = load_json(POLL_FILE, {})
     site.codes = code_state
+    site.giveaways = gifts
     site.dotd_image = (IMG_DIR / "oferta-del-dia.jpg").exists()
     site.build(offers, status, now, games)
     daily = getattr(site, "daily", None) or {}
