@@ -61,6 +61,12 @@ class CodesTest(unittest.TestCase):
         a, _ = codes.from_seria({"codes": [{"code": "no vale", "status": "OK"}, {"code": "<script>", "status": "OK"}]})
         self.assertEqual(a, {})
 
+    def test_artwork_picks_official_game(self):
+        import json
+        data = json.load(open("tests/fixtures/codes_itunes.json", encoding="utf-8"))
+        self.assertIn("genshin", codes.artwork("genshin", lambda url: data))
+        self.assertIsNone(codes.artwork("starrail", lambda url: data))
+
 
 if __name__ == "__main__":
     unittest.main()

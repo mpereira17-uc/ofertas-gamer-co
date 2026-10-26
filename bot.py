@@ -67,6 +67,8 @@ def fixture_fetch(folder):
             name = "steam_featured.json"
         elif "appdetails" in url:
             name = "steam_appdetails.json"
+        elif "itunes.apple.com" in url:
+            name = "codes_itunes.json"
         elif "seria.moe" in url or "ennead.cc" in url:
             name = "codes_seria.json" if "seria.moe" in url else "codes_ennead.json"
         else:

@@ -39,6 +39,8 @@ GAMES = {
 }
 SERIA_URL = "https://hoyo-codes.seria.moe/codes?game={game}"
 ENNEAD_URL = "https://api.ennead.cc/mihoyo/{game}/codes"
+# Ícono oficial de cada juego, tomado de su ficha en la App Store (API pública de Apple, sin clave)
+ITUNES_URL = "https://itunes.apple.com/search?entity=software&country=co&limit=10&term={term}"
 CODE_RE = re.compile(r"^[A-Z0-9]{6,20}$")
 NEW_HOURS = 48
 KEEP_EXPIRED = 40
@@ -121,6 +123,19 @@ def from_ennead(data):
     return active, expired
 
 
+def artwork(gid, fetch):
+    """URL HTTPS del ícono oficial del juego en la App Store, o None."""
+    name = GAMES[gid]["name"]
+    data = fetch(ITUNES_URL.format(term=urllib.parse.quote(name)))
+    for row in (data or {}).get("results", []) if isinstance(data, dict) else []:
+        seller = (row.get("sellerName") or row.get("artistName") or "").upper()
+        title = (row.get("trackName") or "").lower()
+        url = row.get("artworkUrl512") or ""
+        if ("COGNOSPHERE" in seller or "HOYOVERSE" in seller) and title.startswith(name.lower()) and url.startswith("https://"):
+            return url
+    return None
+
+
 def update(previous, now, fetch=get_json_default):
     """Devuelve (estado nuevo, códigos nuevos [(juego, código)], texto de estado)."""
     state = {"updatedAt": iso(now), "games": {}}
@@ -163,7 +178,13 @@ def update(previous, now, fetch=get_json_default):
         live = {k: v for k, v in codes.items() if v.get("status") == "activo"}
         gone = sorted((kv for kv in codes.items() if kv[1].get("status") != "activo"),
                       key=lambda kv: kv[1].get("expiredAt") or "", reverse=True)[:KEEP_EXPIRED]
-        state["games"][gid] = {"lastOk": iso(now), "sources": worked, "codes": dict(sorted(live.items()) + gone)}
+        image = old.get("image")
+        if not image:
+            try:
+                image = artwork(gid, fetch)
+            except Exception as exc:
+                print(f"Códigos {g['name']}: no se pudo traer la imagen ({type(exc).__name__})", file=sys.stderr)
+        state["games"][gid] = {"lastOk": iso(now), "sources": worked, "image": image, "codes": dict(sorted(live.items()) + gone)}
         report.append(f"{g['name']}: {len(live)} activos ({'+'.join(worked)})")
     return state, fresh[:MAX_ANNOUNCE], "; ".join(report)
 
@@ -210,14 +231,15 @@ def send_telegram(text, token=None, chat=None):
         return False
 
 
-def discord_payload(gid, item, link):
+def discord_payload(gid, item, link, image=None):
     g = GAMES[gid]
     lines = [f"`{item['code']}`"]
     if item.get("rewards"):
         lines.append("🎁 " + ", ".join(item["rewards"]))
     lines += [f"[Canjear en la página oficial]({g['redeem'].format(code=item['code'])}) · [Todos los códigos]({link})"]
     return {"embeds": [{"title": f"🎟️ Nuevo código de {g['name']}"[:250], "url": link, "description": "\n".join(lines)[:2000],
-                        "color": 0xFFC83D, "footer": {"text": "Los códigos vencen sin aviso"}}]}
+                        "color": 0xFFC83D, "footer": {"text": "Los códigos vencen sin aviso"}}
+                       | ({"thumbnail": {"url": image}} if (image or "").startswith("https://") else {})]}
 
 
 def announce(state, fresh, base, dc=None, send=send_telegram):
@@ -230,7 +252,7 @@ def announce(state, fresh, base, dc=None, send=send_telegram):
         link = base + GAMES[gid]["page"]
         ok = send(announce_text(gid, dict(item, code=code), link))
         if dc is not None and dc.ready:
-            ok = dc.post_raw("gratis", discord_payload(gid, dict(item, code=code), link)) or ok
+            ok = dc.post_raw("gratis", discord_payload(gid, dict(item, code=code), link, state["games"][gid].get("image"))) or ok
         if ok:
             item["announced"] = True
             sent += 1

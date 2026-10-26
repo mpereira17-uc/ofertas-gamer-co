@@ -1299,7 +1299,7 @@ class Site:
         for gid, g in GAMES.items():
             live, gone = active_codes(state, gid), expired_codes(state, gid)
             last = ((state.get("games") or {}).get(gid) or {}).get("lastOk")
-            hub.append((g, len(live)))
+            hub.append((g, len(live), ((state.get("games") or {}).get(gid) or {}).get("image") or ""))
             when = (f'<p class="meta">Revisado el <time datetime="{e(last)}">{e(co_time(parse_iso(last)))}</time> · se revisa cada {self.cfg["intervalo_horas"]} horas</p>'
                     if last else '<p class="notice">Todavía no se pudo revisar la lista. Vuelve en unas horas.</p>')
             cards = (f'<ul class="code-grid">{"".join(self.code_card(gid, it, now) for it in live)}</ul>' if live else
@@ -1318,10 +1318,13 @@ class Site:
             faq_html = '<div class="faq">' + "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq) + "</div>"
             faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
                 {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+            img = ((state.get("games") or {}).get(gid) or {}).get("image") or ""
+            img = img if img.startswith("https://") else ""
+            icon = f'<img class="code-game-icon" src="{e(img)}" alt="Ícono de {e(g["name"])}" width="96" height="96">' if img else ""
             others = " · ".join(f'<a href="{o["page"]}">Códigos de {e(o["name"])}</a>' for k, o in GAMES.items() if k != gid)
             self.layout(g["page"], f"Códigos de {g['name']} activos hoy ({month})",
                         f"Todos los códigos de {g['name']} que funcionan hoy, con sus recompensas ({g['currency']} y más) y botón para canjear en la página oficial. Revisados cada {self.cfg['intervalo_horas']} horas.",
-                        f'<h1>Códigos de {e(g["name"])} activos</h1><p class="lead">Los códigos que funcionan hoy para conseguir {e(g["currency"])} y otras recompensas gratis. '
+                        f'<div class="code-head">{icon}<h1>Códigos de {e(g["name"])} activos</h1></div><p class="lead">Los códigos que funcionan hoy para conseguir {e(g["currency"])} y otras recompensas gratis. '
                         f'Copia el código o toca <strong>Canjear</strong> para abrir la página oficial de HoYoverse con el código ya puesto.</p>{when}'
                         f'<h2>{ICONS["gift"]} Códigos activos ({len(live)})</h2>{cards}{self.ad_slot("article_middle")}'
                         f'<h2>Cómo canjear los códigos</h2><ol class="steps">{steps}</ol><p>{e(g["ingame"])}</p>{old}'
@@ -1329,8 +1332,10 @@ class Site:
                         f'<p class="meta">Los códigos son de HoYoverse; aquí solo los reunimos. Revisamos dos listas públicas de códigos y mostramos como activo solo '
                         f'lo que ninguna da por vencido. Un código puede dejar de funcionar antes de nuestra próxima revisión.</p>'
                         f'<section class="channels"><h2>{ICONS["bell"]} Recibe los códigos nuevos al instante</h2><p class="lead">Cuando sale un código nuevo lo publicamos en Telegram y Discord.</p>{self.channels_cta()}</section>',
-                        crumbs=[("codigos.html", "Códigos"), (g["page"], g["name"])], jsonld=[faq_ld])
-        rows = "".join(f'<li><a href="{g["page"]}"><strong>Códigos de {e(g["name"])}</strong></a><p class="meta">{n} activos hoy</p></li>' for g, n in hub)
+                        crumbs=[("codigos.html", "Códigos"), (g["page"], g["name"])], jsonld=[faq_ld], og_image=img or None)
+        rows = "".join(f'<li class="code-hub"><a href="{g["page"]}">'
+                       + (f'<img src="{e(im)}" alt="" width="64" height="64" loading="lazy">' if im.startswith("https://") else "")
+                       + f'<span><strong>Códigos de {e(g["name"])}</strong><span class="meta">{n} activos hoy</span></span></a></li>' for g, n, im in hub)
         self.layout("codigos.html", f"Códigos de juegos gratis activos ({month})",
                     "Códigos de canje que funcionan hoy para Genshin Impact, Honkai: Star Rail y Zenless Zone Zero, revisados automáticamente cada 4 horas.",
                     f'<h1>Códigos de juegos</h1><p class="lead">Códigos de canje que funcionan hoy, con sus recompensas y un botón para canjearlos en la página oficial. '
