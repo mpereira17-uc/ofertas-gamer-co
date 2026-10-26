@@ -119,9 +119,51 @@
     setIf(form.max, params.get("max"));
     var orden = params.get("orden");
     setIf(form.sort, orden === "vence" ? "expires" : orden === "precio" ? "price" : orden);
-    form.addEventListener("input", applyFilters);
+    // Atajos (Solo gratis, Vale la pena…): filtran sin recargar, se marcan y se quitan con otro clic
+    var chips = Array.prototype.slice.call(document.querySelectorAll(".quick-chips a.chip"));
+    var chipField = { tipo: "type", min: "min", max: "max", orden: "sort", tienda: "store", q: "q" };
+    var chipParams = function (a) { return new URLSearchParams((a.getAttribute("href") || "").split("?")[1] || ""); };
+    var fieldValue = function (key, value) { return key === "orden" ? (value === "vence" ? "expires" : value === "precio" ? "price" : value) : value; };
+    var chipMatches = function (a) {
+      var ok = true;
+      chipParams(a).forEach(function (v, k) { var f = form[chipField[k]]; if (!f || f.value !== fieldValue(k, v)) ok = false; });
+      return ok;
+    };
+    var markChips = function () {
+      chips.forEach(function (a) { var on = chipMatches(a); a.setAttribute("aria-pressed", on ? "true" : "false"); a.classList.toggle("on", on); });
+    };
+    var syncUrl = function () {
+      try {
+        var p = new URLSearchParams();
+        Object.keys(chipField).forEach(function (k) {
+          var f = form[chipField[k]]; if (!f || !f.value) return;
+          if (k === "orden" && f.value === "discount") return;
+          p.set(k, k === "orden" ? (f.value === "expires" ? "vence" : f.value === "price" ? "precio" : f.value) : f.value);
+        });
+        var qs = p.toString();
+        history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+      } catch (err) { /* sin historial: no pasa nada */ }
+    };
+    chips.forEach(function (a) {
+      a.setAttribute("role", "button");
+      a.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        var wasOn = chipMatches(a);
+        chips.forEach(function (c) {  // un atajo a la vez: limpia lo que ponen los demás
+          chipParams(c).forEach(function (v, k) {
+            var f = form[chipField[k]]; if (!f) return;
+            f.value = k === "orden" ? (f.querySelector('option[value="discount"]') ? "discount" : f.options[0].value) : "";
+          });
+        });
+        if (!wasOn) chipParams(a).forEach(function (v, k) { setIf(form[chipField[k]], fieldValue(k, v)); });
+        applyFilters(); markChips(); syncUrl();
+      });
+    });
+    form.addEventListener("input", function () { applyFilters(); markChips(); syncUrl(); });
     form.addEventListener("submit", function (e) { e.preventDefault(); applyFilters(); });
-    applyFilters();
+    if (list && !Array.prototype.some.call(list.children, function (li) { return li.dataset.type !== "gratis"; }))
+      chips.forEach(function (a) { if (/tipo=gratis/.test(a.getAttribute("href"))) a.hidden = true; });  // en una lista solo de gratis sobra
+    applyFilters(); markChips();
   }
 
   // Calendario de lanzamientos: pestañas de periodo, chips de sistema y género, seguir juegos
