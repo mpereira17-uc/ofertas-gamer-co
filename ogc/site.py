@@ -605,6 +605,21 @@ class Site:
     def eneba_url(title):
         return "https://www.eneba.com/store/all?" + urlencode({"text": title})
 
+    def price_text(self, g, now):
+        p = self.live_price(g, now)
+        if not p:
+            return ""
+        return money(p["final"], p["currency"]) + (f' (-{p["discount"]}%)' if p.get("discount") else "")
+
+    def price_line(self, g, now):
+        """En la ficha del juego: el precio actual en Steam Colombia y el descuento, con la hora en que lo revisamos."""
+        p = self.live_price(g, now)
+        if not p:
+            return ""
+        sale = (f'<span class="badge">-{p["discount"]}%</span> <s>{e(money(p["initial"], p["currency"]))}</s> ' if p.get("discount") else "")
+        return (f'<p class="detail-price">{sale}<strong>{e(money(p["final"], p["currency"]))}</strong> en Steam Colombia'
+                f'{" · en oferta ahora" if p.get("discount") else ""}<span class="meta price-at">Precio revisado: {e(date_es(p["at"]))}. Se revisa cada 4 horas.</span></p>')
+
     def buy_block(self, title, official):
         """«Dónde comprarlo»: primero las tiendas oficiales (con precio verificado si lo hay) y luego tiendas de claves.
         official: lista de (tienda, precio o "", url). En las tiendas de claves no mostramos precio: no tenemos fuente."""
@@ -821,12 +836,12 @@ class Site:
 <div class="detail-info"><p class="eyebrow">Lanzamiento{" en Steam" if src == "Steam" else ""}</p>
 <h1>{e(g['title'])}</h1>
 <p class="detail-date">📅 {e(when)}</p>
-{launch}{moved}
+{launch}{moved}{self.price_line(g, now)}
 <div class="tags">{tags}</div>
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
-<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{self.buy_block(g['title'], [(g.get('store') or 'Steam', '', g.get('url'))])}{extra}{faq_html}""",
+<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{self.buy_block(g['title'], [(g.get('store') or 'Steam', self.price_text(g, now), g.get('url'))])}{extra}{faq_html}""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld, faq_ld], og_image=g.get("image"))
 
     def similar_games(self, g, games):
@@ -891,6 +906,14 @@ class Site:
     def rank(self, g):
         return getattr(self, "ranks", {}).get(g["id"], 9999)
 
+    @staticmethod
+    def live_price(g, now):
+        """Precio de Steam Colombia revisado en las últimas 12 horas (si es más viejo no se muestra)."""
+        p = g.get("price") or {}
+        if not p.get("final") or not p.get("at"):
+            return None
+        return p if p["at"] >= (now - timedelta(hours=12)).strftime("%Y-%m-%dT%H:%M:%SZ") else None
+
     def release_card(self, g, now, compact=True, big=False):
         hot = self.rank(g) <= 25
         img = g.get("image") or "assets/placeholder.svg"
@@ -901,7 +924,7 @@ class Site:
         when = date_label(g.get("date"), g.get("precision"))
         link = self.game_link(g, g.get("store") or "Steam")
         return f"""<li class="rel-card{' is-hot' if hot else ''}{' is-big' if big else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
-<div class="rel-img">{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}</div>
+<div class="rel-img">{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}{f'<span class="badge sale-tag">-{self.live_price(g, now)["discount"]}%</span>' if (self.live_price(g, now) or {}).get("discount") else ''}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}

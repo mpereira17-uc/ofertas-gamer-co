@@ -15,6 +15,9 @@ NON_GAMES = {"Utilidades", "Diseño e ilustración", "Edición de vídeo", "Edic
              "Desarrollo web", "Formación", "Software de entrenamiento", "Animación y modelado"}
 DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=spanish"
 DETAILS_DATE_URL = "https://store.steampowered.com/api/appdetails?appids={id}&cc=co&l=english&filters=release_date"
+# con filters=price_overview Steam acepta muchos appid en una sola consulta: así los precios se revisan en cada corrida
+PRICES_URL = "https://store.steampowered.com/api/appdetails?appids={ids}&cc=co&filters=price_overview"
+PRICE_BATCH = 100
 MAX_GAMES = 700
 MAX_REFRESH = 90  # fichas de Steam consultadas por ejecución; el resto se reutiliza
 REFRESH_HOURS = 24
@@ -236,6 +239,43 @@ def steam_releases(now, fetch, previous=()):
     return games
 
 
+def steam_price(entry, now):
+    """Precio de Steam Colombia (COP) desde price_overview, o None si no hay (sin precio aún, gratis o error)."""
+    if not (entry or {}).get("success"):
+        return None
+    p = (entry.get("data") or {}) if isinstance(entry.get("data"), dict) else {}
+    p = p.get("price_overview") or {}
+    if not isinstance(p.get("final"), int) or p.get("currency") != "COP" or p["final"] <= 0:
+        return None
+    return {"final": p["final"] / 100, "initial": (p.get("initial") or p["final"]) / 100, "discount": int(p.get("discount_percent") or 0),
+            "currency": "COP", "at": iso(now)}
+
+
+def refresh_prices(games, now, fetch):
+    """Pone a cada juego de Steam su precio actual en Colombia. Si una tanda falla, se conserva el precio anterior."""
+    ids = [g["id"].split("-", 1)[1] for g in games if g.get("id", "").startswith("steam-")]
+    prices, ok = {}, 0
+    for i in range(0, len(ids), PRICE_BATCH):
+        batch = ids[i:i + PRICE_BATCH]
+        try:
+            data = fetch(PRICES_URL.format(ids=",".join(batch))) or {}
+        except Exception as exc:
+            print(f"Lanzamientos: precios de Steam fallaron: {exc}", file=sys.stderr)
+            continue
+        for app_id in batch:
+            if str(app_id) in data:
+                ok += 1
+                prices[f"steam-{app_id}"] = steam_price(data[str(app_id)], now)
+    out = []
+    for g in games:
+        if g["id"] in prices:
+            g = {k: v for k, v in g.items() if k != "price"}
+            if prices[g["id"]]:
+                g["price"] = prices[g["id"]]
+        out.append(g)
+    return out, ok
+
+
 def mark_date_changes(games, previous, now, keep_days=45):
     """Marca los juegos cuya fecha publicada cambió (retrasos o adelantos). La marca dura unas semanas."""
     old = {g["id"]: g for g in previous}
@@ -260,7 +300,9 @@ def update(previous, now, fetch):
         games = steam_releases(now, fetch, previous)
         if not games:
             raise ValueError("Steam no devolvió juegos")
-        return games, f"OK, {len(games)} juegos"
+        games, priced = refresh_prices(games, now, fetch)
+        sale = sum(1 for g in games if (g.get("price") or {}).get("discount"))
+        return games, f"OK, {len(games)} juegos; precios revisados de {priced}, {sale} en oferta en Steam"
     except Exception as exc:
         print(f"Lanzamientos: Steam falló: {exc}", file=sys.stderr)
         return previous, f"Falló ({type(exc).__name__}); se conserva la última versión válida"
