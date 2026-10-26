@@ -157,6 +157,8 @@ class Site:
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
         stores_nav = [(f"ofertas-{st['id']}.html" if getattr(self, "store_counts", {}).get(st["id"]) else f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"]]
+        if self.cfg.get("instant_gaming_igr"):
+            stores_nav.append(("instant-gaming.html", "Instant Gaming", "store-ig"))
         groups = NAV[:1] + [("Tiendas", stores_nav)] + NAV[1:]
         nav = "".join(
             f'<div class="side-group"><p class="side-title">{e(title)}</p><ul>' + "".join(
@@ -581,16 +583,60 @@ class Site:
                 f'<p class="meta">El mismo juego en otras tiendas oficiales, del más barato al más caro.</p>'
                 f'<div class="note"><section class="n-sec"><ul>{rows}</ul></section></div></section>')
 
-    def ig_block(self, title):
-        """Botón para buscar el juego en Instant Gaming con el enlace de afiliado. No muestra precios: no tenemos fuente."""
+    def ig_url(self, title=None):
         igr = self.cfg.get("instant_gaming_igr")
         if not igr:
             return ""
-        url = "https://www.instant-gaming.com/es/busquedas/?" + urlencode({"q": title, "igr": igr})
-        return ('<div class="ig-box">' + ext_link(url, "🔎 Buscar en Instant Gaming", affiliate=True, cls="btn btn-sm btn-ig",
-                                                  label=f"Buscar {title} en Instant Gaming (enlace de afiliado, abre en otra pestaña)")
-                + '<p class="meta">A veces está más barato como clave. Enlace de afiliado: si compras, recibimos una pequeña comisión sin costo para ti. '
-                  'Revisa el precio, la región y la plataforma de la clave antes de pagar.</p></div>')
+        if title:
+            return "https://www.instant-gaming.com/es/busquedas/?" + urlencode({"q": title, "igr": igr})
+        return "https://www.instant-gaming.com/es/?" + urlencode({"igr": igr})
+
+    def offer_buy(self, o):
+        if not o.get("currentPrice"):
+            return ""
+        same = sorted([o] + list(o.get("otherStores") or []), key=lambda x: (x.get("copApproximation") if x.get("currency") == "USD" else x.get("currentPrice")) or 0)
+        return self.buy_block(o["title"], [(x["store"], money(x["currentPrice"], x["currency"]), x.get("destinationUrl")) for x in same])
+
+    @staticmethod
+    def eneba_url(title):
+        return "https://www.eneba.com/store/all?" + urlencode({"text": title})
+
+    def buy_block(self, title, official):
+        """«Dónde comprarlo»: primero las tiendas oficiales (con precio verificado si lo hay) y luego tiendas de claves.
+        official: lista de (tienda, precio o "", url). En las tiendas de claves no mostramos precio: no tenemos fuente."""
+        rows = [(name, "Oficial", price, url, False, "") for name, price, url in official if url]
+        if self.ig_url(title):
+            rows.append(("Instant Gaming", "Claves", "", self.ig_url(title), True, "btn-ig"))
+        rows.append(("Eneba", "Claves", "", self.eneba_url(title), False, "btn-eneba"))
+        html_rows = "".join(
+            f'<li class="buy-row"><span class="buy-store">{e(name)}</span><span class="buy-tag{" off" if tag == "Oficial" else ""}">{e(tag)}</span>'
+            (f'<span class="buy-price">{e(price)}</span>' if price else '<span class="buy-price none">Ver precio</span>')
+            + ext_link(url, "Ir →", affiliate=aff, cls=f"btn btn-sm {cls or 'btn-primary'}", label=f"Ver {title} en {name} (abre en otra pestaña)")
+            + "</li>" for name, tag, price, url, aff, cls in rows)
+        return (f'<section class="buy" aria-labelledby="buy-h"><h2 id="buy-h">{ICONS["store"]} Dónde comprarlo</h2><ul class="buy-list">{html_rows}</ul>'
+                '<p class="meta">Las tiendas de claves venden códigos de terceros: revisa la región y la plataforma antes de pagar. '
+                'Instant Gaming es enlace de afiliado (recibimos una pequeña comisión sin costo para ti). <a href="instant-gaming.html">Cómo comprar claves seguro</a>.</p></section>')
+
+    def ig_page(self, live):
+        url = self.ig_url()
+        if not url:
+            return
+        top = sorted([o for o in live if o.get("currentPrice")], key=lambda o: -(o.get("discountPercentage") or 0))[:12]
+        rows = "".join(f'<li>{e(o["title"])} {ext_link(self.ig_url(o["title"]), "Comparar →", affiliate=True, cls="btn btn-sm btn-ig", label=f"Comparar {o["title"]} en Instant Gaming")}</li>' for o in top)
+        self.layout("instant-gaming.html", "Instant Gaming: comprar claves de juegos más baratas de forma segura",
+                    "Qué es Instant Gaming, cómo comparar el precio de un juego como clave y qué revisar antes de pagar desde Colombia.",
+                    f"""<div class="prose"><h1>Instant Gaming</h1>
+<p class="lead">Instant Gaming vende <strong>claves</strong> (códigos) que se activan en Steam, Epic, Xbox, PlayStation o Nintendo. A veces un juego sale más barato ahí que en la tienda oficial.</p>
+<p>{ext_link(url, "Ir a Instant Gaming →", affiliate=True, cls="btn btn-primary btn-ig")}</p>
+<h2>Antes de pagar, revisa</h2><ul>
+<li><strong>Plataforma:</strong> que la clave sea para donde juegas (Steam, Xbox, PlayStation…).</li>
+<li><strong>Región:</strong> que diga «Global», «Latinoamérica» o que funcione en Colombia.</li>
+<li><strong>Edición:</strong> estándar, deluxe o solo un DLC.</li>
+<li><strong>Precio final:</strong> compáralo con el de la oferta oficial en nuestro sitio.</li></ul>
+<h2>Compara las mejores ofertas de hoy</h2><p>Estas son nuestras ofertas oficiales con más descuento. Toca «Comparar» para buscarlas en Instant Gaming.</p>
+<ul class="ig-list">{rows}</ul>
+<p class="meta">Instant Gaming no es una tienda oficial de los juegos, sino un vendedor de claves. Los enlaces de esta página son de afiliado: si compras, recibimos una pequeña comisión sin costo para ti. No mostramos sus precios porque no tenemos una fuente oficial para verificarlos.</p></div>""",
+                    crumbs=[("tiendas.html", "Tiendas"), ("instant-gaming.html", "Instant Gaming")])
 
     def share_whatsapp(self, o, name):
         import urllib.parse
@@ -669,9 +715,9 @@ class Site:
 {self.countdown(o)}{f'<p class="meta">{e(until)}</p>' if until else ''}
 {self.trust_chips(o, full=True)}
 <div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a>{self.alert_button(o, "offer")}</div>
-{search_note}{self.ig_block(o['title']) if o.get('currentPrice') else ''}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
+{search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
 {self.share_whatsapp(o, name)}
-{notice}</div></article>{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
+{notice}</div></article>{self.offer_buy(o)}{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
 
     @staticmethod
@@ -747,8 +793,7 @@ class Site:
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
-{self.ig_block(g['title'])}
-<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{extra}{faq_html}""",
+<p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{self.buy_block(g['title'], [(g.get('store') or 'Steam', '', g.get('url'))])}{extra}{faq_html}""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld, faq_ld], og_image=g.get("image"))
 
     def similar_games(self, g, games):
@@ -1571,6 +1616,7 @@ class Site:
                     "Lista de tiendas oficiales de videojuegos que incluye Ofertas Gamer CO, sus dominios autorizados y su estado de afiliación.",
                     f"""<h1>Tiendas incluidas</h1><p class="lead">Solo publicamos ofertas de estas tiendas. Cada enlace se valida contra su dominio oficial antes de publicarse.</p>
 <table><thead><tr><th scope="col">Tienda</th><th scope="col">Dominio autorizado</th><th scope="col">Ofertas activas</th><th scope="col">Afiliación</th></tr></thead><tbody>{rows}</tbody></table>
+<h2>Tiendas de claves</h2><p><a href="instant-gaming.html"><strong>Instant Gaming</strong></a>: vende claves para activar en Steam, consolas y más. No es tienda oficial; lo enlazamos para comparar precios. <strong>Enlace de afiliado activo.</strong></p>
 <p>Mostrar una tienda no significa que tengamos una relación comercial con ella. Cuando exista, lo indicamos en esta tabla y en cada enlace.</p>
 <p>¿Quieres proponer una tienda oficial? <a href="{REPO}/issues/new?template=proponer-tienda.yml" target="_blank" rel="noopener noreferrer">Envía una propuesta</a>.</p>""",
                     crumbs=[("tiendas.html", "Tiendas")])
@@ -1612,6 +1658,7 @@ class Site:
         self.collection_pages(live, games or [], updated_dt, updated_line, notice)
         self.f2p_page(getattr(self, "f2p", []), updated_line)
         self.giveaways_page(getattr(self, "giveaways", []), updated_line)
+        self.ig_page(live)
         self.epic_archive_page(updated_line)
         self.codes_pages(getattr(self, "codes", {}) or {}, updated_dt)
         self.alerts_page()

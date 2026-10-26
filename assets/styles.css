@@ -53,8 +53,22 @@ header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
 .btn-wa{background:#128c4b;border-color:#128c4b;color:#fff}
 .btn-dc{background:#5865f2;border-color:#5865f2;color:#fff}
 .btn-ig{background:#ff5400;border-color:#ff5400;color:#fff}
-.ig-box{margin:.9rem 0;padding:.8rem 1rem;border:1px dashed rgba(255,84,0,.5);border-radius:14px}
-.ig-box .meta{margin:.5rem 0 0}
+.btn-ig:hover{background:#ff6a1f;border-color:#ff6a1f}
+.store-ig{background:#ff5400}
+.btn-eneba{background:#7b2cff;border-color:#7b2cff;color:#fff}
+.buy{margin:1.4rem 0;padding:1rem 1.1rem;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.03)}
+.buy h2{margin:0 0 .7rem;font-size:1.2rem;display:flex;align-items:center;gap:.4rem}
+.buy-list{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.buy-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:.7rem;padding:.55rem .7rem;border-radius:12px;background:rgba(10,7,22,.55);border:1px solid rgba(255,255,255,.07)}
+.buy-store{font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.buy-tag{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;color:#ff8a4c;border:1px solid rgba(255,138,76,.45)}
+.buy-tag.off{color:#25e09a;border-color:rgba(37,224,154,.45)}
+.buy-price{font-weight:800;color:var(--gold,#ffc83d);white-space:nowrap}
+.buy-price.none{color:var(--muted);font-weight:600}
+.buy .meta{margin:.7rem 0 0;font-size:.82rem}
+@media (max-width:520px){.buy-row{grid-template-columns:minmax(0,1fr) auto;}.buy-tag{justify-self:end}.buy-price{grid-column:1}}
+.ig-list{list-style:none;padding:0;display:grid;gap:.5rem}
+.ig-list li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem .8rem;border:1px solid var(--line,rgba(255,255,255,.1));border-radius:12px}
 .btn-kofi{background:#ff5e5b;border-color:#ff5e5b;color:#fff}
 .support{margin:0 0 1.2rem;padding:1rem 1.1rem;border:1px solid rgba(255,200,61,.35);border-radius:16px;background:rgba(255,200,61,.07)}
 .support p{margin:0 0 .7rem}
