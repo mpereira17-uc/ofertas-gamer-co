@@ -60,6 +60,9 @@ header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
 .buy h2{margin:0 0 .7rem;font-size:1.2rem;display:flex;align-items:center;gap:.4rem}
 .buy-list{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 .buy-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:.7rem;padding:.55rem .7rem;border-radius:12px;background:rgba(10,7,22,.55);border:1px solid rgba(255,255,255,.07)}
+.buy-store img{vertical-align:-3px;margin-right:4px}
+.ig-hero{margin:0 0 .4rem}.ig-hero img{max-width:220px;height:auto}
+.ig-banner{margin:1.2rem 0}.ig-banner img{display:block;width:100%;max-width:900px;height:auto}.ig-banner .meta{margin:.3rem 0 0;font-size:.75rem}
 .buy-store{font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .buy-tag{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;color:#ff8a4c;border:1px solid rgba(255,138,76,.45)}
 .buy-tag.off{color:#25e09a;border-color:rgba(37,224,154,.45)}
