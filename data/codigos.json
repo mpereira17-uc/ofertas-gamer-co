@@ -1,0 +1,897 @@
+{
+ "updatedAt": "2026-10-26T14:47:45Z",
+ "games": {
+  "genshin": {
+   "lastOk": "2026-10-26T14:47:45Z",
+   "sources": [
+    "seria",
+    "ennead"
+   ],
+   "codes": {
+    "6LS3F3LS5K87": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas*20",
+      "Geode of Replication*160"
+     ]
+    },
+    "DATG5HG1PL89": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Mora*10000",
+      "Experiencia de aventurero*10",
+      "Mineral de refinamiento fino*5",
+      "Stir-Fried Fish Noodles*5",
+      "Jueyun Chili Chicken*5"
+     ],
+     "announced": true
+    },
+    "EPIC2026": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "40 Protogemas",
+      "five Experiencia de héroe",
+      "and 20k mora"
+     ]
+    },
+    "NEEI8A8341OW": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×60",
+      "Experiencia de aventurero ×5"
+     ],
+     "announced": true
+    },
+    "NEEI986K5X6R": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×60",
+      "Experiencia de aventurero ×5"
+     ]
+    },
+    "NEEIJB764CA3": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas*60"
+     ],
+     "announced": true
+    },
+    "OKTCHX26J57Q": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Mora ×10,000",
+      "Experiencia de aventurero ×10",
+      "Mineral de refinamiento fino ×5",
+      "Stir-Fried Fish Noodles ×5",
+      "Jueyun Chili Chicken ×5"
+     ]
+    },
+    "OKTCV81F9H8D": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Mora*10000",
+      "Experiencia de aventurero*10",
+      "Mineral de refinamiento fino*5",
+      "Stir-Fried Fish Noodles*5",
+      "Jueyun Chili Chicken*5"
+     ]
+    },
+    "OPERACOLLAB": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas*30",
+      "Mora*20000",
+      "Experiencia de héroe*2"
+     ],
+     "announced": true
+    },
+    "PJ2KEBRAYSRM": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas*60",
+      "Experiencia de aventurero*5"
+     ]
+    },
+    "PNKZ3WLNN8G6": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Teachings of Charity*5",
+      "Teachings of Fortitude*5",
+      "Teachings of Glory*5"
+     ]
+    },
+    "QYJWQVRI39BE": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×60",
+      "Experiencia de aventurero ×5"
+     ]
+    },
+    "Y6JYMKV6JKSL": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas*60",
+      "Experiencia de aventurero*5"
+     ]
+    },
+    "GENSHINGIFT": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "vencido",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×50",
+      "Experiencia de héroe ×3",
+      "Mora ×10000"
+     ],
+     "expiredAt": "2026-10-26T14:47:45Z"
+    },
+    "NEWCODE2026": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "vencido",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×60"
+     ],
+     "expiredAt": "2026-10-26T14:47:45Z"
+    },
+    "OLDCODE123": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YUYANJIAOXI0326": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YUANSHEN2025GIFT": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "TEMPLEOFSPACE": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "VESNA0923": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "56CACUCUVSAJAW": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "INUH43366326": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "STANDWITHMAVUIK": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "1203KUUNRUKOUS": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "JRCB867O8KT3": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NSXD6FDNHCS5": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NMI20MAJGIBP": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ONTOSNEZHNAYA": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "RUIXIO212NEW": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "0FQBAJNXCUFU": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "EAOL18BJ8S64": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "VSL93LTE5WY5": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "KAM7UKZGVRXZ": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NODKRAISP0909": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "4BWU6FCNYUSH": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "TOTHEMOON": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "FIGHTLIKESKIRK57": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "XXOJ2Z7F8GJI": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "P7G0XA30H0Q3": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "TOUGNK89J77G": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "G5HS7EMI47D0": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "HOUROFRUIN": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "SVMCJ1398A18": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "BLINYMOIBLINY": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "VESNAONPATROL": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "GS57YTSNLJ": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "LWKC638ULB16": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "CODENAMEK": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "TSUKINOARIKAE": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YMYD76U85Z1U": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "BLKSMCJ3N725": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "POKAPOKAGENSHIN": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "GS54MTX685": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    }
+   }
+  },
+  "starrail": {
+   "lastOk": "2026-10-26T14:47:45Z",
+   "sources": [
+    "seria",
+    "ennead"
+   ],
+   "codes": {
+    "4TKSX77Y58QK": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "30 Jade Estelar",
+      "three traveler’s guides",
+      "five Éter condensado",
+      "four lost gold fragments",
+      "and 20k Créditos"
+     ]
+    },
+    "CREATIONNYMPH": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Jade Estelar ×60",
+      "Fuel ×1",
+      "Heroic Variable ×1"
+     ]
+    },
+    "CTK5DRQVT48F": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": []
+    },
+    "DSLSPNBREASP": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Jade Estelar ×50",
+      "Créditos ×10000"
+     ]
+    },
+    "PEARLAPPRAISE": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Guía del viajero ×3",
+      "Cold Joke ×2"
+     ]
+    },
+    "STARRAILGIFT": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "50 Jade Estelar",
+      "10k Créditos",
+      "two traveler’s guides",
+      "and five bottled soda"
+     ]
+    },
+    "GENSHINGIFT": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "vencido",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×50",
+      "Experiencia de héroe ×3",
+      "Mora ×10000"
+     ],
+     "expiredAt": "2026-10-26T14:47:45Z"
+    },
+    "NEWCODE2026": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "vencido",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×60"
+     ],
+     "expiredAt": "2026-10-26T14:47:45Z"
+    },
+    "OLDCODE123": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "SUNSWEPTROBIN": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "2T3Z77PLCK67": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "STARRAILFATE2026": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "MT79YKNKARJX": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "JT8BPUJMURUP": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "THEETERNALLAND": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NT39WTKSCHHF": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "POMPOMPOWER": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "FEIXIAOGENERAL": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "LOVEFROMROBIN": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YTRB6VKMVRZB": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "BTN5EL69P6K3": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "STARRAILTREND20": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "WA3BP6Q7R8S9": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "QB3DC36PP673": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "2T7BP4JVEBT7": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "WAKE4HCV745T": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YA37N29RUSJ7": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "GOODGAME1024": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "HSRSEASTHEDAY": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "GT34K5Z4U4EX": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NS3ELGCC64LF": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "H2J8F3P6R9T2": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YUNLISNACK": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "FEIXIAO0910": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YT295D38DLEB": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "BSN2EWMHA4RP": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "WOVPRK19JGM41": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "BTKBH6P47B77": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "STARTTHEFEAST": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ATKEJEY47CLP": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "KFWJG6L3N8M1V": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NEWWORLD0115": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "QSJQZ7WL9PZX": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "STARRAILOSAKAA": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "AS3J6MNJVCA7": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "JSPRZ272S9JB": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    }
+   }
+  },
+  "zenless": {
+   "lastOk": "2026-10-26T14:47:45Z",
+   "sources": [
+    "seria",
+    "ennead"
+   ],
+   "codes": {
+    "HOLLOWRUN33": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Policromos*20",
+      "Dinis*2,222"
+     ]
+    },
+    "INKSHIFT33": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Policromos*20",
+      "Dinis*2,222"
+     ]
+    },
+    "LEVELUP33": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Policromos*20",
+      "Dinis*2,222"
+     ]
+    },
+    "SUNBRINGER": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Policromos*30"
+     ]
+    },
+    "ZENLESSGIFT": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "activo",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "50 Policromos",
+      "two official investigator logs",
+      "three w-engine power supplies",
+      "and one Módulo de algoritmo de Bangbú"
+     ]
+    },
+    "GENSHINGIFT": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "vencido",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×50",
+      "Experiencia de héroe ×3",
+      "Mora ×10000"
+     ],
+     "expiredAt": "2026-10-26T14:47:45Z"
+    },
+    "NEWCODE2026": {
+     "firstSeen": "2026-10-26T14:47:45Z",
+     "status": "vencido",
+     "lastSeen": "2026-10-26T14:47:45Z",
+     "rewards": [
+      "Protogemas ×60"
+     ],
+     "expiredAt": "2026-10-26T14:47:45Z"
+    },
+    "OLDCODE123": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "REMIELLEDANCE31": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "DIALYN1125": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NS6U9TTLM6AV": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "VIRTUALREVENGE": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "MOCKINGBIRD": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZFOR": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZANIMATE": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "HARUMASAFREE": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "VRELEASE25": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ20SIMI": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ25FXH1M90I": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "KRAMPUS": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZMEIJI": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "USNC9SB4499R": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZCREATOR25": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ2024": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZRAZERGOLDLAWSON": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "FLINTWORKS": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ16SPECIAL": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZENLESSZONEZERO": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "NIJIDELUSION": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ4PC": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZSEASON3": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "BEYONDTHECLOUDS": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ABZVGEWK3O": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "DREAMINGANGEL": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "YANAGIGIFTALL": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ21EDDIE": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ15MIORI": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "PEY0T25T": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "LUCIA1015": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ26DELUSION": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ15MINA": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ26UZC2J37W": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "XTNDQAS44985": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "ZZZ26KYU5C44A": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    },
+    "LS7FG347AHRH": {
+     "status": "vencido",
+     "rewards": [],
+     "expiredAt": null
+    }
+   }
+  }
+ }
+}
