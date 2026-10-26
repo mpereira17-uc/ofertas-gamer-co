@@ -605,6 +605,21 @@ class Site:
     def eneba_url(title):
         return "https://www.eneba.com/store/all?" + urlencode({"text": title})
 
+    def steam_sales(self, games, now, listed=()):
+        """Juegos del calendario que Steam Colombia tiene en descuento ahora (precio revisado en cada corrida)."""
+        sale = sorted([g for g in games if (self.live_price(g, now) or {}).get("discount") and g["title"].lower() not in listed],
+                      key=lambda g: (-g["price"]["discount"], self.rank(g)))[:24]
+        if not sale:
+            return ""
+        rows = "".join(
+            f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(g.get("image") or "assets/placeholder.svg")}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">'
+            f'<span class="badge">-{g["price"]["discount"]}%</span></div><div class="spot-body"><h3 class="clamp2">{self.title_link(g)}</h3>'
+            f'<p class="meta"><s>{e(money(g["price"]["initial"], "COP"))}</s> <strong>{e(money(g["price"]["final"], "COP"))}</strong> en Steam</p>'
+            f'<div class="rel-actions">{self.game_link(g, "Ver en Steam")}</div></div></li>' for g in sale)
+        return (f'<section class="spot" id="steam-ahora"><div class="sec-head"><h2>{ICONS["flame"]} También en oferta en Steam ahora</h2>'
+                f'<p class="meta">Juegos nuevos y esperados que Steam Colombia tiene con descuento. Precios revisados cada 4 horas directo en Steam.</p></div>'
+                f'<ul class="spot-grid small">{rows}</ul></section>')
+
     def price_text(self, g, now):
         p = self.live_price(g, now)
         if not p:
@@ -1671,7 +1686,7 @@ class Site:
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
                     "Descuentos de juegos de PC en Steam, GOG, Humble Store, Green Man Gaming, Fanatical y Epic, con precio original, precio actual y porcentaje de descuento.",
-                    f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}{self.ig_banner('rpg')}",
+                    f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}{self.steam_sales(games or [], updated_dt, {o['title'].lower() for o in deals})}{self.ig_banner('rpg')}",
                     crumbs=[("ofertas.html", "Ofertas")], jsonld=[self.item_list_ld(free + deals)])
         self.layout("favoritos.html", "Mis favoritos",
                     "Las ofertas que guardaste con la estrella. Se guardan solo en este navegador.",
