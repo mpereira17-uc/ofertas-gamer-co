@@ -49,6 +49,8 @@ def normalize(raw, now):
     """Convierte un regalo de GamerPower. Devuelve None si no sirve (vencido, tipo raro, sin enlace)."""
     kind = (raw.get("type") or "").strip().lower()
     url = raw.get("open_giveaway_url") or raw.get("open_giveaway") or ""
+    if "gamerpower" in (raw.get("title") or "").lower():  # su propia app no es un regalo de juego
+        return None
     if kind not in TYPES or not str(url).startswith("https://") or (raw.get("status") or "Active").lower() != "active":
         return None
     end = parse_end(raw.get("end_date"))
