@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, channels, community, discord, health, images, promote, releases, sources, tumblr, weekly, wikidata
+from ogc import alerts, channels, codes, community, discord, health, images, promote, releases, sources, tumblr, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -40,6 +40,7 @@ HEALTH_FILE = DATA / "salud.json"
 IMG_DIR = DATA / "img"
 EPIC_ARCHIVE_FILE = DATA / "epic_regalados.json"
 DAILY_FILE = DATA / "oferta_del_dia.json"
+CODES_FILE = DATA / "codigos.json"
 DOCS = ROOT / "docs"
 
 
@@ -66,6 +67,8 @@ def fixture_fetch(folder):
             name = "steam_featured.json"
         elif "appdetails" in url:
             name = "steam_appdetails.json"
+        elif "seria.moe" in url or "ennead.cc" in url:
+            name = "codes_seria.json" if "seria.moe" in url else "codes_ennead.json"
         else:
             name = "epic.json" if "epicgames" in url else "cheapshark.json" if "cheapshark" in url else "rate.json"
         return json.loads((Path(folder) / name).read_text(encoding="utf-8"))
@@ -253,12 +256,19 @@ def run(args):
         if polls:
             save_json(POLL_FILE, polls)
         print(f"Alertas: {status['Alertas de Telegram']}")
+    code_state, new_codes, status["Códigos de canje (HoYoverse)"] = codes.update(load_json(CODES_FILE, {}), now, sources.get_json)
+    if new_codes and not args.no_send:
+        sent_codes = codes.announce(code_state, new_codes, base, discord.Discord(guild=str(cfg.get("discord_servidor", ""))))
+        status["Códigos de canje (HoYoverse)"] += f"; {sent_codes} nuevos anunciados"
+    save_json(CODES_FILE, code_state)
+    print(f"Códigos: {status['Códigos de canje (HoYoverse)']}")
     health_state = load_json(HEALTH_FILE, {})
     if not args.no_send and not args.fixtures:
         checks = {"Epic": "epic" not in failed, "CheapShark": "cheapshark" not in failed}
         for key, label in (("Fuente lanzamientos (Steam)", "Steam (lanzamientos)"), ("Fuente juegos grandes y de consola (Wikidata)", "Wikidata"),
                            ("Fuente gratis para siempre (Steam)", "Steam (gratis para siempre)")):
             checks[label] = str(status.get(key, "")).startswith("OK")
+        checks["Códigos (HoYoverse)"] = any(g.get("lastOk") == iso(now) for g in code_state["games"].values())
         health_state = health.track_sources(health_state, checks, now)
         health_state = health.check_links(health_state, offers, now, health.head_status)
         health_state = health.monthly_report(health_state, now, health.month_stats(
@@ -271,6 +281,7 @@ def run(args):
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
     site.epic_next, site.epic_archive = epic_next, epic_archive
     site.poll = load_json(POLL_FILE, {})
+    site.codes = code_state
     site.dotd_image = (IMG_DIR / "oferta-del-dia.jpg").exists()
     site.build(offers, status, now, games)
     daily = getattr(site, "daily", None) or {}
@@ -304,6 +315,7 @@ def run(args):
             {g["id"] for g in games if g["id"] not in {p.get("id") for p in previous_releases}}
         urls = [base, base + "ofertas.html", base + "juegos-gratis.html", base + "lanzamientos.html"] + \
             [base + site.detail[i] for i in sorted(new_ids) if i in site.detail]
+        urls += [base + "codigos.html"] + [base + codes.GAMES[gid]["page"] for gid in sorted({gid for gid, _ in new_codes})]
         ok = promote.indexnow(base, cfg["indexnow_key"], urls)
         print(f"IndexNow: {len(urls)} URL {'aceptadas' if ok else 'no enviadas'}")
     print(f"{len(offers)} ofertas; {rejected} rechazadas; {sent_now} enviadas a Telegram; fuentes con error: {sorted(failed) or 'ninguna'}")

@@ -515,6 +515,17 @@
       }
     });
   }
+  // Copiar un código de canje con un toque
+  document.querySelectorAll("[data-copy]").forEach(function (btn) {
+    if (!navigator.clipboard || !window.isSecureContext) return;
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      navigator.clipboard.writeText(btn.dataset.copy).then(function () {
+        btn.textContent = "¡Copiado!";
+        setTimeout(function () { btn.textContent = "Copiar"; }, 2500);
+      });
+    });
+  });
   // ---------- Efectos visuales (se apagan si el usuario prefiere menos movimiento) ----------
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches || !!prefs.lite;
   var root = document.documentElement;
