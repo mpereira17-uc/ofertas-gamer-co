@@ -604,18 +604,28 @@ class Site:
     def buy_block(self, title, official):
         """«Dónde comprarlo»: primero las tiendas oficiales (con precio verificado si lo hay) y luego tiendas de claves.
         official: lista de (tienda, precio o "", url). En las tiendas de claves no mostramos precio: no tenemos fuente."""
-        rows = [(name, "Oficial", price, url, False, "") for name, price, url in official if url]
+        rows = [(e(name), "Oficial", price, url, False, "") for name, price, url in official if url]
         if self.ig_url(title):
-            rows.append(("Instant Gaming", "Claves", "", self.ig_url(title), True, "btn-ig"))
+            rows.append(('<img src="assets/brands/ig-icon.png" alt="" width="18" height="19"> Instant Gaming', "Claves", "", self.ig_url(title), True, "btn-ig"))
         rows.append(("Eneba", "Claves", "", self.eneba_url(title), False, "btn-eneba"))
         html_rows = "".join(
-            f'<li class="buy-row"><span class="buy-store">{e(name)}</span><span class="buy-tag{" off" if tag == "Oficial" else ""}">{e(tag)}</span>'
+            f'<li class="buy-row"><span class="buy-store">{name}</span><span class="buy-tag{" off" if tag == "Oficial" else ""}">{e(tag)}</span>'
             + (f'<span class="buy-price">{e(price)}</span>' if price else '<span class="buy-price none">Ver precio</span>')
-            + ext_link(url, "Ir →", affiliate=aff, cls=f"btn btn-sm {cls or 'btn-primary'}", label=f"Ver {title} en {name} (abre en otra pestaña)")
+            + ext_link(url, "Ir →", affiliate=aff, cls=f"btn btn-sm {cls or 'btn-primary'}", label=f"Ver {title} en {name.split('> ')[-1]} (abre en otra pestaña)")
             + "</li>" for name, tag, price, url, aff, cls in rows)
         return (f'<section class="buy" aria-labelledby="buy-h"><h2 id="buy-h">{ICONS["store"]} Dónde comprarlo</h2><ul class="buy-list">{html_rows}</ul>'
                 '<p class="meta">Las tiendas de claves venden códigos de terceros: revisa la región y la plataforma antes de pagar. '
                 'Instant Gaming es enlace de afiliado (recibimos una pequeña comisión sin costo para ti). <a href="instant-gaming.html">Cómo comprar claves seguro</a>.</p></section>')
+
+    def ig_banner(self, which="rpg"):
+        url = self.ig_url()
+        if not url:
+            return ""
+        alt = {"rpg": "Instant Gaming: hasta 90% de descuento en RPGs", "sim": "Instant Gaming: hasta 90% de descuento en simulación",
+               "deportes": "Instant Gaming: hasta 90% de descuento en deportes"}[which]
+        return (f'<aside class="ig-banner"><a href="{e(url)}" target="_blank" rel="sponsored nofollow noopener noreferrer">'
+                f'<img src="assets/brands/ig-banner-{which}.webp" alt="{e(alt)}" width="900" height="276" loading="lazy" decoding="async"></a>'
+                '<p class="meta">Enlace de afiliado de Instant Gaming</p></aside>')
 
     def ig_page(self, live):
         url = self.ig_url()
@@ -625,7 +635,7 @@ class Site:
         rows = "".join(f'<li>{e(o["title"])} {ext_link(self.ig_url(o["title"]), "Comparar →", affiliate=True, cls="btn btn-sm btn-ig", label=f"Comparar {o["title"]} en Instant Gaming")}</li>' for o in top)
         self.layout("instant-gaming.html", "Instant Gaming: comprar claves de juegos más baratas de forma segura",
                     "Qué es Instant Gaming, cómo comparar el precio de un juego como clave y qué revisar antes de pagar desde Colombia.",
-                    f"""<div class="prose"><h1>Instant Gaming</h1>
+                    f"""<div class="prose"><p class="ig-hero"><img src="assets/brands/ig-logo.png" alt="Instant Gaming" width="320" height="91"></p><h1>Instant Gaming</h1>
 <p class="lead">Instant Gaming vende <strong>claves</strong> (códigos) que se activan en Steam, Epic, Xbox, PlayStation o Nintendo. A veces un juego sale más barato ahí que en la tienda oficial.</p>
 <p>{ext_link(url, "Ir a Instant Gaming →", affiliate=True, cls="btn btn-primary btn-ig")}</p>
 <h2>Antes de pagar, revisa</h2><ul>
@@ -633,7 +643,7 @@ class Site:
 <li><strong>Región:</strong> que diga «Global», «Latinoamérica» o que funcione en Colombia.</li>
 <li><strong>Edición:</strong> estándar, deluxe o solo un DLC.</li>
 <li><strong>Precio final:</strong> compáralo con el de la oferta oficial en nuestro sitio.</li></ul>
-<h2>Compara las mejores ofertas de hoy</h2><p>Estas son nuestras ofertas oficiales con más descuento. Toca «Comparar» para buscarlas en Instant Gaming.</p>
+</div>{self.ig_banner("rpg")}{self.ig_banner("sim")}{self.ig_banner("deportes")}<div class="prose"><h2>Compara las mejores ofertas de hoy</h2><p>Estas son nuestras ofertas oficiales con más descuento. Toca «Comparar» para buscarlas en Instant Gaming.</p>
 <ul class="ig-list">{rows}</ul>
 <p class="meta">Instant Gaming no es una tienda oficial de los juegos, sino un vendedor de claves. Los enlaces de esta página son de afiliado: si compras, recibimos una pequeña comisión sin costo para ti. No mostramos sus precios porque no tenemos una fuente oficial para verificarlos.</p></div>""",
                     crumbs=[("tiendas.html", "Tiendas"), ("instant-gaming.html", "Instant Gaming")])
@@ -1598,7 +1608,7 @@ class Site:
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
                     "Descuentos de juegos de PC en Steam, GOG, Humble Store, Green Man Gaming, Fanatical y Epic, con precio original, precio actual y porcentaje de descuento.",
-                    f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}",
+                    f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}{self.ig_banner('rpg')}",
                     crumbs=[("ofertas.html", "Ofertas")], jsonld=[self.item_list_ld(free + deals)])
         self.layout("favoritos.html", "Mis favoritos",
                     "Las ofertas que guardaste con la estrella. Se guardan solo en este navegador.",
@@ -1616,7 +1626,7 @@ class Site:
                     "Lista de tiendas oficiales de videojuegos que incluye Ofertas Gamer CO, sus dominios autorizados y su estado de afiliación.",
                     f"""<h1>Tiendas incluidas</h1><p class="lead">Solo publicamos ofertas de estas tiendas. Cada enlace se valida contra su dominio oficial antes de publicarse.</p>
 <table><thead><tr><th scope="col">Tienda</th><th scope="col">Dominio autorizado</th><th scope="col">Ofertas activas</th><th scope="col">Afiliación</th></tr></thead><tbody>{rows}</tbody></table>
-<h2>Tiendas de claves</h2><p><a href="instant-gaming.html"><strong>Instant Gaming</strong></a>: vende claves para activar en Steam, consolas y más. No es tienda oficial; lo enlazamos para comparar precios. <strong>Enlace de afiliado activo.</strong></p>
+<h2>Tiendas de claves</h2><p><a href="instant-gaming.html"><strong>Instant Gaming</strong></a>: vende claves para activar en Steam, consolas y más. No es tienda oficial; lo enlazamos para comparar precios. <strong>Enlace de afiliado activo.</strong></p>{self.ig_banner("rpg")}
 <p>Mostrar una tienda no significa que tengamos una relación comercial con ella. Cuando exista, lo indicamos en esta tabla y en cada enlace.</p>
 <p>¿Quieres proponer una tienda oficial? <a href="{REPO}/issues/new?template=proponer-tienda.yml" target="_blank" rel="noopener noreferrer">Envía una propuesta</a>.</p>""",
                     crumbs=[("tiendas.html", "Tiendas")])
