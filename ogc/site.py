@@ -6,7 +6,7 @@ import json
 import shutil
 from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 from pathlib import Path
 
 from . import giveaways
@@ -581,6 +581,17 @@ class Site:
                 f'<p class="meta">El mismo juego en otras tiendas oficiales, del más barato al más caro.</p>'
                 f'<div class="note"><section class="n-sec"><ul>{rows}</ul></section></div></section>')
 
+    def ig_block(self, title):
+        """Botón para buscar el juego en Instant Gaming con el enlace de afiliado. No muestra precios: no tenemos fuente."""
+        igr = self.cfg.get("instant_gaming_igr")
+        if not igr:
+            return ""
+        url = "https://www.instant-gaming.com/es/busquedas/?" + urlencode({"q": title, "igr": igr})
+        return ('<div class="ig-box">' + ext_link(url, "🔎 Buscar en Instant Gaming", affiliate=True, cls="btn btn-sm btn-ig",
+                                                  label=f"Buscar {title} en Instant Gaming (enlace de afiliado, abre en otra pestaña)")
+                + '<p class="meta">A veces está más barato como clave. Enlace de afiliado: si compras, recibimos una pequeña comisión sin costo para ti. '
+                  'Revisa el precio, la región y la plataforma de la clave antes de pagar.</p></div>')
+
     def share_whatsapp(self, o, name):
         import urllib.parse
         what = "gratis" if o.get("currentPrice") == 0 else f"-{o.get('discountPercentage') or 0}%"
@@ -658,7 +669,7 @@ class Site:
 {self.countdown(o)}{f'<p class="meta">{e(until)}</p>' if until else ''}
 {self.trust_chips(o, full=True)}
 <div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a>{self.alert_button(o, "offer")}</div>
-{search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
+{search_note}{self.ig_block(o['title']) if o.get('currentPrice') else ''}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
 {self.share_whatsapp(o, name)}
 {notice}</div></article>{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
@@ -736,6 +747,7 @@ class Site:
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
 <button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
+{self.ig_block(g['title'])}
 <p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{extra}{faq_html}""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld, faq_ld], og_image=g.get("image"))
 
