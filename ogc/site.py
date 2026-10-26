@@ -156,6 +156,10 @@ class Site:
     def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website", og_image=None):
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
+        if len(full_title) > 65:  # Google corta los títulos largos: primero sobra el nombre del sitio
+            full_title = title
+        if len(description) > 160:  # y las descripciones de más de ~160 letras
+            description = description[:157].rsplit(" ", 1)[0].rstrip(",.:;") + "…"
         stores_nav = [(f"ofertas-{st['id']}.html" if getattr(self, "store_counts", {}).get(st["id"]) else f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"]]
         if self.cfg.get("instant_gaming_igr"):
             stores_nav.append(("instant-gaming.html", "Instant Gaming", "store-ig"))
