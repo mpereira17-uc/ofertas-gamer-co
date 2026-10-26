@@ -559,3 +559,9 @@ img.poster{position:relative;z-index:1;object-fit:contain!important}
 .code-hub a{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text)}
 .code-hub img{width:64px;height:64px;border-radius:16px;flex-shrink:0}
 .code-hub .meta{display:block}
+.detail-price{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0 10px;font-size:1.05rem}
+.detail-price strong{font-size:1.35rem;color:var(--gold)}
+.detail-price s{color:var(--muted)}
+.detail-price .badge{position:static}
+.detail-price .price-at{flex-basis:100%;font-size:.85rem}
+.rel-img .sale-tag{position:absolute;right:8px;bottom:8px;left:auto;top:auto;z-index:2;background:var(--green,#25e09a);color:#0a0716}
