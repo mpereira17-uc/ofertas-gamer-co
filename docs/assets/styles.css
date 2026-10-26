@@ -54,13 +54,15 @@ header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
 .btn-dc{background:#5865f2;border-color:#5865f2;color:#fff}
 .btn-ig{background:#ff5400;border-color:#ff5400;color:#fff}
 .btn-ig:hover{background:#ff6a1f;border-color:#ff6a1f}
-.store-ig{background:#ff5400}
+
 .btn-eneba{background:#7b2cff;border-color:#7b2cff;color:#fff}
 .buy{margin:1.4rem 0;padding:1rem 1.1rem;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.03)}
 .buy h2{margin:0 0 .7rem;font-size:1.2rem;display:flex;align-items:center;gap:.4rem}
 .buy-list{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 .buy-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:.7rem;padding:.55rem .7rem;border-radius:12px;background:rgba(10,7,22,.55);border:1px solid rgba(255,255,255,.07)}
 .buy-store img{vertical-align:-3px;margin-right:4px}
+.side-ad{margin:1rem .6rem 1.2rem}.side-ad img{display:block;width:100%;max-width:220px;height:auto;border-radius:14px}.side-ad .meta{margin:.25rem 0 0;font-size:.7rem}
+@media (max-width:1099px){.side-ad{display:none}}
 .ig-hero{margin:0 0 .4rem}.ig-hero img{max-width:220px;height:auto}
 .ig-banner{margin:1.2rem 0}.ig-banner img{display:block;width:100%;max-width:900px;height:auto}.ig-banner .meta{margin:.3rem 0 0;font-size:.75rem}
 .buy-store{font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -215,7 +217,7 @@ footer.site a{color:var(--text);text-decoration:none}footer.site a:hover{color:v
 .side-ico svg{display:block;margin:auto}
 .store-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--muted);flex-shrink:0}
 .side-ico.store-dot{width:10px;height:10px;margin:0 6px}
-.store-steam{background:#66c0f4}.store-epic{background:#f5f7ff}.store-gog{background:#a855f7}.store-humble{background:#cc2929}.store-gmg{background:#2fbf71}.store-fanatical{background:#ff7a00}
+.store-steam{background:#66c0f4}.store-epic{background:#f5f7ff}.store-gog{background:#a855f7}.store-humble{background:#cc2929}.store-gmg{background:#2fbf71}.store-fanatical{background:#ff7a00}.store-ig{background:#ff5400}
 .store-chip{position:absolute;top:10px;right:10px;z-index:1;display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:rgba(8,10,18,.82);color:#f5f7ff;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .detail-info .store-chip,.f-top .store-chip{position:static}
 .clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
