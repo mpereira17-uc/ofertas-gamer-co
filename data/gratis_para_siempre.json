@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-26T19:18:45Z",
+ "updatedAt": "2026-10-26T19:24:56Z",
  "games": [
   {
    "id": "steam-570",
@@ -300,6 +300,18 @@
    ]
   },
   {
+   "id": "steam-1449850",
+   "title": "Yu-Gi-Oh! Master Duel",
+   "url": "https://store.steampowered.com/app/1449850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1449850/3dabbf618664c7a561202771e3754b6690949159/header.jpg?t=1788064919",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449850/fed61aa2e905f18280ce7a2884d591b3cbf08fd7/capsule_sm_120.jpg?t=1788064919",
+   "headerChecked": true,
+   "genres": [
+    "Simuladores",
+    "Estrategia"
+   ]
+  },
+  {
    "id": "steam-1222670",
    "title": "The Sims™ 4",
    "url": "https://store.steampowered.com/app/1222670/",
@@ -310,18 +322,6 @@
     "Aventura",
     "Casual",
     "Simuladores"
-   ]
-  },
-  {
-   "id": "steam-1449850",
-   "title": "Yu-Gi-Oh! Master Duel",
-   "url": "https://store.steampowered.com/app/1449850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1449850/3dabbf618664c7a561202771e3754b6690949159/header.jpg?t=1788064919",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449850/fed61aa2e905f18280ce7a2884d591b3cbf08fd7/capsule_sm_120.jpg?t=1788064919",
-   "headerChecked": true,
-   "genres": [
-    "Simuladores",
-    "Estrategia"
    ]
   },
   {
@@ -469,25 +469,29 @@
    ]
   },
   {
-   "id": "steam-1049590",
-   "title": "Eternal Return",
-   "url": "https://store.steampowered.com/app/1049590/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
-   "headerChecked": true,
-   "genres": []
-  },
-  {
-   "id": "steam-2325290",
-   "title": "Sky: Niños de la Luz",
-   "url": "https://store.steampowered.com/app/2325290/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2325290/758dff11b25ce6163bbcce01b49d3f550218ddc8/header.jpg?t=1791580167",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2325290/6289cff6197d59a49e492b3b9b56186b0e041a9e/capsule_sm_120.jpg?t=1791580167",
+   "id": "steam-2948190",
+   "title": "World of Sea Battle",
+   "url": "https://store.steampowered.com/app/2948190/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2948190/831f39f088adb6b5d69af9602b2067041ccc2783/header.jpg?t=1792582672",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2948190/65e96fe2f18ea6a727501cf6acc5ec04a9dca148/capsule_sm_120.jpg?t=1792582672",
    "headerChecked": true,
    "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-714010",
+   "title": "Aimlabs",
+   "url": "https://store.steampowered.com/app/714010/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/714010/d5e9221e92990e5736994f070ffcd7c4e3af9345/header.jpg?t=1791001714",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/714010/907fa062895ed963ea6182be0a1059059df63057/capsule_sm_120.jpg?t=1791001714",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
     "Aventura",
-    "Casual",
-    "Indie"
+    "Casual"
    ]
   }
  ]
