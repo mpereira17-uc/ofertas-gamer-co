@@ -572,3 +572,56 @@ img.poster{position:relative;z-index:1;object-fit:contain!important}
 .thumb .badge,.thumb .store-chip,.thumb .trailer-chip,.rel-img .trailer-chip,.spot-img .trailer-chip,.spot-img .badge,.spot-img .spot-rank{z-index:2}
 .previewing .trailer-chip{background:var(--pink,#ff3d81)}
 button.trailer-chip{cursor:pointer;padding:0;font:inherit}
+/* ---------- diseños con movimiento (inspirados en portafolios creativos) ---------- */
+/* letras gigantes de fondo */
+.mega{overflow:hidden;margin:34px -16px 4px;pointer-events:none;user-select:none;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mega-track{display:flex;white-space:nowrap;transform:translateX(var(--mx,0));will-change:transform}
+.mega span{font-size:clamp(3rem,11vw,9rem);font-weight:900;line-height:.95;letter-spacing:-.03em;padding-right:.3em;color:color-mix(in srgb,var(--gold) 16%,transparent)}
+.mega span.out,.mega.rev span:first-child{color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--pink,#ff3d81) 55%,transparent)}
+/* carrusel 3D curvo */
+.curve{margin:30px 0}
+.curve-track{list-style:none;margin:0;padding:0 0 10px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory}
+.curve-item{flex:0 0 min(300px,78%);scroll-snap-align:center}
+.curve-item a{display:flex;flex-direction:column;gap:6px;color:var(--text);text-decoration:none;padding:10px;border-radius:18px;background:var(--surface);border:1px solid var(--border-strong);height:100%}
+.curve-img{position:relative;display:block;aspect-ratio:460/215;border-radius:12px;overflow:hidden;background:var(--surface-2)}
+.curve-img img{width:100%;height:100%;object-fit:cover;display:block}
+.curve-name{font-weight:800;line-height:1.2}
+.curve-date{font-size:.85rem;color:var(--gold);font-weight:700}
+.curve-nav{display:none}
+.js .curve-stage{position:relative;height:clamp(250px,32vw,330px);perspective:1100px;overflow:hidden;touch-action:pan-y;cursor:grab}
+.js .curve-stage.drag{cursor:grabbing}
+.js .curve-track{position:absolute;inset:0;display:block;overflow:visible;transform-style:preserve-3d}
+.js .curve-item{position:absolute;left:50%;top:12px;width:min(320px,70vw);margin-left:calc(min(320px,70vw) / -2);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s,filter .6s;will-change:transform}
+.js .curve-stage.drag .curve-item{transition:none}
+.js .curve-item.is-center a{border-color:var(--gold);box-shadow:0 0 0 1px rgba(255,200,61,.35),0 24px 60px -24px rgba(255,61,129,.7)}
+.js .curve-item:not(.is-center){filter:brightness(.6) saturate(.8)}
+.js .curve-nav{display:grid;place-items:center;position:absolute;top:42%;z-index:200;width:44px;height:44px;border-radius:50%;border:1px solid var(--border-strong);background:rgba(8,10,18,.8);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer}
+.js .curve-nav.prev{left:6px}.js .curve-nav.next{right:6px}
+/* rueda giratoria de juegos gratis */
+.ring-wrap{display:flex;justify-content:center;margin:6px 0 26px;overflow:hidden}
+.ring-stage{position:relative;width:100%;max-width:760px;height:250px;perspective:1000px;display:grid;place-items:center}
+.ring{list-style:none;margin:0;padding:0;position:relative;width:190px;height:110px;transform-style:preserve-3d;animation:ring-spin 36s linear infinite}
+.ring-stage:hover .ring,.ring-stage:focus-within .ring{animation-play-state:paused}
+.ring li{position:absolute;inset:0;backface-visibility:hidden}
+.ring a{display:block;height:100%;border-radius:14px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 18px 40px -18px rgba(0,0,0,.8);position:relative}
+.ring img{width:100%;height:100%;object-fit:cover;display:block}
+.ring span{position:absolute;left:6px;bottom:6px;padding:2px 8px;border-radius:999px;background:rgba(8,10,18,.85);color:#fff;font-size:.7rem;font-weight:800}
+.ring-core{position:absolute;margin:0;text-align:center;font-weight:800;color:var(--muted);pointer-events:none;line-height:1.1}
+.ring-core strong{display:block;font-size:2.6rem;color:var(--gold)}
+@keyframes ring-spin{to{transform:rotateY(-360deg)}}
+@media (max-width:600px){.ring-stage{height:190px}.ring{width:130px;height:76px}}
+/* revelado con foco de luz al bajar */
+.js .reveal .thumb img,.js .reveal .rel-img img,.js .spot-card.reveal .spot-img img{clip-path:circle(0% at 50% 0%);transition:clip-path 1.1s cubic-bezier(.2,.7,.2,1) .1s,transform .5s}
+.js .reveal.in .thumb img,.js .reveal.in .rel-img img,.js .spot-card.reveal.in .spot-img img{clip-path:circle(150% at 50% 0%)}
+.js .reveal .thumb::before,.js .reveal .rel-img::before,.js .spot-card.reveal .spot-img::before{content:"";position:absolute;inset:-30% 25% 0;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.55),rgba(255,200,61,.18) 40%,transparent 70%);transform-origin:50% 0}
+.js .reveal.in .thumb::before,.js .reveal.in .rel-img::before,.js .spot-card.reveal.in .spot-img::before{animation:beam 1.3s ease-out .05s both}
+@keyframes beam{0%{opacity:0;transform:scaleY(.2)}35%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1.1)}}
+/* intro con el logo (solo la primera visita) */
+.intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#07050f;animation:intro-out .45s ease-in 1.25s forwards;pointer-events:none}
+.intro svg{width:min(560px,86vw);height:auto;overflow:visible}
+.intro text{font:900 64px "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:2px;fill:transparent;stroke:#ffc83d;stroke-width:1.6;stroke-dasharray:900;stroke-dashoffset:900;animation:intro-draw 1s ease-out forwards,intro-fill .35s ease-out .8s forwards}
+.intro .sub{font-size:22px;letter-spacing:9px;stroke:#ff3d81;animation-delay:.15s,.9s}
+@keyframes intro-draw{to{stroke-dashoffset:0}}
+@keyframes intro-fill{to{fill:#fff}}
+@keyframes intro-out{to{opacity:0;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none}.mega-track{transform:none}.intro{display:none}}
