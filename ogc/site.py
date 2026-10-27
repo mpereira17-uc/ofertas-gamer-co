@@ -29,6 +29,9 @@ ICONS = {k: _SVG.format(v) for k, v in {
     "news": '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
     "calendar": '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    "dice": '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/><circle cx="15" cy="9" r="1.2"/><circle cx="9" cy="15" r="1.2"/>',
+    "quiz": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/>',
+    "thermo": '<path d="M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0z"/><path d="M12 9v7"/>',
     "sparkle": '<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>',
     "question": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>',
     "book": '<path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
@@ -45,11 +48,13 @@ NAV = [
     ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"), ("juegos-gratis-en-todas-las-tiendas.html", "Regalos por tienda", "gift"),
                  ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("seguidos.html", "Mis seguidos", "bell"),
                  ("oferta-del-dia.html", "Oferta del día", "sparkle"), ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
-                 ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift")]),
+                 ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift"),
+                 ("rebajas-de-steam.html", "Rebajas de Steam", "clock"), ("que-juego-me-conviene.html", "¿Qué juego me conviene?", "quiz"),
+                 ("sorpresa.html", "Sorpréndeme", "dice")]),
     ("Lanzamientos", [("lanzamientos.html", "Calendario", "calendar"), ("lanzamientos.html#proximos", "Próximos", "clock"),
                       ("lanzamientos.html#recientes", "Recientes", "sparkle"), ("lanzamientos.html#por-confirmar", "Por confirmar", "question"),
                       ("lanzamientos-playstation.html", "PlayStation", "store"), ("lanzamientos-xbox.html", "Xbox", "store"),
-                      ("lanzamientos-switch.html", "Nintendo Switch", "store")]),
+                      ("lanzamientos-switch.html", "Nintendo Switch", "store"), ("juegos-retrasados.html", "Juegos retrasados", "clock")]),
     ("Códigos", [("codigos.html", "Códigos de juegos", "gift"), ("codigos-genshin-impact.html", "Genshin Impact", "sparkle"),
                  ("codigos-honkai-star-rail.html", "Honkai: Star Rail", "sparkle"), ("codigos-zenless-zone-zero.html", "Zenless Zone Zero", "sparkle")]),
     ("Ayuda", [("guias.html", "Guías", "book"), ("glosario.html", "Glosario gamer", "book"), ("estadisticas.html", "Estadísticas", "sparkle"), ("preguntas-frecuentes.html", "Preguntas", "chat"),
@@ -418,7 +423,7 @@ class Site:
 {self.price_html(o)}
 {self.countdown(o)}
 {self.trust_chips(o)}
-<div class="actions">{self.offer_button(o)}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>↗</button></div>
+<div class="actions">{self.offer_button(o)}{f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>✓</button>' if free and self.cop_saved(o) else ''}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>↗</button></div>
 </div></li>"""
 
     def offer_list(self, offers, with_filters=True, list_id="offers"):
@@ -619,6 +624,178 @@ class Site:
         return (f'<section class="spot" id="steam-ahora"><div class="sec-head"><h2>{ICONS["flame"]} También en oferta en Steam ahora</h2>'
                 f'<p class="meta">Juegos nuevos y esperados que Steam Colombia tiene con descuento. Precios revisados cada 4 horas directo en Steam.</p></div>'
                 f'<ul class="spot-grid small">{rows}</ul></section>')
+
+    # ---------- ideas nuevas: rebajas de Steam, termómetro, ahorro, test, sorpresa, retrasos, mapa de calor ----------
+    def steam_events(self, now):
+        """Eventos oficiales de Steam (config/steam_eventos.json) que no han terminado, con su estado."""
+        today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
+        out = []
+        for ev in (getattr(self, "steam_cfg", {}) or {}).get("eventos", []):
+            if ev["fin"] < today:
+                continue
+            start = datetime.strptime(ev["inicio"], "%Y-%m-%d").date()
+            days = (start - now.astimezone(CO_TZ).date()).days
+            out.append(dict(ev, live=ev["inicio"] <= today, days=days))
+        return out
+
+    def steam_strip(self, now):
+        evs = self.steam_events(now)
+        live = [x for x in evs if x["live"]]
+        sale = next((x for x in evs if x["tipo"] == "rebaja"), None)
+        pick = live[0] if live else sale
+        if not pick:
+            return ""
+        if pick["live"]:
+            txt = f'<strong>Ahora en Steam:</strong> {e(pick["nombre"])} hasta el {e(day_es(pick["fin"]))}.'
+        else:
+            txt = f'<strong>Faltan {pick["days"]} días</strong> para las {e(pick["nombre"])} ({e(day_es(pick["inicio"]))}).'
+        return f'<p class="steam-strip">{ICONS["clock"]}<span>{txt}</span><a href="rebajas-de-steam.html">Ver calendario de rebajas →</a></p>'
+
+    def steam_sales_page(self, now, updated_line):
+        cfg = getattr(self, "steam_cfg", {}) or {}
+        evs = self.steam_events(now)
+        if not evs:
+            return
+        sale = next((x for x in evs if x["tipo"] == "rebaja" and not x["live"]), None)
+        hero = ""
+        if sale:
+            hero = (f'<section class="countdown-hero" data-steam-countdown="{e(sale["inicio"])}"><p class="eyebrow">Próxima gran rebaja</p><h2>{e(sale["nombre"])}</h2>'
+                    f'<p class="cd-date">Del {e(day_es(sale["inicio"]))} al {e(day_es(sale["fin"]))}</p>'
+                    f'<p class="cd-clock" aria-live="off"><span><b data-cd="d">{sale["days"]}</b>días</span><span><b data-cd="h">–</b>horas</span><span><b data-cd="m">–</b>min</span><span><b data-cd="s">–</b>seg</span></p></section>')
+        kinds = {"rebaja": "Gran rebaja", "next": "Demos gratis", "fest": "Festival temático"}
+        rows = "".join(
+            f'<li class="ev ev-{e(x["tipo"])}{" live" if x["live"] else ""}"><span class="ev-kind">{e(kinds.get(x["tipo"], "Evento"))}</span>'
+            f'<strong>{e(x["nombre"])}</strong><span class="ev-dates">{e(day_es(x["inicio"]))} – {e(day_es(x["fin"]))}</span>'
+            f'<span class="ev-left">{"En curso ahora" if x["live"] else ("Empieza mañana" if x["days"] == 1 else f"Faltan {x['days']} días")}</span></li>' for x in evs)
+        faq = ('<section class="prose"><h2>Preguntas sobre las rebajas de Steam</h2>'
+               '<h3>¿A qué hora empiezan?</h3><p>Valve publica el día, no la hora. Normalmente empiezan a las 10 a. m. hora del Pacífico, que en Colombia es a las 12 del mediodía (en diciembre, por el cambio de horario de EE. UU., suele ser a la 1 p. m.).</p>'
+               '<h3>¿Qué es un "Fest"?</h3><p>Son semanas temáticas: Steam junta juegos de un tipo (carreras, peleas, estrategia…) y muchos bajan de precio. No son tan grandes como las rebajas de temporada.</p>'
+               '<h3>¿Qué es el Steam Next Fest?</h3><p>Una semana con cientos de demos gratis de juegos que todavía no salen.</p>'
+               '<h3>¿Cómo me entero de los descuentos?</h3><p>El bot revisa los precios de Steam Colombia cada 4 horas y los publica en <a href="ofertas.html">Ofertas</a> y en nuestro canal de Telegram.</p></section>')
+        self.layout("rebajas-de-steam.html", "Rebajas de Steam 2026 y 2027: fechas oficiales y cuenta regresiva",
+                    "Cuándo son las próximas rebajas de Steam: invierno 2026, primavera y verano 2027, fests temáticos y Next Fest, con cuenta regresiva y hora en Colombia.",
+                    f'<h1>Rebajas de <span class="grad">Steam</span>: fechas oficiales</h1><p class="lead">Todas las rebajas y festivales que Valve ya anunció, con cuenta regresiva. '
+                    f'Fechas tomadas de la <a href="{e(cfg.get("fuente", ""))}" target="_blank" rel="noopener noreferrer">página oficial de eventos de Steam</a> (revisada el {e(day_es(cfg.get("revisado", "")))}).</p>'
+                    f'{hero}<ul class="ev-list">{rows}</ul>{faq}',
+                    crumbs=[("rebajas-de-steam.html", "Rebajas de Steam")])
+
+    def thermometer(self, live, free):
+        """Termómetro de ofertas de hoy (0 a 10) con una fórmula sencilla y pública, solo con datos reales."""
+        deals = sorted([o for o in live if o.get("currentPrice")], key=lambda o: -(o.get("discountPercentage") or 0))[:50]
+        if len(deals) < 10:
+            return ""
+        avg = sum(o.get("discountPercentage") or 0 for o in deals) / len(deals)
+        lows = sum(1 for o in live if (self.price_stats(o) or {}).get("isLow"))
+        score = round(min(10, avg / 10 * 0.6 + min(lows, 20) / 20 * 2 + min(len(free), 5) / 5 * 2), 1)
+        word = "¡Día buenísimo para comprar!" if score >= 8 else "Buen día para comprar" if score >= 6 else "Día normal" if score >= 4 else "Mejor espera"
+        arc = round(score / 10 * 125.6, 1)  # media circunferencia de radio 40
+        return (f'<section class="thermo" aria-labelledby="thermo-h"><svg viewBox="0 0 100 58" class="gauge" aria-hidden="true">'
+                f'<path d="M10 50 A40 40 0 0 1 90 50" class="g-bg"/><path d="M10 50 A40 40 0 0 1 90 50" class="g-val" stroke-dasharray="{arc} 200"/></svg>'
+                f'<div><p class="eyebrow">{ICONS["thermo"]} Termómetro de ofertas de hoy</p><h2 id="thermo-h"><span class="t-score">{score}</span>/10 · {e(word)}</h2>'
+                f'<p class="meta">Descuento promedio de las 50 mejores: {round(avg)}% · {lows} en su mínimo histórico · {len(free)} gratis ahora. '
+                f'<a href="como-verificamos.html#termometro">Cómo se calcula</a></p></div></section>')
+
+    def saved_box(self):
+        return ('<p class="saved-box" id="saved-box" hidden>🏆 <span>Has ahorrado <strong data-saved-total>$0</strong> reclamando '
+                '<strong data-saved-count>0</strong> juegos gratis.</span> <span class="meta">Marca ✓ en cada juego que reclames. Se guarda solo en este navegador.</span></p>')
+
+    def heatmap(self, games, now):
+        """Mapa de calor de estrenos: cada día de los próximos meses, más brillante cuantos más juegos salen."""
+        today = now.astimezone(CO_TZ).date()
+        counts = {}
+        for g in games:
+            if g.get("precision") == "day" and g.get("date"):
+                counts[g["date"]] = counts.get(g["date"], 0) + 1
+        months, y, m = [], today.year, today.month
+        for i in range(6):
+            yy, mm = y + (m - 1 + i) // 12, (m - 1 + i) % 12 + 1
+            first = datetime(yy, mm, 1).date()
+            nxt = datetime(yy + (mm == 12), mm % 12 + 1, 1).date()
+            page = f"juegos-que-salen-en-{MONTHS_ES[mm - 1]}-{yy}.html"
+            has_page = page in self.pages
+            cells = ['<span class="hm-pad"></span>'] * first.weekday()
+            d = first
+            while d < nxt:
+                k = d.isoformat()
+                n = counts.get(k, 0)
+                lvl = 0 if not n else 1 if n == 1 else 2 if n <= 3 else 3 if n <= 6 else 4
+                tip = f'{d.day} de {MONTHS_ES[mm - 1]}: {n} {"juego" if n == 1 else "juegos"}'
+                cls = f'hm-d l{lvl}{" past" if d < today else ""}{" today" if d == today else ""}'
+                cells.append(f'<a class="{cls}" href="{page}#dia-{k}" title="{e(tip)}" aria-label="{e(tip)}">{d.day}</a>' if n and has_page
+                             else f'<span class="{cls}" title="{e(tip)}">{d.day}</span>')
+                d += timedelta(days=1)
+            months.append(f'<div class="hm-month"><p class="hm-name">{MONTHS_ES[mm - 1].capitalize()} {yy}</p><div class="hm-grid">'
+                          + "".join(f'<span class="hm-wd">{x}</span>' for x in "LMMJVSD") + "".join(cells) + '</div></div>')
+        if not counts:
+            return ""
+        return (f'<section class="heatmap" aria-labelledby="hm-h"><div class="sec-head"><h2 id="hm-h">{ICONS["flame"]} Mapa de calor de estrenos</h2>'
+                f'<p class="meta">Cuanto más brilla el día, más juegos salen. Toca un día para ver cuáles.</p></div>'
+                f'<div class="hm-wrap">{"".join(months)}</div><p class="hm-legend meta">Menos <i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i> Más</p></section>')
+
+    def fun_pages(self, live, free, games, now, updated_line):
+        """Páginas nuevas: rebajas de Steam, test de recomendación, sorpresa y juegos retrasados."""
+        import json as _json
+        self.steam_sales_page(now, updated_line)
+        # datos para el test y para «Sorpréndeme» (solo lo que ya está publicado en la página)
+        by_title = {g["title"].lower(): g for g in games}
+        items = []
+        for o in live:
+            gm = by_title.get(o["title"].lower()) or {}
+            items.append({"t": o["title"], "u": self.detail.get(o["id"]) or o["destinationUrl"], "i": o.get("imageSmall") or o.get("image") or "",
+                          "g": gm.get("genres") or [], "k": "gratis" if o.get("currentPrice") == 0 else "oferta",
+                          "p": round(self.cop_value(o.get("currentPrice"), o) or 0), "d": o.get("discountPercentage") or 0})
+        for g in getattr(self, "f2p", []) or []:
+            items.append({"t": g["title"], "u": g["url"], "i": g.get("imageSmall") or g.get("image") or "", "g": g.get("genres") or [], "k": "f2p", "p": 0, "d": 0})
+        for g in games:
+            if g["id"] not in self.detail:
+                continue
+            lp = self.live_price(g, now)
+            if g.get("comingSoon"):
+                items.append({"t": g["title"], "u": self.detail[g["id"]], "i": g.get("image") or "", "g": g.get("genres") or [], "k": "pronto", "p": -1, "d": 0, "r": self.rank(g)})
+            elif lp and lp.get("discount") and g["title"].lower() not in {o["title"].lower() for o in live}:
+                items.append({"t": g["title"], "u": self.detail[g["id"]], "i": g.get("image") or "", "g": g.get("genres") or [], "k": "oferta", "p": round(lp["final"]), "d": lp["discount"]})
+        self.write("data/test-juegos.json", _json.dumps({"items": items}, ensure_ascii=False, separators=(",", ":")))
+        surprise = [x["u"] for x in items if not x["u"].startswith("http")]
+        self.write("data/sorpresa.json", _json.dumps(surprise, ensure_ascii=False, separators=(",", ":")))
+        genres = ["Acción", "Aventura", "Rol", "Estrategia", "Simuladores", "Deportes", "Carreras", "Casual", "Indie", "Multijugador masivo"]
+        opt = lambda q, v, label: f'<button type="button" class="quiz-opt" data-q="{q}" data-v="{e(v)}" aria-pressed="false">{e(label)}</button>'
+        self.layout("que-juego-me-conviene.html", "¿Qué juego me conviene? Test rápido de juegos gratis y en oferta",
+                    "Responde 3 preguntas y te recomendamos juegos gratis, en oferta o por salir según tu presupuesto y lo que te gusta. Con precios reales de hoy.",
+                    f'<h1>¿Qué juego me <span class="grad">conviene</span>?</h1><p class="lead">Responde 3 preguntas y te mostramos juegos que existen hoy en la página: gratis, en oferta o por salir.</p>'
+                    f'<div class="quiz" id="quiz"><section class="quiz-step"><h2>1. ¿Cuánto quieres gastar?</h2><div class="quiz-opts">{opt("p", "0", "Nada, solo gratis")}{opt("p", "50000", "Hasta $50.000")}{opt("p", "any", "Me da igual")}</div></section>'
+                    f'<section class="quiz-step"><h2>2. ¿Qué te gusta jugar?</h2><div class="quiz-opts">{"".join(opt("g", x, x) for x in genres)}{opt("g", "any", "De todo")}</div></section>'
+                    f'<section class="quiz-step"><h2>3. ¿Lo quieres ya?</h2><div class="quiz-opts">{opt("w", "now", "Sí, para jugar hoy")}{opt("w", "soon", "Me sirve uno que sale pronto")}</div></section>'
+                    f'<p><button type="button" class="btn btn-primary" id="quiz-go" disabled>Ver mis juegos</button> <button type="button" class="btn" id="quiz-again" hidden>Otra vez</button></p>'
+                    f'<div id="quiz-out" aria-live="polite"></div></div>'
+                    '<noscript><p class="notice">El test necesita JavaScript. Mira los <a href="juegos-gratis.html">juegos gratis</a> o <a href="ofertas.html">todas las ofertas</a>.</p></noscript>',
+                    crumbs=[("que-juego-me-conviene.html", "¿Qué juego me conviene?")])
+        self.layout("sorpresa.html", "Sorpréndeme: un juego al azar", "Te llevamos a una oferta, un juego gratis o un estreno al azar.",
+                    '<h1>🎲 Sorpréndeme</h1><p class="lead" id="surprise-msg">Buscando un juego al azar…</p>'
+                    '<p><a class="btn btn-primary" href="sorpresa.html" data-surprise>Otro al azar</a> <a class="btn" href="ofertas.html">Ver todas las ofertas</a></p>',
+                    crumbs=[("sorpresa.html", "Sorpréndeme")], noindex=True)
+        # juegos retrasados (la fecha cambió en las últimas semanas, según Steam o Wikipedia)
+        moved = []
+        for g in games:
+            ch = g.get("dateChanged") or {}
+            if ch.get("from") and g.get("date") and g["id"] in self.detail:
+                day = lambda v: datetime.strptime((v + "-01-01")[:10] if len(v) < 10 else v[:10], "%Y-%m-%d")
+                try:
+                    shift = (day(g["date"]) - day(ch["from"])).days
+                except ValueError:
+                    continue
+                moved.append((shift, g, ch))
+        moved.sort(key=lambda t: (-t[0], self.rank(t[1])))
+        rows = "".join(
+            f'<li class="delay"><a href="{self.detail[g["id"]]}"><img src="{e(g.get("image") or "assets/placeholder.svg")}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async"></a>'
+            f'<div><h3>{self.title_link(g)}</h3><p><s>{e(date_label(ch["from"], ch.get("fromPrecision")))}</s> → <strong>{e(date_label(g.get("date"), g.get("precision")))}</strong></p>'
+            f'<p class="{"late" if shift > 0 else "early"}">{"Se retrasó" if shift > 0 else "Se adelantó"} {abs(shift)} días · cambio visto el {e(date_es(ch["at"]))}</p></div></li>'
+            for shift, g, ch in moved)
+        self.layout("juegos-retrasados.html", "Juegos retrasados y adelantados: cambios de fecha de lanzamiento",
+                    "Los juegos que cambiaron su fecha de lanzamiento en las últimas semanas: cuánto se retrasaron o adelantaron, según Steam y Wikipedia.",
+                    f'<h1>Juegos <span class="grad">retrasados</span> (y adelantados)</h1><p class="lead">Cuando un juego cambia su fecha en Steam o Wikipedia, el bot lo nota y lo anota aquí durante unas semanas.</p>{updated_line}'
+                    + (f'<ul class="delays">{rows}</ul>' if rows else '<p class="notice">En las últimas semanas no hemos visto cambios de fecha. Esta página se actualiza sola.</p>')
+                    + '<p><a class="btn" href="lanzamientos.html">Ver el calendario</a></p>',
+                    crumbs=[("lanzamientos.html", "Lanzamientos"), ("juegos-retrasados.html", "Juegos retrasados")])
 
     def price_text(self, g, now):
         p = self.live_price(g, now)
@@ -865,7 +1042,8 @@ class Site:
         if not gens:
             return ""
         pool = [x for x in games if x["id"] != g["id"] and x["id"] in self.detail and set(x.get("genres", [])) & gens]
-        pool.sort(key=lambda x: (-len(set(x.get("genres", [])) & gens), -len(set(x.get("platforms", [])) & plats), self.rank(x)))
+        sale = lambda x: not (self.live_price(x, self.now) or {}).get("discount")  # primero los que están en oferta en Steam
+        pool.sort(key=lambda x: (-len(set(x.get("genres", [])) & gens), sale(x), -len(set(x.get("platforms", [])) & plats), self.rank(x)))
         picks = pool[:4]
         if not picks:
             return ""
@@ -984,7 +1162,7 @@ class Site:
                 big = f"{d} {MONTHS_ES[m - 1][:3]}"
                 label, rel = date_label(key, "day"), relative_label(key, "day", now)
             kind = "past" if rel.startswith("hace") or rel == "ayer" else "today" if rel == "hoy" else "future"
-            out.append(f'<section class="rel-day {kind}" aria-label="{e(label)}"><h3 class="rel-head">'
+            out.append(f'<section class="rel-day {kind}"{f' id="dia-{key}"' if len(key) == 10 and not compact else ''} aria-label="{e(label)}"><h3 class="rel-head">'
                        f'<span class="rel-dot" aria-hidden="true"></span><span class="rel-big">{e(big)}</span>'
                        f'<span class="rel-sub">{e(rel)}</span><span class="rel-line" aria-hidden="true"></span>'
                        f'<span class="rel-crumb">Juegos · {len(items)}</span></h3>'
@@ -1098,6 +1276,7 @@ class Site:
 {self.spotlight(games, now)}
 {self.anticipated(games, now)}
 {self.calendar_links()}
+{self.heatmap(games, now)}
 <h2 class="all-rel">Calendario completo</h2>
 {toolbar}
 <p class="count" id="rel-count" aria-live="polite">{len(games)} juegos</p>
@@ -1639,7 +1818,10 @@ class Site:
         title = f"Resumen semanal del {snap['label']}" if current else "Lo mejor de esta semana (hasta ahora)"
         self.layout("resumen-semanal.html", "Resumen semanal de ofertas gamer para Colombia",
                     "Cada viernes: juegos gratis, los mejores descuentos de PC y los estrenos de la semana, en un solo lugar.",
-                    f'<h1>Resumen semanal</h1><p class="lead">{lead}</p>{updated_line}<h2>{e(title)}</h2>{render(snap)}{poll_html}{archive_html}',
+                    f'<h1>Resumen semanal</h1><p class="lead">{lead}</p>{updated_line}<h2>{e(title)}</h2>{render(snap)}'
+                    + ('<section class="top10"><h2>🏆 Top 10 de descuentos en imagen</h2><p class="meta">Para guardar o compartir. Se renueva cada viernes.</p>'
+                       '<p><a href="img/top10-semana.jpg" download><img src="img/top10-semana.jpg" alt="Top 10 de los mayores descuentos de la semana" width="540" height="675" loading="lazy"></a></p></section>'
+                       if getattr(self, "top10_image", False) else '') + f'{poll_html}{archive_html}',
                     crumbs=[("resumen-semanal.html", "Resumen semanal")])
         for h in history:
             self.layout(weekly.page_name(h), f"Resumen semanal de ofertas gamer: {h['label']}",
@@ -1708,7 +1890,10 @@ class Site:
 <li><strong data-count="{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}" data-suffix="%">{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}%</strong><span>mayor descuento</span></li>
 </ul>
 {updated_line}
+<p class="hero-fun"><a class="btn" href="sorpresa.html" data-surprise>{ICONS["dice"]} Sorpréndeme</a><a class="btn" href="que-juego-me-conviene.html">{ICONS["quiz"]} ¿Qué juego me conviene?</a></p>
 </section>
+{self.steam_strip(updated_dt)}
+{self.thermometer(live, free)}
 {self.feature(free + top)}
 {self.curve_carousel(games or [], updated_dt)}
 {self.dotd_block(dotd)}
@@ -1718,6 +1903,7 @@ class Site:
 {self.mega(["GRATIS", "OFERTAS", "ESTRENOS", "COLOMBIA"])}
 <h2>{ICONS['gift']} Gratis esta semana</h2>
 {self.free_ring(free)}
+{self.saved_box()}
 {self.offer_list(free[:8], with_filters=False, list_id="free-home") if free else '<p>No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
 {f'<p><a class="btn" href="juegos-gratis.html">Ver los {len(free)} juegos gratis</a></p>' if len(free) > 8 else ''}
 {self.mega(["DESCUENTOS", "STEAM", "EPIC", "GOG", "HUMBLE"], reverse=True)}
@@ -1732,7 +1918,7 @@ class Site:
 
         self.layout("juegos-gratis.html", "Juegos gratis para PC hoy",
                     "Juegos gratuitos para PC disponibles ahora en tiendas oficiales como Epic Games Store, con la fecha en que termina cada promoción.",
-                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{notice}{self.offer_list(free)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a> <a class=\"btn btn-primary\" href=\"juegos-gratis-en-todas-las-tiendas.html\">Gratis en Steam, GOG, Amazon y más</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
+                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{self.saved_box()}{notice}{self.offer_list(free)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a> <a class=\"btn btn-primary\" href=\"juegos-gratis-en-todas-las-tiendas.html\">Gratis en Steam, GOG, Amazon y más</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
                     crumbs=[("juegos-gratis.html", "Juegos gratis")], jsonld=[self.item_list_ld(free)])
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
@@ -1804,6 +1990,7 @@ class Site:
         self.weekly_pages(getattr(self, "weekly_history", []), live, games or [], updated_dt, updated_line)
         self.offer_pages(live, notice)
         self.game_pages(games or [], updated_dt)
+        self.fun_pages(live, free, games or [], updated_dt, updated_line)
         self.static_pages(status, updated)
         self.feeds(live, updated_dt)
         self.sitemap(updated_dt)
@@ -1875,6 +2062,8 @@ class Site:
 </ul>
 <h2>Limitaciones</h2>
 <p>Algunas fuentes informan precios de referencia de la tienda en dólares de Estados Unidos. El precio para Colombia puede variar. Por eso indicamos la región cuando la conocemos.</p>
+<h2 id="termometro">Termómetro de ofertas</h2>
+<p>Es una nota de 0 a 10 que se calcula sola en cada revisión con tres datos reales: el descuento promedio de las 50 mejores ofertas (hasta 6 puntos), cuántas ofertas están en el precio más bajo que hemos visto (hasta 2 puntos, con 20 o más) y cuántos juegos gratis hay (hasta 2 puntos, con 5 o más). No es una predicción: solo dice qué tan bueno está el día comparado con lo normal.</p>
 <p>¿Encontraste un error? <a href="contacto.html">Repórtalo</a>.</p></div>""",
           crumbs=[("como-verificamos.html", "Cómo verificamos")])
 

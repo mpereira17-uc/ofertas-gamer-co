@@ -46,6 +46,27 @@ CODES_FILE = DATA / "codigos.json"
 DOCS = ROOT / "docs"
 
 
+def top10_image(offers, label):
+    """Imagen con los 10 mayores descuentos de ahora; también queda en la página (img/top10-semana.jpg)."""
+    if not images.available():
+        return None
+    from ogc.site import Site
+    top = sorted([o for o in offers if o.get("currentPrice") and o.get("image")], key=lambda o: -(o.get("discountPercentage") or 0))[:10]
+    if len(top) < 5:
+        return None
+    covers = []
+    for o in top:
+        try:
+            covers.append(sources.get_bytes(o.get("imageSmall") or o["image"]))
+        except Exception:
+            covers.append(None)
+    jpg = images.top10(top, covers, Site.pesos, label)
+    if jpg:
+        IMG_DIR.mkdir(parents=True, exist_ok=True)
+        (IMG_DIR / "top10-semana.jpg").write_bytes(jpg)
+    return jpg
+
+
 def load_json(path, default):
     try:
         return json.loads(Path(path).read_text(encoding="utf-8"))
@@ -245,6 +266,9 @@ def run(args):
         snap = weekly.snapshot(now, *weekly.pick(offers, games, now))
         done = weekly.publish(snap, base + "resumen-semanal.html", discord.Discord(guild=str(cfg.get("discord_servidor", ""))),
                               promote.bluesky_post, cfg.get("enlace_kofi"))
+        jpg = top10_image(offers, snap["label"])
+        if jpg and community.send_daily(f"🏆 <b>Top 10 de descuentos de la semana</b>\nTodas las ofertas: {base}ofertas.html", jpg):
+            done.append("Telegram (top 10)")
         history = [snap] + history[: weekly.KEEP - 1]
         save_json(WEEKLY_FILE, {"semanas": history})
         polls = load_json(POLL_FILE, {})
@@ -290,11 +314,13 @@ def run(args):
     down = [n for n, s in health_state.get("sources", {}).items() if s.get("fails")]
     status["Fuentes con fallas seguidas"] = ", ".join(f"{n} ({health_state['sources'][n]['fails']})" for n in down) or "ninguna"
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
+    site.steam_cfg = load_json(ROOT / "config" / "steam_eventos.json", {})
     site.epic_next, site.epic_archive = epic_next, epic_archive
     site.poll = load_json(POLL_FILE, {})
     site.codes = code_state
     site.giveaways = gifts
     site.dotd_image = (IMG_DIR / "oferta-del-dia.jpg").exists()
+    site.top10_image = (IMG_DIR / "top10-semana.jpg").exists()
     site.build(offers, status, now, games)
     daily = getattr(site, "daily", None) or {}
     dotd = next((o for o in offers if o["id"] == daily.get("id")), None)
@@ -309,6 +335,8 @@ def run(args):
             IMG_DIR.mkdir(exist_ok=True)
             (IMG_DIR / "oferta-del-dia.jpg").write_bytes(jpg)
             daily["imageFor"] = dotd["id"]
+    if not (IMG_DIR / "top10-semana.jpg").exists() and not args.fixtures:
+        top10_image(offers, now.astimezone(channels.CO_TZ).strftime("%d/%m/%Y"))  # la primera vez, para que la página ya la tenga
     if IMG_DIR.exists():
         shutil.copytree(IMG_DIR, DOCS / "img", dirs_exist_ok=True)
     if dotd and community.daily_due(now, daily) and not args.no_send:

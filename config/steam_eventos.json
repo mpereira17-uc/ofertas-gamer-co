@@ -1,0 +1,25 @@
+{
+  "fuente": "https://partner.steamgames.com/doc/marketing/upcoming_events",
+  "revisado": "2026-10-27",
+  "nota": "Fechas oficiales publicadas por Valve. Steam no publica aquí la hora exacta; normalmente empiezan a las 10 a. m. hora del Pacífico.",
+  "eventos": [
+    {"nombre": "Steam Scream V (Halloween)", "tipo": "fest", "inicio": "2026-10-26", "fin": "2026-11-02"},
+    {"nombre": "Auto-Battler RPG Fest", "tipo": "fest", "inicio": "2026-11-16", "fin": "2026-11-23"},
+    {"nombre": "Rebajas de Invierno de Steam 2026", "tipo": "rebaja", "inicio": "2026-12-17", "fin": "2027-01-04"},
+    {"nombre": "Desktop Companion Fest", "tipo": "fest", "inicio": "2027-01-14", "fin": "2027-01-18"},
+    {"nombre": "Shop Keeper Fest", "tipo": "fest", "inicio": "2027-01-25", "fin": "2027-02-01"},
+    {"nombre": "Sheep Fest", "tipo": "fest", "inicio": "2027-02-04", "fin": "2027-02-08"},
+    {"nombre": "Couch Co-Op Fest (cooperativo en el sofá)", "tipo": "fest", "inicio": "2027-02-08", "fin": "2027-02-15"},
+    {"nombre": "Steam Next Fest (demos gratis)", "tipo": "next", "inicio": "2027-02-22", "fin": "2027-03-01"},
+    {"nombre": "Rhythm Fest (ritmo)", "tipo": "fest", "inicio": "2027-03-08", "fin": "2027-03-15"},
+    {"nombre": "Rebajas de Primavera de Steam 2027", "tipo": "rebaja", "inicio": "2027-03-18", "fin": "2027-03-25"},
+    {"nombre": "Dinos vs. Robots Fest", "tipo": "fest", "inicio": "2027-03-29", "fin": "2027-04-05"},
+    {"nombre": "Racing Fest (carreras)", "tipo": "fest", "inicio": "2027-04-12", "fin": "2027-04-19"},
+    {"nombre": "Witch Fest (brujas)", "tipo": "fest", "inicio": "2027-04-22", "fin": "2027-04-26"},
+    {"nombre": "Fighting Fest (peleas)", "tipo": "fest", "inicio": "2027-04-26", "fin": "2027-05-03"},
+    {"nombre": "Real-Time Strategy Fest (estrategia)", "tipo": "fest", "inicio": "2027-05-10", "fin": "2027-05-17"},
+    {"nombre": "Mountaineering Fest (escalada)", "tipo": "fest", "inicio": "2027-05-31", "fin": "2027-06-03"},
+    {"nombre": "Steam Next Fest (demos gratis)", "tipo": "next", "inicio": "2027-06-14", "fin": "2027-06-21"},
+    {"nombre": "Rebajas de Verano de Steam 2027", "tipo": "rebaja", "inicio": "2027-06-24", "fin": "2027-07-08"}
+  ]
+}

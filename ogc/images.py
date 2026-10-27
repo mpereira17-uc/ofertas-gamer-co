@@ -138,3 +138,58 @@ def offer_card(o, cover_bytes, pesos, kicker="Oferta del día"):
     except Exception as exc:
         print(f"Imagen automática falló: {type(exc).__name__}", file=sys.stderr)
         return None
+
+
+def top10(offers, covers, pesos, label):
+    """Imagen vertical (1080x1350) con el top 10 de descuentos de la semana, para Telegram e Instagram.
+    offers: las 10 ofertas; covers: bytes de cada portada (o None). Solo datos reales de las ofertas."""
+    try:
+        from PIL import Image, ImageDraw
+        w, h = 1080, 1350
+        img = Image.new("RGB", (w, h), NIGHT)
+        d = ImageDraw.Draw(img)
+        d.text((60, 54), "TOP 10 DE LA SEMANA", font=_font(30, "Bold"), fill=GOLD)
+        d.text((60, 92), "Los mayores descuentos", font=_font(60), fill=(255, 255, 255))
+        d.text((60, 166), label, font=_font(28, "SemiBold"), fill=(205, 198, 230))
+        y, row = 222, 104
+        for i, o in enumerate(offers[:10]):
+            d.rounded_rectangle((40, y, w - 40, y + row - 12), 18, fill=(26, 20, 48))
+            d.text((70, y + 22), f"{i + 1}", font=_font(48), fill=GOLD if i < 3 else (205, 198, 230))
+            x = 140
+            raw = covers[i] if i < len(covers) else None
+            if raw:
+                try:
+                    c = Image.open(io.BytesIO(raw)).convert("RGB")
+                    ch = row - 32
+                    cw = int(c.width * ch / c.height)
+                    img.paste(c.resize((cw, ch)), (x, y + 10))
+                    x += cw + 22
+                except Exception:
+                    pass
+            big = f"-{o.get('discountPercentage') or 0}%"
+            bf = _font(40)
+            bw = d.textlength(big, font=bf) + 28
+            d.rounded_rectangle((w - 70 - bw, y + 22, w - 70, y + 74), 12, fill=GOLD)
+            d.text((w - 70 - bw + 14, y + 24), big, font=bf, fill=INK)
+            tw = w - 100 - bw - x
+            name = _wrap(d, o["title"], _font(32), tw, 1)
+            d.text((x, y + 14), name[0] if name else "", font=_font(32), fill=(255, 255, 255))
+            if o.get("currency") == "COP":
+                price = pesos(o["currentPrice"]) + " COP"
+            elif o.get("copApproximation"):
+                price = f"{pesos(o['copApproximation'])} COP aprox."
+            else:
+                price = f"US${o['currentPrice']:.2f}"
+            d.text((x, y + 54), f"{price} · {o['store']}", font=_font(24, "SemiBold"), fill=GREEN)
+            y += row
+        d.text((60, h - 66), "Precios verificados al publicar. Confirma en la tienda.", font=_font(22, "SemiBold"), fill=(170, 160, 200))
+        d.rectangle((0, h - 14, w // 2, h), fill=GOLD)
+        d.rectangle((w // 2, h - 14, w * 3 // 4, h), fill=BLUE)
+        d.rectangle((w * 3 // 4, h - 14, w, h), fill=RED)
+        d.text((w - 50, h - 34), "ofertas-gamer-co.pages.dev", font=_font(24, "Bold"), fill=(230, 225, 245), anchor="rs")
+        out = io.BytesIO()
+        img.save(out, "JPEG", quality=86, optimize=True)
+        return out.getvalue()
+    except Exception as exc:
+        print(f"Imagen del top 10 falló: {type(exc).__name__}", file=sys.stderr)
+        return None
