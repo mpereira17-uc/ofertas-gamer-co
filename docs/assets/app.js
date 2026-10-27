@@ -768,6 +768,117 @@
     start();
   });
 
+  // Cuenta regresiva de la próxima rebaja de Steam (hasta la medianoche del día de inicio, hora Colombia)
+  document.querySelectorAll("[data-steam-countdown]").forEach(function (box) {
+    var target = new Date(box.getAttribute("data-steam-countdown") + "T00:00:00-05:00").getTime();
+    var put = function (k, v) { var el = box.querySelector('[data-cd="' + k + '"]'); if (el) el.textContent = v; };
+    var tick = function () {
+      var left = Math.max(0, target - Date.now()), sec = Math.floor(left / 1000);
+      put("d", Math.floor(sec / 86400)); put("h", Math.floor(sec % 86400 / 3600));
+      put("m", Math.floor(sec % 3600 / 60)); put("s", sec % 60);
+    };
+    tick();
+    setInterval(tick, 1000);
+  });
+
+  // «Ya lo reclamé»: suma lo que has ahorrado con los juegos gratis (solo en este navegador)
+  var claims = {};
+  try { claims = JSON.parse(store("ogc-claims") || "{}") || {}; } catch (e) { claims = {}; }
+  var showSaved = function () {
+    var total = 0, count = 0;
+    Object.keys(claims).forEach(function (k) { total += +claims[k] || 0; count++; });
+    document.querySelectorAll("#saved-box").forEach(function (box) {
+      box.hidden = !count;
+      var t = box.querySelector("[data-saved-total]"), c = box.querySelector("[data-saved-count]");
+      if (t) t.textContent = "$" + String(Math.round(total / 100) * 100).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " COP";
+      if (c) c.textContent = count;
+    });
+  };
+  document.querySelectorAll("[data-claim]").forEach(function (btn) {
+    var id = btn.getAttribute("data-claim");
+    btn.hidden = false;
+    btn.setAttribute("aria-pressed", claims[id] ? "true" : "false");
+    btn.addEventListener("click", function () {
+      if (claims[id]) delete claims[id]; else claims[id] = +btn.getAttribute("data-value") || 0;
+      store("ogc-claims", JSON.stringify(claims));
+      document.querySelectorAll('[data-claim="' + id + '"]').forEach(function (b) { b.setAttribute("aria-pressed", claims[id] ? "true" : "false"); });
+      showSaved();
+    });
+  });
+  showSaved();
+
+  // «Sorpréndeme»: abre una página de juego u oferta al azar
+  var surprise = function () {
+    return fetch("data/sorpresa.json").then(function (r) { return r.json(); }).then(function (list) {
+      if (list && list.length) location.href = list[Math.floor(Math.random() * list.length)];
+    });
+  };
+  document.querySelectorAll("[data-surprise]").forEach(function (a) {
+    a.addEventListener("click", function (ev) { ev.preventDefault(); surprise().catch(function () { location.href = "ofertas.html"; }); });
+  });
+  if (document.getElementById("surprise-msg")) surprise().catch(function () {
+    document.getElementById("surprise-msg").textContent = "No pudimos elegir uno ahora. Mira todas las ofertas.";
+  });
+
+  // Test «¿Qué juego me conviene?»
+  var quiz = document.getElementById("quiz");
+  if (quiz) {
+    var el = function (tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text) n.textContent = text;
+      return n;
+    };
+    var answers = {}, go = document.getElementById("quiz-go"), out = document.getElementById("quiz-out"), again = document.getElementById("quiz-again");
+    quiz.querySelectorAll(".quiz-opt").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var q = b.getAttribute("data-q");
+        answers[q] = b.getAttribute("data-v");
+        quiz.querySelectorAll('.quiz-opt[data-q="' + q + '"]').forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        go.disabled = !(answers.p && answers.g && answers.w);
+      });
+    });
+    var pesos = function (v) { return "$" + String(Math.round(v / 100) * 100).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " COP"; };
+    go.addEventListener("click", function () {
+      fetch("data/test-juegos.json").then(function (r) { return r.json(); }).then(function (data) {
+        var max = answers.p === "any" ? Infinity : +answers.p;
+        var list = data.items.filter(function (x) {
+          if (answers.w === "now" && x.k === "pronto") return false;
+          if (answers.w === "soon" && x.k !== "pronto") return false;
+          if (x.k !== "pronto" && x.p > max) return false;
+          return answers.g === "any" || x.g.indexOf(answers.g) >= 0;
+        });
+        var weight = function (x) { return (x.k === "gratis" ? 3 : 0) + (x.d || 0) / 40 + (x.r ? Math.max(0, 3 - x.r / 40) : 0) + Math.random() * 1.5; };
+        list.sort(function (a, b) { return weight(b) - weight(a); });
+        var seen = {}, pick = [];
+        list.forEach(function (x) { if (!seen[x.t] && pick.length < 6) { seen[x.t] = 1; pick.push(x); } });
+        out.textContent = "";
+        if (!pick.length) {
+          out.appendChild(el("p", "notice", "Hoy no hay juegos que cumplan todo. Prueba con «De todo» o «Me da igual»."));
+        } else {
+          var ul = el("ul", "spot-grid small");
+          pick.forEach(function (x) {
+            var li = el("li", "spot-card"), box = el("div", "spot-img"), body = el("div", "spot-body");
+            if (x.i) { var im = document.createElement("img"); im.src = x.i; im.alt = ""; im.loading = "lazy"; im.className = "spot-fg"; box.appendChild(im); }
+            var tag = x.k === "gratis" || x.k === "f2p" ? "GRATIS" : x.k === "pronto" ? "PRONTO" : "-" + x.d + "%";
+            box.appendChild(el("span", "badge", tag));
+            var h = el("h3", "clamp2"), a = document.createElement("a");
+            a.href = x.u; a.textContent = x.t; a.className = "title-link";
+            if (/^https?:/.test(x.u)) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+            h.appendChild(a); body.appendChild(h);
+            body.appendChild(el("p", "meta", x.k === "pronto" ? "Sale pronto" : x.k === "f2p" ? "Gratis para siempre" : x.p ? pesos(x.p) + " aprox." : "Gratis por tiempo limitado"));
+            li.appendChild(box); li.appendChild(body); ul.appendChild(li);
+          });
+          out.appendChild(el("h2", null, "Te recomendamos"));
+          out.appendChild(ul);
+        }
+        again.hidden = false;
+        out.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "start" });
+      }).catch(function () { out.textContent = "No se pudo cargar la lista. Intenta de nuevo."; });
+    });
+    again.addEventListener("click", function () { go.click(); });
+  }
+
   // Rueda de juegos gratis: cada portada en su lugar del anillo (el giro lo hace el CSS)
   var placeRings = function () {
     document.querySelectorAll(".ring").forEach(function (ring) {

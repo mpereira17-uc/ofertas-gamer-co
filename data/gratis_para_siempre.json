@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27T00:14:52Z",
+ "updatedAt": "2026-10-27T00:35:38Z",
  "games": [
   {
    "id": "steam-730",
@@ -381,11 +381,11 @@
    ]
   },
   {
-   "id": "steam-444200",
-   "title": "World of Tanks Blitz",
-   "url": "https://store.steampowered.com/app/444200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/2086620a57f48438d5d3889410643fead1122bfb/header_alt_assets_21.jpg?t=1792910839",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/0b44ccbbd098530deec42738e7d82c26c3da0934/capsule_sm_120_alt_assets_21.jpg?t=1792910839",
+   "id": "steam-552990",
+   "title": "World of Warships",
+   "url": "https://store.steampowered.com/app/552990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/e4946bba05ec1edf85048ae0cf6f47572aabb7fa/capsule_sm_120_alt_assets_16.jpg?t=1791478284",
    "headerChecked": true,
    "genres": [
     "Acción",
@@ -406,11 +406,11 @@
    ]
   },
   {
-   "id": "steam-552990",
-   "title": "World of Warships",
-   "url": "https://store.steampowered.com/app/552990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/e4946bba05ec1edf85048ae0cf6f47572aabb7fa/capsule_sm_120_alt_assets_16.jpg?t=1791478284",
+   "id": "steam-444200",
+   "title": "World of Tanks Blitz",
+   "url": "https://store.steampowered.com/app/444200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/2086620a57f48438d5d3889410643fead1122bfb/header_alt_assets_21.jpg?t=1792910839",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/0b44ccbbd098530deec42738e7d82c26c3da0934/capsule_sm_120_alt_assets_21.jpg?t=1792910839",
    "headerChecked": true,
    "genres": [
     "Acción",

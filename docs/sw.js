@@ -1,6 +1,6 @@
 // Service worker de Ofertas Gamer CO: abre la página sin internet con la última copia guardada.
-const CACHE = "ogc-b1f409311a70b7894f70";
-const SHELL = ["./", "index.html", "sin-conexion.html", "assets/styles.css?v=b1f409311a", "assets/app.js?v=70b7894f70", "assets/icon-192.png", "assets/placeholder.svg"];
+const CACHE = "ogc-82f306490648359ac781";
+const SHELL = ["./", "index.html", "sin-conexion.html", "assets/styles.css?v=82f3064906", "assets/app.js?v=48359ac781", "assets/icon-192.png", "assets/placeholder.svg"];
 self.addEventListener("install", (ev) => {
   ev.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
 });
