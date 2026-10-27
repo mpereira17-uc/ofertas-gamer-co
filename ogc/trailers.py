@@ -4,6 +4,7 @@ Se usan los tráileres que ya trae el calendario y, para el resto, la ficha púb
 Se guardan en data/trailers.json y se piden pocos por corrida para no abusar de Steam.
 """
 
+import re
 import sys
 from datetime import timedelta
 
@@ -19,13 +20,14 @@ def update(offers, games, cache, now, fetch):
     cache = dict(cache or {})
     for g in games or []:
         if g.get("id", "").startswith("steam-") and g.get("trailer"):
-            cache[g["id"][6:]] = {"trailer": g["trailer"], "shots": g.get("shots") or [], "at": g.get("verifiedAt") or iso(now)}
+            cache[g["id"][6:]] = {"trailer": g["trailer"], "shots": g.get("shots") or [], "about": g.get("description") or "",
+                                  "at": g.get("verifiedAt") or iso(now)}
     stale = iso(now - timedelta(days=KEEP_DAYS))
     wanted = []
     for o in offers:
         app = str(o.get("steamAppID") or "")
-        # las fichas guardadas antes sin capturas se vuelven a pedir una vez
-        if app and app not in wanted and (app not in cache or (cache[app].get("at") or "") < stale or "shots" not in cache[app]):
+        # las fichas guardadas antes sin capturas o sin descripción se vuelven a pedir una vez
+        if app and app not in wanted and (app not in cache or (cache[app].get("at") or "") < stale or "about" not in cache[app]):
             wanted.append(app)
     asked = failed = 0
     for app in wanted[:MAX_NEW]:
@@ -35,7 +37,8 @@ def update(offers, games, cache, now, fetch):
             info = entry.get("data") if entry.get("success") else None
             ok = isinstance(info, dict)
             shots = [x["path_thumbnail"] for x in (info.get("screenshots") or []) if (x.get("path_thumbnail") or "").startswith("https://")][:6] if ok else []
-            cache[app] = {"trailer": steam_trailer(info) if ok else {}, "shots": shots, "at": iso(now)}
+            about = re.sub(r"<[^>]+>", "", info.get("short_description") or "").strip()[:400] if ok else ""
+            cache[app] = {"trailer": steam_trailer(info) if ok else {}, "shots": shots, "about": about, "at": iso(now)}
         except Exception as exc:  # un juego que falla no tumba nada; se reintenta en otra corrida
             failed += 1
             print(f"Tráileres: Steam {app} falló: {exc}", file=sys.stderr)
@@ -54,4 +57,6 @@ def attach(offers, cache):
             o["trailer"] = t
         if entry.get("shots"):
             o["shots"] = entry["shots"]
+        if entry.get("about"):
+            o["about"] = entry["about"]  # descripción corta oficial de la ficha de Steam (en español)
     return offers

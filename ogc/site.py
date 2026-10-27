@@ -233,7 +233,7 @@ class Site:
 <script src="assets/app.js?v={asset_version("app.js")}" defer></script>
 {ld_html}
 </head>
-<body>
+<body{self.season_class()}>
 <div class="bg-decor" aria-hidden="true"></div>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site"><div class="wrap">
@@ -627,6 +627,36 @@ class Site:
                 f'<ul class="spot-grid small">{rows}</ul></section>')
 
     # ---------- ideas nuevas: rebajas de Steam, termómetro, ahorro, test, sorpresa, retrasos, mapa de calor ----------
+    def season_class(self):
+        """Temporadas de la interfaz: Halloween del 15 de octubre al 2 de noviembre (hora Colombia). Se quita sola."""
+        now = getattr(self, "now", None)
+        if not now:
+            return ""
+        md = now.astimezone(CO_TZ).strftime("%m-%d")
+        return ' class="halloween"' if "10-15" <= md <= "11-02" else ""
+
+    def halloween_box(self, games, live):
+        """Especial de terror en la portada durante la temporada de Halloween: juegos reales del tema."""
+        if not self.season_class():
+            return ""
+        ev = {"tipo": "fest", "buscar": next((x.get("buscar") for x in (getattr(self, "steam_cfg", {}) or {}).get("eventos", []) if "Halloween" in x["nombre"]), [])}
+        if not ev["buscar"]:
+            return ""
+        # ofertas de hoy cuyo texto oficial de Steam habla de terror
+        kw = [k for k in ev["buscar"] if k[:1].islower()]
+        scary = [o for o in live if o.get("image") and o.get("about") and any(re.search(r"\b" + re.escape(k) + r"\b", o["about"].lower()) for k in kw)]
+        scary.sort(key=lambda o: -(o.get("discountPercentage") or 0))
+        cards = "".join(self.card(o) for o in scary[:6])
+        coming = self.event_covers(ev, games, [], set(), 4)
+        soon = "".join(f'<li class="spot-card"><div class="spot-img"><img class="spot-fg" src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async"></div>'
+                       f'<div class="spot-body"><h3 class="clamp2"><a class="title-link" href="{e(url)}">{e(t)}</a></h3></div></li>' for t, img, url in coming)
+        if not cards and not soon:
+            return ""
+        return ('<section class="halloween-box"><h2>🎃 Especial de terror</h2><p class="meta">Es octubre: juegos de miedo en oferta hoy y los de terror que vienen. '
+                'Elegidos por su descripción oficial en Steam.</p>'
+                + (f'<ul class="grid">{cards}</ul>' if cards else '')
+                + (f'<h3>👻 Los de terror que vienen</h3><ul class="spot-grid small">{soon}</ul>' if soon else '') + '</section>')
+
     def steam_events(self, now):
         """Eventos oficiales de Steam (config/steam_eventos.json) que no han terminado, con su estado."""
         today = now.astimezone(CO_TZ).strftime("%Y-%m-%d")
@@ -987,6 +1017,7 @@ class Site:
 <div class="detail-media" id="trailer">{img}{self.badge(o)}{self.trailer_link(dict(o, url=f"https://store.steampowered.com/app/{o['steamAppID']}/" if o.get("steamAppID") else o["officialUrl"]))}</div>
 <div class="detail-info">{self.store_chip(o)}
 <h1>{e(o['title'])}</h1>
+{f'<p class="lead about">{e(html.unescape(o["about"]))}</p>' if o.get("about") else ''}
 {self.price_html(o, big=True)}
 {self.countdown(o)}{f'<p class="meta">{e(until)}</p>' if until else ''}
 {self.trust_chips(o, full=True)}
@@ -1934,6 +1965,7 @@ class Site:
 <p class="hero-fun"><a class="btn" href="sorpresa.html" data-surprise>{ICONS["dice"]} Sorpréndeme</a><a class="btn" href="que-juego-me-conviene.html">{ICONS["quiz"]} ¿Qué juego me conviene?</a></p>
 </section>
 {self.steam_strip(updated_dt)}
+{self.halloween_box(games or [], live)}
 {self.thermometer(live, free)}
 {self.feature(free + top)}
 {self.curve_carousel(games or [], updated_dt)}

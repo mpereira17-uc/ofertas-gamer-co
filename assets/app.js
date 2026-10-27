@@ -892,6 +892,18 @@
   placeRings();
   window.addEventListener("resize", placeRings);
 
+  // Murciélagos de Halloween (solo en temporada y si la persona no pidió menos movimiento)
+  if (!calm && document.body && document.body.classList.contains("halloween")) {
+    var bats = document.createElement("div");
+    bats.className = "bats";
+    bats.setAttribute("aria-hidden", "true");
+    for (var b = 0; b < (window.innerWidth < 600 ? 3 : 5); b++) bats.appendChild(document.createElement("i")).className = "bat";
+    var spider = bats.appendChild(document.createElement("i"));
+    spider.className = "spider";
+    spider.textContent = "🕷️";
+    document.body.appendChild(bats);
+  }
+
   // Intro con el logo: solo la primera vez que alguien entra
   if (!calm && !store("ogc-intro") && document.body) {
     store("ogc-intro", "1");
