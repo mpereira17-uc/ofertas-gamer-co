@@ -413,7 +413,7 @@ class Site:
         alt = f"Imagen de {o['title']}" if o.get("image") else ""
         cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
         return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
-<div class="thumb"><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}</div>
+<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}</div>
 <div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
 {self.price_html(o)}
 {self.countdown(o)}
@@ -912,6 +912,16 @@ class Site:
         label = text or f"Ver en {where}"
         return ext_link(g["url"], label, cls=cls, label=f"Ver {g['title']} en {where} (abre en otra pestaña)")
 
+    @staticmethod
+    def preview_attrs(t):
+        """Atributos para el avance al pasar el cursor (solo tráileres de Steam: HLS o MP4)."""
+        t = t or {}
+        hls = t.get("hls") if (t.get("hls") or "").startswith("https://") else ""
+        video = t.get("video") if (t.get("video") or "").startswith("https://") else ""
+        if not (hls or video):
+            return ""
+        return f' data-preview="1"' + (f' data-hls="{e(hls)}"' if hls else "") + (f' data-video="{e(video)}"' if video else "")
+
     def trailer_chip(self, g):
         page = self.detail.get(g["id"])
         if not page or not ((g.get("trailer") or {}).get("video") or (g.get("trailer") or {}).get("hls") or g.get("youtube")):
@@ -939,7 +949,7 @@ class Site:
         when = date_label(g.get("date"), g.get("precision"))
         link = self.game_link(g, g.get("store") or "Steam")
         return f"""<li class="rel-card{' is-hot' if hot else ''}{' is-big' if big else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
-<div class="rel-img">{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}{f'<span class="badge sale-tag">-{self.live_price(g, now)["discount"]}%</span>' if (self.live_price(g, now) or {}).get("discount") else ''}</div>
+<div class="rel-img"{self.preview_attrs(g.get("trailer"))}>{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}{f'<span class="badge sale-tag">-{self.live_price(g, now)["discount"]}%</span>' if (self.live_price(g, now) or {}).get("discount") else ''}</div>
 <p class="rel-name">{self.title_link(g)}</p>
 <p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
@@ -994,7 +1004,7 @@ class Site:
               else poster_bg(g))
         fg = (f'<img class="spot-fg{' poster' if is_poster(img) else ''}" src="{e(img)}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="460" height="215" loading="lazy" decoding="async">'
               if g.get("image") else no_cover(g, "no-cover spot-fg"))
-        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img">{bg}{fg}<span class="spot-rank">#{self.rank(g)}</span>{self.trailer_chip(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
+        return f"""<li class="spot-card{' spot-main' if main else ''}"><div class="spot-img"{self.preview_attrs(g.get("trailer"))}>{bg}{fg}<span class="spot-rank">#{self.rank(g)}</span>{self.trailer_chip(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}</div>
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 

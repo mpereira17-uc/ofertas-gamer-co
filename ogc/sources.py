@@ -217,4 +217,6 @@ def cheapshark_deals(stores, rate, now, cfg, fetch=get_json):
         if small.startswith("https://"):
             offers[-1]["imageSmall"] = small
         offers[-1]["metacritic"] = int(d["metacriticScore"]) if str(d.get("metacriticScore") or "0").isdigit() else 0
+        if str(d.get("steamAppID") or "").isdigit():
+            offers[-1]["steamAppID"] = int(d["steamAppID"])  # para buscar su tráiler en Steam (también si se vende en otra tienda)
     return offers

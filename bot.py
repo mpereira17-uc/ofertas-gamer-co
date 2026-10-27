@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, channels, codes, community, discord, giveaways, health, images, promote, releases, sources, tumblr, weekly, wikidata
+from ogc import alerts, channels, codes, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -31,6 +31,7 @@ SOCIAL_FILE = DATA / "redes_publicados.json"
 RELEASES_FILE = DATA / "lanzamientos.json"
 F2P_FILE = DATA / "gratis_para_siempre.json"
 GIVEAWAYS_FILE = DATA / "regalos.json"
+TRAILERS_FILE = DATA / "trailers.json"
 WEEKLY_FILE = DATA / "resumenes.json"
 ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
 BOT_FILE = DATA / "telegram_bot.json"
@@ -173,6 +174,9 @@ def run(args):
     games, status["Fuente juegos grandes y de consola (Wikidata)"] = wikidata.add_consoles(games, previous_releases, now, sources.get_json)
     games = releases.mark_date_changes(games, previous_releases, now)
     save_json(RELEASES_FILE, {"updatedAt": iso(now), "games": games})
+    clips, status["Tráileres de las ofertas (Steam)"] = trailers.update(offers, games, load_json(TRAILERS_FILE, {}).get("apps", {}), now, sources.get_json)
+    save_json(TRAILERS_FILE, {"updatedAt": iso(now), "apps": clips})
+    offers = trailers.attach([dict(o) for o in offers], clips)
     try:
         epic_next = sources.epic_upcoming(sources.get_json)
         save_json(EPIC_NEXT_FILE, {"updatedAt": iso(now), "games": epic_next})

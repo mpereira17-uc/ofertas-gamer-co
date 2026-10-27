@@ -557,6 +557,69 @@
     });
   });
 
+  // Avance del tráiler al pasar el cursor (o al tocar ▶ en el celular). Va sin sonido y no descarga nada antes.
+  var withHls = function (cb) {
+    if (window.Hls) return cb();
+    var tag = document.querySelector("script[data-hls-lib]");
+    if (!tag) {
+      tag = document.createElement("script");
+      tag.src = "assets/vendor/hls.light.min.js";
+      tag.setAttribute("data-hls-lib", "1");
+      document.head.appendChild(tag);
+    }
+    tag.addEventListener("load", function () { cb(); });
+  };
+  var startPreview = function (box) {
+    if (box.querySelector(".hover-preview")) return;
+    var hls = box.getAttribute("data-hls"), mp4 = box.getAttribute("data-video");
+    var v = document.createElement("video");
+    v.className = "hover-preview";
+    v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("aria-hidden", "true");
+    v.addEventListener("playing", function () { box.classList.add("previewing"); });
+    v.addEventListener("error", function () { stopPreview(box); });
+    box.appendChild(v);
+    if (mp4 || (hls && v.canPlayType("application/vnd.apple.mpegurl"))) {
+      v.src = mp4 || hls;
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+    } else if (hls && "MediaSource" in window) {
+      withHls(function () {
+        if (!v.isConnected || !window.Hls) return;
+        var h = new window.Hls({ enableWorker: false, startLevel: 0, capLevelToPlayerSize: true });
+        h.on(window.Hls.Events.ERROR, function (e, data) { if (data.fatal) stopPreview(box); });
+        h.loadSource(hls);
+        h.attachMedia(v);
+        v._hls = h;
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      });
+    } else {
+      v.remove();
+    }
+  };
+  var stopPreview = function (box) {
+    box.classList.remove("previewing");
+    box.querySelectorAll(".hover-preview").forEach(function (v) {
+      if (v._hls) v._hls.destroy();
+      v.pause(); v.removeAttribute("src"); v.load(); v.remove();
+    });
+  };
+  if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    var fine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    document.querySelectorAll("[data-preview]").forEach(function (box) {
+      var timer;
+      if (fine) {
+        var card = box.closest("li, article") || box;
+        card.addEventListener("mouseenter", function () { timer = setTimeout(function () { startPreview(box); }, 350); });
+        card.addEventListener("mouseleave", function () { clearTimeout(timer); stopPreview(box); });
+      }
+      var btn = box.querySelector(".preview-btn");
+      if (btn) btn.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        if (box.querySelector(".hover-preview")) stopPreview(box); else startPreview(box);
+      });
+    });
+  }
+
   // App instalable (PWA): guarda una copia para abrir sin internet y ofrece instalarla
   if ("serviceWorker" in navigator && location.protocol === "https:") {
     navigator.serviceWorker.register("sw.js").catch(function () {});

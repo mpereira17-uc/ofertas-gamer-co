@@ -564,4 +564,11 @@ img.poster{position:relative;z-index:1;object-fit:contain!important}
 .detail-price s{color:var(--muted)}
 .detail-price .badge{position:static}
 .detail-price .price-at{flex-basis:100%;font-size:.85rem}
-.rel-img .sale-tag{position:absolute;right:8px;bottom:8px;left:auto;top:auto;z-index:2;background:var(--green,#25e09a);color:#0a0716}
+.rel-img .sale-tag{position:absolute;left:8px;bottom:8px;right:auto;top:auto;z-index:2;background:var(--green,#25e09a);color:#0a0716}
+/* avance del tráiler al pasar el cursor */
+.thumb,.rel-img,.spot-img{position:relative}
+.hover-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .35s;pointer-events:none;background:#000}
+.previewing .hover-preview{opacity:1}
+.thumb .badge,.thumb .store-chip,.thumb .trailer-chip,.rel-img .trailer-chip,.spot-img .trailer-chip,.spot-img .badge,.spot-img .spot-rank{z-index:2}
+.previewing .trailer-chip{background:var(--pink,#ff3d81)}
+button.trailer-chip{cursor:pointer;padding:0;font:inherit}
