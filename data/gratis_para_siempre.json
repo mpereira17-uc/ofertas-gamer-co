@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27T20:11:30Z",
+ "updatedAt": "2026-10-27T20:46:02Z",
  "games": [
   {
    "id": "steam-730",
@@ -175,6 +175,17 @@
    ]
   },
   {
+   "id": "steam-2073850",
+   "title": "THE FINALS",
+   "url": "https://store.steampowered.com/app/2073850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073850/4b0efa1275c8cedc030209eb174af726a5ca1776/header.jpg?t=1792501373",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/f68c29ce93dd6eedf9d3c71c26a122e87a1c14c3/capsule_sm_120.jpg?t=1792501373",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-3564740",
    "title": "Where Winds Meet",
    "url": "https://store.steampowered.com/app/3564740/",
@@ -185,17 +196,6 @@
     "Acción",
     "Aventura",
     "Casual"
-   ]
-  },
-  {
-   "id": "steam-2073850",
-   "title": "THE FINALS",
-   "url": "https://store.steampowered.com/app/2073850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073850/4b0efa1275c8cedc030209eb174af726a5ca1776/header.jpg?t=1792501373",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/f68c29ce93dd6eedf9d3c71c26a122e87a1c14c3/capsule_sm_120.jpg?t=1792501373",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
    ]
   },
   {
@@ -236,6 +236,18 @@
    ]
   },
   {
+   "id": "steam-1085660",
+   "title": "Destiny 2",
+   "url": "https://store.steampowered.com/app/1085660/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura"
+   ]
+  },
+  {
    "id": "steam-4162040",
    "title": "Zenless Zone Zero",
    "url": "https://store.steampowered.com/app/4162040/",
@@ -246,18 +258,6 @@
     "Acción",
     "Aventura",
     "Rol"
-   ]
-  },
-  {
-   "id": "steam-1085660",
-   "title": "Destiny 2",
-   "url": "https://store.steampowered.com/app/1085660/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura"
    ]
   },
   {
@@ -345,6 +345,19 @@
    ]
   },
   {
+   "id": "steam-1476970",
+   "title": "IdleOn - The Idle RPG",
+   "url": "https://store.steampowered.com/app/1476970/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1476970/header.jpg?t=1783034427",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1476970/6c5ebda02c5a3ee53ed0ce584e9b4db2a8f3909a/capsule_sm_120.jpg?t=1783034427",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Indie"
+   ]
+  },
+  {
    "id": "steam-1407200",
    "title": "World of Tanks",
    "url": "https://store.steampowered.com/app/1407200/",
@@ -380,11 +393,11 @@
    ]
   },
   {
-   "id": "steam-1476970",
-   "title": "IdleOn - The Idle RPG",
-   "url": "https://store.steampowered.com/app/1476970/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1476970/header.jpg?t=1783034427",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1476970/6c5ebda02c5a3ee53ed0ce584e9b4db2a8f3909a/capsule_sm_120.jpg?t=1783034427",
+   "id": "steam-2707930",
+   "title": "Palia",
+   "url": "https://store.steampowered.com/app/2707930/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2707930/9684b2812591bfafc0085adfd1e7128e9203385e/header.jpg?t=1778603601",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2707930/031e3a2dd724debaa59977d6dc77319aec99b5b1/capsule_sm_120.jpg?t=1778603601",
    "headerChecked": true,
    "genres": [
     "Aventura",
@@ -403,6 +416,19 @@
     "Acción",
     "Multijugador masivo",
     "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-1203220",
+   "title": "NARAKA: BLADEPOINT",
+   "url": "https://store.steampowered.com/app/1203220/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/2c626fe471202399b2fe31cf25b05e5e88289a89/header.jpg?t=1792651021",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/277a2795580719890337ed04366a18cacfdc7944/capsule_sm_120.jpg?t=1792651021",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
    ]
   },
   {
@@ -432,19 +458,6 @@
    ]
   },
   {
-   "id": "steam-1203220",
-   "title": "NARAKA: BLADEPOINT",
-   "url": "https://store.steampowered.com/app/1203220/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/2c626fe471202399b2fe31cf25b05e5e88289a89/header.jpg?t=1792651021",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/277a2795580719890337ed04366a18cacfdc7944/capsule_sm_120.jpg?t=1792651021",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
-   ]
-  },
-  {
    "id": "steam-1665460",
    "title": "eFootball™",
    "url": "https://store.steampowered.com/app/1665460/",
@@ -454,19 +467,6 @@
    "genres": [
     "Simuladores",
     "Deportes"
-   ]
-  },
-  {
-   "id": "steam-2707930",
-   "title": "Palia",
-   "url": "https://store.steampowered.com/app/2707930/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2707930/9684b2812591bfafc0085adfd1e7128e9203385e/header.jpg?t=1778603601",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2707930/031e3a2dd724debaa59977d6dc77319aec99b5b1/capsule_sm_120.jpg?t=1778603601",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
    ]
   },
   {
