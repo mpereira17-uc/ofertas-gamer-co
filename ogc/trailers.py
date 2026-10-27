@@ -10,7 +10,7 @@ from datetime import timedelta
 from .model import iso
 from .releases import DETAILS_URL, steam_trailer
 
-MAX_NEW = 80  # fichas nuevas por corrida
+MAX_NEW = 50  # fichas nuevas por corrida
 KEEP_DAYS = 30  # un tráiler se vuelve a revisar al mes
 
 
