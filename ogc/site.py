@@ -1008,6 +1008,43 @@ class Site:
 <div class="spot-body"><p class="spot-date">{ICONS['calendar']}{e(when)}</p><h3 class="clamp2">{self.title_link(g)}</h3>{f'<p class="spot-desc">{e(desc)}</p>' if desc else ''}<div class="tags">{genres}</div>
 <div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS['bell']}</button></div></div></li>"""
 
+    @staticmethod
+    def mega(words, reverse=False):
+        """Letras gigantes de fondo que se deslizan al bajar (solo decoración)."""
+        line = " · ".join(words) + " · "
+        return (f'<div class="mega{" rev" if reverse else ""}" aria-hidden="true"><div class="mega-track">'
+                f'<span>{e(line)}</span><span>{e(line)}</span><span class="out">{e(line)}</span></div></div>')
+
+    def curve_carousel(self, games, now, count=12):
+        """Carrusel 3D curvo con los juegos más esperados (se arrastra o se mueve con las flechas)."""
+        soon = sorted([g for g in games if g.get("comingSoon") and g.get("image")], key=self.rank)[:count]
+        if len(soon) < 5:
+            return ""
+        items = "".join(
+            f'<li class="curve-item"><a href="{e(self.detail.get(g["id"]) or g["url"])}"{"" if self.detail.get(g["id"]) else " target=\"_blank\" rel=\"noopener noreferrer\""}>'
+            f'<span class="curve-img"{self.preview_attrs(g.get("trailer"))}><img src="{e(g["image"])}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async"></span>'
+            f'<span class="curve-name">{e(g["title"])}</span><span class="curve-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
+            for g in soon)
+        return (f'<section class="curve" aria-labelledby="curve-h"><div class="sec-head"><h2 id="curve-h">{ICONS["star"]} Los más esperados</h2>'
+                f'<p class="meta">Arrastra o usa las flechas. <a href="lanzamientos.html">Ver el calendario</a></p></div>'
+                f'<div class="curve-stage"><ul class="curve-track">{items}</ul>'
+                f'<button type="button" class="curve-nav prev" aria-label="Anterior">‹</button><button type="button" class="curve-nav next" aria-label="Siguiente">›</button></div></section>')
+
+    def free_ring(self, free):
+        """Rueda giratoria con los juegos gratis de ahora (Epic y las demás tiendas)."""
+        items = [(o["title"], o.get("image"), self.detail.get(o["id"]) or o["destinationUrl"], o["store"]) for o in free if o.get("image")]
+        for g in getattr(self, "giveaways", []):
+            if g.get("image") and g["title"] not in {t for t, *_ in items} and g.get("type") == "game":
+                items.append((g["title"], g["image"], "juegos-gratis-en-todas-las-tiendas.html", dict((k, n) for k, n, _ in giveaways.GROUPS).get(g["group"], "")))
+        items = items[:8]
+        if len(items) < 4:
+            return ""
+        n = len(items)
+        tiles = "".join(f'<li><a href="{e(url)}"><img src="{e(img)}" alt="{e(t)}" width="460" height="215" loading="lazy" decoding="async"><span>{e(store)}</span></a></li>'
+                        for i, (t, img, url, store) in enumerate(items))
+        return (f'<div class="ring-wrap"><div class="ring-stage"><ul class="ring">{tiles}</ul>'
+                f'<p class="ring-core"><strong>{n}</strong> gratis<br>ahora</p></div></div>')
+
     def spotlight(self, games, now, days=30, count=8):
         """Los más esperados que salen en los próximos días (popularidad de Steam y Wikidata)."""
         today = now.strftime("%Y-%m-%d")
@@ -1055,7 +1092,7 @@ class Site:
             {"@type": "ListItem", "position": i + 1, "name": g["title"], "url": g["url"]} for i, g in enumerate(upcoming[:30])]}
         self.layout("lanzamientos.html", "Calendario de lanzamientos de juegos de PC",
                     "Próximos lanzamientos y estrenos recientes de juegos de PC y consolas, con la fecha que publica la tienda, plataformas y géneros.",
-                    f"""<div class="rel-top"><div><h1>Calendario de <span class="grad">lanzamientos</span></h1>
+                    self.mega(["ESTRENOS", "PC", "PLAYSTATION", "XBOX", "SWITCH"]) + f"""<div class="rel-top"><div><h1>Calendario de <span class="grad">lanzamientos</span></h1>
 <p class="lead">Los próximos juegos de PC y consolas y los estrenos recientes, día por día. Las fechas son las que publica cada tienda y pueden cambiar.</p>
 {updated_line}</div></div>
 {self.spotlight(games, now)}
@@ -1673,13 +1710,17 @@ class Site:
 {updated_line}
 </section>
 {self.feature(free + top)}
+{self.curve_carousel(games or [], updated_dt)}
 {self.dotd_block(dotd)}
 {self.soon_strip(live)}
 {self.quick_search()}
 {self.ad_slot("banner_after_hero")}
+{self.mega(["GRATIS", "OFERTAS", "ESTRENOS", "COLOMBIA"])}
 <h2>{ICONS['gift']} Gratis esta semana</h2>
+{self.free_ring(free)}
 {self.offer_list(free[:8], with_filters=False, list_id="free-home") if free else '<p>No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
 {f'<p><a class="btn" href="juegos-gratis.html">Ver los {len(free)} juegos gratis</a></p>' if len(free) > 8 else ''}
+{self.mega(["DESCUENTOS", "STEAM", "EPIC", "GOG", "HUMBLE"], reverse=True)}
 <h2>{ICONS['flame']} Mejores ofertas verificadas</h2>
 {self.offer_list(top, with_filters=False, list_id="top-home")}
 <p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
@@ -1696,7 +1737,7 @@ class Site:
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
                     "Descuentos de juegos de PC en Steam, GOG, Humble Store, Green Man Gaming, Fanatical y Epic, con precio original, precio actual y porcentaje de descuento.",
-                    f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}{self.steam_sales(games or [], updated_dt, {o['title'].lower() for o in deals})}{self.ig_banner('rpg')}",
+                    self.mega(["OFERTAS", "DESCUENTOS", "MÍNIMOS", "PESOS"]) + f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}{self.steam_sales(games or [], updated_dt, {o['title'].lower() for o in deals})}{self.ig_banner('rpg')}",
                     crumbs=[("ofertas.html", "Ofertas")], jsonld=[self.item_list_ld(free + deals)])
         self.layout("favoritos.html", "Mis favoritos",
                     "Las ofertas que guardaste con la estrella. Se guardan solo en este navegador.",

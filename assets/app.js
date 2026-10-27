@@ -687,6 +687,115 @@
   }, { passive: true });
   onScroll();
 
+  // Letras gigantes que se deslizan al bajar
+  var megas = document.querySelectorAll(".mega");
+  if (!calm && megas.length) {
+    var megaTick = false;
+    var moveMega = function () {
+      megaTick = false;
+      var vh = window.innerHeight;
+      megas.forEach(function (m) {
+        var r = m.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        var shift = (r.top - vh) * 0.35;
+        m.firstElementChild.style.setProperty("--mx", (m.classList.contains("rev") ? -shift - 400 : shift) + "px");
+      });
+    };
+    window.addEventListener("scroll", function () { if (!megaTick) { megaTick = true; requestAnimationFrame(moveMega); } }, { passive: true });
+    moveMega();
+  }
+
+  // Carrusel 3D curvo (arrastrar, flechas, teclado y avance solo)
+  document.querySelectorAll(".curve-stage").forEach(function (stage) {
+    var items = Array.prototype.slice.call(stage.querySelectorAll(".curve-item"));
+    if (!items.length) return;
+    var cur = 0, n = items.length, drag = null, moved = 0, auto;
+    var place = function (offset) {
+      var w = items[0].offsetWidth || 300, wide = stage.offsetWidth < 600 ? 0.72 : 0.62;
+      items.forEach(function (it, i) {
+        var d = i - cur - (offset || 0);
+        if (d > n / 2) d -= n;
+        if (d < -n / 2) d += n;
+        var a = Math.abs(d);
+        it.style.transform = "translateX(" + (d * w * wide) + "px) translateZ(" + (-a * 140) + "px) rotateY(" + (-d * 32) + "deg)";
+        it.style.opacity = a > 3.2 ? 0 : 1;
+        it.style.zIndex = 100 - Math.round(a * 10);
+        it.classList.toggle("is-center", a < 0.5);
+        var link = it.querySelector("a");
+        if (link) link.tabIndex = a < 0.5 ? 0 : -1;
+      });
+    };
+    var go = function (step) { cur = (cur + step + n) % n; place(); };
+    var stop = function () { clearInterval(auto); };
+    var start = function () { stop(); if (!calm) auto = setInterval(function () { go(1); }, 3800); };
+    stage.querySelector(".prev").addEventListener("click", function () { go(-1); start(); });
+    stage.querySelector(".next").addEventListener("click", function () { go(1); start(); });
+    stage.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") { go(-1); start(); }
+      if (ev.key === "ArrowRight") { go(1); start(); }
+    });
+    stage.addEventListener("pointerdown", function (ev) {
+      if (ev.target.closest(".curve-nav")) return;
+      drag = ev.clientX; moved = 0; stage.classList.add("drag"); stop();
+    });
+    window.addEventListener("pointermove", function (ev) {
+      if (drag === null) return;
+      moved = ev.clientX - drag;
+      place(-moved / ((items[0].offsetWidth || 300) * 0.62));
+    });
+    window.addEventListener("pointerup", function () {
+      if (drag === null) return;
+      stage.classList.remove("drag");
+      var steps = Math.round(-moved / ((items[0].offsetWidth || 300) * 0.62));
+      drag = null;
+      go(steps);
+      start();
+    });
+    items.forEach(function (it, i) {
+      it.addEventListener("click", function (ev) {
+        // un arrastre no abre el juego; tocar uno de los lados lo trae al centro
+        if (Math.abs(moved) > 6 || !it.classList.contains("is-center")) {
+          ev.preventDefault();
+          if (Math.abs(moved) <= 6) { cur = i; place(); start(); }
+        }
+        moved = 0;
+      });
+    });
+    stage.addEventListener("mouseenter", stop);
+    stage.addEventListener("mouseleave", start);
+    window.addEventListener("resize", function () { place(); });
+    place();
+    start();
+  });
+
+  // Rueda de juegos gratis: cada portada en su lugar del anillo (el giro lo hace el CSS)
+  var placeRings = function () {
+    document.querySelectorAll(".ring").forEach(function (ring) {
+      var tiles = ring.children, n = tiles.length, w = ring.offsetWidth || 190;
+      var r = Math.max(w * 1.2, (w / 2) / Math.tan(Math.PI / n) + 24);
+      Array.prototype.forEach.call(tiles, function (li, i) {
+        li.style.transform = "rotateY(" + (i * 360 / n) + "deg) translateZ(" + Math.round(r) + "px)";
+      });
+    });
+  };
+  placeRings();
+  window.addEventListener("resize", placeRings);
+
+  // Intro con el logo: solo la primera vez que alguien entra
+  if (!calm && !store("ogc-intro") && document.body) {
+    store("ogc-intro", "1");
+    var intro = document.createElement("div");
+    intro.className = "intro";
+    intro.setAttribute("aria-hidden", "true");
+    intro.innerHTML = '<svg viewBox="0 0 600 160"><text x="300" y="80" text-anchor="middle">OFERTAS GAMER</text>' +
+      '<text class="sub" x="300" y="128" text-anchor="middle">COLOMBIA</text></svg>';
+    var closeIntro = function () { if (intro.parentNode) intro.parentNode.removeChild(intro); };
+    intro.addEventListener("click", closeIntro);
+    intro.addEventListener("animationend", function (ev) { if (ev.target === intro) closeIntro(); });
+    document.body.appendChild(intro);
+    setTimeout(closeIntro, 2500);
+  }
+
   // Aparición de secciones y tarjetas
   if (!calm && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -694,7 +803,7 @@
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    document.querySelectorAll("main h2, main .card, main .rel-card, .stores li, .faq details, .stats li, .filters, .prose > *").forEach(function (el) {
+    document.querySelectorAll("main h2, main .card, main .rel-card, main .spot-card, .stores li, .faq details, .stats li, .filters, .prose > *").forEach(function (el) {
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.classList.add("reveal");
       el.style.transitionDelay = Math.min(siblings % 6, 5) * 70 + "ms";
