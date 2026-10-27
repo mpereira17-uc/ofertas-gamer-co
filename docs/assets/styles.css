@@ -703,3 +703,31 @@ a.hm-d:hover{transform:scale(1.15)}
 .ev.live .ev-left{color:var(--pink,#ff3d81)}
 @media (max-width:900px){.ev-covers a{width:86px}.ev-covers a:nth-child(3){display:none}}
 @media (max-width:600px){.ev{grid-template-columns:48px 1fr}.ev-emoji{font-size:1.8rem}.ev-info{grid-row:auto}.ev-covers{grid-column:1 / -1;grid-row:auto}.ev-covers a{width:auto;flex:1}.ev-covers a:nth-child(3){display:block}}
+/* ---------- temporada de Halloween (la clase la pone el bot del 15 de octubre al 2 de noviembre) ---------- */
+body.halloween{--gold:#ff8a1f;--neon-3:#ff8a1f;--neon-1:#a855f7;--hot:#a855f7;--pink:#a855f7;--yellow:#ffb347;--border-strong:#4a2f6b;
+  --glow:0 0 0 1px rgba(255,138,31,.4),0 14px 40px -14px rgba(168,85,247,.6);--flag:linear-gradient(90deg,#ff8a1f 0 50%,#a855f7 50% 75%,#3ddc84 75%);
+  background-image:radial-gradient(1200px 600px at 85% -10%,rgba(255,138,31,.14),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(168,85,247,.16),transparent 60%)}
+.halloween .brand::after{content:"🎃";margin-left:6px;font-size:1.1em;display:inline-block;animation:pumpkin 2.6s ease-in-out infinite}
+@keyframes pumpkin{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg) scale(1.08)}}
+.halloween .bg-decor::after{content:"";position:fixed;top:56px;right:0;width:220px;height:220px;opacity:.35;pointer-events:none;z-index:0;
+  background:no-repeat top right/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23d9cff5' stroke-width='1.2'%3E%3Cpath d='M200 0L60 140M200 0L100 180M200 0L20 60M200 0L140 200M200 0L0 10'/%3E%3Cpath d='M170 30q-20 -10 -30 -30M150 50q-30 -10 -45 -45M128 72q-40 -12 -62 -60M104 96q-52 -12 -82 -76M80 120q-62 -14 -98 -96'/%3E%3Cpath d='M180 20q-5 20 -2 45M160 40q-6 30 0 70M140 60q-8 40 2 95M118 82q-10 50 4 118'/%3E%3C/svg%3E")}
+.spider{position:absolute;top:56px;right:120px;font-size:22px;font-style:normal;animation:spider 7s ease-in-out infinite}
+.spider::before{content:"";position:absolute;left:50%;bottom:100%;width:1px;height:200px;background:rgba(217,207,245,.5)}
+@keyframes spider{0%,100%{transform:translateY(0)}50%{transform:translateY(120px)}}
+.halloween .card:hover,.halloween .rel-card:hover,.halloween .spot-card:hover{border-color:#ff8a1f;box-shadow:0 0 0 1px rgba(255,138,31,.45),0 18px 44px -16px rgba(168,85,247,.75)}
+.halloween .btn-primary{background:linear-gradient(135deg,#ff8a1f,#a855f7)}
+.halloween .badge{background:#ff8a1f}
+.halloween h2::after{background:linear-gradient(90deg,#ff8a1f,#a855f7,#3ddc84)}
+.bats{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.bat{position:absolute;top:0;left:0;width:34px;height:18px;opacity:.75;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'%3E%3Cpath fill='%23140a22' stroke='%23ff8a1f' stroke-width='1' d='M32 10c2-4 4-5 4-5l1 4c3-1 5-1 5-1-1 3 0 6 0 6 6-6 14-8 22-6-6 2-8 6-9 10-3-2-7-2-9 1-2-3-6-3-8 0-2-2-4-2-6 0-2-3-6-3-8 0-2-3-6-3-9-1-1-4-3-8-9-10 8-2 16 0 22 6 0 0 1-3 0-6 0 0 2 0 5 1l1-4s2 1 4 5z'/%3E%3C/svg%3E");
+  animation:bat-fly 16s linear infinite}
+.bat:nth-child(2){animation-duration:21s;animation-delay:-6s;width:24px;height:13px}
+.bat:nth-child(3){animation-duration:18s;animation-delay:-11s}
+.bat:nth-child(4){animation-duration:25s;animation-delay:-3s;width:20px;height:11px}
+.bat:nth-child(5){animation-duration:19s;animation-delay:-15s;width:28px;height:15px}
+@keyframes bat-fly{0%{transform:translate(-60px,22vh) scaleY(1)}10%{transform:translate(10vw,14vh) scaleY(.4)}20%{transform:translate(20vw,26vh) scaleY(1)}30%{transform:translate(32vw,10vh) scaleY(.4)}40%{transform:translate(44vw,30vh) scaleY(1)}50%{transform:translate(56vw,16vh) scaleY(.4)}60%{transform:translate(66vw,34vh) scaleY(1)}70%{transform:translate(76vw,12vh) scaleY(.4)}80%{transform:translate(86vw,24vh) scaleY(1)}100%{transform:translate(110vw,8vh) scaleY(.4)}}
+.halloween-box{margin:22px 0;padding:18px;border-radius:20px;border:1px solid #ff8a1f;background:linear-gradient(135deg,rgba(255,138,31,.14),rgba(168,85,247,.14)),var(--surface)}
+.halloween-box h2{margin-top:0}
+@media (prefers-reduced-motion:reduce){.bats{display:none}.halloween .brand::after{animation:none}}
+@media (max-width:600px){.halloween .bg-decor::after{width:120px;height:120px}.spider{right:60px}}
