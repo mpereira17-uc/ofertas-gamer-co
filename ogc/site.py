@@ -3,6 +3,7 @@
 import hashlib
 import html
 import json
+import re
 import shutil
 from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
@@ -651,26 +652,61 @@ class Site:
             txt = f'<strong>Faltan {pick["days"]} días</strong> para las {e(pick["nombre"])} ({e(day_es(pick["inicio"]))}).'
         return f'<p class="steam-strip">{ICONS["clock"]}<span>{txt}</span><a href="rebajas-de-steam.html">Ver calendario de rebajas →</a></p>'
 
-    def steam_sales_page(self, now, updated_line):
+    def event_covers(self, ev, games, live, used, count=3):
+        """Portadas reales para ilustrar un evento: juegos del tema (por género o palabras), o las mejores ofertas."""
+        if ev["tipo"] == "rebaja":
+            pool = [(o["title"], o.get("image"), self.detail.get(o["id"]) or o["destinationUrl"])
+                    for o in sorted(live, key=lambda o: -(o.get("discountPercentage") or 0)) if o.get("image") and o.get("currentPrice")]
+        else:
+            ranked = sorted([g for g in games if g.get("image") and g["id"] in self.detail], key=self.rank)
+            if ev["tipo"] == "next":
+                ranked = [g for g in ranked if g.get("comingSoon")]
+            kw = ev.get("buscar") or []
+            def hit(g):  # en mayúscula = género de Steam; en minúscula = palabra completa del título o la descripción
+                text = (g["title"] + " " + (g.get("description") or "")).lower()
+                return any(k in g.get("genres", []) if k[:1].isupper() else re.search(r"\b" + re.escape(k) + r"\b", text) for k in kw)
+            themed = [g for g in ranked if hit(g)] if kw else ranked
+            pool = [(g["title"], g["image"], self.detail[g["id"]]) for g in themed + ranked]
+        out = []
+        for t, img, url in pool:
+            if t not in used and t not in {x[0] for x in out}:
+                out.append((t, img, url))
+            if len(out) == count:
+                break
+        used.update(t for t, *_ in out)
+        return out
+
+    def steam_sales_page(self, now, updated_line, live=(), games=()):
         cfg = getattr(self, "steam_cfg", {}) or {}
         evs = self.steam_events(now)
         if not evs:
             return
+        used = set()
         sale = next((x for x in evs if x["tipo"] == "rebaja" and not x["live"]), None)
         hero = ""
         if sale:
-            hero = (f'<section class="countdown-hero" data-steam-countdown="{e(sale["inicio"])}"><p class="eyebrow">Próxima gran rebaja</p><h2>{e(sale["nombre"])}</h2>'
+            mosaic = "".join(f'<img src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async">' for _, img, _ in self.event_covers(sale, games, live, used, 8))
+            hero = (f'<section class="countdown-hero" data-steam-countdown="{e(sale["inicio"])}"><div class="cd-mosaic" aria-hidden="true">{mosaic}</div>'
+                    f'<div class="cd-inner"><p class="cd-emoji" aria-hidden="true">{e(sale.get("emoji", ""))}</p><p class="eyebrow">Próxima gran rebaja</p><h2>{e(sale["nombre"])}</h2>'
                     f'<p class="cd-date">Del {e(day_es(sale["inicio"]))} al {e(day_es(sale["fin"]))}</p>'
-                    f'<p class="cd-clock" aria-live="off"><span><b data-cd="d">{sale["days"]}</b>días</span><span><b data-cd="h">–</b>horas</span><span><b data-cd="m">–</b>min</span><span><b data-cd="s">–</b>seg</span></p></section>')
+                    f'<p class="cd-clock" aria-live="off"><span><b data-cd="d">{sale["days"]}</b>días</span><span><b data-cd="h">–</b>horas</span><span><b data-cd="m">–</b>min</span><span><b data-cd="s">–</b>seg</span></p></div></section>')
         kinds = {"rebaja": "Gran rebaja", "next": "Demos gratis", "fest": "Festival temático"}
-        rows = "".join(
-            f'<li class="ev ev-{e(x["tipo"])}{" live" if x["live"] else ""}"><span class="ev-kind">{e(kinds.get(x["tipo"], "Evento"))}</span>'
-            f'<strong>{e(x["nombre"])}</strong><span class="ev-dates">{e(day_es(x["inicio"]))} – {e(day_es(x["fin"]))}</span>'
-            f'<span class="ev-left">{"En curso ahora" if x["live"] else ("Empieza mañana" if x["days"] == 1 else f"Faltan {x['days']} días")}</span></li>' for x in evs)
+        rows = []
+        for x in evs:
+            covers = self.event_covers(x, games, live, used)
+            bg = f'<img class="ev-bg" src="{e(covers[0][1])}" alt="" width="460" height="215" loading="lazy" decoding="async">' if covers else ""
+            thumbs = "".join(f'<a href="{e(url)}" title="{e(t)}"><img src="{e(img)}" alt="{e(t)}" width="460" height="215" loading="lazy" decoding="async"></a>' for t, img, url in covers)
+            left = "En curso ahora" if x["live"] else ("Empieza mañana" if x["days"] == 1 else f"Faltan {x['days']} días")
+            rows.append(f'<li class="ev ev-{e(x["tipo"])}{" live" if x["live"] else ""}">{bg}<span class="ev-emoji" aria-hidden="true">{e(x.get("emoji", ""))}</span>'
+                        f'<div class="ev-info"><span class="ev-kind">{e(kinds.get(x["tipo"], "Evento"))}</span><strong>{e(x["nombre"])}</strong>'
+                        f'<span class="ev-dates">{e(day_es(x["inicio"]))} – {e(day_es(x["fin"]))}</span><span class="ev-left">{left}</span></div>'
+                        f'<div class="ev-covers">{thumbs}</div></li>')
+        rows = "".join(rows)
         faq = ('<section class="prose"><h2>Preguntas sobre las rebajas de Steam</h2>'
                '<h3>¿A qué hora empiezan?</h3><p>Valve publica el día, no la hora. Normalmente empiezan a las 10 a. m. hora del Pacífico, que en Colombia es a las 12 del mediodía (en diciembre, por el cambio de horario de EE. UU., suele ser a la 1 p. m.).</p>'
                '<h3>¿Qué es un "Fest"?</h3><p>Son semanas temáticas: Steam junta juegos de un tipo (carreras, peleas, estrategia…) y muchos bajan de precio. No son tan grandes como las rebajas de temporada.</p>'
                '<h3>¿Qué es el Steam Next Fest?</h3><p>Una semana con cientos de demos gratis de juegos que todavía no salen.</p>'
+               '<h3>¿Las imágenes son de los eventos?</h3><p>Son portadas de juegos reales del tema de cada evento que están en nuestra página (o de las mejores ofertas de hoy). Valve publica el póster oficial de cada evento pocos días antes de que empiece.</p>'
                '<h3>¿Cómo me entero de los descuentos?</h3><p>El bot revisa los precios de Steam Colombia cada 4 horas y los publica en <a href="ofertas.html">Ofertas</a> y en nuestro canal de Telegram.</p></section>')
         self.layout("rebajas-de-steam.html", "Rebajas de Steam 2026 y 2027: fechas oficiales y cuenta regresiva",
                     "Cuándo son las próximas rebajas de Steam: invierno 2026, primavera y verano 2027, fests temáticos y Next Fest, con cuenta regresiva y hora en Colombia.",
@@ -735,7 +771,7 @@ class Site:
     def fun_pages(self, live, free, games, now, updated_line):
         """Páginas nuevas: rebajas de Steam, test de recomendación, sorpresa y juegos retrasados."""
         import json as _json
-        self.steam_sales_page(now, updated_line)
+        self.steam_sales_page(now, updated_line, live, games)
         # datos para el test y para «Sorpréndeme» (solo lo que ya está publicado en la página)
         by_title = {g["title"].lower(): g for g in games}
         items = []
@@ -948,7 +984,7 @@ class Site:
             self.layout(name, f"{o['title']} {what} en {o['store']}",
                         f"{o['title']} está {what} en {o['store']}. Precio, vigencia y enlace oficial verificados por Ofertas Gamer CO.",
                         f"""<article class="detail">
-<div class="detail-media">{img}{self.badge(o)}</div>
+<div class="detail-media" id="trailer">{img}{self.badge(o)}{self.trailer_link(dict(o, url=f"https://store.steampowered.com/app/{o['steamAppID']}/" if o.get("steamAppID") else o["officialUrl"]))}</div>
 <div class="detail-info">{self.store_chip(o)}
 <h1>{e(o['title'])}</h1>
 {self.price_html(o, big=True)}
@@ -957,8 +993,16 @@ class Site:
 <div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a>{self.alert_button(o, "offer")}</div>
 {search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
 {self.share_whatsapp(o, name)}
-{notice}</div></article>{self.offer_buy(o)}{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
+{notice}</div></article>{self.shots_block(o)}{self.offer_buy(o)}{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
+
+    @staticmethod
+    def shots_block(g):
+        """Capturas oficiales de Steam (la miniatura abre la imagen grande)."""
+        shots = "".join(f'<li><a href="{e(u.replace(".600x338", ".1920x1080"))}" target="_blank" rel="noopener noreferrer">'
+                        f'<img src="{e(u)}" alt="Captura {i + 1} de {e(g["title"])}" width="600" height="338" loading="lazy" decoding="async"></a></li>'
+                        for i, u in enumerate(g.get("shots") or []) if u.startswith("https://"))
+        return f'<section class="shots"><h2>{ICONS["sparkle"]} Capturas oficiales</h2><ul class="shot-grid">{shots}</ul></section>' if shots else ""
 
     @staticmethod
     def trailer_link(g):
@@ -988,10 +1032,7 @@ class Site:
             tags = "".join(f'<span class="tag">{e(x)}</span>' for x in g.get("platforms", [])) + \
                 "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])) + \
                 ('<span class="tag es">En español</span>' if g.get("spanish") else "")
-            shots = "".join(f'<li><a href="{e(u.replace(".600x338", ".1920x1080"))}" target="_blank" rel="noopener noreferrer">'
-                            f'<img src="{e(u)}" alt="Captura {i + 1} de {e(g["title"])}" width="600" height="338" loading="lazy" decoding="async"></a></li>'
-                            for i, u in enumerate(g.get("shots") or []))
-            extra = (f'<section class="shots"><h2>{ICONS["sparkle"]} Capturas oficiales</h2><ul class="shot-grid">{shots}</ul></section>' if shots else "")
+            extra = self.shots_block(g)
             if g.get("requirements"):
                 extra += (f'<section class="reqs"><h2>{ICONS["check"]} Requisitos mínimos de PC</h2><ul>'
                           + "".join(f"<li>{e(ln)}</li>" for ln in g["requirements"].splitlines()) + '</ul><p class="meta">Según Steam. Pueden cambiar antes del lanzamiento.</p></section>')

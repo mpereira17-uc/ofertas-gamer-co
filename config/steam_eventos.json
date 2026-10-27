@@ -3,23 +3,242 @@
   "revisado": "2026-10-27",
   "nota": "Fechas oficiales publicadas por Valve. Steam no publica aquí la hora exacta; normalmente empiezan a las 10 a. m. hora del Pacífico.",
   "eventos": [
-    {"nombre": "Steam Scream V (Halloween)", "tipo": "fest", "inicio": "2026-10-26", "fin": "2026-11-02"},
-    {"nombre": "Auto-Battler RPG Fest", "tipo": "fest", "inicio": "2026-11-16", "fin": "2026-11-23"},
-    {"nombre": "Rebajas de Invierno de Steam 2026", "tipo": "rebaja", "inicio": "2026-12-17", "fin": "2027-01-04"},
-    {"nombre": "Desktop Companion Fest", "tipo": "fest", "inicio": "2027-01-14", "fin": "2027-01-18"},
-    {"nombre": "Shop Keeper Fest", "tipo": "fest", "inicio": "2027-01-25", "fin": "2027-02-01"},
-    {"nombre": "Sheep Fest", "tipo": "fest", "inicio": "2027-02-04", "fin": "2027-02-08"},
-    {"nombre": "Couch Co-Op Fest (cooperativo en el sofá)", "tipo": "fest", "inicio": "2027-02-08", "fin": "2027-02-15"},
-    {"nombre": "Steam Next Fest (demos gratis)", "tipo": "next", "inicio": "2027-02-22", "fin": "2027-03-01"},
-    {"nombre": "Rhythm Fest (ritmo)", "tipo": "fest", "inicio": "2027-03-08", "fin": "2027-03-15"},
-    {"nombre": "Rebajas de Primavera de Steam 2027", "tipo": "rebaja", "inicio": "2027-03-18", "fin": "2027-03-25"},
-    {"nombre": "Dinos vs. Robots Fest", "tipo": "fest", "inicio": "2027-03-29", "fin": "2027-04-05"},
-    {"nombre": "Racing Fest (carreras)", "tipo": "fest", "inicio": "2027-04-12", "fin": "2027-04-19"},
-    {"nombre": "Witch Fest (brujas)", "tipo": "fest", "inicio": "2027-04-22", "fin": "2027-04-26"},
-    {"nombre": "Fighting Fest (peleas)", "tipo": "fest", "inicio": "2027-04-26", "fin": "2027-05-03"},
-    {"nombre": "Real-Time Strategy Fest (estrategia)", "tipo": "fest", "inicio": "2027-05-10", "fin": "2027-05-17"},
-    {"nombre": "Mountaineering Fest (escalada)", "tipo": "fest", "inicio": "2027-05-31", "fin": "2027-06-03"},
-    {"nombre": "Steam Next Fest (demos gratis)", "tipo": "next", "inicio": "2027-06-14", "fin": "2027-06-21"},
-    {"nombre": "Rebajas de Verano de Steam 2027", "tipo": "rebaja", "inicio": "2027-06-24", "fin": "2027-07-08"}
+    {
+      "nombre": "Steam Scream V (Halloween)",
+      "tipo": "fest",
+      "inicio": "2026-10-26",
+      "fin": "2026-11-02",
+      "emoji": "🎃",
+      "buscar": [
+        "horror",
+        "terror",
+        "zombi",
+        "zombie",
+        "zombis",
+        "muertos vivientes",
+        "demonio",
+        "demonios",
+        "sangre",
+        "miedo",
+        "fantasma",
+        "fantasmas",
+        "ghost",
+        "ghosts",
+        "undead"
+      ]
+    },
+    {
+      "nombre": "Auto-Battler RPG Fest",
+      "tipo": "fest",
+      "inicio": "2026-11-16",
+      "fin": "2026-11-23",
+      "emoji": "⚔️",
+      "buscar": [
+        "Rol",
+        "rpg",
+        "autobattler",
+        "auto-battler",
+        "auto battler"
+      ]
+    },
+    {
+      "nombre": "Rebajas de Invierno de Steam 2026",
+      "tipo": "rebaja",
+      "inicio": "2026-12-17",
+      "fin": "2027-01-04",
+      "emoji": "❄️",
+      "buscar": []
+    },
+    {
+      "nombre": "Desktop Companion Fest",
+      "tipo": "fest",
+      "inicio": "2027-01-14",
+      "fin": "2027-01-18",
+      "emoji": "🖥️",
+      "buscar": [
+        "Casual",
+        "escritorio",
+        "desktop",
+        "mascota",
+        "pet",
+        "idle"
+      ]
+    },
+    {
+      "nombre": "Shop Keeper Fest",
+      "tipo": "fest",
+      "inicio": "2027-01-25",
+      "fin": "2027-02-01",
+      "emoji": "🏪",
+      "buscar": [
+        "tienda",
+        "shop",
+        "negocio",
+        "business",
+        "comercia",
+        "Simuladores"
+      ]
+    },
+    {
+      "nombre": "Sheep Fest",
+      "tipo": "fest",
+      "inicio": "2027-02-04",
+      "fin": "2027-02-08",
+      "emoji": "🐑",
+      "buscar": [
+        "oveja",
+        "sheep",
+        "granja",
+        "farm",
+        "animal"
+      ]
+    },
+    {
+      "nombre": "Couch Co-Op Fest (cooperativo en el sofá)",
+      "tipo": "fest",
+      "inicio": "2027-02-08",
+      "fin": "2027-02-15",
+      "emoji": "🛋️",
+      "buscar": [
+        "cooperativ",
+        "co-op",
+        "coop",
+        "amigos",
+        "friends",
+        "local"
+      ]
+    },
+    {
+      "nombre": "Steam Next Fest (demos gratis)",
+      "tipo": "next",
+      "inicio": "2027-02-22",
+      "fin": "2027-03-01",
+      "emoji": "🧪",
+      "buscar": []
+    },
+    {
+      "nombre": "Rhythm Fest (ritmo)",
+      "tipo": "fest",
+      "inicio": "2027-03-08",
+      "fin": "2027-03-15",
+      "emoji": "🎵",
+      "buscar": [
+        "ritmo",
+        "rhythm",
+        "música",
+        "music",
+        "baile",
+        "dance"
+      ]
+    },
+    {
+      "nombre": "Rebajas de Primavera de Steam 2027",
+      "tipo": "rebaja",
+      "inicio": "2027-03-18",
+      "fin": "2027-03-25",
+      "emoji": "🌸",
+      "buscar": []
+    },
+    {
+      "nombre": "Dinos vs. Robots Fest",
+      "tipo": "fest",
+      "inicio": "2027-03-29",
+      "fin": "2027-04-05",
+      "emoji": "🦖",
+      "buscar": [
+        "dino",
+        "robot",
+        "mecha",
+        "mech",
+        "jurás"
+      ]
+    },
+    {
+      "nombre": "Racing Fest (carreras)",
+      "tipo": "fest",
+      "inicio": "2027-04-12",
+      "fin": "2027-04-19",
+      "emoji": "🏎️",
+      "buscar": [
+        "Carreras",
+        "carreras",
+        "racing",
+        "race",
+        "conducción",
+        "driving"
+      ]
+    },
+    {
+      "nombre": "Witch Fest (brujas)",
+      "tipo": "fest",
+      "inicio": "2027-04-22",
+      "fin": "2027-04-26",
+      "emoji": "🧙",
+      "buscar": [
+        "bruja",
+        "witch",
+        "magia",
+        "magic",
+        "hechi",
+        "spell"
+      ]
+    },
+    {
+      "nombre": "Fighting Fest (peleas)",
+      "tipo": "fest",
+      "inicio": "2027-04-26",
+      "fin": "2027-05-03",
+      "emoji": "🥊",
+      "buscar": [
+        "lucha",
+        "pelea",
+        "fight",
+        "combate",
+        "brawl"
+      ]
+    },
+    {
+      "nombre": "Real-Time Strategy Fest (estrategia)",
+      "tipo": "fest",
+      "inicio": "2027-05-10",
+      "fin": "2027-05-17",
+      "emoji": "🏰",
+      "buscar": [
+        "Estrategia",
+        "strategy",
+        "rts",
+        "ejército",
+        "army"
+      ]
+    },
+    {
+      "nombre": "Mountaineering Fest (escalada)",
+      "tipo": "fest",
+      "inicio": "2027-05-31",
+      "fin": "2027-06-03",
+      "emoji": "🏔️",
+      "buscar": [
+        "montaña",
+        "mountain",
+        "escal",
+        "climb"
+      ]
+    },
+    {
+      "nombre": "Steam Next Fest (demos gratis)",
+      "tipo": "next",
+      "inicio": "2027-06-14",
+      "fin": "2027-06-21",
+      "emoji": "🧪",
+      "buscar": []
+    },
+    {
+      "nombre": "Rebajas de Verano de Steam 2027",
+      "tipo": "rebaja",
+      "inicio": "2027-06-24",
+      "fin": "2027-07-08",
+      "emoji": "☀️",
+      "buscar": []
+    }
   ]
 }

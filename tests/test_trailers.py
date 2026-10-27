@@ -4,7 +4,8 @@ from datetime import datetime, timezone
 from ogc import trailers
 
 NOW = datetime(2026, 10, 27, 1, 0, tzinfo=timezone.utc)
-MOVIE = {"movies": [{"name": "Tráiler", "thumbnail": "https://x/p.jpg", "hls_h264": "https://video.akamai.steamstatic.com/a/hls.m3u8"}]}
+MOVIE = {"movies": [{"name": "Tráiler", "thumbnail": "https://x/p.jpg", "hls_h264": "https://video.akamai.steamstatic.com/a/hls.m3u8"}],
+         "screenshots": [{"path_thumbnail": "https://shared.steamstatic.com/s1.600x338.jpg"}, {"path_thumbnail": "http://inseguro.jpg"}]}
 
 
 class TrailersTest(unittest.TestCase):
@@ -24,11 +25,12 @@ class TrailersTest(unittest.TestCase):
         self.assertEqual(out[0]["trailer"]["hls"], "https://v/10.m3u8")
         self.assertTrue(out[1]["trailer"]["hls"].endswith("hls.m3u8"))
         self.assertNotIn("trailer", out[2])
+        self.assertEqual(out[1]["shots"], ["https://shared.steamstatic.com/s1.600x338.jpg"])
         self.assertIn("2 ofertas con tráiler", status)
 
     def test_no_repite_y_tolera_fallos(self):
         offers = [{"id": "a", "steamAppID": 30}]
-        cache, _ = trailers.update(offers, [], {"30": {"trailer": {}, "at": "2026-10-20T00:00:00Z"}}, NOW,
+        cache, _ = trailers.update(offers, [], {"30": {"trailer": {}, "shots": [], "at": "2026-10-20T00:00:00Z"}}, NOW,
                                    lambda url: self.fail("no debía pedir"))
         self.assertIn("30", cache)
 
