@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27T00:44:33Z",
+ "updatedAt": "2026-10-27T00:51:30Z",
  "games": [
   {
    "id": "steam-730",
@@ -197,19 +197,6 @@
    ]
   },
   {
-   "id": "steam-1974050",
-   "title": "Torchlight: Infinite",
-   "url": "https://store.steampowered.com/app/1974050/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
    "id": "steam-438100",
    "title": "VRChat",
    "url": "https://store.steampowered.com/app/438100/",
@@ -223,11 +210,11 @@
    ]
   },
   {
-   "id": "steam-4162040",
-   "title": "Zenless Zone Zero",
-   "url": "https://store.steampowered.com/app/4162040/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162040/22b56d833834d90674b30498f78e0839e48792db/header_alt_assets_2.jpg?t=1792533213",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4162040/b7b46c035e69ba29a985ce55505631f8e6964b9b/capsule_sm_120_alt_assets_2.jpg?t=1792533213",
+   "id": "steam-1974050",
+   "title": "Torchlight: Infinite",
+   "url": "https://store.steampowered.com/app/1974050/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
    "headerChecked": true,
    "genres": [
     "Acción",
@@ -245,6 +232,19 @@
    "genres": [
     "Acción",
     "Aventura"
+   ]
+  },
+  {
+   "id": "steam-4162040",
+   "title": "Zenless Zone Zero",
+   "url": "https://store.steampowered.com/app/4162040/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162040/22b56d833834d90674b30498f78e0839e48792db/header_alt_assets_2.jpg?t=1792533213",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4162040/b7b46c035e69ba29a985ce55505631f8e6964b9b/capsule_sm_120_alt_assets_2.jpg?t=1792533213",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -419,6 +419,17 @@
    ]
   },
   {
+   "id": "steam-3028330",
+   "title": "Battlefield™ REDSEC",
+   "url": "https://store.steampowered.com/app/3028330/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3028330/7f156ef258b0b34011363f8da61b7e2a714232c7/header.jpg?t=1792018418",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3028330/f7ec6648f9de149b098b8b9674aa99a0b1c284c8/capsule_sm_120.jpg?t=1792018418",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-4508340",
    "title": "NTE: Neverness to Everness",
    "url": "https://store.steampowered.com/app/4508340/",
@@ -429,17 +440,6 @@
     "Acción",
     "Aventura",
     "Rol"
-   ]
-  },
-  {
-   "id": "steam-3028330",
-   "title": "Battlefield™ REDSEC",
-   "url": "https://store.steampowered.com/app/3028330/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3028330/7f156ef258b0b34011363f8da61b7e2a714232c7/header.jpg?t=1792018418",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3028330/f7ec6648f9de149b098b8b9674aa99a0b1c284c8/capsule_sm_120.jpg?t=1792018418",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
    ]
   },
   {
@@ -482,16 +482,16 @@
    ]
   },
   {
-   "id": "steam-24200",
-   "title": "DC Universe™ Online",
-   "url": "https://store.steampowered.com/app/24200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/24200/a7cb4d4f549431bb0e27d6bfa8b5a9c6766a422b/header.jpg?t=1792434219",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24200/ff053443afd3434d5599bbc96d2c955e7adfb7fb/capsule_sm_120.jpg?t=1792434219",
+   "id": "steam-714010",
+   "title": "Aimlabs",
+   "url": "https://store.steampowered.com/app/714010/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/714010/d5e9221e92990e5736994f070ffcd7c4e3af9345/header.jpg?t=1791001714",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/714010/907fa062895ed963ea6182be0a1059059df63057/capsule_sm_120.jpg?t=1791001714",
    "headerChecked": true,
    "genres": [
     "Acción",
     "Aventura",
-    "Multijugador masivo"
+    "Casual"
    ]
   }
  ]
