@@ -1493,7 +1493,9 @@ class Site:
             mine = [o for o in live if o["storeId"] == st["id"]]
             if st["active"] and mine:
                 extra = " Los juegos de GOG no tienen DRM: el instalador es tuyo para siempre." if st["id"] == "gog" else ""
-                pages.append((f"ofertas-{st['id']}.html", f"Ofertas de {st['name']} hoy", f"Ofertas de {st['name']}",
+                # Título según búsquedas reales (vidIQ, 2026-10-27: "mejores ofertas steam" +80% en el mes).
+                title = "Mejores ofertas de Steam hoy" if st["id"] == "steam" else f"Ofertas de {st['name']} hoy"
+                pages.append((f"ofertas-{st['id']}.html", title, f"Ofertas de {st['name']}",
                               f"Juegos gratis y descuentos de {st['name']} verificados, con precio en pesos aproximado.{extra}", mine))
         for name, title, h1, desc, items in pages:
             body = (f'<h1>{e(h1)}</h1><p class="lead">{e(desc)}</p>{updated_line}{notice}'
@@ -1852,8 +1854,8 @@ class Site:
             listing = chips + f'<ul class="spot-grid small" id="f2p-list">{cards}</ul>'
         else:
             listing = '<p class="notice">Todavía no se cargó la lista. Vuelve en unas horas.</p>'
-        self.layout("juegos-gratis-para-siempre.html", "Juegos gratis para siempre en PC (free to play)",
-                    "Los juegos gratis para siempre más jugados en Steam ahora mismo: free to play que puedes descargar sin pagar.",
+        self.layout("juegos-gratis-para-siempre.html", "Juegos de Steam gratis para siempre (free to play)",
+                    "Los juegos de Steam gratis para siempre más jugados ahora mismo: free to play para PC que puedes descargar sin pagar.",
                     f'<h1>Juegos gratis para siempre</h1><p class="lead">Juegos <em>free to play</em> que no cuestan nada, ordenados por los más jugados en Steam. '
                     f'Pueden tener compras dentro del juego. ¿Buscas juegos de pago gratis por tiempo limitado? Mira <a href="juegos-gratis.html">Juegos gratis</a>.</p>'
                     f'{updated_line}{listing}', crumbs=[("juegos-gratis-para-siempre.html", "Gratis para siempre")])
