@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27T01:00:46Z",
+ "updatedAt": "2026-10-27T05:14:38Z",
  "games": [
   {
    "id": "steam-730",
@@ -223,18 +223,6 @@
    ]
   },
   {
-   "id": "steam-1085660",
-   "title": "Destiny 2",
-   "url": "https://store.steampowered.com/app/1085660/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura"
-   ]
-  },
-  {
    "id": "steam-4162040",
    "title": "Zenless Zone Zero",
    "url": "https://store.steampowered.com/app/4162040/",
@@ -248,16 +236,15 @@
    ]
   },
   {
-   "id": "steam-3564740",
-   "title": "Where Winds Meet",
-   "url": "https://store.steampowered.com/app/3564740/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3564740/6083e91454cf6ad67242a0799c4fc7d0dd3f8bde/header.jpg?t=1792379585",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3564740/8ee4ce23171b8704c0a791682b5716e458f1c3be/capsule_sm_120.jpg?t=1792379585",
+   "id": "steam-1085660",
+   "title": "Destiny 2",
+   "url": "https://store.steampowered.com/app/1085660/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Aventura",
-    "Casual"
+    "Aventura"
    ]
   },
   {
@@ -287,6 +274,19 @@
    ]
   },
   {
+   "id": "steam-3564740",
+   "title": "Where Winds Meet",
+   "url": "https://store.steampowered.com/app/3564740/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3564740/6083e91454cf6ad67242a0799c4fc7d0dd3f8bde/header.jpg?t=1792379585",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3564740/8ee4ce23171b8704c0a791682b5716e458f1c3be/capsule_sm_120.jpg?t=1792379585",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Casual"
+   ]
+  },
+  {
    "id": "steam-1449850",
    "title": "Yu-Gi-Oh! Master Duel",
    "url": "https://store.steampowered.com/app/1449850/",
@@ -306,17 +306,6 @@
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1973530/capsule_sm_120.jpg?t=1792746022",
    "headerChecked": true,
    "genres": []
-  },
-  {
-   "id": "steam-2807960",
-   "title": "Battlefield™ 6",
-   "url": "https://store.steampowered.com/app/2807960/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2807960/c12d12ce3c7d217398d3fcad77427bfc9d57c570/header.jpg?t=1792168547",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2807960/d7ae078e0a543a97ff5a5d72165999535b0b1cdc/capsule_sm_120.jpg?t=1792168547",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
   },
   {
    "id": "steam-1222670",
@@ -342,6 +331,17 @@
     "Acción",
     "Multijugador masivo",
     "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-2807960",
+   "title": "Battlefield™ 6",
+   "url": "https://store.steampowered.com/app/2807960/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2807960/c12d12ce3c7d217398d3fcad77427bfc9d57c570/header.jpg?t=1792168547",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2807960/d7ae078e0a543a97ff5a5d72165999535b0b1cdc/capsule_sm_120.jpg?t=1792168547",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
    ]
   },
   {
@@ -394,6 +394,32 @@
    ]
   },
   {
+   "id": "steam-24200",
+   "title": "DC Universe™ Online",
+   "url": "https://store.steampowered.com/app/24200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/24200/a7cb4d4f549431bb0e27d6bfa8b5a9c6766a422b/header.jpg?t=1792434219",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24200/ff053443afd3434d5599bbc96d2c955e7adfb7fb/capsule_sm_120.jpg?t=1792434219",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ]
+  },
+  {
+   "id": "steam-1203220",
+   "title": "NARAKA: BLADEPOINT",
+   "url": "https://store.steampowered.com/app/1203220/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/2c626fe471202399b2fe31cf25b05e5e88289a89/header.jpg?t=1792651021",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/277a2795580719890337ed04366a18cacfdc7944/capsule_sm_120.jpg?t=1792651021",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ]
+  },
+  {
    "id": "steam-1286830",
    "title": "STAR WARS™: The Old Republic™",
    "url": "https://store.steampowered.com/app/1286830/",
@@ -430,6 +456,19 @@
    ]
   },
   {
+   "id": "steam-799960",
+   "title": "Wizard101",
+   "url": "https://store.steampowered.com/app/799960/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/799960/header.jpg?t=1778853004",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/799960/capsule_sm_120.jpg?t=1778853004",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Multijugador masivo"
+   ]
+  },
+  {
    "id": "steam-4508340",
    "title": "NTE: Neverness to Everness",
    "url": "https://store.steampowered.com/app/4508340/",
@@ -443,32 +482,6 @@
    ]
   },
   {
-   "id": "steam-1203220",
-   "title": "NARAKA: BLADEPOINT",
-   "url": "https://store.steampowered.com/app/1203220/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203220/2c626fe471202399b2fe31cf25b05e5e88289a89/header.jpg?t=1792651021",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/277a2795580719890337ed04366a18cacfdc7944/capsule_sm_120.jpg?t=1792651021",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-2325290",
-   "title": "Sky: Niños de la Luz",
-   "url": "https://store.steampowered.com/app/2325290/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2325290/758dff11b25ce6163bbcce01b49d3f550218ddc8/header.jpg?t=1791580167",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2325290/6289cff6197d59a49e492b3b9b56186b0e041a9e/capsule_sm_120.jpg?t=1791580167",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
-   ]
-  },
-  {
    "id": "steam-1599340",
    "title": "Lost Ark",
    "url": "https://store.steampowered.com/app/1599340/",
@@ -479,19 +492,6 @@
     "Acción",
     "Aventura",
     "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-714010",
-   "title": "Aimlabs",
-   "url": "https://store.steampowered.com/app/714010/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/714010/d5e9221e92990e5736994f070ffcd7c4e3af9345/header.jpg?t=1791001714",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/714010/907fa062895ed963ea6182be0a1059059df63057/capsule_sm_120.jpg?t=1791001714",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Casual"
    ]
   }
  ]
