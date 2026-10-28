@@ -43,6 +43,14 @@ ICONS = {k: _SVG.format(v) for k, v in {
     "star": '<path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>',
     "play": '<path d="M8 5v14l11-7z" fill="currentColor"/>',
     "bell": '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
+    "share": '<path d="M7 17L17 7M9 7h8v8"/>',
+    "tick": '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+    "chevL": '<path d="M15 5l-7 7 7 7"/>',
+    "chevR": '<path d="M9 5l7 7-7 7"/>',
+    "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    "pad": '<path d="M7 8h10a4 4 0 0 1 4 4v1a3 3 0 0 1-5.4 1.8L14.5 14h-5l-1.1 1.8A3 3 0 0 1 3 13v-1a4 4 0 0 1 4-4z"/><path d="M7.5 10.5v3M6 12h3M16 11.5h.01M18 13h.01"/>',
+    "ghost": '<path d="M5 21V10a7 7 0 0 1 14 0v11l-2.3-1.6L14.4 21 12 19.4 9.6 21l-2.3-1.6z"/><path d="M9.5 10.5h.01M14.5 10.5h.01"/>',
+    "trophy": '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M10 17h4"/>',
 }.items()}
 
 NAV = [
@@ -173,10 +181,9 @@ class Site:
         if not m or m.start() > 4000 or name.startswith(("oferta-", "juego-")) and name != "oferta-del-dia.html":
             return body
         kind = next((k for key, k in self.HERO_KINDS if key in name), "plain")
-        label = crumbs[0][1] if crumbs else "Ofertas Gamer CO"
         pic = re.search(r'<img[^>]+src="(https://[^"]+)"', body[m.end():m.end() + 60000])
         bg = f'<img class="ph-bg" src="{pic.group(1)}" alt="" width="1280" height="600" decoding="async">' if pic else ""
-        hero = (f'<header class="page-hero ph-{kind}{" has-bg" if bg else ""}">{bg}<p class="ph-kick"><span class="ph-no" aria-hidden="true"></span>{e(label)}</p>'
+        hero = (f'<header class="page-hero ph-{kind}{" has-bg" if bg else ""}">{bg}'
                 f'{m.group(0)}<span class="ph-deco" aria-hidden="true"></span></header>')
         return body[:m.start()] + hero + body[m.end():]
 
@@ -377,9 +384,9 @@ class Site:
         ps = self.price_stats(o)
         if ps and ps["isLow"]:
             chips.append(f'<span class="st low" title="El más bajo que hemos visto desde el {e(day_es(ps["first"]))}">Mínimo histórico</span>')
-        if o.get("metacritic"):
+        if o.get("metacritic") and full:
             chips.append(f'<span class="st mc" title="Nota de la crítica en Metacritic">Crítica {int(o["metacritic"])}</span>')
-        if len(o.get("otherStores") or []) and not full:
+        if len(o.get("otherStores") or []) and full:
             n = len(o["otherStores"])
             chips.append(f'<span class="st muted">+{n} {"tienda" if n == 1 else "tiendas"}</span>')
         if "CO" in (o.get("regions") or []):
@@ -388,7 +395,7 @@ class Site:
             chips.append('<span class="st ref">Precio de referencia en USD</span>')
         else:
             chips.append('<span class="st warn">Región por confirmar</span>')
-        if not o.get("expiresAt"):
+        if not o.get("expiresAt") and full:
             chips.append('<span class="st muted">Vigencia por confirmar</span>')
         if o.get("status") == "Vencido":
             chips.append('<span class="st bad">Oferta terminada</span>')
@@ -443,12 +450,13 @@ class Site:
         alt = f"Imagen de {o['title']}" if o.get("image") else ""
         cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
         return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
-<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}<span class="wm-arrow" aria-hidden="true">↗</span>{self.ribbon(o)}</div>
-<div class="body"><p class="wm-cap">{e(self.card_caption(o))}</p><h3 class="clamp2">{self.title_link(o)}</h3>
+<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}{self.ribbon(o)}</div>
+<div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
+{f'<p class="card-meta"><span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span> Metacritic</p>' if o.get("metacritic") else ''}
 {self.price_html(o)}
 {self.countdown(o)}
 {self.trust_chips(o)}
-<div class="actions">{self.offer_button(o)}{f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>✓</button>' if free and self.cop_saved(o) else ''}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>↗</button></div>
+<div class="actions">{self.offer_button(o)}{f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>{ICONS['tick']}</button>' if free and self.cop_saved(o) else ''}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>{ICONS['share']}</button></div>
 </div></li>"""
 
     def card_caption(self, o):
@@ -486,7 +494,7 @@ class Site:
 <label><span>Precio</span><span><input type="checkbox" name="low"> Solo mínimos históricos</span></label>
 </form>
 <nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav>
-<p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
+<h2 class="sr-only">Lista de ofertas</h2><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
         return filters + f'<ul class="grid{" bento" if bento else ""}{" poster" if poster else ""}" id="{list_id}">' + "".join(cards) + "</ul>"
 
     def support_box(self):
@@ -494,12 +502,12 @@ class Site:
         if not url:
             return ""
         return ('<div class="support"><p><strong>¿Te ahorramos plata?</strong> El sitio es gratis y sin anuncios. '
-                'Si quieres, invítanos un café para mantenerlo.</p>' + ext_link(url, "☕ Apóyanos en Ko-fi", cls="btn btn-kofi") + "</div>")
+                'Si quieres, invítanos un café para mantenerlo.</p>' + ext_link(url, "Apóyanos en Ko-fi", cls="btn btn-kofi") + "</div>")
 
     def side_channels(self):
         links = [ext_link(self.cfg[k], label, cls=f"btn {cls}") for k, label, cls in
                  (("enlace_canal_telegram", "Canal de Telegram", "btn-tg"), ("enlace_canal_whatsapp", "Canal de WhatsApp", "btn-wa"),
-                  ("enlace_discord", "Servidor de Discord", "btn-dc"), ("enlace_kofi", "☕ Apóyanos en Ko-fi", "btn-kofi"))
+                  ("enlace_discord", "Servidor de Discord", "btn-dc"), ("enlace_kofi", "Apóyanos en Ko-fi", "btn-kofi"))
                  if self.cfg.get(k)]
         return '<div class="side-group side-cta">' + "".join(links) + "</div>" if links else ""
 
@@ -547,7 +555,7 @@ class Site:
                 bits.append("hasta el " + end.astimezone(CO_TZ).strftime("%d/%m"))
         meta = f'<span class="ft ft-bottom">{" · ".join(e(b) for b in bits)}</span>'
         kind = "Gratis hoy" if o.get("currentPrice") == 0 else "Oferta destacada"
-        return f'<span class="ft ft-top"><span class="pill">N.º 1</span>{kind}</span>{meta}'
+        return f'<span class="ft ft-top">{kind}</span>{meta}'
 
     def deal_of_day(self, live):
         """Una oferta por día (hora Colombia), la que más vale la pena. Se guarda para que no cambie en el día."""
@@ -598,20 +606,10 @@ class Site:
 
     @staticmethod
     def sec_head(eyebrow, title, lede="", icon="", hid=""):
-        """Encabezado de sección: etiqueta pequeña y título grande a la izquierda, texto a la derecha."""
+        """Encabezado de sección tipo estante: título grande a la izquierda, texto o enlace a la derecha."""
         ida = f' id="{hid}"' if hid else ""
-        return (f'<div class="sec-big"><div><p class="eyebrow">{e(eyebrow)}</p><h2{ida}>{ICONS.get(icon, "")} {title}</h2></div>'
+        return (f'<div class="sec-big"><h2{ida}>{title}</h2>'
                 + (f'<p class="sec-lede">{lede}</p>' if lede else "") + "</div>")
-
-    def pain_points(self):
-        pains = ["Te enteraste tarde del juego gratis de Epic", "Compraste un juego y a la semana bajó de precio",
-                 "No sabes cuánto es en pesos colombianos", "Páginas de claves con precios sospechosos",
-                 "Diez pestañas abiertas comparando tiendas", "La rebaja de Steam te tomó por sorpresa"]
-        chips = "".join(f'<li><span aria-hidden="true">✕</span>{e(t)}</li>' for t in pains)
-        return (f'<section class="pains" aria-labelledby="pain-h"><p class="eyebrow">¿Te ha pasado?</p>'
-                f'<h2 id="pain-h">Comprar juegos en Colombia <span class="grad">no debería ser difícil</span></h2>'
-                f'<ul class="pain-list">{chips}</ul>'
-                f'<p class="pain-fix">{ICONS["check"]} Aquí juntamos los precios de las tiendas oficiales, los pasamos a pesos y te avisamos antes de que se acaben.</p></section>')
 
     def tools_grid(self):
         tools = [("bell", "Alertas de precio", "Te avisamos por Telegram cuando un juego baje.", "alertas.html"),
@@ -623,10 +621,10 @@ class Site:
                  ("quiz", "¿Qué juego me conviene?", "Responde 4 preguntas y te recomendamos uno.", "que-juego-me-conviene.html"),
                  ("news", "Resumen semanal", "Lo mejor de la semana, todos los viernes.", "resumen-semanal.html"),
                  ("dice", "Sorpréndeme", "Un juego al azar de las ofertas de hoy.", "sorpresa.html")]
-        cards = "".join(f'<li><a href="{href}"><span class="tool-ico">{ICONS[ic]}</span><strong>{e(t)}</strong><span>{e(d)}</span><span class="tool-go" aria-hidden="true">↗</span></a></li>'
+        cards = "".join(f'<li><a href="{href}"><span class="tool-ico">{ICONS[ic]}</span><strong>{e(t)}</strong><span>{e(d)}</span><span class="tool-go" aria-hidden="true">{ICONS["arrow"]}</span></a></li>'
                         for ic, t, d, href in tools)
         return (f'<section class="tools" aria-labelledby="tools-h">'
-                + self.sec_head("Todo en un solo lugar", 'Herramientas para <span class="grad">ahorrar en serio</span>',
+                + self.sec_head("", 'Herramientas para <span class="grad">ahorrar</span>',
                                 "Todo es gratis y funciona sin crear cuenta.", hid="tools-h")
                 + f'<ul class="tool-grid">{cards}</ul></section>')
 
@@ -636,19 +634,19 @@ class Site:
             return ""
         row = "".join(f'<li><span class="store-dot store-{e(s["id"])}" aria-hidden="true"></span>{e(s["name"])}'
                       f'<small>{self.store_counts.get(s["id"], 0)} ofertas</small></li>' for s in names)
-        return (f'<section class="store-marquee" aria-label="Tiendas oficiales que revisamos"><p class="eyebrow">Tiendas oficiales que revisamos</p>'
-                f'<div class="sm-track"><ul>{row}</ul><ul aria-hidden="true">{row}</ul></div></section>')
+        return (f'<section class="store-marquee" aria-label="Tiendas oficiales que revisamos"><h2 class="sm-h">Tiendas oficiales que revisamos</h2>'
+                f'<div class="sm-track"><ul>{row}</ul></div></section>')
 
     def journal(self):
         kinds = {"guia-tienda-oficial": "Seguridad", "guia-juegos-gratis-temporales": "Juegos gratis",
                  "guia-reclamar-juegos-gratis-epic": "Paso a paso", "guia-comprar-juegos-baratos-colombia": "Ahorro",
                  "guia-clave-regional-global": "Claves", "guia-que-es-drm": "Explicado", "guia-enlaces-afiliados": "Transparencia"}
         cards = "".join(
-            f'<li><a href="{g["slug"]}.html"><span class="jr-num">{i:02d}</span><span class="jr-kind">{e(kinds.get(g["slug"], "Guía"))}</span>'
-            f'<strong>{e(g["title"])}</strong><span class="jr-text">{e(g["description"])}</span><span class="jr-more">Leer la guía →</span></a></li>'
-            for i, g in enumerate(GUIDES[:3], 1))
+            f'<li><a href="{g["slug"]}.html"><span class="jr-kind">{e(kinds.get(g["slug"], "Guía"))}</span>'
+            f'<strong>{e(g["title"])}</strong><span class="jr-text">{e(g["description"])}</span><span class="jr-more">Leer la guía {ICONS["arrow"]}</span></a></li>'
+            for g in GUIDES[:3])
         return (f'<section class="journal" aria-labelledby="jr-h">'
-                + self.sec_head("Guías", 'Aprende a <span class="grad">comprar sin riesgos</span>',
+                + self.sec_head("", 'Aprende a <span class="grad">comprar sin riesgos</span>',
                                 '<a href="guias.html">Ver todas las guías</a>', hid="jr-h")
                 + f'<ul class="jr-grid">{cards}</ul></section>')
 
@@ -656,9 +654,8 @@ class Site:
         img = (f'<img src="{e(item["image"])}"{fallback(item)} alt="" width="1280" height="600" loading="lazy" decoding="async">'
                if item and item.get("image") else "")
         return (f'<section class="cta-band" aria-labelledby="cta-h">{img}<div class="cta-band-in">'
-                f'<p class="eyebrow">Gratis · sin cuenta · cada 4 horas</p>'
                 f'<h2 id="cta-h">Que las ofertas <span class="grad">te busquen a ti</span></h2>'
-                f'<p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.</p>{self.channels_cta()}</div></section>')
+                f'<p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky. Gratis, sin cuenta, cada 4 horas.</p>{self.channels_cta()}</div></section>')
 
     def duel_box(self, live):
         """Duelo de tiendas: el mismo juego en dos tiendas oficiales, gana la más barata (precios reales)."""
@@ -684,7 +681,7 @@ class Site:
             f'<p class="meta">Diferencia: {self.pesos(diff)} aprox.</p></li>'
             for diff, o, b in rows if o.get("image"))
         return (f'<section class="duels" aria-labelledby="duel-h">'
-                + self.sec_head("Mismo juego, distinta tienda", 'Duelo de <span class="grad">tiendas</span>',
+                + self.sec_head("", 'Duelo de <span class="grad">tiendas</span>',
                                 "Comparamos el precio del mismo juego en tiendas oficiales. Valores aproximados en pesos.", hid="duel-h")
                 + f'<ul class="duel-list">{items}</ul></section>')
 
@@ -700,8 +697,8 @@ class Site:
             f'<span class="tv-name">{e(g["title"])}</span><span class="tv-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
             for g in picks)
         return (f'<section class="tv" aria-labelledby="tv-h">'
-                + self.sec_head("Pasa el cursor y mira", 'Tráileres de <span class="grad">lo que viene</span>',
-                                '<a href="lanzamientos.html">Ver el calendario completo</a>', "play", "tv-h")
+                + self.sec_head("", 'Tráileres de <span class="grad">lo que viene</span>',
+                                'Pasa el cursor para verlos. <a href="lanzamientos.html">Ver el calendario completo</a>', "", "tv-h")
                 + f'<ul class="tv-grid">{items}</ul></section>')
 
     def ribbon(self, o):
@@ -711,8 +708,6 @@ class Site:
             return '<span class="ribbon r-time">Últimas horas</span>'
         if (self.price_stats(o) or {}).get("isLow"):
             return '<span class="ribbon r-low">Mínimo histórico</span>'
-        if o.get("currentPrice") and (o.get("discountPercentage") or 0) >= 90:
-            return '<span class="ribbon r-hot">🔥 Hot</span>'
         return ""
 
     def tide_stage(self, offers, count=4):
@@ -771,18 +766,6 @@ class Site:
                  + (f'<p class="fc-title">Síguenos</p><ul class="fc-social">{follow}</ul>' if follow else "") + "</div>")
         return f'<div class="foot-cols">{about}{html}</div>'
 
-    def stat_strip(self, free, deals, games):
-        """Franja de cifras grandes con datos reales del momento."""
-        top = max((o.get("discountPercentage") or 0) for o in deals) if deals else 0
-        stores = sum(1 for n in self.store_counts.values() if n)
-        cells = [(len(free), "", "Juegos gratis ahora"), (len(deals), "", "Ofertas activas"),
-                 (top, "%", "Mayor descuento de hoy"), (stores, "", "Tiendas oficiales revisadas")]
-        if games:
-            cells.append((len(games), "", "Juegos en el calendario"))
-        return '<ul class="stat-strip">' + "".join(
-            f'<li><strong data-count="{n}"{f" data-suffix=\"{suf}\"" if suf else ""}>{n}{suf}</strong><span>{e(label)}</span></li>'
-            for n, suf, label in cells) + "</ul>"
-
     def savings_box(self, deals):
         """Comparación precio normal contra precio de hoy, con las ofertas que más ahorran en pesos."""
         rows = []
@@ -797,33 +780,19 @@ class Site:
         items = "".join(
             f'<li><span class="sv-name">{self.title_link(o)}<small>{e(o["store"])} · -{o.get("discountPercentage") or 0}%</small></span>'
             f'<s>{self.pesos(was)}</s><strong>{self.pesos(now)}</strong></li>' for _, was, now, o in rows)
-        return (f'<section class="savings" aria-labelledby="sv-h"><div><p class="eyebrow">Precio normal contra precio de hoy</p>'
+        return (f'<section class="savings" aria-labelledby="sv-h"><div>'
                 f'<h2 id="sv-h">Las 3 ofertas que <span class="grad">más te ahorran</span></h2>'
                 f'<p class="lead">Si compraras estos tres juegos a precio normal pagarías <s>{self.pesos(was_t)}</s>. Hoy cuestan '
                 f'<strong>{self.pesos(now_t)}</strong>: te ahorras <strong class="sv-total">{self.pesos(was_t - now_t)}</strong>.</p>'
                 f'<p class="meta">Valores aproximados en pesos colombianos. Confirma el precio final en la tienda.</p></div>'
                 f'<ul class="sv-list">{items}</ul></section>')
 
-    def category_tiles(self, free, top, games, now):
-        """Tres accesos grandes con imagen: gratis, ofertas y estrenos."""
-        soon = sorted([g for g in games if g.get("comingSoon") and g.get("image")], key=self.rank)
-        tiles = [("juegos-gratis.html", "Gratis", f"{len(free)} juegos para reclamar", next((o for o in free if o.get("image")), None)),
-                 ("ofertas.html", "Ofertas", "Descuentos verificados", next((o for o in top if o.get("image")), None)),
-                 ("lanzamientos.html", "Estrenos", "Calendario de lanzamientos", soon[0] if soon else None)]
-        tiles = [t for t in tiles if t[3]]
-        if len(tiles) < 3:
-            return ""
-        return '<ul class="cat-tiles">' + "".join(
-            f'<li><a href="{href}"><img src="{e(it["image"])}"{fallback(it)} alt="" width="460" height="215" loading="lazy" decoding="async">'
-            f'<span class="ct-name">{e(name)}</span><span class="ct-sub">{e(sub)}</span><span class="ct-btn">Ver →</span></a></li>'
-            for href, name, sub, it in tiles) + "</ul>"
-
     def how_we_verify(self):
         steps = [("Buscamos", "Tiendas oficiales", "Solo Steam, Epic, GOG, Humble, Green Man Gaming y Fanatical. Nada de claves de reventa."),
                  ("Verificamos", "Revisión cada 4 horas", "Un sistema automático consulta los precios y retira las ofertas que ya terminaron."),
                  ("Convertimos", "Precio en pesos", "Mostramos el valor aproximado en pesos colombianos y el precio original de la tienda."),
                  ("Avisamos", "Directo a tu celular", "Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.")]
-        lis = "".join(f'<li><span class="hs-num">{i:02d}</span><span class="hs-kick">{e(k)}</span><strong>{e(t)}</strong><span>{e(d)}</span></li>'
+        lis = "".join(f'<li><span class="hs-num">{i}</span><strong>{e(t)}</strong><span>{e(d)}</span></li>'
                       for i, (k, t, d) in enumerate(steps, 1))
         return f"""<section class="how" aria-labelledby="how-h"><h2 id="how-h">Cómo verificamos los precios</h2><ol class="how-steps big">{lis}</ol>
 <p class="how-states"><span class="st ok">Precio para Colombia</span> <span class="st ref">Referencia en USD</span> <span class="st muted">Vigencia por confirmar</span></p>
@@ -926,10 +895,10 @@ class Site:
                        f'<div class="spot-body"><h3 class="clamp2"><a class="title-link" href="{e(url)}">{e(t)}</a></h3></div></li>' for t, img, url in coming)
         if not cards and not soon:
             return ""
-        return ('<section class="halloween-box"><h2>🎃 Especial de terror</h2><p class="meta">Es octubre: juegos de miedo en oferta hoy y los de terror que vienen. '
+        return (f'<section class="halloween-box"><h2>{ICONS["ghost"]} Especial de terror</h2><p class="meta">Es octubre: juegos de miedo en oferta hoy y los de terror que vienen. '
                 'Elegidos por su descripción oficial en Steam.</p>'
                 + (f'<ul class="grid">{cards}</ul>' if cards else '')
-                + (f'<h3>👻 Los de terror que vienen</h3><ul class="spot-grid small">{soon}</ul>' if soon else '') + '</section>')
+                + (f'<h3>Los de terror que vienen</h3><ul class="spot-grid small">{soon}</ul>' if soon else '') + '</section>')
 
     def steam_events(self, now):
         """Eventos oficiales de Steam (config/steam_eventos.json) que no han terminado, con su estado."""
@@ -991,7 +960,7 @@ class Site:
         if sale:
             mosaic = "".join(f'<img src="{e(img)}" alt="" width="460" height="215" loading="lazy" decoding="async">' for _, img, _ in self.event_covers(sale, games, live, used, 8))
             hero = (f'<section class="countdown-hero" data-steam-countdown="{e(sale["inicio"])}"><div class="cd-mosaic" aria-hidden="true">{mosaic}</div>'
-                    f'<div class="cd-inner"><p class="cd-emoji" aria-hidden="true">{e(sale.get("emoji", ""))}</p><p class="eyebrow">Próxima gran rebaja</p><h2>{e(sale["nombre"])}</h2>'
+                    f'<div class="cd-inner"><h2><span class="cd-pre">Próxima gran rebaja:</span> {e(sale["nombre"])}</h2>'
                     f'<p class="cd-date">Del {e(day_es(sale["inicio"]))} al {e(day_es(sale["fin"]))}</p>'
                     f'<p class="cd-clock" aria-live="off"><span><b data-cd="d">{sale["days"]}</b>días</span><span><b data-cd="h">–</b>horas</span><span><b data-cd="m">–</b>min</span><span><b data-cd="s">–</b>seg</span></p></div></section>')
         kinds = {"rebaja": "Gran rebaja", "next": "Demos gratis", "fest": "Festival temático"}
@@ -1001,7 +970,7 @@ class Site:
             bg = f'<img class="ev-bg" src="{e(covers[0][1])}" alt="" width="460" height="215" loading="lazy" decoding="async">' if covers else ""
             thumbs = "".join(f'<a href="{e(url)}" title="{e(t)}"><img src="{e(img)}" alt="{e(t)}" width="460" height="215" loading="lazy" decoding="async"></a>' for t, img, url in covers)
             left = "En curso ahora" if x["live"] else ("Empieza mañana" if x["days"] == 1 else f"Faltan {x['days']} días")
-            rows.append(f'<li class="ev ev-{e(x["tipo"])}{" live" if x["live"] else ""}">{bg}<span class="ev-emoji" aria-hidden="true">{e(x.get("emoji", ""))}</span>'
+            rows.append(f'<li class="ev ev-{e(x["tipo"])}{" live" if x["live"] else ""}">{bg}'
                         f'<div class="ev-info"><span class="ev-kind">{e(kinds.get(x["tipo"], "Evento"))}</span><strong>{e(x["nombre"])}</strong>'
                         f'<span class="ev-dates">{e(day_es(x["inicio"]))} – {e(day_es(x["fin"]))}</span><span class="ev-left">{left}</span></div>'
                         f'<div class="ev-covers">{thumbs}</div></li>')
@@ -1031,13 +1000,13 @@ class Site:
         arc = round(score / 10 * 125.6, 1)  # media circunferencia de radio 40
         return (f'<section class="thermo" aria-labelledby="thermo-h"><svg viewBox="0 0 100 58" class="gauge" aria-hidden="true">'
                 f'<path d="M10 50 A40 40 0 0 1 90 50" class="g-bg"/><path d="M10 50 A40 40 0 0 1 90 50" class="g-val" stroke-dasharray="{arc} 200"/></svg>'
-                f'<div><p class="eyebrow">{ICONS["thermo"]} Termómetro de ofertas de hoy</p><h2 id="thermo-h"><span class="t-score">{score}</span>/10 · {e(word)}</h2>'
+                f'<div><h2 id="thermo-h">Termómetro de hoy: <span class="t-score">{score}</span>/10</h2><p class="t-word">{e(word)}</p>'
                 f'<p class="meta">Descuento promedio de las 50 mejores: {round(avg)}% · {lows} en su mínimo histórico · {len(free)} gratis ahora. '
                 f'<a href="como-verificamos.html#termometro">Cómo se calcula</a></p></div></section>')
 
     def saved_box(self):
-        return ('<p class="saved-box" id="saved-box" hidden>🏆 <span>Has ahorrado <strong data-saved-total>$0</strong> reclamando '
-                '<strong data-saved-count>0</strong> juegos gratis.</span> <span class="meta">Marca ✓ en cada juego que reclames. Se guarda solo en este navegador.</span></p>')
+        return (f'<p class="saved-box" id="saved-box" hidden>{ICONS["trophy"]} <span>Has ahorrado <strong data-saved-total>$0</strong> reclamando '
+                '<strong data-saved-count>0</strong> juegos gratis.</span> <span class="meta">Marca el visto en cada juego que reclames. Se guarda solo en este navegador.</span></p>')
 
     def heatmap(self, games, now):
         """Mapa de calor de estrenos: cada día de los próximos meses, más brillante cuantos más juegos salen."""
@@ -1110,7 +1079,7 @@ class Site:
                     '<noscript><p class="notice">El test necesita JavaScript. Mira los <a href="juegos-gratis.html">juegos gratis</a> o <a href="ofertas.html">todas las ofertas</a>.</p></noscript>',
                     crumbs=[("que-juego-me-conviene.html", "¿Qué juego me conviene?")])
         self.layout("sorpresa.html", "Sorpréndeme: un juego al azar", "Te llevamos a una oferta, un juego gratis o un estreno al azar.",
-                    '<h1>🎲 Sorpréndeme</h1><p class="lead" id="surprise-msg">Buscando un juego al azar…</p>'
+                    '<h1>Sorpréndeme</h1><p class="lead" id="surprise-msg">Buscando un juego al azar…</p>'
                     '<p><a class="btn btn-primary" href="sorpresa.html" data-surprise>Otro al azar</a> <a class="btn" href="ofertas.html">Ver todas las ofertas</a></p>',
                     crumbs=[("sorpresa.html", "Sorpréndeme")], noindex=True)
         # juegos retrasados (la fecha cambió en las últimas semanas, según Steam o Wikipedia)
@@ -1366,19 +1335,19 @@ class Site:
             moved = ""
             if (g.get("dateChanged") or {}).get("from"):
                 ch = g["dateChanged"]
-                moved = f'<p class="notice moved">📆 <strong>Cambió la fecha.</strong> Antes: {e(date_label(ch["from"], ch.get("fromPrecision")))}. Ahora: {e(when)}.</p>'
+                moved = f'<p class="notice moved">{ICONS["clock"]} <strong>Cambió la fecha.</strong> Antes: {e(date_label(ch["from"], ch.get("fromPrecision")))}. Ahora: {e(when)}.</p>'
             self.layout(name, f"{g['title']}: fecha de lanzamiento" + ("" if consoles else " en PC"),
                         f"Fecha de lanzamiento de {g['title']} ({', '.join(g.get('platforms', []))}): {when}. Plataformas, géneros y enlace.",
                         f"""<article class="detail">
 <div class="detail-media" id="trailer">{img}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}{self.trailer_link(g)}</div>
-<div class="detail-info"><p class="eyebrow">Lanzamiento{" en Steam" if src == "Steam" else ""}</p>
+<div class="detail-info">
 <h1>{e(g['title'])}</h1>
-<p class="detail-date">📅 {e(when)}</p>
+<p class="detail-date">{ICONS["calendar"]} {e(when)}</p>
 {launch}{moved}{self.price_line(g, now)}
 <div class="tags">{tags}</div>
 {f'<p class="lead">{e(g["description"])}</p>' if g.get("description") else ''}
 <div class="cta">{self.game_link(g, cls="btn btn-primary")}<a class="btn" href="lanzamientos.html">Ver calendario</a>{self.alert_button(g, "game") if g.get("comingSoon") else ""}
-<button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔 Seguir</button></div>
+<button class="btn icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS["bell"]} Seguir</button></div>
 <p class="meta">La fecha es la que publica {src} y puede cambiar.{' Resumen e imagen: Wikipedia en español (CC BY-SA 4.0).' if src == "Wikidata" and g.get("description") else ''} Verificado: {e(date_es(g.get('verifiedAt')))}.</p></div></article>{self.buy_block(g['title'], [(g.get('store') or 'Steam', self.price_text(g, now), g.get('url'))])}{extra}{faq_html}""",
                         crumbs=[("lanzamientos.html", "Lanzamientos"), (name, g["title"])], jsonld=[ld, faq_ld], og_image=g.get("image"))
 
@@ -1475,10 +1444,10 @@ class Site:
         return f"""<li class="rel-card{' is-hot' if hot else ''}{' is-big' if big else ''}" data-id="{e(g['id'])}" data-title="{e(g['title'].lower())}" data-date="{e(g.get('date') or '')}" data-precision="{e(g.get('precision') or '')}" data-platforms="{e('|'.join(g.get('platforms', [])))}" data-genres="{e('|'.join(g.get('genres', [])))}">
 <div class="rel-img"{self.preview_attrs(g.get("trailer"))}>{(poster_bg(g) + f'<img{" class=\"poster\"" if is_poster(img) else ""} src="{e(img)}"{fallback(g)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">') if g.get("image") else no_cover(g)}{f'<span class="badge rel">{e(rel)}</span>' if rel and not compact else ''}{f'<span class="hot-tag">{ICONS["flame"]} Muy esperado</span>' if hot else ''}{self.trailer_chip(g)}{f'<span class="badge sale-tag">-{self.live_price(g, now)["discount"]}%</span>' if (self.live_price(g, now) or {}).get("discount") else ''}</div>
 <p class="rel-name">{self.title_link(g)}</p>
-<p class="rel-vers"><span class="rel-type" aria-hidden="true">🎮</span>{plats}</p>
+<p class="rel-vers"><span class="rel-type" aria-hidden="true">{ICONS["pad"]}</span>{plats}</p>
 {'' if compact else f'<p class="meta">{e(when)}</p>'}
 <div class="tags">{genres}</div>
-<div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>🔔</button></div></li>"""
+<div class="rel-actions">{link}<button class="btn btn-sm icon-btn" type="button" data-follow="{e(g['id'])}" aria-pressed="false" aria-label="Seguir {e(g['title'])}" hidden>{ICONS["bell"]}</button></div></li>"""
 
     def is_big(self, g, pos, count):
         """Estilo calendario de releases: el más esperado de cada día va en grande (y el segundo si es muy esperado)."""
@@ -1552,22 +1521,7 @@ class Site:
         return (f'<section class="curve" aria-labelledby="curve-h"><div class="sec-head"><h2 id="curve-h">{ICONS["star"]} Los más esperados</h2>'
                 f'<p class="meta">Arrastra o usa las flechas. <a href="lanzamientos.html">Ver el calendario</a></p></div>'
                 f'<div class="curve-stage"><ul class="curve-track">{items}</ul>'
-                f'<button type="button" class="curve-nav prev" aria-label="Anterior">‹</button><button type="button" class="curve-nav next" aria-label="Siguiente">›</button></div></section>')
-
-    def free_ring(self, free):
-        """Rueda giratoria con los juegos gratis de ahora (Epic y las demás tiendas)."""
-        items = [(o["title"], o.get("image"), self.detail.get(o["id"]) or o["destinationUrl"], o["store"]) for o in free if o.get("image")]
-        for g in getattr(self, "giveaways", []):
-            if g.get("image") and g["title"] not in {t for t, *_ in items} and g.get("type") == "game":
-                items.append((g["title"], g["image"], "juegos-gratis-en-todas-las-tiendas.html", dict((k, n) for k, n, _ in giveaways.GROUPS).get(g["group"], "")))
-        items = items[:8]
-        if len(items) < 4:
-            return ""
-        n = len(items)
-        tiles = "".join(f'<li><a href="{e(url)}"><img src="{e(img)}" alt="{e(t)}" width="460" height="215" loading="lazy" decoding="async"><span>{e(store)}</span></a></li>'
-                        for i, (t, img, url, store) in enumerate(items))
-        return (f'<div class="ring-wrap"><div class="ring-stage"><ul class="ring">{tiles}</ul>'
-                f'<p class="ring-core"><strong>{n}</strong> gratis<br>ahora</p></div></div>')
+                f'<button type="button" class="curve-nav prev" aria-label="Anterior">{ICONS["chevL"]}</button><button type="button" class="curve-nav next" aria-label="Siguiente">{ICONS["chevR"]}</button></div></section>')
 
     def spotlight(self, games, now, days=30, count=8):
         """Los más esperados que salen en los próximos días (popularidad de Steam y Wikidata)."""
@@ -1599,11 +1553,11 @@ class Site:
         chip = lambda kind, v: f'<button type="button" class="chip" data-{kind}="{e(v)}" aria-pressed="false">{e(v)}</button>'
         toolbar = f"""<div class="rel-toolbar" id="rel-toolbar" hidden>
 <div class="tabs" role="group" aria-label="Periodo">
-<button type="button" class="tab" data-view="hot" aria-pressed="true">🔥 Destacados</button>
+<button type="button" class="tab" data-view="hot" aria-pressed="true">{ICONS["flame"]} Destacados</button>
 <button type="button" class="tab" data-view="week" aria-pressed="false">Esta semana</button>
 <button type="button" class="tab" data-view="month" aria-pressed="false">Este mes</button>
 <button type="button" class="tab" data-view="all" aria-pressed="false">Todo</button>
-<button type="button" class="tab" data-view="follow" aria-pressed="false">🔔 Siguiendo</button>
+<button type="button" class="tab" data-view="follow" aria-pressed="false">{ICONS["bell"]} Siguiendo</button>
 </div>
 <label class="rel-search"><span class="sr-only">Buscar juego</span><input type="search" id="rel-q" placeholder="Buscar juego…" autocomplete="off"></label>
 <div class="chips" role="group" aria-label="Sistema">{''.join(chip('platform', x) for x in ('Windows', 'PlayStation', 'Xbox', 'Switch', 'Mac', 'Linux') if any(x in g.get('platforms', []) for g in games))}</div>
@@ -1640,17 +1594,6 @@ class Site:
             return ""
         return (f'<section class="today-rel"><h2>{ICONS["sparkle"]} Salen hoy</h2><ul class="spot-grid small">'
                 + "".join(self.spot_card(g, now) for g in hoy) + "</ul></section>")
-
-    def upcoming_home(self, games, now):
-        limit = (now + timedelta(days=30)).strftime("%Y-%m-%d")
-        upcoming = sorted([g for g in self.split_releases(games, now)[0] if g.get("precision") == "day" and g["date"] <= limit],
-                          key=self.rank)[:6]
-        upcoming.sort(key=lambda g: g["date"])
-        if not upcoming:
-            return ""
-        return ('<h2>Próximos lanzamientos más esperados</h2><ul class="rel-grid">' +
-                "".join(self.release_card(g, now, compact=False) for g in upcoming) +
-                '</ul><p><a class="btn" href="lanzamientos.html">Ver el calendario completo</a></p>')
 
     def note_row(self, it, kind, now):
         """Una línea de las notas de novedades: miniatura, nombre, etiqueta y enlace."""
@@ -2230,41 +2173,33 @@ class Site:
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
                     f"""{self.tide_stage(free[:2] + top)}
-<section class="hero compact">
-<p class="eyebrow">Radar de ofertas gamer · Colombia</p>
-<h1>Juegos <span class="grad">gratis</span> y ofertas de PC, verificados</h1>
-{self.stat_strip(free, deals, games or [])}
-{updated_line}
-<p class="hero-fun"><a class="btn" href="sorpresa.html" data-surprise>{ICONS["dice"]} Sorpréndeme</a><a class="btn" href="que-juego-me-conviene.html">{ICONS["quiz"]} ¿Qué juego me conviene?</a></p>
+<section class="hero compact home-bar" aria-labelledby="home-h">
+<div class="hb-text"><h1 id="home-h">Juegos <span class="grad">gratis</span> y ofertas de PC, verificados para Colombia</h1>
+<p class="lead">Hoy hay <strong>{len(free)} {"juego gratis" if len(free) == 1 else "juegos gratis"}</strong> y <strong>{len(deals)} ofertas</strong> de {sum(1 for n in self.store_counts.values() if n)} tiendas oficiales, con el precio en pesos y la hora en que terminan.</p>
+{updated_line}</div>
+{self.thermometer(live, free)}
+{self.quick_search()}
 </section>
 {self.steam_strip(updated_dt)}
-{self.halloween_box(games or [], live)}
-{self.thermometer(live, free)}
-{self.curve_carousel(games or [], updated_dt)}
-{self.trailers_box(games or [])}
-{self.dotd_block(dotd)}
-{self.soon_strip(live)}
-{self.quick_search()}
-{self.ad_slot("banner_after_hero")}
-{self.mega(["GRATIS", "OFERTAS", "ESTRENOS", "COLOMBIA"])}
-{self.category_tiles(free, top, games or [], updated_dt)}
-{self.sec_head("Para reclamar ya", 'Gratis <span class="grad">esta semana</span>', "Juegos que puedes quedarte para siempre si los reclamas antes de que termine la promoción.", "gift")}
-{self.free_ring(free)}
+<section class="shelf shelf-free" aria-labelledby="free-h">
+{self.sec_head("", 'Gratis <span class="grad">esta semana</span>', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', hid="free-h")}
 {self.saved_box()}
-{self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True) if free else '<p>No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
-{f'<p><a class="btn" href="juegos-gratis.html">Ver los {len(free)} juegos gratis</a></p>' if len(free) > 8 else ''}
-{self.mega(["DESCUENTOS", "STEAM", "EPIC", "GOG", "HUMBLE"], reverse=True)}
-{self.sec_head("Selección de hoy", 'Mejores ofertas <span class="grad">verificadas</span>', "Elegidas por descuento, valoración de la crítica y disponibilidad en Colombia. Pasa el cursor para ver el tráiler.", "flame")}
+{self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True) if free else '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
+</section>
+{self.ad_slot("banner_after_hero")}
+<section class="shelf shelf-top" aria-labelledby="top-h">
+{self.sec_head("", 'Mejores ofertas <span class="grad">verificadas</span>', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', hid="top-h")}
 {self.offer_list(top, with_filters=False, list_id="top-home", bento=True)}
-<p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
-{self.savings_box(deals)}
-{self.duel_box(live)}
-{self.pain_points()}
+<p class="shelf-more"><a class="btn btn-primary" href="ofertas.html">Buscar entre las {len(live)} ofertas {ICONS["arrow"]}</a></p>
+</section>
+<div class="duo">{self.dotd_block(dotd)}{self.soon_strip(live)}</div>
+{self.halloween_box(games or [], live)}
+<div class="duo duo-save">{self.savings_box(deals)}{self.duel_box(live)}</div>
 {self.store_marquee()}
+{self.curve_carousel(games or [], updated_dt)}
 {self.today_releases(games or [], updated_dt)}
-{self.upcoming_home(games or [], updated_dt)}
-{self.tools_grid()}
-{self.how_we_verify()}
+{self.trailers_box(games or [])}
+<div class="duo duo-learn">{self.how_we_verify()}{self.tools_grid()}</div>
 {self.journal()}
 {self.cta_band(next((o for o in top if o.get("image")), None))}
 <p class="meta small-notice">Los precios pueden cambiar en cualquier momento: confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>""", jsonld=[org, website, self.item_list_ld(live)])
@@ -2382,7 +2317,7 @@ class Site:
                     '<noscript><p>El buscador necesita JavaScript. Mira <a href="ofertas.html">todas las ofertas</a> o el <a href="lanzamientos.html">calendario</a>.</p></noscript>',
                     crumbs=[("buscar.html", "Buscar")], noindex=True)
         self.layout("seguidos.html", "Mis juegos seguidos", "Los lanzamientos que sigues con la campana. Se guardan solo en este navegador.",
-                    '<h1>Mis juegos seguidos</h1><p class="lead">Los lanzamientos que sigues con la campana 🔔. Se guardan solo en este navegador, sin cuenta. '
+                    '<h1>Mis juegos seguidos</h1><p class="lead">Los lanzamientos que sigues con la campana. Se guardan solo en este navegador, sin cuenta. '
                     'Para recibir un aviso cuando salgan, usa las <a href="alertas.html">alertas de Telegram</a>.</p>'
                     '<div id="follow-root"><p class="notice">Activa JavaScript para ver tus juegos seguidos.</p></div>',
                     crumbs=[("seguidos.html", "Mis seguidos")], noindex=True)
