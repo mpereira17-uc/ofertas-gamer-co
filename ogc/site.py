@@ -171,7 +171,9 @@ class Site:
             return body
         kind = next((k for key, k in self.HERO_KINDS if key in name), "plain")
         label = crumbs[0][1] if crumbs else "Ofertas Gamer CO"
-        hero = (f'<header class="page-hero ph-{kind}"><p class="ph-kick"><span class="ph-no" aria-hidden="true"></span>{e(label)}</p>'
+        pic = re.search(r'<img[^>]+src="(https://[^"]+)"', body[m.end():m.end() + 60000])
+        bg = f'<img class="ph-bg" src="{pic.group(1)}" alt="" width="1280" height="600" decoding="async">' if pic else ""
+        hero = (f'<header class="page-hero ph-{kind}{" has-bg" if bg else ""}">{bg}<p class="ph-kick"><span class="ph-no" aria-hidden="true"></span>{e(label)}</p>'
                 f'{m.group(0)}<span class="ph-deco" aria-hidden="true"></span></header>')
         return body[:m.start()] + hero + body[m.end():]
 
@@ -267,7 +269,7 @@ class Site:
 </div></main>
 </div>
 <footer class="site"><div class="wrap">
-<p class="foot-brand"><img src="assets/logo-72.png" alt="" width="32" height="32"> Ofertas Gamer CO</p>
+{self.foot_columns()}
 <div class="prefs" role="group" aria-label="Opciones de lectura"><span class="meta">Opciones de lectura:</span>
 <button class="chip" type="button" data-pref="big" aria-pressed="false" hidden>Letra grande</button>
 <button class="chip" type="button" data-pref="contrast" aria-pressed="false" hidden>Alto contraste</button>
@@ -709,6 +711,51 @@ class Site:
         if o.get("currentPrice") and (o.get("discountPercentage") or 0) >= 90:
             return '<span class="ribbon r-hot">🔥 Hot</span>'
         return ""
+
+    def hero_slider(self, offers, count=5):
+        """Banner grande de portada con las ofertas destacadas pasando una tras otra (datos reales)."""
+        seen, picks = set(), []
+        for o in offers:
+            if o["id"] not in seen and o.get("image"):
+                seen.add(o["id"])
+                picks.append(o)
+        picks = picks[:count]
+        if not picks:
+            return ""
+        slides = []
+        for i, o in enumerate(picks):
+            free = o.get("currentPrice") == 0
+            kick = "Gratis por tiempo limitado" if free else f"-{o.get('discountPercentage') or 0}% en {o['store']}"
+            page = self.detail.get(o["id"])
+            more = f'<a class="btn btn-ghost" href="{page}">Ver ficha</a>' if page else ""
+            slides.append(
+                f'<li class="hs-slide{" on" if i == 0 else ""}"{"" if i == 0 else " aria-hidden=\"true\""}>'
+                f'<img src="{e(o["image"])}"{fallback(o)} alt="" width="1280" height="600"{" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""} decoding="async">'
+                f'<div class="hs-info"><p class="hs-kick{" free" if free else ""}">{e(kick)}</p>'
+                f'<p class="hs-title">{e(o["title"])}</p>{self.price_html(o, big=True)}{self.countdown(o, "left hs-left")}'
+                f'<div class="cta">{self.offer_button(o)}{more}</div></div>'
+                f'<span class="hs-num" aria-hidden="true">{i + 1:02d}<small>/{len(picks):02d}</small></span></li>')
+        dots = "".join(f'<button type="button" class="hs-dot{" on" if i == 0 else ""}" aria-label="Ver destacado {i + 1}"></button>' for i in range(len(picks)))
+        nav = (f'<div class="hs-nav" hidden><button type="button" class="hs-prev" aria-label="Anterior">‹</button>{dots}'
+               f'<button type="button" class="hs-next" aria-label="Siguiente">›</button></div>') if len(picks) > 1 else ""
+        return f'<section class="hero-slider" aria-roledescription="carrusel" aria-label="Ofertas destacadas"><ul class="hs-track">{"".join(slides)}</ul>{nav}</section>'
+
+    def foot_columns(self):
+        cols = [("Ofertas", [("juegos-gratis.html", "Juegos gratis"), ("ofertas.html", "Todas las ofertas"), ("oferta-del-dia.html", "Oferta del día"),
+                             ("minimos-historicos.html", "Mínimos históricos"), ("rebajas-de-steam.html", "Rebajas de Steam")]),
+                ("Lanzamientos", [("lanzamientos.html", "Calendario"), ("juegos-retrasados.html", "Juegos retrasados"),
+                                  ("lanzamientos-playstation.html", "PlayStation"), ("lanzamientos-xbox.html", "Xbox"), ("lanzamientos-switch.html", "Nintendo Switch")]),
+                ("Aprende", [("guias.html", "Guías"), ("preguntas-frecuentes.html", "Preguntas frecuentes"), ("glosario.html", "Glosario"),
+                             ("como-verificamos.html", "Cómo verificamos"), ("tiendas.html", "Tiendas oficiales")])]
+        html = "".join(f'<div class="fc"><p class="fc-title">{e(t)}</p><ul>' + "".join(f'<li><a href="{h}">{e(l)}</a></li>' for h, l in links) + "</ul></div>"
+                       for t, links in cols)
+        social = [(self.cfg.get(k), label) for k, label in (("enlace_canal_telegram", "Telegram"), ("enlace_discord", "Discord"),
+                                                             ("enlace_bluesky", "Bluesky"), ("enlace_canal_whatsapp", "WhatsApp"), ("enlace_kofi", "Ko-fi"))]
+        follow = "".join(f'<li>{ext_link(u, label, cls="")}</li>' for u, label in social if u)
+        about = ('<div class="fc fc-about"><p class="foot-brand"><img src="assets/logo-72.png" alt="" width="32" height="32"> Ofertas Gamer CO</p>'
+                 '<p>Juegos gratis y ofertas de PC en tiendas oficiales, con precios aproximados en pesos colombianos. Se actualiza solo cada 4 horas.</p>'
+                 + (f'<p class="fc-title">Síguenos</p><ul class="fc-social">{follow}</ul>' if follow else "") + "</div>")
+        return f'<div class="foot-cols">{about}{html}</div>'
 
     def stat_strip(self, free, deals, games):
         """Franja de cifras grandes con datos reales del momento."""
@@ -2168,7 +2215,8 @@ class Site:
 
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
-                    f"""<section class="hero compact">
+                    f"""{self.hero_slider(free + top)}
+<section class="hero compact">
 <p class="eyebrow">Radar de ofertas gamer · Colombia</p>
 <h1>Juegos <span class="grad">gratis</span> y ofertas de PC, verificados</h1>
 {self.stat_strip(free, deals, games or [])}
@@ -2178,7 +2226,6 @@ class Site:
 {self.steam_strip(updated_dt)}
 {self.halloween_box(games or [], live)}
 {self.thermometer(live, free)}
-{self.feature(free + top)}
 {self.curve_carousel(games or [], updated_dt)}
 {self.trailers_box(games or [])}
 {self.dotd_block(dotd)}
