@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27T20:46:02Z",
+ "updatedAt": "2026-10-28T02:14:10Z",
  "items": [
   {
    "id": "gp-3340",
@@ -50,19 +50,6 @@
    "endsOn": "2026-10-29",
    "image": "https://www.gamerpower.com/offers/1b/home.jpg",
    "url": "https://www.gamerpower.com/open/home",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3822",
-   "title": "Terraspace",
-   "type": "game",
-   "group": "epic",
-   "platforms": "PC, Epic Games Store",
-   "worth": "$7.99",
-   "endsOn": "2026-10-27",
-   "image": "https://www.gamerpower.com/offers/1b/6ad9256e3eef5.jpg",
-   "url": "https://www.gamerpower.com/open/terraspace-epic-games-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
   },
@@ -312,6 +299,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3822",
+   "title": "Terraspace",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$7.99",
+   "endsOn": "2026-10-27",
+   "image": "https://www.gamerpower.com/offers/1b/6ad9256e3eef5.jpg",
+   "url": "https://www.gamerpower.com/open/terraspace-epic-games-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-1531",
