@@ -148,6 +148,9 @@ def fallback(o):
     return f' data-fallback="{e(small)}"' if small.startswith("https://") else ""
 
 
+STEAM_HERO = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{id}/library_hero.jpg"
+
+
 class Site:
     def __init__(self, cfg, stores, ads, out):
         self.cfg, self.stores, self.ads, self.out = cfg, stores, ads, Path(out)
@@ -712,8 +715,9 @@ class Site:
             return '<span class="ribbon r-hot">🔥 Hot</span>'
         return ""
 
-    def hero_slider(self, offers, count=5):
-        """Banner grande de portada con las ofertas destacadas pasando una tras otra (datos reales)."""
+    def tide_stage(self, offers, count=4):
+        """Portada por capítulos: al bajar, la escena se queda fija y pasa por las ofertas destacadas (datos reales).
+        Sin JavaScript o con «menos movimiento» se ve como una cuadrícula normal."""
         seen, picks = set(), []
         for o in offers:
             if o["id"] not in seen and o.get("image"):
@@ -722,23 +726,33 @@ class Site:
         picks = picks[:count]
         if not picks:
             return ""
-        slides = []
+        chapters, ticks = [], []
         for i, o in enumerate(picks):
             free = o.get("currentPrice") == 0
-            kick = "Gratis por tiempo limitado" if free else f"-{o.get('discountPercentage') or 0}% en {o['store']}"
+            pct = o.get("discountPercentage") or 0
+            app = o.get("steamAppID")
+            # el arte ancho de la biblioteca de Steam se ve nítido a pantalla completa; si no existe, vuelve a la portada
+            wide = STEAM_HERO.format(id=app) if app and "steamstatic.com" in o["image"] else o["image"]
             page = self.detail.get(o["id"])
             more = f'<a class="btn btn-ghost" href="{page}">Ver ficha</a>' if page else ""
-            slides.append(
-                f'<li class="hs-slide{" on" if i == 0 else ""}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-                f'<img src="{e(o["image"])}"{fallback(o)} alt="" width="1280" height="600"{" fetchpriority=\"high\"" if i == 0 else " loading=\"lazy\""} decoding="async">'
-                f'<div class="hs-info"><p class="hs-kick{" free" if free else ""}">{e(kick)}</p>'
-                f'<p class="hs-title">{e(o["title"])}</p>{self.price_html(o, big=True)}{self.countdown(o, "left hs-left")}'
-                f'<div class="cta">{self.offer_button(o)}{more}</div></div>'
-                f'<span class="hs-num" aria-hidden="true">{i + 1:02d}<small>/{len(picks):02d}</small></span></li>')
-        dots = "".join(f'<button type="button" class="hs-dot{" on" if i == 0 else ""}" aria-label="Ver destacado {i + 1}"></button>' for i in range(len(picks)))
-        nav = (f'<div class="hs-nav" hidden><button type="button" class="hs-prev" aria-label="Anterior">‹</button>{dots}'
-               f'<button type="button" class="hs-next" aria-label="Siguiente">›</button></div>') if len(picks) > 1 else ""
-        return f'<section class="hero-slider" aria-roledescription="carrusel" aria-label="Ofertas destacadas"><ul class="hs-track">{"".join(slides)}</ul>{nav}</section>'
+            words = " ".join(f'<span class="td-w">{e(w)}</span>' for w in o["title"].split())
+            big = ('<span class="td-big free">GRATIS</span>' if free else
+                   f'<span class="td-big">-<b data-to="{pct}">{pct}</b>%</span>' if pct else "")
+            lazy = ' fetchpriority="high"' if i == 0 else ' loading="lazy"'
+            chapters.append(
+                f'<li class="td-ch{" is-free" if free else ""}" data-i="{i}">'
+                f'<img class="td-bg" src="{e(wide)}" data-fallback="{e(o["image"])}" alt="" width="1920" height="620"{lazy} decoding="async">'
+                f'<div class="td-art"><img src="{e(o["image"])}"{fallback(o)} alt="" width="920" height="430"{lazy} decoding="async">{big}</div>'
+                f'<div class="td-copy"><p class="td-store">{self.store_chip(o)}<span>{"Gratis por tiempo limitado" if free else f"-{pct}% de descuento"}</span></p>'
+                f'<p class="td-title">{words}</p>{self.price_html(o, big=True)}{self.countdown(o, "left td-left")}'
+                f'<div class="cta">{self.offer_button(o)}{more}</div></div></li>')
+            ticks.append(f'<li><button type="button" data-go="{i}"><span class="td-tn">{i + 1}</span><span class="td-tt">{e(o["title"])}</span></button></li>')
+        return (f'<section class="tide" data-n="{len(picks)}" aria-label="Ofertas destacadas">'
+                f'<div class="td-stage"><ol class="td-list">{"".join(chapters)}</ol>'
+                f'<ol class="td-rail" aria-label="Ir a una oferta destacada" hidden>{"".join(ticks)}</ol>'
+                f'<div class="td-bar" aria-hidden="true"><span></span></div>'
+                f'<p class="td-cue" aria-hidden="true" hidden>Baja para ver las {len(picks)} destacadas</p>'
+                '<span class="td-grain" aria-hidden="true"></span></div></section>')
 
     def foot_columns(self):
         cols = [("Ofertas", [("juegos-gratis.html", "Juegos gratis"), ("ofertas.html", "Todas las ofertas"), ("oferta-del-dia.html", "Oferta del día"),
@@ -2215,7 +2229,7 @@ class Site:
 
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
-                    f"""{self.hero_slider(free + top)}
+                    f"""{self.tide_stage(free[:2] + top)}
 <section class="hero compact">
 <p class="eyebrow">Radar de ofertas gamer · Colombia</p>
 <h1>Juegos <span class="grad">gratis</span> y ofertas de PC, verificados</h1>

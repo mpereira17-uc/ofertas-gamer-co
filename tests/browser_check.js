@@ -26,6 +26,24 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     await page.goto(base + "index.html");
     if (width === 360 && !(await page.isVisible("nav.bottom-nav"))) errors.push("360px: falta el menú inferior");
     if (width === 1280 && (await page.isVisible("nav.bottom-nav"))) errors.push("1280px: el menú inferior no debería verse");
+    // portada por capítulos: la escena se fija y los botones llevan a cada oferta destacada
+    if (await page.$(".tide")) {
+      const tide = await page.evaluate(() => { const t = document.querySelector(".tide"); return { on: t.classList.contains("on"), n: t.querySelectorAll(".td-ch").length }; });
+      if (tide.n > 1 && !tide.on) errors.push(`${width}px: la portada animada no se activó`);
+      if (tide.on) {
+        await page.click(".td-rail [data-go='1']");
+        await page.waitForTimeout(1500);
+        const cur = await page.getAttribute(".td-rail [data-go='1']", "aria-current");
+        if (cur !== "true") errors.push(`${width}px: el botón 2 de la portada no lleva a la segunda oferta`);
+        await page.evaluate(() => window.scrollTo(0, 0));
+      }
+      const calm = await browser.newContext({ viewport: { width, height: 800 }, reducedMotion: "reduce" });
+      const cp = await calm.newPage();
+      await cp.route(/^https:\/\//, (r) => r.fulfill({ status: 200, contentType: "image/svg+xml", body: "<svg xmlns='http://www.w3.org/2000/svg'/>" }));
+      await cp.goto(base + "index.html");
+      if (await cp.$eval(".tide", (t) => t.classList.contains("on"))) errors.push(`${width}px: con «menos movimiento» la portada no debería animarse`);
+      await calm.close();
+    }
     if (width === 360) {
       if (await page.isVisible("#main-nav")) errors.push("360px: el menú debería estar plegado");
       await page.click("#menu-toggle");
