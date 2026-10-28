@@ -1033,24 +1033,72 @@ document.addEventListener("error", function (ev) {
   }
 }, true);
 
-// Banner de portada: pasa solo cada 6 segundos, se puede mover con puntos y flechas
+// Portada por capítulos: al bajar, la escena se queda fija y pasa por cada oferta destacada.
+// Sin JavaScript, con «menos movimiento» o con ahorro de datos se queda como cuadrícula normal.
 (function () {
-  var box = document.querySelector(".hero-slider");
-  if (!box) return;
-  var slides = box.querySelectorAll(".hs-slide"), dots = box.querySelectorAll(".hs-dot"), nav = box.querySelector(".hs-nav");
-  if (slides.length < 2 || !nav) return;
-  nav.hidden = false;
-  var cur = 0, timer = null, still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function go(i) {
-    cur = (i + slides.length) % slides.length;
-    slides.forEach(function (s, k) { s.classList.toggle("on", k === cur); if (k === cur) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
-    dots.forEach(function (d, k) { d.classList.toggle("on", k === cur); });
+  var box = document.querySelector(".tide");
+  if (!box || !window.requestAnimationFrame) return;
+  var calm = (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
+    document.documentElement.classList.contains("pref-lite");
+  var chs = [].slice.call(box.querySelectorAll(".td-ch")), n = chs.length;
+  if (calm || n < 2) return;
+  var rail = box.querySelector(".td-rail"), ticks = [].slice.call(box.querySelectorAll("[data-go]"));
+  var bar = box.querySelector(".td-bar span"), cue = box.querySelector(".td-cue");
+  var words = chs.map(function (c) { return [].slice.call(c.querySelectorAll(".td-w")); });
+  var nums = chs.map(function (c) { return c.querySelector(".td-big b"); });
+  var span = n - 1 + 0.6;            // el último capítulo se queda quieto un rato antes de soltar la escena
+  var cur = 0, goal = 0, raf = 0, active = -1, top = 0, len = 1;
+  box.style.setProperty("--n", n);
+  box.classList.add("on");
+  rail.hidden = false; cue.hidden = false;
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+  function measure() {
+    var stage = box.querySelector(".td-stage");
+    top = box.getBoundingClientRect().top + window.pageYOffset - (parseFloat(getComputedStyle(stage).top) || 0);
+    len = Math.max(1, box.offsetHeight - stage.offsetHeight);
   }
-  function play() { if (!still) { clearInterval(timer); timer = setInterval(function () { go(cur + 1); }, 6000); } }
-  dots.forEach(function (d, k) { d.addEventListener("click", function () { go(k); play(); }); });
-  box.querySelector(".hs-prev").addEventListener("click", function () { go(cur - 1); play(); });
-  box.querySelector(".hs-next").addEventListener("click", function () { go(cur + 1); play(); });
-  box.addEventListener("mouseenter", function () { clearInterval(timer); });
-  box.addEventListener("mouseleave", play);
-  play();
+  function target() { return clamp((window.pageYOffset - top) / len) * span; }
+  function paint(p) {
+    var now = Math.min(n - 1, Math.floor(p + 0.25));
+    chs.forEach(function (c, i) {
+      var d = p - i;                 // 0 = capítulo centrado; entra entre -0.25 y 0, sale entre 0.75 y 1
+      var e = i === 0 ? 1 : ease(clamp((d + 0.25) / 0.25));
+      var x = i === n - 1 ? 0 : ease(clamp((d - 0.75) / 0.25));
+      var live = e > 0 && x < 1;
+      c.classList.toggle("live", live);
+      if (!live) return;
+      c.style.setProperty("--e", e.toFixed(3));
+      c.style.setProperty("--x", x.toFixed(3));
+      c.style.setProperty("--k", clamp((d + 0.25) / 1.25).toFixed(3));
+      var t = i === 0 ? 1 : clamp((d + 0.1) / 0.5), w = words[i];
+      w.forEach(function (el, k) { el.classList.toggle("lit", (k + 1) / w.length <= t + 0.001); });
+      if (nums[i]) nums[i].textContent = Math.round(+nums[i].getAttribute("data-to") * ease(i === 0 ? 1 : clamp((d + 0.2) / 0.4)));
+    });
+    if (now !== active) {
+      active = now;
+      ticks.forEach(function (b, k) { if (k === now) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
+    }
+    bar.style.transform = "scaleX(" + clamp(p / span).toFixed(4) + ")";
+    cue.style.opacity = p > 0.15 ? 0 : 1;
+  }
+  function tick() {
+    cur += (goal - cur) * 0.14;      // suaviza el desplazamiento para que se sienta como una cámara
+    if (Math.abs(goal - cur) < 0.0005) cur = goal;
+    paint(cur);
+    raf = cur === goal ? 0 : requestAnimationFrame(tick);
+  }
+  function onScroll() { goal = target(); if (!raf) raf = requestAnimationFrame(tick); }
+  measure(); cur = goal = target(); paint(cur);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { measure(); onScroll(); });
+  window.addEventListener("load", function () { measure(); onScroll(); });
+  function jump(i) { window.scrollTo({ top: top + len * (i / span) + 2, behavior: "smooth" }); }
+  ticks.forEach(function (b) { b.addEventListener("click", function () { jump(+b.getAttribute("data-go")); }); });
+  // con teclado: al llegar a un botón de un capítulo escondido, la escena se mueve hasta ese capítulo
+  chs.forEach(function (c, i) {
+    c.addEventListener("focusin", function () {
+      if (i !== active) { window.scrollTo({ top: top + len * (i / span) + 2 }); goal = cur = target(); paint(cur); }
+    });
+  });
 })();

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28T13:57:53Z",
+ "updatedAt": "2026-10-28T14:19:33Z",
  "games": [
   {
    "id": "steam-3393110",
@@ -213,6 +213,19 @@
    ]
   },
   {
+   "id": "steam-4508340",
+   "title": "NTE: Neverness to Everness",
+   "url": "https://store.steampowered.com/app/4508340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1790722094",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/a97040318ffcf7e02ee7dbe08dd2cd9cb3684f20/capsule_sm_120.jpg?t=1793179644",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
    "id": "steam-1974050",
    "title": "Torchlight: Infinite",
    "url": "https://store.steampowered.com/app/1974050/",
@@ -226,16 +239,16 @@
    ]
   },
   {
-   "id": "steam-4508340",
-   "title": "NTE: Neverness to Everness",
-   "url": "https://store.steampowered.com/app/4508340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1790722094",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/a97040318ffcf7e02ee7dbe08dd2cd9cb3684f20/capsule_sm_120.jpg?t=1793179644",
+   "id": "steam-552990",
+   "title": "World of Warships",
+   "url": "https://store.steampowered.com/app/552990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/e4946bba05ec1edf85048ae0cf6f47572aabb7fa/capsule_sm_120_alt_assets_16.jpg?t=1791478284",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Aventura",
-    "Rol"
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
@@ -271,19 +284,6 @@
    "headerChecked": true,
    "genres": [
     "Estrategia"
-   ]
-  },
-  {
-   "id": "steam-552990",
-   "title": "World of Warships",
-   "url": "https://store.steampowered.com/app/552990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/e4946bba05ec1edf85048ae0cf6f47572aabb7fa/capsule_sm_120_alt_assets_16.jpg?t=1791478284",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
    ]
   },
   {
@@ -443,19 +443,6 @@
    ]
   },
   {
-   "id": "steam-1407200",
-   "title": "World of Tanks",
-   "url": "https://store.steampowered.com/app/1407200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1407200/819fc92f7ddb96ef10792a6d72382c5b814d671a/header.jpg?t=1792493146",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1407200/d7ebe4d7dfb1fe42c7eb4ded656356199dd4ac82/capsule_sm_120.jpg?t=1793012187",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
-   ]
-  },
-  {
    "id": "steam-3557620",
    "title": "Blue Archive",
    "url": "https://store.steampowered.com/app/3557620/",
@@ -469,13 +456,24 @@
    ]
   },
   {
-   "id": "steam-1049590",
-   "title": "Eternal Return",
-   "url": "https://store.steampowered.com/app/1049590/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
+   "id": "steam-1407200",
+   "title": "World of Tanks",
+   "url": "https://store.steampowered.com/app/1407200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1407200/819fc92f7ddb96ef10792a6d72382c5b814d671a/header.jpg?t=1792493146",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1407200/d7ebe4d7dfb1fe42c7eb4ded656356199dd4ac82/capsule_sm_120.jpg?t=1793012187",
    "headerChecked": true,
-   "genres": []
+   "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-2707930",
+   "title": "Palia",
+   "url": "https://store.steampowered.com/app/2707930/",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2707930/031e3a2dd724debaa59977d6dc77319aec99b5b1/capsule_sm_120.jpg?t=1778603601",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2707930/031e3a2dd724debaa59977d6dc77319aec99b5b1/capsule_sm_120.jpg?t=1778603601"
   },
   {
    "id": "steam-1818450",
