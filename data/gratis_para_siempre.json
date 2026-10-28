@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28T02:14:10Z",
+ "updatedAt": "2026-10-28T02:37:23Z",
  "games": [
   {
    "id": "steam-730",
@@ -296,6 +296,19 @@
    "genres": []
   },
   {
+   "id": "steam-4508340",
+   "title": "NTE: Neverness to Everness",
+   "url": "https://store.steampowered.com/app/4508340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1790722094",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/a97040318ffcf7e02ee7dbe08dd2cd9cb3684f20/capsule_sm_120.jpg?t=1790722094",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
    "id": "steam-1476970",
    "title": "IdleOn - The Idle RPG",
    "url": "https://store.steampowered.com/app/1476970/",
@@ -333,16 +346,15 @@
    ]
   },
   {
-   "id": "steam-4508340",
-   "title": "NTE: Neverness to Everness",
-   "url": "https://store.steampowered.com/app/4508340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1790722094",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/a97040318ffcf7e02ee7dbe08dd2cd9cb3684f20/capsule_sm_120.jpg?t=1790722094",
+   "id": "steam-1449850",
+   "title": "Yu-Gi-Oh! Master Duel",
+   "url": "https://store.steampowered.com/app/1449850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1449850/3dabbf618664c7a561202771e3754b6690949159/header.jpg?t=1788064919",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449850/fed61aa2e905f18280ce7a2884d591b3cbf08fd7/capsule_sm_120.jpg?t=1788064919",
    "headerChecked": true,
    "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
+    "Simuladores",
+    "Estrategia"
    ]
   },
   {
@@ -356,18 +368,6 @@
     "Aventura",
     "Casual",
     "Simuladores"
-   ]
-  },
-  {
-   "id": "steam-1449850",
-   "title": "Yu-Gi-Oh! Master Duel",
-   "url": "https://store.steampowered.com/app/1449850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1449850/3dabbf618664c7a561202771e3754b6690949159/header.jpg?t=1788064919",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449850/fed61aa2e905f18280ce7a2884d591b3cbf08fd7/capsule_sm_120.jpg?t=1788064919",
-   "headerChecked": true,
-   "genres": [
-    "Simuladores",
-    "Estrategia"
    ]
   },
   {
@@ -406,19 +406,6 @@
    ]
   },
   {
-   "id": "steam-1407200",
-   "title": "World of Tanks",
-   "url": "https://store.steampowered.com/app/1407200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1407200/819fc92f7ddb96ef10792a6d72382c5b814d671a/header.jpg?t=1792493146",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1407200/d7ebe4d7dfb1fe42c7eb4ded656356199dd4ac82/capsule_sm_120.jpg?t=1793012187",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
-   ]
-  },
-  {
    "id": "steam-1203220",
    "title": "NARAKA: BLADEPOINT",
    "url": "https://store.steampowered.com/app/1203220/",
@@ -432,15 +419,16 @@
    ]
   },
   {
-   "id": "steam-3224770",
-   "title": "Umamusume: Pretty Derby",
-   "url": "https://store.steampowered.com/app/3224770/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3224770/d7ddfe8985d7be8db7a0195d5c482c4438ed929d/header.jpg?t=1773306345",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3224770/8ec1b9ecbdf9af10a1c21aaf1b2a2f3be58bf097/capsule_sm_120.jpg?t=1773306345",
+   "id": "steam-1407200",
+   "title": "World of Tanks",
+   "url": "https://store.steampowered.com/app/1407200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1407200/819fc92f7ddb96ef10792a6d72382c5b814d671a/header.jpg?t=1792493146",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1407200/d7ebe4d7dfb1fe42c7eb4ded656356199dd4ac82/capsule_sm_120.jpg?t=1793012187",
    "headerChecked": true,
    "genres": [
-    "Simuladores",
-    "Deportes"
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
@@ -457,11 +445,11 @@
    ]
   },
   {
-   "id": "steam-1665460",
-   "title": "eFootball™",
-   "url": "https://store.steampowered.com/app/1665460/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1792635226",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/7c1ef2670889241a42df4405da83ec99e4d6d442/capsule_sm_120.jpg?t=1792635226",
+   "id": "steam-3224770",
+   "title": "Umamusume: Pretty Derby",
+   "url": "https://store.steampowered.com/app/3224770/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3224770/d7ddfe8985d7be8db7a0195d5c482c4438ed929d/header.jpg?t=1773306345",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3224770/8ec1b9ecbdf9af10a1c21aaf1b2a2f3be58bf097/capsule_sm_120.jpg?t=1773306345",
    "headerChecked": true,
    "genres": [
     "Simuladores",
@@ -482,16 +470,27 @@
    ]
   },
   {
-   "id": "steam-1599340",
-   "title": "Lost Ark",
-   "url": "https://store.steampowered.com/app/1599340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1599340/header.jpg?t=1763571534",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/capsule_sm_120.jpg?t=1763571534",
+   "id": "steam-1286830",
+   "title": "STAR WARS™: The Old Republic™",
+   "url": "https://store.steampowered.com/app/1286830/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/header.jpg?t=1791993603",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603",
    "headerChecked": true,
    "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
+    "Multijugador masivo",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-1665460",
+   "title": "eFootball™",
+   "url": "https://store.steampowered.com/app/1665460/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1792635226",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/7c1ef2670889241a42df4405da83ec99e4d6d442/capsule_sm_120.jpg?t=1792635226",
+   "headerChecked": true,
+   "genres": [
+    "Simuladores",
+    "Deportes"
    ]
   }
  ]
