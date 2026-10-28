@@ -159,7 +159,25 @@ class Site:
         self.history = {}  # historial de precios propio (ogc/history.py)
 
     # ---------- plantilla común ----------
+    HERO_KINDS = (("gratis", "free"), ("regalo", "free"), ("codigos", "free"), ("lanzamiento", "rel"), ("juegos-que-salen", "rel"),
+                  ("mas-esperados", "rel"), ("retrasados", "rel"), ("guia", "guide"), ("preguntas", "guide"), ("glosario", "guide"),
+                  ("como-verificamos", "guide"), ("rebajas", "steam"), ("oferta", "deal"), ("baratos", "deal"), ("minimos", "deal"),
+                  ("menos-de", "deal"), ("tiendas", "deal"), ("instant", "deal"))
+
+    def page_hero(self, name, body, crumbs):
+        """Envuelve el título, la entrada y la fecha de cada página en una cabecera con su propio estilo según el tema."""
+        m = re.search(r'<h1>.*?</h1>(?:\s*<p class="lead">.*?</p>)?(?:\s*<p class="meta">.*?</p>)?', body, flags=re.S)
+        if not m or m.start() > 4000 or name.startswith(("oferta-", "juego-")) and name != "oferta-del-dia.html":
+            return body
+        kind = next((k for key, k in self.HERO_KINDS if key in name), "plain")
+        label = crumbs[0][1] if crumbs else "Ofertas Gamer CO"
+        hero = (f'<header class="page-hero ph-{kind}"><p class="ph-kick"><span class="ph-no" aria-hidden="true"></span>{e(label)}</p>'
+                f'{m.group(0)}<span class="ph-deco" aria-hidden="true"></span></header>')
+        return body[:m.start()] + hero + body[m.end():]
+
     def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website", og_image=None):
+        if name != "index.html":
+            body = self.page_hero(name, body, crumbs)
         canonical = self.base + ("" if name == "index.html" else name)
         full_title = title if name == "index.html" else f"{title} | {self.cfg['nombre']}"
         if len(full_title) > 65:  # Google corta los títulos largos: primero sobra el nombre del sitio
@@ -258,6 +276,7 @@ class Site:
 {self.support_box()}<p>{e(DISCLOSURE)}</p>
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
 <p>Ofertas Gamer CO no vende productos ni procesa pagos. Los precios y la disponibilidad pueden cambiar sin previo aviso.</p>
+<p class="foot-giant" aria-hidden="true">OFERTAS GAMER CO</p>
 </div></footer>
 {self.bottom_nav(name)}
 </body>
@@ -419,15 +438,25 @@ class Site:
         alt = f"Imagen de {o['title']}" if o.get("image") else ""
         cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
         return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
-<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}</div>
-<div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
+<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}<span class="wm-arrow" aria-hidden="true">↗</span></div>
+<div class="body"><p class="wm-cap">{e(self.card_caption(o))}</p><h3 class="clamp2">{self.title_link(o)}</h3>
 {self.price_html(o)}
 {self.countdown(o)}
 {self.trust_chips(o)}
 <div class="actions">{self.offer_button(o)}{f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>✓</button>' if free and self.cop_saved(o) else ''}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>↗</button></div>
 </div></li>"""
 
-    def offer_list(self, offers, with_filters=True, list_id="offers"):
+    def card_caption(self, o):
+        """Línea corta tipo ficha: tienda, sistema y fecha de fin (solo datos reales)."""
+        bits = [o.get("store") or ""]
+        if o.get("metacritic"):
+            bits.append(f"Metacritic {o['metacritic']}")
+        end = parse_iso(o.get("expiresAt")) if o.get("expiresAt") else None
+        if end:
+            bits.append("hasta el " + end.astimezone(CO_TZ).strftime("%d/%m"))
+        return " · ".join(b for b in bits if b)
+
+    def offer_list(self, offers, with_filters=True, list_id="offers", bento=False, poster=False):
         if not offers:
             return '<p class="notice">No hay ofertas disponibles en este momento. Vuelve en unas horas.</p>'
         cards = []
@@ -453,7 +482,7 @@ class Site:
 </form>
 <nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav>
 <p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
-        return filters + f'<ul class="grid" id="{list_id}">' + "".join(cards) + "</ul>"
+        return filters + f'<ul class="grid{" bento" if bento else ""}{" poster" if poster else ""}" id="{list_id}">' + "".join(cards) + "</ul>"
 
     def support_box(self):
         url = self.cfg.get("enlace_kofi")
@@ -535,7 +564,8 @@ class Site:
         if not o:
             return ""
         score = self.value_score(o)
-        return f"""<section class="dotd" aria-labelledby="dotd-h"><div class="dotd-media"><img src="{e(o['image'])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}</div>
+        bg = f'<img class="dotd-bg" src="{e(o["image"])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">' if page else ""
+        return f"""<section class="dotd{' dotd-page' if page else ''}" aria-labelledby="dotd-h">{bg}<div class="dotd-media"><img src="{e(o['image'])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}</div>
 <div class="dotd-info"><p class="dotd-kicker">{ICONS['sparkle']} Oferta del día</p><h2 id="dotd-h" class="dotd-title">{self.title_link(o)}</h2>
 {self.price_html(o)}{self.countdown(o)}<p class="meta">{self.store_chip(o)} · Vale la pena: <strong>{score}/100</strong></p>
 <div class="cta">{self.offer_button(o)}{'' if page else '<a class="btn" href="oferta-del-dia.html">¿Por qué esta?</a>'}</div></div></section>"""
@@ -560,6 +590,70 @@ class Site:
 <input id="qs" name="q" type="search" placeholder="Busca un juego…" autocomplete="off"><button class="btn btn-primary" type="submit">{ICONS['search']} Buscar</button></form>
 <nav class="chips quick-chips" aria-label="Filtros rápidos"><a class="chip hot" href="juegos-gratis.html">Gratis</a><a class="chip" href="ofertas.html?orden=vence">Terminan pronto</a><a class="chip" href="ofertas.html?max=20000">Menos de $20.000</a><a class="chip" href="ofertas.html?min=75">-75% o más</a>{stores}</nav>
 </section>"""
+
+    @staticmethod
+    def sec_head(eyebrow, title, lede="", icon="", hid=""):
+        """Encabezado de sección: etiqueta pequeña y título grande a la izquierda, texto a la derecha."""
+        ida = f' id="{hid}"' if hid else ""
+        return (f'<div class="sec-big"><div><p class="eyebrow">{e(eyebrow)}</p><h2{ida}>{ICONS.get(icon, "")} {title}</h2></div>'
+                + (f'<p class="sec-lede">{lede}</p>' if lede else "") + "</div>")
+
+    def pain_points(self):
+        pains = ["Te enteraste tarde del juego gratis de Epic", "Compraste un juego y a la semana bajó de precio",
+                 "No sabes cuánto es en pesos colombianos", "Páginas de claves con precios sospechosos",
+                 "Diez pestañas abiertas comparando tiendas", "La rebaja de Steam te tomó por sorpresa"]
+        chips = "".join(f'<li><span aria-hidden="true">✕</span>{e(t)}</li>' for t in pains)
+        return (f'<section class="pains" aria-labelledby="pain-h"><p class="eyebrow">¿Te ha pasado?</p>'
+                f'<h2 id="pain-h">Comprar juegos en Colombia <span class="grad">no debería ser difícil</span></h2>'
+                f'<ul class="pain-list">{chips}</ul>'
+                f'<p class="pain-fix">{ICONS["check"]} Aquí juntamos los precios de las tiendas oficiales, los pasamos a pesos y te avisamos antes de que se acaben.</p></section>')
+
+    def tools_grid(self):
+        tools = [("bell", "Alertas de precio", "Te avisamos por Telegram cuando un juego baje.", "alertas.html"),
+                 ("calendar", "Calendario de estrenos", "Cientos de juegos ordenados por fecha de salida.", "lanzamientos.html"),
+                 ("gift", "Juegos gratis", "Epic, Steam, GOG y más, con la hora en que terminan.", "juegos-gratis.html"),
+                 ("clock", "Rebajas de Steam", "Cuenta regresiva para la próxima gran rebaja.", "rebajas-de-steam.html"),
+                 ("thermo", "Mínimos históricos", "Ofertas que están en su precio más bajo registrado.", "minimos-historicos.html"),
+                 ("store", "Comparar tiendas", "El mismo juego en varias tiendas, del más barato al más caro.", "tiendas.html"),
+                 ("quiz", "¿Qué juego me conviene?", "Responde 4 preguntas y te recomendamos uno.", "que-juego-me-conviene.html"),
+                 ("news", "Resumen semanal", "Lo mejor de la semana, todos los viernes.", "resumen-semanal.html"),
+                 ("dice", "Sorpréndeme", "Un juego al azar de las ofertas de hoy.", "sorpresa.html")]
+        cards = "".join(f'<li><a href="{href}"><span class="tool-ico">{ICONS[ic]}</span><strong>{e(t)}</strong><span>{e(d)}</span><span class="tool-go" aria-hidden="true">↗</span></a></li>'
+                        for ic, t, d, href in tools)
+        return (f'<section class="tools" aria-labelledby="tools-h">'
+                + self.sec_head("Todo en un solo lugar", 'Herramientas para <span class="grad">ahorrar en serio</span>',
+                                "Todo es gratis y funciona sin crear cuenta.", hid="tools-h")
+                + f'<ul class="tool-grid">{cards}</ul></section>')
+
+    def store_marquee(self):
+        names = [s for s in self.stores.values() if s["active"]]
+        if len(names) < 3:
+            return ""
+        row = "".join(f'<li><span class="store-dot store-{e(s["id"])}" aria-hidden="true"></span>{e(s["name"])}'
+                      f'<small>{self.store_counts.get(s["id"], 0)} ofertas</small></li>' for s in names)
+        return (f'<section class="store-marquee" aria-label="Tiendas oficiales que revisamos"><p class="eyebrow">Tiendas oficiales que revisamos</p>'
+                f'<div class="sm-track"><ul>{row}</ul><ul aria-hidden="true">{row}</ul></div></section>')
+
+    def journal(self):
+        kinds = {"guia-tienda-oficial": "Seguridad", "guia-juegos-gratis-temporales": "Juegos gratis",
+                 "guia-reclamar-juegos-gratis-epic": "Paso a paso", "guia-comprar-juegos-baratos-colombia": "Ahorro",
+                 "guia-clave-regional-global": "Claves", "guia-que-es-drm": "Explicado", "guia-enlaces-afiliados": "Transparencia"}
+        cards = "".join(
+            f'<li><a href="{g["slug"]}.html"><span class="jr-num">{i:02d}</span><span class="jr-kind">{e(kinds.get(g["slug"], "Guía"))}</span>'
+            f'<strong>{e(g["title"])}</strong><span class="jr-text">{e(g["description"])}</span><span class="jr-more">Leer la guía →</span></a></li>'
+            for i, g in enumerate(GUIDES[:3], 1))
+        return (f'<section class="journal" aria-labelledby="jr-h">'
+                + self.sec_head("Guías", 'Aprende a <span class="grad">comprar sin riesgos</span>',
+                                '<a href="guias.html">Ver todas las guías</a>', hid="jr-h")
+                + f'<ul class="jr-grid">{cards}</ul></section>')
+
+    def cta_band(self, item):
+        img = (f'<img src="{e(item["image"])}"{fallback(item)} alt="" width="1280" height="600" loading="lazy" decoding="async">'
+               if item and item.get("image") else "")
+        return (f'<section class="cta-band" aria-labelledby="cta-h">{img}<div class="cta-band-in">'
+                f'<p class="eyebrow">Gratis · sin cuenta · cada 4 horas</p>'
+                f'<h2 id="cta-h">Que las ofertas <span class="grad">te busquen a ti</span></h2>'
+                f'<p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.</p>{self.channels_cta()}</div></section>')
 
     def stat_strip(self, free, deals, games):
         """Franja de cifras grandes con datos reales del momento."""
@@ -2037,25 +2131,29 @@ class Site:
 {self.ad_slot("banner_after_hero")}
 {self.mega(["GRATIS", "OFERTAS", "ESTRENOS", "COLOMBIA"])}
 {self.category_tiles(free, top, games or [], updated_dt)}
-<h2>{ICONS['gift']} Gratis esta semana</h2>
+{self.sec_head("Para reclamar ya", 'Gratis <span class="grad">esta semana</span>', "Juegos que puedes quedarte para siempre si los reclamas antes de que termine la promoción.", "gift")}
 {self.free_ring(free)}
 {self.saved_box()}
-{self.offer_list(free[:8], with_filters=False, list_id="free-home") if free else '<p>No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
+{self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True) if free else '<p>No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
 {f'<p><a class="btn" href="juegos-gratis.html">Ver los {len(free)} juegos gratis</a></p>' if len(free) > 8 else ''}
 {self.mega(["DESCUENTOS", "STEAM", "EPIC", "GOG", "HUMBLE"], reverse=True)}
-<h2>{ICONS['flame']} Mejores ofertas verificadas</h2>
-{self.offer_list(top, with_filters=False, list_id="top-home")}
+{self.sec_head("Selección de hoy", 'Mejores ofertas <span class="grad">verificadas</span>', "Elegidas por descuento, valoración de la crítica y disponibilidad en Colombia. Pasa el cursor para ver el tráiler.", "flame")}
+{self.offer_list(top, with_filters=False, list_id="top-home", bento=True)}
 <p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
 {self.savings_box(deals)}
+{self.pain_points()}
+{self.store_marquee()}
 {self.today_releases(games or [], updated_dt)}
 {self.upcoming_home(games or [], updated_dt)}
+{self.tools_grid()}
 {self.how_we_verify()}
-<section class="channels"><h2>{ICONS['bell']} Recibe las ofertas al instante</h2><p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky cada 4 horas.</p>{self.channels_cta()}</section>
+{self.journal()}
+{self.cta_band(next((o for o in top if o.get("image")), None))}
 <p class="meta small-notice">Los precios pueden cambiar en cualquier momento: confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>""", jsonld=[org, website, self.item_list_ld(live)])
 
         self.layout("juegos-gratis.html", "Juegos gratis para PC hoy",
                     "Juegos gratuitos para PC disponibles ahora en tiendas oficiales como Epic Games Store, con la fecha en que termina cada promoción.",
-                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{self.saved_box()}{notice}{self.offer_list(free)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a> <a class=\"btn btn-primary\" href=\"juegos-gratis-en-todas-las-tiendas.html\">Gratis en Steam, GOG, Amazon y más</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
+                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{self.saved_box()}{notice}{self.offer_list(free, poster=True)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a> <a class=\"btn btn-primary\" href=\"juegos-gratis-en-todas-las-tiendas.html\">Gratis en Steam, GOG, Amazon y más</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
                     crumbs=[("juegos-gratis.html", "Juegos gratis")], jsonld=[self.item_list_ld(free)])
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
