@@ -1032,3 +1032,25 @@ document.addEventListener("error", function (ev) {
     img.removeAttribute("data-fallback");
   }
 }, true);
+
+// Banner de portada: pasa solo cada 6 segundos, se puede mover con puntos y flechas
+(function () {
+  var box = document.querySelector(".hero-slider");
+  if (!box) return;
+  var slides = box.querySelectorAll(".hs-slide"), dots = box.querySelectorAll(".hs-dot"), nav = box.querySelector(".hs-nav");
+  if (slides.length < 2 || !nav) return;
+  nav.hidden = false;
+  var cur = 0, timer = null, still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function go(i) {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle("on", k === cur); if (k === cur) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
+    dots.forEach(function (d, k) { d.classList.toggle("on", k === cur); });
+  }
+  function play() { if (!still) { clearInterval(timer); timer = setInterval(function () { go(cur + 1); }, 6000); } }
+  dots.forEach(function (d, k) { d.addEventListener("click", function () { go(k); play(); }); });
+  box.querySelector(".hs-prev").addEventListener("click", function () { go(cur - 1); play(); });
+  box.querySelector(".hs-next").addEventListener("click", function () { go(cur + 1); play(); });
+  box.addEventListener("mouseenter", function () { clearInterval(timer); });
+  box.addEventListener("mouseleave", play);
+  play();
+})();
