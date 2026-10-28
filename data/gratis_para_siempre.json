@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28T13:50:29Z",
+ "updatedAt": "2026-10-28T13:57:53Z",
  "games": [
   {
    "id": "steam-3393110",
@@ -239,19 +239,6 @@
    ]
   },
   {
-   "id": "steam-552990",
-   "title": "World of Warships",
-   "url": "https://store.steampowered.com/app/552990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/e4946bba05ec1edf85048ae0cf6f47572aabb7fa/capsule_sm_120_alt_assets_16.jpg?t=1791478284",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
-   ]
-  },
-  {
    "id": "steam-2073620",
    "title": "Arena Breakout: Infinite",
    "url": "https://store.steampowered.com/app/2073620/",
@@ -284,6 +271,19 @@
    "headerChecked": true,
    "genres": [
     "Estrategia"
+   ]
+  },
+  {
+   "id": "steam-552990",
+   "title": "World of Warships",
+   "url": "https://store.steampowered.com/app/552990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/e4946bba05ec1edf85048ae0cf6f47572aabb7fa/capsule_sm_120_alt_assets_16.jpg?t=1791478284",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
@@ -396,17 +396,6 @@
    ]
   },
   {
-   "id": "steam-3028330",
-   "title": "Battlefield™ REDSEC",
-   "url": "https://store.steampowered.com/app/3028330/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3028330/7f156ef258b0b34011363f8da61b7e2a714232c7/header.jpg?t=1792018418",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3028330/f7ec6648f9de149b098b8b9674aa99a0b1c284c8/capsule_sm_120.jpg?t=1792018418",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
-  },
-  {
    "id": "steam-2426960",
    "title": "Summoners' War: Sky Arena",
    "url": "https://store.steampowered.com/app/2426960/",
@@ -416,6 +405,17 @@
    "genres": [
     "Rol",
     "Estrategia"
+   ]
+  },
+  {
+   "id": "steam-3028330",
+   "title": "Battlefield™ REDSEC",
+   "url": "https://store.steampowered.com/app/3028330/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3028330/7f156ef258b0b34011363f8da61b7e2a714232c7/header.jpg?t=1792018418",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3028330/f7ec6648f9de149b098b8b9674aa99a0b1c284c8/capsule_sm_120.jpg?t=1792018418",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
    ]
   },
   {
@@ -432,16 +432,14 @@
    ]
   },
   {
-   "id": "steam-3557620",
-   "title": "Blue Archive",
-   "url": "https://store.steampowered.com/app/3557620/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3557620/b723141fa8cf93bb2bb56d03789561341a2cad62/header.jpg?t=1779773548",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3557620/1bf892b91fc9832afaf2478fad7ed7e35e2d1dec/capsule_sm_120.jpg?t=1779773548",
+   "id": "steam-1938090",
+   "title": "Call of Duty®",
+   "url": "https://store.steampowered.com/app/1938090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1792807032",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793043140",
    "headerChecked": true,
    "genres": [
-    "Aventura",
-    "Casual",
-    "Rol"
+    "Acción"
    ]
   },
   {
@@ -458,6 +456,28 @@
    ]
   },
   {
+   "id": "steam-3557620",
+   "title": "Blue Archive",
+   "url": "https://store.steampowered.com/app/3557620/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3557620/b723141fa8cf93bb2bb56d03789561341a2cad62/header.jpg?t=1779773548",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3557620/1bf892b91fc9832afaf2478fad7ed7e35e2d1dec/capsule_sm_120.jpg?t=1779773548",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-1049590",
+   "title": "Eternal Return",
+   "url": "https://store.steampowered.com/app/1049590/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
+   "headerChecked": true,
+   "genres": []
+  },
+  {
    "id": "steam-1818450",
    "title": "STALZONE",
    "url": "https://store.steampowered.com/app/1818450/",
@@ -469,26 +489,6 @@
     "Multijugador masivo",
     "Rol"
    ]
-  },
-  {
-   "id": "steam-1938090",
-   "title": "Call of Duty®",
-   "url": "https://store.steampowered.com/app/1938090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1792807032",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793043140",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
-  },
-  {
-   "id": "steam-1049590",
-   "title": "Eternal Return",
-   "url": "https://store.steampowered.com/app/1049590/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
-   "headerChecked": true,
-   "genres": []
   }
  ]
 }
