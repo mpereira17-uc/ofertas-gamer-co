@@ -438,7 +438,7 @@ class Site:
         alt = f"Imagen de {o['title']}" if o.get("image") else ""
         cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
         return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
-<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}<span class="wm-arrow" aria-hidden="true">↗</span></div>
+<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}<span class="wm-arrow" aria-hidden="true">↗</span>{self.ribbon(o)}</div>
 <div class="body"><p class="wm-cap">{e(self.card_caption(o))}</p><h3 class="clamp2">{self.title_link(o)}</h3>
 {self.price_html(o)}
 {self.countdown(o)}
@@ -654,6 +654,61 @@ class Site:
                 f'<p class="eyebrow">Gratis · sin cuenta · cada 4 horas</p>'
                 f'<h2 id="cta-h">Que las ofertas <span class="grad">te busquen a ti</span></h2>'
                 f'<p class="lead">Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.</p>{self.channels_cta()}</div></section>')
+
+    def duel_box(self, live):
+        """Duelo de tiendas: el mismo juego en dos tiendas oficiales, gana la más barata (precios reales)."""
+        cop = lambda x: self.cop_value(x.get("currentPrice"), x)
+        rows = []
+        for o in live:
+            others = [x for x in (o.get("otherStores") or []) if x.get("currentPrice") and cop(x)]
+            if not o.get("currentPrice") or not cop(o) or not others:
+                continue
+            b = max(others, key=cop) if cop(min(others, key=cop)) >= cop(o) else min(others, key=cop)
+            if round(cop(b), -2) == round(cop(o), -2):
+                continue
+            rows.append((abs(cop(o) - cop(b)), o, b))
+        rows = sorted(rows, key=lambda r: -r[0])[:4]
+        if len(rows) < 2:
+            return ""
+        def side(x, win):
+            return (f'<div class="duel-side{" win" if win else ""}"><span class="store-chip"><span class="store-dot store-{e(x["storeId"])}" aria-hidden="true"></span>{e(x["store"])}</span>'
+                    f'<strong>{self.pesos(cop(x))}</strong><small>-{x.get("discountPercentage") or 0}%</small>{"<em>Más barato</em>" if win else ""}</div>')
+        items = "".join(
+            f'<li><img src="{e(o["image"])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">'
+            f'<p class="duel-name">{self.title_link(o)}</p><div class="duel-row">{side(o, cop(o) < cop(b))}<span class="duel-vs" aria-hidden="true">VS</span>{side(b, cop(b) < cop(o))}</div>'
+            f'<p class="meta">Diferencia: {self.pesos(diff)} aprox.</p></li>'
+            for diff, o, b in rows if o.get("image"))
+        return (f'<section class="duels" aria-labelledby="duel-h">'
+                + self.sec_head("Mismo juego, distinta tienda", 'Duelo de <span class="grad">tiendas</span>',
+                                "Comparamos el precio del mismo juego en tiendas oficiales. Valores aproximados en pesos.", hid="duel-h")
+                + f'<ul class="duel-list">{items}</ul></section>')
+
+    def trailers_box(self, games, count=6):
+        """Tráileres de los juegos más esperados (pasa el cursor para verlos)."""
+        picks = sorted([g for g in games if g.get("trailer") and g.get("image")], key=self.rank)[:count]
+        if len(picks) < 3:
+            return ""
+        items = "".join(
+            f'<li><a href="{e(self.detail.get(g["id"]) or g["url"])}"{"" if self.detail.get(g["id"]) else " target=\"_blank\" rel=\"noopener noreferrer\""}>'
+            f'<span class="tv-img"{self.preview_attrs(g.get("trailer"))}><img src="{e(g["image"])}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async">'
+            f'<span class="tv-play" aria-hidden="true">{ICONS["play"]}</span><span class="tv-live">Tráiler</span></span>'
+            f'<span class="tv-name">{e(g["title"])}</span><span class="tv-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
+            for g in picks)
+        return (f'<section class="tv" aria-labelledby="tv-h">'
+                + self.sec_head("Pasa el cursor y mira", 'Tráileres de <span class="grad">lo que viene</span>',
+                                '<a href="lanzamientos.html">Ver el calendario completo</a>', "play", "tv-h")
+                + f'<ul class="tv-grid">{items}</ul></section>')
+
+    def ribbon(self, o):
+        """Etiqueta de estado de la tarjeta, solo con datos reales."""
+        end = parse_iso(o.get("expiresAt")) if o.get("expiresAt") else None
+        if end and 0 < (end - self.now).total_seconds() < 24 * 3600:
+            return '<span class="ribbon r-time">Últimas horas</span>'
+        if (self.price_stats(o) or {}).get("isLow"):
+            return '<span class="ribbon r-low">Mínimo histórico</span>'
+        if o.get("currentPrice") and (o.get("discountPercentage") or 0) >= 90:
+            return '<span class="ribbon r-hot">🔥 Hot</span>'
+        return ""
 
     def stat_strip(self, free, deals, games):
         """Franja de cifras grandes con datos reales del momento."""
@@ -2125,6 +2180,7 @@ class Site:
 {self.thermometer(live, free)}
 {self.feature(free + top)}
 {self.curve_carousel(games or [], updated_dt)}
+{self.trailers_box(games or [])}
 {self.dotd_block(dotd)}
 {self.soon_strip(live)}
 {self.quick_search()}
@@ -2141,6 +2197,7 @@ class Site:
 {self.offer_list(top, with_filters=False, list_id="top-home", bento=True)}
 <p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
 {self.savings_box(deals)}
+{self.duel_box(live)}
 {self.pain_points()}
 {self.store_marquee()}
 {self.today_releases(games or [], updated_dt)}
