@@ -492,7 +492,7 @@ class Site:
         m = picks[0]
         main = f"""<article class="f-main{' is-free' if m.get('currentPrice') == 0 else ''}">
 <img src="{e(m['image'])}"{fallback(m)} alt="" width="1280" height="600" fetchpriority="high" decoding="async">
-<div class="f-info"><div class="f-top">{self.store_chip(m)}{self.badge(m)}</div>
+{self.float_tags(m)}<div class="f-info"><div class="f-top">{self.store_chip(m)}{self.badge(m)}</div>
 <h2 class="f-title">{self.title_link(m)}</h2>
 {self.price_html(m, big=True)}
 {self.countdown(m, "left f-left")}
@@ -501,6 +501,19 @@ class Site:
 <div class="f-item-info">{self.badge(o)}<h3 class="clamp2">{self.title_link(o)}</h3><p class="f-price{' free' if o.get('currentPrice') == 0 else ''}">{'Gratis' if o.get('currentPrice') == 0 else e(money(o['currentPrice'], o['currency']))}</p>{self.countdown(o)}</div></li>"""
                        for o in picks[1:])
         return f'<section class="feature" aria-label="Ofertas destacadas">{main}<ul class="f-side">{side}</ul></section>'
+
+    def float_tags(self, o):
+        """Etiquetas flotantes sobre la imagen principal (datos reales de la oferta)."""
+        bits = [o["store"]]
+        if o.get("discountPercentage") and o.get("currentPrice"):
+            bits.append(f"-{o['discountPercentage']}%")
+        if o.get("expiresAt"):
+            end = parse_iso(o["expiresAt"])
+            if end:
+                bits.append("hasta el " + end.astimezone(CO_TZ).strftime("%d/%m"))
+        meta = f'<span class="ft ft-bottom">{" · ".join(e(b) for b in bits)}</span>'
+        kind = "Gratis hoy" if o.get("currentPrice") == 0 else "Oferta destacada"
+        return f'<span class="ft ft-top"><span class="pill">N.º 1</span>{kind}</span>{meta}'
 
     def deal_of_day(self, live):
         """Una oferta por día (hora Colombia), la que más vale la pena. Se guarda para que no cambie en el día."""
@@ -548,12 +561,63 @@ class Site:
 <nav class="chips quick-chips" aria-label="Filtros rápidos"><a class="chip hot" href="juegos-gratis.html">Gratis</a><a class="chip" href="ofertas.html?orden=vence">Terminan pronto</a><a class="chip" href="ofertas.html?max=20000">Menos de $20.000</a><a class="chip" href="ofertas.html?min=75">-75% o más</a>{stores}</nav>
 </section>"""
 
+    def stat_strip(self, free, deals, games):
+        """Franja de cifras grandes con datos reales del momento."""
+        top = max((o.get("discountPercentage") or 0) for o in deals) if deals else 0
+        stores = sum(1 for n in self.store_counts.values() if n)
+        cells = [(len(free), "", "Juegos gratis ahora"), (len(deals), "", "Ofertas activas"),
+                 (top, "%", "Mayor descuento de hoy"), (stores, "", "Tiendas oficiales revisadas")]
+        if games:
+            cells.append((len(games), "", "Juegos en el calendario"))
+        return '<ul class="stat-strip">' + "".join(
+            f'<li><strong data-count="{n}"{f" data-suffix=\"{suf}\"" if suf else ""}>{n}{suf}</strong><span>{e(label)}</span></li>'
+            for n, suf, label in cells) + "</ul>"
+
+    def savings_box(self, deals):
+        """Comparación precio normal contra precio de hoy, con las ofertas que más ahorran en pesos."""
+        rows = []
+        for o in deals:
+            was, now = self.cop_value(o.get("originalPrice"), o), self.cop_value(o.get("currentPrice"), o)
+            if was and now and was > now:
+                rows.append((was - now, was, now, o))
+        rows = sorted(rows, key=lambda r: -r[0])[:3]
+        if len(rows) < 3:
+            return ""
+        was_t, now_t = sum(r[1] for r in rows), sum(r[2] for r in rows)
+        items = "".join(
+            f'<li><span class="sv-name">{self.title_link(o)}<small>{e(o["store"])} · -{o.get("discountPercentage") or 0}%</small></span>'
+            f'<s>{self.pesos(was)}</s><strong>{self.pesos(now)}</strong></li>' for _, was, now, o in rows)
+        return (f'<section class="savings" aria-labelledby="sv-h"><div><p class="eyebrow">Precio normal contra precio de hoy</p>'
+                f'<h2 id="sv-h">Las 3 ofertas que <span class="grad">más te ahorran</span></h2>'
+                f'<p class="lead">Si compraras estos tres juegos a precio normal pagarías <s>{self.pesos(was_t)}</s>. Hoy cuestan '
+                f'<strong>{self.pesos(now_t)}</strong>: te ahorras <strong class="sv-total">{self.pesos(was_t - now_t)}</strong>.</p>'
+                f'<p class="meta">Valores aproximados en pesos colombianos. Confirma el precio final en la tienda.</p></div>'
+                f'<ul class="sv-list">{items}</ul></section>')
+
+    def category_tiles(self, free, top, games, now):
+        """Tres accesos grandes con imagen: gratis, ofertas y estrenos."""
+        soon = sorted([g for g in games if g.get("comingSoon") and g.get("image")], key=self.rank)
+        tiles = [("juegos-gratis.html", "Gratis", f"{len(free)} juegos para reclamar", next((o for o in free if o.get("image")), None)),
+                 ("ofertas.html", "Ofertas", "Descuentos verificados", next((o for o in top if o.get("image")), None)),
+                 ("lanzamientos.html", "Estrenos", "Calendario de lanzamientos", soon[0] if soon else None)]
+        tiles = [t for t in tiles if t[3]]
+        if len(tiles) < 3:
+            return ""
+        return '<ul class="cat-tiles">' + "".join(
+            f'<li><a href="{href}"><img src="{e(it["image"])}"{fallback(it)} alt="" width="460" height="215" loading="lazy" decoding="async">'
+            f'<span class="ct-name">{e(name)}</span><span class="ct-sub">{e(sub)}</span><span class="ct-btn">Ver →</span></a></li>'
+            for href, name, sub, it in tiles) + "</ul>"
+
     def how_we_verify(self):
-        return """<section class="how" aria-labelledby="how-h"><h2 id="how-h">Cómo verificamos los precios</h2><ol class="how-steps">
-<li><strong>Tiendas oficiales</strong><span>Solo Steam, Epic, GOG, Humble, Green Man Gaming y Fanatical. Nada de claves de reventa.</span></li>
-<li><strong>Revisión cada 4 horas</strong><span>Un sistema automático consulta los precios y retira las ofertas que ya terminaron.</span></li>
-<li><strong>Estados claros</strong><span><span class="st ok">Precio para Colombia</span> <span class="st ref">Referencia en USD</span> <span class="st muted">Vigencia por confirmar</span></span></li>
-</ol><p><a href="como-verificamos.html">Leer el método completo</a></p></section>"""
+        steps = [("Buscamos", "Tiendas oficiales", "Solo Steam, Epic, GOG, Humble, Green Man Gaming y Fanatical. Nada de claves de reventa."),
+                 ("Verificamos", "Revisión cada 4 horas", "Un sistema automático consulta los precios y retira las ofertas que ya terminaron."),
+                 ("Convertimos", "Precio en pesos", "Mostramos el valor aproximado en pesos colombianos y el precio original de la tienda."),
+                 ("Avisamos", "Directo a tu celular", "Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.")]
+        lis = "".join(f'<li><span class="hs-num">{i:02d}</span><span class="hs-kick">{e(k)}</span><strong>{e(t)}</strong><span>{e(d)}</span></li>'
+                      for i, (k, t, d) in enumerate(steps, 1))
+        return f"""<section class="how" aria-labelledby="how-h"><h2 id="how-h">Cómo verificamos los precios</h2><ol class="how-steps big">{lis}</ol>
+<p class="how-states"><span class="st ok">Precio para Colombia</span> <span class="st ref">Referencia en USD</span> <span class="st muted">Vigencia por confirmar</span></p>
+<p><a href="como-verificamos.html">Leer el método completo</a></p></section>"""
 
     # ---------- páginas propias por oferta y por juego (para buscadores) ----------
     def assign_pages(self, offers, games):
@@ -1958,11 +2022,7 @@ class Site:
                     f"""<section class="hero compact">
 <p class="eyebrow">Radar de ofertas gamer · Colombia</p>
 <h1>Juegos <span class="grad">gratis</span> y ofertas de PC, verificados</h1>
-<ul class="stats mini">
-<li><strong data-count="{len(free)}">{len(free)}</strong><span>gratis ahora</span></li>
-<li><strong data-count="{len(deals)}">{len(deals)}</strong><span>ofertas activas</span></li>
-<li><strong data-count="{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}" data-suffix="%">{max((o.get('discountPercentage') or 0) for o in deals) if deals else 0}%</strong><span>mayor descuento</span></li>
-</ul>
+{self.stat_strip(free, deals, games or [])}
 {updated_line}
 <p class="hero-fun"><a class="btn" href="sorpresa.html" data-surprise>{ICONS["dice"]} Sorpréndeme</a><a class="btn" href="que-juego-me-conviene.html">{ICONS["quiz"]} ¿Qué juego me conviene?</a></p>
 </section>
@@ -1976,6 +2036,7 @@ class Site:
 {self.quick_search()}
 {self.ad_slot("banner_after_hero")}
 {self.mega(["GRATIS", "OFERTAS", "ESTRENOS", "COLOMBIA"])}
+{self.category_tiles(free, top, games or [], updated_dt)}
 <h2>{ICONS['gift']} Gratis esta semana</h2>
 {self.free_ring(free)}
 {self.saved_box()}
@@ -1985,6 +2046,7 @@ class Site:
 <h2>{ICONS['flame']} Mejores ofertas verificadas</h2>
 {self.offer_list(top, with_filters=False, list_id="top-home")}
 <p><a class="btn btn-primary" href="ofertas.html">Ver las {len(live)} ofertas con buscador y filtros</a></p>
+{self.savings_box(deals)}
 {self.today_releases(games or [], updated_dt)}
 {self.upcoming_home(games or [], updated_dt)}
 {self.how_we_verify()}
