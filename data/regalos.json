@@ -1,6 +1,45 @@
 {
- "updatedAt": "2026-10-29T15:17:12Z",
+ "updatedAt": "2026-10-29T21:13:08Z",
  "items": [
+  {
+   "id": "gp-3834",
+   "title": "Hexologic",
+   "type": "game",
+   "group": "steam",
+   "platforms": "PC, Steam",
+   "worth": "$4.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/6ae37c96c0b45.jpg",
+   "url": "https://www.gamerpower.com/open/hexologic-steam-giveaway",
+   "firstSeen": "2026-10-29T21:13:08Z",
+   "active": true
+  },
+  {
+   "id": "gp-3832",
+   "title": "Galaxy Kart",
+   "type": "game",
+   "group": "otros",
+   "platforms": "Android, iOS",
+   "worth": "$4.99",
+   "endsOn": "2026-11-05",
+   "image": "https://www.gamerpower.com/offers/1b/6ae3661d090e9.jpg",
+   "url": "https://www.gamerpower.com/open/galaxy-kart-mobile-giveaway",
+   "firstSeen": "2026-10-29T21:13:08Z",
+   "active": true
+  },
+  {
+   "id": "gp-3426",
+   "title": "Sorry We're Closed",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$24.99",
+   "endsOn": "2026-11-05",
+   "image": "https://www.gamerpower.com/offers/1b/69481a230819b.jpg",
+   "url": "https://www.gamerpower.com/open/sorry-we-re-closed-epic-games-giveaway",
+   "firstSeen": "2026-10-29T21:13:08Z",
+   "active": true
+  },
   {
    "id": "gp-3830",
    "title": "Free itch.io Games Bundle",
@@ -76,32 +115,6 @@
    "endsOn": "2026-11-01",
    "image": "https://www.gamerpower.com/offers/1b/6add376bc36a0.jpg",
    "url": "https://www.gamerpower.com/open/mafia-hotel-epic-games-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3824",
-   "title": "Sker Ritual",
-   "type": "game",
-   "group": "epic",
-   "platforms": "PC, Epic Games Store",
-   "worth": "$19.99",
-   "endsOn": "2026-10-29",
-   "image": "https://www.gamerpower.com/offers/1b/sker.jpg",
-   "url": "https://www.gamerpower.com/open/sker-ritual",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3823",
-   "title": "Home",
-   "type": "game",
-   "group": "epic",
-   "platforms": "PC, Android, iOS, Epic Games Store",
-   "worth": "$4.99",
-   "endsOn": "2026-10-29",
-   "image": "https://www.gamerpower.com/offers/1b/home.jpg",
-   "url": "https://www.gamerpower.com/open/home",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
   },
@@ -507,6 +520,32 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3824",
+   "title": "Sker Ritual",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$19.99",
+   "endsOn": "2026-10-29",
+   "image": "https://www.gamerpower.com/offers/1b/sker.jpg",
+   "url": "https://www.gamerpower.com/open/sker-ritual",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
+  },
+  {
+   "id": "gp-3823",
+   "title": "Home",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Android, iOS, Epic Games Store",
+   "worth": "$4.99",
+   "endsOn": "2026-10-29",
+   "image": "https://www.gamerpower.com/offers/1b/home.jpg",
+   "url": "https://www.gamerpower.com/open/home",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-3822",
