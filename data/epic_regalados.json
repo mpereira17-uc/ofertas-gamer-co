@@ -43,5 +43,23 @@
   "expiresAt": "2099-10-30T15:00:00.000Z",
   "originalPrice": 24.99,
   "currency": "USD"
+ },
+ "epic-4e469c7d8bbf49bcabc2c07127d3d946-2026-11-05": {
+  "title": "Sorry We're Closed",
+  "image": "https://cdn1.epicgames.com/spt-assets/9ab7eaaeb2f041969b350955b789f0f7/sorry-were-closed-1orqh.png",
+  "officialUrl": "https://store.epicgames.com/es-ES/p/sorry-were-closed-724c86",
+  "startsAt": "2026-10-29T15:00:00.000Z",
+  "expiresAt": "2026-11-05T16:00:00.000Z",
+  "originalPrice": 51899.0,
+  "currency": "COP"
+ },
+ "cs-251782-25-0.00": {
+  "title": "Sker Ritual",
+  "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1492070/header.jpg",
+  "officialUrl": "https://store.epicgames.com/es-ES/browse?q=Sker%20Ritual",
+  "startsAt": null,
+  "expiresAt": null,
+  "originalPrice": 24.99,
+  "currency": "USD"
  }
 }
