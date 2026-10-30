@@ -1,6 +1,19 @@
 {
- "updatedAt": "2026-10-29T21:13:08Z",
+ "updatedAt": "2026-10-30T05:57:55Z",
  "games": [
+  {
+   "id": "steam-4126040",
+   "title": "Aniimo",
+   "url": "https://store.steampowered.com/app/4126040/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4126040/bf9b76d25ac135baf8f313d9a095e754fd2e950b/header.jpg?t=1792665446",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4126040/806a53273c53fc64acc49093c7aade6719fed512/capsule_sm_120.jpg?t=1793258293",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ]
+  },
   {
    "id": "steam-3393110",
    "title": "AION 2",
@@ -23,19 +36,6 @@
    "headerChecked": true,
    "genres": [
     "Acción"
-   ]
-  },
-  {
-   "id": "steam-4126040",
-   "title": "Aniimo",
-   "url": "https://store.steampowered.com/app/4126040/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4126040/bf9b76d25ac135baf8f313d9a095e754fd2e950b/header.jpg?t=1792665446",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4126040/806a53273c53fc64acc49093c7aade6719fed512/capsule_sm_120.jpg?t=1793258293",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
    ]
   },
   {
@@ -101,6 +101,18 @@
    ]
   },
   {
+   "id": "steam-1665460",
+   "title": "eFootball™",
+   "url": "https://store.steampowered.com/app/1665460/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1792635226",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/7c1ef2670889241a42df4405da83ec99e4d6d442/capsule_sm_120.jpg?t=1792635226",
+   "headerChecked": true,
+   "genres": [
+    "Simuladores",
+    "Deportes"
+   ]
+  },
+  {
    "id": "steam-1973530",
    "title": "Limbus Company",
    "url": "https://store.steampowered.com/app/1973530/",
@@ -123,15 +135,16 @@
    ]
   },
   {
-   "id": "steam-1665460",
-   "title": "eFootball™",
-   "url": "https://store.steampowered.com/app/1665460/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1792635226",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/7c1ef2670889241a42df4405da83ec99e4d6d442/capsule_sm_120.jpg?t=1792635226",
+   "id": "steam-2767030",
+   "title": "Marvel Rivals",
+   "url": "https://store.steampowered.com/app/2767030/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2767030/c61f65c5968af5d85b0393005991ecee0184fcaf/header.jpg?t=1792140776",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/e7870f67a65dd3e9a9d04021260e62bf2a637e33/capsule_sm_120.jpg?t=1792140776",
    "headerChecked": true,
    "genres": [
-    "Simuladores",
-    "Deportes"
+    "Acción",
+    "Aventura",
+    "Casual"
    ]
   },
   {
@@ -161,19 +174,6 @@
    ]
   },
   {
-   "id": "steam-2767030",
-   "title": "Marvel Rivals",
-   "url": "https://store.steampowered.com/app/2767030/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2767030/c61f65c5968af5d85b0393005991ecee0184fcaf/header.jpg?t=1792140776",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/e7870f67a65dd3e9a9d04021260e62bf2a637e33/capsule_sm_120.jpg?t=1792140776",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Casual"
-   ]
-  },
-  {
    "id": "steam-359550",
    "title": "Tom Clancy's Rainbow Six Siege",
    "url": "https://store.steampowered.com/app/359550/",
@@ -182,19 +182,6 @@
    "headerChecked": true,
    "genres": [
     "Acción"
-   ]
-  },
-  {
-   "id": "steam-4282500",
-   "title": "hololive Dreams",
-   "url": "https://store.steampowered.com/app/4282500/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4282500/21d618af6bdb3be75a8b923bf8d38328aaba1820/header.jpg?t=1793163670",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4282500/7a916ae469dbdcf1d851ca9918ee46b79f274327/capsule_sm_120.jpg?t=1793163670",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
    ]
   },
   {
@@ -220,6 +207,15 @@
    ]
   },
   {
+   "id": "steam-1049590",
+   "title": "Eternal Return",
+   "url": "https://store.steampowered.com/app/1049590/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
+   "headerChecked": true,
+   "genres": []
+  },
+  {
    "id": "steam-3513350",
    "title": "Wuthering Waves",
    "url": "https://store.steampowered.com/app/3513350/",
@@ -233,13 +229,16 @@
    ]
   },
   {
-   "id": "steam-1049590",
-   "title": "Eternal Return",
-   "url": "https://store.steampowered.com/app/1049590/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
+   "id": "steam-1085660",
+   "title": "Destiny 2",
+   "url": "https://store.steampowered.com/app/1085660/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
    "headerChecked": true,
-   "genres": []
+   "genres": [
+    "Acción",
+    "Aventura"
+   ]
   },
   {
    "id": "steam-2073620",
@@ -255,15 +254,27 @@
    ]
   },
   {
-   "id": "steam-1085660",
-   "title": "Destiny 2",
-   "url": "https://store.steampowered.com/app/1085660/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
+   "id": "steam-2141910",
+   "title": "Magic: The Gathering Arena",
+   "url": "https://store.steampowered.com/app/2141910/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2141910/3ba5b0f05a0dac4e184047699da0fece877bfb9f/header_spanish.jpg?t=1787780109",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2141910/b15710d69590d3e90ca54cf7f9790cb979e1828f/capsule_sm_120.jpg?t=1787780109",
+   "headerChecked": true,
+   "genres": [
+    "Estrategia"
+   ]
+  },
+  {
+   "id": "steam-4282500",
+   "title": "hololive Dreams",
+   "url": "https://store.steampowered.com/app/4282500/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4282500/21d618af6bdb3be75a8b923bf8d38328aaba1820/header.jpg?t=1793163670",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4282500/7a916ae469dbdcf1d851ca9918ee46b79f274327/capsule_sm_120.jpg?t=1793163670",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Aventura"
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -280,14 +291,28 @@
    ]
   },
   {
-   "id": "steam-2141910",
-   "title": "Magic: The Gathering Arena",
-   "url": "https://store.steampowered.com/app/2141910/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2141910/3ba5b0f05a0dac4e184047699da0fece877bfb9f/header_spanish.jpg?t=1787780109",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2141910/b15710d69590d3e90ca54cf7f9790cb979e1828f/capsule_sm_120.jpg?t=1787780109",
+   "id": "steam-1974050",
+   "title": "Torchlight: Infinite",
+   "url": "https://store.steampowered.com/app/1974050/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
    "headerChecked": true,
    "genres": [
-    "Estrategia"
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-3061570",
+   "title": "Persona5: The Phantom X",
+   "url": "https://store.steampowered.com/app/3061570/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061570/16cdd695861464bd7aa502df7eb35a1e5caad6f8/header.jpg?t=1790928862",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3061570/07b0e821002a9f6a2e2fe057de2f8eb860b85087/capsule_sm_120.jpg?t=1790928862",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -304,52 +329,14 @@
    ]
   },
   {
-   "id": "steam-1974050",
-   "title": "Torchlight: Infinite",
-   "url": "https://store.steampowered.com/app/1974050/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-1607250",
-   "title": "MY HERO ULTRA RUMBLE",
-   "url": "https://store.steampowered.com/app/1607250/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607250/609881717ea2123b86cc44909a60ebbc790e7c39/header.jpg?t=1790820130",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1607250/3003cc54f0fae115d56d8ec72e0908a3448b70e9/capsule_sm_120.jpg?t=1790820130",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Casual"
-   ]
-  },
-  {
    "id": "steam-2807960",
    "title": "Battlefield™ 6",
    "url": "https://store.steampowered.com/app/2807960/",
    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2807960/c12d12ce3c7d217398d3fcad77427bfc9d57c570/header.jpg?t=1792168547",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2807960/d7ae078e0a543a97ff5a5d72165999535b0b1cdc/capsule_sm_120.jpg?t=1792168547",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2807960/d7ae078e0a543a97ff5a5d72165999535b0b1cdc/capsule_sm_120.jpg?t=1793314012",
    "headerChecked": true,
    "genres": [
     "Acción"
-   ]
-  },
-  {
-   "id": "steam-4162040",
-   "title": "Zenless Zone Zero",
-   "url": "https://store.steampowered.com/app/4162040/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162040/22b56d833834d90674b30498f78e0839e48792db/header_alt_assets_2.jpg?t=1792533213",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4162040/b7b46c035e69ba29a985ce55505631f8e6964b9b/capsule_sm_120_alt_assets_2.jpg?t=1792533213",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
    ]
   },
   {
@@ -366,6 +353,43 @@
    ]
   },
   {
+   "id": "steam-1607250",
+   "title": "MY HERO ULTRA RUMBLE",
+   "url": "https://store.steampowered.com/app/1607250/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607250/609881717ea2123b86cc44909a60ebbc790e7c39/header.jpg?t=1790820130",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1607250/3003cc54f0fae115d56d8ec72e0908a3448b70e9/capsule_sm_120.jpg?t=1790820130",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Casual"
+   ]
+  },
+  {
+   "id": "steam-4162040",
+   "title": "Zenless Zone Zero",
+   "url": "https://store.steampowered.com/app/4162040/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162040/22b56d833834d90674b30498f78e0839e48792db/header_alt_assets_2.jpg?t=1792533213",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4162040/b7b46c035e69ba29a985ce55505631f8e6964b9b/capsule_sm_120_alt_assets_2.jpg?t=1792533213",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-5019180",
+   "title": "Epic Seven",
+   "url": "https://store.steampowered.com/app/5019180/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5019180/6dabc3f404b51e08ab22763d3df4808081baa5e0/header.jpg?t=1793256460",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/5019180/bb198e38698a469c0af46e637ce3aebe01f8aca3/capsule_sm_120.jpg?t=1793256460",
+   "headerChecked": true,
+   "genres": [
+    "Rol",
+    "Estrategia"
+   ]
+  },
+  {
    "id": "steam-2507950",
    "title": "Delta Force",
    "url": "https://store.steampowered.com/app/2507950/",
@@ -379,31 +403,6 @@
    ]
   },
   {
-   "id": "steam-3061570",
-   "title": "Persona5: The Phantom X",
-   "url": "https://store.steampowered.com/app/3061570/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061570/16cdd695861464bd7aa502df7eb35a1e5caad6f8/header.jpg?t=1790928862",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3061570/07b0e821002a9f6a2e2fe057de2f8eb860b85087/capsule_sm_120.jpg?t=1790928862",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-4508340",
-   "title": "NTE: Neverness to Everness",
-   "url": "https://store.steampowered.com/app/4508340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1790722094",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/a97040318ffcf7e02ee7dbe08dd2cd9cb3684f20/capsule_sm_120.jpg?t=1793179644",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
    "id": "steam-3308670",
    "title": "GIRLS' FRONTLINE 2: EXILIUM",
    "url": "https://store.steampowered.com/app/3308670/",
@@ -413,30 +412,6 @@
    "genres": [
     "Rol",
     "Estrategia"
-   ]
-  },
-  {
-   "id": "steam-1938090",
-   "title": "Call of Duty®",
-   "url": "https://store.steampowered.com/app/1938090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1792807032",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793206213",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
-  },
-  {
-   "id": "steam-3679080",
-   "title": "The Seven Deadly Sins: Origin",
-   "url": "https://store.steampowered.com/app/3679080/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679080/86b4734355e3e43b8323426e69d127ce79bab888/header.jpg?t=1791364897",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3679080/f7ce109f339c8ad6c1f8839313c64806a9edc203/capsule_sm_120.jpg?t=1791364897",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
    ]
   },
   {
@@ -453,28 +428,52 @@
    ]
   },
   {
-   "id": "steam-1476970",
-   "title": "IdleOn - The Idle RPG",
-   "url": "https://store.steampowered.com/app/1476970/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1476970/header.jpg?t=1783034427",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1476970/6c5ebda02c5a3ee53ed0ce584e9b4db2a8f3909a/capsule_sm_120.jpg?t=1783034427",
+   "id": "steam-2074920",
+   "title": "The First Descendant",
+   "url": "https://store.steampowered.com/app/2074920/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2074920/dc8ac02c8328d66f2f78ea8b83472bdd7e281a62/header.jpg?t=1789716956",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2074920/60eef59662d80f0b38492a8061e018c2613afefa/capsule_sm_120.jpg?t=1789716956",
    "headerChecked": true,
    "genres": [
+    "Acción",
     "Aventura",
-    "Casual",
-    "Indie"
+    "Rol"
    ]
   },
   {
-   "id": "steam-5019180",
-   "title": "Epic Seven",
-   "url": "https://store.steampowered.com/app/5019180/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5019180/6dabc3f404b51e08ab22763d3df4808081baa5e0/header.jpg?t=1793256460",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/5019180/bb198e38698a469c0af46e637ce3aebe01f8aca3/capsule_sm_120.jpg?t=1793256460",
+   "id": "steam-1938090",
+   "title": "Call of Duty®",
+   "url": "https://store.steampowered.com/app/1938090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1792807032",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793206213",
    "headerChecked": true,
    "genres": [
-    "Rol",
-    "Estrategia"
+    "Acción"
+   ]
+  },
+  {
+   "id": "steam-4508340",
+   "title": "NTE: Neverness to Everness",
+   "url": "https://store.steampowered.com/app/4508340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1790722094",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/a97040318ffcf7e02ee7dbe08dd2cd9cb3684f20/capsule_sm_120.jpg?t=1793179644",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-1286830",
+   "title": "STAR WARS™: The Old Republic™",
+   "url": "https://store.steampowered.com/app/1286830/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/header.jpg?t=1791993603",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603",
+   "headerChecked": true,
+   "genres": [
+    "Multijugador masivo",
+    "Rol"
    ]
   },
   {
