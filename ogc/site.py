@@ -282,6 +282,7 @@ class Site:
 <div class="shell">
 <nav class="side" id="main-nav" aria-label="Principal">{nav}{self.side_channels()}{self.ig_side(name)}</nav>
 <main id="contenido"><div class="wrap">
+{self.departures_ticker()}
 {crumb_html}
 {body}
 </div></main>
@@ -477,7 +478,7 @@ class Site:
             bits.append("hasta el " + end.astimezone(CO_TZ).strftime("%d/%m"))
         return " · ".join(b for b in bits if b)
 
-    def offer_list(self, offers, with_filters=True, list_id="offers", bento=False, poster=False):
+    def offer_list(self, offers, with_filters=True, list_id="offers", bento=False, poster=False, slider=False):
         if not offers:
             return '<p class="notice">No hay ofertas disponibles en este momento. Vuelve en unas horas.</p>'
         cards = []
@@ -504,7 +505,8 @@ class Site:
 <nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav>
 <h2 class="sr-only">Lista de ofertas</h2><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
         cols = ('' if poster else '<div class="board-cols" aria-hidden="true"><span>Juego</span><span>Precio</span><span>Termina</span><span></span></div>')
-        return filters + cols + f'<ul class="grid{" poster" if poster else " board"}" id="{list_id}">' + "".join(cards) + "</ul>"
+        slide = f' data-slider aria-label="{len(offers)} juegos: desliza o usa las flechas"' if slider else ""
+        return filters + cols + f'<ul class="grid{" poster" if poster else " board"}" id="{list_id}"{slide}>' + "".join(cards) + "</ul>"
 
     def support_box(self):
         url = self.cfg.get("enlace_kofi")
@@ -880,6 +882,22 @@ class Site:
                 f'<ul class="spot-grid small">{rows}</ul></section>')
 
     # ---------- ideas nuevas: rebajas de Steam, termómetro, ahorro, test, sorpresa, retrasos, mapa de calor ----------
+    def departures_ticker(self):
+        """Tablero de salidas arriba de cada página: va pasando ofertas reales (con JS cambia solo cada pocos segundos)."""
+        items = getattr(self, "ticker", None) or []
+        if len(items) < 2:
+            return ""
+        rows = []
+        for i, o in enumerate(items):
+            free = o.get("currentPrice") == 0
+            price = "Gratis" if free else money(o["currentPrice"], o["currency"])
+            off = "" if free or not o.get("discountPercentage") else f'<span class="tk-off">-{o["discountPercentage"]}%</span>'
+            rows.append(f'<li{" class=\"on\"" if i == 0 else ""}><a href="{e(self.detail[o["id"]])}"><span class="tk-t">{e(o["title"])}</span>'
+                        f'<span class="tk-s">{e(o["store"])}</span>{off}<span class="tk-p{" free" if free else ""}">{e(price)}</span></a></li>')
+        return (f'<section class="ticker" aria-label="Próximas salidas: ofertas destacadas"><span class="tk-label">{ICONS["depart"]}<span>Próxima salida</span></span>'
+                f'<ol class="tk-list">{"".join(rows)}</ol>'
+                '<button type="button" class="tk-pause" aria-pressed="false" aria-label="Pausar el tablero" hidden><span aria-hidden="true"></span></button></section>')
+
     def season_class(self):
         """Temporadas de la interfaz: Halloween del 15 de octubre al 2 de noviembre (hora Colombia). Se quita sola."""
         now = getattr(self, "now", None)
@@ -905,9 +923,12 @@ class Site:
                        f'<div class="spot-body"><h3 class="clamp2"><a class="title-link" href="{e(url)}">{e(t)}</a></h3></div></li>' for t, img, url in coming)
         if not cards and not soon:
             return ""
-        return (f'<section class="halloween-box"><h2>{ICONS["ghost"]} Especial de terror</h2><p class="meta">Es octubre: juegos de miedo en oferta hoy y los de terror que vienen. '
-                'Elegidos por su descripción oficial en Steam.</p>'
-                + (f'<ul class="grid">{cards}</ul>' if cards else '')
+        end = datetime(self.now.astimezone(CO_TZ).year, 11, 2, 23, 59, tzinfo=CO_TZ).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        return (f'<section class="halloween-box" aria-labelledby="hw-h"><div class="hw-head"><span class="hw-gate" aria-hidden="true">13</span>'
+                f'<div><p class="hw-kicker">Puerta 13 · vuelo nocturno</p><h2 id="hw-h">{ICONS["ghost"]} Especial de terror</h2>'
+                '<p class="meta">Juegos de miedo en oferta hoy y los de terror que vienen, elegidos por su descripción oficial en Steam.</p></div>'
+                f'<p class="left hw-end" data-countdown="{end}" title="El especial de la página dura hasta el 2 de noviembre">{ICONS["clock"]}<span>{e(time_left(end, self.now))}</span></p></div>'
+                + (f'<ul class="grid board hw-list">{cards}</ul>' if cards else '')
                 + (f'<h3>Los de terror que vienen</h3><ul class="spot-grid small">{soon}</ul>' if soon else '') + '</section>')
 
     def steam_events(self, now):
@@ -2153,6 +2174,9 @@ class Site:
         self.rate = rates[len(rates) // 2] if rates else None
         self.assign_pages(live, games or [])
         self.store_counts = {st: sum(1 for o in live if o["storeId"] == st) for st in self.stores}
+        # tablero de salidas de arriba: gratis primero y luego los descuentos más grandes, solo con página propia
+        self.ticker = [o for o in sorted(live, key=lambda o: (o.get("currentPrice") != 0, -(o.get("discountPercentage") or 0)))
+                       if o["id"] in self.detail][:10]
         self.ranks = {g["id"]: g.get("rank") or i + 1 for i, g in enumerate(games or [])}
         free = [o for o in live if o.get("currentPrice") == 0]
         deals = [o for o in live if o.get("currentPrice")]
@@ -2194,7 +2218,7 @@ class Site:
 <section class="shelf shelf-free" aria-labelledby="free-h">
 {self.sec_head("", 'Abordando: gratis esta semana', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', "ticket", "free-h")}
 {self.saved_box()}
-{self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True) if free else '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
+{self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True, slider=len(free) > 2) if free else '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
 </section>
 {self.ad_slot("banner_after_hero")}
 <section class="shelf shelf-top" aria-labelledby="top-h">

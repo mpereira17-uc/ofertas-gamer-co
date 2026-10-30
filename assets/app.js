@@ -898,10 +898,165 @@
     bats.className = "bats";
     bats.setAttribute("aria-hidden", "true");
     for (var b = 0; b < (window.innerWidth < 600 ? 3 : 5); b++) bats.appendChild(document.createElement("i")).className = "bat";
-    var spider = bats.appendChild(document.createElement("i"));
-    spider.className = "spider";
-    spider.textContent = "🕷️";
+    bats.appendChild(document.createElement("i")).className = "spider";
     document.body.appendChild(bats);
+
+    // De vez en cuando: unos ojos se abren en una esquina y la luz del tablero baja un momento
+    var eyes = document.createElement("div");
+    eyes.className = "eyes";
+    eyes.setAttribute("aria-hidden", "true");
+    eyes.innerHTML = "<i></i><i></i>";
+    document.body.appendChild(eyes);
+    var dim = document.createElement("div");
+    dim.className = "blackout";
+    dim.setAttribute("aria-hidden", "true");
+    document.body.appendChild(dim);
+    var spots = [[4, 70], [88, 62], [6, 30], [90, 84], [50, 90]];
+    var haunt = function () {
+      if (!document.hidden) {
+        if (Math.random() < 0.6) {
+          var sp = spots[Math.floor(Math.random() * spots.length)];
+          eyes.style.left = sp[0] + "vw";
+          eyes.style.top = sp[1] + "vh";
+          eyes.classList.remove("show");
+          void eyes.offsetWidth;
+          eyes.classList.add("show");
+        } else {
+          dim.classList.remove("on");
+          void dim.offsetWidth;
+          dim.classList.add("on");
+        }
+      }
+      setTimeout(haunt, 16000 + Math.random() * 14000);
+    };
+    setTimeout(haunt, 7000);
+  }
+
+  // Texto que se arma como en un tablero de aeropuerto: letras al azar que se van quedando quietas
+  var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var flipText = function (el) {
+    var final = el.textContent;
+    if (!final || final.length > 80) return;
+    var n = 0;
+    el.setAttribute("aria-label", final);
+    var t = setInterval(function () {
+      n += 2;
+      el.textContent = final.split("").map(function (c, i) {
+        return c === " " || i < n ? c : GLYPHS.charAt(Math.floor(Math.random() * GLYPHS.length));
+      }).join("");
+      if (n >= final.length) { clearInterval(t); el.textContent = final; el.removeAttribute("aria-label"); }
+    }, 38);
+  };
+
+  // Tablero de salidas de arriba: pasa a la siguiente oferta cada 5 s (se pausa con el botón, al pasar el cursor o al enfocar)
+  var tk = document.querySelector(".ticker");
+  if (tk && !calm) {
+    var tkItems = tk.querySelectorAll(".tk-list>li"), tkI = 0, tkHold = false, tkStop = false;
+    var tkBtn = tk.querySelector(".tk-pause");
+    if (tkBtn) {
+      tkBtn.hidden = false;
+      tkBtn.addEventListener("click", function () {
+        tkStop = !tkStop;
+        tkBtn.setAttribute("aria-pressed", tkStop ? "true" : "false");
+        tkBtn.setAttribute("aria-label", tkStop ? "Seguir pasando ofertas" : "Pausar el tablero");
+      });
+    }
+    tk.addEventListener("pointerenter", function () { tkHold = true; });
+    tk.addEventListener("pointerleave", function () { tkHold = false; });
+    tk.addEventListener("focusin", function () { tkHold = true; });
+    tk.addEventListener("focusout", function () { tkHold = false; });
+    setInterval(function () {
+      if (tkHold || tkStop || document.hidden || tkItems.length < 2) return;
+      tkItems[tkI].classList.remove("on");
+      tkI = (tkI + 1) % tkItems.length;
+      var li = tkItems[tkI];
+      li.classList.add("on");
+      var title = li.querySelector(".tk-t");
+      if (title) flipText(title);
+    }, 5000);
+  }
+
+  // Estantes que se deslizan: flechas, dedo o rueda, y avance solo cada 5 s
+  // (se pausa con el botón, al pasar el cursor, al enfocar algo adentro o si el estante no está en pantalla)
+  document.querySelectorAll("ul[data-slider]").forEach(function (ul) {
+    var box = document.createElement("div");
+    box.className = "slider";
+    ul.parentNode.insertBefore(box, ul);
+    box.appendChild(ul);
+    ul.classList.add("slider-track");
+    var nav = document.createElement("div");
+    nav.className = "slider-nav";
+    nav.innerHTML = '<button type="button" class="slider-btn" data-dir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+      '<button type="button" class="slider-btn" data-dir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>' +
+      (calm ? "" : '<button type="button" class="slider-btn slider-play" aria-pressed="false" aria-label="Pausar el avance automático"><span aria-hidden="true"></span></button>');
+    box.appendChild(nav);
+    var go = function (dir) {
+      var first = ul.firstElementChild;
+      if (!first) return;
+      var step = first.getBoundingClientRect().width + 16;
+      var max = ul.scrollWidth - ul.clientWidth - 4;
+      var how = calm ? "auto" : "smooth";
+      if (dir > 0 && ul.scrollLeft >= max) ul.scrollTo({ left: 0, behavior: how });
+      else if (dir < 0 && ul.scrollLeft <= 4) ul.scrollTo({ left: max + 4, behavior: how });
+      else ul.scrollBy({ left: dir * step, behavior: how });
+    };
+    var hold = false, stopped = false, seen = false;
+    nav.addEventListener("click", function (ev) {
+      var b = ev.target.closest(".slider-btn");
+      if (!b) return;
+      if (b.classList.contains("slider-play")) {
+        stopped = !stopped;
+        b.setAttribute("aria-pressed", stopped ? "true" : "false");
+        b.setAttribute("aria-label", stopped ? "Seguir con el avance automático" : "Pausar el avance automático");
+      } else {
+        go(+b.getAttribute("data-dir"));
+      }
+    });
+    if (calm) return;
+    ul.addEventListener("pointerenter", function () { hold = true; });
+    ul.addEventListener("pointerleave", function () { hold = false; });
+    ul.addEventListener("focusin", function () { hold = true; });
+    ul.addEventListener("focusout", function () { hold = false; });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (en) { seen = en[0].isIntersecting; }, { threshold: 0.4 }).observe(ul);
+    }
+    setInterval(function () {
+      if (!hold && !stopped && seen && !document.hidden && ul.scrollWidth > ul.clientWidth + 8) go(1);
+    }, 5000);
+  });
+
+  // Letreros de sección: al aparecer, el cuadro se enciende y el título se arma como en el tablero (una vez)
+  if (!calm && "IntersectionObserver" in window) {
+    var signIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        signIo.unobserve(en.target);
+        var sign = en.target.closest(".sign");
+        if (sign) sign.classList.add("lit");
+        flipText(en.target);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll(".sign h2").forEach(function (h) {
+      if (!h.children.length) {
+        var sign = h.closest(".sign");
+        if (sign) sign.classList.add("unlit");
+        signIo.observe(h);
+      }
+    });
+
+    // Cada tanto, la paleta de «Termina» de una fila que se ve en pantalla vuelve a girar (mismo dato, solo el giro)
+    setInterval(function () {
+      if (document.hidden) return;
+      var tiles = Array.prototype.filter.call(document.querySelectorAll("main ul.grid:not(.poster) .left"), function (el) {
+        var r = el.getBoundingClientRect();
+        return r.top > 60 && r.bottom < window.innerHeight;
+      });
+      if (!tiles.length) return;
+      var tile = tiles[Math.floor(Math.random() * tiles.length)];
+      tile.classList.remove("reflip");
+      void tile.offsetWidth;
+      tile.classList.add("reflip");
+    }, 7000);
   }
 
   // Intro con el logo: solo la primera vez que alguien entra

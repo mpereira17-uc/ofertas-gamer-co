@@ -53,8 +53,26 @@ La metáfora se queda en los títulos de los estantes principales. El resto del 
 
 - La escena por capítulos de la portada se mantiene.
 - Las filas del tablero caen una vez como paletas al entrar en pantalla: `rotateX` desde -70°, escalonadas cada 55 ms.
+- **Tablero de salidas** (`departures_ticker`): va arriba de cada página. Pasa una oferta real cada 5 s y el título se arma letra por letra. Tiene botón de pausa y se detiene al pasar el cursor o al enfocar.
+- **Estantes que se deslizan** (`offer_list(slider=True)`, `ul[data-slider]`): tienen flechas, pausa y avance solo cada 5 s, y solo se mueven si están en pantalla. Sin JS quedan en cuadrícula.
+- **Letreros:** al aparecer, el cuadro amarillo se enciende y el título se arma como en un tablero.
+- **Paletas:** cada 7 s la paleta «Termina» de una fila visible vuelve a girar. Es solo el giro; el dato no cambia.
+- **Transiciones entre páginas:** CSS `@view-transition`. El contenido nuevo cae como una paleta.
 - No hay inclinación 3D ni partículas.
 - Con `prefers-reduced-motion`, sin JS o con «Ahorro de datos», todo queda estático.
+
+## Modo terror (15 de octubre al 2 de noviembre, se activa y se quita solo)
+
+- El amarillo pasa a naranja calabaza `#ff7a1a`, con rojo sangre `#b3122b`.
+- **Decorado:**
+  - niebla que se arrastra por el piso;
+  - sangre que chorrea bajo la cabecera;
+  - telarañas en los letreros, que parpadean de vez en cuando;
+  - murciélagos y una araña (oculta en el celular).
+- **Sustos:** cada 16 a 30 s hay un susto suave. Puede ser un par de ojos que se abren en una esquina o un apagón de 1,2 s, con dos bajadas de luz y nunca destellos claros.
+- **Especial de terror:** «Puerta 13 · vuelo nocturno», con la cuenta regresiva hasta el fin del especial.
+- **Transición entre páginas:** sale de la niebla (desenfoque).
+- Todo se apaga con «menos movimiento» y con «Ahorro de datos».
 
 ## Reglas que no se rompen
 

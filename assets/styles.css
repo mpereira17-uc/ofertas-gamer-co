@@ -1423,3 +1423,120 @@ footer.site a.btn-kofi,footer.site a.btn-kofi:hover{color:#2a0706;text-decoratio
 .btn-ig,.btn-ig:hover{color:#1a0800}
 .td-cue{letter-spacing:.02em}
 .sign h2{flex:1 1 0;min-width:min(100%,14ch)}
+
+/* ==== Movimiento v4.1: tablero de salidas, estantes que se deslizan, letreros que se arman y transiciones entre páginas ==== */
+/* botones de tiendas de claves: el bloque v4 les quitaba el color propio */
+.btn-ig,.side a.btn-ig{background:#ff5400;border-color:#ff5400;color:#1a0800}
+.btn-ig:hover,.side a.btn-ig:hover{background:#ff7433;border-color:#ff7433;color:#1a0800}
+.btn-eneba{background:#7b2cff;border-color:#7b2cff;color:#fff}
+.btn-eneba:hover{background:#8f4bff;border-color:#8f4bff}
+
+/* Tablero de salidas arriba de cada página */
+.ticker{display:flex;align-items:stretch;margin:14px 0 6px;border:1px solid var(--border);border-radius:var(--r);background:var(--board);overflow:hidden;min-height:48px}
+.tk-label{display:flex;align-items:center;gap:8px;flex:0 0 auto;padding:0 14px;background:var(--sign);color:var(--sign-ink);font:700 .88rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.tk-label svg{width:20px;height:20px}
+.tk-list{flex:1 1 auto;min-width:0;margin:0;padding:0;list-style:none;perspective:600px}
+.tk-list>li{display:none;height:100%}
+.tk-list>li.on{display:block}
+.js .tk-list>li.on{animation:tk-in .5s var(--ease-out) both;transform-origin:50% 0}
+@keyframes tk-in{from{opacity:0;transform:rotateX(-80deg)}to{opacity:1;transform:none}}
+.tk-list a{display:flex;align-items:center;gap:14px;height:100%;padding:8px 14px;color:var(--text);text-decoration:none;font:700 1.08rem/1.15 var(--display);letter-spacing:.03em;text-transform:uppercase;min-width:0}
+.tk-list a:hover .tk-t{color:var(--sign)}
+.tk-t{flex:1 1 auto;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.tk-s{flex:0 0 auto;color:var(--muted);font:600 .9rem/1 var(--ui);text-transform:none;letter-spacing:0}
+.tk-off{flex:0 0 auto;padding:3px 7px;border-radius:3px;background:var(--sign);color:var(--sign-ink);font-size:.95rem}
+.tk-p{flex:0 0 auto;padding:4px 10px;border-radius:var(--r-in);background:var(--flap);font-variant-numeric:tabular-nums}
+.tk-p.free{color:var(--free)}
+.tk-pause{flex:0 0 46px;display:grid;place-items:center;border:0;border-left:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer}
+.tk-pause:hover{color:var(--sign)}
+.tk-pause span,.slider-play span{display:block;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.tk-pause[aria-pressed="true"] span,.slider-play[aria-pressed="true"] span{width:0;height:0;border:0;border-left:11px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent}
+@media (max-width:700px){.tk-label span,.tk-s{display:none}.tk-label{padding:0 10px}.tk-list a{gap:8px;padding:8px 10px;font-size:.98rem}}
+
+/* Estantes que se deslizan (solo con JS: sin él quedan en cuadrícula) */
+.slider{position:relative}
+.slider-track.grid{display:flex;flex-wrap:nowrap;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;padding-bottom:4px}
+.slider-track::-webkit-scrollbar{display:none}
+.slider-track>li{flex:0 0 min(560px,88%);scroll-snap-align:start}
+.slider-nav{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.slider-btn{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--border-strong);border-radius:var(--r);background:var(--board);color:var(--text);cursor:pointer;transition:background-color .15s,border-color .15s,color .15s,transform .14s var(--ease-out)}
+.slider-btn:hover{border-color:var(--sign);color:var(--sign)}
+.slider-btn:active{transform:scale(.94)}
+.slider-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Letreros que se encienden y paletas que vuelven a girar */
+.sign.unlit .sign-ico{opacity:.25;transform:perspective(400px) rotateX(-90deg)}
+.sign .sign-ico{transition:opacity .35s,transform .5s var(--ease-out)}
+.sign.lit .sign-ico{opacity:1;transform:none}
+.sign h2{font-variant-numeric:tabular-nums}
+.left.reflip{animation:reflip .6s var(--ease-out)}
+@keyframes reflip{0%{transform:perspective(300px) rotateX(0)}45%{transform:perspective(300px) rotateX(-88deg)}46%{transform:perspective(300px) rotateX(88deg)}100%{transform:perspective(300px) rotateX(0)}}
+
+/* Transiciones entre páginas: el contenido sale y el nuevo cae como una paleta (navegadores que lo soportan) */
+@view-transition{navigation:auto}
+main{view-transition-name:site-main}
+::view-transition-old(site-main){animation:vt-out .2s ease-in both}
+::view-transition-new(site-main){animation:vt-in .42s var(--ease-out) both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-12px)}}
+@keyframes vt-in{from{opacity:0;transform:perspective(1000px) rotateX(-7deg) translateY(18px);transform-origin:50% 0}}
+
+/* ==== Modo terror (15 de octubre al 2 de noviembre): el tablero de una terminal embrujada ==== */
+body.halloween{--sign:#ff7a1a;--sign-ink:#1a0800;--blood:#b3122b;--ghost:#cfc6e6;--border:#25202e;--border-strong:#3a3047}
+.halloween .btn-primary:hover{background:#ff9445;border-color:#ff9445}
+.halloween .chip[aria-pressed="true"],.halloween .chip.hot{background:rgba(255,122,26,.1)}
+/* niebla que se arrastra por el piso */
+.halloween .bg-decor{display:block;background:none}
+.halloween .bg-decor::before,.halloween .bg-decor::after{content:"";position:absolute;inset:auto -20% -10vh -20%;height:46vh;transform:none;-webkit-mask-image:none;mask-image:none;background:radial-gradient(ellipse 30% 55% at 18% 75%,rgba(190,180,225,.13),transparent 70%),radial-gradient(ellipse 26% 50% at 52% 85%,rgba(170,160,215,.10),transparent 70%),radial-gradient(ellipse 30% 60% at 84% 78%,rgba(190,180,225,.12),transparent 70%);animation:fog 46s ease-in-out infinite alternate}
+.halloween .bg-decor::after{bottom:-16vh;opacity:.8;animation-duration:61s;animation-direction:alternate-reverse}
+@keyframes fog{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+/* sangre que chorrea bajo la cabecera */
+.halloween header.site::before{content:"";position:absolute;left:0;right:0;top:100%;height:14px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath fill='%23a30f26' d='M0 0h120v3c-5 0-5 3-8 3s-3-3-7-3-4 8-7 8-3-8-7-8-3 2-6 2-3-2-8-2-3 5-6 5-3-5-7-5-5 10-8 10-3-10-7-10-4 3-7 3-3-3-7-3-3 4-5 4-3-4-8-4-4 2-6 2-4-2-7-2-4 6-7 6-3-6-6-6z'/%3E%3C/svg%3E") 0 0/120px 14px repeat-x}
+/* telarañas en la esquina de cada letrero */
+.halloween .sign-ico{position:relative;animation:neon 9s steps(1) infinite}
+.halloween .sign-ico::after{content:"";position:absolute;left:-10px;top:-10px;width:34px;height:34px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke='%23e6e0f2' stroke-opacity='.7' stroke-width='.9'%3E%3Cpath d='M0 0l40 12M0 0l30 30M0 0l12 40'/%3E%3Cpath d='M10 3q3 4 2 6-5 2-7 5-4-1-3-4M22 6q2 7 1 11-7 3-11 9-7-1-9-3M34 10q1 9-1 15-10 4-15 12-9-2-15-4'/%3E%3C/svg%3E") 0 0/contain no-repeat}
+.sec-big .sign-ico:nth-child(1){animation-delay:-3s}
+@keyframes neon{0%,91%,95%,100%{opacity:1}92%{opacity:.35}94%{opacity:.7}}
+/* el tablero de noche */
+.halloween ul.grid:not(.poster){border-color:#2c2238}
+.halloween ul.grid:not(.poster)>.card:hover{box-shadow:inset 3px 0 0 var(--blood)}
+.halloween .grid.poster>.card{background:#ebe3cf}
+.halloween .grid.poster>.card:hover{background:#f1eadb}
+.halloween .tk-label{background:var(--blood);color:#fff}
+.halloween .ticker{border-color:#3a1a24}
+/* especial de terror: puerta 13 */
+.halloween-box{position:relative;overflow:hidden;padding:22px;border-color:#5a1a28}
+.halloween-box::before{content:"";position:absolute;inset:auto -10% -30% -10%;height:70%;pointer-events:none;background:radial-gradient(ellipse 40% 60% at 30% 80%,rgba(190,180,225,.12),transparent 70%),radial-gradient(ellipse 35% 55% at 75% 85%,rgba(179,18,43,.14),transparent 70%)}
+.halloween-box>*{position:relative}
+.hw-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-bottom:16px}
+.hw-head>div{flex:1 1 320px;min-width:0}
+.hw-gate{display:grid;place-items:center;width:78px;height:78px;border-radius:var(--r);background:var(--flap);color:var(--blood);font:700 3rem/1 var(--display);box-shadow:0 1px 0 rgba(255,255,255,.05) inset}
+.hw-kicker{margin:0 0 6px;color:#ff8f8f;font:600 .86rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase}
+.halloween-box h2{margin:0}
+.halloween-box h2 svg{background:var(--blood);color:#fff}
+.hw-end{flex:0 0 auto}
+.hw-list{margin-bottom:14px}
+/* ojos en la oscuridad, araña y apagón */
+.eyes{position:fixed;left:0;top:0;z-index:3;display:flex;gap:12px;width:62px;height:20px;opacity:0;pointer-events:none}
+.eyes i{flex:1;border-radius:50%;background:radial-gradient(circle,#ffd27a 0 22%,#ff6a1a 24% 56%,transparent 60%)}
+.eyes.show{animation:eyes 4.4s ease both}
+.eyes.show i{animation:blink 4.4s ease both}
+@keyframes eyes{0%{opacity:0}18%,78%{opacity:.9}100%{opacity:0}}
+@keyframes blink{0%,40%,46%,66%,72%,100%{transform:scaleY(1)}43%,69%{transform:scaleY(.08)}}
+.spider{width:30px;height:30px;font-size:0;right:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg stroke='%23a79fb8' stroke-width='2' fill='none' stroke-linecap='round'%3E%3Cpath d='M15 18 5 9M14 22H3M15 26 6 34M25 18l10-9M26 22h11M25 26l9 8'/%3E%3C/g%3E%3Cellipse cx='20' cy='24' rx='7' ry='8' fill='%23a79fb8'/%3E%3Ccircle cx='20' cy='14' r='4.5' fill='%23a79fb8'/%3E%3Ccircle cx='18.4' cy='13.4' r='1.1' fill='%23ff3b3b'/%3E%3Ccircle cx='21.6' cy='13.4' r='1.1' fill='%23ff3b3b'/%3E%3C/svg%3E") center/contain no-repeat}
+.blackout{position:fixed;inset:0;z-index:40;pointer-events:none;opacity:0;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(6,3,10,.45),rgba(2,1,4,.9))}
+.blackout.on{animation:blackout 1.2s ease both}
+@keyframes blackout{0%{opacity:0}14%{opacity:.85}30%{opacity:.35}48%{opacity:.8}100%{opacity:0}}
+.halloween .foot-giant{color:transparent;-webkit-text-stroke:1px #4a1520}
+.halloween ::view-transition-new(site-main){animation-name:vt-fog}
+@keyframes vt-fog{from{opacity:0;filter:blur(8px)}}
+
+@media (prefers-reduced-motion:reduce){
+ @view-transition{navigation:none}
+ .js .tk-list>li.on,.left.reflip,.halloween .sign-ico{animation:none}
+ .sign.unlit .sign-ico{opacity:1;transform:none}
+ .halloween .bg-decor::before,.halloween .bg-decor::after{animation:none}
+ .eyes,.blackout{display:none}
+}
+.pref-lite .halloween .bg-decor,.pref-lite .eyes,.pref-lite .blackout{display:none}
+.pref-contrast .halloween .bg-decor{display:none}
+@media (max-width:700px){.spider{display:none}}
