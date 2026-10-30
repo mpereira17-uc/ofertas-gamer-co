@@ -164,7 +164,6 @@ def fallback(o):
     return f' data-fallback="{e(small)}"' if small.startswith("https://") else ""
 
 
-STEAM_HERO = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{id}/library_hero.jpg"
 
 
 class Site:
@@ -722,44 +721,59 @@ class Site:
             return '<span class="ribbon r-low">Mínimo histórico</span>'
         return ""
 
-    def tide_stage(self, offers, count=4):
-        """Portada por capítulos: al bajar, la escena se queda fija y pasa por las ofertas destacadas (datos reales).
-        Sin JavaScript o con «menos movimiento» se ve como una cuadrícula normal."""
+    def showcase(self, offers, count=5):
+        """Portada tipo vitrina (idea del diseño Jordan de Figma que mandó pepe): tarjeta negra, título gigante,
+        portada inclinada encima, precio grande, puntos para cambiar y miniaturas «Elige otra». Solo datos reales.
+        Sin JavaScript se ve la primera oferta y las miniaturas son enlaces a cada ficha."""
         seen, picks = set(), []
         for o in offers:
-            if o["id"] not in seen and o.get("image"):
+            if o["id"] not in seen and o.get("image") and o["id"] in self.detail:
                 seen.add(o["id"])
                 picks.append(o)
         picks = picks[:count]
         if not picks:
             return ""
-        chapters, ticks = [], []
+        slides, dots, thumbs = [], [], []
         for i, o in enumerate(picks):
             free = o.get("currentPrice") == 0
             pct = o.get("discountPercentage") or 0
-            app = o.get("steamAppID")
-            # el arte ancho de la biblioteca de Steam se ve nítido a pantalla completa; si no existe, vuelve a la portada
-            wide = STEAM_HERO.format(id=app) if app and "steamstatic.com" in o["image"] else o["image"]
-            page = self.detail.get(o["id"])
-            more = f'<a class="btn btn-ghost" href="{page}">Ver ficha</a>' if page else ""
-            words = " ".join(f'<span class="td-w">{e(w)}</span>' for w in o["title"].split())
-            big = ('<span class="td-big free">GRATIS</span>' if free else
-                   f'<span class="td-big">-<b data-to="{pct}">{pct}</b>%</span>' if pct else "")
+            words = o["title"].split()
+            cut = max(1, (len(words) + 1) // 2)
+            title = (f'<span class="sh-a">{e(" ".join(words[:cut]))}</span>'
+                     + (f' <span class="sh-b">{e(" ".join(words[cut:]))}</span>' if words[cut:] else ""))
+            ghost = "GRATIS" if free else (f"-{pct}%" if pct else o["store"].split()[0].upper())
+            price = "Gratis" if free else money(o["currentPrice"], o["currency"])
+            tag = "Gratis por tiempo limitado" if free else (f"-{pct}% de descuento" if pct else "En oferta")
+            about = (o.get("about") or "").strip()
+            if len(about) > 170:
+                about = about[:167].rsplit(" ", 1)[0].rstrip(",.;:") + "…"
+            cop = "" if free or o["currency"] == "COP" else cop_text(o)
             lazy = ' fetchpriority="high"' if i == 0 else ' loading="lazy"'
-            chapters.append(
-                f'<li class="td-ch{" is-free" if free else ""}" data-i="{i}">'
-                f'<img class="td-bg" src="{e(wide)}" data-fallback="{e(o["image"])}" alt="" width="1920" height="620"{lazy} decoding="async">'
-                f'<div class="td-art"><img src="{e(o["image"])}"{fallback(o)} alt="" width="920" height="430"{lazy} decoding="async">{big}</div>'
-                f'<div class="td-copy"><p class="td-store">{self.store_chip(o)}<span>{"Gratis por tiempo limitado" if free else f"-{pct}% de descuento"}</span></p>'
-                f'<p class="td-title">{words}</p>{self.price_html(o, big=True)}{self.countdown(o, "left td-left")}'
-                f'<div class="cta">{self.offer_button(o)}{more}</div></div></li>')
-            ticks.append(f'<li><button type="button" data-go="{i}"><span class="td-tn">{i + 1}</span><span class="td-tt">{e(o["title"])}</span></button></li>')
-        return (f'<section class="tide" data-n="{len(picks)}" aria-label="Ofertas destacadas">'
-                f'<div class="td-stage"><ol class="td-list">{"".join(chapters)}</ol>'
-                f'<ol class="td-rail" aria-label="Ir a una oferta destacada" hidden>{"".join(ticks)}</ol>'
-                f'<div class="td-bar" aria-hidden="true"><span></span></div>'
-                f'<p class="td-cue" aria-hidden="true" hidden>Baja para ver las {len(picks)} destacadas</p>'
-                '<span class="td-grain" aria-hidden="true"></span></div></section>')
+            page = self.detail[o["id"]]
+            slides.append(
+                f'<li class="sh-slide{" on" if i == 0 else ""}{" is-free" if free else ""}" data-i="{i}"{"" if i == 0 else " hidden"}>'
+                f'<span class="sh-ghost" aria-hidden="true">{e(ghost)}</span>'
+                f'<div class="sh-copy"><p class="sh-store">{e(o["store"])}</p>'
+                f'<h2 class="sh-title"><a href="{e(page)}">{title}</a></h2>'
+                f'{self.countdown(o, "left sh-left") or ""}</div>'
+                f'<figure class="sh-art"><img src="{e(o["image"])}"{fallback(o)} alt="" width="920" height="430"{lazy} decoding="async">'
+                f'<span class="sh-tag">{e(tag)}</span></figure>'
+                f'<div class="sh-buy"><p class="sh-price{" free" if free else ""}">{e(price)}</p>'
+                f'<p class="sh-name">{e(o["title"])}' + (f'<span>{e(cop)}</span>' if cop else "") + '</p></div>'
+                f'<div class="sh-cta">{self.offer_button(o, "btn sh-btn-main")}<a class="btn sh-btn-line" href="{e(page)}">Ver ficha</a></div>'
+                + (f'<div class="sh-about"><p class="sh-about-h">De qué trata</p><p>{e(about)}</p></div>' if about else "")
+                + '</li>')
+            dots.append(f'<li><button type="button" data-go="{i}" aria-label="Oferta {i + 1}: {e(o["title"])}"{" aria-current=\"true\"" if i == 0 else ""}></button></li>')
+            thumbs.append(f'<li><a href="{e(page)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""}><img src="{e(o["image"])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">'
+                          f'<span>{e(o["title"])}</span></a></li>')
+        return (f'<section class="show" aria-label="Ofertas destacadas" data-n="{len(picks)}"><div class="sh-card">'
+                '<svg class="sh-lines" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 420C180 300 260 520 470 400S760 90 1020 160"/>'
+                '<path d="M120 -20C260 120 160 260 380 300S700 520 900 580"/><path d="M640 -20C700 90 860 60 1020 120"/></svg>'
+                f'<ol class="sh-list">{"".join(slides)}</ol>'
+                f'<div class="sh-side" hidden><ol class="sh-dots" aria-label="Cambiar de oferta destacada">{"".join(dots)}</ol>'
+                '<button type="button" class="sh-pause" aria-pressed="false" aria-label="Pausar el cambio automático"><span aria-hidden="true"></span></button></div>'
+                f'<div class="sh-pick"><p class="sh-pick-h">Elige otra:</p><ol class="sh-thumbs">{"".join(thumbs)}</ol></div>'
+                '</div></section>')
 
     def foot_columns(self):
         cols = [("Ofertas", [("juegos-gratis.html", "Juegos gratis"), ("ofertas.html", "Todas las ofertas"), ("oferta-del-dia.html", "Oferta del día"),
@@ -2206,7 +2220,7 @@ class Site:
 
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
-                    f"""{self.tide_stage(free[:2] + top)}
+                    f"""{self.showcase(free[:2] + top)}
 <section class="hero compact home-bar" aria-labelledby="home-h">
 <div class="hb-text"><h1 id="home-h">Juegos gratis y ofertas de PC, verificados para Colombia</h1>
 <p class="lead">Hoy hay <strong>{len(free)} {"juego gratis" if len(free) == 1 else "juegos gratis"}</strong> y <strong>{len(deals)} ofertas</strong> de {sum(1 for n in self.store_counts.values() if n)} tiendas oficiales, con el precio en pesos y la hora en que terminan.</p>

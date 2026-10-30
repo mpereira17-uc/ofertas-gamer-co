@@ -26,22 +26,21 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     await page.goto(base + "index.html");
     if (width === 360 && !(await page.isVisible("nav.bottom-nav"))) errors.push("360px: falta el menú inferior");
     if (width === 1280 && (await page.isVisible("nav.bottom-nav"))) errors.push("1280px: el menú inferior no debería verse");
-    // portada por capítulos: la escena se fija y los botones llevan a cada oferta destacada
-    if (await page.$(".tide")) {
-      const tide = await page.evaluate(() => { const t = document.querySelector(".tide"); return { on: t.classList.contains("on"), n: t.querySelectorAll(".td-ch").length }; });
-      if (tide.n > 1 && !tide.on) errors.push(`${width}px: la portada animada no se activó`);
-      if (tide.on) {
-        await page.click(".td-rail [data-go='1']");
-        await page.waitForTimeout(1500);
-        const cur = await page.getAttribute(".td-rail [data-go='1']", "aria-current");
-        if (cur !== "true") errors.push(`${width}px: el botón 2 de la portada no lleva a la segunda oferta`);
-        await page.evaluate(() => window.scrollTo(0, 0));
+    // vitrina de la portada: los puntos cambian la oferta destacada; con «menos movimiento» no avanza sola
+    if (await page.$(".show")) {
+      const show = await page.evaluate(() => { const t = document.querySelector(".show"); return { on: t.classList.contains("on"), n: t.querySelectorAll(".sh-slide").length }; });
+      if (show.n > 1 && !show.on) errors.push(`${width}px: la vitrina de la portada no se activó`);
+      if (show.on) {
+        await page.click(".sh-dots [data-go='1']");
+        await page.waitForTimeout(300);
+        const vis = await page.isVisible(".sh-slide[data-i='1']");
+        if (!vis) errors.push(`${width}px: el punto 2 de la vitrina no muestra la segunda oferta`);
       }
       const calm = await browser.newContext({ viewport: { width, height: 800 }, reducedMotion: "reduce" });
       const cp = await calm.newPage();
       await cp.route(/^https:\/\//, (r) => r.fulfill({ status: 200, contentType: "image/svg+xml", body: "<svg xmlns='http://www.w3.org/2000/svg'/>" }));
       await cp.goto(base + "index.html");
-      if (await cp.$eval(".tide", (t) => t.classList.contains("on"))) errors.push(`${width}px: con «menos movimiento» la portada no debería animarse`);
+      if (await cp.isVisible(".sh-pause")) errors.push(`${width}px: con «menos movimiento» la vitrina no debería avanzar sola`);
       await calm.close();
     }
     if (width === 360) {

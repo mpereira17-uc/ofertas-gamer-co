@@ -1,4 +1,19 @@
-# Design: Ofertas Gamer CO («Tablero», v4)
+# Design: Ofertas Gamer CO («Tablero» v4 + estilo «Jordan» v5)
+
+**v5 «Jordan» (2026-10-30), a partir del diseño de Figma «Jordan Shoes Website Concept» que mandó pepe:**
+- El bloque «Diseño v5 «Jordan»» va al final de `assets/styles.css` y manda sobre v4.
+- **Colores:** negro `#070708`, rojo `#ff2a3d` (`--sign`) y blanco. Enlaces en `#ff6b78`.
+- **Títulos:** grandes en cursiva, con la primera letra en rojo.
+- **Botones:** blanco sólido para la acción principal y borde blanco para lo demás, con esquinas casi rectas.
+- **Fondo y paneles:** líneas rojas finas detrás. Paneles negros con esquinas de 14px y sombra suave. Portadas un poco inclinadas.
+- **Portada** (`showcase`): reemplaza la escena por capítulos y tiene:
+  - tarjeta negra con el título partido en rojo y blanco y la palabra gigante de fondo;
+  - portada inclinada encima y precio grande;
+  - puntos verticales y miniaturas «Elige otra»;
+  - avance automático cada 6 s, con botón de pausa.
+- **Juegos gratis:** tarjetas negras con la portada inclinada. Ya no son pases de abordar claros.
+- Los nombres de sección (Salidas, Abordando…) siguen igual.
+
 
 Mundo elegido por pepe el 2026-10-30. El sitio se lee como el tablero de vuelos de un aeropuerto. Los estilos están en `assets/styles.css`: el bloque «Diseño v4 «Tablero»» del final manda sobre las reglas anteriores. El HTML lo genera `ogc/site.py`.
 
