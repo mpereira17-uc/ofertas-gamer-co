@@ -1116,72 +1116,57 @@ document.addEventListener("error", function (ev) {
   }
 }, true);
 
-// Portada por capítulos: al bajar, la escena se queda fija y pasa por cada oferta destacada.
-// Sin JavaScript, con «menos movimiento» o con ahorro de datos se queda como cuadrícula normal.
+// Vitrina de la portada: puntos y miniaturas cambian la oferta destacada; avanza sola cada 6 s
+// (se pausa con el botón, al pasar el cursor o al enfocar). Sin JavaScript se ve la primera y las miniaturas abren cada ficha.
 (function () {
-  var box = document.querySelector(".tide");
-  if (!box || !window.requestAnimationFrame) return;
+  var box = document.querySelector(".show");
+  if (!box) return;
+  var slides = box.querySelectorAll(".sh-slide");
+  var n = slides.length;
+  if (n < 2) return;
   var calm = (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
     document.documentElement.classList.contains("pref-lite");
-  var chs = [].slice.call(box.querySelectorAll(".td-ch")), n = chs.length;
-  if (calm || n < 2) return;
-  var rail = box.querySelector(".td-rail"), ticks = [].slice.call(box.querySelectorAll("[data-go]"));
-  var bar = box.querySelector(".td-bar span"), cue = box.querySelector(".td-cue");
-  var words = chs.map(function (c) { return [].slice.call(c.querySelectorAll(".td-w")); });
-  var nums = chs.map(function (c) { return c.querySelector(".td-big b"); });
-  var span = n - 1 + 0.6;            // el último capítulo se queda quieto un rato antes de soltar la escena
-  var cur = 0, goal = 0, raf = 0, active = -1, top = 0, len = 1;
-  box.style.setProperty("--n", n);
+  var side = box.querySelector(".sh-side");
+  var dots = box.querySelectorAll(".sh-dots button");
+  var thumbs = box.querySelectorAll(".sh-thumbs a");
+  var pause = box.querySelector(".sh-pause");
+  var cur = 0, hold = false, stopped = calm;
+  if (side) side.hidden = false;
+  if (pause && calm) pause.hidden = true;
   box.classList.add("on");
-  rail.hidden = false; cue.hidden = false;
-  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
-  function ease(t) { return 1 - Math.pow(1 - t, 3); }
-  function measure() {
-    var stage = box.querySelector(".td-stage");
-    top = box.getBoundingClientRect().top + window.pageYOffset - (parseFloat(getComputedStyle(stage).top) || 0);
-    len = Math.max(1, box.offsetHeight - stage.offsetHeight);
-  }
-  function target() { return clamp((window.pageYOffset - top) / len) * span; }
-  function paint(p) {
-    var now = Math.min(n - 1, Math.floor(p + 0.25));
-    chs.forEach(function (c, i) {
-      var d = p - i;                 // 0 = capítulo centrado; entra entre -0.25 y 0, sale entre 0.75 y 1
-      var e = i === 0 ? 1 : ease(clamp((d + 0.25) / 0.25));
-      var x = i === n - 1 ? 0 : ease(clamp((d - 0.75) / 0.25));
-      var live = e > 0 && x < 1;
-      c.classList.toggle("live", live);
-      if (!live) return;
-      c.style.setProperty("--e", e.toFixed(3));
-      c.style.setProperty("--x", x.toFixed(3));
-      c.style.setProperty("--k", clamp((d + 0.25) / 1.25).toFixed(3));
-      var t = i === 0 ? 1 : clamp((d + 0.1) / 0.5), w = words[i];
-      w.forEach(function (el, k) { el.classList.toggle("lit", (k + 1) / w.length <= t + 0.001); });
-      if (nums[i]) nums[i].textContent = Math.round(+nums[i].getAttribute("data-to") * ease(i === 0 ? 1 : clamp((d + 0.2) / 0.4)));
+  var go = function (i) {
+    i = (i + n) % n;
+    if (i === cur) return;
+    slides[cur].classList.remove("on");
+    slides[cur].hidden = true;
+    slides[i].hidden = false;
+    slides[i].classList.add("on");
+    [dots, thumbs].forEach(function (list) {
+      list.forEach(function (b, k) { if (k === i) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
     });
-    if (now !== active) {
-      active = now;
-      ticks.forEach(function (b, k) { if (k === now) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
-    }
-    bar.style.transform = "scaleX(" + clamp(p / span).toFixed(4) + ")";
-    cue.style.opacity = p > 0.15 ? 0 : 1;
-  }
-  function tick() {
-    cur += (goal - cur) * 0.14;      // suaviza el desplazamiento para que se sienta como una cámara
-    if (Math.abs(goal - cur) < 0.0005) cur = goal;
-    paint(cur);
-    raf = cur === goal ? 0 : requestAnimationFrame(tick);
-  }
-  function onScroll() { goal = target(); if (!raf) raf = requestAnimationFrame(tick); }
-  measure(); cur = goal = target(); paint(cur);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", function () { measure(); onScroll(); });
-  window.addEventListener("load", function () { measure(); onScroll(); });
-  function jump(i) { window.scrollTo({ top: top + len * (i / span) + 2, behavior: "smooth" }); }
-  ticks.forEach(function (b) { b.addEventListener("click", function () { jump(+b.getAttribute("data-go")); }); });
-  // con teclado: al llegar a un botón de un capítulo escondido, la escena se mueve hasta ese capítulo
-  chs.forEach(function (c, i) {
-    c.addEventListener("focusin", function () {
-      if (i !== active) { window.scrollTo({ top: top + len * (i / span) + 2 }); goal = cur = target(); paint(cur); }
+    cur = i;
+  };
+  dots.forEach(function (b) { b.addEventListener("click", function () { go(+b.getAttribute("data-go")); }); });
+  thumbs.forEach(function (a) {
+    a.addEventListener("click", function (ev) {
+      var i = +a.getAttribute("data-go");
+      if (i === cur) return; // segundo toque: abre la ficha
+      ev.preventDefault();
+      go(i);
     });
   });
+  if (pause) {
+    pause.addEventListener("click", function () {
+      stopped = !stopped;
+      pause.setAttribute("aria-pressed", stopped ? "true" : "false");
+      pause.setAttribute("aria-label", stopped ? "Seguir con el cambio automático" : "Pausar el cambio automático");
+    });
+  }
+  box.addEventListener("pointerenter", function () { hold = true; });
+  box.addEventListener("pointerleave", function () { hold = false; });
+  box.addEventListener("focusin", function () { hold = true; });
+  box.addEventListener("focusout", function () { hold = false; });
+  setInterval(function () {
+    if (!hold && !stopped && !document.hidden) go(cur + 1);
+  }, 6000);
 })();

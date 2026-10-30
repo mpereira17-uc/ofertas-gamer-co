@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-30T18:21:41Z",
+ "updatedAt": "2026-10-30T18:41:47Z",
  "items": [
   {
    "id": "gp-3346",
@@ -314,19 +314,6 @@
    "active": true
   },
   {
-   "id": "gp-3301",
-   "title": "Bad cat Sam",
-   "type": "game",
-   "group": "otros",
-   "platforms": "PC, DRM-Free",
-   "worth": "$2.99",
-   "endsOn": "",
-   "image": "https://www.gamerpower.com/offers/1b/68d828fc4174f.jpg",
-   "url": "https://www.gamerpower.com/open/bad-cat-sam-pc-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
    "id": "gp-3716",
    "title": "Dwarven Realms (Steam)",
    "type": "game",
@@ -559,6 +546,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3301",
+   "title": "Bad cat Sam",
+   "type": "game",
+   "group": "otros",
+   "platforms": "PC, DRM-Free",
+   "worth": "$2.99",
+   "endsOn": "",
+   "image": "https://www.gamerpower.com/offers/1b/68d828fc4174f.jpg",
+   "url": "https://www.gamerpower.com/open/bad-cat-sam-pc-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-3824",

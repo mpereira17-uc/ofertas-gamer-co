@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-30T18:21:41Z",
+ "updatedAt": "2026-10-30T18:41:47Z",
  "games": [
   {
    "id": "steam-730",
@@ -153,15 +153,6 @@
    ]
   },
   {
-   "id": "steam-1973530",
-   "title": "Limbus Company",
-   "url": "https://store.steampowered.com/app/1973530/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1973530/header.jpg?t=1792746022",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1973530/capsule_sm_120.jpg?t=1792746022",
-   "headerChecked": true,
-   "genres": []
-  },
-  {
    "id": "steam-359550",
    "title": "Tom Clancy's Rainbow Six Siege",
    "url": "https://store.steampowered.com/app/359550/",
@@ -171,6 +162,15 @@
    "genres": [
     "Acción"
    ]
+  },
+  {
+   "id": "steam-1973530",
+   "title": "Limbus Company",
+   "url": "https://store.steampowered.com/app/1973530/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1973530/header.jpg?t=1792746022",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1973530/capsule_sm_120.jpg?t=1792746022",
+   "headerChecked": true,
+   "genres": []
   },
   {
    "id": "steam-2073850",
@@ -220,19 +220,6 @@
    ]
   },
   {
-   "id": "steam-3513350",
-   "title": "Wuthering Waves",
-   "url": "https://store.steampowered.com/app/3513350/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3513350/fb969539fb0373bd5ee07c767bf9dafa4afae5c3/header.jpg?t=1791864800",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3513350/ccb275636063d8aa7fe8f74afc5fb369eb68c505/capsule_sm_120.jpg?t=1791864800",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
    "id": "steam-1085660",
    "title": "Destiny 2",
    "url": "https://store.steampowered.com/app/1085660/",
@@ -268,6 +255,19 @@
     "Acción",
     "Aventura",
     "Casual"
+   ]
+  },
+  {
+   "id": "steam-3513350",
+   "title": "Wuthering Waves",
+   "url": "https://store.steampowered.com/app/3513350/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3513350/fb969539fb0373bd5ee07c767bf9dafa4afae5c3/header.jpg?t=1791864800",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3513350/ccb275636063d8aa7fe8f74afc5fb369eb68c505/capsule_sm_120.jpg?t=1791864800",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -319,19 +319,6 @@
    ]
   },
   {
-   "id": "steam-1974050",
-   "title": "Torchlight: Infinite",
-   "url": "https://store.steampowered.com/app/1974050/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
    "id": "steam-2507950",
    "title": "Delta Force",
    "url": "https://store.steampowered.com/app/2507950/",
@@ -342,6 +329,19 @@
     "Acción",
     "Aventura",
     "Multijugador masivo"
+   ]
+  },
+  {
+   "id": "steam-1974050",
+   "title": "Torchlight: Infinite",
+   "url": "https://store.steampowered.com/app/1974050/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -382,6 +382,17 @@
    ]
   },
   {
+   "id": "steam-1938090",
+   "title": "Call of Duty®",
+   "url": "https://store.steampowered.com/app/1938090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1793206213",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793206213",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-5019180",
    "title": "Epic Seven",
    "url": "https://store.steampowered.com/app/5019180/",
@@ -401,17 +412,6 @@
    "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
    "headerChecked": true,
    "genres": []
-  },
-  {
-   "id": "steam-1938090",
-   "title": "Call of Duty®",
-   "url": "https://store.steampowered.com/app/1938090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1793206213",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793206213",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
   },
   {
    "id": "steam-223750",
@@ -450,18 +450,6 @@
    ]
   },
   {
-   "id": "steam-1449850",
-   "title": "Yu-Gi-Oh! Master Duel",
-   "url": "https://store.steampowered.com/app/1449850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1449850/3dabbf618664c7a561202771e3754b6690949159/header.jpg?t=1788064919",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449850/cc22c3ceaa31b5fc073dd32d237acc65a9efde6d/capsule_sm_120.jpg?t=1793252158",
-   "headerChecked": true,
-   "genres": [
-    "Simuladores",
-    "Estrategia"
-   ]
-  },
-  {
    "id": "steam-4508340",
    "title": "NTE: Neverness to Everness",
    "url": "https://store.steampowered.com/app/4508340/",
@@ -472,6 +460,18 @@
     "Acción",
     "Aventura",
     "Rol"
+   ]
+  },
+  {
+   "id": "steam-1449850",
+   "title": "Yu-Gi-Oh! Master Duel",
+   "url": "https://store.steampowered.com/app/1449850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1449850/3dabbf618664c7a561202771e3754b6690949159/header.jpg?t=1788064919",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449850/cc22c3ceaa31b5fc073dd32d237acc65a9efde6d/capsule_sm_120.jpg?t=1793252158",
+   "headerChecked": true,
+   "genres": [
+    "Simuladores",
+    "Estrategia"
    ]
   },
   {
