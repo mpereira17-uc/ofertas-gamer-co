@@ -1,0 +1,354 @@
+{
+ "semanas": [
+  {
+   "week": "2026-S44",
+   "date": "2026-10-30T15:06:04Z",
+   "label": "30 de octubre de 2026",
+   "free": [
+    {
+     "id": "epic-4e469c7d8bbf49bcabc2c07127d3d946-2026-11-05",
+     "title": "Sorry We're Closed",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0,
+     "originalPrice": 51899.0,
+     "currency": "COP",
+     "discountPercentage": 100,
+     "image": "https://cdn1.epicgames.com/spt-assets/9ab7eaaeb2f041969b350955b789f0f7/sorry-were-closed-1orqh.png",
+     "destinationUrl": "https://store.epicgames.com/es-ES/p/sorry-were-closed-724c86",
+     "officialUrl": "https://store.epicgames.com/es-ES/p/sorry-were-closed-724c86",
+     "affiliate": false,
+     "expiresAt": "2026-11-05T16:00:00.000Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-290603-25-0.00",
+     "title": "Sorry Were Closed",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0.0,
+     "originalPrice": 24.99,
+     "currency": "USD",
+     "discountPercentage": 100,
+     "copApproximation": 0,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1796580/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1796580/c6fa267fe2888073c88a429b579bd92e5f388292/capsule_231x87.jpg?t=1788536861",
+     "destinationUrl": "https://store.epicgames.com/es-ES/browse?q=Sorry%20Were%20Closed",
+     "officialUrl": "https://store.epicgames.com/es-ES/browse?q=Sorry%20Were%20Closed",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-331788-25-0.00",
+     "title": "MAFIA HOTEL",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0.0,
+     "originalPrice": 1.99,
+     "currency": "USD",
+     "discountPercentage": 100,
+     "copApproximation": 0,
+     "image": "https://cdn1.epicgames.com/spt-assets/f050bad3cfcd406f94bad85c0aa10177/mafia-hotel-8s83c.png",
+     "destinationUrl": "https://store.epicgames.com/es-ES/browse?q=MAFIA%20HOTEL",
+     "officialUrl": "https://store.epicgames.com/es-ES/browse?q=MAFIA%20HOTEL",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-316632-25-0.00",
+     "title": "GetHigh.EXE",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0.0,
+     "originalPrice": 1.99,
+     "currency": "USD",
+     "discountPercentage": 100,
+     "copApproximation": 0,
+     "image": "https://cdn1.epicgames.com/spt-assets/c98f33cf3ea9491f926ce69fc9835ccf/gethighexe-v2w47.png",
+     "destinationUrl": "https://store.epicgames.com/es-ES/browse?q=GetHigh.EXE",
+     "officialUrl": "https://store.epicgames.com/es-ES/browse?q=GetHigh.EXE",
+     "affiliate": false,
+     "regions": []
+    }
+   ],
+   "deals": [
+    {
+     "id": "cs-154838-11-2.49",
+     "title": "Tumblestone",
+     "store": "Humble Store",
+     "storeId": "humble",
+     "currentPrice": 2.49,
+     "originalPrice": 24.99,
+     "currency": "USD",
+     "discountPercentage": 90,
+     "copApproximation": 7900,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/269710/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/269710/capsule_231x87.jpg?t=1768587840",
+     "destinationUrl": "https://www.humblebundle.com/store/search?search=Tumblestone",
+     "officialUrl": "https://www.humblebundle.com/store/search?search=Tumblestone",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-109746-1-1.99",
+     "title": "Metro 2033 Redux",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 1.99,
+     "originalPrice": 19.99,
+     "currency": "USD",
+     "discountPercentage": 90,
+     "copApproximation": 6300,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/e61b54b5c5ec0a610be1bd53e89b461c413e0e6b/capsule_231x87_alt_assets_1.jpg?t=1792681167",
+     "destinationUrl": "https://store.steampowered.com/app/286690/",
+     "officialUrl": "https://store.steampowered.com/app/286690/",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-146697-7-5.99",
+     "title": "Divinity: Original Sin - Enhanced Edition",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 5.99,
+     "originalPrice": 39.99,
+     "currency": "USD",
+     "discountPercentage": 85,
+     "copApproximation": 19000,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/373420/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/373420/capsule_231x87.jpg?t=1765505119",
+     "destinationUrl": "https://www.gog.com/en/games?query=Divinity%3A%20Original%20Sin%20-%20Enhanced%20Edition",
+     "officialUrl": "https://www.gog.com/en/games?query=Divinity%3A%20Original%20Sin%20-%20Enhanced%20Edition",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-102249-7-2.99",
+     "title": "Deus Ex: Human Revolution - Director's Cut",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 2.99,
+     "originalPrice": 19.99,
+     "currency": "USD",
+     "discountPercentage": 85,
+     "copApproximation": 9500,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
+     "destinationUrl": "https://www.gog.com/en/games?query=Deus%20Ex%3A%20Human%20Revolution%20-%20Director%27s%20Cut",
+     "officialUrl": "https://www.gog.com/en/games?query=Deus%20Ex%3A%20Human%20Revolution%20-%20Director%27s%20Cut",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-93503-3-6.75",
+     "title": "BioShock Infinite",
+     "store": "Green Man Gaming",
+     "storeId": "gmg",
+     "currentPrice": 6.75,
+     "originalPrice": 29.99,
+     "currency": "USD",
+     "discountPercentage": 77,
+     "copApproximation": 21400,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8870/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8870/capsule_231x87.jpg?t=1728673518",
+     "destinationUrl": "https://www.greenmangaming.com/search/?query=BioShock%20Infinite",
+     "officialUrl": "https://www.greenmangaming.com/search/?query=BioShock%20Infinite",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-224-3-2.25",
+     "title": "Tom Clancy's Splinter Cell Chaos Theory",
+     "store": "Green Man Gaming",
+     "storeId": "gmg",
+     "currentPrice": 2.25,
+     "originalPrice": 9.99,
+     "currency": "USD",
+     "discountPercentage": 77,
+     "copApproximation": 7100,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13570/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13570/capsule_231x87.jpg?t=1764776065",
+     "destinationUrl": "https://www.greenmangaming.com/search/?query=Tom%20Clancy%27s%20Splinter%20Cell%20Chaos%20Theory",
+     "officialUrl": "https://www.greenmangaming.com/search/?query=Tom%20Clancy%27s%20Splinter%20Cell%20Chaos%20Theory",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-243-3-2.25",
+     "title": "Tom Clancy's Splinter Cell",
+     "store": "Green Man Gaming",
+     "storeId": "gmg",
+     "currentPrice": 2.25,
+     "originalPrice": 9.99,
+     "currency": "USD",
+     "discountPercentage": 77,
+     "copApproximation": 7100,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13560/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13560/capsule_231x87.jpg?t=1764775959",
+     "destinationUrl": "https://www.greenmangaming.com/search/?query=Tom%20Clancy%27s%20Splinter%20Cell",
+     "officialUrl": "https://www.greenmangaming.com/search/?query=Tom%20Clancy%27s%20Splinter%20Cell",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-227942-7-9.99",
+     "title": "Disco Elysium - The Final Cut",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 9.99,
+     "originalPrice": 39.99,
+     "currency": "USD",
+     "discountPercentage": 75,
+     "copApproximation": 31600,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
+     "destinationUrl": "https://www.gog.com/en/games?query=Disco%20Elysium%20-%20The%20Final%20Cut",
+     "officialUrl": "https://www.gog.com/en/games?query=Disco%20Elysium%20-%20The%20Final%20Cut",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-257-7-1.25",
+     "title": "Freedom Force",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 1.25,
+     "originalPrice": 4.99,
+     "currency": "USD",
+     "discountPercentage": 75,
+     "copApproximation": 4000,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8880/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8880/capsule_231x87.jpg?t=1569012854",
+     "destinationUrl": "https://www.gog.com/en/games?query=Freedom%20Force",
+     "officialUrl": "https://www.gog.com/en/games?query=Freedom%20Force",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-278335-7-2.99",
+     "title": "Bzzzt",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 2.99,
+     "originalPrice": 11.99,
+     "currency": "USD",
+     "discountPercentage": 75,
+     "copApproximation": 9500,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1293170/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1293170/cc5bb40fb30abc202f00500a972470af63df6937/capsule_231x87.jpg?t=1750557220",
+     "destinationUrl": "https://www.gog.com/en/games?query=Bzzzt",
+     "officialUrl": "https://www.gog.com/en/games?query=Bzzzt",
+     "affiliate": false,
+     "regions": []
+    }
+   ],
+   "games": [
+    {
+     "id": "wd-Q140140365",
+     "title": "The Legend of Zelda: Ocarina of Time",
+     "date": "2026-11-05",
+     "precision": "day",
+     "platforms": [
+      "Switch"
+     ],
+     "genres": [
+      "Acción-aventura"
+     ],
+     "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/OcarinaofTime2026.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+     "url": "https://es.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_(videojuego_de_2026)",
+     "store": "Wikipedia",
+     "source": "wikidata"
+    },
+    {
+     "id": "wd-Q141440705",
+     "title": "World of Warcraft: Forever",
+     "date": "2026-11-04",
+     "precision": "day",
+     "platforms": [
+      "Mac",
+      "Windows"
+     ],
+     "genres": [
+      "Videojuego de rol multijugador masivo en línea"
+     ],
+     "image": "https://i.ytimg.com/vi/ubf2XFWyPfk/maxresdefault.jpg",
+     "url": "https://en.wikipedia.org/wiki/World_of_Warcraft:_Forever",
+     "store": "Wikipedia",
+     "source": "wikidata"
+    },
+    {
+     "id": "steam-3218230",
+     "title": "ArcheAge Chronicles",
+     "date": "2026-11-03",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción",
+      "Aventura",
+      "Multijugador masivo"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3218230/header.jpg?t=1793259958",
+     "url": "https://store.steampowered.com/app/3218230/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-3581230",
+     "title": "Cozy Game Restoration",
+     "date": "2026-11-04",
+     "precision": "day",
+     "platforms": [
+      "Windows",
+      "Mac"
+     ],
+     "genres": [
+      "Casual",
+      "Simuladores"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3581230/72723670e61f2e3c107ec8f34a4acb06a7e8db20/header.jpg?t=1792727429",
+     "url": "https://store.steampowered.com/app/3581230/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-2320980",
+     "title": "Loftia",
+     "date": "2026-11-03",
+     "precision": "day",
+     "platforms": [
+      "Windows",
+      "Mac"
+     ],
+     "genres": [
+      "Aventura",
+      "Casual",
+      "Indie"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2320980/header.jpg?t=1793100947",
+     "url": "https://store.steampowered.com/app/2320980/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-5160800",
+     "title": "Find The Needle",
+     "date": "2026-11-06",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Casual",
+      "Indie",
+      "Simuladores"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5160800/9ad39ef753543a194a7546ee8a17dc4b821cd021/header.jpg?t=1793315267",
+     "url": "https://store.steampowered.com/app/5160800/",
+     "store": "Steam"
+    }
+   ]
+  }
+ ]
+}
