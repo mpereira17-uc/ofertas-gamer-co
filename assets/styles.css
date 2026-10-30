@@ -1694,3 +1694,16 @@ header.site{background:#070708}
 .sh-title{padding-bottom:.1em}
 @media (max-width:900px){.sh-cta .btn{letter-spacing:.06em;padding-left:10px;padding-right:10px}}
 .filters input,.filters select,.qs input,input[type="search"]{border-radius:4px}
+
+/* ===== v6 «Herramientas del video»: GSAP (SplitText, ScrollTrigger), efectos tipo Skiper UI y espacio para Spline ===== */
+.gsap-on main h1{font-kerning:none}
+.foot-giant .giant-track{display:inline-flex;white-space:nowrap;will-change:transform}
+.foot-giant .giant-track>span{padding-right:.3em}
+.side .roll{display:inline-grid;overflow:hidden;vertical-align:bottom;line-height:1.25}
+.side .roll-a,.side .roll-b{grid-area:1/1;white-space:nowrap}
+.side .roll-b{color:var(--sign)}
+.side a[aria-current="page"] .roll-b{color:#fff}
+.gsap-on main .btn-primary,.gsap-on main .btn-ig{will-change:transform}
+.spline-box{margin:28px 0}
+.spline-box iframe{display:block;width:100%;height:clamp(320px,55vh,560px);border:1px solid var(--border-strong);border-radius:2px;background:#000}
+.pref-lite .spline-box{display:none}

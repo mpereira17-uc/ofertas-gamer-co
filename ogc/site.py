@@ -86,7 +86,7 @@ FOOTER = [
 ]
 CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; "
        "connect-src 'self' https://*.steamstatic.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
-       "media-src 'self' blob: https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com; "
+       "media-src 'self' blob: https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com https://my.spline.design; "
        "upgrade-insecure-requests")
 
 e = html.escape
@@ -268,6 +268,10 @@ class Site:
 <link rel="alternate" type="application/feed+json" title="Ofertas Gamer CO (JSON)" href="feed.json">
 <link rel="stylesheet" href="assets/styles.css?v={asset_version("styles.css")}">
 <script src="assets/app.js?v={asset_version("app.js")}" defer></script>
+<script src="assets/vendor/gsap.min.js?v={asset_version("vendor/gsap.min.js")}" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js?v={asset_version("vendor/ScrollTrigger.min.js")}" defer></script>
+<script src="assets/vendor/SplitText.min.js?v={asset_version("vendor/SplitText.min.js")}" defer></script>
+<script src="assets/motion.js?v={asset_version("motion.js")}" defer></script>
 {ld_html}
 </head>
 <body{self.season_class()}>
@@ -720,6 +724,18 @@ class Site:
         if (self.price_stats(o) or {}).get("isLow"):
             return '<span class="ribbon r-low">Mínimo histórico</span>'
         return ""
+
+    def spline_box(self):
+        """Objeto 3D de Spline que la gente puede girar y arrastrar (video de pepe, 2026-10-30).
+        Solo aparece si config/site.json trae «spline_escena» con el enlace público de la escena (https://my.spline.design/…).
+        Va en un iframe aislado: no carga scripts de Spline en nuestra página."""
+        url = (self.cfg.get("spline_escena") or "").strip()
+        if not re.fullmatch(r"https://my\.spline\.design/[A-Za-z0-9_-]+/?", url):
+            return ""
+        return (f'<section class="spline-box" aria-labelledby="spline-h">'
+                f'<div class="sec-head"><h2 id="spline-h">{ICONS["sparkle"]} Gíralo con el mouse o el dedo</h2></div>'
+                f'<iframe src="{e(url)}" title="Objeto 3D interactivo de Ofertas Gamer CO" loading="lazy" '
+                f'sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe></section>')
 
     def showcase(self, offers, count=5):
         """Portada tipo vitrina (idea del diseño Jordan de Figma que mandó pepe): tarjeta negra, título gigante,
@@ -2221,6 +2237,7 @@ class Site:
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
                     f"""{self.showcase(free[:2] + top)}
+{self.spline_box()}
 <section class="hero compact home-bar" aria-labelledby="home-h">
 <div class="hb-text"><h1 id="home-h">Juegos gratis y ofertas de PC, verificados para Colombia</h1>
 <p class="lead">Hoy hay <strong>{len(free)} {"juego gratis" if len(free) == 1 else "juegos gratis"}</strong> y <strong>{len(deals)} ofertas</strong> de {sum(1 for n in self.store_counts.values() if n)} tiendas oficiales, con el precio en pesos y la hora en que terminan.</p>
