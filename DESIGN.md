@@ -1,58 +1,63 @@
-# Design: Ofertas Gamer CO («Arcade CO», v3)
+# Design: Ofertas Gamer CO («Tablero», v4)
 
-Documentado desde el sitio construido el 2026-10-28. Los estilos viven en `assets/styles.css` (el bloque «Rediseño v3» al final manda sobre las reglas anteriores) y el HTML lo genera `ogc/site.py`.
+Mundo elegido por pepe el 2026-10-30. El sitio se lee como el tablero de vuelos de un aeropuerto. Los estilos están en `assets/styles.css`: el bloque «Diseño v4 «Tablero»» del final manda sobre las reglas anteriores. El HTML lo genera `ogc/site.py`.
 
-## Mundo
+## Idea
 
-Vitrina de tienda gamer de noche. Un solo tema oscuro (pepe no quiere tema claro). Cada sección es un estante con ofertas reales; nada de cifras inventadas.
+- **Salidas:** ofertas que terminan.
+- **Abordando:** juegos gratis de ahora.
+- **Última llamada:** lo que termina pronto.
+- **Llegadas y Aterrizan hoy:** estrenos.
+
+La metáfora se queda en los títulos de los estantes principales. El resto del texto habla claro.
 
 ## Color
 
 | Rol | Valor | Uso |
 | --- | --- | --- |
-| Fondo | `#0a0716` | Página |
-| Superficie | `#150f26` (`--surface-solid`) | Tarjetas, paneles, buscador |
-| Menú lateral | `#0d0a1d` | Fondo del menú en computador |
-| Borde | `#2a2146` | Solo estructura: divisores y bordes de tarjeta |
-| Texto | `#fbf8ff` / secundario `#aba2c8` | |
-| Oro | `#ffc83d` (`--gold`) | Precio, botón principal, enlace de sección, elemento activo del menú, selección de texto, cursor |
-| Gratis | `#25e09a` (`--free`) | Precio «Gratis», botón de reclamar, ahorro |
-| Fucsia | `#ff3d81` | Solo urgencia y tráiler |
-| Bandera | `--flag` (oro, azul, rojo) | Único adorno: marca el inicio de cada estante |
-
-Temporada de Halloween (15 oct a 2 nov): la acción pasa a naranja `#ff8a1f` con texto oscuro y la franja a naranja, morado y verde. Mismo sistema, otro tono.
+| Fondo | `#0a0b0d` | Página |
+| Tablero | `#101215` (`--board`) | Paneles, tablero, buscador |
+| Filas | `#14171b` y `#111317` | Filas alternas del tablero |
+| Bordes | `#23272d` y `#323840` | Divisores de filas y bordes de paneles |
+| Texto | `#f3f0e7`; secundario `#a3a9b1` | |
+| Amarillo de señalización | `#ffd200` (`--sign`) | Acción principal, pictogramas, menú activo, fechas, selección |
+| Verde | `#3ddc84` | Gratis, reclamar y ahorro |
+| Naranja | `#ff9d2e` | Termina pronto |
+| Rojo | `#ff5a5f` | Tráiler en vivo |
+| Azul | `#5aa9ff` | Foco del teclado |
 
 ## Tipografía
 
-- Títulos, precios y números grandes: Bricolage Grotesque (alojada en `assets/fonts`), 800, tracking de -0.02em a -0.035em.
-- Texto: pila del sistema (Segoe UI Variable, system-ui).
-- Títulos con `text-wrap: balance`; párrafos con `pretty`; precios, contadores y cuentas regresivas con `tabular-nums`.
-- Sin monoespaciada de adorno.
+- Barlow Condensed (600 y 700) para títulos, precios, horas y botones. Barlow (400 y 600) para el texto. Las dos están alojadas en `assets/fonts` con licencia OFL.
+- Las mayúsculas espaciadas solo van en etiquetas de columna, títulos de grupo del menú y botones.
+- Números tabulares en precios, horas y contadores.
 
-## Profundidad y forma
+## Forma y profundidad
 
-- Sin vidrio ni desenfoque decorativo (solo la cabecera fija lo usa, porque el contenido pasa por debajo).
-- `--elev-1` para reposo y `--elev-2` al pasar el ratón (sombra con desplazamiento, más un anillo dorado fino). Nada de halos de color con desplazamiento cero.
-- Radios concéntricos: tarjeta 16px con 6px de relleno e imagen de 10px. Botones de 12px. Botones de icono de 10px dentro de la tarjeta.
-- Imágenes con contorno `oklch(1 0 0 / .1)`.
+- Esquinas de señalización: 6px en paneles y botones, 4px en el interior, 3px en etiquetas.
+- El tablero es plano: sin brillos, vidrio, partículas ni degradados de fondo.
+- La profundidad sale del contraste entre fondo, tablero y filas.
+- La paleta (`--flap`) es un mosaico oscuro con la línea de corte en el centro. Se usa para la hora de fin y para el descuento grande de la portada.
 
 ## Componentes
 
-- **Título de estante** (`sec_head`, `.sec-big`, `.sec-head`): título grande a la izquierda, texto o enlace dorado a la derecha, línea superior de 1px con la franja de la bandera. Sin etiqueta encima, sin icono y sin barra de colores debajo.
-- **Tarjeta de oferta** (`card`): imagen encajada con el descuento (oro) o «GRATIS» (verde), la tienda y la cinta solo si es real («Últimas horas», «Mínimo histórico»). Debajo: título, nota de Metacritic si existe, precio grande, pesos aproximados, ahorro, cuenta regresiva y una sola etiqueta de región. Botón principal a todo el ancho y, debajo, los botones de icono (visto, favorito, compartir) en SVG.
-- **Estantes de la portada**: `bento` para las mejores ofertas y `poster` para las gratis. En el celular se deslizan de lado con imán (`scroll-snap`).
-- **Paneles dobles** (`.duo`): oferta del día junto a «Terminan pronto»; cómo verificamos junto a las herramientas (lista de enlaces, no tarjetas iguales).
-- **Botones**: principal en oro con texto oscuro, gratis en verde, canales con su color de marca y contraste AA. Al presionar, `scale(.96)`; sin brillo que recorre el botón.
-- **Iconos**: un solo juego de SVG de trazo (`ICONS` en `ogc/site.py`) con `currentColor`. Nada de emojis como iconos.
+- **Letrero de sección** (`sec_head(..., icon)`): pictograma negro sobre un cuadro amarillo y el título al lado. A la derecha va el texto o el enlace. Sin etiquetas encima del título.
+- **Fila del tablero:** toda lista `ul.grid` que no sea `poster`.
+  - En computador tiene columnas: carátula, juego (tienda y nota MC), precio (USD, pesos y ahorro), «Termina» (paleta o «Sin fecha de fin») y acciones. Arriba va la cabecera `.board-cols`.
+  - En el celular la carátula va a la izquierda, los datos a la derecha y los botones abajo.
+- **Pase de abordar** (`poster`, para los gratis): papel claro `#ecebe5` con la carátula como talón, línea perforada y sello «GRATIS» verde.
+- **Escena de la portada** (`tide_stage`): pantalla de puerta de embarque, con el descuento en una paleta grande.
+- **Pictogramas** (`ICONS`): depart, arrive, ticket, shield, info, speaker, screen y swap, más los anteriores. Todos son SVG de trazo con `currentColor`.
 
 ## Movimiento
 
-- Un solo momento con autor: la escena por capítulos de la portada (`tide_stage`, JS propio, sin GSAP por la CSP `script-src 'self'`).
-- Lo demás son transiciones cortas de propiedades concretas (nunca `transition: all`).
+- La escena por capítulos de la portada se mantiene.
+- Las filas del tablero caen una vez como paletas al entrar en pantalla: `rotateX` desde -70°, escalonadas cada 55 ms.
+- No hay inclinación 3D ni partículas.
 - Con `prefers-reduced-motion`, sin JS o con «Ahorro de datos», todo queda estático.
 
 ## Reglas que no se rompen
 
-- Solo datos reales del bot: precios, fechas, tiendas y notas. No se inventan cifras, rankings ni testimonios.
+- Solo datos reales del bot. Si una tienda no publica la fecha de fin, se muestra «Sin fecha de fin».
 - El menú lateral se queda.
 - Sin estilos ni scripts en línea (CSP).

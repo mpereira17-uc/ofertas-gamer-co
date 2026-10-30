@@ -45,6 +45,14 @@ ICONS = {k: _SVG.format(v) for k, v in {
     "bell": '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
     "share": '<path d="M7 17L17 7M9 7h8v8"/>',
     "tick": '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+    "depart": '<path d="M2 19h20"/><path d="M3.5 12.5l2.4-1 2.6 2.2 4.3-1.9-5-5.1 2.3-1 7.4 3.6 3-1.3a1.8 1.8 0 0 1 1.5 3.2L7.4 16.4 3.5 12.5z"/>',
+    "arrive": '<path d="M2 20h20"/><path d="M4.2 7.7l2.5-.4 1.7 2.9 4.6.9-3-6.5 2.5-.4 5.8 5.9 3.3.6a1.8 1.8 0 0 1 .2 3.6L6.3 13.2z"/>',
+    "ticket": '<path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 5v14" stroke-dasharray="2 2.5"/>',
+    "shield": '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    "info": '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 11v6M12 7.5h.01"/>',
+    "speaker": '<path d="M4 10v4h4l5 4V6L8 10z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/>',
+    "screen": '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><path d="M10.5 8v4l3.5-2z"/>',
+    "swap": '<path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/>',
     "chevL": '<path d="M15 5l-7 7 7 7"/>',
     "chevR": '<path d="M9 5l7 7-7 7"/>',
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -452,9 +460,9 @@ class Site:
         return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
 <div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}{self.ribbon(o)}</div>
 <div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
-{f'<p class="card-meta"><span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span> Metacritic</p>' if o.get("metacritic") else ''}
+<p class="card-meta"><span class="cm-store"><span class="store-dot store-{e(o["storeId"])}" aria-hidden="true"></span>{e(o["store"])}</span>{f'<span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span>' if o.get("metacritic") else ''}</p>
 {self.price_html(o)}
-{self.countdown(o)}
+{self.countdown(o) or '<p class="left none" title="La tienda no publicó la fecha de fin">Sin fecha de fin</p>'}
 {self.trust_chips(o)}
 <div class="actions">{self.offer_button(o)}{f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>{ICONS['tick']}</button>' if free and self.cop_saved(o) else ''}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>{ICONS['share']}</button></div>
 </div></li>"""
@@ -495,7 +503,8 @@ class Site:
 </form>
 <nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav>
 <h2 class="sr-only">Lista de ofertas</h2><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
-        return filters + f'<ul class="grid{" bento" if bento else ""}{" poster" if poster else ""}" id="{list_id}">' + "".join(cards) + "</ul>"
+        cols = ('' if poster else '<div class="board-cols" aria-hidden="true"><span>Juego</span><span>Precio</span><span>Termina</span><span></span></div>')
+        return filters + cols + f'<ul class="grid{" poster" if poster else " board"}" id="{list_id}">' + "".join(cards) + "</ul>"
 
     def support_box(self):
         url = self.cfg.get("enlace_kofi")
@@ -579,7 +588,7 @@ class Site:
         score = self.value_score(o)
         bg = f'<img class="dotd-bg" src="{e(o["image"])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">' if page else ""
         return f"""<section class="dotd{' dotd-page' if page else ''}" aria-labelledby="dotd-h">{bg}<div class="dotd-media"><img src="{e(o['image'])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}</div>
-<div class="dotd-info"><p class="dotd-kicker">{ICONS['sparkle']} Oferta del día</p><h2 id="dotd-h" class="dotd-title">{self.title_link(o)}</h2>
+<div class="dotd-info"><p class="dotd-kicker">{ICONS['depart']} Oferta del día</p><h2 id="dotd-h" class="dotd-title">{self.title_link(o)}</h2>
 {self.price_html(o)}{self.countdown(o)}<p class="meta">{self.store_chip(o)} · Vale la pena: <strong>{score}/100</strong></p>
 <div class="cta">{self.offer_button(o)}{'' if page else '<a class="btn" href="oferta-del-dia.html">¿Por qué esta?</a>'}</div></div></section>"""
 
@@ -592,7 +601,7 @@ class Site:
             return ""
         items = "".join(f"""<li class="soon-item"><img src="{e(o.get('image') or 'assets/placeholder.svg')}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">
 <div>{self.badge(o)}<p class="soon-title clamp2">{self.title_link(o)}</p>{self.countdown(o)}</div></li>""" for o in soon)
-        return (f'<section class="soon" aria-labelledby="soon-h"><h2 id="soon-h">{ICONS["clock"]} Terminan pronto</h2>'
+        return (f'<section class="soon" aria-labelledby="soon-h"><h2 id="soon-h">{ICONS["clock"]} Última llamada: terminan pronto</h2>'
                 f'<ul class="soon-strip">{items}</ul></section>')
 
     def quick_search(self):
@@ -606,9 +615,10 @@ class Site:
 
     @staticmethod
     def sec_head(eyebrow, title, lede="", icon="", hid=""):
-        """Encabezado de sección tipo estante: título grande a la izquierda, texto o enlace a la derecha."""
+        """Encabezado de sección como letrero de aeropuerto: pictograma y título, con el texto o enlace al lado."""
         ida = f' id="{hid}"' if hid else ""
-        return (f'<div class="sec-big"><h2{ida}>{title}</h2>'
+        ico = f'<span class="sign-ico" aria-hidden="true">{ICONS[icon]}</span>' if icon in ICONS else ""
+        return (f'<div class="sec-big sign">{ico}<h2{ida}>{title}</h2>'
                 + (f'<p class="sec-lede">{lede}</p>' if lede else "") + "</div>")
 
     def tools_grid(self):
@@ -624,8 +634,8 @@ class Site:
         cards = "".join(f'<li><a href="{href}"><span class="tool-ico">{ICONS[ic]}</span><strong>{e(t)}</strong><span>{e(d)}</span><span class="tool-go" aria-hidden="true">{ICONS["arrow"]}</span></a></li>'
                         for ic, t, d, href in tools)
         return (f'<section class="tools" aria-labelledby="tools-h">'
-                + self.sec_head("", 'Herramientas para <span class="grad">ahorrar</span>',
-                                "Todo es gratis y funciona sin crear cuenta.", hid="tools-h")
+                + self.sec_head("", 'Servicios para ahorrar',
+                                "Todo es gratis y funciona sin crear cuenta.", "info", "tools-h")
                 + f'<ul class="tool-grid">{cards}</ul></section>')
 
     def store_marquee(self):
@@ -646,8 +656,8 @@ class Site:
             f'<strong>{e(g["title"])}</strong><span class="jr-text">{e(g["description"])}</span><span class="jr-more">Leer la guía {ICONS["arrow"]}</span></a></li>'
             for g in GUIDES[:3])
         return (f'<section class="journal" aria-labelledby="jr-h">'
-                + self.sec_head("", 'Aprende a <span class="grad">comprar sin riesgos</span>',
-                                '<a href="guias.html">Ver todas las guías</a>', hid="jr-h")
+                + self.sec_head("", 'Antes de comprar: guías',
+                                '<a href="guias.html">Ver todas las guías</a>', "book", "jr-h")
                 + f'<ul class="jr-grid">{cards}</ul></section>')
 
     def cta_band(self, item):
@@ -681,8 +691,8 @@ class Site:
             f'<p class="meta">Diferencia: {self.pesos(diff)} aprox.</p></li>'
             for diff, o, b in rows if o.get("image"))
         return (f'<section class="duels" aria-labelledby="duel-h">'
-                + self.sec_head("", 'Duelo de <span class="grad">tiendas</span>',
-                                "Comparamos el precio del mismo juego en tiendas oficiales. Valores aproximados en pesos.", hid="duel-h")
+                + self.sec_head("", 'Comparador: mismo juego, distinta tienda',
+                                "El precio del mismo juego en tiendas oficiales. Valores aproximados en pesos.", "swap", "duel-h")
                 + f'<ul class="duel-list">{items}</ul></section>')
 
     def trailers_box(self, games, count=6):
@@ -697,8 +707,8 @@ class Site:
             f'<span class="tv-name">{e(g["title"])}</span><span class="tv-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
             for g in picks)
         return (f'<section class="tv" aria-labelledby="tv-h">'
-                + self.sec_head("", 'Tráileres de <span class="grad">lo que viene</span>',
-                                'Pasa el cursor para verlos. <a href="lanzamientos.html">Ver el calendario completo</a>', "", "tv-h")
+                + self.sec_head("", 'Sala de espera: tráileres',
+                                'Pasa el cursor para verlos. <a href="lanzamientos.html">Ver el calendario completo</a>', "screen", "tv-h")
                 + f'<ul class="tv-grid">{items}</ul></section>')
 
     def ribbon(self, o):
@@ -781,7 +791,7 @@ class Site:
             f'<li><span class="sv-name">{self.title_link(o)}<small>{e(o["store"])} · -{o.get("discountPercentage") or 0}%</small></span>'
             f'<s>{self.pesos(was)}</s><strong>{self.pesos(now)}</strong></li>' for _, was, now, o in rows)
         return (f'<section class="savings" aria-labelledby="sv-h"><div>'
-                f'<h2 id="sv-h">Las 3 ofertas que <span class="grad">más te ahorran</span></h2>'
+                f'<h2 id="sv-h">Las 3 ofertas que más te ahorran</h2>'
                 f'<p class="lead">Si compraras estos tres juegos a precio normal pagarías <s>{self.pesos(was_t)}</s>. Hoy cuestan '
                 f'<strong>{self.pesos(now_t)}</strong>: te ahorras <strong class="sv-total">{self.pesos(was_t - now_t)}</strong>.</p>'
                 f'<p class="meta">Valores aproximados en pesos colombianos. Confirma el precio final en la tienda.</p></div>'
@@ -794,7 +804,7 @@ class Site:
                  ("Avisamos", "Directo a tu celular", "Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.")]
         lis = "".join(f'<li><span class="hs-num">{i}</span><strong>{e(t)}</strong><span>{e(d)}</span></li>'
                       for i, (k, t, d) in enumerate(steps, 1))
-        return f"""<section class="how" aria-labelledby="how-h"><h2 id="how-h">Cómo verificamos los precios</h2><ol class="how-steps big">{lis}</ol>
+        return f"""<section class="how" aria-labelledby="how-h"><h2 id="how-h">{ICONS["shield"]} Control: cómo verificamos los precios</h2><ol class="how-steps big">{lis}</ol>
 <p class="how-states"><span class="st ok">Precio para Colombia</span> <span class="st ref">Referencia en USD</span> <span class="st muted">Vigencia por confirmar</span></p>
 <p><a href="como-verificamos.html">Leer el método completo</a></p></section>"""
 
@@ -1518,7 +1528,7 @@ class Site:
             f'<span class="curve-img"{self.preview_attrs(g.get("trailer"))}><img src="{e(g["image"])}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async"></span>'
             f'<span class="curve-name">{e(g["title"])}</span><span class="curve-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
             for g in soon)
-        return (f'<section class="curve" aria-labelledby="curve-h"><div class="sec-head"><h2 id="curve-h">{ICONS["star"]} Los más esperados</h2>'
+        return (f'<section class="curve" aria-labelledby="curve-h"><div class="sec-head"><h2 id="curve-h">{ICONS["arrive"]} Llegadas: los más esperados</h2>'
                 f'<p class="meta">Arrastra o usa las flechas. <a href="lanzamientos.html">Ver el calendario</a></p></div>'
                 f'<div class="curve-stage"><ul class="curve-track">{items}</ul>'
                 f'<button type="button" class="curve-nav prev" aria-label="Anterior">{ICONS["chevL"]}</button><button type="button" class="curve-nav next" aria-label="Siguiente">{ICONS["chevR"]}</button></div></section>')
@@ -1592,7 +1602,7 @@ class Site:
         hoy = sorted([g for g in games if g.get("precision") == "day" and g.get("date") == today], key=self.rank)[:8]
         if not hoy:
             return ""
-        return (f'<section class="today-rel"><h2>{ICONS["sparkle"]} Salen hoy</h2><ul class="spot-grid small">'
+        return (f'<section class="today-rel"><h2>{ICONS["arrive"]} Aterrizan hoy</h2><ul class="spot-grid small">'
                 + "".join(self.spot_card(g, now) for g in hoy) + "</ul></section>")
 
     def note_row(self, it, kind, now):
@@ -2174,7 +2184,7 @@ class Site:
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
                     f"""{self.tide_stage(free[:2] + top)}
 <section class="hero compact home-bar" aria-labelledby="home-h">
-<div class="hb-text"><h1 id="home-h">Juegos <span class="grad">gratis</span> y ofertas de PC, verificados para Colombia</h1>
+<div class="hb-text"><h1 id="home-h">Juegos gratis y ofertas de PC, verificados para Colombia</h1>
 <p class="lead">Hoy hay <strong>{len(free)} {"juego gratis" if len(free) == 1 else "juegos gratis"}</strong> y <strong>{len(deals)} ofertas</strong> de {sum(1 for n in self.store_counts.values() if n)} tiendas oficiales, con el precio en pesos y la hora en que terminan.</p>
 {updated_line}</div>
 {self.thermometer(live, free)}
@@ -2182,13 +2192,13 @@ class Site:
 </section>
 {self.steam_strip(updated_dt)}
 <section class="shelf shelf-free" aria-labelledby="free-h">
-{self.sec_head("", 'Gratis <span class="grad">esta semana</span>', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', hid="free-h")}
+{self.sec_head("", 'Abordando: gratis esta semana', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', "ticket", "free-h")}
 {self.saved_box()}
 {self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True) if free else '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
 </section>
 {self.ad_slot("banner_after_hero")}
 <section class="shelf shelf-top" aria-labelledby="top-h">
-{self.sec_head("", 'Mejores ofertas <span class="grad">verificadas</span>', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', hid="top-h")}
+{self.sec_head("", 'Salidas: las mejores ofertas de hoy', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', "depart", "top-h")}
 {self.offer_list(top, with_filters=False, list_id="top-home", bento=True)}
 <p class="shelf-more"><a class="btn btn-primary" href="ofertas.html">Buscar entre las {len(live)} ofertas {ICONS["arrow"]}</a></p>
 </section>

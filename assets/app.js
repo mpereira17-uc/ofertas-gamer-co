@@ -919,17 +919,17 @@
     setTimeout(closeIntro, 2500);
   }
 
-  // Aparición de secciones y tarjetas
+  // Las filas del tablero caen como paletas al entrar en pantalla (una sola vez)
   if (!calm && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    document.querySelectorAll("main h2, main .card, main .rel-card, main .spot-card, .stores li, .faq details, .stats li, .filters, .prose > *").forEach(function (el) {
+    document.querySelectorAll("main .grid > .card, main .rel-card, main .spot-card").forEach(function (el) {
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.classList.add("reveal");
-      el.style.transitionDelay = Math.min(siblings % 6, 5) * 70 + "ms";
+      el.style.transitionDelay = Math.min(siblings % 8, 7) * 55 + "ms";
       io.observe(el);
     });
   }
@@ -950,78 +950,6 @@
     });
   }
 
-  // Inclinación 3D de las tarjetas con el puntero
-  if (!calm && window.matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll(".card").forEach(function (card) {
-      card.addEventListener("pointermove", function (ev) {
-        var r = card.getBoundingClientRect();
-        var x = (ev.clientX - r.left) / r.width - 0.5, y = (ev.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty("--rx", (-y * 6).toFixed(2) + "deg");
-        card.style.setProperty("--ry", (x * 8).toFixed(2) + "deg");
-      });
-      card.addEventListener("pointerleave", function () {
-        card.style.setProperty("--rx", "0deg");
-        card.style.setProperty("--ry", "0deg");
-      });
-    });
-  }
-
-  // Partículas de fondo conectadas
-  var canvas = document.createElement("canvas");
-  if (!calm && canvas.getContext) {
-    canvas.className = "bg-particles";
-    canvas.setAttribute("aria-hidden", "true");
-    document.body.insertBefore(canvas, document.body.firstChild);
-    var ctx = canvas.getContext("2d");
-    var dots = [], W = 0, H = 0, dpr = 1, mouse = { x: -9999, y: -9999 }, running = true;
-    var colors = ["255,200,61", "255,61,129", "77,124,255"];
-    function resize() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = window.innerWidth; H = window.innerHeight;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = W < 760 ? Math.max(10, Math.round(W * H / 40000)) : Math.max(24, Math.min(90, Math.round(W * H / 16000)));
-      dots = [];
-      for (var i = 0; i < n; i++) {
-        dots.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35, r: Math.random() * 1.8 + 0.6, c: colors[i % 3] });
-      }
-    }
-    function frame() {
-      if (!running) return;
-      var alpha = 0.8;
-      ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < dots.length; i++) {
-        var d = dots[i];
-        var mx = d.x - mouse.x, my = d.y - mouse.y, md = mx * mx + my * my;
-        if (md < 14400) { d.x += mx / 60; d.y += my / 60; }
-        d.x += d.vx; d.y += d.vy;
-        if (d.x < 0 || d.x > W) d.vx *= -1;
-        if (d.y < 0 || d.y > H) d.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.r, 0, 6.283);
-        ctx.fillStyle = "rgba(" + d.c + "," + alpha + ")";
-        ctx.fill();
-        for (var j = i + 1; j < dots.length; j++) {
-          var o = dots[j], dx = d.x - o.x, dy = d.y - o.y, dist = dx * dx + dy * dy;
-          if (dist < 15000) {
-            ctx.strokeStyle = "rgba(" + d.c + "," + (alpha * 0.35 * (1 - dist / 15000)).toFixed(3) + ")";
-            ctx.lineWidth = 1;
-            ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(o.x, o.y); ctx.stroke();
-          }
-        }
-      }
-      window.requestAnimationFrame(frame);
-    }
-    window.addEventListener("resize", resize);
-    window.addEventListener("pointermove", function (ev) { mouse.x = ev.clientX; mouse.y = ev.clientY; }, { passive: true });
-    document.addEventListener("visibilitychange", function () {
-      running = !document.hidden;
-      if (running) window.requestAnimationFrame(frame);
-    });
-    resize();
-    window.requestAnimationFrame(frame);
-  }
 })();
 
 // Si la portada grande de una oferta no existe, se usa la miniatura original de la tienda.

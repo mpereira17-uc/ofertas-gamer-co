@@ -27,9 +27,10 @@ Sitio estático generado por un bot en Python (bot.py + ogc/) que corre en GitHu
 
 ## Brand Commitments
 - Nombre: Ofertas Gamer CO. Logo existente en assets/logo-72.png.
-- Mundo visual propio oscuro "Arcade CO": oro #ffc83d, fucsia #ff3d81 y azul #4d7cff, con la franja de bandera de Colombia y la letra Bricolage Grotesque. pepe pidió un solo diseño, sin tema claro.
+- Un solo tema oscuro (pepe no quiere tema claro). El menú lateral se queda.
+- Desde el 2026-10-30 el mundo visual es «Tablero» (tablero de vuelos de aeropuerto), elegido por pepe en una tarjeta de decisión. Reemplaza al mundo anterior «Arcade CO».
+- Franja de la bandera de Colombia en la cabecera y el pie.
 - Voz en español colombiano, cercana y directa.
-- Referencias que pepe dio: plantillas gamer de tienda y esports (GameX, MYKD, Galactic), Brivon, Automark, Scrolltide. Pide su estructura y tarjetas, pero con la personalidad propia.
 - Temporada de Halloween automática (del 15 de octubre al 2 de noviembre).
 
 ## Evidence on Hand

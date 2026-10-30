@@ -8,14 +8,14 @@ related_targets: ["ogc/site.py","assets/styles.css"]
 # Portada y sitio (index.html y todas las páginas generadas por ogc/site.py)
 
 Modo: Persuade en la portada; Operate en ofertas.html y las listas con filtros.
-Visitante: gamer de PC en Colombia, casi siempre desde el celular. Tarea: ver qué está gratis o barato hoy, en pesos, y reclamarlo en la tienda oficial. Prueba: solo datos reales del bot (precios, fechas, tiendas).
+Visitante: gamer de PC en Colombia, casi siempre desde el celular. Tarea: ver qué está gratis o barato hoy, en pesos, y reclamarlo en la tienda oficial. Prueba: solo datos reales del bot.
 Restricciones: el menú lateral se queda; CSP sin estilos ni scripts externos; sin JS debe funcionar; prefers-reduced-motion.
 
 ## Direction contract
 
-THESIS: La portada es la vitrina de una tienda gamer donde cada estante es una oferta real. Rechaza el montaje de landing SaaS: etiquetas sobre los títulos, cifras gigantes, tarjetas iguales de icono y texto, barras de colores bajo cada título.
-OWN-WORLD: «Arcade CO»: fondo noche violeta #0a0716, superficies sólidas #150f26 con sombra para la profundidad, oro #ffc83d como color del precio y de la acción, verde #25e09a para lo gratis, fucsia solo para urgencia. La franja de la bandera de Colombia es el único adorno y marca el inicio de cada estante. Bricolage Grotesque para títulos y precios; números tabulares. Tarjetas con la imagen encajada (radio 16 por fuera, 10 por dentro).
-STORY: ve lo gratis y lo destacado (escena por capítulos), entiende en una frase cuánto hay hoy, busca, recorre estantes (gratis, mejores ofertas, oferta del día y lo que termina, ahorro y duelos, estrenos), confía (cómo verificamos) y sigue un canal.
-FIRST VIEWPORT: la escena fija por capítulos (tide_stage) a todo el ancho del contenido, junto al menú lateral; título del juego grande, precio en pesos, cuenta regresiva y botón de reclamar abajo a la izquierda.
-FORM: Estantes de tienda (posición 1 de mi lista; carta repartida #4). seed:97d1e04b453b10df
+THESIS: El sitio es el tablero de vuelos de un aeropuerto: cada oferta es una salida con su hora de fin, cada estreno una llegada, cada juego gratis un pase de abordar. Rechaza la vitrina gamer de neón con tarjetas iguales.
+OWN-WORLD: Tablero negro #0a0b0d con filas alternas, amarillo de señalización #ffd200 para acción y pictogramas, verde para gratis, naranja para última llamada. Barlow Condensed para títulos, precios y horas; Barlow para texto. Paletas oscuras con línea de corte para la hora de fin. Pase de abordar en papel claro con perforación para lo gratis.
+STORY: ve lo destacado (escena por capítulos), lee en una frase cuánto hay hoy, busca, aborda lo gratis, recorre las salidas, ve la oferta del día y la última llamada, compara en pesos, mira las llegadas, confía en el control y sigue un canal.
+FIRST VIEWPORT: escena fija por capítulos como pantalla de puerta de embarque, junto al menú lateral; título del juego grande, descuento en una paleta amarilla, precio en pesos, hora de fin y botón amarillo de acción abajo a la izquierda.
+FORM: Tablero de salidas (posición 6 de la lista; asignado por el sorteo y elegido por pepe). seed:c8ee7caeb298c021
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
