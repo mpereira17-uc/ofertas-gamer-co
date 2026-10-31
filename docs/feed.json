@@ -6,20 +6,92 @@
  "language": "es",
  "items": [
   {
+   "id": "cs-234269-1-3.15",
+   "url": "https://store.steampowered.com/app/1693040/",
+   "title": "Synthwave Burnout",
+   "content_text": "91% de descuento en Steam: US$3.15.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1693040/header.jpg"
+  },
+  {
+   "id": "cs-227012-1-1.49",
+   "url": "https://store.steampowered.com/app/982720/",
+   "title": "Paradise Lost",
+   "content_text": "90% de descuento en Steam: US$1.49.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/982720/header.jpg"
+  },
+  {
+   "id": "cs-190056-1-3.48",
+   "url": "https://store.steampowered.com/app/812550/",
+   "title": "The King's Bird",
+   "content_text": "88% de descuento en Steam: US$3.48.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/812550/header.jpg"
+  },
+  {
+   "id": "cs-247663-3-8.10",
+   "url": "https://www.greenmangaming.com/search/?query=Marvels%20Midnight%20Suns",
+   "title": "Marvels Midnight Suns",
+   "content_text": "86% de descuento en Green Man Gaming: US$8.10.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/368260/header.jpg"
+  },
+  {
+   "id": "cs-167978-1-2.24",
+   "url": "https://store.steampowered.com/app/562500/",
+   "title": "Warstone TD",
+   "content_text": "85% de descuento en Steam: US$2.24.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/562500/header.jpg"
+  },
+  {
+   "id": "cs-247685-3-14.40",
+   "url": "https://www.greenmangaming.com/search/?query=Marvels%20Midnight%20Suns%20Digital%20Edition",
+   "title": "Marvels Midnight Suns Digital Edition",
+   "content_text": "82% de descuento en Green Man Gaming: US$14.40.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://sttc.gamersgate.com/images/product/marvels-midnight-suns-digitalplus-edition-steam/cover-180-1a15a6.jpg"
+  },
+  {
+   "id": "cs-247664-3-18.00",
+   "url": "https://www.greenmangaming.com/search/?query=Marvels%20Midnight%20Suns%20Legendary%20Edition",
+   "title": "Marvels Midnight Suns Legendary Edition",
+   "content_text": "82% de descuento en Green Man Gaming: US$18.00.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://sttc.gamersgate.com/images/product/marvels-midnight-suns-legendary-edition-steam/cover-180-27439c.jpg"
+  },
+  {
+   "id": "cs-153363-7-2.99",
+   "url": "https://www.gog.com/en/games?query=SteamWorld%20Heist",
+   "title": "SteamWorld Heist",
+   "content_text": "80% de descuento en GOG: US$2.99.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322190/header.jpg"
+  },
+  {
+   "id": "cs-100624-7-1.99",
+   "url": "https://www.gog.com/en/games?query=Beatbuddy%3A%20Tale%20of%20the%20Guardians",
+   "title": "Beatbuddy: Tale of the Guardians",
+   "content_text": "80% de descuento en GOG: US$1.99.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/231040/header.jpg"
+  },
+  {
+   "id": "cs-255060-3-8.50",
+   "url": "https://www.greenmangaming.com/search/?query=Resident%20Evil%204%20%282005%29",
+   "title": "Resident Evil 4 (2005)",
+   "content_text": "79% de descuento en Green Man Gaming: US$8.50.",
+   "date_published": "2026-10-31T05:54:32Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/254700/header.jpg"
+  },
+  {
    "id": "cs-228789-1-1.59",
    "url": "https://store.steampowered.com/app/1364100/",
    "title": "Lacuna  A Sci-Fi Noir Adventure",
    "content_text": "90% de descuento en Steam: US$1.59.",
    "date_published": "2026-10-30T21:47:00Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364100/header.jpg"
-  },
-  {
-   "id": "cs-247663-1-8.99",
-   "url": "https://store.steampowered.com/app/368260/",
-   "title": "Marvels Midnight Suns",
-   "content_text": "85% de descuento en Steam: US$8.99.",
-   "date_published": "2026-10-30T21:47:00Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/368260/header.jpg"
   },
   {
    "id": "cs-220402-3-7.20",
@@ -36,14 +108,6 @@
    "content_text": "80% de descuento en Steam: US$3.99.",
    "date_published": "2026-10-30T21:47:00Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1458300/header.jpg"
-  },
-  {
-   "id": "cs-247685-25-15.99",
-   "url": "https://store.epicgames.com/es-ES/browse?q=Marvels%20Midnight%20Suns%20Digital%20Edition",
-   "title": "Marvels Midnight Suns Digital Edition",
-   "content_text": "80% de descuento en Epic Games Store: US$15.99.",
-   "date_published": "2026-10-30T21:47:00Z",
-   "image": "https://sttc.gamersgate.com/images/product/marvels-midnight-suns-digitalplus-edition-steam/cover-180-1a15a6.jpg"
   },
   {
    "id": "cs-214694-1-4.99",
@@ -118,22 +182,6 @@
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1630110/header.jpg"
   },
   {
-   "id": "cs-185881-11-0.49",
-   "url": "https://www.humblebundle.com/store/search?search=Vandals",
-   "title": "Vandals",
-   "content_text": "90% de descuento en Humble Store: US$0.49.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/809240/header.jpg"
-  },
-  {
-   "id": "cs-282106-1-4.38",
-   "url": "https://store.steampowered.com/app/2431700/",
-   "title": "Vampire: The Masquerade - Justice",
-   "content_text": "89% de descuento en Steam: US$4.38.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2431700/header.jpg"
-  },
-  {
    "id": "cs-209670-3-2.09",
    "url": "https://www.greenmangaming.com/search/?query=Frostpunk%3A%20The%20Last%20Autumn",
    "title": "Frostpunk: The Last Autumn",
@@ -156,14 +204,6 @@
    "content_text": "82% de descuento en Green Man Gaming: US$17.60.",
    "date_published": "2026-10-30T20:52:16Z",
    "image": "https://images.greenmangaming.com/ce77d02334d0460da2c70207fe3e9a2a/ee7127ac849d40a4979a0437bc9f2b23.jpg"
-  },
-  {
-   "id": "cs-347-3-1.80",
-   "url": "https://www.greenmangaming.com/search/?query=Prince%20of%20Persia%3A%20The%20Two%20Thrones",
-   "title": "Prince of Persia: The Two Thrones",
-   "content_text": "82% de descuento en Green Man Gaming: US$1.80.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13530/header.jpg"
   },
   {
    "id": "cs-188632-7-4.99",
@@ -204,46 +244,6 @@
    "content_text": "80% de descuento en GOG: US$7.99.",
    "date_published": "2026-10-30T20:52:16Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2144740/header.jpg"
-  },
-  {
-   "id": "cs-207336-7-2.99",
-   "url": "https://www.gog.com/en/games?query=Still%20There",
-   "title": "Still There",
-   "content_text": "80% de descuento en GOG: US$2.99.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1063490/header.jpg"
-  },
-  {
-   "id": "cs-219657-7-2.99",
-   "url": "https://www.gog.com/en/games?query=Genesis%20Noir",
-   "title": "Genesis Noir",
-   "content_text": "80% de descuento en GOG: US$2.99.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/735290/header.jpg"
-  },
-  {
-   "id": "cs-225453-7-2.99",
-   "url": "https://www.gog.com/en/games?query=Olija",
-   "title": "Olija",
-   "content_text": "80% de descuento en GOG: US$2.99.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1297330/header.jpg"
-  },
-  {
-   "id": "cs-191568-3-8.00",
-   "url": "https://www.greenmangaming.com/search/?query=Bloodstained%3A%20Ritual%20of%20the%20Night",
-   "title": "Bloodstained: Ritual of the Night",
-   "content_text": "80% de descuento en Green Man Gaming: US$8.00.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/692850/header.jpg"
-  },
-  {
-   "id": "cs-173642-7-3.99",
-   "url": "https://www.gog.com/en/games?query=Vaporum",
-   "title": "Vaporum",
-   "content_text": "80% de descuento en GOG: US$3.99.",
-   "date_published": "2026-10-30T20:52:16Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/629690/header.jpg"
   }
  ]
 }
