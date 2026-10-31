@@ -1,6 +1,32 @@
 {
- "updatedAt": "2026-10-31T14:35:35Z",
+ "updatedAt": "2026-10-31T20:02:23Z",
  "items": [
+  {
+   "id": "gp-3838",
+   "title": "Gladiator: Blades of Fury",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$9.99",
+   "endsOn": "2026-11-08",
+   "image": "https://www.gamerpower.com/offers/1b/6ae6414cb0f67.jpg",
+   "url": "https://www.gamerpower.com/open/gladiator-blades-of-fury-epic-games-giveaway",
+   "firstSeen": "2026-10-31T20:02:23Z",
+   "active": true
+  },
+  {
+   "id": "gp-3837",
+   "title": "Quiztopia: The Ultimate Trivia",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$7.99",
+   "endsOn": "2026-11-08",
+   "image": "https://www.gamerpower.com/offers/1b/6ae64030ca5f5.jpg",
+   "url": "https://www.gamerpower.com/open/quiztopia-the-ultimate-trivia-epic-games-giveaway",
+   "firstSeen": "2026-10-31T20:02:23Z",
+   "active": true
+  },
   {
    "id": "gp-3346",
    "title": "My Darkest Witch",
@@ -38,19 +64,6 @@
    "image": "https://www.gamerpower.com/offers/1b/6ae4af4cbf862.jpg",
    "url": "https://www.gamerpower.com/open/a-new-beginning-final-cut-gog-giveaway",
    "firstSeen": "2026-10-30T17:50:26Z",
-   "active": true
-  },
-  {
-   "id": "gp-3834",
-   "title": "Hexologic",
-   "type": "game",
-   "group": "steam",
-   "platforms": "PC, Steam",
-   "worth": "$4.99",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/6ae37c96c0b45.jpg",
-   "url": "https://www.gamerpower.com/open/hexologic-steam-giveaway",
-   "firstSeen": "2026-10-29T21:13:08Z",
    "active": true
   },
   {
@@ -327,19 +340,6 @@
    "active": true
   },
   {
-   "id": "gp-3498",
-   "title": "Primal Slideee Deluxe",
-   "type": "game",
-   "group": "otros",
-   "platforms": "PC",
-   "worth": "$1.99",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/6993208da38c7.jpg",
-   "url": "https://www.gamerpower.com/open/primal-slideee-deluxe-pc-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
    "id": "gp-3553",
    "title": "Sleep Demon",
    "type": "game",
@@ -546,6 +546,32 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3834",
+   "title": "Hexologic",
+   "type": "game",
+   "group": "steam",
+   "platforms": "PC, Steam",
+   "worth": "$4.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/6ae37c96c0b45.jpg",
+   "url": "https://www.gamerpower.com/open/hexologic-steam-giveaway",
+   "firstSeen": "2026-10-29T21:13:08Z",
+   "active": false
+  },
+  {
+   "id": "gp-3498",
+   "title": "Primal Slideee Deluxe",
+   "type": "game",
+   "group": "otros",
+   "platforms": "PC",
+   "worth": "$1.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/6993208da38c7.jpg",
+   "url": "https://www.gamerpower.com/open/primal-slideee-deluxe-pc-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-3301",
