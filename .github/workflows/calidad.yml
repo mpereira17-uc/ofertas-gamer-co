@@ -26,7 +26,7 @@ jobs:
         run: python bot.py --fixtures tests/fixtures --no-send
       - name: Comprobaciones críticas (enlaces, SEO, secretos, publicidad)
         run: python scripts/check_site.py
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
       - name: Prueba en navegador (360 px y 1280 px)
