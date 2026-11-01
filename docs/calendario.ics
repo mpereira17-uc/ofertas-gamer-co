@@ -8,7 +8,7 @@ X-WR-TIMEZONE:America/Bogota
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:steam-1858720@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261102
 SUMMARY:🎮 Sale Message From Aliens
@@ -18,7 +18,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3116870@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261102
 SUMMARY:🎮 Sale Deus Mantle
@@ -28,7 +28,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4863090@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261102
 SUMMARY:🎮 Sale Bravemech: The Century War
@@ -37,8 +37,218 @@ URL:https://ofertas-gamer-co.pages.dev/juego-bravemech-the-century-war.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-5329940@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale SCROLLS: Tidy up the Library of Olympus!
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-scrolls-tidy-up-the-library-of-olympus.html
+URL:https://ofertas-gamer-co.pages.dev/juego-scrolls-tidy-up-the-library-of-olympus.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4933450@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale CLAWSTROPHOBIA
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-clawstrophobia.html
+URL:https://ofertas-gamer-co.pages.dev/juego-clawstrophobia.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4923370@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Studs Up!
+DESCRIPTION:Windows\, Mac. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-studs-up.html
+URL:https://ofertas-gamer-co.pages.dev/juego-studs-up.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3081070@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale MOLY
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-moly.html
+URL:https://ofertas-gamer-co.pages.dev/juego-moly.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5448940@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Liberate : escape game à deux
+DESCRIPTION:Windows\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-liberate-escape-game-a-deux.html
+URL:https://ofertas-gamer-co.pages.dev/juego-liberate-escape-game-a-deux.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4451770@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Manual Teller Machine
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-manual-teller-machine.html
+URL:https://ofertas-gamer-co.pages.dev/juego-manual-teller-machine.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5132750@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale RuinsGate Survivors
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-ruinsgate-survivors.html
+URL:https://ofertas-gamer-co.pages.dev/juego-ruinsgate-survivors.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4799130@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Phantom Grind
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-phantom-grind.html
+URL:https://ofertas-gamer-co.pages.dev/juego-phantom-grind.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4501140@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Gimbap Heaven
+DESCRIPTION:Windows\, Mac. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-gimbap-heaven.html
+URL:https://ofertas-gamer-co.pages.dev/juego-gimbap-heaven.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5373980@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Find The Clover
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-find-the-clover.html
+URL:https://ofertas-gamer-co.pages.dev/juego-find-the-clover.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4703560@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Soviet Backrooms
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-soviet-backrooms.html
+URL:https://ofertas-gamer-co.pages.dev/juego-soviet-backrooms.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4645180@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Elecade
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-elecade.html
+URL:https://ofertas-gamer-co.pages.dev/juego-elecade.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3552240@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale LEGRADA
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-legrada.html
+URL:https://ofertas-gamer-co.pages.dev/juego-legrada.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4922860@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale PingPongDart
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-pingpongdart.html
+URL:https://ofertas-gamer-co.pages.dev/juego-pingpongdart.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4844820@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale DARK PGT 2: The Red Death
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-dark-pgt-2-the-red-death.html
+URL:https://ofertas-gamer-co.pages.dev/juego-dark-pgt-2-the-red-death.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5057320@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Is This Reversi?
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-is-this-reversi.html
+URL:https://ofertas-gamer-co.pages.dev/juego-is-this-reversi.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5231880@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Blind Night
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-blind-night.html
+URL:https://ofertas-gamer-co.pages.dev/juego-blind-night.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5306640@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale DOOD
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-dood.html
+URL:https://ofertas-gamer-co.pages.dev/juego-dood.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5448060@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Sea Train
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-sea-train.html
+URL:https://ofertas-gamer-co.pages.dev/juego-sea-train.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4844090@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Suits of Fantasia
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-suits-of-fantasia.html
+URL:https://ofertas-gamer-co.pages.dev/juego-suits-of-fantasia.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5306810@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:🎮 Sale Just Kukuruza
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-just-kukuruza.html
+URL:https://ofertas-gamer-co.pages.dev/juego-just-kukuruza.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-2440760@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale GRAVHOUNDS
@@ -48,7 +258,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3832030@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale BOOST VECTOR EX
@@ -58,7 +268,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5313470@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Figure Me Out
@@ -68,7 +278,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1686230@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Mayday: The Survival Island
@@ -78,7 +288,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4986750@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Sabado
@@ -88,7 +298,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4740930@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Legend of Defenders
@@ -98,7 +308,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4430260@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Beat For Speed
@@ -108,7 +318,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4442840@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Crime Podcast: Welcome to the Neighborhood
@@ -118,7 +328,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3683940@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Replay Value: Second Hand Games
@@ -128,7 +338,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4806180@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Imperium
@@ -138,7 +348,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5271880@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale IRON SOL
@@ -148,7 +358,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5009390@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale BOB LOGISTICS
@@ -157,8 +367,28 @@ URL:https://ofertas-gamer-co.pages.dev/juego-bob-logistics.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-3873120@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Food Delivery Simulator 2027 - Prologue
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-food-delivery-simulator-2027-prologue.html
+URL:https://ofertas-gamer-co.pages.dev/juego-food-delivery-simulator-2027-prologue.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4687990@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale VOID PROFIT
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-void-profit.html
+URL:https://ofertas-gamer-co.pages.dev/juego-void-profit.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-4362170@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:🎮 Sale Feed The Forest
@@ -167,8 +397,158 @@ URL:https://ofertas-gamer-co.pages.dev/juego-feed-the-forest.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-4180890@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale AI Digital Human Lab
+DESCRIPTION:Windows\, Mac\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-ai-digital-human-lab.html
+URL:https://ofertas-gamer-co.pages.dev/juego-ai-digital-human-lab.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4500020@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Tie Down
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-tie-down.html
+URL:https://ofertas-gamer-co.pages.dev/juego-tie-down.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3780970@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Killer Aces Volleyball
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-killer-aces-volleyball.html
+URL:https://ofertas-gamer-co.pages.dev/juego-killer-aces-volleyball.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5333990@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Habet
+DESCRIPTION:Windows\, Mac\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-habet.html
+URL:https://ofertas-gamer-co.pages.dev/juego-habet.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5379010@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Cubic Earth
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-cubic-earth.html
+URL:https://ofertas-gamer-co.pages.dev/juego-cubic-earth.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4744400@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Verdant Requiem
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-verdant-requiem.html
+URL:https://ofertas-gamer-co.pages.dev/juego-verdant-requiem.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4655130@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Minero del Paraíso
+DESCRIPTION:Windows\, Mac\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-minero-del-paraiso.html
+URL:https://ofertas-gamer-co.pages.dev/juego-minero-del-paraiso.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3684530@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale PlinkIdle
+DESCRIPTION:Windows\, Mac\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-plinkidle.html
+URL:https://ofertas-gamer-co.pages.dev/juego-plinkidle.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4159290@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale The Rusted
+DESCRIPTION:Windows\, Mac. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-the-rusted.html
+URL:https://ofertas-gamer-co.pages.dev/juego-the-rusted.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4398020@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Blastlane Racers
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-blastlane-racers.html
+URL:https://ofertas-gamer-co.pages.dev/juego-blastlane-racers.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4764420@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Tale Sweeper
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-tale-sweeper.html
+URL:https://ofertas-gamer-co.pages.dev/juego-tale-sweeper.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4424740@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Agent of Strange: Arrival
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-agent-of-strange-arrival.html
+URL:https://ofertas-gamer-co.pages.dev/juego-agent-of-strange-arrival.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5046340@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale Hotel 13
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-hotel-13.html
+URL:https://ofertas-gamer-co.pages.dev/juego-hotel-13.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5323350@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale European Truck Manager
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-european-truck-manager.html
+URL:https://ofertas-gamer-co.pages.dev/juego-european-truck-manager.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4255640@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🎮 Sale MyDear.exe
+DESCRIPTION:Windows\, Mac. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-mydear-exe.html
+URL:https://ofertas-gamer-co.pages.dev/juego-mydear-exe.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-3218230@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale ArcheAge Chronicles
@@ -178,7 +558,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2320980@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Loftia
@@ -188,7 +568,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4251460@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Godzilla: Destroy All Monsters Melee Remastered
@@ -198,7 +578,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3758950@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Death at Fleming Manor
@@ -208,7 +588,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3393720@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Ramen Shop Simulator
@@ -218,7 +598,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5101960@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Dungeons & Dynasties
@@ -228,7 +608,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5181520@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Mycelarium
@@ -238,7 +618,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5028050@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Traffic Architect
@@ -248,7 +628,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5266240@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Potato Please
@@ -258,7 +638,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2861730@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Food Devils
@@ -268,7 +648,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4286110@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale 妹调教日记
@@ -278,7 +658,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2218060@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:🎮 Sale Backdraft
@@ -287,8 +667,68 @@ URL:https://ofertas-gamer-co.pages.dev/juego-backdraft.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-4621810@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:🎮 Sale Livin' the Cream: Ice Cream Simulator
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-livin-the-cream-ice-cream-simulator.html
+URL:https://ofertas-gamer-co.pages.dev/juego-livin-the-cream-ice-cream-simulator.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-1892100@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:🎮 Sale HEART ABYSS
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-heart-abyss.html
+URL:https://ofertas-gamer-co.pages.dev/juego-heart-abyss.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4736470@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:🎮 Sale Dead Sector
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-dead-sector.html
+URL:https://ofertas-gamer-co.pages.dev/juego-dead-sector.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3645540@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:🎮 Sale HAVKER-MAN X
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-havker-man-x.html
+URL:https://ofertas-gamer-co.pages.dev/juego-havker-man-x.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-1587920@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:🎮 Sale Undead Development 2
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-undead-development-2.html
+URL:https://ofertas-gamer-co.pages.dev/juego-undead-development-2.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-1779750@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:🎮 Sale The House Before
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-the-house-before.html
+URL:https://ofertas-gamer-co.pages.dev/juego-the-house-before.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:wd-Q141440705@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale World of Warcraft: Forever
@@ -298,7 +738,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3581230@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale Cozy Game Restoration
@@ -308,7 +748,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5037200@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale just volleyball
@@ -318,7 +758,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4318080@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale ALTEREDBLOOD+ [AB+]
@@ -328,7 +768,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3891160@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale CRYMELIGHT
@@ -338,7 +778,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3339970@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale WendyQuest: Legend of the Four Corner Stones
@@ -348,7 +788,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4358660@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale Hull Rupture
@@ -358,7 +798,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5217440@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale FailRooms
@@ -368,7 +808,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2991310@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale Eternal Palace Sakura
@@ -378,7 +818,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3002130@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale Theos: Cities Of Myth
@@ -388,7 +828,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4427790@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale Total Blade: Mythology
@@ -398,7 +838,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3727090@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:🎮 Sale Horses of Hoofprint Bay
@@ -407,8 +847,58 @@ URL:https://ofertas-gamer-co.pages.dev/juego-horses-of-hoofprint-bay.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-5113760@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:🎮 Sale Echo Mates
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-echo-mates.html
+URL:https://ofertas-gamer-co.pages.dev/juego-echo-mates.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5283340@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:🎮 Sale Plague Inc: The Board Game
+DESCRIPTION:Windows\, Mac. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-plague-inc-the-board-game.html
+URL:https://ofertas-gamer-co.pages.dev/juego-plague-inc-the-board-game.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3273260@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:🎮 Sale Lost Host
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-lost-host.html
+URL:https://ofertas-gamer-co.pages.dev/juego-lost-host.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3275210@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:🎮 Sale Pionero Capital
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-pionero-capital.html
+URL:https://ofertas-gamer-co.pages.dev/juego-pionero-capital.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4920680@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:🎮 Sale Warlapse
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-warlapse.html
+URL:https://ofertas-gamer-co.pages.dev/juego-warlapse.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:wd-Q140140365@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale The Legend of Zelda: Ocarina of Time
@@ -418,7 +908,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3204330@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Condado de la Fortuna
@@ -428,7 +918,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2411200@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Underkeep
@@ -438,7 +928,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3572090@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Dominus Gladiatus
@@ -448,7 +938,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5096020@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale LYSSA: Goddess of Rage
@@ -458,7 +948,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3577020@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Clean Start
@@ -468,7 +958,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3456660@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale PAYDAY: Aces High
@@ -478,7 +968,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4420660@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale ZONE L.O.S.T.
@@ -488,7 +978,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1460810@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Dungeon Munchies 2 餐癮地城：貳度救業
@@ -498,7 +988,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2433560@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Meadgard
@@ -507,8 +997,18 @@ URL:https://ofertas-gamer-co.pages.dev/juego-meadgard.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-3573120@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:🎮 Sale SpellChain
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-spellchain.html
+URL:https://ofertas-gamer-co.pages.dev/juego-spellchain.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-3296060@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Escape Academy 2: Back 2 School
@@ -518,7 +1018,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2522120@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🎮 Sale Airframe Ultra
@@ -527,18 +1027,48 @@ URL:https://ofertas-gamer-co.pages.dev/juego-airframe-ultra.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:steam-3573120@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+UID:steam-4572120@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
-SUMMARY:🎮 Sale SpellChain
-DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-spellchain.html
-URL:https://ofertas-gamer-co.pages.dev/juego-spellchain.html
+SUMMARY:🎮 Sale Dirt Clicker
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-dirt-clicker.html
+URL:https://ofertas-gamer-co.pages.dev/juego-dirt-clicker.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3432860@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:🎮 Sale Psycho-Sleuth
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-psycho-sleuth.html
+URL:https://ofertas-gamer-co.pages.dev/juego-psycho-sleuth.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5119400@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:🎮 Sale WORKS: Motorsport Factory
+DESCRIPTION:Windows\, Mac. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-works-motorsport-factory.html
+URL:https://ofertas-gamer-co.pages.dev/juego-works-motorsport-factory.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4159350@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:🎮 Sale a Dogs Dream
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-a-dogs-dream.html
+URL:https://ofertas-gamer-co.pages.dev/juego-a-dogs-dream.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5160800@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:🎮 Sale Find The Needle
@@ -548,7 +1078,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4776500@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:🎮 Sale Carry On Together
@@ -558,7 +1088,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4834760@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:🎮 Sale Pool of Radiance: Ruins of Myth Drannor
@@ -568,7 +1098,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4725170@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:🎮 Sale Elven Huntress: Sunveil
@@ -578,7 +1108,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4784510@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:🎮 Sale Leviathan: Rhino
@@ -587,8 +1117,28 @@ URL:https://ofertas-gamer-co.pages.dev/juego-leviathan-rhino.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-4612650@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:🎮 Sale Metro Anomaly
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-metro-anomaly.html
+URL:https://ofertas-gamer-co.pages.dev/juego-metro-anomaly.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-4468540@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:🎮 Sale It's About Pirates
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-it-s-about-pirates.html
+URL:https://ofertas-gamer-co.pages.dev/juego-it-s-about-pirates.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-3629430@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:🎮 Sale DREADMOOR
@@ -598,7 +1148,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4576490@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:🎮 Sale Casualties: Unknown
@@ -608,7 +1158,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5175310@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:🎮 Sale Worst Class Ever
@@ -618,7 +1168,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5086460@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:🎮 Sale PeeVPee
@@ -628,7 +1178,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5118500@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:🎮 Sale Safari-TV
@@ -638,7 +1188,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3669620@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Warhammer Survivors
@@ -648,7 +1198,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4530370@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Football Manager 27
@@ -658,7 +1208,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2523740@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale DreamWorks Shrek 2 Remastered
@@ -668,7 +1218,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2638080@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Annihilated
@@ -678,7 +1228,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4876650@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Nunca ordenes por color
@@ -688,7 +1238,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2826790@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Stormforge
@@ -698,7 +1248,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3499790@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Ashes of the Singularity II
@@ -708,7 +1258,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3710120@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:🎮 Sale Potion-making: Path of the Alchemist
@@ -717,8 +1267,18 @@ URL:https://ofertas-gamer-co.pages.dev/juego-potion-making-path-of-the-alchemist
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-4618570@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:🎮 Sale Booster Pack Heroes
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-booster-pack-heroes.html
+URL:https://ofertas-gamer-co.pages.dev/juego-booster-pack-heroes.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-4218360@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:🎮 Sale Wall World Strategy
@@ -727,8 +1287,18 @@ URL:https://ofertas-gamer-co.pages.dev/juego-wall-world-strategy.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-4521650@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:🎮 Sale Farm & Feast
+DESCRIPTION:Windows\, Mac\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-farm-feast.html
+URL:https://ofertas-gamer-co.pages.dev/juego-farm-feast.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-5378110@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:🎮 Sale One More Lawn
@@ -738,7 +1308,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2487190@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:🎮 Sale Main Sequence
@@ -748,7 +1318,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4672030@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:🎮 Sale Malignus
@@ -758,7 +1328,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4045480@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:🎮 Sale Drawquarium
@@ -768,7 +1338,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4661070@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:🎮 Sale HANDS OVER
@@ -778,7 +1348,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3810510@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:🎮 Sale DERELIKT
@@ -787,8 +1357,38 @@ URL:https://ofertas-gamer-co.pages.dev/juego-derelikt.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-2860490@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:🎮 Sale ワロタ、俺の家のとなり魔王城www
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-www.html
+URL:https://ofertas-gamer-co.pages.dev/juego-www.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3687090@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:🎮 Sale Dice Hoarder
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-dice-hoarder.html
+URL:https://ofertas-gamer-co.pages.dev/juego-dice-hoarder.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-5189160@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:🎮 Sale We March as One
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-we-march-as-one.html
+URL:https://ofertas-gamer-co.pages.dev/juego-we-march-as-one.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:steam-5200620@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:🎮 Sale Dungeonbound
@@ -797,8 +1397,28 @@ URL:https://ofertas-gamer-co.pages.dev/juego-dungeonbound.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:steam-2321960@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:🎮 Sale Spirit Crossing
+DESCRIPTION:Windows. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-spirit-crossing.html
+URL:https://ofertas-gamer-co.pages.dev/juego-spirit-crossing.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:steam-3218350@ofertas-gamer-co
+DTSTAMP:20261101T061937Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:🎮 Sale Melvor Idle 2
+DESCRIPTION:Windows\, Mac\, Linux. La fecha puede cambiar. https://ofertas-gamer-co.pages.dev/juego-melvor-idle-2.html
+URL:https://ofertas-gamer-co.pages.dev/juego-melvor-idle-2.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:wd-Q23648408@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 SUMMARY:🎮 Sale Grand Theft Auto VI
@@ -808,7 +1428,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4253570@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
 SUMMARY:🎮 Sale Reshine
@@ -818,7 +1438,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3333850@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:🎮 Sale Arkheron
@@ -828,7 +1448,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3161310@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:🎮 Sale Hela: of Mice & Magic
@@ -838,7 +1458,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1209970@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:🎮 Sale Blind Descent
@@ -848,7 +1468,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2272360@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:🎮 Sale Warhammer 40\,000: Dawn of War IV
@@ -858,7 +1478,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3681610@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:🎮 Sale Dragon Quest Monsters: The Withered World
@@ -868,7 +1488,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2870790@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:🎮 Sale Dumpster Gang
@@ -878,7 +1498,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2153760@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261207
 DTEND;VALUE=DATE:20261208
 SUMMARY:🎮 Sale Stronghold 4
@@ -888,7 +1508,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-5138990@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261207
 DTEND;VALUE=DATE:20261208
 SUMMARY:🎮 Sale Unharvest
@@ -898,7 +1518,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4150720@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:🎮 Sale PUKEY GODDESS SHOT TRICK
@@ -908,7 +1528,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2988120@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:🎮 Sale Never Be Alone
@@ -918,7 +1538,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3734220@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:🎮 Sale Guns of Eschaton
@@ -928,7 +1548,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:wd-Q116734043@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:🎮 Sale El profesor Layton y el Nuevo Mundo a vapor
@@ -938,7 +1558,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4452700@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:🎮 Sale Stage Tour
@@ -948,7 +1568,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2694490@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:🎮 Sale Path of Exile 2
@@ -958,7 +1578,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3680170@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270111
 DTEND;VALUE=DATE:20270112
 SUMMARY:🎮 Sale Mortuus
@@ -968,7 +1588,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3751230@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270113
 DTEND;VALUE=DATE:20270114
 SUMMARY:🎮 Sale Danganronpa 2x2
@@ -978,7 +1598,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4260840@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
 SUMMARY:🎮 Sale STRANGER THAN HEAVEN
@@ -988,7 +1608,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4814120@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
 SUMMARY:🎮 Sale ANANTA
@@ -998,7 +1618,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1637460@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
 SUMMARY:🎮 Sale TankRat
@@ -1008,7 +1628,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1846700@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270128
 DTEND;VALUE=DATE:20270129
 SUMMARY:🎮 Sale Witchbrook
@@ -1018,7 +1638,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:wd-Q141391458@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270128
 DTEND;VALUE=DATE:20270129
 SUMMARY:🎮 Sale Metroid Ravenous
@@ -1028,7 +1648,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:wd-Q140036775@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270128
 DTEND;VALUE=DATE:20270129
 SUMMARY:🎮 Sale Until Dawn 2
@@ -1038,7 +1658,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2155070@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270128
 DTEND;VALUE=DATE:20270129
 SUMMARY:🎮 Sale Fate/EXTRA Record
@@ -1048,7 +1668,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1853440@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270128
 DTEND;VALUE=DATE:20270129
 SUMMARY:🎮 Sale Tropico 7
@@ -1058,7 +1678,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2590240@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
 SUMMARY:🎮 Sale METRO 2039
@@ -1068,7 +1688,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2849490@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270207
 DTEND;VALUE=DATE:20270208
 SUMMARY:🎮 Sale Outward 2
@@ -1078,7 +1698,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3558670@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270212
 DTEND;VALUE=DATE:20270213
 SUMMARY:🎮 Sale Tomb Raider: Legacy of Atlantis
@@ -1088,7 +1708,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:wd-Q140036783@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270216
 DTEND;VALUE=DATE:20270217
 SUMMARY:🎮 Sale God of War Laufey
@@ -1098,7 +1718,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4214960@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270216
 DTEND;VALUE=DATE:20270217
 SUMMARY:🎮 Sale Romancing SaGa 3: Destinies United
@@ -1108,7 +1728,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2963950@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270217
 DTEND;VALUE=DATE:20270218
 SUMMARY:🎮 Sale Persona 4 Revival
@@ -1118,7 +1738,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2842310@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270217
 DTEND;VALUE=DATE:20270218
 SUMMARY:🎮 Sale Among Us Story: On Guard
@@ -1128,7 +1748,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2769570@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270223
 DTEND;VALUE=DATE:20270224
 SUMMARY:🎮 Sale Fable
@@ -1138,7 +1758,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4532500@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270225
 DTEND;VALUE=DATE:20270226
 SUMMARY:🎮 Sale Atelier Karia: The Night Kingdom & the Guide of Memories
@@ -1148,7 +1768,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4507990@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
 SUMMARY:🎮 Sale Wo Long 2: Wings of Ember
@@ -1158,7 +1778,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1963680@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
 SUMMARY:🎮 Sale GUNDAM ROGUE ORBIT
@@ -1168,7 +1788,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3255110@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270309
 DTEND;VALUE=DATE:20270310
 SUMMARY:🎮 Sale Grave Seasons
@@ -1178,7 +1798,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-1173980@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270310
 DTEND;VALUE=DATE:20270311
 SUMMARY:🎮 Sale Shadow of the Road
@@ -1188,7 +1808,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2141130@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270311
 DTEND;VALUE=DATE:20270312
 SUMMARY:🎮 Sale Road Kings
@@ -1198,7 +1818,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-3230960@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270407
 DTEND;VALUE=DATE:20270408
 SUMMARY:🎮 Sale EXODUS
@@ -1208,7 +1828,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4354570@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270408
 DTEND;VALUE=DATE:20270409
 SUMMARY:🎮 Sale FINAL FANTASY VII REVELATION
@@ -1218,7 +1838,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-4113000@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270422
 DTEND;VALUE=DATE:20270423
 SUMMARY:🎮 Sale Melty Blood: Twi-Lumina
@@ -1228,7 +1848,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2376260@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270427
 DTEND;VALUE=DATE:20270428
 SUMMARY:🎮 Sale Mariachi Legends
@@ -1238,7 +1858,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:steam-2017940@ofertas-gamer-co
-DTSTAMP:20261031T232702Z
+DTSTAMP:20261101T061937Z
 DTSTART;VALUE=DATE:20270427
 DTEND;VALUE=DATE:20270428
 SUMMARY:🎮 Sale Pony Island 2: Panda Circus

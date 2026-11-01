@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-31T23:27:02Z",
+ "updatedAt": "2026-11-01T06:19:37Z",
  "items": [
   {
    "id": "gp-3838",
@@ -197,32 +197,6 @@
    "active": true
   },
   {
-   "id": "gp-3100",
-   "title": "The Black Within",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$5.99",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/67cb0e32bf51c.jpg",
-   "url": "https://www.gamerpower.com/open/the-black-within-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
-   "id": "gp-3690",
-   "title": "The Green Light",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$9.99",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/6a369af2d25aa.jpg",
-   "url": "https://www.gamerpower.com/open/the-green-light-itch-io-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
    "id": "gp-3819",
    "title": "Fathom Reach Playtest",
    "type": "early access",
@@ -275,19 +249,6 @@
    "active": true
   },
   {
-   "id": "gp-3771",
-   "title": "Liminal Space Holiday",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$3.00",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/6aa2ad0a69420.jpg",
-   "url": "https://www.gamerpower.com/open/liminal-space-holiday-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
    "id": "gp-3324",
    "title": "Battle Ram",
    "type": "game",
@@ -337,32 +298,6 @@
    "image": "https://www.gamerpower.com/offers/1b/6a59119a8eb8d.jpg",
    "url": "https://www.gamerpower.com/open/dwarven-realms-steam-key-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3553",
-   "title": "Sleep Demon",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$1.99",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/69ca788f5d0d4.jpg",
-   "url": "https://www.gamerpower.com/open/sleep-demon-itchio-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
-   "id": "gp-3628",
-   "title": "Liminal Lane",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$1.99",
-   "endsOn": "2026-10-31",
-   "image": "https://www.gamerpower.com/offers/1b/69fe517a04b6a.jpg",
-   "url": "https://www.gamerpower.com/open/liminal-lane-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
    "active": true
   },
   {
@@ -546,6 +481,71 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3100",
+   "title": "The Black Within",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$5.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/67cb0e32bf51c.jpg",
+   "url": "https://www.gamerpower.com/open/the-black-within-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-3690",
+   "title": "The Green Light",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$9.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/6a369af2d25aa.jpg",
+   "url": "https://www.gamerpower.com/open/the-green-light-itch-io-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
+  },
+  {
+   "id": "gp-3771",
+   "title": "Liminal Space Holiday",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$3.00",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/6aa2ad0a69420.jpg",
+   "url": "https://www.gamerpower.com/open/liminal-space-holiday-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-3553",
+   "title": "Sleep Demon",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$1.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/69ca788f5d0d4.jpg",
+   "url": "https://www.gamerpower.com/open/sleep-demon-itchio-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-3628",
+   "title": "Liminal Lane",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$1.99",
+   "endsOn": "2026-10-31",
+   "image": "https://www.gamerpower.com/offers/1b/69fe517a04b6a.jpg",
+   "url": "https://www.gamerpower.com/open/liminal-lane-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
   },
   {
    "id": "gp-3834",
