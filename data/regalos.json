@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-02T06:21:00Z",
+ "updatedAt": "2026-11-02T18:29:56Z",
  "items": [
   {
    "id": "gp-3842",
@@ -102,19 +102,6 @@
    "endsOn": "2026-11-02",
    "image": "https://www.gamerpower.com/offers/1b/6ae4ceb2e38bb.jpg",
    "url": "https://www.gamerpower.com/open/asleep-act-1-steam-giveaway",
-   "firstSeen": "2026-10-30T17:50:26Z",
-   "active": true
-  },
-  {
-   "id": "gp-3835",
-   "title": "A New Beginning: Final Cut",
-   "type": "game",
-   "group": "gog",
-   "platforms": "PC, GOG, DRM-Free",
-   "worth": "$9.99",
-   "endsOn": "2026-11-02",
-   "image": "https://www.gamerpower.com/offers/1b/6ae4af4cbf862.jpg",
-   "url": "https://www.gamerpower.com/open/a-new-beginning-final-cut-gog-giveaway",
    "firstSeen": "2026-10-30T17:50:26Z",
    "active": true
   },
@@ -520,6 +507,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3835",
+   "title": "A New Beginning: Final Cut",
+   "type": "game",
+   "group": "gog",
+   "platforms": "PC, GOG, DRM-Free",
+   "worth": "$9.99",
+   "endsOn": "2026-11-02",
+   "image": "https://www.gamerpower.com/offers/1b/6ae4af4cbf862.jpg",
+   "url": "https://www.gamerpower.com/open/a-new-beginning-final-cut-gog-giveaway",
+   "firstSeen": "2026-10-30T17:50:26Z",
+   "active": false
   },
   {
    "id": "gp-3825",
