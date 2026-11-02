@@ -1,6 +1,45 @@
 {
- "updatedAt": "2026-11-01T20:34:56Z",
+ "updatedAt": "2026-11-02T06:21:00Z",
  "items": [
+  {
+   "id": "gp-3842",
+   "title": "Highway Driving",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$9.99",
+   "endsOn": "2026-11-08",
+   "image": "https://www.gamerpower.com/offers/1b/6ae7cab593610.jpg",
+   "url": "https://www.gamerpower.com/open/highway-driving-epic-games-giveaway",
+   "firstSeen": "2026-11-02T06:21:00Z",
+   "active": true
+  },
+  {
+   "id": "gp-3841",
+   "title": "Dark Mystery",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$7.99",
+   "endsOn": "2026-11-08",
+   "image": "https://www.gamerpower.com/offers/1b/6ae7c63220dc4.jpg",
+   "url": "https://www.gamerpower.com/open/dark-mystery-epic-games-giveaway",
+   "firstSeen": "2026-11-02T06:21:00Z",
+   "active": true
+  },
+  {
+   "id": "gp-3840",
+   "title": "Horse Racing",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$9.99",
+   "endsOn": "2026-11-08",
+   "image": "https://www.gamerpower.com/offers/1b/6ae7b210288b2.jpg",
+   "url": "https://www.gamerpower.com/open/horse-racing-epic-games-giveaway",
+   "firstSeen": "2026-11-02T06:21:00Z",
+   "active": true
+  },
   {
    "id": "gp-3839",
    "title": "Epic World - Hunt For Quest",
@@ -167,19 +206,6 @@
    "endsOn": "",
    "image": "https://www.gamerpower.com/offers/1b/69024dade7c16.jpg",
    "url": "https://www.gamerpower.com/open/ancient-evil-pc-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3825",
-   "title": "MAFIA HOTEL",
-   "type": "game",
-   "group": "epic",
-   "platforms": "PC, Epic Games Store",
-   "worth": "$1.99",
-   "endsOn": "2026-11-01",
-   "image": "https://www.gamerpower.com/offers/1b/6add376bc36a0.jpg",
-   "url": "https://www.gamerpower.com/open/mafia-hotel-epic-games-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
   },
@@ -494,6 +520,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3825",
+   "title": "MAFIA HOTEL",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$1.99",
+   "endsOn": "2026-11-01",
+   "image": "https://www.gamerpower.com/offers/1b/6add376bc36a0.jpg",
+   "url": "https://www.gamerpower.com/open/mafia-hotel-epic-games-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-3100",
