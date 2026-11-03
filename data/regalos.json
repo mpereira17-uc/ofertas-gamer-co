@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-03T12:00:21Z",
+ "updatedAt": "2026-11-03T19:34:20Z",
  "items": [
   {
    "id": "gp-3842",
@@ -275,19 +275,6 @@
    "active": true
   },
   {
-   "id": "gp-3313",
-   "title": "Wordle",
-   "type": "game",
-   "group": "otros",
-   "platforms": "PC, DRM-Free",
-   "worth": "$29.99",
-   "endsOn": "",
-   "image": "https://www.gamerpower.com/offers/1b/68e15e986da99.jpg",
-   "url": "https://www.gamerpower.com/open/wordle-pc-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
    "id": "gp-3716",
    "title": "Dwarven Realms (Steam)",
    "type": "game",
@@ -481,6 +468,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3313",
+   "title": "Wordle",
+   "type": "game",
+   "group": "otros",
+   "platforms": "PC, DRM-Free",
+   "worth": "$29.99",
+   "endsOn": "",
+   "image": "https://www.gamerpower.com/offers/1b/68e15e986da99.jpg",
+   "url": "https://www.gamerpower.com/open/wordle-pc-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-3836",
