@@ -1,3 +1,16 @@
+# Design: Ofertas Gamer CO (v7 «Tienda», 2026-11-03)
+
+**v7 «Tienda»** (pedido de pepe: «más llamativa y que no se vea hecha con IA, como Instant Gaming o mejor»). Manda sobre todo lo de abajo; el bloque está al final de `assets/styles.css`.
+- **Idea:** se ve como una tienda de juegos. Cabecera con logo, buscador grande (va a `buscar.html?q=`) y atajos Gratis / Ofertas / Estrenos. El menú lateral se queda, más tranquilo.
+- **Colores:** fondo `#0b0c10`, paneles `#14161c`, rojo de marca `#ff3b4f` (descuentos y botón principal), verde `#2fd67b` (gratis), amarillo `#ffcb3d` (mínimo histórico).
+- **Letra:** Bricolage Grotesque para títulos (rectos, sin cursiva), Barlow para el texto, Barlow Condensed solo para precios y descuentos.
+- **Portada:** carrusel con la portada nítida y la misma imagen difuminada de fondo, descuento grande, precio y botón; miniaturas debajo. Luego accesos por categoría con los conteos reales y las tiendas.
+- **Estantes:** todas las listas de ofertas son cuadrículas de portadas grandes, con el descuento pegado a la esquina inferior de la portada, la tienda arriba a la izquierda y el precio grande debajo.
+- **Se quitó:** tablero de salidas, letras que se arman, títulos con la primera letra roja, portadas inclinadas, líneas rojas de fondo, letrero gigante del pie, intro del logo y los efectos de GSAP (los archivos siguen en `assets/vendor` por si se quieren usar).
+- **Movimiento:** solo el cambio del carrusel y las tarjetas que aparecen suave una vez. Nada con «menos movimiento».
+
+---
+
 # Design: Ofertas Gamer CO («Tablero» v4 + estilo «Jordan» v5)
 
 **v5 «Jordan» (2026-10-30), a partir del diseño de Figma «Jordan Shoes Website Concept» que mandó pepe:**

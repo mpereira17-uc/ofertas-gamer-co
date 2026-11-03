@@ -1025,56 +1025,7 @@
     }, 5000);
   });
 
-  // Letreros de sección: al aparecer, el cuadro se enciende y el título se arma como en el tablero (una vez)
-  if (!calm && "IntersectionObserver" in window) {
-    var signIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        signIo.unobserve(en.target);
-        var sign = en.target.closest(".sign");
-        if (sign) sign.classList.add("lit");
-        flipText(en.target);
-      });
-    }, { threshold: 0.6 });
-    document.querySelectorAll(".sign h2").forEach(function (h) {
-      if (!h.children.length) {
-        var sign = h.closest(".sign");
-        if (sign) sign.classList.add("unlit");
-        signIo.observe(h);
-      }
-    });
-
-    // Cada tanto, la paleta de «Termina» de una fila que se ve en pantalla vuelve a girar (mismo dato, solo el giro)
-    setInterval(function () {
-      if (document.hidden) return;
-      var tiles = Array.prototype.filter.call(document.querySelectorAll("main ul.grid:not(.poster) .left"), function (el) {
-        var r = el.getBoundingClientRect();
-        return r.top > 60 && r.bottom < window.innerHeight;
-      });
-      if (!tiles.length) return;
-      var tile = tiles[Math.floor(Math.random() * tiles.length)];
-      tile.classList.remove("reflip");
-      void tile.offsetWidth;
-      tile.classList.add("reflip");
-    }, 7000);
-  }
-
-  // Intro con el logo: solo la primera vez que alguien entra
-  if (!calm && !store("ogc-intro") && document.body) {
-    store("ogc-intro", "1");
-    var intro = document.createElement("div");
-    intro.className = "intro";
-    intro.setAttribute("aria-hidden", "true");
-    intro.innerHTML = '<svg viewBox="0 0 600 160"><text x="300" y="80" text-anchor="middle">OFERTAS GAMER</text>' +
-      '<text class="sub" x="300" y="128" text-anchor="middle">COLOMBIA</text></svg>';
-    var closeIntro = function () { if (intro.parentNode) intro.parentNode.removeChild(intro); };
-    intro.addEventListener("click", closeIntro);
-    intro.addEventListener("animationend", function (ev) { if (ev.target === intro) closeIntro(); });
-    document.body.appendChild(intro);
-    setTimeout(closeIntro, 2500);
-  }
-
-  // Las filas del tablero caen como paletas al entrar en pantalla (una sola vez)
+  // Las tarjetas aparecen suave al entrar en pantalla (una sola vez)
   if (!calm && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
@@ -1084,7 +1035,7 @@
     document.querySelectorAll("main .grid > .card, main .rel-card, main .spot-card").forEach(function (el) {
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.classList.add("reveal");
-      el.style.transitionDelay = Math.min(siblings % 8, 7) * 55 + "ms";
+      el.style.transitionDelay = Math.min(siblings % 6, 5) * 40 + "ms";
       io.observe(el);
     });
   }

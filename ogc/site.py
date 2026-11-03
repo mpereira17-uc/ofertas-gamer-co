@@ -53,6 +53,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
     "speaker": '<path d="M4 10v4h4l5 4V6L8 10z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/>',
     "screen": '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><path d="M10.5 8v4l3.5-2z"/>',
     "swap": '<path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/>',
+    "coin": '<circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.4-1-1.4-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1.1 0-2.1-.5-2.5-1.5M12 6.5v11"/>',
     "chevL": '<path d="M15 5l-7 7 7 7"/>',
     "chevR": '<path d="M9 5l7 7-7 7"/>',
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -268,24 +269,20 @@ class Site:
 <link rel="alternate" type="application/feed+json" title="Ofertas Gamer CO (JSON)" href="feed.json">
 <link rel="stylesheet" href="assets/styles.css?v={asset_version("styles.css")}">
 <script src="assets/app.js?v={asset_version("app.js")}" defer></script>
-<script src="assets/vendor/gsap.min.js?v={asset_version("vendor/gsap.min.js")}" defer></script>
-<script src="assets/vendor/ScrollTrigger.min.js?v={asset_version("vendor/ScrollTrigger.min.js")}" defer></script>
-<script src="assets/vendor/SplitText.min.js?v={asset_version("vendor/SplitText.min.js")}" defer></script>
-<script src="assets/motion.js?v={asset_version("motion.js")}" defer></script>
 {ld_html}
 </head>
 <body{self.season_class()}>
-<div class="bg-decor" aria-hidden="true"></div>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site"><div class="wrap">
-<div class="bar"><a class="brand" href="index.html"><img src="assets/logo-72.png" alt="" width="36" height="36">Ofertas Gamer CO</a>
+<div class="bar"><a class="brand" href="index.html"><img src="assets/logo-72.png" alt="" width="36" height="36"><span>Ofertas Gamer <b>CO</b></span></a>
+<form class="top-search" action="buscar.html" method="get" role="search"><label class="sr-only" for="top-q">Buscar un juego</label><input id="top-q" name="q" type="search" placeholder="Busca un juego: Elden Ring, Hades, GTA…" autocomplete="off" maxlength="80"><button type="submit" aria-label="Buscar">{ICONS['search']}</button></form>
+<nav class="top-links" aria-label="Atajos"><a href="juegos-gratis.html"{' aria-current="page"' if name == "juegos-gratis.html" else ''}>Gratis</a><a href="ofertas.html"{' aria-current="page"' if name == "ofertas.html" else ''}>Ofertas</a><a href="lanzamientos.html"{' aria-current="page"' if name == "lanzamientos.html" else ''}>Estrenos</a></nav>
 <div class="bar-actions"><a class="btn btn-search" href="buscar.html" aria-label="Buscar un juego en las ofertas">{ICONS['search']}<span>Buscar</span></a>
 <button class="btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button></div></div>
 </div></header>
 <div class="shell">
 <nav class="side" id="main-nav" aria-label="Principal">{nav}{self.side_channels()}{self.ig_side(name)}</nav>
 <main id="contenido"><div class="wrap">
-{self.departures_ticker()}
 {crumb_html}
 {body}
 </div></main>
@@ -300,7 +297,6 @@ class Site:
 {self.support_box()}<p>{e(DISCLOSURE)}</p>
 <nav aria-label="Pie de página"><ul>{foot}</ul></nav>
 <p>Ofertas Gamer CO no vende productos ni procesa pagos. Los precios y la disponibilidad pueden cambiar sin previo aviso.</p>
-<p class="foot-giant" aria-hidden="true">OFERTAS GAMER CO</p>
 </div></footer>
 {self.bottom_nav(name)}
 </body>
@@ -606,8 +602,23 @@ class Site:
             return ""
         items = "".join(f"""<li class="soon-item"><img src="{e(o.get('image') or 'assets/placeholder.svg')}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">
 <div>{self.badge(o)}<p class="soon-title clamp2">{self.title_link(o)}</p>{self.countdown(o)}</div></li>""" for o in soon)
-        return (f'<section class="soon" aria-labelledby="soon-h"><h2 id="soon-h">{ICONS["clock"]} Última llamada: terminan pronto</h2>'
+        return (f'<section class="soon" aria-labelledby="soon-h"><h2 id="soon-h">{ICONS["clock"]} Terminan pronto</h2>'
                 f'<ul class="soon-strip">{items}</ul></section>')
+
+    def cat_row(self, free, deals):
+        """Accesos rápidos bajo el carrusel, como las categorías de una tienda. Los números son los de hoy."""
+        under = sum(1 for o in deals if 0 < (self.cop_value(o.get("currentPrice"), o) or 0) < 20000)
+        big = sum(1 for o in deals if (o.get("discountPercentage") or 0) >= 75)
+        items = [("juegos-gratis.html", "gift", "Gratis ahora", len(free)), ("ofertas.html?min=75", "flame", "-75% o más", big),
+                 ("ofertas.html?max=20000", "coin", "Menos de $20.000", under), ("minimos-historicos.html", "thermo", "Mínimos históricos", None),
+                 ("lanzamientos.html", "calendar", "Estrenos", None), ("codigos.html", "pad", "Códigos", None)]
+        cells = "".join(f'<li><a href="{h}"><span class="cat-ico" aria-hidden="true">{ICONS.get(ic, ICONS["gift"])}</span>'
+                        f'<span class="cat-name">{e(t)}</span>' + (f'<span class="cat-n">{n}</span>' if n else "") + '</a></li>'
+                        for h, ic, t, n in items)
+        stores = "".join(f'<li><a href="ofertas-{e(st["id"])}.html"><span class="store-dot store-{e(st["id"])}" aria-hidden="true"></span>{e(st["name"])}</a></li>'
+                         for st in self.stores.values() if st["active"] and self.store_counts.get(st["id"]))
+        return (f'<nav class="cat-row" aria-label="Categorías"><ul class="cat-list">{cells}</ul>'
+                f'<ul class="store-pills" aria-label="Tiendas">{stores}</ul></nav>')
 
     def quick_search(self):
         stores = "".join(f'<a class="chip" href="ofertas.html?tienda={e(st["id"])}"><span class="store-dot store-{e(st["id"])}" aria-hidden="true"></span>{e(st["name"])}</a>'
@@ -620,10 +631,9 @@ class Site:
 
     @staticmethod
     def sec_head(eyebrow, title, lede="", icon="", hid=""):
-        """Encabezado de sección como letrero de aeropuerto: pictograma y título, con el texto o enlace al lado."""
+        """Encabezado de estante como en una tienda: el título a la izquierda y el texto o el enlace «Ver todo» a la derecha."""
         ida = f' id="{hid}"' if hid else ""
-        ico = f'<span class="sign-ico" aria-hidden="true">{ICONS[icon]}</span>' if icon in ICONS else ""
-        return (f'<div class="sec-big sign">{ico}<h2{ida}>{title}</h2>'
+        return (f'<div class="sec-big shelf-head"><h2{ida}>{title}</h2>'
                 + (f'<p class="sec-lede">{lede}</p>' if lede else "") + "</div>")
 
     def tools_grid(self):
@@ -712,7 +722,7 @@ class Site:
             f'<span class="tv-name">{e(g["title"])}</span><span class="tv-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
             for g in picks)
         return (f'<section class="tv" aria-labelledby="tv-h">'
-                + self.sec_head("", 'Sala de espera: tráileres',
+                + self.sec_head("", 'Tráileres de los más esperados',
                                 'Pasa el cursor para verlos. <a href="lanzamientos.html">Ver el calendario completo</a>', "screen", "tv-h")
                 + f'<ul class="tv-grid">{items}</ul></section>')
 
@@ -737,9 +747,9 @@ class Site:
                 f'<iframe src="{e(url)}" title="Objeto 3D interactivo de Ofertas Gamer CO" loading="lazy" '
                 f'sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe></section>')
 
-    def showcase(self, offers, count=5):
-        """Portada tipo vitrina (idea del diseño Jordan de Figma que mandó pepe): tarjeta negra, título gigante,
-        portada inclinada encima, precio grande, puntos para cambiar y miniaturas «Elige otra». Solo datos reales.
+    def showcase(self, offers, count=6):
+        """Carrusel de portada como el de una tienda: la portada del juego grande, su fondo difuminado detrás,
+        el descuento, el precio y el botón. Debajo, miniaturas para cambiar. Solo datos reales.
         Sin JavaScript se ve la primera oferta y las miniaturas son enlaces a cada ficha."""
         seen, picks = set(), []
         for o in offers:
@@ -753,43 +763,38 @@ class Site:
         for i, o in enumerate(picks):
             free = o.get("currentPrice") == 0
             pct = o.get("discountPercentage") or 0
-            words = o["title"].split()
-            cut = max(1, (len(words) + 1) // 2)
-            title = (f'<span class="sh-a">{e(" ".join(words[:cut]))}</span>'
-                     + (f' <span class="sh-b">{e(" ".join(words[cut:]))}</span>' if words[cut:] else ""))
-            ghost = "GRATIS" if free else (f"-{pct}%" if pct else o["store"].split()[0].upper())
             price = "Gratis" if free else money(o["currentPrice"], o["currency"])
-            tag = "Gratis por tiempo limitado" if free else (f"-{pct}% de descuento" if pct else "En oferta")
+            old = f'<s>Antes {e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+            off = ('<span class="sh-off free">-100%</span>' if free else (f'<span class="sh-off">-{pct}%</span>' if pct else ""))
             about = (o.get("about") or "").strip()
-            if len(about) > 170:
-                about = about[:167].rsplit(" ", 1)[0].rstrip(",.;:") + "…"
+            if len(about) > 150:
+                about = about[:147].rsplit(" ", 1)[0].rstrip(",.;:") + "…"
             cop = "" if free or o["currency"] == "COP" else cop_text(o)
             lazy = ' fetchpriority="high"' if i == 0 else ' loading="lazy"'
             page = self.detail[o["id"]]
+            img = e(o["image"])
             slides.append(
                 f'<li class="sh-slide{" on" if i == 0 else ""}{" is-free" if free else ""}" data-i="{i}"{"" if i == 0 else " hidden"}>'
-                f'<span class="sh-ghost" aria-hidden="true">{e(ghost)}</span>'
-                f'<div class="sh-copy"><p class="sh-store">{e(o["store"])}</p>'
-                f'<h2 class="sh-title"><a href="{e(page)}">{title}</a></h2>'
-                f'{self.countdown(o, "left sh-left") or ""}</div>'
-                f'<figure class="sh-art"><img src="{e(o["image"])}"{fallback(o)} alt="" width="920" height="430"{lazy} decoding="async">'
-                f'<span class="sh-tag">{e(tag)}</span></figure>'
-                f'<div class="sh-buy"><p class="sh-price{" free" if free else ""}">{e(price)}</p>'
-                f'<p class="sh-name">{e(o["title"])}' + (f'<span>{e(cop)}</span>' if cop else "") + '</p></div>'
-                f'<div class="sh-cta">{self.offer_button(o, "btn sh-btn-main")}<a class="btn sh-btn-line" href="{e(page)}">Ver ficha</a></div>'
-                + (f'<div class="sh-about"><p class="sh-about-h">De qué trata</p><p>{e(about)}</p></div>' if about else "")
-                + '</li>')
+                f'<img class="sh-bg" src="{img}" alt="" width="460" height="215" loading="lazy" decoding="async">'
+                f'<a class="sh-art" href="{e(page)}" tabindex="-1" aria-hidden="true"><img src="{img}"{fallback(o)} alt="" width="920" height="430"{lazy} decoding="async"></a>'
+                f'<div class="sh-copy">{self.store_chip(o)}'
+                f'<h2 class="sh-title"><a href="{e(page)}">{e(o["title"])}</a></h2>'
+                + (f'<p class="sh-about">{e(about)}</p>' if about else "")
+                + f'<div class="sh-buy">{off}<p class="sh-price{" free" if free else ""}">{old}<strong>{e(price)}</strong>'
+                + (f'<span>{e(cop)}</span>' if cop else "") + '</p></div>'
+                f'{self.countdown(o, "left sh-left") or ""}'
+                f'<div class="sh-cta">{self.offer_button(o, "btn btn-primary sh-btn-main")}<a class="btn sh-btn-line" href="{e(page)}">Ver ficha</a></div>'
+                '</div></li>')
             dots.append(f'<li><button type="button" data-go="{i}" aria-label="Oferta {i + 1}: {e(o["title"])}"{" aria-current=\"true\"" if i == 0 else ""}></button></li>')
-            thumbs.append(f'<li><a href="{e(page)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""}><img src="{e(o["image"])}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">'
-                          f'<span>{e(o["title"])}</span></a></li>')
+            tag = "Gratis" if free else (f"-{pct}%" if pct else "")
+            thumbs.append(f'<li><a href="{e(page)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""}><img src="{img}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">'
+                          f'<span class="sh-t-name">{e(o["title"])}</span>' + (f'<span class="sh-t-off{" free" if free else ""}">{e(tag)}</span>' if tag else "") + '</a></li>')
         return (f'<section class="show" aria-label="Ofertas destacadas" data-n="{len(picks)}"><div class="sh-card">'
-                '<svg class="sh-lines" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 420C180 300 260 520 470 400S760 90 1020 160"/>'
-                '<path d="M120 -20C260 120 160 260 380 300S700 520 900 580"/><path d="M640 -20C700 90 860 60 1020 120"/></svg>'
                 f'<ol class="sh-list">{"".join(slides)}</ol>'
                 f'<div class="sh-side" hidden><ol class="sh-dots" aria-label="Cambiar de oferta destacada">{"".join(dots)}</ol>'
                 '<button type="button" class="sh-pause" aria-pressed="false" aria-label="Pausar el cambio automático"><span aria-hidden="true"></span></button></div>'
-                f'<div class="sh-pick"><p class="sh-pick-h">Elige otra:</p><ol class="sh-thumbs">{"".join(thumbs)}</ol></div>'
-                '</div></section>')
+                f'</div><div class="sh-pick"><p class="sr-only">Elige otra oferta destacada:</p><ol class="sh-thumbs">{"".join(thumbs)}</ol></div>'
+                '</section>')
 
     def foot_columns(self):
         cols = [("Ofertas", [("juegos-gratis.html", "Juegos gratis"), ("ofertas.html", "Todas las ofertas"), ("oferta-del-dia.html", "Oferta del día"),
@@ -1579,7 +1584,7 @@ class Site:
             f'<span class="curve-img"{self.preview_attrs(g.get("trailer"))}><img src="{e(g["image"])}"{fallback(g)} alt="" width="460" height="215" loading="lazy" decoding="async"></span>'
             f'<span class="curve-name">{e(g["title"])}</span><span class="curve-date">{e(date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar")}</span></a></li>'
             for g in soon)
-        return (f'<section class="curve" aria-labelledby="curve-h"><div class="sec-head"><h2 id="curve-h">{ICONS["arrive"]} Llegadas: los más esperados</h2>'
+        return (f'<section class="curve" aria-labelledby="curve-h"><div class="sec-head"><h2 id="curve-h">{ICONS["arrive"]} Los más esperados</h2>'
                 f'<p class="meta">Arrastra o usa las flechas. <a href="lanzamientos.html">Ver el calendario</a></p></div>'
                 f'<div class="curve-stage"><ul class="curve-track">{items}</ul>'
                 f'<button type="button" class="curve-nav prev" aria-label="Anterior">{ICONS["chevL"]}</button><button type="button" class="curve-nav next" aria-label="Siguiente">{ICONS["chevR"]}</button></div></section>')
@@ -1653,7 +1658,7 @@ class Site:
         hoy = sorted([g for g in games if g.get("precision") == "day" and g.get("date") == today], key=self.rank)[:8]
         if not hoy:
             return ""
-        return (f'<section class="today-rel"><h2>{ICONS["arrive"]} Aterrizan hoy</h2><ul class="spot-grid small">'
+        return (f'<section class="today-rel"><h2>{ICONS["arrive"]} Salen hoy</h2><ul class="spot-grid small">'
                 + "".join(self.spot_card(g, now) for g in hoy) + "</ul></section>")
 
     def note_row(self, it, kind, now):
@@ -2237,23 +2242,23 @@ class Site:
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
                     f"""{self.showcase(free[:2] + top)}
+{self.cat_row(free, deals)}
 {self.spline_box()}
 <section class="hero compact home-bar" aria-labelledby="home-h">
 <div class="hb-text"><h1 id="home-h">Juegos gratis y ofertas de PC, verificados para Colombia</h1>
 <p class="lead">Hoy hay <strong>{len(free)} {"juego gratis" if len(free) == 1 else "juegos gratis"}</strong> y <strong>{len(deals)} ofertas</strong> de {sum(1 for n in self.store_counts.values() if n)} tiendas oficiales, con el precio en pesos y la hora en que terminan.</p>
 {updated_line}</div>
 {self.thermometer(live, free)}
-{self.quick_search()}
 </section>
 {self.steam_strip(updated_dt)}
 <section class="shelf shelf-free" aria-labelledby="free-h">
-{self.sec_head("", 'Abordando: gratis esta semana', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', "ticket", "free-h")}
+{self.sec_head("", 'Gratis esta semana', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', "ticket", "free-h")}
 {self.saved_box()}
 {self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True, slider=len(free) > 2) if free else '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
 </section>
 {self.ad_slot("banner_after_hero")}
 <section class="shelf shelf-top" aria-labelledby="top-h">
-{self.sec_head("", 'Salidas: las mejores ofertas de hoy', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', "depart", "top-h")}
+{self.sec_head("", 'Las mejores ofertas de hoy', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', "depart", "top-h")}
 {self.offer_list(top, with_filters=False, list_id="top-home", bento=True)}
 <p class="shelf-more"><a class="btn btn-primary" href="ofertas.html">Buscar entre las {len(live)} ofertas {ICONS["arrow"]}</a></p>
 </section>
