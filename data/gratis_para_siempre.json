@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-02T18:29:56Z",
+ "updatedAt": "2026-11-03T02:25:03Z",
  "games": [
   {
    "id": "steam-730",
@@ -63,6 +63,18 @@
    ]
   },
   {
+   "id": "steam-230410",
+   "title": "Warframe",
+   "url": "https://store.steampowered.com/app/230410/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/1a3e7c2a05ce4e5cad5ac4c7e858cf5b0934704e/header.jpg?t=1792613117",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/61226446133ca3229607bbc1b5cd386a85b7902c/capsule_sm_120.jpg?t=1792613117",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Rol"
+   ]
+  },
+  {
    "id": "steam-4126040",
    "title": "Aniimo",
    "url": "https://store.steampowered.com/app/4126040/",
@@ -73,18 +85,6 @@
     "Acción",
     "Aventura",
     "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-230410",
-   "title": "Warframe",
-   "url": "https://store.steampowered.com/app/230410/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/1a3e7c2a05ce4e5cad5ac4c7e858cf5b0934704e/header.jpg?t=1792613117",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/61226446133ca3229607bbc1b5cd386a85b7902c/capsule_sm_120.jpg?t=1792613117",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Rol"
    ]
   },
   {
@@ -101,16 +101,14 @@
    ]
   },
   {
-   "id": "steam-1476970",
-   "title": "IdleOn - The Idle RPG",
-   "url": "https://store.steampowered.com/app/1476970/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1476970/header.jpg?t=1783034427",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1476970/6c5ebda02c5a3ee53ed0ce584e9b4db2a8f3909a/capsule_sm_120.jpg?t=1783034427",
+   "id": "steam-1938090",
+   "title": "Call of Duty®",
+   "url": "https://store.steampowered.com/app/1938090/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1793206213",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793656583",
    "headerChecked": true,
    "genres": [
-    "Aventura",
-    "Casual",
-    "Indie"
+    "Acción"
    ]
   },
   {
@@ -151,14 +149,16 @@
    ]
   },
   {
-   "id": "steam-1938090",
-   "title": "Call of Duty®",
-   "url": "https://store.steampowered.com/app/1938090/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/23af6cf41e2d09620caa07700a4cb3288dbcbaa8/header.jpg?t=1793206213",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/0ac3cc02398b9db61c8db4fef2e3e1b4b8b66e4b/capsule_sm_120.jpg?t=1793386059",
+   "id": "steam-1476970",
+   "title": "IdleOn - The Idle RPG",
+   "url": "https://store.steampowered.com/app/1476970/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1476970/header.jpg?t=1783034427",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1476970/6c5ebda02c5a3ee53ed0ce584e9b4db2a8f3909a/capsule_sm_120.jpg?t=1783034427",
    "headerChecked": true,
    "genres": [
-    "Acción"
+    "Aventura",
+    "Casual",
+    "Indie"
    ]
   },
   {
@@ -175,6 +175,17 @@
    ]
   },
   {
+   "id": "steam-2357570",
+   "title": "Overwatch®",
+   "url": "https://store.steampowered.com/app/2357570/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2357570/5c208b2699cd38ed6125d039be388fa744db54a4/header_alt_assets_23.jpg?t=1791576843",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/7a96583919542b66a209172b945fb4e1e68137e4/capsule_sm_120_alt_assets_23.jpg?t=1791576843",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-3513350",
    "title": "Wuthering Waves",
    "url": "https://store.steampowered.com/app/3513350/",
@@ -185,6 +196,19 @@
     "Acción",
     "Aventura",
     "Rol"
+   ]
+  },
+  {
+   "id": "steam-438100",
+   "title": "VRChat",
+   "url": "https://store.steampowered.com/app/438100/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/438100/header.jpg?t=1762366454",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/438100/capsule_sm_120.jpg?t=1762366454",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Multijugador masivo"
    ]
   },
   {
@@ -201,24 +225,11 @@
    ]
   },
   {
-   "id": "steam-552990",
-   "title": "World of Warships",
-   "url": "https://store.steampowered.com/app/552990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/74133093749b4627d25ff3229e9ade3291b665d6/capsule_sm_120_alt_assets_17.jpg?t=1793268266",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
-   ]
-  },
-  {
-   "id": "steam-2357570",
-   "title": "Overwatch®",
-   "url": "https://store.steampowered.com/app/2357570/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2357570/5c208b2699cd38ed6125d039be388fa744db54a4/header_alt_assets_23.jpg?t=1791576843",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/7a96583919542b66a209172b945fb4e1e68137e4/capsule_sm_120_alt_assets_23.jpg?t=1791576843",
+   "id": "steam-2073850",
+   "title": "THE FINALS",
+   "url": "https://store.steampowered.com/app/2073850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073850/4b0efa1275c8cedc030209eb174af726a5ca1776/header.jpg?t=1792501373",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/f68c29ce93dd6eedf9d3c71c26a122e87a1c14c3/capsule_sm_120.jpg?t=1792501373",
    "headerChecked": true,
    "genres": [
     "Acción"
@@ -236,42 +247,16 @@
    ]
   },
   {
-   "id": "steam-2507950",
-   "title": "Delta Force",
-   "url": "https://store.steampowered.com/app/2507950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/09ef134458549352e5b5a06ed7f97cf00d729b62/header_alt_assets_14.jpg?t=1790238079",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2507950/c28c15e52fc6dd75dbf52653a8123930ec399478/capsule_sm_120_alt_assets_14.jpg?t=1790238079",
+   "id": "steam-552990",
+   "title": "World of Warships",
+   "url": "https://store.steampowered.com/app/552990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/74133093749b4627d25ff3229e9ade3291b665d6/capsule_sm_120_alt_assets_17.jpg?t=1793268266",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Aventura",
-    "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-438100",
-   "title": "VRChat",
-   "url": "https://store.steampowered.com/app/438100/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/438100/header.jpg?t=1762366454",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/438100/capsule_sm_120.jpg?t=1762366454",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-2073620",
-   "title": "Arena Breakout: Infinite",
-   "url": "https://store.steampowered.com/app/2073620/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073620/eccc13f9398a6af599a78ec7a437d6540f43a3c5/header.jpg?t=1791983571",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073620/4d7e3b2a565f2606a0a95494e064664b6d6e6949/capsule_sm_120.jpg?t=1791983571",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
@@ -296,52 +281,16 @@
    "genres": []
   },
   {
-   "id": "steam-2073850",
-   "title": "THE FINALS",
-   "url": "https://store.steampowered.com/app/2073850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073850/4b0efa1275c8cedc030209eb174af726a5ca1776/header.jpg?t=1792501373",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/f68c29ce93dd6eedf9d3c71c26a122e87a1c14c3/capsule_sm_120.jpg?t=1792501373",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
-  },
-  {
-   "id": "steam-4162040",
-   "title": "Zenless Zone Zero",
-   "url": "https://store.steampowered.com/app/4162040/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162040/22b56d833834d90674b30498f78e0839e48792db/header_alt_assets_2.jpg?t=1792533213",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4162040/b7b46c035e69ba29a985ce55505631f8e6964b9b/capsule_sm_120_alt_assets_2.jpg?t=1792533213",
+   "id": "steam-2507950",
+   "title": "Delta Force",
+   "url": "https://store.steampowered.com/app/2507950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/09ef134458549352e5b5a06ed7f97cf00d729b62/header_alt_assets_14.jpg?t=1790238079",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2507950/c28c15e52fc6dd75dbf52653a8123930ec399478/capsule_sm_120_alt_assets_14.jpg?t=1790238079",
    "headerChecked": true,
    "genres": [
     "Acción",
     "Aventura",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-1974050",
-   "title": "Torchlight: Infinite",
-   "url": "https://store.steampowered.com/app/1974050/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-1665460",
-   "title": "eFootball™",
-   "url": "https://store.steampowered.com/app/1665460/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1792635226",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/7c1ef2670889241a42df4405da83ec99e4d6d442/capsule_sm_120.jpg?t=1792635226",
-   "headerChecked": true,
-   "genres": [
-    "Simuladores",
-    "Deportes"
+    "Multijugador masivo"
    ]
   },
   {
@@ -358,6 +307,56 @@
    ]
   },
   {
+   "id": "steam-2073620",
+   "title": "Arena Breakout: Infinite",
+   "url": "https://store.steampowered.com/app/2073620/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073620/eccc13f9398a6af599a78ec7a437d6540f43a3c5/header.jpg?t=1791983571",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073620/4d7e3b2a565f2606a0a95494e064664b6d6e6949/capsule_sm_120.jpg?t=1791983571",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
+   ]
+  },
+  {
+   "id": "steam-4162040",
+   "title": "Zenless Zone Zero",
+   "url": "https://store.steampowered.com/app/4162040/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162040/22b56d833834d90674b30498f78e0839e48792db/header_alt_assets_2.jpg?t=1792533213",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4162040/b7b46c035e69ba29a985ce55505631f8e6964b9b/capsule_sm_120_alt_assets_2.jpg?t=1792533213",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-1286830",
+   "title": "STAR WARS™: The Old Republic™",
+   "url": "https://store.steampowered.com/app/1286830/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/header.jpg?t=1791993603",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603",
+   "headerChecked": true,
+   "genres": [
+    "Multijugador masivo",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-1665460",
+   "title": "eFootball™",
+   "url": "https://store.steampowered.com/app/1665460/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1792635226",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/7c1ef2670889241a42df4405da83ec99e4d6d442/capsule_sm_120.jpg?t=1792635226",
+   "headerChecked": true,
+   "genres": [
+    "Simuladores",
+    "Deportes"
+   ]
+  },
+  {
    "id": "steam-2807960",
    "title": "Battlefield™ 6",
    "url": "https://store.steampowered.com/app/2807960/",
@@ -366,6 +365,19 @@
    "headerChecked": true,
    "genres": [
     "Acción"
+   ]
+  },
+  {
+   "id": "steam-1974050",
+   "title": "Torchlight: Infinite",
+   "url": "https://store.steampowered.com/app/1974050/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/8239fb450914aadc70a6fe79e9583673acc2be5e/header.jpg?t=1792033048",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1974050/c0d8fd393e168e075287988295cb6f182cc7a54b/capsule_sm_120.jpg?t=1792033048",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -382,6 +394,18 @@
    ]
   },
   {
+   "id": "steam-4025700",
+   "title": "Heartopia",
+   "url": "https://store.steampowered.com/app/4025700/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4025700/2228fe487077813485fe804a4f8311c289d69901/header_alt_assets_1.jpg?t=1789974308",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4025700/2cfc752138a31ce4847ba014a8603ffaf4bf64d8/capsule_sm_120.jpg?t=1789974308",
+   "headerChecked": true,
+   "genres": [
+    "Casual",
+    "Simuladores"
+   ]
+  },
+  {
    "id": "steam-1449850",
    "title": "Yu-Gi-Oh! Master Duel",
    "url": "https://store.steampowered.com/app/1449850/",
@@ -392,6 +416,15 @@
     "Simuladores",
     "Estrategia"
    ]
+  },
+  {
+   "id": "steam-1049590",
+   "title": "Eternal Return",
+   "url": "https://store.steampowered.com/app/1049590/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
+   "headerChecked": true,
+   "genres": []
   },
   {
    "id": "steam-444200",
@@ -407,25 +440,15 @@
    ]
   },
   {
-   "id": "steam-4025700",
-   "title": "Heartopia",
-   "url": "https://store.steampowered.com/app/4025700/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4025700/2228fe487077813485fe804a4f8311c289d69901/header_alt_assets_1.jpg?t=1789974308",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4025700/2cfc752138a31ce4847ba014a8603ffaf4bf64d8/capsule_sm_120.jpg?t=1789974308",
+   "id": "steam-223750",
+   "title": "DCS World Steam Edition",
+   "url": "https://store.steampowered.com/app/223750/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/223750/header.jpg?t=1793199839",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/223750/capsule_sm_120.jpg?t=1793199839",
    "headerChecked": true,
    "genres": [
-    "Casual",
     "Simuladores"
    ]
-  },
-  {
-   "id": "steam-1049590",
-   "title": "Eternal Return",
-   "url": "https://store.steampowered.com/app/1049590/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
-   "headerChecked": true,
-   "genres": []
   },
   {
    "id": "steam-1203220",
@@ -454,38 +477,15 @@
    ]
   },
   {
-   "id": "steam-1286830",
-   "title": "STAR WARS™: The Old Republic™",
-   "url": "https://store.steampowered.com/app/1286830/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/header.jpg?t=1791993603",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603",
+   "id": "steam-1607250",
+   "title": "MY HERO ULTRA RUMBLE",
+   "url": "https://store.steampowered.com/app/1607250/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607250/609881717ea2123b86cc44909a60ebbc790e7c39/header.jpg?t=1790820130",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1607250/3003cc54f0fae115d56d8ec72e0908a3448b70e9/capsule_sm_120.jpg?t=1790820130",
    "headerChecked": true,
    "genres": [
-    "Multijugador masivo",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-5019180",
-   "title": "Epic Seven",
-   "url": "https://store.steampowered.com/app/5019180/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5019180/6dabc3f404b51e08ab22763d3df4808081baa5e0/header.jpg?t=1793256460",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/5019180/bb198e38698a469c0af46e637ce3aebe01f8aca3/capsule_sm_120.jpg?t=1793256460",
-   "headerChecked": true,
-   "genres": [
-    "Rol",
-    "Estrategia"
-   ]
-  },
-  {
-   "id": "steam-223750",
-   "title": "DCS World Steam Edition",
-   "url": "https://store.steampowered.com/app/223750/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/223750/header.jpg?t=1793199839",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/223750/capsule_sm_120.jpg?t=1793199839",
-   "headerChecked": true,
-   "genres": [
-    "Simuladores"
+    "Acción",
+    "Casual"
    ]
   }
  ]
