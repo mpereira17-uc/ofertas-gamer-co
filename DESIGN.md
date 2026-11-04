@@ -7,6 +7,7 @@
 - **Portada:** carrusel con la portada nítida y la misma imagen difuminada de fondo, descuento grande, precio y botón; miniaturas debajo. Luego accesos por categoría con los conteos reales y las tiendas.
 - **Estantes:** todas las listas de ofertas son cuadrículas de portadas grandes, con el descuento pegado a la esquina inferior de la portada, la tienda arriba a la izquierda y el precio grande debajo.
 - **Se quitó:** tablero de salidas, letras que se arman, títulos con la primera letra roja, portadas inclinadas, líneas rojas de fondo, letrero gigante del pie, intro del logo y los efectos de GSAP (los archivos siguen en `assets/vendor` por si se quieren usar).
+- **Página de ofertas (v7.1, 2026-11-04):** filtros en una columna a la izquierda (buscador, listas desplegables e interruptores), resultados a la derecha con los atajos arriba. El aviso de precios ya no es una caja amarilla: es una línea discreta con un ícono (`.price-note`).
 - **Movimiento:** solo el cambio del carrusel y las tarjetas que aparecen suave una vez. Nada con «menos movimiento».
 
 ---

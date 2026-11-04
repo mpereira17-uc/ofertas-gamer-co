@@ -487,25 +487,30 @@ class Site:
                 slot = self.ad_slot(f"inline_after_card_{i}")
                 if slot:
                     cards.append(f"<li>{slot}</li>")
-        filters = ""
+        filters = toolbar = ""
         if with_filters:
             store_opts = "".join(f'<option value="{e(s["id"])}">{e(s["name"])}</option>'
                                  for s in self.stores.values() if s["active"] and any(o["storeId"] == s["id"] for o in offers))
-            filters = f"""<form class="filters" id="filters" role="search" aria-label="Buscar y filtrar ofertas" hidden>
-<label>Buscar<input type="search" name="q" placeholder="Nombre del juego" autocomplete="off"></label>
-<label>Tienda<select name="store"><option value="">Todas</option>{store_opts}</select></label>
-<label>Tipo<select name="type"><option value="">Todos</option><option value="gratis">Gratis</option><option value="descuento">Descuento</option></select></label>
-<label>Descuento mínimo<select name="min"><option value="0">Cualquiera</option><option value="50">50% o más</option><option value="75">75% o más</option><option value="90">90% o más</option></select></label>
-<label>Precio máximo<select name="max"><option value="">Cualquiera</option><option value="20000">Menos de $20.000</option><option value="40000">Menos de $40.000</option></select></label>
-<label>Ordenar por<select name="sort"><option value="discount">Mayor descuento</option><option value="score">Vale la pena</option><option value="saved">Más ahorro en pesos</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
-<label><span>Favoritos</span><span><input type="checkbox" name="favs"> Solo mis favoritos</span></label>
-<label><span>Precio</span><span><input type="checkbox" name="low"> Solo mínimos históricos</span></label>
-</form>
-<nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav>
-<h2 class="sr-only">Lista de ofertas</h2><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>"""
+            filters = f"""<form class="filters shop-filters" id="filters" role="search" aria-label="Buscar y filtrar ofertas" hidden>
+<div class="sf-search"><label class="sr-only" for="sf-q">Buscar en estas ofertas</label>{ICONS['search']}<input id="sf-q" type="search" name="q" placeholder="Filtra por nombre…" autocomplete="off" maxlength="80"></div>
+<p class="sf-title">Filtrar</p>
+<label class="sf-field"><span>Tienda</span><select name="store"><option value="">Todas las tiendas</option>{store_opts}</select></label>
+<label class="sf-field"><span>Tipo</span><select name="type"><option value="">Gratis y descuentos</option><option value="gratis">Solo gratis</option><option value="descuento">Solo descuentos</option></select></label>
+<label class="sf-field"><span>Descuento mínimo</span><select name="min"><option value="0">Cualquiera</option><option value="50">50% o más</option><option value="75">75% o más</option><option value="90">90% o más</option></select></label>
+<label class="sf-field"><span>Precio en pesos</span><select name="max"><option value="">Cualquiera</option><option value="20000">Menos de $20.000</option><option value="40000">Menos de $40.000</option></select></label>
+<label class="sf-toggle"><input type="checkbox" name="favs"><span>Solo mis favoritos</span></label>
+<label class="sf-toggle"><input type="checkbox" name="low"><span>Solo mínimos históricos</span></label>
+<label class="sf-field sf-sort"><span>Ordenar por</span><select name="sort"><option value="discount">Mayor descuento</option><option value="score">Vale la pena</option><option value="saved">Más ahorro en pesos</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
+</form>"""
+            toolbar = f"""<div class="shop-bar"><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>
+<nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav></div>
+<h2 class="sr-only">Lista de ofertas</h2>"""
         cols = ('' if poster else '<div class="board-cols" aria-hidden="true"><span>Juego</span><span>Precio</span><span>Termina</span><span></span></div>')
         slide = f' data-slider aria-label="{len(offers)} juegos: desliza o usa las flechas"' if slider else ""
-        return filters + cols + f'<ul class="grid{" poster" if poster else " board"}" id="{list_id}"{slide}>' + "".join(cards) + "</ul>"
+        ul = f'<ul class="grid{" poster" if poster else " board"}" id="{list_id}"{slide}>' + "".join(cards) + "</ul>"
+        if with_filters:
+            return f'<div class="shop">{filters}<div class="shop-main">{toolbar}{ul}</div></div>'
+        return cols + ul
 
     def support_box(self):
         url = self.cfg.get("enlace_kofi")
@@ -2219,8 +2224,8 @@ class Site:
         top = sorted(deals, key=lambda o: (-("CO" in (o.get("regions") or [])), -(o.get("metacritic") or 0) // 10,
                                            -(o.get("discountPercentage") or 0)))[:12]
         dotd = self.deal_of_day(live)
-        notice = ('<p class="notice">Los precios y promociones pueden haber cambiado desde la última verificación. '
-                  'Confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>')
+        notice = (f'<p class="price-note">{ICONS["info"]}<span>Los precios y promociones pueden haber cambiado desde la última verificación. '
+                  'Confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</span></p>')
         updated_line = f'<p class="meta">Actualizado el <time datetime="{updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ")}">{updated}</time> · se revisa cada {self.cfg["intervalo_horas"]} horas</p>'
 
         guides_html = '<ul class="stores">' + "".join(
