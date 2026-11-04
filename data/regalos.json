@@ -1,6 +1,19 @@
 {
- "updatedAt": "2026-11-04T12:15:43Z",
+ "updatedAt": "2026-11-04T19:54:49Z",
  "items": [
+  {
+   "id": "gp-3843",
+   "title": "Letter Quest: Grimm's Journey Remastered",
+   "type": "game",
+   "group": "steam",
+   "platforms": "PC, Steam",
+   "worth": "$6.99",
+   "endsOn": "2026-11-06",
+   "image": "https://www.gamerpower.com/offers/1b/6aeb27dbc0e38.jpg",
+   "url": "https://www.gamerpower.com/open/letter-quest-grimm-s-journey-remastered-steam-key-giveaway",
+   "firstSeen": "2026-11-04T19:54:49Z",
+   "active": true
+  },
   {
    "id": "gp-3842",
    "title": "Highway Driving",
@@ -129,32 +142,6 @@
    "image": "https://www.gamerpower.com/offers/1b/6ae264e50edb5.jpg",
    "url": "https://www.gamerpower.com/open/free-itch-io-games-bundle",
    "firstSeen": "2026-10-29T05:56:39Z",
-   "active": true
-  },
-  {
-   "id": "gp-3829",
-   "title": "MOLOKAUST",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$10.00",
-   "endsOn": "2026-11-04",
-   "image": "https://www.gamerpower.com/offers/1b/6ae25ef1a9917.jpg",
-   "url": "https://www.gamerpower.com/open/molokaust-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
-   "id": "gp-3827",
-   "title": "Heirloom",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$0.99",
-   "endsOn": "2026-11-04",
-   "image": "https://www.gamerpower.com/offers/1b/6ae257b2d5ad9.jpg",
-   "url": "https://www.gamerpower.com/open/heirloom-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
    "active": true
   },
   {
@@ -327,19 +314,6 @@
    "active": true
   },
   {
-   "id": "gp-1669",
-   "title": "Assassin at Crimson Keep",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$4.99",
-   "endsOn": "2026-11-04",
-   "image": "https://www.gamerpower.com/offers/1b/62e41a3c35b09.jpg",
-   "url": "https://www.gamerpower.com/open/assassin-at-crimson-keep",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
    "id": "gp-2089",
    "title": "Project Malice",
    "type": "game",
@@ -442,6 +416,45 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3829",
+   "title": "MOLOKAUST",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$10.00",
+   "endsOn": "2026-11-04",
+   "image": "https://www.gamerpower.com/offers/1b/6ae25ef1a9917.jpg",
+   "url": "https://www.gamerpower.com/open/molokaust-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-3827",
+   "title": "Heirloom",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$0.99",
+   "endsOn": "2026-11-04",
+   "image": "https://www.gamerpower.com/offers/1b/6ae257b2d5ad9.jpg",
+   "url": "https://www.gamerpower.com/open/heirloom-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-1669",
+   "title": "Assassin at Crimson Keep",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$4.99",
+   "endsOn": "2026-11-04",
+   "image": "https://www.gamerpower.com/offers/1b/62e41a3c35b09.jpg",
+   "url": "https://www.gamerpower.com/open/assassin-at-crimson-keep",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
   },
   {
    "id": "gp-3828",
