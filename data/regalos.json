@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-03T21:34:29Z",
+ "updatedAt": "2026-11-04T00:36:06Z",
  "items": [
   {
    "id": "gp-3842",
@@ -145,19 +145,6 @@
    "active": true
   },
   {
-   "id": "gp-3828",
-   "title": "Octane100",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$0.99",
-   "endsOn": "2026-11-03",
-   "image": "https://www.gamerpower.com/offers/1b/6ae25d5c6c327.jpg",
-   "url": "https://www.gamerpower.com/open/octane100-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
    "id": "gp-3827",
    "title": "Heirloom",
    "type": "game",
@@ -193,19 +180,6 @@
    "endsOn": "",
    "image": "https://www.gamerpower.com/offers/1b/68f91bd81c328.jpg",
    "url": "https://www.gamerpower.com/open/last-room-pc-giveaway",
-   "firstSeen": "2026-10-26T19:15:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3819",
-   "title": "Fathom Reach Playtest",
-   "type": "early access",
-   "group": "steam",
-   "platforms": "PC, Steam",
-   "worth": "",
-   "endsOn": "2026-11-03",
-   "image": "https://www.gamerpower.com/offers/1b/6ad23bbd018d3.jpg",
-   "url": "https://www.gamerpower.com/open/fathom-reach-playtest-steam-key-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
   },
@@ -468,6 +442,32 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3828",
+   "title": "Octane100",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$0.99",
+   "endsOn": "2026-11-03",
+   "image": "https://www.gamerpower.com/offers/1b/6ae25d5c6c327.jpg",
+   "url": "https://www.gamerpower.com/open/octane100-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-3819",
+   "title": "Fathom Reach Playtest",
+   "type": "early access",
+   "group": "steam",
+   "platforms": "PC, Steam",
+   "worth": "",
+   "endsOn": "2026-11-03",
+   "image": "https://www.gamerpower.com/offers/1b/6ad23bbd018d3.jpg",
+   "url": "https://www.gamerpower.com/open/fathom-reach-playtest-steam-key-giveaway",
+   "firstSeen": "2026-10-26T19:15:59Z",
+   "active": false
   },
   {
    "id": "gp-3313",
