@@ -1,18 +1,31 @@
 {
- "updatedAt": "2026-11-04T00:42:48Z",
+ "updatedAt": "2026-11-04T12:15:43Z",
  "games": {
   "genshin": {
-   "lastOk": "2026-11-04T00:42:48Z",
+   "lastOk": "2026-11-04T12:15:43Z",
    "sources": [
     "seria",
     "ennead"
    ],
    "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5c/e2/13/5ce21317-a08a-24ac-cc5f-2b25a4d71fa6/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
    "codes": {
+    "CDOF4X83H7X2": {
+     "firstSeen": "2026-11-04T12:15:43Z",
+     "status": "activo",
+     "lastSeen": "2026-11-04T12:15:43Z",
+     "rewards": [
+      "Mora ×10000",
+      "Experiencia de aventurero ×10",
+      "Mineral de refinamiento fino ×5",
+      "Stir-Fried Fish Noodles ×5",
+      "Jueyun Chili Chicken ×5"
+     ],
+     "announced": true
+    },
     "EPIC2026": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×40",
       "Mora ×20000",
@@ -20,10 +33,34 @@
      ],
      "announced": true
     },
+    "KEEPUPWITHMITYA": {
+     "firstSeen": "2026-11-04T12:15:43Z",
+     "status": "activo",
+     "lastSeen": "2026-11-04T12:15:43Z",
+     "rewards": [
+      "Guide to Charity ×3",
+      "\"Energy-Replenishing Meal\" ×3",
+      "Kristallfold ×3"
+     ],
+     "announced": true
+    },
+    "MIJIQ23V2437": {
+     "firstSeen": "2026-11-04T12:15:43Z",
+     "status": "activo",
+     "lastSeen": "2026-11-04T12:15:43Z",
+     "rewards": [
+      "Mora ×10000",
+      "Experiencia de aventurero ×10",
+      "Mineral de refinamiento fino ×5",
+      "Stir-Fried Fish Noodles ×5",
+      "Jueyun Chili Chicken ×5"
+     ],
+     "announced": true
+    },
     "NEEI8A8341OW": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×60",
       "Experiencia de aventurero ×5"
@@ -33,7 +70,7 @@
     "NEEI986K5X6R": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×60",
       "Experiencia de aventurero ×5"
@@ -43,7 +80,7 @@
     "NEEIJB764CA3": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×60"
      ],
@@ -52,7 +89,7 @@
     "PJ2KEBRAYSRM": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×60",
       "Experiencia de aventurero ×5"
@@ -62,7 +99,7 @@
     "PNKZ3WLNN8G6": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Teachings of Charity ×5",
       "Teachings of Fortitude ×5",
@@ -73,7 +110,7 @@
     "QYJWQVRI39BE": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×60",
       "Experiencia de aventurero ×5"
@@ -83,7 +120,7 @@
     "Y6JYMKV6JKSL": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Protogemas ×60",
       "Experiencia de aventurero ×5"
@@ -376,7 +413,7 @@
    }
   },
   "starrail": {
-   "lastOk": "2026-11-04T00:42:48Z",
+   "lastOk": "2026-11-04T12:15:43Z",
    "sources": [
     "seria",
     "ennead"
@@ -386,7 +423,7 @@
     "4TKSX77Y58QK": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Jade Estelar ×30",
       "Guía del viajero ×3",
@@ -399,7 +436,7 @@
     "CREATIONNYMPH": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Jade Estelar ×60",
       "Fuel ×1",
@@ -410,14 +447,14 @@
     "CTK5DRQVT48F": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [],
      "announced": true
     },
     "DSLSPNBREASP": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Jade Estelar ×50",
       "Créditos ×10000"
@@ -427,7 +464,7 @@
     "PEARLAPPRAISE": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Guía del viajero ×3",
       "Cold Joke ×2"
@@ -437,7 +474,7 @@
     "STARRAILGIFT": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Jade Estelar ×50",
       "Créditos ×10k",
@@ -704,7 +741,7 @@
    }
   },
   "zenless": {
-   "lastOk": "2026-11-04T00:42:48Z",
+   "lastOk": "2026-11-04T12:15:43Z",
    "sources": [
     "seria",
     "ennead"
@@ -714,7 +751,7 @@
     "HOLLOWRUN33": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Policromos ×20",
       "Dinis ×2,222"
@@ -724,7 +761,7 @@
     "INKSHIFT33": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Policromos ×20",
       "Dinis ×2,222"
@@ -734,7 +771,7 @@
     "LEVELUP33": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Policromos ×20",
       "Dinis ×2,222"
@@ -744,7 +781,7 @@
     "ZENLESSGIFT": {
      "firstSeen": "2026-10-26T14:47:45Z",
      "status": "activo",
-     "lastSeen": "2026-11-04T00:42:48Z",
+     "lastSeen": "2026-11-04T12:15:43Z",
      "rewards": [
       "Policromos ×50",
       "Registro de investigador oficial ×2",
