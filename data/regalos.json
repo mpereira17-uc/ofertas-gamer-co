@@ -1,6 +1,19 @@
 {
- "updatedAt": "2026-11-05T22:04:59Z",
+ "updatedAt": "2026-11-06T06:57:08Z",
  "items": [
+  {
+   "id": "gp-3847",
+   "title": "GMH - Good Morning Human (Epic Games) Giveaways",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$9.99",
+   "endsOn": "2026-11-08",
+   "image": "https://www.gamerpower.com/offers/1b/6aed159f0ca1d.jpg",
+   "url": "https://www.gamerpower.com/open/gmh-good-morning-human-epic-games-giveaways",
+   "firstSeen": "2026-11-06T06:57:08Z",
+   "active": true
+  },
   {
    "id": "gp-3846",
    "title": "Chants of Sennaar",
@@ -249,32 +262,6 @@
    "active": true
   },
   {
-   "id": "gp-3421",
-   "title": "Very Realistic Game Dev Simulator",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$1.99",
-   "endsOn": "2026-11-05",
-   "image": "https://www.gamerpower.com/offers/1b/6946b7c157bca.jpg",
-   "url": "https://www.gamerpower.com/open/very-realistic-game-dev-simulator-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
-   "id": "gp-3496",
-   "title": "Cherophobia",
-   "type": "game",
-   "group": "itch",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$1.99",
-   "endsOn": "2026-11-05",
-   "image": "https://www.gamerpower.com/offers/1b/698fa7369c1f5.jpg",
-   "url": "https://www.gamerpower.com/open/cherophobia-itch-io-giveaway",
-   "firstSeen": "2026-10-28T21:09:43Z",
-   "active": true
-  },
-  {
    "id": "gp-3486",
    "title": "Chop Shop Playtest (Steam)",
    "type": "early access",
@@ -351,6 +338,32 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3421",
+   "title": "Very Realistic Game Dev Simulator",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$1.99",
+   "endsOn": "2026-11-05",
+   "image": "https://www.gamerpower.com/offers/1b/6946b7c157bca.jpg",
+   "url": "https://www.gamerpower.com/open/very-realistic-game-dev-simulator-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
+  },
+  {
+   "id": "gp-3496",
+   "title": "Cherophobia",
+   "type": "game",
+   "group": "itch",
+   "platforms": "PC, Itch.io, DRM-Free",
+   "worth": "$1.99",
+   "endsOn": "2026-11-05",
+   "image": "https://www.gamerpower.com/offers/1b/698fa7369c1f5.jpg",
+   "url": "https://www.gamerpower.com/open/cherophobia-itch-io-giveaway",
+   "firstSeen": "2026-10-28T21:09:43Z",
+   "active": false
   },
   {
    "id": "gp-3832",
