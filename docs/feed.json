@@ -6,20 +6,44 @@
  "language": "es",
  "items": [
   {
+   "id": "cs-192769-1-5.99",
+   "url": "https://store.steampowered.com/app/783170/",
+   "title": "INSOMNIA: The Ark",
+   "content_text": "80% de descuento en Steam: US$5.99.",
+   "date_published": "2026-11-07T14:57:07Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/783170/header.jpg"
+  },
+  {
+   "id": "cs-290415-1-4.99",
+   "url": "https://store.steampowered.com/app/2492040/",
+   "title": "FATAL FURY: City of the Wolves",
+   "content_text": "75% de descuento en Steam: US$4.99.",
+   "date_published": "2026-11-07T14:57:07Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2492040/header.jpg"
+  },
+  {
+   "id": "cs-238252-1-14.99",
+   "url": "https://store.steampowered.com/app/1498570/",
+   "title": "THE KING OF FIGHTERS XV",
+   "content_text": "75% de descuento en Steam: US$14.99.",
+   "date_published": "2026-11-07T14:57:07Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1498570/header.jpg"
+  },
+  {
+   "id": "cs-174086-1-8.99",
+   "url": "https://store.steampowered.com/app/660160/",
+   "title": "Field of Glory II",
+   "content_text": "70% de descuento en Steam: US$8.99.",
+   "date_published": "2026-11-07T14:57:07Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/660160/header.jpg"
+  },
+  {
    "id": "cs-206403-15-1.99",
    "url": "https://www.fanatical.com/en/search?search=Zombie%20Army%204%3A%20Dead%20War",
    "title": "Zombie Army 4: Dead War",
    "content_text": "96% de descuento en Fanatical: US$1.99.",
    "date_published": "2026-11-07T06:09:34Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/694280/header.jpg"
-  },
-  {
-   "id": "cs-204144-1-0.99",
-   "url": "https://store.steampowered.com/app/773740/",
-   "title": "Overpass",
-   "content_text": "95% de descuento en Steam: US$0.99.",
-   "date_published": "2026-11-07T06:09:34Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/773740/header.jpg"
   },
   {
    "id": "cs-228533-15-2.99",
@@ -150,14 +174,6 @@
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304460/header.jpg"
   },
   {
-   "id": "cs-175223-7-1.49",
-   "url": "https://www.gog.com/en/games?query=Outcast%20-%20Second%20Contact",
-   "title": "Outcast - Second Contact",
-   "content_text": "90% de descuento en GOG: US$1.49.",
-   "date_published": "2026-11-07T06:09:34Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/618970/header.jpg"
-  },
-  {
    "id": "cs-658-15-0.90",
    "url": "https://www.fanatical.com/en/search?search=King%27s%20Bounty%3A%20The%20Legend",
    "title": "King's Bounty: The Legend",
@@ -188,14 +204,6 @@
    "content_text": "85% de descuento en Steam: US$2.39.",
    "date_published": "2026-11-07T06:09:34Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/537800/header.jpg"
-  },
-  {
-   "id": "cs-174086-15-4.64",
-   "url": "https://www.fanatical.com/en/search?search=Field%20of%20Glory%20II",
-   "title": "Field of Glory II",
-   "content_text": "85% de descuento en Fanatical: US$4.64.",
-   "date_published": "2026-11-07T06:09:34Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/660160/header.jpg"
   },
   {
    "id": "cs-209723-15-2.47",
@@ -236,14 +244,6 @@
    "content_text": "80% de descuento en Humble Store: US$4.99.",
    "date_published": "2026-11-07T06:09:34Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1150530/header.jpg"
-  },
-  {
-   "id": "cs-104426-11-5.99",
-   "url": "https://www.humblebundle.com/store/search?search=Men%20of%20War%3A%20Assault%20Squad%202",
-   "title": "Men of War: Assault Squad 2",
-   "content_text": "80% de descuento en Humble Store: US$5.99.",
-   "date_published": "2026-11-07T06:09:34Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/244450/header.jpg"
   }
  ]
 }
