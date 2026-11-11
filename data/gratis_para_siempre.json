@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-11T06:39:44Z",
+ "updatedAt": "2026-11-11T16:17:15Z",
  "games": [
   {
    "id": "steam-1172470",
@@ -11,30 +11,6 @@
    "genres": [
     "Acción",
     "Aventura"
-   ]
-  },
-  {
-   "id": "steam-730",
-   "title": "Counter-Strike 2",
-   "url": "https://store.steampowered.com/app/730/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1791824795",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/942c04efaa5bc87afb6f2a97dbf17ac614c8a84d/capsule_sm_120.jpg?t=1793054556",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
-  },
-  {
-   "id": "steam-578080",
-   "title": "PUBG: BATTLEGROUNDS",
-   "url": "https://store.steampowered.com/app/578080/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/841ea38bc58cabb70aef65365cf50bc2d79329d9/header.jpg?t=1792718193",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_sm_120.jpg?t=1792718193",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Multijugador masivo"
    ]
   },
   {
@@ -51,6 +27,17 @@
    ]
   },
   {
+   "id": "steam-730",
+   "title": "Counter-Strike 2",
+   "url": "https://store.steampowered.com/app/730/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1791824795",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/942c04efaa5bc87afb6f2a97dbf17ac614c8a84d/capsule_sm_120.jpg?t=1793054556",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-570",
    "title": "Dota 2",
    "url": "https://store.steampowered.com/app/570/",
@@ -60,6 +47,19 @@
    "genres": [
     "Acción",
     "Estrategia"
+   ]
+  },
+  {
+   "id": "steam-578080",
+   "title": "PUBG: BATTLEGROUNDS",
+   "url": "https://store.steampowered.com/app/578080/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/841ea38bc58cabb70aef65365cf50bc2d79329d9/header.jpg?t=1792718193",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_sm_120.jpg?t=1792718193",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Multijugador masivo"
    ]
   },
   {
@@ -88,16 +88,16 @@
    ]
   },
   {
-   "id": "steam-2507950",
-   "title": "Delta Force",
-   "url": "https://store.steampowered.com/app/2507950/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/09ef134458549352e5b5a06ed7f97cf00d729b62/header_alt_assets_14.jpg?t=1790238079",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2507950/978829ad97a5139127a4fccf35d8a95ef6b0f9e3/capsule_sm_120_alt_assets_16.jpg?t=1794276014",
+   "id": "steam-4508340",
+   "title": "NTE: Neverness to Everness",
+   "url": "https://store.steampowered.com/app/4508340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1793179644",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/484aa9396c520d414b5b3f5c619f96e0edc8e50c/capsule_sm_120.jpg?t=1794352536",
    "headerChecked": true,
    "genres": [
     "Acción",
     "Aventura",
-    "Multijugador masivo"
+    "Rol"
    ]
   },
   {
@@ -112,16 +112,29 @@
    ]
   },
   {
-   "id": "steam-4508340",
-   "title": "NTE: Neverness to Everness",
-   "url": "https://store.steampowered.com/app/4508340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1793179644",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/484aa9396c520d414b5b3f5c619f96e0edc8e50c/capsule_sm_120.jpg?t=1794352536",
+   "id": "steam-236390",
+   "title": "War Thunder",
+   "url": "https://store.steampowered.com/app/236390/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/236390/38881c549e623fe432af4e7b4bc3952b443906f5/header.jpg?t=1791988478",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/1ebb0fdc38fc6f27dae69ba750d0d489ed55fe6f/capsule_sm_120.jpg?t=1794405808",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-2507950",
+   "title": "Delta Force",
+   "url": "https://store.steampowered.com/app/2507950/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/09ef134458549352e5b5a06ed7f97cf00d729b62/header_alt_assets_14.jpg?t=1790238079",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2507950/978829ad97a5139127a4fccf35d8a95ef6b0f9e3/capsule_sm_120_alt_assets_16.jpg?t=1794276014",
    "headerChecked": true,
    "genres": [
     "Acción",
     "Aventura",
-    "Rol"
+    "Multijugador masivo"
    ]
   },
   {
@@ -133,45 +146,6 @@
    "headerChecked": true,
    "genres": [
     "Acción"
-   ]
-  },
-  {
-   "id": "steam-2767030",
-   "title": "Marvel Rivals",
-   "url": "https://store.steampowered.com/app/2767030/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2767030/c61f65c5968af5d85b0393005991ecee0184fcaf/header.jpg?t=1792140776",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/e7870f67a65dd3e9a9d04021260e62bf2a637e33/capsule_sm_120.jpg?t=1792140776",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Casual"
-   ]
-  },
-  {
-   "id": "steam-3557620",
-   "title": "Blue Archive",
-   "url": "https://store.steampowered.com/app/3557620/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3557620/b723141fa8cf93bb2bb56d03789561341a2cad62/header.jpg?t=1779773548",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3557620/1bf892b91fc9832afaf2478fad7ed7e35e2d1dec/capsule_sm_120.jpg?t=1779773548",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-3513350",
-   "title": "Wuthering Waves",
-   "url": "https://store.steampowered.com/app/3513350/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3513350/fb969539fb0373bd5ee07c767bf9dafa4afae5c3/header.jpg?t=1791864800",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3513350/ccb275636063d8aa7fe8f74afc5fb369eb68c505/capsule_sm_120.jpg?t=1791864800",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
    ]
   },
   {
@@ -188,16 +162,16 @@
    ]
   },
   {
-   "id": "steam-236390",
-   "title": "War Thunder",
-   "url": "https://store.steampowered.com/app/236390/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/236390/38881c549e623fe432af4e7b4bc3952b443906f5/header.jpg?t=1791988478",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/e791436bba88d064d1837cf85f38d01ca09886e4/capsule_sm_120.jpg?t=1793692939",
+   "id": "steam-2767030",
+   "title": "Marvel Rivals",
+   "url": "https://store.steampowered.com/app/2767030/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2767030/c61f65c5968af5d85b0393005991ecee0184fcaf/header.jpg?t=1792140776",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/e7870f67a65dd3e9a9d04021260e62bf2a637e33/capsule_sm_120.jpg?t=1792140776",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Multijugador masivo",
-    "Simuladores"
+    "Aventura",
+    "Casual"
    ]
   },
   {
@@ -225,6 +199,19 @@
    ]
   },
   {
+   "id": "steam-3513350",
+   "title": "Wuthering Waves",
+   "url": "https://store.steampowered.com/app/3513350/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3513350/fb969539fb0373bd5ee07c767bf9dafa4afae5c3/header.jpg?t=1791864800",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3513350/ccb275636063d8aa7fe8f74afc5fb369eb68c505/capsule_sm_120.jpg?t=1791864800",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
    "id": "steam-4126040",
    "title": "Aniimo",
    "url": "https://store.steampowered.com/app/4126040/",
@@ -236,6 +223,15 @@
     "Aventura",
     "Multijugador masivo"
    ]
+  },
+  {
+   "id": "steam-1973530",
+   "title": "Limbus Company",
+   "url": "https://store.steampowered.com/app/1973530/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1973530/header.jpg?t=1792746022",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1973530/capsule_sm_120.jpg?t=1793975559",
+   "headerChecked": true,
+   "genres": []
   },
   {
    "id": "steam-359550",
@@ -274,35 +270,38 @@
    ]
   },
   {
-   "id": "steam-1973530",
-   "title": "Limbus Company",
-   "url": "https://store.steampowered.com/app/1973530/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1973530/header.jpg?t=1792746022",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1973530/capsule_sm_120.jpg?t=1793975559",
+   "id": "steam-3557620",
+   "title": "Blue Archive",
+   "url": "https://store.steampowered.com/app/3557620/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3557620/b723141fa8cf93bb2bb56d03789561341a2cad62/header.jpg?t=1779773548",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3557620/1bf892b91fc9832afaf2478fad7ed7e35e2d1dec/capsule_sm_120.jpg?t=1779773548",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Casual",
+    "Rol"
+   ]
+  },
+  {
+   "id": "steam-1049590",
+   "title": "Eternal Return",
+   "url": "https://store.steampowered.com/app/1049590/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
    "headerChecked": true,
    "genres": []
   },
   {
-   "id": "steam-3028330",
-   "title": "Battlefield™ REDSEC",
-   "url": "https://store.steampowered.com/app/3028330/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3028330/7f156ef258b0b34011363f8da61b7e2a714232c7/header.jpg?t=1792018418",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3028330/f7ec6648f9de149b098b8b9674aa99a0b1c284c8/capsule_sm_120.jpg?t=1794335883",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
-   ]
-  },
-  {
-   "id": "steam-1085660",
-   "title": "Destiny 2",
-   "url": "https://store.steampowered.com/app/1085660/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
+   "id": "steam-552990",
+   "title": "World of Warships",
+   "url": "https://store.steampowered.com/app/552990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/227928b1615d13c15815e49438a1daa6a779af33/capsule_sm_120_alt_assets_18.jpg?t=1793875646",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Aventura"
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
@@ -330,35 +329,47 @@
    ]
   },
   {
-   "id": "steam-3564740",
-   "title": "Where Winds Meet",
-   "url": "https://store.steampowered.com/app/3564740/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3564740/6083e91454cf6ad67242a0799c4fc7d0dd3f8bde/header.jpg?t=1792379585",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3564740/976daf5b3b9d08577449111e7f8cb9bd6e6a624d/capsule_sm_120_alt_assets_11.jpg?t=1794281467",
+   "id": "steam-438100",
+   "title": "VRChat",
+   "url": "https://store.steampowered.com/app/438100/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/438100/header.jpg?t=1762366454",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/438100/capsule_sm_120.jpg?t=1762366454",
    "headerChecked": true,
    "genres": [
-    "Acción",
     "Aventura",
-    "Casual"
+    "Casual",
+    "Multijugador masivo"
    ]
   },
   {
-   "id": "steam-2073850",
-   "title": "THE FINALS",
-   "url": "https://store.steampowered.com/app/2073850/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073850/4b0efa1275c8cedc030209eb174af726a5ca1776/header.jpg?t=1792501373",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/f68c29ce93dd6eedf9d3c71c26a122e87a1c14c3/capsule_sm_120.jpg?t=1792501373",
+   "id": "steam-3028330",
+   "title": "Battlefield™ REDSEC",
+   "url": "https://store.steampowered.com/app/3028330/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3028330/7f156ef258b0b34011363f8da61b7e2a714232c7/header.jpg?t=1792018418",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3028330/f7ec6648f9de149b098b8b9674aa99a0b1c284c8/capsule_sm_120.jpg?t=1794335883",
    "headerChecked": true,
    "genres": [
     "Acción"
    ]
   },
   {
-   "id": "steam-552990",
-   "title": "World of Warships",
-   "url": "https://store.steampowered.com/app/552990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/227928b1615d13c15815e49438a1daa6a779af33/capsule_sm_120_alt_assets_18.jpg?t=1793875646",
+   "id": "steam-1085660",
+   "title": "Destiny 2",
+   "url": "https://store.steampowered.com/app/1085660/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/0ccf0dc0a8c4ec078db7ab99ddc820b2fa884441/header.jpg?t=1781815889",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/953a00adc58cc0758102a5026dda6f2a76a5a6a1/capsule_sm_120.jpg?t=1781815889",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura"
+   ]
+  },
+  {
+   "id": "steam-1407200",
+   "title": "World of Tanks",
+   "url": "https://store.steampowered.com/app/1407200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1407200/245a27faaf17a0c331a98dcd56f6815f68f92ab7/header_alt_assets_28.jpg?t=1793879118",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1407200/d7ebe4d7dfb1fe42c7eb4ded656356199dd4ac82/capsule_sm_120.jpg?t=1793879118",
    "headerChecked": true,
    "genres": [
     "Acción",
@@ -380,15 +391,6 @@
    ]
   },
   {
-   "id": "steam-1049590",
-   "title": "Eternal Return",
-   "url": "https://store.steampowered.com/app/1049590/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049590/72918ebacd0d4f8537969dc8b976ceb98f681cab/header.jpg?t=1789544685",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049590/0c0cd980ad700e8ca9a3200273d62469e561bd7e/capsule_sm_120.jpg?t=1789544685",
-   "headerChecked": true,
-   "genres": []
-  },
-  {
    "id": "steam-2807960",
    "title": "Battlefield™ 6",
    "url": "https://store.steampowered.com/app/2807960/",
@@ -400,16 +402,14 @@
    ]
   },
   {
-   "id": "steam-1041320",
-   "title": "Lords Mobile",
-   "url": "https://store.steampowered.com/app/1041320/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1041320/header.jpg?t=1785907023",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1041320/capsule_sm_120.jpg?t=1785907023",
+   "id": "steam-2073850",
+   "title": "THE FINALS",
+   "url": "https://store.steampowered.com/app/2073850/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2073850/4b0efa1275c8cedc030209eb174af726a5ca1776/header.jpg?t=1792501373",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2073850/f68c29ce93dd6eedf9d3c71c26a122e87a1c14c3/capsule_sm_120.jpg?t=1792501373",
    "headerChecked": true,
    "genres": [
-    "Multijugador masivo",
-    "Rol",
-    "Estrategia"
+    "Acción"
    ]
   },
   {
@@ -422,6 +422,19 @@
    "genres": [
     "Multijugador masivo",
     "Rol"
+   ]
+  },
+  {
+   "id": "steam-3564740",
+   "title": "Where Winds Meet",
+   "url": "https://store.steampowered.com/app/3564740/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3564740/6083e91454cf6ad67242a0799c4fc7d0dd3f8bde/header.jpg?t=1792379585",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3564740/976daf5b3b9d08577449111e7f8cb9bd6e6a624d/capsule_sm_120_alt_assets_11.jpg?t=1794281467",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Casual"
    ]
   },
   {
@@ -438,42 +451,16 @@
    ]
   },
   {
-   "id": "steam-438100",
-   "title": "VRChat",
-   "url": "https://store.steampowered.com/app/438100/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/438100/header.jpg?t=1762366454",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/438100/capsule_sm_120.jpg?t=1762366454",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-1407200",
-   "title": "World of Tanks",
-   "url": "https://store.steampowered.com/app/1407200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1407200/245a27faaf17a0c331a98dcd56f6815f68f92ab7/header_alt_assets_28.jpg?t=1793879118",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1407200/d7ebe4d7dfb1fe42c7eb4ded656356199dd4ac82/capsule_sm_120.jpg?t=1793879118",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
-   ]
-  },
-  {
-   "id": "steam-2074920",
-   "title": "The First Descendant",
-   "url": "https://store.steampowered.com/app/2074920/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2074920/dc8ac02c8328d66f2f78ea8b83472bdd7e281a62/header.jpg?t=1789716956",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2074920/60eef59662d80f0b38492a8061e018c2613afefa/capsule_sm_120.jpg?t=1789716956",
+   "id": "steam-238960",
+   "title": "Path of Exile",
+   "url": "https://store.steampowered.com/app/238960/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/19a8acaddb5659ef3c1c91e5d6beb89abf10718d/header.jpg?t=1794180550",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/c2aa069ce94eb90a7a4cde9314d2c240880e8475/capsule_sm_120.jpg?t=1794180550",
    "headerChecked": true,
    "genres": [
     "Acción",
     "Aventura",
-    "Rol"
+    "Indie"
    ]
   },
   {
@@ -486,6 +473,17 @@
    "genres": [
     "Simuladores",
     "Deportes"
+   ]
+  },
+  {
+   "id": "steam-767560",
+   "title": "War Robots",
+   "url": "https://store.steampowered.com/app/767560/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/767560/0d291b863576b43b588ab30a49d9991aea694ed8/header.jpg?t=1790758165",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/767560/84c2908ff77748d5be8ab7ded9a02427845c2fdf/capsule_sm_120.jpg?t=1790758165",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
    ]
   }
  ]
