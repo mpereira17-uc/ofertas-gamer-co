@@ -1,6 +1,32 @@
 {
- "updatedAt": "2026-11-12T12:52:27Z",
+ "updatedAt": "2026-11-12T22:17:25Z",
  "items": [
+  {
+   "id": "gp-3851",
+   "title": "The Legend of California (Playtest)",
+   "type": "early access",
+   "group": "steam",
+   "platforms": "PC, Steam",
+   "worth": "",
+   "endsOn": "2026-11-18",
+   "image": "https://www.gamerpower.com/offers/1b/6af60c747ec99.jpg",
+   "url": "https://www.gamerpower.com/open/the-legend-of-california-playtest-steam-key-giveaway",
+   "firstSeen": "2026-11-12T22:17:25Z",
+   "active": true
+  },
+  {
+   "id": "gp-3850",
+   "title": "Knightica",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Android, iOS, Epic Games Store",
+   "worth": "$14.99",
+   "endsOn": "2026-11-19",
+   "image": "https://www.gamerpower.com/offers/1b/6af5f33e49913.jpg",
+   "url": "https://www.gamerpower.com/open/knightica-epic-games-giveaway",
+   "firstSeen": "2026-11-12T22:17:25Z",
+   "active": true
+  },
   {
    "id": "gp-3848",
    "title": "RUNZ Playtest",
@@ -12,32 +38,6 @@
    "image": "https://www.gamerpower.com/offers/1b/6af35f1968895.jpg",
    "url": "https://www.gamerpower.com/open/runz-playtest-steam-key-giveaway",
    "firstSeen": "2026-11-10T21:50:11Z",
-   "active": true
-  },
-  {
-   "id": "gp-3846",
-   "title": "Chants of Sennaar",
-   "type": "game",
-   "group": "otros",
-   "platforms": "Android, iOS",
-   "worth": "$7.99",
-   "endsOn": "2026-11-12",
-   "image": "https://www.gamerpower.com/offers/1b/6aecabf3ea6a1.jpg",
-   "url": "https://www.gamerpower.com/open/chants-of-sennaar-mobile-giveaway",
-   "firstSeen": "2026-11-05T22:04:59Z",
-   "active": true
-  },
-  {
-   "id": "gp-3845",
-   "title": "Flotsam",
-   "type": "game",
-   "group": "epic",
-   "platforms": "PC, Epic Games Store",
-   "worth": "$24.99",
-   "endsOn": "2026-11-12",
-   "image": "https://www.gamerpower.com/offers/1b/6aeca99004384.jpg",
-   "url": "https://www.gamerpower.com/open/flotsam-epic-games-giveaway",
-   "firstSeen": "2026-11-05T22:04:59Z",
    "active": true
   },
   {
@@ -247,6 +247,32 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3846",
+   "title": "Chants of Sennaar",
+   "type": "game",
+   "group": "otros",
+   "platforms": "Android, iOS",
+   "worth": "$7.99",
+   "endsOn": "2026-11-12",
+   "image": "https://www.gamerpower.com/offers/1b/6aecabf3ea6a1.jpg",
+   "url": "https://www.gamerpower.com/open/chants-of-sennaar-mobile-giveaway",
+   "firstSeen": "2026-11-05T22:04:59Z",
+   "active": false
+  },
+  {
+   "id": "gp-3845",
+   "title": "Flotsam",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$24.99",
+   "endsOn": "2026-11-12",
+   "image": "https://www.gamerpower.com/offers/1b/6aeca99004384.jpg",
+   "url": "https://www.gamerpower.com/open/flotsam-epic-games-giveaway",
+   "firstSeen": "2026-11-05T22:04:59Z",
+   "active": false
   },
   {
    "id": "gp-3847",
