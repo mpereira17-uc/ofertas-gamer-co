@@ -2,8 +2,10 @@ name: Calidad
 
 on:
   pull_request:
+  # En todas las ramas, también main. Los commits automáticos del bot solo tocan data/ y docs/,
+  # así que no disparan esta revisión; cualquier cambio de código sí.
   push:
-    branches-ignore: [main]
+    paths-ignore: ["data/**", "docs/**"]
   workflow_dispatch:
 
 permissions:
