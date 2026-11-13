@@ -1218,6 +1218,16 @@ document.addEventListener("error", function (ev) {
       list.forEach(function (b, k) { if (k === i) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
     });
     cur = i;
+    spent = 0;
+    bar();
+  };
+  // Barra de progreso de la oferta activa: avanza con el tiempo real del cambio automático
+  // y se queda quieta mientras el cursor está encima, hay foco o está en pausa.
+  var STEP = 6000, TICK = 200, spent = 0;
+  var bar = function () {
+    var p = stopped ? 0 : Math.min(1, spent / STEP);
+    box.style.setProperty("--sh-p", String(Math.round(p * 1000) / 1000));
+    box.classList.toggle("paused", hold || stopped);
   };
   dots.forEach(function (b) { b.addEventListener("click", function () { go(+b.getAttribute("data-go")); }); });
   thumbs.forEach(function (a) {
@@ -1231,15 +1241,20 @@ document.addEventListener("error", function (ev) {
   if (pause) {
     pause.addEventListener("click", function () {
       stopped = !stopped;
+      spent = 0;
+      bar();
       pause.setAttribute("aria-pressed", stopped ? "true" : "false");
       pause.setAttribute("aria-label", stopped ? "Seguir con el cambio automático" : "Pausar el cambio automático");
     });
   }
-  box.addEventListener("pointerenter", function () { hold = true; });
-  box.addEventListener("pointerleave", function () { hold = false; });
-  box.addEventListener("focusin", function () { hold = true; });
-  box.addEventListener("focusout", function () { hold = false; });
+  box.addEventListener("pointerenter", function () { hold = true; bar(); });
+  box.addEventListener("pointerleave", function () { hold = false; bar(); });
+  box.addEventListener("focusin", function () { hold = true; bar(); });
+  box.addEventListener("focusout", function () { hold = false; bar(); });
+  if (calm) return;
   setInterval(function () {
-    if (!hold && !stopped && !document.hidden) go(cur + 1);
-  }, 6000);
+    if (hold || stopped || document.hidden) return;
+    spent += TICK;
+    if (spent >= STEP) go(cur + 1); else bar();
+  }, TICK);
 })();

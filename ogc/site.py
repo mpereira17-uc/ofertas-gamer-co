@@ -896,7 +896,9 @@ class Site:
             box = f'box store-{e(o["storeId"])} tilt-{self.tilt(o)}' + ("" if o.get("capsule") else " no-capsule")
             slides.append(
                 f'<li class="sh-slide{" on" if i == 0 else ""}{" is-free" if free else ""}" data-i="{i}"{"" if i == 0 else " hidden"}>'
-                f'<img class="sh-bg" src="{img}" alt="" width="460" height="215" loading="lazy" decoding="async">'
+                + (f'<img class="sh-bg sh-hero" src="{e(o.get("hero") or o["image"])}" alt="" width="1920" height="620"{lazy} decoding="async">'
+                 if (o.get("hero") or not o.get("capsule")) else f'<img class="sh-bg" src="{img}" alt="" width="460" height="215" loading="lazy" decoding="async">')
+                +
                 f'<a class="sh-art {box}" href="{e(page)}" tabindex="-1" aria-hidden="true"><img src="{art}" data-fallback="{img}" alt="" width="300" height="450"{lazy} decoding="async">{off}</a>'
                 f'<div class="sh-copy">{self.store_chip(o)}'
                 f'<h2 class="sh-title"><a href="{e(page)}">{e(o["title"])}</a></h2>'
@@ -908,7 +910,9 @@ class Site:
                 '</div></li>')
             dots.append(f'<li><button type="button" data-go="{i}" aria-label="Oferta {i + 1}: {e(o["title"])}"{" aria-current=\"true\"" if i == 0 else ""}></button></li>')
             tag = "Gratis" if free else (f"-{pct}%" if pct else "")
+            short = "Gratis" if free else (f"{self.pesos(cop_now)} aprox." if cop_now else money(o["currentPrice"], o["currency"]))
             thumbs.append(f'<li><a class="spine store-{e(o["storeId"])}" href="{e(page)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""}><img src="{art}" data-fallback="{img}" alt="" width="300" height="450" loading="lazy" decoding="async">'
+                          f'<span class="sh-t-price{" free" if free else ""}">{e(short)}</span><span class="sh-t-bar" aria-hidden="true"></span>'
                           f'<span class="sh-t-name">{e(o["title"])}</span>' + (f'<span class="sh-t-off{" free" if free else ""}">{e(tag)}</span>' if tag else "") + '</a></li>')
         return (f'<section class="show" aria-label="Ofertas destacadas" data-n="{len(picks)}"><div class="sh-card">'
                 f'<ol class="sh-list">{"".join(slides)}</ol>'

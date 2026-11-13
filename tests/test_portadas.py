@@ -36,8 +36,22 @@ class PortadasTest(unittest.TestCase):
         self.assertTrue(out[0]["capsule"].startswith("https://shared.fastly.steamstatic.com/"))
         self.assertNotIn("capsule", out[-1])
 
+    def test_guarda_tambien_la_imagen_panoramica(self):
+        def fetch(url):
+            return {"response": {"store_items": [{"appid": 9, "assets": {"asset_url_format": "steam/apps/9/${FILENAME}?t=2",
+                    "library_capsule": "library_600x900.jpg", "library_hero": "library_hero.jpg"}}]}}
+        cache, _ = capsules.update([{"id": "a", "steamAppID": 9}], {}, NOW, fetch)
+        out = capsules.attach([{"id": "a", "steamAppID": 9}], cache)
+        self.assertEqual(out[0]["hero"], "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/9/library_hero.jpg?t=2")
+
+    def test_pide_de_nuevo_lo_guardado_sin_panoramica(self):
+        old = {"1": {"url": "https://shared.fastly.steamstatic.com/x/1.jpg", "at": "2026-11-12T00:00:00Z"}}
+        asked = []
+        capsules.update([{"id": "a", "steamAppID": 1}], old, NOW, lambda url: asked.append(url) or items(1))
+        self.assertEqual(len(asked), 1)
+
     def test_no_repite_lo_vigente_y_renueva_lo_viejo(self):
-        cache = {"1": {"url": "https://shared.fastly.steamstatic.com/x/1.jpg", "at": "2026-11-10T00:00:00Z"},
+        cache = {"1": {"url": "https://shared.fastly.steamstatic.com/x/1.jpg", "hero": "", "at": "2026-11-10T00:00:00Z"},
                  "2": {"url": "https://shared.fastly.steamstatic.com/x/2.jpg", "at": "2026-10-01T00:00:00Z"}}
         asked = []
 
