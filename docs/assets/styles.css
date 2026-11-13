@@ -1946,3 +1946,48 @@ main>.wrap>.how,.how{margin-top:56px;padding:28px;border-radius:16px;background:
 .how .how-steps.big li>span:last-child{color:var(--muted)}
 .is-awaited .box,.is-soon .box{--spine:#8b93a7}
 .how .how-steps.big li{flex-wrap:nowrap}
+
+/* ---- Vitrina v8.2 (2026-11-13, pepe: «más juegos, un cuadro más interesante, se ve plano y vacío»):
+   fondo panorámico nítido de Steam, caja y texto abajo a la izquierda, y en escritorio una columna con las
+   seis destacadas (caja, nombre y precio) con una barra que avanza en la activa ---- */
+.sh-bg.sh-hero{inset:0;width:100%;height:100%;filter:none;opacity:1;object-fit:cover;object-position:center top}
+.sh-slide:has(.sh-hero)::before{background:linear-gradient(90deg,rgba(11,12,16,.94) 0%,rgba(11,12,16,.6) 42%,rgba(11,12,16,.05) 78%),linear-gradient(0deg,rgba(11,12,16,.96) 0%,rgba(11,12,16,0) 58%)}
+.sh-slide:has(.sh-hero) .sh-copy{text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.sh-slide:has(.sh-art.no-capsule){grid-template-columns:minmax(0,1fr);grid-template-areas:"copy"}
+.sh-slide .sh-art.no-capsule{display:none}
+.sh-t-price,.sh-t-bar{display:none}
+@media (min-width:901px){
+ .sh-slide,.sh-slide.on{grid-template-columns:170px minmax(0,1fr);align-items:end;gap:34px;min-height:480px;padding:40px 44px}
+ .sh-slide:has(.sh-art.no-capsule){grid-template-columns:minmax(0,1fr)}
+ .sh-slide .sh-copy{max-width:560px}
+}
+@media (min-width:1100px){
+ .show{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:14px;align-items:stretch}
+ .sh-card{border-radius:18px}
+ .sh-pick{display:flex;flex-direction:column;margin:0;padding:10px;border:1px solid var(--border);border-radius:18px;background:#101218}
+ .sh-thumbs{flex:1;flex-direction:column;gap:4px;overflow:visible}
+ .sh-thumbs li{flex:1 1 0;min-height:0;display:flex}
+ .sh-thumbs a.spine{position:relative;display:grid;grid-template-columns:46px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;column-gap:12px;row-gap:2px;width:100%;aspect-ratio:auto;padding:8px 10px;border-left:0;border-radius:12px;background:transparent;opacity:1;outline:0;overflow:hidden;transform:none}
+ .sh-thumbs a.spine img{grid-row:1/3;width:46px;height:69px;border-radius:2px 5px 5px 2px;border-left:3px solid var(--spine);object-fit:cover}
+ .sh-thumbs .sh-t-name{position:static;width:auto;height:auto;clip:auto;align-self:end;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:600 .9rem/1.25 var(--ui);color:var(--soft)}
+ .sh-t-price{display:block;align-self:start;font:700 1rem/1.2 var(--num);color:#fff}
+ .sh-t-price.free{color:var(--free)}
+ .sh-thumbs a.spine:hover{background:#171a21;transform:none;opacity:1}
+ .sh-thumbs a.spine[aria-current="true"]{background:#1c1f28;outline:0}
+ .sh-thumbs a.spine[aria-current="true"] .sh-t-name{color:#fff}
+ .sh-t-bar{display:block;position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--sticker)}
+ .sh-thumbs a.spine[aria-current="true"] .sh-t-bar{width:calc(var(--sh-p,0) * 100%);transition:width .2s linear}
+ .show.paused .sh-thumbs a.spine[aria-current="true"] .sh-t-bar{opacity:.45}
+}
+@media (max-width:900px){
+ .sh-slide:has(.sh-hero){padding-top:46vw}
+ .sh-slide:has(.sh-hero) .sh-art.box{width:min(34vw,140px);margin-top:-18vw}
+ .sh-slide:has(.sh-hero)::before{background:linear-gradient(0deg,#101218 42%,rgba(16,18,24,.35) 75%,rgba(16,18,24,0) 100%)}
+}
+@media (prefers-reduced-motion:reduce){.sh-t-bar{display:none!important}}
+@media (min-width:1100px){
+ .sh-thumbs a.spine,.sh-thumbs a.spine:hover{text-decoration:none}
+ .sh-thumbs .sh-t-name{grid-column:2;grid-row:1}
+ .sh-t-price{grid-column:2;grid-row:2}
+ .sh-pick::before{content:"Destacados de hoy";display:block;padding:6px 10px 8px;color:var(--muted);font:700 .72rem/1 var(--ui);letter-spacing:.08em;text-transform:uppercase}
+}

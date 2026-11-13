@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T21:52:01Z",
+ "updatedAt": "2026-11-13T23:02:12Z",
  "games": [
   {
    "id": "steam-730",
@@ -136,6 +136,19 @@
    ]
   },
   {
+   "id": "steam-238960",
+   "title": "Path of Exile",
+   "url": "https://store.steampowered.com/app/238960/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/19a8acaddb5659ef3c1c91e5d6beb89abf10718d/header.jpg?t=1794180550",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/36db623d3337b00788bc28606d926e2a4fbefab0/capsule_sm_120.jpg?t=1794430224",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Indie"
+   ]
+  },
+  {
    "id": "steam-236390",
    "title": "War Thunder",
    "url": "https://store.steampowered.com/app/236390/",
@@ -159,19 +172,6 @@
     "Acción",
     "Aventura",
     "Rol"
-   ]
-  },
-  {
-   "id": "steam-238960",
-   "title": "Path of Exile",
-   "url": "https://store.steampowered.com/app/238960/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/19a8acaddb5659ef3c1c91e5d6beb89abf10718d/header.jpg?t=1794180550",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238960/36db623d3337b00788bc28606d926e2a4fbefab0/capsule_sm_120.jpg?t=1794430224",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Indie"
    ]
   },
   {
@@ -208,6 +208,17 @@
    ]
   },
   {
+   "id": "steam-359550",
+   "title": "Tom Clancy's Rainbow Six Siege",
+   "url": "https://store.steampowered.com/app/359550/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ee838739b8241c6f58361b88ae769dfd64dc4b87/header_alt_assets_27_spanish.jpg?t=1792001976",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/3530857a30ecb9ed4e6b9c3df9d7e162d9008aae/capsule_sm_120_alt_assets_28.jpg?t=1792001976",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-2507950",
    "title": "Delta Force",
    "url": "https://store.steampowered.com/app/2507950/",
@@ -218,17 +229,6 @@
     "Acción",
     "Aventura",
     "Multijugador masivo"
-   ]
-  },
-  {
-   "id": "steam-359550",
-   "title": "Tom Clancy's Rainbow Six Siege",
-   "url": "https://store.steampowered.com/app/359550/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ee838739b8241c6f58361b88ae769dfd64dc4b87/header_alt_assets_27_spanish.jpg?t=1792001976",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/3530857a30ecb9ed4e6b9c3df9d7e162d9008aae/capsule_sm_120_alt_assets_28.jpg?t=1792001976",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
    ]
   },
   {
@@ -326,19 +326,6 @@
    ]
   },
   {
-   "id": "steam-4508340",
-   "title": "NTE: Neverness to Everness",
-   "url": "https://store.steampowered.com/app/4508340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1793179644",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/484aa9396c520d414b5b3f5c619f96e0edc8e50c/capsule_sm_120.jpg?t=1794352536",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
    "id": "steam-1085660",
    "title": "Destiny 2",
    "url": "https://store.steampowered.com/app/1085660/",
@@ -348,19 +335,6 @@
    "genres": [
     "Acción",
     "Aventura"
-   ]
-  },
-  {
-   "id": "steam-444200",
-   "title": "World of Tanks Blitz",
-   "url": "https://store.steampowered.com/app/444200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/43a7d4c3c4fe526752a83b212e7f91e0955aec47/header_alt_assets_22.jpg?t=1794571521",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/a47a70688956b7db7f5a607f073f7e89beda7718/capsule_sm_120_alt_assets_22.jpg?t=1794571521",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Multijugador masivo",
-    "Simuladores"
    ]
   },
   {
@@ -377,6 +351,19 @@
    ]
   },
   {
+   "id": "steam-4508340",
+   "title": "NTE: Neverness to Everness",
+   "url": "https://store.steampowered.com/app/4508340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1793179644",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/484aa9396c520d414b5b3f5c619f96e0edc8e50c/capsule_sm_120.jpg?t=1794352536",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
    "id": "steam-552990",
    "title": "World of Warships",
    "url": "https://store.steampowered.com/app/552990/",
@@ -386,6 +373,32 @@
    "genres": [
     "Acción",
     "Multijugador masivo",
+    "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-444200",
+   "title": "World of Tanks Blitz",
+   "url": "https://store.steampowered.com/app/444200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/43a7d4c3c4fe526752a83b212e7f91e0955aec47/header_alt_assets_22.jpg?t=1794571521",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/a47a70688956b7db7f5a607f073f7e89beda7718/capsule_sm_120_alt_assets_22.jpg?t=1794571521",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-1222670",
+   "title": "The Sims™ 4",
+   "url": "https://store.steampowered.com/app/1222670/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/header.jpg?t=1790028362",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222670/capsule_sm_120.jpg?t=1793293287",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Casual",
     "Simuladores"
    ]
   },
@@ -400,19 +413,6 @@
     "Rol",
     "Simuladores",
     "Estrategia"
-   ]
-  },
-  {
-   "id": "steam-1222670",
-   "title": "The Sims™ 4",
-   "url": "https://store.steampowered.com/app/1222670/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/header.jpg?t=1790028362",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222670/capsule_sm_120.jpg?t=1793293287",
-   "headerChecked": true,
-   "genres": [
-    "Aventura",
-    "Casual",
-    "Simuladores"
    ]
   },
   {
