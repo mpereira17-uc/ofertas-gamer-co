@@ -2014,3 +2014,27 @@ main>.wrap>.how,.how{margin-top:56px;padding:28px;border-radius:16px;background:
 .code-hub2.has-new a{border-color:rgba(47,214,123,.45)}
 .code-warn{border-color:rgba(255,171,46,.4)}
 @media (prefers-reduced-motion:reduce){.code-hub2 a:hover{transform:none}}
+
+/* ---- Reseñas de Steam y Steam Deck en la caja (2026-11-13) ---- */
+.card-rev{margin:2px 0 0;font:600 .78rem/1.3 var(--ui)}
+.card-rev.rev-pos{color:#66c0f4}
+.card-rev.rev-mix{color:#b9a074}
+.card-rev.rev-neg{color:#e57373}
+.deck-badge{display:inline-flex;align-items:center;padding:1px 6px;border-radius:5px;font:700 .68rem/1.3 var(--ui);letter-spacing:.02em}
+.deck-badge.deck-verified{background:rgba(89,191,64,.16);color:#8fdc6f}
+.deck-badge.deck-playable{background:rgba(255,203,61,.14);color:#ffd96b}
+.store-xbox{--spine:#107c10}
+.sticker.gp{background:#107c10;color:#fff;font-size:.9rem;letter-spacing:.03em}
+.seal.gp-new{background:var(--free);color:#05210f}
+
+/* ---- Aviso al volver: favoritos que bajaron de precio (2026-11-13) ---- */
+.fav-drops{position:relative;margin:22px 0 0;padding:16px 46px 16px 18px;border:1px solid rgba(47,214,123,.45);border-radius:14px;background:rgba(47,214,123,.08)}
+.fav-drops .fd-title{margin:0 0 8px;font:700 1rem/1.3 var(--head);color:#fff}
+.fav-drops ul{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.fav-drops li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 14px}
+.fav-drops li a{color:var(--text);font-weight:600}
+.fav-drops .fd-price{color:var(--free);font:700 .95rem/1.3 var(--num)}
+.fav-drops .fd-close{position:absolute;top:8px;right:10px;width:32px;height:32px;border:0;border-radius:8px;background:none;color:var(--soft);font-size:1.4rem;line-height:1;cursor:pointer}
+.fav-drops .fd-close:hover{background:rgba(255,255,255,.08);color:#fff}
+ul.grid:not(.x)>.card .card-meta,ul.grid:not(.x)>.card .card-meta:not(:has(.mc-score)){flex-wrap:wrap;row-gap:4px}
+ul.grid:not(.x)>.card .card-meta .cm-store{white-space:nowrap}
