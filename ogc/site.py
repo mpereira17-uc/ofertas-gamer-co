@@ -663,6 +663,65 @@ class Site:
         return (f'<section class="soon" aria-labelledby="soon-h"><h2 id="soon-h">{ICONS["clock"]} Terminan pronto</h2>'
                 f'<ul class="soon-strip">{items}</ul></section>')
 
+    def upcoming_free_boxes(self):
+        """Cajas «PRONTO» con los próximos gratis que Epic ya anunció (datos reales), para el estante de gratis."""
+        out = []
+        for g in (getattr(self, "epic_next", []) or [])[:6]:
+            if not g.get("title") or not (g.get("startsAt") or "")[:10]:
+                continue
+            img = light_image(g["image"]) if (g.get("image") or "").startswith("https://") else "assets/placeholder.svg"
+            out.append(f'<li class="card is-soon"><div class="box store-epic tilt-{self.tilt(g)} no-capsule">'
+                       f'<img src="{e(img)}" alt="Imagen de {e(g["title"])}" width="300" height="450" loading="lazy" decoding="async">'
+                       f'<span class="box-name" aria-hidden="true">{e(g["title"])}</span><span class="sticker soon">PRONTO</span></div>'
+                       f'<div class="body"><h3 class="clamp2">{e(g["title"])}</h3><p class="card-meta"><span class="cm-store">Epic Games Store</span></p>'
+                       f'<div class="pricebox"><span class="now free">Gratis</span></div>'
+                       f'<p class="left">{ICONS["calendar"]}<span>Desde el {e(day_es(g["startsAt"][:10]))}</span></p>'
+                       f'<div class="actions">{ext_link(g["url"], "Ver en Epic", cls="btn", label=f"Ver {g["title"]} en Epic Games Store (abre en otra pestaña)")}</div></div></li>')
+        return "".join(out)
+
+    def free_shelf(self, free):
+        """Estante «Gratis esta semana»: los gratis de hoy y, detrás, los próximos que Epic ya anunció."""
+        soon = self.upcoming_free_boxes()
+        if not free and not soon:
+            return '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'
+        html = self.offer_list(free[:12], with_filters=False, list_id="free-home", slider=True) if free else             '<ul class="grid board" id="free-home" data-slider aria-label="Próximos juegos gratis: desliza o usa las flechas"></ul>'
+        i = html.rindex("</ul>")
+        return html[:i] + soon + html[i:]
+
+    def awaited_shelf(self, games, count=12):
+        """Estante «Los más esperados»: los próximos estrenos más populares como cajas, con la fecha en el sticker."""
+        soon = sorted([g for g in games if g.get("comingSoon") and g.get("image")], key=self.rank)[:count]
+        if len(soon) < 4:
+            return ""
+        items = []
+        for g in soon:
+            page = self.detail.get(g["id"])
+            href = e(page or g["url"])
+            out = "" if page else ' target="_blank" rel="noopener noreferrer"'
+            when = date_label(g.get("date"), g.get("precision")) if g.get("date") else "Fecha por confirmar"
+            tag = "PRONTO"
+            if g.get("date"):
+                d = datetime.strptime(g["date"], "%Y-%m-%d")
+                tag = f"{d.day} {MONTHS_ES[d.month - 1][:3].upper()}" if g.get("precision") == "day" else f"{MONTHS_ES[d.month - 1][:3].upper()} {d.year}"
+            items.append(f'<li class="card is-awaited"><a class="box store-steam tilt-{self.tilt(g)} no-capsule" href="{href}"{out}>'
+                         f'<img src="{e(g["image"])}"{fallback(g)} alt="Imagen de {e(g["title"])}" width="300" height="450" loading="lazy" decoding="async">'
+                         f'<span class="box-name" aria-hidden="true">{e(g["title"])}</span><span class="sticker soon">{e(tag)}</span></a>'
+                         f'<div class="body"><h3 class="clamp2"><a href="{href}"{out}>{e(g["title"])}</a></h3>'
+                         f'<p class="left">{ICONS["calendar"]}<span>{e(when)}</span></p></div></li>')
+        return ('<section class="shelf shelf-awaited" aria-labelledby="awaited-h">'
+                + self.sec_head("", "Los más esperados", 'Los próximos estrenos más seguidos en Steam. <a href="lanzamientos.html">Ver el calendario</a>', "arrive", "awaited-h")
+                + f'<ul class="grid board" id="awaited-home" data-slider aria-label="{len(soon)} juegos: desliza o usa las flechas">{"".join(items)}</ul></section>')
+
+    def ending_shelf(self, live):
+        """Estante «Terminan pronto»: lo que se acaba en las próximas 72 horas, con las mismas cajas."""
+        soon = sorted((o for o in live if o.get("expiresAt") and 0 < (parse_iso(o["expiresAt"]) - self.now).total_seconds() < 72 * 3600),
+                      key=lambda o: o["expiresAt"])[:12]
+        if len(soon) < 3:
+            return ""
+        return ('<section class="shelf shelf-soon" aria-labelledby="soon-h">'
+                + self.sec_head("", "Terminan pronto", 'Se acaban en las próximas 72 horas. <a href="ofertas.html?orden=vence">Ver por fecha de fin</a>', "clock", "soon-h")
+                + self.offer_list(soon, with_filters=False, list_id="soon-home", slider=True) + "</section>")
+
     def cat_row(self, free, deals):
         """Accesos rápidos bajo el carrusel, como las categorías de una tienda. Los números son los de hoy."""
         under = sum(1 for o in deals if 0 < (self.cop_value(o.get("currentPrice"), o) or 0) < 20000)
@@ -2308,35 +2367,25 @@ class Site:
         self.layout("index.html", "Ofertas Gamer CO: juegos gratis y ofertas de PC para Colombia",
                     "Juegos gratis y descuentos de videojuegos para PC en tiendas oficiales, con vigencia, precio original y equivalente aproximado en pesos colombianos. Actualizado cada 4 horas.",
                     f"""{self.showcase(free[:2] + top)}
-{self.cat_row(free, deals)}
-{self.spline_box()}
-<section class="hero compact home-bar" aria-labelledby="home-h">
-<div class="hb-text"><h1 id="home-h">Juegos gratis y ofertas de PC, verificados para Colombia</h1>
+<section class="home-intro" aria-labelledby="home-h">
+<h1 id="home-h">Juegos gratis y ofertas de PC, verificados para Colombia</h1>
 <p class="lead">Hoy hay <strong>{len(free)} {"juego gratis" if len(free) == 1 else "juegos gratis"}</strong> y <strong>{len(deals)} ofertas</strong> de {sum(1 for n in self.store_counts.values() if n)} tiendas oficiales, con el precio en pesos y la hora en que terminan.</p>
-{updated_line}</div>
-{self.thermometer(live, free)}
+{updated_line}
 </section>
-{self.steam_strip(updated_dt)}
+{self.cat_row(free, deals)}
 <section class="shelf shelf-free" aria-labelledby="free-h">
-{self.sec_head("", 'Gratis esta semana', 'Te quedas con el juego para siempre si lo reclamas antes de que termine. <a href="juegos-gratis.html">Ver todos los gratis</a>', "ticket", "free-h")}
-{self.saved_box()}
-{self.offer_list(free[:8], with_filters=False, list_id="free-home", poster=True, slider=len(free) > 2) if free else '<p class="notice">No hay juegos gratis activos en este momento. Te avisamos en Telegram cuando salga uno.</p>'}
+{self.sec_head("", 'Gratis esta semana', 'Reclámalo antes de que termine y es tuyo para siempre. <a href="juegos-gratis.html">Ver todos</a>', "ticket", "free-h")}
+{self.free_shelf(free)}
 </section>
 {self.ad_slot("banner_after_hero")}
 <section class="shelf shelf-top" aria-labelledby="top-h">
-{self.sec_head("", 'Las mejores ofertas de hoy', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', "depart", "top-h")}
+{self.sec_head("", 'Las mejores ofertas de hoy', f'Por descuento, crítica y precio en Colombia. <a href="ofertas.html">Ver las {len(live)}</a>', "depart", "top-h")}
 {self.offer_list(top, with_filters=False, list_id="top-home", slider=True)}
-<p class="shelf-more"><a class="btn btn-primary" href="ofertas.html">Buscar entre las {len(live)} ofertas {ICONS["arrow"]}</a></p>
 </section>
-<div class="duo">{self.dotd_block(dotd)}{self.soon_strip(live)}</div>
+{self.ending_shelf(live)}
 {self.halloween_box(games or [], live)}
-<div class="duo duo-save">{self.savings_box(deals)}{self.duel_box(live)}</div>
-{self.store_marquee()}
-{self.curve_carousel(games or [], updated_dt)}
-{self.today_releases(games or [], updated_dt)}
-{self.trailers_box(games or [])}
-<div class="duo duo-learn">{self.how_we_verify()}{self.tools_grid()}</div>
-{self.journal()}
+{self.awaited_shelf(games or [])}
+{self.how_we_verify()}
 {self.cta_band(next((o for o in top if o.get("image")), None))}
 <p class="meta small-notice">Los precios pueden cambiar en cualquier momento: confirma siempre en la tienda antes de comprar. Los valores en pesos son aproximados.</p>""", jsonld=[org, website, self.item_list_ld(live)])
 

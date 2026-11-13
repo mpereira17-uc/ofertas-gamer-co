@@ -7,6 +7,7 @@
 - **Estantes:** los de la portada se deslizan, con borde de repisa y flechas redondas. La caja enfocada sube 8 px con marco amarillo. Sin portada vertical: imagen horizontal con el título encima (`.no-capsule`); en la vitrina la caja se acuesta (16:9).
 - **Vitrina:** caja grande «parada» (rotada −2°) junto al título, el precio y los botones; debajo, lomos para cambiar de oferta.
 - **Se mantiene:** tema oscuro, franja de la bandera, rojo de marca en botones, menú lateral, «menos movimiento» sin animaciones.
+- **Portada (v8.1, 2026-11-13, pedido de pepe: «algo más profesional en vez de ese montón de cosas»):** vitrina, presentación corta (título, una frase y la hora de actualización), categorías en 3×2, y estantes iguales: «Gratis esta semana» (con los próximos gratis de Epic como cajas «PRONTO»), «Las mejores ofertas de hoy», «Terminan pronto» (si hay 3 o más en 72 h) y «Los más esperados» (fecha en el sticker). Cierra con «Cómo verificamos» y el llamado a los canales. Se quitaron de la portada el termómetro, la oferta del día, el ahorro, el comparador, la marquesina de tiendas, los estrenos de hoy, los tráileres, las herramientas, las guías y el carrusel 3D: siguen en sus páginas y en el menú.
 
 ---
 
