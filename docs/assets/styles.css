@@ -1991,3 +1991,26 @@ main>.wrap>.how,.how{margin-top:56px;padding:28px;border-radius:16px;background:
  .sh-t-price{grid-column:2;grid-row:2}
  .sh-pick::before{content:"Destacados de hoy";display:block;padding:6px 10px 8px;color:var(--muted);font:700 .72rem/1 var(--ui);letter-spacing:.08em;text-transform:uppercase}
 }
+
+/* ---- Códigos: página general con tarjetas por juego (2026-11-13) ---- */
+.code-hubs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:22px 0 0;padding:0;list-style:none}
+.code-hub2 a{position:relative;isolation:isolate;display:grid;grid-template-columns:72px minmax(0,1fr);grid-template-areas:"icon top" "icon count" "latest latest" "go go";gap:4px 16px;height:100%;padding:18px;border:1px solid var(--border);border-radius:16px;background:var(--board);color:var(--text);text-decoration:none;overflow:hidden;transition:border-color .2s,transform .2s var(--ease-out)}
+.code-hub2 a:hover{border-color:var(--sticker);transform:translateY(-3px)}
+.code-hub2 .ch-bg{position:absolute;inset:-40px;z-index:-1;width:calc(100% + 80px);height:calc(100% + 80px);max-width:none;object-fit:cover;filter:blur(40px) saturate(1.3);opacity:.28}
+.code-hub2 .ch-icon{grid-area:icon;width:72px;height:72px;border-radius:16px;box-shadow:0 10px 20px -10px rgba(0,0,0,.8)}
+.code-hub2 .ch-none{display:block;background:var(--surface-2)}
+.code-hub2 .ch-top{grid-area:top;display:flex;align-items:center;gap:8px;align-self:end}
+.code-hub2 .ch-top strong{font:700 1.15rem/1.2 var(--head);letter-spacing:-.01em}
+.code-hub2 .ch-top .badge{position:static;font-size:.7rem;padding:2px 6px}
+.code-hub2 .ch-count{grid-area:count;align-self:start;color:var(--soft);font-size:.9rem}
+.code-hub2 .ch-count b{color:var(--sticker);font:700 1.25rem/1 var(--num)}
+.code-hub2 .ch-latest{grid-area:latest;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:12px;padding:10px 12px;border:1px dashed var(--border-strong);border-radius:10px;background:rgba(11,12,16,.55)}
+.code-hub2 .ch-label{width:100%;color:var(--muted);font:700 .68rem/1 var(--ui);letter-spacing:.08em;text-transform:uppercase}
+.code-hub2 .ch-latest code{font:700 1.02rem/1.2 var(--mono,ui-monospace,monospace);color:#fff;letter-spacing:.04em}
+.code-hub2 .ch-reward{color:var(--free);font-size:.82rem}
+.code-hub2 .ch-empty{color:var(--muted);font-size:.86rem}
+.code-hub2 .ch-go{grid-area:go;display:flex;align-items:center;gap:6px;margin-top:10px;color:var(--muted);font-size:.84rem}
+.code-hub2 .ch-go svg{width:14px;height:14px;color:var(--sticker)}
+.code-hub2.has-new a{border-color:rgba(47,214,123,.45)}
+.code-warn{border-color:rgba(255,171,46,.4)}
+@media (prefers-reduced-motion:reduce){.code-hub2 a:hover{transform:none}}
