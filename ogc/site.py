@@ -41,6 +41,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
     "store": '<path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16"/><path d="M9 20v-6h6v6"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
     "star": '<path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>',
+    "heart": '<path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/>',
     "play": '<path d="M8 5v14l11-7z" fill="currentColor"/>',
     "bell": '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
     "share": '<path d="M7 17L17 7M9 7h8v8"/>',
@@ -64,7 +65,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
 
 NAV = [
     ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"), ("juegos-gratis-en-todas-las-tiendas.html", "Regalos por tienda", "gift"),
-                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("seguidos.html", "Mis seguidos", "bell"),
+                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("lista-de-deseos.html", "Mi lista de Steam", "heart"), ("seguidos.html", "Mis seguidos", "bell"),
                  ("oferta-del-dia.html", "Oferta del día", "sparkle"), ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
                  ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift"),
                  ("rebajas-de-steam.html", "Rebajas de Steam", "clock"), ("que-juego-me-conviene.html", "¿Qué juego me conviene?", "quiz"),
@@ -85,8 +86,8 @@ FOOTER = [
     ("terminos.html", "Términos de uso"), ("anunciate.html", "Anúnciate"), ("estado.html", "Estado del sistema"),
     ("fuentes.html", "Fuentes de información"),
 ]
-CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; "
-       "connect-src 'self' https://*.steamstatic.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
+CSP = ("default-src 'self'; img-src 'self' https: data:; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; "
+       "connect-src 'self' https://*.steamstatic.com https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; "
        "media-src 'self' blob: https://*.steamstatic.com; frame-src https://www.youtube-nocookie.com https://my.spline.design; "
        "upgrade-insecure-requests")
 
@@ -667,7 +668,8 @@ class Site:
                  ("store", "Comparar tiendas", "El mismo juego en varias tiendas, del más barato al más caro.", "tiendas.html"),
                  ("quiz", "¿Qué juego me conviene?", "Responde 4 preguntas y te recomendamos uno.", "que-juego-me-conviene.html"),
                  ("news", "Resumen semanal", "Lo mejor de la semana, todos los viernes.", "resumen-semanal.html"),
-                 ("dice", "Sorpréndeme", "Un juego al azar de las ofertas de hoy.", "sorpresa.html")]
+                 ("dice", "Sorpréndeme", "Un juego al azar de las ofertas de hoy.", "sorpresa.html"),
+                 ("heart", "Mi lista de Steam", "Mira qué juegos de tu lista de deseos están en oferta.", "lista-de-deseos.html")]
         cards = "".join(f'<li><a href="{href}"><span class="tool-ico">{ICONS[ic]}</span><strong>{e(t)}</strong><span>{e(d)}</span><span class="tool-go" aria-hidden="true">{ICONS["arrow"]}</span></a></li>'
                         for ic, t, d, href in tools)
         return (f'<section class="tools" aria-labelledby="tools-h">'
@@ -745,7 +747,7 @@ class Site:
             for g in picks)
         return (f'<section class="tv" aria-labelledby="tv-h">'
                 + self.sec_head("", 'Tráileres de los más esperados',
-                                'Pasa el cursor para verlos. <a href="lanzamientos.html">Ver el calendario completo</a>', "screen", "tv-h")
+                                'Pasa el cursor para ver un avance o toca uno para abrir su ficha. <a href="lanzamientos.html">Ver el calendario completo</a>', "screen", "tv-h")
                 + f'<ul class="tv-grid">{items}</ul></section>')
 
     def ribbon(self, o):
@@ -2313,6 +2315,21 @@ class Site:
                     '<p><a class="btn btn-primary" href="ofertas.html">Buscar más ofertas</a></p>',
                     crumbs=[("favoritos.html", "Mis favoritos")], noindex=True)
 
+        self.layout("lista-de-deseos.html", "Tu lista de deseos de Steam en oferta",
+                    "Pega tu perfil de Steam y mira qué juegos de tu lista de deseos están hoy en oferta en tiendas oficiales, con el precio en pesos.",
+                    '<h1>¿Qué de tu lista de deseos está en oferta?</h1>'
+                    '<p class="lead">Pega el enlace de tu perfil de Steam y te mostramos cuáles de los juegos que quieres están hoy en oferta en tiendas oficiales.</p>'
+                    '<form id="wl-form" class="wl-form" role="search" aria-label="Buscar mi lista de deseos de Steam" hidden>'
+                    '<label for="wl-perfil">Tu perfil de Steam</label>'
+                    '<div class="wl-row"><input id="wl-perfil" name="perfil" type="text" inputmode="url" autocomplete="off" spellcheck="false" maxlength="200" required '
+                    'placeholder="https://steamcommunity.com/id/tu-nombre"><button class="btn btn-primary" type="submit">Revisar mi lista</button></div>'
+                    '<p class="meta">Sirve el enlace del perfil, tu SteamID64 o tu nombre personalizado. Tu lista de deseos debe ser pública '
+                    '(en Steam: Editar perfil → Privacidad → «Detalles del juego» en Público).</p></form>'
+                    '<div id="wl-root" data-src="data/offers.json" aria-live="polite"><noscript><p class="notice">Esta página necesita JavaScript para consultar tu lista en Steam.</p></noscript></div>'
+                    '<p class="meta">No guardamos tu perfil: solo se usa para pedirle la lista a Steam. Tu último perfil buscado queda en este navegador. '
+                    '<a href="privacidad.html">Privacidad</a></p>',
+                    crumbs=[("lista-de-deseos.html", "Mi lista de Steam")])
+
         rows = "".join(
             f"<tr><td>{e(s['name'])}</td><td>{', '.join(e(d) for d in s['domains'])}</td>"
             f"<td>{sum(1 for o in live if o['storeId'] == s['id'])}</td>"
@@ -2471,11 +2488,16 @@ class Site:
 <h2>Resumen</h2>
 <ul><li>La página no requiere registro de usuario.</li>
 <li>No pedimos contraseñas, datos bancarios, números de tarjeta, documentos de identidad ni información financiera.</li>
-<li>No usamos herramientas de analítica, publicidad ni cookies de seguimiento.</li></ul>
+<li>No usamos publicidad ni cookies de seguimiento.</li>
+<li>Contamos las visitas con Cloudflare Web Analytics, que no usa cookies ni identifica a las personas.</li></ul>
 <h2>Alertas por Telegram (opcional)</h2>
 <p>Si creas una alerta en nuestro bot de Telegram, guardamos tu número de chat de Telegram (lo necesitamos para escribirte) y el texto de tus alertas. No guardamos tu nombre, usuario ni teléfono. Esos datos se guardan cifrados y solo los usa el bot. Puedes borrarlos cuando quieras escribiendo <code>/borrar todo</code> al bot. Los favoritos, los juegos que sigues y el tema se guardan solo en tu navegador.</p>
+<h2>Lista de deseos de Steam (opcional)</h2>
+<p>Si usas la página <a href="lista-de-deseos.html">Mi lista de deseos</a>, tu navegador envía a nuestro servidor el enlace o el número de tu perfil público de Steam. El servidor le pide a Steam la lista de juegos de esa lista de deseos y te la devuelve para cruzarla con las ofertas. No guardamos ese dato en ninguna base: Cloudflare puede conservar la respuesta en caché hasta una hora para no repetir la consulta. Tu último perfil buscado queda solo en tu navegador.</p>
 <h2>Servicios técnicos que usamos</h2>
 <ul>
+<li><strong>Cloudflare Pages</strong> aloja la página y la pequeña función que consulta Steam. Como cualquier servidor web, puede procesar datos técnicos como la dirección IP para entregar el sitio y protegerlo. <a href="https://www.cloudflare.com/es-es/privacypolicy/" target="_blank" rel="noopener noreferrer">Política de privacidad de Cloudflare</a>.</li>
+<li><strong>Cloudflare Web Analytics</strong> cuenta visitas y páginas vistas de forma agregada. No usa cookies ni almacenamiento en tu navegador y no te identifica entre sitios.</li>
 <li><strong>GitHub Pages</strong> aloja la página. Como cualquier servidor web, puede procesar datos técnicos como la dirección IP para entregar el sitio y protegerlo. <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Declaración de privacidad de GitHub</a>.</li>
 <li><strong>Imágenes de las tiendas</strong>: algunas imágenes de los juegos se cargan desde los servidores de cada tienda, que pueden registrar datos técnicos de la solicitud según sus propias políticas.</li>
 <li><strong>Google Search Console</strong>: usamos una etiqueta de verificación para que Google indexe el sitio. No instala seguimiento en tu navegador.</li>
@@ -2486,17 +2508,17 @@ class Site:
 <h2>Enlaces a terceros</h2>
 <p>Los enlaces llevan a páginas de terceros con sus propias políticas de privacidad, que te recomendamos revisar.</p>
 <h2>Cambios</h2>
-<p>No instalaremos analítica, cookies, formularios, boletines, notificaciones ni publicidad sin actualizar antes esta política.</p>
+<p>No instalaremos otra analítica, cookies, formularios, boletines, notificaciones ni publicidad sin actualizar antes esta política.</p>
 <h2>Consultas</h2>
 <p>Puedes enviar consultas de privacidad por nuestro {tg_link}.</p>
 {LEGAL_REVIEW}</div>""", crumbs=[("privacidad.html", "Privacidad")])
 
         P("cookies.html", "Política de cookies", "Ofertas Gamer CO no usa cookies de seguimiento. Qué guardamos en tu navegador y cómo borrarlo.",
           f"""<div class="prose"><h1>Política de cookies</h1><p class="meta">Última actualización: {LEGAL_UPDATED}</p>
-<p>Ofertas Gamer CO no instala cookies propias ni de terceros para analítica o publicidad.</p>
+<p>Ofertas Gamer CO no instala cookies propias ni de terceros para analítica o publicidad. Contamos las visitas con Cloudflare Web Analytics, que funciona sin cookies.</p>
 <p>Usamos el almacenamiento local del navegador solo para preferencias opcionales, como los favoritos (<code>ogc-favs</code>). No se envían a ningún servidor.</p>
 <p>Las tiendas a las que enlazamos pueden usar sus propias cookies cuando visitas su sitio.</p>
-<p>Si en el futuro activamos analítica o anuncios, actualizaremos esta política y pediremos tu consentimiento cuando la ley lo requiera.</p>
+<p>Si en el futuro activamos anuncios u otra analítica, actualizaremos esta política y pediremos tu consentimiento cuando la ley lo requiera.</p>
 {LEGAL_REVIEW}</div>""", crumbs=[("cookies.html", "Cookies")])
 
         P("afiliados.html", "Aviso de afiliados", "Cómo funcionan los enlaces de afiliados en Ofertas Gamer CO y cómo se identifican.",

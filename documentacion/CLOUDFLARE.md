@@ -14,3 +14,11 @@ El sitio ya se genera en `docs/` y trae `docs/_headers` con los encabezados de s
 10. Dominio propio (fase posterior, con tu autorización): **Custom domains → Set up a domain**, configura DNS, redirige `www`, cambia `url_web` en `config/site.json` (canónicas y sitemap se regeneran) y agrega la nueva propiedad en Search Console.
 
 Cuando la nueva dirección funcione, cambia `url_web` en `config/site.json` a la dirección de Cloudflare para que la URL canónica apunte allí.
+
+## Función de la lista de deseos (activa desde el 13/11/2026)
+
+`functions/api/lista-de-deseos.js` es una Pages Function: Cloudflare la publica sola en `/api/lista-de-deseos` porque la carpeta `functions/` está en la raíz del repositorio. Solo consulta dos direcciones fijas de Steam (el XML público del perfil y `IWishlistService/GetWishlist`), valida la entrada, no guarda nada y deja cada respuesta 1 hora en la caché de Cloudflare. El plan gratis permite 100.000 llamadas al día. Pruebas sin internet: `node --test tests/lista_deseos.test.mjs`. En GitHub Pages la función no existe y la página muestra un aviso de error.
+
+## Web Analytics (activa desde el 13/11/2026)
+
+La CSP (`config/_headers` y `CSP` en `ogc/site.py`) permite `static.cloudflareinsights.com` y `cloudflareinsights.com` para el contador sin cookies. La política de privacidad ya lo explica.

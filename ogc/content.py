@@ -4,7 +4,7 @@ Los textos legales son una base de trabajo y deben revisarse con un profesional 
 considerarlos definitivos.
 """
 
-LEGAL_UPDATED = "24 de octubre de 2026"
+LEGAL_UPDATED = "13 de noviembre de 2026"
 LEGAL_REVIEW = ("<p class=\"notice\">Este texto es una base de trabajo redactada para un proyecto pequeño. "
                 "Recomendamos una revisión jurídica profesional antes de considerarlo definitivo.</p>")
 

@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Pruebas de la función de lista de deseos (sin internet)
+        run: node --test tests/lista_deseos.test.mjs
       - name: Prueba en navegador (360 px y 1280 px)
         run: |
           npm install --no-save playwright@1.63.0

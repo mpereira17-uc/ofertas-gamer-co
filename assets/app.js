@@ -444,17 +444,21 @@
       var ul = el("ul", "grid");
       mine.forEach(function (o) {
         var free = o.currentPrice === 0, li = el("li", "card" + (free ? " is-free" : ""));
-        var media = el("a", "media");
+        var media = el("a", "thumb");
         media.href = o.page || o.destinationUrl;
         var img = el("img");
         img.src = /^https:\/\//.test(o.image || "") ? o.image : "assets/placeholder.svg";
+        img.addEventListener("error", function () { // portada caída: usa la miniatura o el marcador
+          var small = /^https:\/\//.test(o.imageSmall || "") && img.src !== o.imageSmall ? o.imageSmall : "assets/placeholder.svg";
+          if (img.src.indexOf(small) < 0) img.src = small;
+        });
         img.alt = "Imagen de " + o.title;
         img.loading = "lazy";
         media.appendChild(img);
         media.appendChild(el("span", "badge" + (free ? " free" : ""), free ? "GRATIS" : "-" + (o.discountPercentage || 0) + "%"));
         li.appendChild(media);
         var body = el("div", "body");
-        body.appendChild(el("span", "store-chip", o.store));
+        media.appendChild(el("span", "store-chip", o.store));
         var h = el("h3", "clamp2"), link = el("a", "", o.title);
         link.href = o.page || o.destinationUrl;
         h.appendChild(link);
@@ -494,6 +498,118 @@
     }).catch(function () {
       favRoot.textContent = "";
       favRoot.appendChild(el("p", "notice", "No se pudieron cargar tus favoritos. Intenta de nuevo en un momento."));
+    });
+  }
+
+  // Página "Mi lista de deseos": pide a /api/lista-de-deseos los juegos de la lista pública de Steam
+  // y muestra los que hoy están en oferta. Todo el texto se pone con textContent (nada de innerHTML).
+  var wlForm = document.getElementById("wl-form");
+  var wlRoot = document.getElementById("wl-root");
+  if (wlForm && wlRoot && window.fetch) {
+    wlForm.hidden = false;
+    var mk = function (tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text) n.textContent = text;
+      return n;
+    };
+    var cash = function (v, cur) {
+      if (cur === "COP") return "$" + Math.round(v).toLocaleString("es-CO") + " COP";
+      return "US$" + Number(v).toFixed(2);
+    };
+    var say = function (cls, text) {
+      wlRoot.textContent = "";
+      wlRoot.appendChild(mk("p", cls, text));
+    };
+    var input = wlForm.querySelector("input[name=perfil]");
+    var button = wlForm.querySelector("button[type=submit]");
+    var last = store("ogc-steam-perfil");
+    if (last && input && !input.value) input.value = last;
+    var card = function (o) {
+      var free = o.currentPrice === 0, li = mk("li", "card" + (free ? " is-free" : ""));
+      var media = mk("a", "thumb");
+      media.href = o.page || o.destinationUrl;
+      var img = mk("img");
+      img.src = /^https:\/\//.test(o.image || "") ? o.image : "assets/placeholder.svg";
+      img.addEventListener("error", function () { // portada caída: usa la miniatura o el marcador
+        var small = /^https:\/\//.test(o.imageSmall || "") && img.src !== o.imageSmall ? o.imageSmall : "assets/placeholder.svg";
+        if (img.src.indexOf(small) < 0) img.src = small;
+      });
+      img.alt = "Imagen de " + o.title;
+      img.loading = "lazy";
+      media.appendChild(img);
+      media.appendChild(mk("span", "badge" + (free ? " free" : ""), free ? "GRATIS" : "-" + (o.discountPercentage || 0) + "%"));
+      li.appendChild(media);
+      var body = mk("div", "body");
+      media.appendChild(mk("span", "store-chip", o.store));
+      var h = mk("h3", "clamp2"), link = mk("a", "", o.title);
+      link.href = o.page || o.destinationUrl;
+      h.appendChild(link);
+      body.appendChild(h);
+      var box = mk("div", "pricebox");
+      box.appendChild(mk("span", "now" + (free ? " free" : ""), free ? "Gratis" : cash(o.currentPrice, o.currency)));
+      if (o.originalPrice) box.appendChild(mk("s", "", "Antes " + cash(o.originalPrice, o.currency)));
+      body.appendChild(box);
+      if (o.saving) body.appendChild(mk("p", "save", o.saving));
+      if (o.expiresAt) {
+        var left = mk("p", "left");
+        left.setAttribute("data-countdown", o.expiresAt);
+        left.appendChild(mk("span", "", leftText(o.expiresAt) || ""));
+        body.appendChild(left);
+      }
+      var acts = mk("div", "actions"), go = mk("a", "btn btn-primary" + (free && o.action !== "Buscar en la tienda" ? " btn-free" : ""), o.action || "Ver oferta");
+      go.href = o.destinationUrl;
+      go.target = "_blank";
+      go.rel = o.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer";
+      acts.appendChild(go);
+      body.appendChild(acts);
+      li.appendChild(body);
+      return li;
+    };
+    wlForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var perfil = (input.value || "").trim();
+      if (!perfil) { say("notice", "Pega el enlace de tu perfil de Steam."); input.focus(); return; }
+      button.disabled = true;
+      wlRoot.setAttribute("aria-busy", "true");
+      say("meta", "Buscando tu lista de deseos en Steam…");
+      Promise.all([
+        fetch("/api/lista-de-deseos?perfil=" + encodeURIComponent(perfil)).then(function (r) {
+          return r.json().catch(function () { return { error: "Steam no respondió. Intenta de nuevo en unos minutos." }; });
+        }),
+        fetch(wlRoot.getAttribute("data-src")).then(function (r) { return r.json(); })
+      ]).then(function (res) {
+        var wl = res[0] || {}, data = res[1] || {};
+        if (!wl.appids || !wl.appids.length) return say("notice", wl.error || "No encontramos juegos en esa lista de deseos.");
+        store("ogc-steam-perfil", perfil);
+        var want = {};
+        wl.appids.forEach(function (id) { want[id] = true; });
+        // una tarjeta por juego: la oferta más barata de cada uno
+        var best = {};
+        (data.offers || []).forEach(function (o) {
+          if (!o.steamAppID || !want[o.steamAppID] || o.status === "Vencido") return;
+          var cop = o.currentPrice === 0 ? 0 : (o.copApproximation || o.currentPrice);
+          var cur = best[o.steamAppID];
+          if (!cur || cop < cur.cop) best[o.steamAppID] = { cop: cop, o: o };
+        });
+        var hits = Object.keys(best).map(function (k) { return best[k].o; })
+          .sort(function (a, b) { return (b.discountPercentage || 0) - (a.discountPercentage || 0); });
+        wlRoot.textContent = "";
+        var n = wl.appids.length;
+        wlRoot.appendChild(mk("p", "count", hits.length
+          ? hits.length + (hits.length === 1 ? " juego" : " juegos") + " de tu lista de deseos " + (hits.length === 1 ? "está" : "están") + " en oferta hoy (de " + n + " en tu lista)."
+          : "Ninguno de los " + n + " juegos de tu lista está en oferta hoy. Revisamos cada 4 horas: vuelve pronto."));
+        if (!hits.length) return;
+        var ul = mk("ul", "grid");
+        hits.forEach(function (o) { ul.appendChild(card(o)); });
+        wlRoot.appendChild(ul);
+        tick();
+      }).catch(function () {
+        say("notice", "No pudimos revisar tu lista ahora. Intenta de nuevo en un momento.");
+      }).then(function () {
+        button.disabled = false;
+        wlRoot.removeAttribute("aria-busy");
+      });
     });
   }
 
