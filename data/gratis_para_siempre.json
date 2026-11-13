@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T21:29:05Z",
+ "updatedAt": "2026-11-13T21:52:01Z",
  "games": [
   {
    "id": "steam-730",
@@ -136,19 +136,6 @@
    ]
   },
   {
-   "id": "steam-3513350",
-   "title": "Wuthering Waves",
-   "url": "https://store.steampowered.com/app/3513350/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3513350/fb969539fb0373bd5ee07c767bf9dafa4afae5c3/header.jpg?t=1791864800",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3513350/dfc00b5174879d03f6c8ec508d9360a66d5729a5/capsule_sm_120.jpg?t=1794439536",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
    "id": "steam-236390",
    "title": "War Thunder",
    "url": "https://store.steampowered.com/app/236390/",
@@ -159,6 +146,19 @@
     "Acción",
     "Multijugador masivo",
     "Simuladores"
+   ]
+  },
+  {
+   "id": "steam-3513350",
+   "title": "Wuthering Waves",
+   "url": "https://store.steampowered.com/app/3513350/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3513350/fb969539fb0373bd5ee07c767bf9dafa4afae5c3/header.jpg?t=1791864800",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3513350/dfc00b5174879d03f6c8ec508d9360a66d5729a5/capsule_sm_120.jpg?t=1794439536",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -221,6 +221,17 @@
    ]
   },
   {
+   "id": "steam-359550",
+   "title": "Tom Clancy's Rainbow Six Siege",
+   "url": "https://store.steampowered.com/app/359550/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ee838739b8241c6f58361b88ae769dfd64dc4b87/header_alt_assets_27_spanish.jpg?t=1792001976",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/3530857a30ecb9ed4e6b9c3df9d7e162d9008aae/capsule_sm_120_alt_assets_28.jpg?t=1792001976",
+   "headerChecked": true,
+   "genres": [
+    "Acción"
+   ]
+  },
+  {
    "id": "steam-1665460",
    "title": "eFootball™",
    "url": "https://store.steampowered.com/app/1665460/",
@@ -230,17 +241,6 @@
    "genres": [
     "Simuladores",
     "Deportes"
-   ]
-  },
-  {
-   "id": "steam-359550",
-   "title": "Tom Clancy's Rainbow Six Siege",
-   "url": "https://store.steampowered.com/app/359550/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ee838739b8241c6f58361b88ae769dfd64dc4b87/header_alt_assets_27_spanish.jpg?t=1792001976",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/3530857a30ecb9ed4e6b9c3df9d7e162d9008aae/capsule_sm_120_alt_assets_28.jpg?t=1792001976",
-   "headerChecked": true,
-   "genres": [
-    "Acción"
    ]
   },
   {
@@ -326,16 +326,16 @@
    ]
   },
   {
-   "id": "steam-444200",
-   "title": "World of Tanks Blitz",
-   "url": "https://store.steampowered.com/app/444200/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/43a7d4c3c4fe526752a83b212e7f91e0955aec47/header_alt_assets_22.jpg?t=1794571521",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/a47a70688956b7db7f5a607f073f7e89beda7718/capsule_sm_120_alt_assets_22.jpg?t=1794571521",
+   "id": "steam-4508340",
+   "title": "NTE: Neverness to Everness",
+   "url": "https://store.steampowered.com/app/4508340/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1793179644",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/484aa9396c520d414b5b3f5c619f96e0edc8e50c/capsule_sm_120.jpg?t=1794352536",
    "headerChecked": true,
    "genres": [
     "Acción",
-    "Multijugador masivo",
-    "Simuladores"
+    "Aventura",
+    "Rol"
    ]
   },
   {
@@ -351,24 +351,11 @@
    ]
   },
   {
-   "id": "steam-4508340",
-   "title": "NTE: Neverness to Everness",
-   "url": "https://store.steampowered.com/app/4508340/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4508340/2865c1f08217110a549e039a81a6461d8dc3c1d0/header.jpg?t=1793179644",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4508340/484aa9396c520d414b5b3f5c619f96e0edc8e50c/capsule_sm_120.jpg?t=1794352536",
-   "headerChecked": true,
-   "genres": [
-    "Acción",
-    "Aventura",
-    "Rol"
-   ]
-  },
-  {
-   "id": "steam-552990",
-   "title": "World of Warships",
-   "url": "https://store.steampowered.com/app/552990/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/227928b1615d13c15815e49438a1daa6a779af33/capsule_sm_120_alt_assets_18.jpg?t=1793875646",
+   "id": "steam-444200",
+   "title": "World of Tanks Blitz",
+   "url": "https://store.steampowered.com/app/444200/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/444200/43a7d4c3c4fe526752a83b212e7f91e0955aec47/header_alt_assets_22.jpg?t=1794571521",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/444200/a47a70688956b7db7f5a607f073f7e89beda7718/capsule_sm_120_alt_assets_22.jpg?t=1794571521",
    "headerChecked": true,
    "genres": [
     "Acción",
@@ -387,6 +374,19 @@
     "Acción",
     "Aventura",
     "Multijugador masivo"
+   ]
+  },
+  {
+   "id": "steam-552990",
+   "title": "World of Warships",
+   "url": "https://store.steampowered.com/app/552990/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552990/9684685d206bf6a74fb21cdb49eb4748c61b1c79/header_alt_assets_16.jpg?t=1791478284",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552990/227928b1615d13c15815e49438a1daa6a779af33/capsule_sm_120_alt_assets_18.jpg?t=1793875646",
+   "headerChecked": true,
+   "genres": [
+    "Acción",
+    "Multijugador masivo",
+    "Simuladores"
    ]
   },
   {
@@ -429,6 +429,18 @@
    ]
   },
   {
+   "id": "steam-3061570",
+   "title": "Persona5: The Phantom X",
+   "url": "https://store.steampowered.com/app/3061570/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061570/16cdd695861464bd7aa502df7eb35a1e5caad6f8/header.jpg?t=1790928862",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3061570/07b0e821002a9f6a2e2fe057de2f8eb860b85087/capsule_sm_120.jpg?t=1790928862",
+   "headerChecked": true,
+   "genres": [
+    "Aventura",
+    "Rol"
+   ]
+  },
+  {
    "id": "steam-2807960",
    "title": "Battlefield™ 6",
    "url": "https://store.steampowered.com/app/2807960/",
@@ -440,15 +452,16 @@
    ]
   },
   {
-   "id": "steam-3061570",
-   "title": "Persona5: The Phantom X",
-   "url": "https://store.steampowered.com/app/3061570/",
-   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3061570/16cdd695861464bd7aa502df7eb35a1e5caad6f8/header.jpg?t=1790928862",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3061570/07b0e821002a9f6a2e2fe057de2f8eb860b85087/capsule_sm_120.jpg?t=1790928862",
+   "id": "steam-3164330",
+   "title": "Infinity Nikki",
+   "url": "https://store.steampowered.com/app/3164330/",
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3164330/cf1ca7f2da4630063fabb13fb1789ba7ab14c80c/header.jpg?t=1793329246",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3164330/bc9acdd2c3765ce4484d73141ca908f71fab8485/capsule_sm_120.jpg?t=1793329246",
    "headerChecked": true,
    "genres": [
+    "Acción",
     "Aventura",
-    "Rol"
+    "Casual"
    ]
   },
   {
@@ -465,18 +478,16 @@
    ]
   },
   {
-   "id": "steam-3164330",
-   "title": "Infinity Nikki",
-   "url": "https://store.steampowered.com/app/3164330/",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3164330/bc9acdd2c3765ce4484d73141ca908f71fab8485/capsule_sm_120.jpg?t=1793329246",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3164330/bc9acdd2c3765ce4484d73141ca908f71fab8485/capsule_sm_120.jpg?t=1793329246"
-  },
-  {
    "id": "steam-1286830",
    "title": "STAR WARS™: The Old Republic™",
    "url": "https://store.steampowered.com/app/1286830/",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603",
-   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603"
+   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/header.jpg?t=1791993603",
+   "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_sm_120.jpg?t=1791993603",
+   "headerChecked": true,
+   "genres": [
+    "Multijugador masivo",
+    "Rol"
+   ]
   }
  ]
 }

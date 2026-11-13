@@ -1920,3 +1920,29 @@ ul.grid:not(.x)>.card .actions:has(.claim-btn:not([hidden])) .btn:first-child{fl
 .wl-form .meta{margin:0}
 #wl-root .count{margin:0 0 14px;font:600 1rem/1.4 var(--ui)}
 @media (max-width:520px){.wl-row{flex-direction:column}.wl-row .btn{width:100%}}
+
+/* ---- Portada profesional (2026-11-13): vitrina, presentación corta, categorías y estantes; sin paneles sueltos ---- */
+.home-intro{display:grid;gap:8px;margin:34px 0 0;max-width:820px}
+.home-intro h1{margin:0;font:700 clamp(1.6rem,2.8vw,2.2rem)/1.1 var(--head);letter-spacing:-.025em;text-wrap:balance}
+.home-intro .lead{margin:0;max-width:68ch;font-size:1rem;line-height:1.55}
+.home-intro .lead strong{color:#fff}
+.home-intro .meta{margin:0;color:var(--muted);font-size:.84rem}
+.home-intro+.cat-row{margin-top:22px}
+.shelf-soon .sticker{background:var(--hot);color:#2a1700}
+main>.wrap>.how,.how{margin-top:56px;padding:28px;border-radius:16px;background:var(--board);border:1px solid var(--border)}
+.how .how-steps.big{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 22px}
+.how .how-steps.big li{flex-direction:column;align-items:flex-start;gap:4px;padding:14px 0 0;border-top:2px solid var(--shelf-edge)}
+.how .how-steps.big li>span:last-child{padding-left:0;font-size:.88rem}
+.how .how-steps.big .hs-num{flex:none;font-size:1.3rem;color:var(--sticker)}
+.home-intro~.how .how-states{display:none}
+@media (max-width:900px){.how .how-steps.big{grid-template-columns:1fr 1fr;gap:18px 18px}}
+@media (max-width:520px){.how{padding:20px 16px}.how .how-steps.big{grid-template-columns:1fr}}
+.cat-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cat-list .cat-name{overflow-wrap:normal}
+@media (min-width:1500px){.cat-list{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media (max-width:620px){.cat-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sticker.soon{background:#e8eaf0;color:#1a1d26;font-size:.95rem}
+.how .how-steps.big li>*{flex:none;width:100%;padding-left:0}
+.how .how-steps.big li>span:last-child{color:var(--muted)}
+.is-awaited .box,.is-soon .box{--spine:#8b93a7}
+.how .how-steps.big li{flex-wrap:nowrap}
