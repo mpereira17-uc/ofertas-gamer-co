@@ -1,3 +1,15 @@
+# Design: Ofertas Gamer CO (v8 «Estantería», 2026-11-13)
+
+**v8 «Estantería»** (pepe eligió la dirección A entre tres bocetos; diseño completo en `documentacion/2026-11-13-diseno-estanteria.md`). Manda sobre todo lo de abajo; el bloque «Diseño v8 «Estantería»» de `assets/styles.css` reemplazó los estantes, las tarjetas y la vitrina de v7.
+- **Idea:** cada juego es una caja vertical en una repisa. Portada 600×900 de Steam (`ogc/capsules.py`, caché en `data/portadas.json`), lomo de 7 px con el color de la tienda (`--spine` por `.store-<id>`) y esquinas más rectas del lado del lomo.
+- **Sticker de precio:** amarillo `#ffd23f` para descuento, verde para «GRATIS», torcido con `.tilt-1`…`.tilt-5` (fijo por juego). Sello rojo `#e63946` «GANGA» en las 10 que más valen la pena con ≥75 %. «Mínimo histórico» en negro con letra amarilla.
+- **Precio:** pesos primero con «aprox.» si viene de dólares («$8.200 aprox.»); debajo, el precio real de la tienda («US$2.49 en Steam»). En pesos (Epic Colombia) es exacto.
+- **Estantes:** los de la portada se deslizan, con borde de repisa y flechas redondas. La caja enfocada sube 8 px con marco amarillo. Sin portada vertical: imagen horizontal con el título encima (`.no-capsule`); en la vitrina la caja se acuesta (16:9).
+- **Vitrina:** caja grande «parada» (rotada −2°) junto al título, el precio y los botones; debajo, lomos para cambiar de oferta.
+- **Se mantiene:** tema oscuro, franja de la bandera, rojo de marca en botones, menú lateral, «menos movimiento» sin animaciones.
+
+---
+
 # Design: Ofertas Gamer CO (v7 «Tienda», 2026-11-03)
 
 **v7 «Tienda»** (pedido de pepe: «más llamativa y que no se vea hecha con IA, como Instant Gaming o mejor»). Manda sobre todo lo de abajo; el bloque está al final de `assets/styles.css`.

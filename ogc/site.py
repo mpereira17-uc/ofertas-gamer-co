@@ -194,6 +194,7 @@ class Site:
         self.now = datetime.now(timezone.utc)
         self.rate = None  # pesos por dólar, deducido de las ofertas
         self.history = {}  # historial de precios propio (ogc/history.py)
+        self.ganga = set()  # ids con el sello «GANGA» (se calcula en build)
 
     # ---------- plantilla común ----------
     HERO_KINDS = (("gratis", "free"), ("regalo", "free"), ("codigos", "free"), ("lanzamiento", "rel"), ("juegos-que-salen", "rel"),
@@ -470,19 +471,53 @@ class Site:
             return '<span class="badge free">GRATIS</span>'
         return f'<span class="badge">-{o["discountPercentage"]}%</span>' if o.get("discountPercentage") else ""
 
-    def card(self, o):
+    def tilt(self, o):
+        """Inclinación del sticker (1 a 5), fija por juego para que no cambie entre visitas."""
+        return int(hashlib.md5(str(o.get("id", "")).encode()).hexdigest(), 16) % 5 + 1
+
+    def card_price(self, o):
+        """Precio de la caja: pesos primero («aprox.» si viene de dólares) y el precio real de la tienda debajo."""
         free = o.get("currentPrice") == 0
-        img = o.get("image") or "assets/placeholder.svg"
-        alt = f"Imagen de {o['title']}" if o.get("image") else ""
+        if free:
+            old = f'<s>Antes {e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+            return f'<div class="pricebox"><span class="now free">Gratis</span>{old}</div>'
+        if o["currency"] == "COP":
+            old = f'<s>{e(money(o["originalPrice"], "COP"))}</s>' if o.get("originalPrice") else ""
+            return f'<div class="pricebox"><span class="now">{e(money(o["currentPrice"], "COP"))}</span>{old}</div>'
+        cop = self.cop_value(o["currentPrice"], o)
+        store_old = f' <s>{e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+        if not cop:
+            return f'<div class="pricebox"><span class="now">{e(money(o["currentPrice"], o["currency"]))}</span>{store_old}</div>'
+        return (f'<div class="pricebox"><span class="now">{e(self.pesos(cop))} <small>aprox.</small></span></div>'
+                f'<p class="store-price">{e(money(o["currentPrice"], o["currency"]))} en {e(o["store"])}{store_old}</p>')
+
+    def card(self, o):
+        """Caja de la estantería (v8): portada vertical con lomo del color de la tienda y sticker de precio."""
+        free = o.get("currentPrice") == 0
+        cover = o.get("capsule") or ""
+        flat = o.get("image") or "assets/placeholder.svg"
+        img = cover or flat
+        back = flat if cover and o.get("image") else (o.get("imageSmall") or "")
+        alt = f"Imagen de {o['title']}" if (cover or o.get("image")) else ""
         cop_now = 0 if free else (self.cop_value(o.get("currentPrice"), o) or 0)
-        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else (o.get('discountPercentage') or 0)}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
-<div class="thumb"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{fallback(o)} alt="{e(alt)}" width="460" height="215" loading="lazy" decoding="async">{self.badge(o)}{self.store_chip(o)}{f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>' if self.preview_attrs(o.get("trailer")) else ''}{self.ribbon(o)}</div>
+        pct = o.get("discountPercentage") or 0
+        sticker = ('<span class="sticker free">GRATIS</span>' if free else (f'<span class="sticker">-{pct}%</span>' if pct else ""))
+        ganga = '<span class="seal ganga">GANGA</span>' if not free and o["id"] in getattr(self, "ganga", set()) else ""
+        name = "" if cover else f'<span class="box-name" aria-hidden="true">{e(o["title"])}</span>'
+        trailer = (f'<button type="button" class="trailer-chip preview-btn" aria-label="Ver avance del tráiler de {e(o["title"])}">{ICONS["play"]}</button>'
+                   if self.preview_attrs(o.get("trailer")) else "")
+        claim = (f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" '
+                 f'aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>{ICONS["tick"]}</button>' if free and self.cop_saved(o) else "")
+        share = e(self.base + self.detail[o["id"]] if o["id"] in self.detail else o["destinationUrl"])
+        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else pct}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
+<div class="box store-{e(o['storeId'])} tilt-{self.tilt(o)}{'' if cover else ' no-capsule'}"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{f' data-fallback="{e(back)}"' if back.startswith("https://") else ''} alt="{e(alt)}" width="300" height="450" loading="lazy" decoding="async">{name}{sticker}{ganga}{self.ribbon(o)}{trailer}</div>
 <div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
 <p class="card-meta"><span class="cm-store"><span class="store-dot store-{e(o["storeId"])}" aria-hidden="true"></span>{e(o["store"])}</span>{f'<span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span>' if o.get("metacritic") else ''}</p>
-{self.price_html(o)}
+{self.card_price(o)}
+{f'<p class="save">{e(self.saving_text(o))}</p>' if self.saving_text(o) else ''}
 {self.countdown(o) or '<p class="left none" title="La tienda no publicó la fecha de fin">Sin fecha de fin</p>'}
 {self.trust_chips(o)}
-<div class="actions">{self.offer_button(o)}{f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>{ICONS['tick']}</button>' if free and self.cop_saved(o) else ''}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{e(self.base + self.detail[o['id']] if o['id'] in self.detail else o['destinationUrl'])}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>{ICONS['share']}</button></div>
+<div class="actions">{self.offer_button(o)}{claim}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{share}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>{ICONS['share']}</button></div>
 </div></li>"""
 
     def card_caption(self, o):
@@ -787,31 +822,34 @@ class Site:
         for i, o in enumerate(picks):
             free = o.get("currentPrice") == 0
             pct = o.get("discountPercentage") or 0
-            price = "Gratis" if free else money(o["currentPrice"], o["currency"])
+            cop_now = None if free or o["currency"] == "COP" else self.cop_value(o["currentPrice"], o)
+            price = "Gratis" if free else (self.pesos(cop_now) if cop_now else money(o["currentPrice"], o["currency"]))
             old = f'<s>Antes {e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
-            off = ('<span class="sh-off free">-100%</span>' if free else (f'<span class="sh-off">-{pct}%</span>' if pct else ""))
+            off = ('<span class="sticker free">GRATIS</span>' if free else (f'<span class="sticker">-{pct}%</span>' if pct else ""))
             about = (o.get("about") or "").strip()
             if len(about) > 150:
                 about = about[:147].rsplit(" ", 1)[0].rstrip(",.;:") + "…"
-            cop = "" if free or o["currency"] == "COP" else cop_text(o)
+            cop = f'{money(o["currentPrice"], o["currency"])} en {o["store"]}' if cop_now else ""
             lazy = ' fetchpriority="high"' if i == 0 else ' loading="lazy"'
             page = self.detail[o["id"]]
             img = e(o["image"])
+            art = e(o.get("capsule") or o["image"])  # la caja grande usa la portada vertical si Steam la tiene
+            box = f'box store-{e(o["storeId"])} tilt-{self.tilt(o)}' + ("" if o.get("capsule") else " no-capsule")
             slides.append(
                 f'<li class="sh-slide{" on" if i == 0 else ""}{" is-free" if free else ""}" data-i="{i}"{"" if i == 0 else " hidden"}>'
                 f'<img class="sh-bg" src="{img}" alt="" width="460" height="215" loading="lazy" decoding="async">'
-                f'<a class="sh-art" href="{e(page)}" tabindex="-1" aria-hidden="true"><img src="{img}"{fallback(o)} alt="" width="920" height="430"{lazy} decoding="async"></a>'
+                f'<a class="sh-art {box}" href="{e(page)}" tabindex="-1" aria-hidden="true"><img src="{art}" data-fallback="{img}" alt="" width="300" height="450"{lazy} decoding="async">{off}</a>'
                 f'<div class="sh-copy">{self.store_chip(o)}'
                 f'<h2 class="sh-title"><a href="{e(page)}">{e(o["title"])}</a></h2>'
                 + (f'<p class="sh-about">{e(about)}</p>' if about else "")
-                + f'<div class="sh-buy">{off}<p class="sh-price{" free" if free else ""}">{old}<strong>{e(price)}</strong>'
-                + (f'<span>{e(cop)}</span>' if cop else "") + '</p></div>'
+                + f'<div class="sh-buy"><p class="sh-price{" free" if free else ""}"><strong>{e(price)}{" <small>aprox.</small>" if cop_now else ""}</strong>'
+                + (f'<span>{e(cop)} {old}</span>' if cop else old) + '</p></div>'
                 f'{self.countdown(o, "left sh-left") or ""}'
                 f'<div class="sh-cta">{self.offer_button(o, "btn btn-primary sh-btn-main")}<a class="btn sh-btn-line" href="{e(page)}">Ver ficha</a></div>'
                 '</div></li>')
             dots.append(f'<li><button type="button" data-go="{i}" aria-label="Oferta {i + 1}: {e(o["title"])}"{" aria-current=\"true\"" if i == 0 else ""}></button></li>')
             tag = "Gratis" if free else (f"-{pct}%" if pct else "")
-            thumbs.append(f'<li><a href="{e(page)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""}><img src="{img}"{fallback(o)} alt="" width="460" height="215" loading="lazy" decoding="async">'
+            thumbs.append(f'<li><a class="spine store-{e(o["storeId"])}" href="{e(page)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""}><img src="{art}" data-fallback="{img}" alt="" width="300" height="450" loading="lazy" decoding="async">'
                           f'<span class="sh-t-name">{e(o["title"])}</span>' + (f'<span class="sh-t-off{" free" if free else ""}">{e(tag)}</span>' if tag else "") + '</a></li>')
         return (f'<section class="show" aria-label="Ofertas destacadas" data-n="{len(picks)}"><div class="sh-card">'
                 f'<ol class="sh-list">{"".join(slides)}</ol>'
@@ -2240,6 +2278,9 @@ class Site:
         self.ranks = {g["id"]: g.get("rank") or i + 1 for i, g in enumerate(games or [])}
         free = [o for o in live if o.get("currentPrice") == 0]
         deals = [o for o in live if o.get("currentPrice")]
+        # sello «GANGA»: las 10 que más valen la pena hoy entre las de 75 % o más (solo datos reales)
+        self.ganga = {o["id"] for o in sorted((o for o in deals if (o.get("discountPercentage") or 0) >= 75),
+                                              key=lambda o: -(self.value_score(o) or 0))[:10]}
         soon = sorted([o for o in live if o.get("expiresAt")], key=lambda o: o["expiresAt"])[:6]
         top = sorted(deals, key=lambda o: (-("CO" in (o.get("regions") or [])), -(o.get("metacritic") or 0) // 10,
                                            -(o.get("discountPercentage") or 0)))[:12]
@@ -2284,7 +2325,7 @@ class Site:
 {self.ad_slot("banner_after_hero")}
 <section class="shelf shelf-top" aria-labelledby="top-h">
 {self.sec_head("", 'Las mejores ofertas de hoy', f'Por descuento, crítica y disponibilidad en Colombia. <a href="ofertas.html">Ver las {len(live)} ofertas</a>', "depart", "top-h")}
-{self.offer_list(top, with_filters=False, list_id="top-home", bento=True)}
+{self.offer_list(top, with_filters=False, list_id="top-home", slider=True)}
 <p class="shelf-more"><a class="btn btn-primary" href="ofertas.html">Buscar entre las {len(live)} ofertas {ICONS["arrow"]}</a></p>
 </section>
 <div class="duo">{self.dotd_block(dotd)}{self.soon_strip(live)}</div>
@@ -2413,7 +2454,8 @@ class Site:
         shutil.copy(ROOT / "config" / "_headers", self.out / "_headers")
         (self.out / "data").mkdir(exist_ok=True)
         public = [dict({k: o[k] for k in o if k != "telegramPublishedAt"}, page=self.detail.get(o["id"]),
-                       action=self.action_label(o), saving=self.saving_text(o)) for o in live]
+                       action=self.action_label(o), saving=self.saving_text(o), ganga=o["id"] in self.ganga, tilt=self.tilt(o),
+                       copNow=round(self.cop_value(o["currentPrice"], o) or 0) if o.get("currentPrice") and o["currency"] != "COP" else None) for o in live]
         self.write("data/offers.json", json.dumps({"updatedAt": updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                                    "offers": public}, ensure_ascii=False, indent=1))
         self.write("data/juegos.json", json.dumps({"games": [
