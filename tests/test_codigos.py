@@ -37,7 +37,7 @@ class CodesTest(unittest.TestCase):
         state, fresh, _ = codes.update(state, later, fetcher(SERIA, more))
         self.assertEqual(fresh[0][1], "BRANDNEW99")
         sent = []
-        self.assertEqual(codes.announce(state, fresh, "https://x.dev/", send=lambda t: sent.append(t) or True), 3)
+        self.assertEqual(codes.announce(state, fresh, "https://x.dev/", send=lambda t: sent.append(t) or True), min(len(codes.GAMES), codes.MAX_ANNOUNCE))
         self.assertIn("BRANDNEW99", sent[0])
         self.assertIn("gift?code=BRANDNEW99", sent[0])
         state, fresh, _ = codes.update(state, later + timedelta(hours=4), fetcher(SERIA, more))
@@ -70,3 +70,36 @@ class CodesTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class JuegosSinCanjeWebTest(unittest.TestCase):
+    """Honkai Impact 3rd y Tears of Themis: se canjean dentro del juego y la fuente no verifica su estado."""
+
+    def test_juegos_nuevos_con_sus_fuentes(self):
+        self.assertEqual(codes.GAMES["honkai3rd"]["seria"], "honkai3rd")
+        self.assertEqual(codes.GAMES["honkai3rd"]["ennead"], "honkai")
+        self.assertEqual(codes.GAMES["themis"]["seria"], "tot")
+        self.assertEqual(codes.GAMES["themis"]["ennead"], "themis")
+        for gid in ("honkai3rd", "themis"):
+            self.assertIsNone(codes.GAMES[gid]["redeem"])
+            self.assertFalse(codes.GAMES[gid]["verified"])
+            self.assertTrue(codes.GAMES[gid]["page"].startswith("codigos-"))
+
+    def test_anuncio_sin_enlace_de_canje(self):
+        text = codes.announce_text("themis", {"code": "ABCDEF12", "rewards": ["S-Chip ×240"]}, "https://x/codigos-tears-of-themis.html")
+        self.assertIn("ABCDEF12", text)
+        self.assertNotIn("None", text)
+        self.assertIn("dentro del juego", text)
+        payload = codes.discord_payload("honkai3rd", {"code": "ABCDEF12"}, "https://x/c.html")
+        self.assertNotIn("None", payload["embeds"][0]["description"])
+
+    def test_recompensas_de_honkai_en_espanol(self):
+        self.assertEqual(codes.translate("Crystals ×30"), "Cristales ×30")
+        self.assertEqual(codes.translate("Asterite ×500"), "Asterita ×500")
+
+
+class PrimeraRevisionTest(unittest.TestCase):
+    def test_lo_que_ya_existia_no_sale_como_nuevo(self):
+        state, fresh, _ = codes.update({}, NOW, fetcher(SERIA, ENNEAD))
+        self.assertEqual(fresh, [])
+        self.assertFalse(any(codes.is_new(it, NOW) for it in codes.active_codes(state, "genshin")))

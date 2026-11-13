@@ -75,7 +75,8 @@ NAV = [
                       ("lanzamientos-playstation.html", "PlayStation", "store"), ("lanzamientos-xbox.html", "Xbox", "store"),
                       ("lanzamientos-switch.html", "Nintendo Switch", "store"), ("juegos-retrasados.html", "Juegos retrasados", "clock")]),
     ("Códigos", [("codigos.html", "Códigos de juegos", "gift"), ("codigos-genshin-impact.html", "Genshin Impact", "sparkle"),
-                 ("codigos-honkai-star-rail.html", "Honkai: Star Rail", "sparkle"), ("codigos-zenless-zone-zero.html", "Zenless Zone Zero", "sparkle")]),
+                 ("codigos-honkai-star-rail.html", "Honkai: Star Rail", "sparkle"), ("codigos-zenless-zone-zero.html", "Zenless Zone Zero", "sparkle"),
+                 ("codigos-honkai-impact-3rd.html", "Honkai Impact 3rd", "sparkle"), ("codigos-tears-of-themis.html", "Tears of Themis", "sparkle")]),
     ("Ayuda", [("guias.html", "Guías", "book"), ("glosario.html", "Glosario gamer", "book"), ("estadisticas.html", "Estadísticas", "sparkle"), ("preguntas-frecuentes.html", "Preguntas", "chat"),
                ("como-verificamos.html", "Cómo verificamos", "check")]),
 ]
@@ -2157,9 +2158,11 @@ class Site:
         new = '<span class="badge free code-new">NUEVO</span>' if is_new(item, now) else ""
         return (f'<li class="code-card">{new}<p class="code-text"><code>{e(item["code"])}</code></p>'
                 f'<p class="code-rewards">{ICONS["gift"]}{e(rewards)}</p><div class="rel-actions">'
-                f'<button class="btn btn-sm" type="button" data-copy="{e(item["code"])}" hidden>Copiar</button>'
-                + ext_link(g["redeem"].format(code=quote(item["code"])), "Canjear", cls="btn btn-primary btn-sm btn-free",
-                           label=f"Canjear el código {item['code']} en la página oficial (abre en otra pestaña)") + "</div></li>")
+                + (f'<button class="btn btn-sm" type="button" data-copy="{e(item["code"])}" hidden>Copiar</button>'
+                   + ext_link(g["redeem"].format(code=quote(item["code"])), "Canjear", cls="btn btn-primary btn-sm btn-free",
+                              label=f"Canjear el código {item['code']} en la página oficial (abre en otra pestaña)")
+                   if g["redeem"] else f'<button class="btn btn-primary btn-sm btn-free" type="button" data-copy="{e(item["code"])}" hidden>Copiar código</button>')
+                + "</div></li>")
 
     def codes_pages(self, state, now):
         from .codes import GAMES, active_codes, expired_codes
@@ -2169,7 +2172,12 @@ class Site:
         for gid, g in GAMES.items():
             live, gone = active_codes(state, gid), expired_codes(state, gid)
             last = ((state.get("games") or {}).get(gid) or {}).get("lastOk")
-            hub.append((g, len(live), ((state.get("games") or {}).get(gid) or {}).get("image") or ""))
+            hub.append((g, live, ((state.get("games") or {}).get(gid) or {}).get("image") or ""))
+            web = bool(g["redeem"])
+            how = ('Copia el código o toca <strong>Canjear</strong> para abrir la página oficial de HoYoverse con el código ya puesto.' if web else
+                   'Este juego no tiene página web de canje: copia el código y pégalo dentro del juego.')
+            warn = ('' if g["verified"] else '<p class="notice code-warn">Las listas públicas no pueden comprobar si los códigos de este juego siguen vivos: '
+                    'mostramos los que ninguna da por vencidos, pero alguno puede haber caducado.</p>')
             when = (f'<p class="meta">Revisado el <time datetime="{e(last)}">{e(co_time(parse_iso(last)))}</time> · se revisa cada {self.cfg["intervalo_horas"]} horas</p>'
                     if last else '<p class="notice">Todavía no se pudo revisar la lista. Vuelve en unas horas.</p>')
             cards = (f'<ul class="code-grid">{"".join(self.code_card(gid, it, now) for it in live)}</ul>' if live else
@@ -2184,7 +2192,8 @@ class Site:
                    ("¿Por qué un código no me funciona?",
                     "Puede que ya haya vencido, que ya lo hayas usado en esa cuenta o que no tengas el nivel mínimo. Cada código se puede usar una sola vez por cuenta."),
                    ("¿Los códigos sirven en Colombia y Latinoamérica?",
-                    "Sí. Elige el servidor América al canjear. Casi todos los códigos funcionan en todos los servidores.")]
+                    "Sí. Elige el servidor América al canjear. Casi todos los códigos funcionan en todos los servidores." if web else
+                    "Sí, en la versión global del juego. Algunos códigos son solo para ciertos servidores o eventos.")]
             faq_html = '<div class="faq">' + "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq) + "</div>"
             faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
                 {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
@@ -2193,9 +2202,9 @@ class Site:
             icon = f'<img class="code-game-icon" src="{e(img)}" alt="Ícono de {e(g["name"])}" width="96" height="96">' if img else ""
             others = " · ".join(f'<a href="{o["page"]}">Códigos de {e(o["name"])}</a>' for k, o in GAMES.items() if k != gid)
             self.layout(g["page"], f"Códigos de {g['name']} activos hoy ({month})",
-                        f"Todos los códigos de {g['name']} que funcionan hoy, con sus recompensas ({g['currency']} y más) y botón para canjear en la página oficial. Revisados cada {self.cfg['intervalo_horas']} horas.",
+                        f"Todos los códigos de {g['name']} que funcionan hoy, con sus recompensas ({g['currency']} y más)" + (" y botón para canjear en la página oficial" if web else " y cómo canjearlos dentro del juego") + f". Revisados cada {self.cfg['intervalo_horas']} horas.",
                         f'<div class="code-head">{icon}<h1>Códigos de {e(g["name"])} activos</h1></div><p class="lead">Los códigos que funcionan hoy para conseguir {e(g["currency"])} y otras recompensas gratis. '
-                        f'Copia el código o toca <strong>Canjear</strong> para abrir la página oficial de HoYoverse con el código ya puesto.</p>{when}'
+                        f'{how}</p>{when}{warn}'
                         f'<h2>{ICONS["gift"]} Códigos activos ({len(live)})</h2>{cards}{self.ad_slot("article_middle")}'
                         f'<h2>Cómo canjear los códigos</h2><ol class="steps">{steps}</ol><p>{e(g["ingame"])}</p>{old}'
                         f'<h2>Preguntas frecuentes</h2>{faq_html}<p>{others}</p>'
@@ -2203,13 +2212,26 @@ class Site:
                         f'lo que ninguna da por vencido. Un código puede dejar de funcionar antes de nuestra próxima revisión.</p>'
                         f'<section class="channels"><h2>{ICONS["bell"]} Recibe los códigos nuevos al instante</h2><p class="lead">Cuando sale un código nuevo lo publicamos en Telegram y Discord.</p>{self.channels_cta()}</section>',
                         crumbs=[("codigos.html", "Códigos"), (g["page"], g["name"])], jsonld=[faq_ld], og_image=img or None)
-        rows = "".join(f'<li class="code-hub"><a href="{g["page"]}">'
-                       + (f'<img src="{e(im)}" alt="" width="64" height="64" loading="lazy">' if im.startswith("https://") else "")
-                       + f'<span><strong>Códigos de {e(g["name"])}</strong><span class="meta">{n} activos hoy</span></span></a></li>' for g, n, im in hub)
+        from .codes import is_new
+        cards = []
+        for g, live, im in sorted(hub, key=lambda h: -len(h[1])):
+            icon = f'<img class="ch-bg" src="{e(im)}" alt="" width="96" height="96" loading="lazy"><img class="ch-icon" src="{e(im)}" alt="" width="96" height="96" loading="lazy">' if im.startswith("https://") else '<span class="ch-icon ch-none" aria-hidden="true"></span>'
+            latest = live[0] if live else None
+            fresh = any(is_new(it, now) for it in live)
+            peek = (f'<span class="ch-latest"><span class="ch-label">Último código</span><code>{e(latest["code"])}</code>'
+                    + (f'<span class="ch-reward">{e((latest.get("rewards") or [""])[0])}</span>' if latest.get("rewards") else "") + "</span>") if latest else                 '<span class="ch-latest ch-empty">Sin códigos activos ahora. Te avisamos cuando salga uno.</span>'
+            cards.append(f'<li class="code-hub2{" has-new" if fresh else ""}"><a href="{g["page"]}">{icon}'
+                         f'<span class="ch-top"><strong>{e(g["name"])}</strong>' + ('<span class="badge free">NUEVO</span>' if fresh else "") + '</span>'
+                         f'<span class="ch-count"><b>{len(live)}</b> {"código activo" if len(live) == 1 else "códigos activos"}</span>{peek}'
+                         f'<span class="ch-go">{"Canje en la web" if g["redeem"] else "Canje dentro del juego"} · Ver códigos {ICONS["arrow"]}</span></a></li>')
+        total = sum(len(h[1]) for h in hub)
+        names = ", ".join(g["name"] for g, _, _ in hub[:-1]) + " y " + hub[-1][0]["name"]
         self.layout("codigos.html", f"Códigos de juegos gratis activos ({month})",
-                    "Códigos de canje que funcionan hoy para Genshin Impact, Honkai: Star Rail y Zenless Zone Zero, revisados automáticamente cada 4 horas.",
-                    f'<h1>Códigos de juegos</h1><p class="lead">Códigos de canje que funcionan hoy, con sus recompensas y un botón para canjearlos en la página oficial. '
-                    f'La lista se revisa sola cada {self.cfg["intervalo_horas"]} horas.</p><ul class="stores">{rows}</ul>',
+                    f"Códigos de canje que funcionan hoy para {names}, revisados automáticamente cada 4 horas.",
+                    f'<h1>Códigos de juegos</h1><p class="lead">Hoy hay <strong>{total} códigos activos</strong> para {e(names)}, con sus recompensas y cómo canjearlos. '
+                    f'La lista se revisa sola cada {self.cfg["intervalo_horas"]} horas.</p><p class="meta">Revisado el {e(checked)}</p>'
+                    f'<ul class="code-hubs">{"".join(cards)}</ul>'
+                    f'<section class="channels"><h2>{ICONS["bell"]} Recibe los códigos nuevos al instante</h2><p class="lead">Cuando sale un código nuevo lo publicamos en Telegram y Discord.</p>{self.channels_cta()}</section>',
                     crumbs=[("codigos.html", "Códigos")])
 
     def giveaway_card(self, g):
@@ -2678,7 +2700,7 @@ class Site:
 <li><strong>Epic Games Store</strong>: listado público de juegos gratis, consultado para Colombia. Enlace a la ficha oficial del juego.</li>
 <li><strong><a href="https://www.cheapshark.com" target="_blank" rel="noopener noreferrer">CheapShark</a></strong>: API pública de precios de tiendas de juegos de PC. La usamos para encontrar descuentos; el enlace lleva a la tienda oficial (ficha de Steam o búsqueda oficial de la tienda). Gracias a CheapShark por ofrecer estos datos.</li>
 <li><strong><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a></strong>: la base de datos libre de Wikipedia. La usamos para los juegos grandes y de consola (PlayStation, Xbox y Switch) y sus fechas; los ordenamos por en cuántos idiomas de Wikipedia tienen artículo.</li>
-<li><strong>Códigos de canje de HoYoverse</strong>: dos listas públicas y gratuitas de la comunidad, <a href="https://hoyo-codes.seria.moe" target="_blank" rel="noopener noreferrer">hoyo-codes</a> y <a href="https://api.ennead.cc" target="_blank" rel="noopener noreferrer">ennead</a>. Un código solo aparece como activo si ninguna de las dos lo da por vencido. El botón «Canjear» lleva a la página oficial de HoYoverse.</li>
+<li><strong>Códigos de canje de HoYoverse</strong>: dos listas públicas y gratuitas de la comunidad, <a href="https://hoyo-codes.seria.moe" target="_blank" rel="noopener noreferrer">hoyo-codes</a> y <a href="https://api.ennead.cc" target="_blank" rel="noopener noreferrer">ennead</a>. Un código solo aparece como activo si ninguna de las dos lo da por vencido. El botón «Canjear» lleva a la página oficial de HoYoverse. Honkai Impact 3rd y Tears of Themis se canjean dentro del juego y sus listas no pueden comprobar el estado de cada código: sus páginas lo avisan.</li>
 <li><strong><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong>: tasa de cambio del día para el valor aproximado en pesos.</li>
 </ul>
 <p>No copiamos textos protegidos de las tiendas. Las imágenes de los juegos son las promocionales que publican las propias tiendas o fuentes. Si eres titular de derechos y quieres que retiremos una imagen, escríbenos desde <a href="contacto.html">Contacto</a>.</p></div>""",

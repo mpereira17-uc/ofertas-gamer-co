@@ -1,4 +1,5 @@
-"""Códigos de canje de juegos gacha de HoYoverse (Genshin Impact, Honkai: Star Rail y Zenless Zone Zero).
+"""Códigos de canje de juegos gacha de HoYoverse (Genshin Impact, Honkai: Star Rail, Zenless Zone Zero,
+Honkai Impact 3rd y Tears of Themis).
 
 Se consultan dos API públicas y gratuitas que recopilan los códigos oficiales. Un código solo se muestra
 como activo si alguna fuente que respondió lo da por activo y ninguna lo da por vencido. Si ninguna fuente
@@ -36,7 +37,25 @@ GAMES = {
                           "Inicia sesión, elige el servidor América y tu agente, y confirma.",
                           "Las recompensas llegan al correo dentro del juego."],
                 "ingame": "Dentro del juego: menú → Más → Canjear código."},
+    # Estos dos se canjean solo dentro del juego (no hay página web de canje) y las listas públicas no pueden
+    # comprobar si un código sigue vivo: la página lo dice claro.
+    "honkai3rd": {"name": "Honkai Impact 3rd", "page": "codigos-honkai-impact-3rd.html", "seria": "honkai3rd", "ennead": "honkai",
+                  "redeem": None, "verified": False, "currency": "Cristales",
+                  "steps": ["Copia el código con el botón «Copiar».",
+                            "Abre Honkai Impact 3rd e inicia sesión con tu cuenta.",
+                            "Busca la opción de canjear códigos (Exchange) en el menú de la cuenta y pega el código.",
+                            "Las recompensas llegan al correo dentro del juego."],
+                  "ingame": "No hay página web de canje: el código se pega dentro del juego."},
+    "themis": {"name": "Tears of Themis", "page": "codigos-tears-of-themis.html", "seria": "tot", "ennead": "themis",
+               "redeem": None, "verified": False, "currency": "S-Chips",
+               "steps": ["Copia el código con el botón «Copiar».",
+                         "Abre Tears of Themis e inicia sesión con tu cuenta.",
+                         "Busca la opción de canjear códigos en la configuración del juego y pega el código.",
+                         "Las recompensas llegan al correo dentro del juego."],
+               "ingame": "No hay página web de canje: el código se pega dentro del juego."},
 }
+for _g in GAMES.values():
+    _g.setdefault("verified", True)
 SERIA_URL = "https://hoyo-codes.seria.moe/codes?game={game}"
 ENNEAD_URL = "https://api.ennead.cc/mihoyo/{game}/codes"
 # Ícono oficial de cada juego, tomado de su ficha en la App Store (API pública de Apple, sin clave)
@@ -56,6 +75,7 @@ REWARDS_ES = [
     ("Polychrome", "Policromos"), ("Dennies", "Dinis"), ("Denny", "Dinis"), ("Official Investigator Log", "Registro de investigador oficial"),
     ("Senior Investigator Log", "Registro de investigador sénior"), ("W-Engine Energy Module", "Módulo de energía de amplificador"),
     ("Bangboo Algorithm Module", "Módulo de algoritmo de Bangbú"), ("Bangboo System Widget", "Accesorio de sistema de Bangbú"),
+    ("Crystal", "Cristales"), ("Asterite", "Asterita"), ("Stamina Potion", "Poción de energía"),
 ]
 
 
@@ -164,7 +184,8 @@ def update(previous, now, fetch=get_json_default):
         for code, rewards in active.items():
             if code in expired:
                 continue
-            item = codes.setdefault(code, {"firstSeen": iso(now)})
+            # en la primera revisión de un juego no sabemos cuándo salió cada código: no se marcan como nuevos
+            item = codes.setdefault(code, {"firstSeen": iso(now) if seeded else None})
             if item.get("status") != "activo" and seeded and not item.get("announced"):
                 fresh.append((gid, code))
             item.update(status="activo", lastSeen=iso(now), rewards=rewards or item.get("rewards", []))
@@ -210,7 +231,8 @@ def announce_text(gid, item, link):
     lines = [f"🎟️ <b>Nuevo código de {e(g['name'])}</b>", "", f"<code>{e(item['code'])}</code>"]
     if item.get("rewards"):
         lines.append("🎁 " + e(", ".join(item["rewards"])))
-    lines += [f'👉 <a href="{e(g["redeem"].format(code=item["code"]))}">Canjear en la página oficial</a>',
+    lines += [f'👉 <a href="{e(g["redeem"].format(code=item["code"]))}">Canjear en la página oficial</a>' if g["redeem"]
+              else "👉 Cópialo y pégalo dentro del juego (no tiene página web de canje).",
               f'📋 Todos los códigos: <a href="{e(link)}">{e(link)}</a>', "<i>Úsalo pronto: los códigos vencen sin aviso.</i>"]
     return "\n".join(lines)
 
@@ -236,7 +258,8 @@ def discord_payload(gid, item, link, image=None):
     lines = [f"`{item['code']}`"]
     if item.get("rewards"):
         lines.append("🎁 " + ", ".join(item["rewards"]))
-    lines += [f"[Canjear en la página oficial]({g['redeem'].format(code=item['code'])}) · [Todos los códigos]({link})"]
+    lines += [(f"[Canjear en la página oficial]({g['redeem'].format(code=item['code'])}) · " if g["redeem"] else "Se canjea dentro del juego · ")
+              + f"[Todos los códigos]({link})"]
     return {"embeds": [{"title": f"🎟️ Nuevo código de {g['name']}"[:250], "url": link, "description": "\n".join(lines)[:2000],
                         "color": 0xFFC83D, "footer": {"text": "Los códigos vencen sin aviso"}}
                        | ({"thumbnail": {"url": image}} if (image or "").startswith("https://") else {})]}
