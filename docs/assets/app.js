@@ -1212,10 +1212,11 @@ document.addEventListener("error", function (ev) {
     im.forEach(function (img) { if (img.loading === "lazy") img.loading = "eager"; });
   };
   window.addEventListener("load", function () { warm(1); });
+  box.classList.add("on"); // la vitrina quedó activa (las pruebas lo revisan)
   var go = function (i) {
     i = (i + n) % n;
     if (i === cur) return;
-    box.classList.add("on"); // la animación de entrada solo corre al cambiar, no en la carga (mejor LCP)
+    box.classList.add("moved"); // la animación de entrada solo corre al cambiar, no en la carga (mejor LCP)
     warm(i + 1);
     slides[cur].classList.remove("on");
     slides[cur].hidden = true;
