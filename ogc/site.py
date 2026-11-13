@@ -7,7 +7,7 @@ import re
 import shutil
 from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode, urlparse
 from pathlib import Path
 
 from . import giveaways
@@ -157,6 +157,23 @@ def day_es(day):
 def slugify_words(text):
     from .model import slugify
     return slugify(text).split("-")
+
+
+LIGHT_IMAGE_HOSTS = ("cdn1.epicgames.com",)
+
+
+def light_image(url, width=920):
+    """Epic entrega las portadas en PNG de hasta 2560 px (una pesaba 1,6 MB). Su CDN las devuelve redimensionadas
+    en JPEG si se pide: unos 116 KB a 920 px, el ancho más grande que usa el sitio. Las demás tiendas ya son livianas."""
+    p = urlparse(url or "")
+    if p.scheme == "https" and p.hostname in LIGHT_IMAGE_HOSTS and not p.query:
+        return f"{url}?resize=1&w={width}"
+    return url
+
+
+def light_images(items):
+    """Copia de las ofertas o juegos con las portadas livianas (no cambia los datos guardados)."""
+    return [dict(x, image=light_image(x["image"])) if x.get("image") else x for x in items]
 
 
 def fallback(o):
@@ -2208,6 +2225,7 @@ class Site:
         shutil.copytree(ASSETS, self.out / "assets")
         self.now = updated_dt
         updated = co_time(updated_dt)
+        offers, games = light_images(offers), light_images(games or [])
         live = [o for o in offers if o["status"] != "Vencido"]
         rates = sorted(o["copApproximation"] / o["currentPrice"] for o in live
                        if o.get("copApproximation") and o.get("currentPrice") and o["currency"] == "USD")
