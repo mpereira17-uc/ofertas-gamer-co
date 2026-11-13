@@ -1025,17 +1025,23 @@
     }, 5000);
   });
 
-  // Las tarjetas aparecen suave al entrar en pantalla (una sola vez)
+  // Las tarjetas aparecen suave al entrar en pantalla (una sola vez).
+  // Se activan 240px antes de llegar a la pantalla para que al bajar rápido no queden huecos negros;
+  // las que ya están a la vista al cargar se muestran de una vez, sin animación.
   if (!calm && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    document.querySelectorAll("main .grid > .card, main .rel-card, main .spot-card").forEach(function (el) {
+    }, { rootMargin: "0px 0px 240px 0px", threshold: 0 });
+    var fold = window.innerHeight;
+    var cards = Array.prototype.slice.call(document.querySelectorAll("main .grid > .card, main .rel-card, main .spot-card"));
+    var tops = cards.map(function (el) { return el.getBoundingClientRect().top; }); // leer todo antes de escribir
+    cards.forEach(function (el, k) {
+      if (tops[k] < fold) return;
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.classList.add("reveal");
-      el.style.transitionDelay = Math.min(siblings % 6, 5) * 40 + "ms";
+      el.style.transitionDelay = Math.min(siblings % 4, 3) * 30 + "ms";
       io.observe(el);
     });
   }
@@ -1084,10 +1090,17 @@ document.addEventListener("error", function (ev) {
   var cur = 0, hold = false, stopped = calm;
   if (side) side.hidden = false;
   if (pause && calm) pause.hidden = true;
-  box.classList.add("on");
+  // Precarga la portada de la siguiente oferta para que nunca se vea el cuadro vacío al cambiar
+  var warm = function (k) {
+    var im = slides[k % n].querySelectorAll("img");
+    im.forEach(function (img) { if (img.loading === "lazy") img.loading = "eager"; });
+  };
+  window.addEventListener("load", function () { warm(1); });
   var go = function (i) {
     i = (i + n) % n;
     if (i === cur) return;
+    box.classList.add("on"); // la animación de entrada solo corre al cambiar, no en la carga (mejor LCP)
+    warm(i + 1);
     slides[cur].classList.remove("on");
     slides[cur].hidden = true;
     slides[i].hidden = false;
