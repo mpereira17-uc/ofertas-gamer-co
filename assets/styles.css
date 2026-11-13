@@ -1949,3 +1949,32 @@ main:has(.shop) .page-hero .lead{font-size:1rem;margin:.3em 0}
 .filters.shop-filters label.sf-toggle:nth-last-child(-n+2){flex-direction:row;align-items:center}
 .filters.shop-filters label:nth-last-child(-n+2)>span:first-child{display:inline}
 .filters.shop-filters .sf-sort{padding-top:12px}
+
+/* ---- v7.2 Tarjetas más limpias y portada más corta en el celular (2026-11-13) ----
+   Tarjetas: el aviso «Precio de referencia en USD» pasa de recuadro amarillo a una nota gris, y los pesos se leen mejor.
+   En el celular se vuelven a ver «Mínimo histórico», «Oferta terminada» y los avisos de afiliado o patrocinio
+   (antes se ocultaban todas las etiquetas). Portada en el celular: tráileres y guías pasan a filas
+   que se deslizan, herramientas en dos columnas sin descripción, 2 comparaciones de tiendas en vez de 4 y 6 de las mejores ofertas en vez de 12. */
+ul.grid:not(.x)>.card .st.ref{padding-left:0;padding-right:0;border-color:transparent;color:var(--muted)}
+ul.grid:not(.x)>.card .cop-line{color:#d3d7df;font-weight:600}
+/* con el botón «Ya lo reclamé» son cuatro botones: el principal pasa a su propia fila para no cortarse */
+ul.grid:not(.x)>.card .actions:has(.claim-btn:not([hidden])){flex-wrap:wrap}
+ul.grid:not(.x)>.card .actions:has(.claim-btn:not([hidden])) .btn:first-child{flex-basis:100%}
+@media (max-width:520px){
+ ul.grid:not(.x)>.card .chips-st{display:flex;flex-wrap:wrap}
+ ul.grid:not(.x)>.card .chips-st .st:not(.low):not(.bad):not(.aff){display:none}
+ ul.grid:not(.x)>.card .chips-st:not(:has(.low,.bad,.aff)){display:none}
+}
+@media (max-width:700px){
+ #top-home>li:nth-child(n+7){display:none}
+ .tv-grid,.jr-grid{display:flex;gap:12px;margin-inline:-16px;padding:0 16px 6px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:16px;scrollbar-width:none}
+ .tv-grid::-webkit-scrollbar,.jr-grid::-webkit-scrollbar{display:none}
+ .tv-grid>li,.jr-grid>li{flex:0 0 82%;min-width:0;scroll-snap-align:start}
+ .duel-list>li:nth-child(n+3){display:none}
+ .tool-grid{grid-template-columns:1fr 1fr;gap:0 12px}
+ .tool-grid span:not(.tool-ico):not(.tool-go){display:none}
+ .tool-grid a{flex-wrap:nowrap;gap:8px;min-height:52px;padding:10px 2px}
+ .tool-grid .tool-go{display:none}
+ .tool-grid .tool-ico{flex:none;width:28px;height:28px}
+ .tool-grid strong{min-width:0;font-size:.98rem;line-height:1.15;overflow-wrap:normal;hyphens:auto}
+}

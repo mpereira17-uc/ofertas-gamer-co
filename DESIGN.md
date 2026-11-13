@@ -9,6 +9,7 @@
 - **Se quitó:** tablero de salidas, letras que se arman, títulos con la primera letra roja, portadas inclinadas, líneas rojas de fondo, letrero gigante del pie, intro del logo y los efectos de GSAP (los archivos siguen en `assets/vendor` por si se quieren usar).
 - **Página de ofertas (v7.1, 2026-11-04):** filtros en una columna a la izquierda (buscador, listas desplegables e interruptores), resultados a la derecha con los atajos arriba. El aviso de precios ya no es una caja amarilla: es una línea discreta con un ícono (`.price-note`).
 - **Movimiento:** solo el cambio del carrusel y las tarjetas que aparecen suave una vez. Nada con «menos movimiento».
+- **v7.2 (2026-11-13):** «Precio de referencia en USD» es una nota gris, no un recuadro amarillo, y la línea en pesos va más clara. En el celular se ven «Mínimo histórico», «Oferta terminada» y los avisos de afiliado o patrocinio (las demás etiquetas siguen ocultas). La portada en el celular es más corta: tráileres y guías en filas que se deslizan, herramientas en dos columnas, 2 comparaciones de tiendas y 6 de las mejores ofertas. «Sin fecha de fin» se mantiene en cada tarjeta.
 
 ---
 
