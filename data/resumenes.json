@@ -1,6 +1,308 @@
 {
  "semanas": [
   {
+   "week": "2026-S46",
+   "date": "2026-11-13T16:31:24Z",
+   "label": "13 de noviembre de 2026",
+   "free": [
+    {
+     "id": "epic-9975548b6d404a94b8a9bdb34cad49e9-2026-11-19",
+     "title": "Knightica",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0,
+     "originalPrice": 31099.0,
+     "currency": "COP",
+     "discountPercentage": 100,
+     "image": "https://cdn1.epicgames.com/spt-assets/357100ca5613420e98208c5f14585e9d/knightica-1nuxm.png",
+     "destinationUrl": "https://store.epicgames.com/es-ES/p/knightica-3be45c",
+     "officialUrl": "https://store.epicgames.com/es-ES/p/knightica-3be45c",
+     "affiliate": false,
+     "expiresAt": "2026-11-19T16:00:00.000Z",
+     "regions": [
+      "CO"
+     ]
+    }
+   ],
+   "deals": [
+    {
+     "id": "cs-109746-15-1.99",
+     "title": "Metro 2033 Redux",
+     "store": "Fanatical",
+     "storeId": "fanatical",
+     "currentPrice": 1.99,
+     "originalPrice": 19.99,
+     "currency": "USD",
+     "discountPercentage": 90,
+     "copApproximation": 6500,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/capsule_231x87.jpg?t=1792681167",
+     "destinationUrl": "https://www.fanatical.com/en/search?search=Metro%202033%20Redux",
+     "officialUrl": "https://www.fanatical.com/en/search?search=Metro%202033%20Redux",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-154838-11-2.49",
+     "title": "Tumblestone",
+     "store": "Humble Store",
+     "storeId": "humble",
+     "currentPrice": 2.49,
+     "originalPrice": 24.99,
+     "currency": "USD",
+     "discountPercentage": 90,
+     "copApproximation": 8200,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/269710/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/269710/capsule_231x87.jpg?t=1768587840",
+     "destinationUrl": "https://www.humblebundle.com/store/search?search=Tumblestone",
+     "officialUrl": "https://www.humblebundle.com/store/search?search=Tumblestone",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-295869-25-7.49",
+     "title": "FINAL FANTASY VII REBIRTH",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 7.49,
+     "originalPrice": 49.99,
+     "currency": "USD",
+     "discountPercentage": 85,
+     "copApproximation": 24600,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2909400/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2909400/61fda2e598f865ba6e985830661b98f3167e4ccc/capsule_231x87.jpg?t=1793774936",
+     "destinationUrl": "https://store.epicgames.com/es-ES/browse?q=FINAL%20FANTASY%20VII%20REBIRTH",
+     "officialUrl": "https://store.epicgames.com/es-ES/browse?q=FINAL%20FANTASY%20VII%20REBIRTH",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-126-1-3.99",
+     "title": "Sid Meier's Civilization IV",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 3.99,
+     "originalPrice": 19.99,
+     "currency": "USD",
+     "discountPercentage": 80,
+     "copApproximation": 13100,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3900/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3900/capsule_231x87.jpg?t=1724341287",
+     "destinationUrl": "https://store.steampowered.com/app/3900/",
+     "officialUrl": "https://store.steampowered.com/app/3900/",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-117-1-2.99",
+     "title": "Company of Heroes",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 2.99,
+     "originalPrice": 14.99,
+     "currency": "USD",
+     "discountPercentage": 80,
+     "copApproximation": 9800,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4560/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/228200/capsule_231x87.jpg?t=1777996337",
+     "destinationUrl": "https://store.steampowered.com/app/4560/",
+     "officialUrl": "https://store.steampowered.com/app/4560/",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-227942-15-7.99",
+     "title": "Disco Elysium - The Final Cut",
+     "store": "Fanatical",
+     "storeId": "fanatical",
+     "currentPrice": 7.99,
+     "originalPrice": 39.99,
+     "currency": "USD",
+     "discountPercentage": 80,
+     "copApproximation": 26300,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
+     "destinationUrl": "https://www.fanatical.com/en/search?search=Disco%20Elysium%20-%20The%20Final%20Cut",
+     "officialUrl": "https://www.fanatical.com/en/search?search=Disco%20Elysium%20-%20The%20Final%20Cut",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-243-1-2.49",
+     "title": "Tom Clancy's Splinter Cell",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 2.49,
+     "originalPrice": 9.99,
+     "currency": "USD",
+     "discountPercentage": 75,
+     "copApproximation": 8200,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13560/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13560/capsule_231x87.jpg?t=1764775959",
+     "destinationUrl": "https://store.steampowered.com/app/13560/",
+     "officialUrl": "https://store.steampowered.com/app/13560/",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-206516-3-15.00",
+     "title": "Red Dead Redemption 2",
+     "store": "Green Man Gaming",
+     "storeId": "gmg",
+     "currentPrice": 15.0,
+     "originalPrice": 59.99,
+     "currency": "USD",
+     "discountPercentage": 75,
+     "copApproximation": 49300,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/capsule_231x87.jpg?t=1759502961",
+     "destinationUrl": "https://www.greenmangaming.com/search/?query=Red%20Dead%20Redemption%202",
+     "officialUrl": "https://www.greenmangaming.com/search/?query=Red%20Dead%20Redemption%202",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-61-1-7.49",
+     "title": "Sid Meier's Civilization V",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7.49,
+     "originalPrice": 29.99,
+     "currency": "USD",
+     "discountPercentage": 75,
+     "copApproximation": 24600,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8930/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8930/capsule_231x87.jpg?t=1724341158",
+     "destinationUrl": "https://store.steampowered.com/app/8930/",
+     "officialUrl": "https://store.steampowered.com/app/8930/",
+     "affiliate": false,
+     "regions": []
+    },
+    {
+     "id": "cs-252306-15-16.79",
+     "title": "Persona 5 Royal",
+     "store": "Fanatical",
+     "storeId": "fanatical",
+     "currentPrice": 16.79,
+     "originalPrice": 59.99,
+     "currency": "USD",
+     "discountPercentage": 72,
+     "copApproximation": 55200,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/capsule_231x87.jpg?t=1783356822",
+     "destinationUrl": "https://www.fanatical.com/en/search?search=Persona%205%20Royal",
+     "officialUrl": "https://www.fanatical.com/en/search?search=Persona%205%20Royal",
+     "affiliate": false,
+     "regions": []
+    }
+   ],
+   "games": [
+    {
+     "id": "wd-Q23648408",
+     "title": "Grand Theft Auto VI",
+     "date": "2026-11-19",
+     "precision": "day",
+     "platforms": [
+      "Xbox",
+      "PlayStation",
+      "Windows"
+     ],
+     "genres": [
+      "Acción-aventura",
+      "Disparos en tercera persona"
+     ],
+     "image": "https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg",
+     "url": "https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+     "store": "Wikipedia",
+     "source": "wikidata"
+    },
+    {
+     "id": "steam-4171850",
+     "title": "Trees Hate You",
+     "date": "2026-11-16",
+     "precision": "day",
+     "platforms": [
+      "Windows",
+      "Linux"
+     ],
+     "genres": [
+      "Aventura",
+      "Indie"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4171850/4550c09c2fa41435b7b695f31460bea297d4ce15/header.jpg?t=1793641997",
+     "url": "https://store.steampowered.com/app/4171850/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-3687090",
+     "title": "Dice Hoarder",
+     "date": "2026-11-13",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Casual",
+      "Indie"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3687090/af03fa8cadd860459554ac85a2e47c47190c9f90/header.jpg?t=1794484302",
+     "url": "https://store.steampowered.com/app/3687090/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-5185750",
+     "title": "Trafficity",
+     "date": "2026-11-16",
+     "precision": "day",
+     "platforms": [
+      "Windows",
+      "Mac"
+     ],
+     "genres": [
+      "Indie",
+      "Simuladores"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5185750/cba1f3195974a89cac41d5ae9c56e6bed1809b56/header.jpg?t=1794501756",
+     "url": "https://store.steampowered.com/app/5185750/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-5200620",
+     "title": "Dungeonbound",
+     "date": "2026-11-15",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Aventura",
+      "Indie",
+      "Rol"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5200620/b3a32d9086038acf42c9457c2bc062f93d90ea3e/header.jpg?t=1793798725",
+     "url": "https://store.steampowered.com/app/5200620/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-3724300",
+     "title": "Toto's Journey",
+     "date": "2026-11-18",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción",
+      "Aventura",
+      "Casual"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3724300/92e1d5509cb77280e69a080068dcc16effa0d3ab/header.jpg?t=1793627236",
+     "url": "https://store.steampowered.com/app/3724300/",
+     "store": "Steam"
+    }
+   ]
+  },
+  {
    "week": "2026-S45",
    "date": "2026-11-06T15:59:15Z",
    "label": "6 de noviembre de 2026",

@@ -2,17 +2,30 @@
  "current": {
   "question": "🎮 ¿Cuál vas a jugar este fin de semana?",
   "options": [
-   "Flotsam",
-   "Good Morning Human",
-   "Horror Adventure",
-   "Balloon Strike",
+   "Knightica",
+   "Metro 2033 Redux",
+   "Tumblestone",
+   "FINAL FANTASY VII REBIRTH",
    "Otro / ninguno"
   ],
-  "week": "2026-S45",
-  "telegram": "5148143423861031175",
+  "week": "2026-S46",
+  "telegram": "5167990188562973023",
   "discord": true
  },
  "previous": [
+  {
+   "question": "🎮 ¿Cuál vas a jugar este fin de semana?",
+   "options": [
+    "Flotsam",
+    "Good Morning Human",
+    "Horror Adventure",
+    "Balloon Strike",
+    "Otro / ninguno"
+   ],
+   "week": "2026-S45",
+   "telegram": "5148143423861031175",
+   "discord": true
+  },
   {
    "question": "🎮 ¿Cuál vas a jugar este fin de semana?",
    "options": [
