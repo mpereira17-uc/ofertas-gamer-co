@@ -413,6 +413,83 @@
     });
   }
 
+  // Caja de la estantería (v8) armada con los datos públicos de una oferta: la usan favoritos y la lista de deseos.
+  // Todo el texto va con textContent. Devuelve el <li> y su fila de botones para agregar más.
+  function boxCard(o) {
+    var mk = function (tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text) n.textContent = text;
+      return n;
+    };
+    var cash = function (v, cur) {
+      if (cur === "COP") return "$" + Math.round(v).toLocaleString("es-CO") + " COP";
+      return "US$" + Number(v).toFixed(2);
+    };
+    var https = function (u) { return /^https:\/\//.test(u || ""); };
+    var free = o.currentPrice === 0, li = mk("li", "card" + (free ? " is-free" : ""));
+    var cover = https(o.capsule) ? o.capsule : "";
+    var box = mk("a", "box store-" + String(o.storeId || "").replace(/[^a-z0-9-]/g, "") + " tilt-" + (o.tilt || 1) + (cover ? "" : " no-capsule"));
+    box.href = o.page || o.destinationUrl;
+    var img = mk("img");
+    img.src = cover || (https(o.image) ? o.image : "assets/placeholder.svg");
+    img.addEventListener("error", function () { // portada caída: la horizontal, la miniatura o el marcador
+      var next = [o.image, o.imageSmall].filter(function (u) { return https(u) && img.src !== u; })[0] || "assets/placeholder.svg";
+      if (img.src.indexOf(next) < 0) img.src = next;
+    });
+    img.alt = "Imagen de " + o.title;
+    img.loading = "lazy";
+    img.width = 300;
+    img.height = 450;
+    box.appendChild(img);
+    if (!cover) { var nm = mk("span", "box-name", o.title); nm.setAttribute("aria-hidden", "true"); box.appendChild(nm); }
+    if (free) box.appendChild(mk("span", "sticker free", "GRATIS"));
+    else if (o.discountPercentage) box.appendChild(mk("span", "sticker", "-" + o.discountPercentage + "%"));
+    if (o.ganga && !free) box.appendChild(mk("span", "seal ganga", "GANGA"));
+    li.appendChild(box);
+    var body = mk("div", "body");
+    var h = mk("h3", "clamp2"), link = mk("a", "", o.title);
+    link.href = o.page || o.destinationUrl;
+    h.appendChild(link);
+    body.appendChild(h);
+    var meta = mk("p", "card-meta");
+    meta.appendChild(mk("span", "cm-store", o.store));
+    body.appendChild(meta);
+    var price = mk("div", "pricebox");
+    if (free) {
+      price.appendChild(mk("span", "now free", "Gratis"));
+      if (o.originalPrice) price.appendChild(mk("s", "", "Antes " + cash(o.originalPrice, o.currency)));
+      body.appendChild(price);
+    } else if (o.currency !== "COP" && o.copNow) {
+      var now = mk("span", "now", "$" + (Math.round(o.copNow / 100) * 100).toLocaleString("es-CO") + " ");
+      now.appendChild(mk("small", "", "aprox."));
+      price.appendChild(now);
+      body.appendChild(price);
+      var sp = mk("p", "store-price", cash(o.currentPrice, o.currency) + " en " + o.store + " ");
+      if (o.originalPrice) sp.appendChild(mk("s", "", cash(o.originalPrice, o.currency)));
+      body.appendChild(sp);
+    } else {
+      price.appendChild(mk("span", "now", cash(o.currentPrice, o.currency)));
+      if (o.originalPrice) price.appendChild(mk("s", "", cash(o.originalPrice, o.currency)));
+      body.appendChild(price);
+    }
+    if (o.saving) body.appendChild(mk("p", "save", o.saving));
+    var left = mk("p", "left" + (o.expiresAt ? "" : " none"));
+    if (o.expiresAt) {
+      left.setAttribute("data-countdown", o.expiresAt);
+      left.appendChild(mk("span", "", leftText(o.expiresAt) || ""));
+    } else left.textContent = "Sin fecha de fin";
+    body.appendChild(left);
+    var acts = mk("div", "actions"), go = mk("a", "btn btn-primary" + (free && o.action !== "Buscar en la tienda" ? " btn-free" : ""), o.action || "Ver oferta");
+    go.href = o.destinationUrl;
+    go.target = "_blank";
+    go.rel = o.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer";
+    acts.appendChild(go);
+    body.appendChild(acts);
+    li.appendChild(body);
+    return { li: li, acts: acts };
+  }
+
   // Página "Mis favoritos": arma las tarjetas con los datos públicos de las ofertas
   var favRoot = document.getElementById("fav-root");
   if (favRoot && window.fetch) {
@@ -431,10 +508,6 @@
       box.appendChild(a);
       favRoot.appendChild(box);
     };
-    var money = function (v, cur) {
-      if (cur === "COP") return "$" + Math.round(v).toLocaleString("es-CO") + " COP";
-      return "US$" + Number(v).toFixed(2);
-    };
     if (!favs.length) empty();
     else fetch(favRoot.getAttribute("data-src")).then(function (r) { return r.json(); }).then(function (data) {
       var mine = (data.offers || []).filter(function (o) { return favs.indexOf(o.id) >= 0; });
@@ -443,42 +516,7 @@
       favRoot.appendChild(el("p", "count", mine.length + (mine.length === 1 ? " oferta guardada" : " ofertas guardadas")));
       var ul = el("ul", "grid");
       mine.forEach(function (o) {
-        var free = o.currentPrice === 0, li = el("li", "card" + (free ? " is-free" : ""));
-        var media = el("a", "thumb");
-        media.href = o.page || o.destinationUrl;
-        var img = el("img");
-        img.src = /^https:\/\//.test(o.image || "") ? o.image : "assets/placeholder.svg";
-        img.addEventListener("error", function () { // portada caída: usa la miniatura o el marcador
-          var small = /^https:\/\//.test(o.imageSmall || "") && img.src !== o.imageSmall ? o.imageSmall : "assets/placeholder.svg";
-          if (img.src.indexOf(small) < 0) img.src = small;
-        });
-        img.alt = "Imagen de " + o.title;
-        img.loading = "lazy";
-        media.appendChild(img);
-        media.appendChild(el("span", "badge" + (free ? " free" : ""), free ? "GRATIS" : "-" + (o.discountPercentage || 0) + "%"));
-        li.appendChild(media);
-        var body = el("div", "body");
-        media.appendChild(el("span", "store-chip", o.store));
-        var h = el("h3", "clamp2"), link = el("a", "", o.title);
-        link.href = o.page || o.destinationUrl;
-        h.appendChild(link);
-        body.appendChild(h);
-        var box = el("div", "pricebox");
-        box.appendChild(el("span", "now" + (free ? " free" : ""), free ? "Gratis" : money(o.currentPrice, o.currency)));
-        if (o.originalPrice) box.appendChild(el("s", "", "Antes " + money(o.originalPrice, o.currency)));
-        body.appendChild(box);
-        if (o.saving) body.appendChild(el("p", "save", o.saving));
-        if (o.expiresAt) {
-          var left = el("p", "left");
-          left.setAttribute("data-countdown", o.expiresAt);
-          left.appendChild(el("span", "", leftText(o.expiresAt) || ""));
-          body.appendChild(left);
-        }
-        var acts = el("div", "actions"), go = el("a", "btn btn-primary" + (free && o.action !== "Buscar en la tienda" ? " btn-free" : ""), o.action || "Ver oferta");
-        go.href = o.destinationUrl;
-        go.target = "_blank";
-        go.rel = o.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer";
-        acts.appendChild(go);
+        var built = boxCard(o), li = built.li, acts = built.acts;
         var rm = el("button", "btn", "Quitar");
         rm.type = "button";
         rm.addEventListener("click", function () {
@@ -489,8 +527,6 @@
           if (!ul.children.length) empty();
         });
         acts.appendChild(rm);
-        body.appendChild(acts);
-        li.appendChild(body);
         ul.appendChild(li);
       });
       favRoot.appendChild(ul);
@@ -513,10 +549,6 @@
       if (text) n.textContent = text;
       return n;
     };
-    var cash = function (v, cur) {
-      if (cur === "COP") return "$" + Math.round(v).toLocaleString("es-CO") + " COP";
-      return "US$" + Number(v).toFixed(2);
-    };
     var say = function (cls, text) {
       wlRoot.textContent = "";
       wlRoot.appendChild(mk("p", cls, text));
@@ -525,47 +557,7 @@
     var button = wlForm.querySelector("button[type=submit]");
     var last = store("ogc-steam-perfil");
     if (last && input && !input.value) input.value = last;
-    var card = function (o) {
-      var free = o.currentPrice === 0, li = mk("li", "card" + (free ? " is-free" : ""));
-      var media = mk("a", "thumb");
-      media.href = o.page || o.destinationUrl;
-      var img = mk("img");
-      img.src = /^https:\/\//.test(o.image || "") ? o.image : "assets/placeholder.svg";
-      img.addEventListener("error", function () { // portada caída: usa la miniatura o el marcador
-        var small = /^https:\/\//.test(o.imageSmall || "") && img.src !== o.imageSmall ? o.imageSmall : "assets/placeholder.svg";
-        if (img.src.indexOf(small) < 0) img.src = small;
-      });
-      img.alt = "Imagen de " + o.title;
-      img.loading = "lazy";
-      media.appendChild(img);
-      media.appendChild(mk("span", "badge" + (free ? " free" : ""), free ? "GRATIS" : "-" + (o.discountPercentage || 0) + "%"));
-      li.appendChild(media);
-      var body = mk("div", "body");
-      media.appendChild(mk("span", "store-chip", o.store));
-      var h = mk("h3", "clamp2"), link = mk("a", "", o.title);
-      link.href = o.page || o.destinationUrl;
-      h.appendChild(link);
-      body.appendChild(h);
-      var box = mk("div", "pricebox");
-      box.appendChild(mk("span", "now" + (free ? " free" : ""), free ? "Gratis" : cash(o.currentPrice, o.currency)));
-      if (o.originalPrice) box.appendChild(mk("s", "", "Antes " + cash(o.originalPrice, o.currency)));
-      body.appendChild(box);
-      if (o.saving) body.appendChild(mk("p", "save", o.saving));
-      if (o.expiresAt) {
-        var left = mk("p", "left");
-        left.setAttribute("data-countdown", o.expiresAt);
-        left.appendChild(mk("span", "", leftText(o.expiresAt) || ""));
-        body.appendChild(left);
-      }
-      var acts = mk("div", "actions"), go = mk("a", "btn btn-primary" + (free && o.action !== "Buscar en la tienda" ? " btn-free" : ""), o.action || "Ver oferta");
-      go.href = o.destinationUrl;
-      go.target = "_blank";
-      go.rel = o.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer";
-      acts.appendChild(go);
-      body.appendChild(acts);
-      li.appendChild(body);
-      return li;
-    };
+    var card = function (o) { return boxCard(o).li; };
     wlForm.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var perfil = (input.value || "").trim();
