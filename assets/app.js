@@ -79,7 +79,7 @@
     if (!list || !form) return;
     var q = (form.q.value || "").toLowerCase().trim();
     var st = form.store.value, type = form.type.value, sort = form.sort.value;
-    var min = parseInt(form.min.value || "0", 10), onlyFavs = form.favs && form.favs.checked, onlyLow = form.low && form.low.checked;
+    var min = parseInt(form.min.value || "0", 10), onlyFavs = form.favs && form.favs.checked, onlyLow = form.low && form.low.checked, onlyGood = form.good && form.good.checked;
     var max = form.max ? parseInt(form.max.value || "0", 10) : 0;
     var cards = Array.prototype.slice.call(list.children);
     var shown = 0;
@@ -88,7 +88,7 @@
       var ok = (!q || d.title.indexOf(q) >= 0) && (!st || d.store === st) &&
         (!type || d.type === type) && (parseInt(d.discount || "0", 10) >= min) &&
         (!max || (d.cop !== undefined && parseInt(d.cop || "0", 10) < max && (d.type === "gratis" || parseInt(d.cop || "0", 10) > 0))) &&
-        (!onlyFavs || favs.indexOf(d.id) >= 0) && (!onlyLow || d.low === "1");
+        (!onlyFavs || favs.indexOf(d.id) >= 0) && (!onlyLow || d.low === "1") && (!onlyGood || parseInt(d.rev || "0", 10) >= 80);
       li.hidden = !ok;
       if (ok) shown++;
     });
@@ -97,6 +97,7 @@
       if (sort === "price") return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
       if (sort === "title") return a.dataset.title < b.dataset.title ? -1 : 1;
       if (sort === "score") return parseInt(b.dataset.score || "0", 10) - parseInt(a.dataset.score || "0", 10);
+      if (sort === "reviews") return parseInt(b.dataset.rev || "0", 10) - parseInt(a.dataset.rev || "0", 10);
       if (sort === "saved") return parseInt(b.dataset.saved || "0", 10) - parseInt(a.dataset.saved || "0", 10);
       return parseInt(b.dataset.discount || "0", 10) - parseInt(a.dataset.discount || "0", 10);
     }).forEach(function (li) { list.appendChild(li); });
@@ -455,6 +456,10 @@
     var meta = mk("p", "card-meta");
     meta.appendChild(mk("span", "cm-store", o.store));
     body.appendChild(meta);
+    if (o.reviews && typeof o.reviews.pct === "number") {
+      var tier = o.reviews.pct >= 70 ? "pos" : (o.reviews.pct >= 40 ? "mix" : "neg");
+      body.appendChild(mk("p", "card-rev rev-" + tier, o.reviews.label + " · " + o.reviews.pct + " %"));
+    }
     var price = mk("div", "pricebox");
     if (free) {
       price.appendChild(mk("span", "now free", "Gratis"));
@@ -1257,4 +1262,56 @@ document.addEventListener("error", function (ev) {
     spent += TICK;
     if (spent >= STEP) go(cur + 1); else bar();
   }, TICK);
+})();
+
+// Aviso al volver: si tus favoritos bajaron de precio desde tu última visita, lo decimos arriba.
+// Todo queda en este navegador (localStorage): no hay cuenta ni servidor. Solo en la portada y en favoritos.
+(function () {
+  var spot = document.querySelector(".home-intro") || document.getElementById("fav-root");
+  if (!spot || !window.fetch) return;
+  var read = function (k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } };
+  var write = function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } };
+  var favs = read("ogc-favs");
+  if (!Array.isArray(favs) || !favs.length) return;
+  fetch("data/offers.json").then(function (r) { return r.json(); }).then(function (data) {
+    var before = read("ogc-fav-precios") || {}, now = {}, drops = [];
+    (data.offers || []).forEach(function (o) {
+      if (favs.indexOf(o.id) < 0) return;
+      var value = o.currentPrice === 0 ? 0 : (o.copNow || (o.currency === "COP" ? o.currentPrice : null));
+      if (value === null || value === undefined) return;
+      now[o.id] = value;
+      if (typeof before[o.id] === "number" && value < before[o.id] - 50) drops.push({ o: o, was: before[o.id], is: value });
+    });
+    write("ogc-fav-precios", now);
+    if (!drops.length) return;
+    var cop = function (v) { return v === 0 ? "Gratis" : "$" + (Math.round(v / 100) * 100).toLocaleString("es-CO"); };
+    var box = document.createElement("aside");
+    box.className = "fav-drops";
+    box.setAttribute("aria-label", "Tus favoritos que bajaron de precio");
+    var h = document.createElement("p");
+    h.className = "fd-title";
+    h.textContent = drops.length === 1 ? "Uno de tus favoritos bajó de precio desde tu última visita" : drops.length + " de tus favoritos bajaron de precio desde tu última visita";
+    box.appendChild(h);
+    var ul = document.createElement("ul");
+    drops.slice(0, 6).forEach(function (d) {
+      var li = document.createElement("li"), a = document.createElement("a");
+      a.href = d.o.page || d.o.destinationUrl;
+      a.textContent = d.o.title;
+      li.appendChild(a);
+      var p = document.createElement("span");
+      p.className = "fd-price";
+      p.textContent = cop(d.was) + " → " + cop(d.is) + (d.is && d.o.currency !== "COP" ? " aprox." : "");
+      li.appendChild(p);
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    var x = document.createElement("button");
+    x.type = "button";
+    x.className = "fd-close";
+    x.setAttribute("aria-label", "Cerrar el aviso");
+    x.textContent = "×";
+    x.addEventListener("click", function () { box.remove(); });
+    box.appendChild(x);
+    spot.parentNode.insertBefore(box, spot);
+  }).catch(function () { /* sin datos: no se muestra nada */ });
 })();

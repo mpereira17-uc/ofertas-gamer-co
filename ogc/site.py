@@ -65,7 +65,7 @@ ICONS = {k: _SVG.format(v) for k, v in {
 
 NAV = [
     ("Ofertas", [("index.html", "Inicio", "home"), ("juegos-gratis.html", "Juegos gratis", "gift"), ("juegos-gratis-en-todas-las-tiendas.html", "Regalos por tienda", "gift"),
-                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("lista-de-deseos.html", "Mi lista de Steam", "heart"), ("seguidos.html", "Mis seguidos", "bell"),
+                 ("ofertas.html", "Todas las ofertas", "flame"), ("favoritos.html", "Mis favoritos", "star"), ("lista-de-deseos.html", "Mi lista de Steam", "heart"), ("pc-game-pass.html", "Novedades de Game Pass", "screen"), ("seguidos.html", "Mis seguidos", "bell"),
                  ("oferta-del-dia.html", "Oferta del día", "sparkle"), ("noticias.html", "Novedades", "news"), ("resumen-semanal.html", "Resumen semanal", "calendar"),
                  ("juegos-baratos.html", "Baratos en pesos", "sparkle"), ("juegos-gratis-para-siempre.html", "Gratis para siempre", "gift"),
                  ("rebajas-de-steam.html", "Rebajas de Steam", "clock"), ("que-juego-me-conviene.html", "¿Qué juego me conviene?", "quiz"),
@@ -492,6 +492,22 @@ class Site:
         return (f'<div class="pricebox"><span class="now">{e(self.pesos(cop))} <small>aprox.</small></span></div>'
                 f'<p class="store-price">{e(money(o["currentPrice"], o["currency"]))} en {e(o["store"])}{store_old}</p>')
 
+    @staticmethod
+    def review_line(o):
+        """Reseñas de los jugadores en Steam (etiqueta oficial en español y porcentaje), solo si hay suficientes."""
+        r = o.get("reviews")
+        if not r:
+            return ""
+        tier = "pos" if r["pct"] >= 70 else ("mix" if r["pct"] >= 40 else "neg")
+        n = f'{r["count"]:,}'.replace(",", ".")
+        return f'<p class="card-rev rev-{tier}" title="{n} reseñas de jugadores en Steam">{e(r["label"])} · {r["pct"]} %</p>'
+
+    @staticmethod
+    def deck_badge(o):
+        """Sello de Steam Deck según la revisión oficial de Valve."""
+        label = {"verified": "Deck verificado", "playable": "Deck jugable"}.get(o.get("deck") or "")
+        return f'<span class="deck-badge deck-{e(o["deck"])}" title="Revisión oficial de Steam Deck">{label}</span>' if label else ""
+
     def card(self, o):
         """Caja de la estantería (v8): portada vertical con lomo del color de la tienda y sticker de precio."""
         free = o.get("currentPrice") == 0
@@ -510,10 +526,11 @@ class Site:
         claim = (f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" '
                  f'aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>{ICONS["tick"]}</button>' if free and self.cop_saved(o) else "")
         share = e(self.base + self.detail[o["id"]] if o["id"] in self.detail else o["destinationUrl"])
-        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else pct}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
+        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else pct}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}" data-rev="{(o.get('reviews') or {}).get('pct', 0)}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
 <div class="box store-{e(o['storeId'])} tilt-{self.tilt(o)}{'' if cover else ' no-capsule'}"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{f' data-fallback="{e(back)}"' if back.startswith("https://") else ''} alt="{e(alt)}" width="300" height="450" loading="lazy" decoding="async">{name}{sticker}{ganga}{self.ribbon(o)}{trailer}</div>
 <div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
-<p class="card-meta"><span class="cm-store"><span class="store-dot store-{e(o["storeId"])}" aria-hidden="true"></span>{e(o["store"])}</span>{f'<span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span>' if o.get("metacritic") else ''}</p>
+<p class="card-meta"><span class="cm-store"><span class="store-dot store-{e(o["storeId"])}" aria-hidden="true"></span>{e(o["store"])}</span>{f'<span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span>' if o.get("metacritic") else ''}{self.deck_badge(o)}</p>
+{self.review_line(o)}
 {self.card_price(o)}
 {f'<p class="save">{e(self.saving_text(o))}</p>' if self.saving_text(o) else ''}
 {self.countdown(o) or '<p class="left none" title="La tienda no publicó la fecha de fin">Sin fecha de fin</p>'}
@@ -554,7 +571,8 @@ class Site:
 <label class="sf-field"><span>Precio en pesos</span><select name="max"><option value="">Cualquiera</option><option value="20000">Menos de $20.000</option><option value="40000">Menos de $40.000</option></select></label>
 <label class="sf-toggle"><input type="checkbox" name="favs"><span>Solo mis favoritos</span></label>
 <label class="sf-toggle"><input type="checkbox" name="low"><span>Solo mínimos históricos</span></label>
-<label class="sf-field sf-sort"><span>Ordenar por</span><select name="sort"><option value="discount">Mayor descuento</option><option value="score">Vale la pena</option><option value="saved">Más ahorro en pesos</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
+<label class="sf-toggle"><input type="checkbox" name="good"><span>Solo bien valorados (80 % o más en Steam)</span></label>
+<label class="sf-field sf-sort"><span>Ordenar por</span><select name="sort"><option value="discount">Mayor descuento</option><option value="score">Vale la pena</option><option value="reviews">Mejor valorados</option><option value="saved">Más ahorro en pesos</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
 </form>"""
             toolbar = f"""<div class="shop-bar"><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>
 <nav class="chips quick-chips" aria-label="Atajos"><a class="chip hot" href="?tipo=gratis">Solo gratis</a><a class="chip" href="?orden=score">Vale la pena</a><a class="chip" href="?orden=saved">Más ahorro</a><a class="chip" href="?min=90">-90% o más</a><a class="chip" href="?max=20000">Menos de $20.000</a></nav></div>
@@ -712,6 +730,34 @@ class Site:
         return ('<section class="shelf shelf-awaited" aria-labelledby="awaited-h">'
                 + self.sec_head("", "Los más esperados", 'Los próximos estrenos más seguidos en Steam. <a href="lanzamientos.html">Ver el calendario</a>', "arrive", "awaited-h")
                 + f'<ul class="grid board" id="awaited-home" data-slider aria-label="{len(soon)} juegos: desliza o usa las flechas">{"".join(items)}</ul></section>')
+
+    def gamepass_boxes(self, limit=24):
+        """Cajas de las novedades de PC Game Pass (catálogo oficial de Microsoft). «NUEVO» si llegó hace 7 días o menos."""
+        gp = getattr(self, "gamepass", {}) or {}
+        seen = gp.get("firstSeen") or {}
+        out = []
+        for g in (gp.get("recent") or [])[:limit]:
+            if not (g.get("poster") or "").startswith("https://store-images.s-microsoft.com/"):
+                continue
+            first = parse_iso(seen.get(g["id"])) if seen.get(g["id"]) else None
+            fresh = '<span class="seal ganga gp-new">NUEVO</span>' if first and (self.now - first).days < 7 else ""
+            label = f"Ver {g['title']} en la Microsoft Store (abre en otra pestaña)"
+            out.append(f'<li class="card is-gp"><a class="box store-xbox tilt-{self.tilt(g)}" href="{e(g["url"])}" target="_blank" rel="noopener noreferrer" aria-label="{e(label)}">'
+                       f'<img src="{e(g["poster"])}" alt="Imagen de {e(g["title"])}" width="300" height="450" loading="lazy" decoding="async">'
+                       f'<span class="sticker gp">GAME PASS</span>{fresh}</a>'
+                       f'<div class="body"><h3 class="clamp2">{e(g["title"])}</h3>'
+                       + (f'<p class="card-meta"><span class="cm-store">{e(g["publisher"])}</span></p>' if g.get("publisher") else "")
+                       + '<p class="store-price">Incluido con PC Game Pass</p>'
+                       f'<div class="actions">{ext_link(g["url"], "Ver en Xbox", cls="btn", label=label)}</div></div></li>')
+        return out
+
+    def gamepass_shelf(self):
+        boxes = self.gamepass_boxes(12)
+        if len(boxes) < 4:
+            return ""
+        return ('<section class="shelf shelf-gp" aria-labelledby="gp-h">'
+                + self.sec_head("", "Nuevo en PC Game Pass", 'Llegaron hace poco al catálogo de PC. Vienen incluidos con la suscripción. <a href="pc-game-pass.html">Ver todos</a>', "screen", "gp-h")
+                + f'<ul class="grid board" id="gp-home" data-slider aria-label="{len(boxes)} juegos: desliza o usa las flechas">{"".join(boxes)}</ul></section>')
 
     def ending_shelf(self, live):
         """Estante «Terminan pronto»: lo que se acaba en las próximas 72 horas, con las mismas cajas."""
@@ -2409,6 +2455,7 @@ class Site:
 {self.offer_list(top, with_filters=False, list_id="top-home", slider=True)}
 </section>
 {self.ending_shelf(live)}
+{self.gamepass_shelf()}
 {self.halloween_box(games or [], live)}
 {self.awaited_shelf(games or [])}
 {self.how_we_verify()}
@@ -2430,6 +2477,19 @@ class Site:
                     '<div id="fav-root" data-src="data/offers.json"><p class="notice">Activa JavaScript para ver tus favoritos.</p></div>'
                     '<p><a class="btn btn-primary" href="ofertas.html">Buscar más ofertas</a></p>',
                     crumbs=[("favoritos.html", "Mis favoritos")], noindex=True)
+
+        gp = getattr(self, "gamepass", {}) or {}
+        gp_boxes = self.gamepass_boxes(24)
+        self.layout("pc-game-pass.html", "Novedades de PC Game Pass",
+                    "Los juegos que llegaron hace poco a PC Game Pass, según el catálogo oficial de Microsoft para Colombia.",
+                    '<h1>Novedades de PC Game Pass</h1>'
+                    f'<p class="lead">Los juegos que Microsoft agregó hace poco al catálogo de PC Game Pass'
+                    + (f' (hoy son {gp["total"]} juegos en total)' if gp.get("total") else "")
+                    + '. No son gratis: vienen incluidos con la suscripción. Si ya la tienes, puedes jugarlos sin pagar nada más.</p>'
+                    + (f'<p class="meta">Revisado el {e(co_time(parse_iso(gp["updatedAt"])))} · fuente: catálogo oficial de Xbox</p>' if gp.get("updatedAt") else "")
+                    + (f'<ul class="grid board" id="gp-list">{"".join(gp_boxes)}</ul>' if gp_boxes else
+                       '<p class="notice">No pudimos revisar el catálogo de Game Pass en este momento. Vuelve en unas horas.</p>'),
+                    crumbs=[("pc-game-pass.html", "PC Game Pass")])
 
         self.layout("lista-de-deseos.html", "Tu lista de deseos de Steam en oferta",
                     "Pega tu perfil de Steam y mira qué juegos de tu lista de deseos están hoy en oferta en tiendas oficiales, con el precio en pesos.",
@@ -2633,7 +2693,7 @@ class Site:
         P("cookies.html", "Política de cookies", "Ofertas Gamer CO no usa cookies de seguimiento. Qué guardamos en tu navegador y cómo borrarlo.",
           f"""<div class="prose"><h1>Política de cookies</h1><p class="meta">Última actualización: {LEGAL_UPDATED}</p>
 <p>Ofertas Gamer CO no instala cookies propias ni de terceros para analítica o publicidad. Contamos las visitas con Cloudflare Web Analytics, que funciona sin cookies.</p>
-<p>Usamos el almacenamiento local del navegador solo para preferencias opcionales, como los favoritos (<code>ogc-favs</code>). No se envían a ningún servidor.</p>
+<p>Usamos el almacenamiento local del navegador solo para preferencias opcionales, como los favoritos (<code>ogc-favs</code>), el último precio que viste de cada favorito para avisarte si bajó (<code>ogc-fav-precios</code>) y tu último perfil de Steam buscado (<code>ogc-steam-perfil</code>). No se envían a ningún servidor.</p>
 <p>Las tiendas a las que enlazamos pueden usar sus propias cookies cuando visitas su sitio.</p>
 <p>Si en el futuro activamos anuncios u otra analítica, actualizaremos esta política y pediremos tu consentimiento cuando la ley lo requiera.</p>
 {LEGAL_REVIEW}</div>""", crumbs=[("cookies.html", "Cookies")])
@@ -2700,6 +2760,8 @@ class Site:
 <li><strong>Epic Games Store</strong>: listado público de juegos gratis, consultado para Colombia. Enlace a la ficha oficial del juego.</li>
 <li><strong><a href="https://www.cheapshark.com" target="_blank" rel="noopener noreferrer">CheapShark</a></strong>: API pública de precios de tiendas de juegos de PC. La usamos para encontrar descuentos; el enlace lleva a la tienda oficial (ficha de Steam o búsqueda oficial de la tienda). Gracias a CheapShark por ofrecer estos datos.</li>
 <li><strong><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a></strong>: la base de datos libre de Wikipedia. La usamos para los juegos grandes y de consola (PlayStation, Xbox y Switch) y sus fechas; los ordenamos por en cuántos idiomas de Wikipedia tienen artículo.</li>
+<li><strong>Reseñas, portadas y Steam Deck</strong>: el catálogo público de la tienda de Steam (IStoreBrowseService). La etiqueta de reseñas es la oficial de Steam en español y solo se muestra con 50 reseñas o más.</li>
+<li><strong>Novedades de PC Game Pass</strong>: el catálogo oficial y público de Xbox para Colombia («Agregados recientemente») y la ficha de cada juego en la Microsoft Store.</li>
 <li><strong>Códigos de canje de HoYoverse</strong>: dos listas públicas y gratuitas de la comunidad, <a href="https://hoyo-codes.seria.moe" target="_blank" rel="noopener noreferrer">hoyo-codes</a> y <a href="https://api.ennead.cc" target="_blank" rel="noopener noreferrer">ennead</a>. Un código solo aparece como activo si ninguna de las dos lo da por vencido. El botón «Canjear» lleva a la página oficial de HoYoverse. Honkai Impact 3rd y Tears of Themis se canjean dentro del juego y sus listas no pueden comprobar el estado de cada código: sus páginas lo avisan.</li>
 <li><strong><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong>: tasa de cambio del día para el valor aproximado en pesos.</li>
 </ul>

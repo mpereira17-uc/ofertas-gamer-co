@@ -9,6 +9,10 @@
 - **Se mantiene:** tema oscuro, franja de la bandera, rojo de marca en botones, menú lateral, «menos movimiento» sin animaciones.
 - **Portada (v8.1, 2026-11-13, pedido de pepe: «algo más profesional en vez de ese montón de cosas»):** vitrina, presentación corta (título, una frase y la hora de actualización), categorías en 3×2, y estantes iguales: «Gratis esta semana» (con los próximos gratis de Epic como cajas «PRONTO»), «Las mejores ofertas de hoy», «Terminan pronto» (si hay 3 o más en 72 h) y «Los más esperados» (fecha en el sticker). Cierra con «Cómo verificamos» y el llamado a los canales. Se quitaron de la portada el termómetro, la oferta del día, el ahorro, el comparador, la marquesina de tiendas, los estrenos de hoy, los tráileres, las herramientas, las guías y el carrusel 3D: siguen en sus páginas y en el menú.
 
+- **Más datos en la caja (2026-11-13):** reseñas oficiales de Steam en español («Muy positivas · 92 %», azul si son buenas, ámbar variadas, rojo malas; solo con 50 reseñas o más) y sello «Deck verificado» o «Deck jugable». Filtro «Solo bien valorados (80 % o más)» y orden «Mejor valorados» en ofertas.
+- **PC Game Pass:** estante «Nuevo en PC Game Pass» en la portada y página `pc-game-pass.html`, con pósters verticales, lomo verde Xbox y sticker «GAME PASS». Se aclara que viene incluido con la suscripción, no gratis.
+- **Aviso al volver:** recuadro verde arriba de la portada y de favoritos con los favoritos que bajaron de precio desde la última visita (todo en el navegador, `ogc-fav-precios`).
+
 ---
 
 # Design: Ofertas Gamer CO (v7 «Tienda», 2026-11-03)

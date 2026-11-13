@@ -8,11 +8,12 @@ Ninguna cifra de este documento es una ganancia garantizada. GitHub Pages no se 
 | --- | --- | --- | --- |
 | Green Man Gaming | Impact | Solicitud en revisión | `config/stores.json` → `gmg`, o variable `GMG_AFFILIATE_URL` |
 | Fanatical | Awin | Registro en curso | `config/stores.json` → `fanatical`, o variable `FANATICAL_AFFILIATE_URL` |
+| Humble Store | Humble Partner Program | Sin solicitud (preparado el 13/11/2026) | `config/stores.json` → `humble`, o variable `HUMBLE_AFFILIATE_URL` |
 | Otras tiendas oficiales | Según la tienda | Pendiente | Nuevo registro en `config/stores.json` |
 
 Cuando una red apruebe:
 1. Copia el enlace de seguimiento que te da el panel (Impact: *Create Tracking Link*; Awin: *Link Builder*). Debe llevar el enlace de la tienda en un parámetro; en la plantilla ese lugar se marca con `{url}`.
-2. Guárdalo en **Settings → Secrets and variables → Actions → Variables** como `GMG_AFFILIATE_URL` o `FANATICAL_AFFILIATE_URL`, o en `affiliateUrl` de `config/stores.json`.
+2. Guárdalo en **Settings → Secrets and variables → Actions → Variables** como `GMG_AFFILIATE_URL`, `FANATICAL_AFFILIATE_URL` o `HUMBLE_AFFILIATE_URL`, o en `affiliateUrl` de `config/stores.json`.
 3. Cambia `"approved": false` a `true` en esa tienda. La única función que arma enlaces es `ogc/affiliates.py::build_destination`.
 4. Los subidentificadores por canal (website, telegram, whatsapp…) se agregarán solo si la red los admite; no se inventan parámetros.
 5. Mide clics, conversiones y comisiones en los paneles oficiales de Impact y Awin.

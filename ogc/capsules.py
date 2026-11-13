@@ -1,4 +1,5 @@
-"""Portadas verticales (600×900) de Steam para las cajas del diseño «Estantería».
+"""Portadas verticales (600×900) de Steam para las cajas del diseño «Estantería», más la panorámica,
+las reseñas de los jugadores (en español) y si el juego funciona en Steam Deck.
 
 Se piden a la API pública IStoreBrowseService/GetItems (sin clave), en lotes, y se guardan en
 data/portadas.json. Solo se vuelve a preguntar por un juego cada 14 días. Si Steam falla, se usa lo guardado.
@@ -16,6 +17,18 @@ CDN = "https://shared.fastly.steamstatic.com/store_item_assets/"
 BATCH = 50
 MAX_BATCHES = 12  # hasta 600 juegos por corrida
 KEEP_DAYS = 14
+MIN_REVIEWS = 50  # con menos reseñas el porcentaje no dice mucho
+LABELS = {"Extremadamente positivas", "Muy positivas", "Positivas", "Mayormente positivas", "Variadas",
+          "Mayormente negativas", "Negativas", "Muy negativas", "Extremadamente negativas"}
+DECK = {3: "verified", 2: "playable", 1: "unsupported"}
+
+
+def _reviews(item):
+    r = ((item.get("reviews") or {}).get("summary_filtered") or {})
+    label, count, pct = r.get("review_score_label"), r.get("review_count") or 0, r.get("percent_positive")
+    if label in LABELS and isinstance(pct, int) and count >= MIN_REVIEWS:
+        return {"label": label, "pct": pct, "count": int(count)}
+    return None
 
 
 def _url(item, key="library_capsule"):
@@ -34,19 +47,20 @@ def update(offers, cache, now, fetch):
     for o in offers:
         app = str(o.get("steamAppID") or "")
         entry = cache.get(app) or {}
-        if app.isdigit() and app not in wanted and (entry.get("at", "") < stale or "hero" not in entry):
+        if app.isdigit() and app not in wanted and (entry.get("at", "") < stale or "reviews" not in entry):
             wanted.append(app)
     asked = failed = 0
     for start in range(0, min(len(wanted), BATCH * MAX_BATCHES), BATCH):
         chunk = wanted[start:start + BATCH]
         query = {"ids": [{"appid": int(a)} for a in chunk], "context": {"country_code": "CO", "language": "spanish"},
-                 "data_request": {"include_assets": True}}
+                 "data_request": {"include_assets": True, "include_reviews": True, "include_platforms": True}}
         try:
             data = fetch(API + urllib.parse.quote(json.dumps(query))) or {}
-            found = {str(it.get("appid")): (_url(it), _url(it, "library_hero")) for it in (data.get("response") or {}).get("store_items") or []}
+            found = {str(it.get("appid")): it for it in (data.get("response") or {}).get("store_items") or []}
             for app in chunk:
-                url, hero = found.get(app, ("", ""))
-                cache[app] = {"url": url, "hero": hero, "at": iso(now)}
+                it = found.get(app) or {}
+                cache[app] = {"url": _url(it), "hero": _url(it, "library_hero"), "reviews": _reviews(it),
+                              "deck": DECK.get((it.get("platforms") or {}).get("steam_deck_compat_category")), "at": iso(now)}
             asked += len(chunk)
         except Exception as exc:  # un lote que falla no tumba nada; se reintenta en otra corrida
             failed += 1
@@ -65,4 +79,8 @@ def attach(offers, cache):
             o["capsule"] = entry["url"]
         if (entry.get("hero") or "").startswith(CDN):
             o["hero"] = entry["hero"]  # imagen panorámica para el fondo de la vitrina
+        if entry.get("reviews"):
+            o["reviews"] = entry["reviews"]
+        if entry.get("deck"):
+            o["deck"] = entry["deck"]
     return offers

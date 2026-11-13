@@ -7,7 +7,7 @@
      "searchUrl": "https://store.epicgames.com/es-ES/browse?q={query}"},
     {"id": "gog", "name": "GOG", "cheapsharkId": "7", "domains": ["www.gog.com"], "currency": "USD", "affiliateNetwork": null, "approved": false, "affiliateUrl": "", "affiliateUrlVar": null, "allowedTrackingParams": [], "priority": 3, "active": true,
      "searchUrl": "https://www.gog.com/en/games?query={query}"},
-    {"id": "humble", "name": "Humble Store", "cheapsharkId": "11", "domains": ["www.humblebundle.com"], "currency": "USD", "affiliateNetwork": null, "approved": false, "affiliateUrl": "", "affiliateUrlVar": null, "allowedTrackingParams": [], "priority": 4, "active": true,
+    {"id": "humble", "name": "Humble Store", "cheapsharkId": "11", "domains": ["www.humblebundle.com"], "currency": "USD", "affiliateNetwork": "Humble Partner Program", "approved": false, "affiliateUrl": "", "affiliateUrlVar": "HUMBLE_AFFILIATE_URL", "allowedTrackingParams": [], "priority": 4, "active": true,
      "searchUrl": "https://www.humblebundle.com/store/search?search={query}"},
     {"id": "gmg", "name": "Green Man Gaming", "cheapsharkId": "3", "domains": ["www.greenmangaming.com"], "currency": "USD", "affiliateNetwork": "Impact", "approved": false, "affiliateUrl": "", "affiliateUrlVar": "GMG_AFFILIATE_URL", "allowedTrackingParams": [], "priority": 5, "active": true,
      "searchUrl": "https://www.greenmangaming.com/search/?query={query}"},

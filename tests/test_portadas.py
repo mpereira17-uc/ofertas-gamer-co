@@ -51,7 +51,7 @@ class PortadasTest(unittest.TestCase):
         self.assertEqual(len(asked), 1)
 
     def test_no_repite_lo_vigente_y_renueva_lo_viejo(self):
-        cache = {"1": {"url": "https://shared.fastly.steamstatic.com/x/1.jpg", "hero": "", "at": "2026-11-10T00:00:00Z"},
+        cache = {"1": {"url": "https://shared.fastly.steamstatic.com/x/1.jpg", "hero": "", "reviews": None, "at": "2026-11-10T00:00:00Z"},
                  "2": {"url": "https://shared.fastly.steamstatic.com/x/2.jpg", "at": "2026-10-01T00:00:00Z"}}
         asked = []
 
@@ -84,3 +84,27 @@ class PortadasTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ResenasYDeckTest(unittest.TestCase):
+    def test_guarda_resenas_y_steam_deck(self):
+        def fetch(url):
+            q = json.loads(urllib.parse.parse_qs(urllib.parse.urlparse(url).query)["input_json"][0])
+            self.assertTrue(q["data_request"]["include_reviews"])
+            self.assertTrue(q["data_request"]["include_platforms"])
+            return {"response": {"store_items": [{"appid": 3, "assets": {}, "platforms": {"steam_deck_compat_category": 3},
+                    "reviews": {"summary_filtered": {"review_count": 2821, "percent_positive": 92, "review_score_label": "Muy positivas"}}}]}}
+        cache, _ = capsules.update([{"id": "a", "steamAppID": 3}], {}, NOW, fetch)
+        out = capsules.attach([{"id": "a", "steamAppID": 3}], cache)[0]
+        self.assertEqual(out["reviews"], {"label": "Muy positivas", "pct": 92, "count": 2821})
+        self.assertEqual(out["deck"], "verified")
+
+    def test_pocas_resenas_o_texto_raro_no_se_muestran(self):
+        def fetch(url):
+            return {"response": {"store_items": [
+                {"appid": 4, "reviews": {"summary_filtered": {"review_count": 3, "percent_positive": 100, "review_score_label": "3 reseñas"}}},
+                {"appid": 5, "reviews": {"summary_filtered": {"review_count": 900, "percent_positive": 80, "review_score_label": "<b>x</b>"}}}]}}
+        cache, _ = capsules.update([{"id": "a", "steamAppID": 4}, {"id": "b", "steamAppID": 5}], {}, NOW, fetch)
+        out = capsules.attach([{"id": "a", "steamAppID": 4}, {"id": "b", "steamAppID": 5}], cache)
+        self.assertNotIn("reviews", out[0])
+        self.assertNotIn("reviews", out[1])

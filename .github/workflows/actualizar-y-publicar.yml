@@ -51,6 +51,7 @@ jobs:
           TUMBLR_TOKEN_SECRET: ${{ secrets.TUMBLR_TOKEN_SECRET }}
           FANATICAL_AFFILIATE_URL: ${{ vars.FANATICAL_AFFILIATE_URL }}
           GMG_AFFILIATE_URL: ${{ vars.GMG_AFFILIATE_URL }}
+          HUMBLE_AFFILIATE_URL: ${{ vars.HUMBLE_AFFILIATE_URL }}
       - name: Comprobaciones críticas del sitio
         run: python scripts/check_site.py
       - name: Guardar cambios solo si existen

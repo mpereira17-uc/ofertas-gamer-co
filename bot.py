@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, capsules, channels, codes, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
+from ogc import alerts, capsules, channels, codes, gamepass, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -33,6 +33,7 @@ F2P_FILE = DATA / "gratis_para_siempre.json"
 GIVEAWAYS_FILE = DATA / "regalos.json"
 TRAILERS_FILE = DATA / "trailers.json"
 CAPSULES_FILE = DATA / "portadas.json"
+GAMEPASS_FILE = DATA / "gamepass.json"
 WEEKLY_FILE = DATA / "resumenes.json"
 ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
 BOT_FILE = DATA / "telegram_bot.json"
@@ -89,6 +90,10 @@ def fixture_fetch(folder):
     def fetch(url):
         if "featuredcategories" in url:
             name = "steam_featured.json"
+        elif "catalog.gamepass.com" in url:
+            name = "gamepass_sigl.json"
+        elif "displaycatalog" in url:
+            name = "gamepass_products.json"
         elif "IStoreBrowseService" in url:
             name = "steam_getitems.json"
         elif "appdetails" in url:
@@ -204,6 +209,8 @@ def run(args):
     covers, status["Portadas verticales (Steam)"] = capsules.update(offers, load_json(CAPSULES_FILE, {}).get("apps", {}), now, sources.get_json)
     save_json(CAPSULES_FILE, {"updatedAt": iso(now), "apps": covers})
     offers = capsules.attach(offers, covers)
+    game_pass, status["PC Game Pass (Microsoft)"] = gamepass.update(load_json(GAMEPASS_FILE, {}), now, sources.get_json)
+    save_json(GAMEPASS_FILE, game_pass)
     try:
         epic_next = sources.epic_upcoming(sources.get_json)
         save_json(EPIC_NEXT_FILE, {"updatedAt": iso(now), "games": epic_next})
@@ -322,6 +329,7 @@ def run(args):
     site.f2p, site.weekly_history, site.bot = f2p, history, bot_info.get("username", "")
     site.steam_cfg = load_json(ROOT / "config" / "steam_eventos.json", {})
     site.epic_next, site.epic_archive = epic_next, epic_archive
+    site.gamepass = game_pass
     site.poll = load_json(POLL_FILE, {})
     site.codes = code_state
     site.giveaways = gifts
