@@ -1,4 +1,7 @@
 {"response": {"store_items": [
- {"appid": 367520, "assets": {"asset_url_format": "steam/apps/367520/${FILENAME}?t=1", "library_capsule": "library_600x900.jpg"}},
+ {"appid": 367520, "assets": {"asset_url_format": "steam/apps/367520/${FILENAME}?t=1", "library_capsule": "library_600x900.jpg", "library_hero": "library_hero.jpg"},
+  "reviews": {"summary_filtered": {"review_count": 300000, "percent_positive": 97, "review_score_label": "Extremadamente positivas"}},
+  "platforms": {"steam_deck_compat_category": 3},
+  "best_purchase_option": {"final_price_in_cents": 1320000, "original_price_in_cents": 3300000, "discount_pct": 60, "active_discounts": [{"discount_end_date": 1795111200}]}},
  {"appid": 292030, "assets": {"asset_url_format": "steam/apps/292030/${FILENAME}?t=1", "library_capsule": "library_600x900.jpg"}}
 ]}}

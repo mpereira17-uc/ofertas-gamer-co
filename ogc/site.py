@@ -224,7 +224,7 @@ class Site:
             full_title = title
         if len(description) > 160:  # y las descripciones de más de ~160 letras
             description = description[:157].rsplit(" ", 1)[0].rstrip(",.:;") + "…"
-        stores_nav = [(f"ofertas-{st['id']}.html" if getattr(self, "store_counts", {}).get(st["id"]) else f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"]]
+        stores_nav = [(f"ofertas-{st['id']}.html" if getattr(self, "store_counts", {}).get(st["id"]) else f"ofertas.html?tienda={st['id']}", st["name"], "store-" + st["id"]) for st in self.stores.values() if st["active"] and getattr(self, "store_counts", {}).get(st["id"])]
         if self.cfg.get("instant_gaming_igr"):
             stores_nav.append(("instant-gaming.html", "Instant Gaming", "store-ig"))
         groups = NAV[:1] + [("Tiendas", stores_nav)] + NAV[1:]
@@ -571,7 +571,7 @@ class Site:
 <label class="sf-field"><span>Precio en pesos</span><select name="max"><option value="">Cualquiera</option><option value="20000">Menos de $20.000</option><option value="40000">Menos de $40.000</option></select></label>
 <label class="sf-toggle"><input type="checkbox" name="favs"><span>Solo mis favoritos</span></label>
 <label class="sf-toggle"><input type="checkbox" name="low"><span>Solo mínimos históricos</span></label>
-<label class="sf-toggle"><input type="checkbox" name="good"><span>Solo bien valorados (80 % o más en Steam)</span></label>
+<label class="sf-toggle" title="80 % o más de reseñas positivas en Steam"><input type="checkbox" name="good"><span>Solo bien valorados</span></label>
 <label class="sf-field sf-sort"><span>Ordenar por</span><select name="sort"><option value="discount">Mayor descuento</option><option value="score">Vale la pena</option><option value="reviews">Mejor valorados</option><option value="saved">Más ahorro en pesos</option><option value="expires">Vence primero</option><option value="price">Menor precio</option><option value="title">Nombre</option></select></label>
 </form>"""
             toolbar = f"""<div class="shop-bar"><p class="count" id="count" aria-live="polite">{len(offers)} ofertas</p>
@@ -1007,9 +1007,9 @@ class Site:
                 f'<ul class="sv-list">{items}</ul></section>')
 
     def how_we_verify(self):
-        steps = [("Buscamos", "Tiendas oficiales", "Solo Steam, Epic, GOG, Humble, Green Man Gaming y Fanatical. Nada de claves de reventa."),
+        steps = [("Buscamos", "Tiendas oficiales", "Solo Steam, Epic y GOG, con el precio confirmado para Colombia. Nada de claves de reventa."),
                  ("Verificamos", "Revisión cada 4 horas", "Un sistema automático consulta los precios y retira las ofertas que ya terminaron."),
-                 ("Convertimos", "Precio en pesos", "Mostramos el valor aproximado en pesos colombianos y el precio original de la tienda."),
+                 ("Convertimos", "Precio en pesos", "Steam: el precio oficial en pesos para Colombia. GOG: su precio para Colombia en dólares, con el valor aproximado en pesos."),
                  ("Avisamos", "Directo a tu celular", "Las mejores ofertas llegan solas a Telegram, Discord y Bluesky.")]
         lis = "".join(f'<li><span class="hs-num">{i}</span><strong>{e(t)}</strong><span>{e(d)}</span></li>'
                       for i, (k, t, d) in enumerate(steps, 1))
@@ -2468,7 +2468,7 @@ class Site:
                     crumbs=[("juegos-gratis.html", "Juegos gratis")], jsonld=[self.item_list_ld(free)])
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
-                    "Descuentos de juegos de PC en Steam, GOG, Humble Store, Green Man Gaming, Fanatical y Epic, con precio original, precio actual y porcentaje de descuento.",
+                    "Descuentos de juegos de PC en Steam, GOG y Epic, verificados para Colombia, con precio original, precio actual y porcentaje de descuento.",
                     self.mega(["OFERTAS", "DESCUENTOS", "MÍNIMOS", "PESOS"]) + f"<h1>Todas las ofertas</h1><p class=\"lead\">{len(free)} juegos gratis y {len(deals)} descuentos de {self.cfg['filtros_ofertas']['descuento_minimo']}% o más en tiendas oficiales. Busca, filtra y guarda tus favoritos.</p>{updated_line}{notice}{self.offer_list(free + deals)}{self.steam_sales(games or [], updated_dt, {o['title'].lower() for o in deals})}{self.ig_banner('rpg')}",
                     crumbs=[("ofertas.html", "Ofertas")], jsonld=[self.item_list_ld(free + deals)])
         self.layout("favoritos.html", "Mis favoritos",
@@ -2628,6 +2628,7 @@ class Site:
 <h2>Reglas que aplicamos</h2>
 <ul>
 <li>Solo tiendas de una lista autorizada y enlaces HTTPS de sus dominios oficiales.</li>
+<li><strong>Verificación para Colombia:</strong> cada descuento de Steam se confirma con la tienda de Steam para Colombia y se publica con su precio oficial en pesos y la fecha en que termina; si allá no tiene descuento, no se publica. Cada descuento de GOG se confirma en el catálogo de GOG para Colombia y enlaza a la página exacta del juego. Las tiendas que no permiten esta comprobación (por ahora Humble, Fanatical y Green Man Gaming) no se publican.</li>
 <li>Rechazamos registros sin título, tienda o enlace.</li>
 <li>Conservamos el precio y la moneda originales de la tienda. El valor en pesos solo se muestra si obtuvimos una tasa de cambio confiable, y siempre como aproximado.</li>
 <li>El porcentaje de descuento solo se calcula cuando tenemos el precio anterior y el actual.</li>
@@ -2758,7 +2759,9 @@ class Site:
           """<div class="prose"><h1>Fuentes de información</h1>
 <ul>
 <li><strong>Epic Games Store</strong>: listado público de juegos gratis, consultado para Colombia. Enlace a la ficha oficial del juego.</li>
-<li><strong><a href="https://www.cheapshark.com" target="_blank" rel="noopener noreferrer">CheapShark</a></strong>: API pública de precios de tiendas de juegos de PC. La usamos para encontrar descuentos; el enlace lleva a la tienda oficial (ficha de Steam o búsqueda oficial de la tienda). Gracias a CheapShark por ofrecer estos datos.</li>
+<li><strong><a href="https://www.cheapshark.com" target="_blank" rel="noopener noreferrer">CheapShark</a></strong>: API pública de precios de tiendas de juegos de PC. La usamos para encontrar descuentos; antes de publicar, cada descuento se confirma con la propia tienda para Colombia (Steam y GOG) y el enlace lleva a la página del juego. Gracias a CheapShark por ofrecer estos datos.</li>
+<li><strong>Precios de Steam para Colombia</strong>: la tienda de Steam (IStoreBrowseService, país CO), con el precio oficial en pesos y la fecha de fin del descuento.</li>
+<li><strong>Catálogo de GOG para Colombia</strong>: catalog.gog.com, con la página exacta de cada juego y su precio para Colombia.</li>
 <li><strong><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a></strong>: la base de datos libre de Wikipedia. La usamos para los juegos grandes y de consola (PlayStation, Xbox y Switch) y sus fechas; los ordenamos por en cuántos idiomas de Wikipedia tienen artículo.</li>
 <li><strong>Reseñas, portadas y Steam Deck</strong>: el catálogo público de la tienda de Steam (IStoreBrowseService). La etiqueta de reseñas es la oficial de Steam en español y solo se muestra con 50 reseñas o más.</li>
 <li><strong>Novedades de PC Game Pass</strong>: el catálogo oficial y público de Xbox para Colombia («Agregados recientemente») y la ficha de cada juego en la Microsoft Store.</li>

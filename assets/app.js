@@ -139,6 +139,7 @@
         Object.keys(chipField).forEach(function (k) {
           var f = form[chipField[k]]; if (!f || !f.value) return;
           if (k === "orden" && f.value === "discount") return;
+          if (k === "min" && f.value === "0") return;
           p.set(k, k === "orden" ? (f.value === "expires" ? "vence" : f.value === "price" ? "precio" : f.value) : f.value);
         });
         var qs = p.toString();
@@ -153,7 +154,8 @@
         chips.forEach(function (c) {  // un atajo a la vez: limpia lo que ponen los demás
           chipParams(c).forEach(function (v, k) {
             var f = form[chipField[k]]; if (!f) return;
-            f.value = k === "orden" ? (f.querySelector('option[value="discount"]') ? "discount" : f.options[0].value) : "";
+            // al quitar un atajo, cada lista vuelve a su primera opción («Cualquiera»), nunca a un valor vacío
+            f.value = k === "orden" ? (f.querySelector('option[value="discount"]') ? "discount" : f.options[0].value) : (f.tagName === "SELECT" ? f.options[0].value : "");
           });
         });
         if (!wasOn) chipParams(a).forEach(function (v, k) { setIf(form[chipField[k]], fieldValue(k, v)); });

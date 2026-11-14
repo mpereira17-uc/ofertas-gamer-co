@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, capsules, channels, codes, gamepass, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
+from ogc import alerts, capsules, channels, codes, gamepass, verify, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -90,6 +90,8 @@ def fixture_fetch(folder):
     def fetch(url):
         if "featuredcategories" in url:
             name = "steam_featured.json"
+        elif "catalog.gog.com" in url:
+            name = "gog_catalog.json"
         elif "catalog.gamepass.com" in url:
             name = "gamepass_sigl.json"
         elif "displaycatalog" in url:
@@ -132,6 +134,19 @@ def run(args):
             failed.add(name)
             status[f"Fuente {name}"] = f"Falló ({type(exc).__name__}); se conserva la última versión válida"
             print(f"La fuente {name} falló: {exc}", file=sys.stderr)
+
+    # Verificación para Colombia antes de publicar (ogc/verify.py): precio oficial de Steam en pesos y página
+    # exacta de GOG; lo que no se puede comprobar no se publica. Si la verificación falla, la fuente cuenta como caída.
+    if "cheapshark" in fresh:
+        try:
+            fresh["cheapshark"], status["Verificación para Colombia"] = verify.run(fresh["cheapshark"], sources.get_json, rate)
+        except Exception as exc:
+            fresh.pop("cheapshark")
+            failed.add("cheapshark")
+            status["Verificación para Colombia"] = f"Falló ({type(exc).__name__}); se conserva la última lista verificada"
+            print(f"La verificación falló: {exc}", file=sys.stderr)
+    # Las ofertas guardadas de antes de la verificación no se vuelven a publicar
+    previous = [o for o in previous if o.get("source") != "cheapshark" or o.get("verifiedFor") == "CO"]
 
     # Validación: lo que no pasa no se publica.
     rejected = 0
