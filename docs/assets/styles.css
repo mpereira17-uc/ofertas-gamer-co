@@ -2095,3 +2095,18 @@ ul.grid:not(.x)>.card .card-meta .cm-store{white-space:nowrap}
 .pd-side .buy-row .buy-tag{grid-area:tag}
 .pd-side .buy-row .buy-price{grid-area:price;text-align:left}
 .pd-side .buy-row .btn{grid-area:go}
+
+/* ---- Juegos gratis (2026-11-14): cada gratis como cabecera grande, próximos de Epic en cajas y más formas de jugar gratis ---- */
+.ff{margin:22px 0 0}
+.ff-title{margin:0;font:800 clamp(1.8rem,3vw,2.6rem)/1.05 var(--head);letter-spacing:-.03em}
+.ff-title a{color:#fff;text-decoration:none}
+.ff-title a:hover{text-decoration:underline;text-underline-offset:5px}
+.ways-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.ways-grid a{display:grid;grid-template-columns:40px minmax(0,1fr);grid-template-areas:"ico title" "ico text";gap:2px 12px;height:100%;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--board);color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s var(--ease-out)}
+.ways-grid a:hover{border-color:var(--sticker);transform:translateY(-2px)}
+.ways-grid .tool-ico{grid-area:ico;display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:rgba(47,214,123,.12);color:var(--free)}
+.ways-grid strong{grid-area:title;font:700 1rem/1.25 var(--head)}
+.ways-grid span:not(.tool-ico){grid-area:text;color:var(--muted);font-size:.86rem}
+@media (prefers-reduced-motion:reduce){.ways-grid a:hover{transform:none}}
+.ff .pd-box.no-capsule{display:none}
+.ff .pd-top:has(.pd-box.no-capsule){grid-template-columns:minmax(0,1fr);min-height:300px}
