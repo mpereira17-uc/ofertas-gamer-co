@@ -759,6 +759,37 @@ class Site:
                 + self.sec_head("", "Nuevo en PC Game Pass", 'Llegaron hace poco al catálogo de PC. Vienen incluidos con la suscripción. <a href="pc-game-pass.html">Ver todos</a>', "screen", "gp-h")
                 + f'<ul class="grid board" id="gp-home" data-slider aria-label="{len(boxes)} juegos: desliza o usa las flechas">{"".join(boxes)}</ul></section>')
 
+    def free_feature(self, o):
+        """Juego gratis destacado como cabecera grande (mismo estilo que la ficha): panorámica, caja, contador y botón."""
+        page = self.detail.get(o["id"])
+        cover, flat = o.get("capsule") or "", o.get("image") or "assets/placeholder.svg"
+        bg = o.get("hero") or o.get("image")
+        title = f'<a href="{e(page)}">{e(o["title"])}</a>' if page else e(o["title"])
+        old = f'<s>Antes {e(money(o["originalPrice"], o["currency"]))}</s>' if o.get("originalPrice") else ""
+        return (f'<article class="pd-hero ff">' + (f'<img class="pd-bg" src="{e(bg)}" alt="" width="1920" height="620" loading="lazy" decoding="async">' if bg else "")
+                + f'<div class="pd-top"><div class="box pd-box store-{e(o["storeId"])} tilt-{self.tilt(o)}{"" if cover else " no-capsule"}">'
+                f'<img src="{e(cover or flat)}" alt="Imagen de {e(o["title"])}" width="300" height="450" loading="lazy" decoding="async">'
+                + ("" if cover else f'<span class="box-name" aria-hidden="true">{e(o["title"])}</span>')
+                + '<span class="sticker free">GRATIS</span></div>'
+                f'<div class="pd-info">{self.store_chip(o)}<h2 class="ff-title">{title}</h2>'
+                + (f'<div class="pd-sub">{self.review_line(o)}{self.deck_badge(o)}</div>' if (o.get("reviews") or o.get("deck")) else "")
+                + f'<div class="pd-price"><div class="pricebox"><span class="now free">Gratis</span>{old}</div></div>'
+                f'{self.countdown(o)}<div class="cta">{self.offer_button(o)}'
+                + (f'<a class="btn" href="{e(page)}">Ver ficha</a>' if page else "") + '</div>'
+                '<p class="meta">Al reclamarlo antes de que termine, queda en tu biblioteca para siempre.</p></div></div></article>')
+
+    def more_free_ways(self):
+        """Accesos a las otras formas de jugar gratis del sitio."""
+        gp = len((getattr(self, "gamepass", {}) or {}).get("recent") or [])
+        ways = [("gift", "Regalos en otras tiendas", "Steam, GOG, Amazon y más, según GamerPower.", "juegos-gratis-en-todas-las-tiendas.html"),
+                ("pad", "Gratis para siempre", "Juegos free to play de Steam que no se acaban.", "juegos-gratis-para-siempre.html"),
+                ("screen", "Novedades de PC Game Pass", f"{gp} llegadas recientes (incluidas con la suscripción)." if gp else "Lo nuevo del catálogo de PC.", "pc-game-pass.html"),
+                ("trophy", "Todo lo que regaló Epic", "El archivo de los juegos gratis de Epic.", "todos-los-juegos-gratis-de-epic.html")]
+        cells = "".join(f'<li><a href="{h}"><span class="tool-ico" aria-hidden="true">{ICONS[ic]}</span><strong>{e(t)}</strong><span>{e(d)}</span></a></li>'
+                        for ic, t, d, h in ways)
+        return ('<section class="free-ways" aria-labelledby="ways-h">' + self.sec_head("", "Más formas de jugar gratis", "", "gift", "ways-h")
+                + f'<ul class="ways-grid">{cells}</ul></section>')
+
     def ending_shelf(self, live):
         """Estante «Terminan pronto»: lo que se acaba en las próximas 72 horas, con las mismas cajas."""
         soon = sorted((o for o in live if o.get("expiresAt") and 0 < (parse_iso(o["expiresAt"]) - self.now).total_seconds() < 72 * 3600),
@@ -2492,7 +2523,17 @@ class Site:
 
         self.layout("juegos-gratis.html", "Juegos gratis para PC hoy",
                     "Juegos gratuitos para PC disponibles ahora en tiendas oficiales como Epic Games Store, con la fecha en que termina cada promoción.",
-                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">Juegos que puedes reclamar gratis por tiempo limitado en tiendas oficiales.</p>{updated_line}{self.epic_countdown(free)}{self.saved_box()}{notice}{self.offer_list(free, poster=True)}{self.epic_next_block()}<p><a class=\"btn\" href=\"todos-los-juegos-gratis-de-epic.html\">Todos los juegos que ha regalado Epic</a> <a class=\"btn\" href=\"juegos-gratis-para-siempre.html\">Gratis para siempre (free to play)</a> <a class=\"btn btn-primary\" href=\"juegos-gratis-en-todas-las-tiendas.html\">Gratis en Steam, GOG, Amazon y más</a></p><p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
+                    f"<h1>Juegos gratis para PC</h1><p class=\"lead\">"
+                    + (f"Hoy hay <strong>{len(free)} {'juego' if len(free) == 1 else 'juegos'} para reclamar gratis</strong>"
+                       + (f" que valen en total ≈ <strong>{self.pesos(sum(self.cop_value(o.get('originalPrice') or 0, o) or 0 for o in free))} COP</strong>" if any(o.get('originalPrice') for o in free) else "")
+                       + ". Si los reclamas antes de que termine la promoción, son tuyos para siempre." if free else "Ahora mismo no hay juegos gratis por tiempo limitado. Abajo están los próximos que ya anunció Epic.")
+                    + f"</p>{updated_line}{self.saved_box()}"
+                    + "".join(self.free_feature(o) for o in free[:4])
+                    + (self.offer_list(free, poster=True) if len(free) > 6 else "")
+                    + (('<section class="shelf" aria-labelledby="soon-free-h">' + self.sec_head("", "Próximos gratis en Epic", "Anunciados por Epic. Te avisamos en Telegram el día que empiecen.", "clock", "soon-free-h")
+                        + f'<ul class="grid board" id="soon-free" data-slider aria-label="Próximos juegos gratis: desliza o usa las flechas">{self.upcoming_free_boxes()}</ul></section>') if self.upcoming_free_boxes() else "")
+                    + self.more_free_ways()
+                    + f"{notice}<p>¿Primera vez? Lee <a href=\"guia-juegos-gratis-temporales.html\">cómo funcionan los juegos gratuitos temporales</a>.</p>",
                     crumbs=[("juegos-gratis.html", "Juegos gratis")], jsonld=[self.item_list_ld(free)])
 
         self.layout("ofertas.html", "Ofertas y descuentos de videojuegos",
