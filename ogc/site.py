@@ -710,6 +710,11 @@ class Site:
     def awaited_shelf(self, games, count=12):
         """Estante «Los más esperados»: los próximos estrenos más populares como cajas, con la fecha en el sticker."""
         soon = sorted([g for g in games if g.get("comingSoon") and g.get("image")], key=self.rank)[:count]
+        return self.games_shelf(soon, "Los más esperados", 'Los próximos estrenos más seguidos en Steam. <a href="lanzamientos.html">Ver el calendario</a>', "awaited")
+
+    def games_shelf(self, soon, title, lede, hid):
+        """Estante de cajas de juegos que vienen, con la fecha en el sticker."""
+        soon = [g for g in soon if g.get("image")]
         if len(soon) < 4:
             return ""
         items = []
@@ -727,9 +732,9 @@ class Site:
                          f'<span class="box-name" aria-hidden="true">{e(g["title"])}</span><span class="sticker soon">{e(tag)}</span></a>'
                          f'<div class="body"><h3 class="clamp2"><a href="{href}"{out}>{e(g["title"])}</a></h3>'
                          f'<p class="left">{ICONS["calendar"]}<span>{e(when)}</span></p></div></li>')
-        return ('<section class="shelf shelf-awaited" aria-labelledby="awaited-h">'
-                + self.sec_head("", "Los más esperados", 'Los próximos estrenos más seguidos en Steam. <a href="lanzamientos.html">Ver el calendario</a>', "arrive", "awaited-h")
-                + f'<ul class="grid board" id="awaited-home" data-slider aria-label="{len(soon)} juegos: desliza o usa las flechas">{"".join(items)}</ul></section>')
+        return (f'<section class="shelf shelf-awaited" aria-labelledby="{hid}-h">'
+                + self.sec_head("", title, lede, "arrive", f"{hid}-h")
+                + f'<ul class="grid board" id="{hid}-home" data-slider aria-label="{len(soon)} juegos: desliza o usa las flechas">{"".join(items)}</ul></section>')
 
     def gamepass_boxes(self, limit=24):
         """Cajas de las novedades de PC Game Pass (catálogo oficial de Microsoft). «NUEVO» si llegó hace 7 días o menos."""
@@ -1824,8 +1829,8 @@ class Site:
         """Los más esperados que salen en los próximos días (popularidad de Steam y Wikidata)."""
         today = now.strftime("%Y-%m-%d")
         limit = (now + timedelta(days=days)).strftime("%Y-%m-%d")
-        soon = sorted([g for g in games if g.get("date") and g.get("precision") == "day" and today <= g["date"] <= limit],
-                      key=self.rank)[:count]
+        soon = sorted([g for g in games if g.get("date") and g.get("precision") == "day" and today <= g["date"] <= limit
+                       and g["id"] != getattr(self, "hero_release", None)], key=self.rank)[:count]
         if not soon:
             return ""
         return (f'<section class="spot" aria-labelledby="spot-h"><div class="sec-head"><h2 id="spot-h">{ICONS["flame"]} Lo más esperado del mes</h2>'
@@ -1838,9 +1843,29 @@ class Site:
         later = sorted([g for g in games if g.get("comingSoon") and (not g.get("date") or g["date"] > limit)], key=self.rank)[:count]
         if not later:
             return ""
-        return (f'<section class="spot" aria-labelledby="ant-h"><div class="sec-head"><h2 id="ant-h">{ICONS["star"]} Los más esperados que vienen</h2>'
-                f'<p class="meta">Los juegos más populares de los próximos meses. Algunos aún no tienen fecha exacta.</p></div>'
-                f'<ul class="spot-grid small">{"".join(self.spot_card(g, now) for g in later)}</ul></section>')
+        return self.games_shelf(later, "Los más esperados que vienen", "Los más populares de los próximos meses. Algunos aún no tienen fecha exacta.", "ant") or             (f'<section class="spot" aria-labelledby="ant-h"><div class="sec-head"><h2 id="ant-h">{ICONS["star"]} Los más esperados que vienen</h2></div>'
+             f'<ul class="spot-grid small">{"".join(self.spot_card(g, now) for g in later)}</ul></section>')
+
+    def release_hero(self, games, now):
+        """Cabecera del calendario: el estreno más esperado de los próximos 120 días, con cuenta regresiva (fecha real de la tienda)."""
+        today = now.strftime("%Y-%m-%d")
+        limit = (now + timedelta(days=120)).strftime("%Y-%m-%d")
+        soon = sorted([g for g in games if g.get("date") and g.get("precision") == "day" and today <= g["date"] <= limit and g.get("image")], key=self.rank)
+        if not soon:
+            return ""
+        g = soon[0]
+        self.hero_release = g["id"]  # para no repetirlo justo debajo, en «Lo más esperado del mes»
+        days = (datetime.strptime(g["date"], "%Y-%m-%d").date() - now.astimezone(CO_TZ).date()).days
+        page = self.detail.get(g["id"])
+        plats = " · ".join(g.get("platforms") or [])
+        left = "Sale hoy" if days <= 0 else ("Sale mañana" if days == 1 else f"Faltan <b>{days}</b> días")
+        return (f'<article class="pd-hero rel-hero"><img class="pd-bg" src="{e(g["image"])}" alt="" width="1920" height="620" fetchpriority="high" decoding="async">'
+                f'<div class="pd-top rh-top"><div class="pd-info"><span class="store-chip">El estreno más esperado</span>'
+                f'<h2 class="ff-title">{self.title_link(g)}</h2>'
+                f'<p class="rh-when">{ICONS["calendar"]}{e(date_label(g["date"], "day"))}' + (f' · {e(plats)}' if plats else "") + '</p>'
+                f'<p class="rh-left">{left}</p>'
+                f'<div class="cta">' + (f'<a class="btn btn-primary" href="{e(page)}">Ver ficha</a>' if page else "") + f'{self.alert_button(g, "game")}</div>'
+                '<p class="meta">La fecha es la que publica la tienda y puede cambiar.</p></div></div></article>')
 
     def releases_page(self, games, now, updated_line):
         upcoming, recent, tba = self.split_releases(games, now)
@@ -1870,6 +1895,7 @@ class Site:
                     self.mega(["ESTRENOS", "PC", "PLAYSTATION", "XBOX", "SWITCH"]) + f"""<div class="rel-top"><div><h1>Calendario de <span class="grad">lanzamientos</span></h1>
 <p class="lead">Los próximos juegos de PC y consolas y los estrenos recientes, día por día. Las fechas son las que publica cada tienda y pueden cambiar.</p>
 {updated_line}</div></div>
+{self.release_hero(games, now)}
 {self.spotlight(games, now)}
 {self.anticipated(games, now)}
 {self.calendar_links()}

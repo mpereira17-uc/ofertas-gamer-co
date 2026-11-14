@@ -13,6 +13,11 @@
 - **PC Game Pass:** estante «Nuevo en PC Game Pass» en la portada y página `pc-game-pass.html`, con pósters verticales, lomo verde Xbox y sticker «GAME PASS». Se aclara que viene incluido con la suscripción, no gratis.
 - **Aviso al volver:** recuadro verde arriba de la portada y de favoritos con los favoritos que bajaron de precio desde la última visita (todo en el navegador, `ogc-fav-precios`).
 
+- **Páginas relacionadas (2026-11-14, por etapas):**
+  - **Ficha de oferta:** cabecera como la vitrina (panorámica, caja, reseñas, Steam Deck, precio verificado y botones), dos columnas en escritorio (tráiler, capturas, «¿Corre en mi PC?», historial y puntaje; «Dónde comprarlo» fijo a la derecha) y estante de parecidas.
+  - **Juegos gratis:** cada gratis como cabecera grande con contador, próximos de Epic en cajas «PRONTO» y fila «Más formas de jugar gratis».
+  - **Calendario de estrenos:** cabecera con el estreno más esperado y cuenta regresiva en sticker, «Los más esperados que vienen» en estante de cajas y etiquetas «en X días» amarillas.
+
 ---
 
 # Design: Ofertas Gamer CO (v7 «Tienda», 2026-11-03)

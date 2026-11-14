@@ -2110,3 +2110,13 @@ ul.grid:not(.x)>.card .card-meta .cm-store{white-space:nowrap}
 @media (prefers-reduced-motion:reduce){.ways-grid a:hover{transform:none}}
 .ff .pd-box.no-capsule{display:none}
 .ff .pd-top:has(.pd-box.no-capsule){grid-template-columns:minmax(0,1fr);min-height:300px}
+
+/* ---- Calendario de estrenos (2026-11-14): cabecera con cuenta regresiva, estantes de cajas y etiquetas tipo sticker ---- */
+.rel-hero{margin:20px 0 6px}
+.rh-top{grid-template-columns:minmax(0,1fr);min-height:340px}
+.rh-when{display:inline-flex;align-items:center;gap:8px;margin:0;color:var(--soft);font-weight:600}
+.rh-when svg{width:18px;height:18px;color:var(--sticker)}
+.rh-left{margin:2px 0 4px;font:700 1.4rem/1.1 var(--head);color:#fff}
+.rh-left b{display:inline-block;padding:2px 12px;margin:0 4px;border-radius:10px;background:var(--sticker);color:var(--sticker-ink);font:700 2.2rem/1.1 var(--num);transform:rotate(-3deg)}
+.spot-card .badge.rel{background:var(--sticker);color:var(--sticker-ink);border-radius:7px;transform:rotate(3deg)}
+.spot-card .spot-rank{background:#0b0c10;color:var(--sticker)}
