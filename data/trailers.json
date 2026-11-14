@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T21:00:47Z",
+ "updatedAt": "2026-11-14T21:18:15Z",
  "apps": {
   "2719590": {
    "trailer": {
@@ -394,7 +394,7 @@
    ],
    "about": "STAR WARS: Galactic Racer™ es una vuelta de tuerca a las carreras nacidas en el Borde Exterior. Con la desaparición del Imperio y la reconstrucción de la galaxia, surge la Liga Galáctica: un circuito clandestino donde los sindicatos financian el caos y se forjan los campeones.",
    "reqs": null,
-   "at": "2026-11-13T18:19:01Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "2272360": {
    "trailer": {
@@ -884,7 +884,7 @@
    ],
    "about": "Vuelve al mundo pixelado de FINAL FANTASY, que ha evolucionado a partir de sus raíces clásicas. Viaja con unos compañeros unidos por el destino y recurre a las visiones para que te ayuden a descubrir en el combate la verdad oculta tras una fuerza que amenaza con destruirlo todo.",
    "reqs": null,
-   "at": "2026-11-13T18:17:08Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "5072600": {
    "trailer": {
@@ -3641,7 +3641,7 @@
    ],
    "about": "Enshrouded es un RPG de acción y supervivencia para un jugador o en cooperativo donde tu libertad y creatividad son lo primero. Conquista el Velo, que devora Valle Ascua; explora un mundo lleno de secretos; crea a tu héroe a tu manera y construye lo que quieras en un mundo totalmente modificable.",
    "reqs": null,
-   "at": "2026-11-13T18:11:27Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "5335510": {
    "trailer": {
@@ -4264,7 +4264,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/46510/ss_8e62348881304fa68f7a5514fc954465050b8fa3.600x338.jpg?t=1743167581"
    ],
    "about": "Después de buscar por Europa Occidental y Oriental a un heredero desaparecido, Kate Walker finalmente completó su largo y arduo viaje, obteniendo así la firma de Hans Voralberg y el cierre de la adquisición de la fábrica de autómatas.",
-   "at": "2026-10-28T21:09:43Z"
+   "reqs": {
+    "min": [
+     "SO: Windows XP / Vista / 7 / 10",
+     "Procesador: 1.5 GHz",
+     "Memoria: 512 MB de RAM",
+     "Disco Duro: 1.5 GB de espacio libre",
+     "Gráficos: Compatible con DirectX con 128 MB de VRAM",
+     "DirectX®: 9.0c",
+     "Sonido: Compatible con DirectX 9.0c"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "700160": {
    "trailer": {
@@ -5070,7 +5082,7 @@
    ],
    "about": "Un RPG de acción y fantasía retro con combates brutales y exploración centrada en el desplazamiento. Embárcate en la búsqueda de tu padre, que desapareció en la misteriosa Isla de Neasied, un lugar repleto de secretos y fuerzas siniestras, donde la Reina durmiente está despertando…",
    "reqs": null,
-   "at": "2026-11-13T18:11:27Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "4251460": {
    "trailer": {
@@ -5131,7 +5143,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1619520/32b35f74fefc1b5e69e655a6d1124f159121b596/ss_32b35f74fefc1b5e69e655a6d1124f159121b596.600x338.jpg?t=1764925994"
    ],
    "about": "Cross Blitz es un juego de rol y cartas único con trepidantes combates tácticos. Explora, sube de nivel y fabrica nuevas cartas para crear mazos perfectos mientras asciendas hacia la victoria.",
-   "at": "2026-11-04T19:54:49Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10",
+     "Procesador: Intel Core 2 Duo E6750 or AMD Phenom II X2 550",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GT 320, 1 GB or AMD Radeon HD 6570, 1 GB",
+     "Almacenamiento: 600 MB de espacio disponible",
+     "Notas adicionales: Low 1080p @ 60 FPS"
+    ],
+    "rec": [
+     "SO: Windows 10",
+     "Procesador: Intel Core 2 Duo E6750 or AMD Phenom II X2 550",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GT 320, 1 GB or AMD Radeon HD 6570, 1 GB",
+     "Almacenamiento: 600 MB de espacio disponible",
+     "Notas adicionales: Low 1080p @ 60 FPS"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "5362020": {
    "trailer": {
@@ -5160,15 +5190,35 @@
     "hls": "https://video.akamai.steamstatic.com/store_trailers/351910/43966/571f2e06da5fb9d0ac7ff5f5b9d551f17a8156c8/1751283285/hls_264_master.m3u8?t=1447378320"
    },
    "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_22e66122863b278d7a066b0997103dc17d481587.600x338.jpg?t=1789475400",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_3f5dcb44672ea077ec77c4d6d3d84d46bc54c1b7.600x338.jpg?t=1789475400",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_cd1defd96113383ed10133aa116a1d2053853e29.600x338.jpg?t=1789475400",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_924811584d3c92c0cb1b27cf449822fa3e1a6655.600x338.jpg?t=1789475400",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_b667a41bf9c5fa3067e520f83a2baff0015d0b07.600x338.jpg?t=1789475400",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_6ffaaf17abea2981e6d917814da4333d1e537dfc.600x338.jpg?t=1789475400"
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_22e66122863b278d7a066b0997103dc17d481587.600x338.jpg?t=1793977597",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_3f5dcb44672ea077ec77c4d6d3d84d46bc54c1b7.600x338.jpg?t=1793977597",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_cd1defd96113383ed10133aa116a1d2053853e29.600x338.jpg?t=1793977597",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_924811584d3c92c0cb1b27cf449822fa3e1a6655.600x338.jpg?t=1793977597",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_b667a41bf9c5fa3067e520f83a2baff0015d0b07.600x338.jpg?t=1793977597",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351910/ss_6ffaaf17abea2981e6d917814da4333d1e537dfc.600x338.jpg?t=1793977597"
    ],
    "about": "Pasas toda tu vida intentando contentar a los dioses. Luchas y mueres con una muerte honorable. ¡Y ahora esto! Los pobres vikingos están frente a las puertas de Asgard, esperando entrar al Valhalla. Pero los desagradecidos dioses no les darán lo que se merecen, ya que han cerrado las puertas justo en sus narices.",
-   "at": "2026-11-05T12:29:27Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7/8 32-bit",
+     "Procesador: Dual-core Intel or AMD, 2.5 GHz or faster",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce 8800 GT or Radeon HD2900 series card or better (DirectX10 card or better)",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 3 GB de espacio disponible",
+     "Tarjeta de sonido: Onboard"
+    ],
+    "rec": [
+     "SO *: Windows 7/8 32-bit or higher",
+     "Procesador: Quad-core Intel or AMD, 2.5 GHz or faster",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce 470 GTX or AMD Radeon 6870 HD series card or better (DirectX10 card or better)",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 3 GB de espacio disponible",
+     "Tarjeta de sonido: Onboard"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "216210": {
    "trailer": {},
@@ -5249,7 +5299,20 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1398100/ss_454e63c0a5b0a86db3901cf0d6be76ef25e2dd35.600x338.jpg?t=1613035991"
    ],
    "about": "Orwell's Animal Farm es un juego narrativo basado en texto basado en elecciones donde todos los animales son iguales, pero algunos animales son más iguales que otros. Sumérjase en la historia de poder absoluto y corrupción de George Orwell y siga los altibajos del animalismo.",
-   "at": "2026-11-05T12:29:27Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 / 8 / 8.1 / 10",
+     "Procesador: 1.5GHz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: Intel HD graphics",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "40340": {
    "trailer": {},
@@ -5427,7 +5490,30 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/418460/ss_faecea4e02947cec201a16d7b3f8fce3e1f90429.600x338.jpg?t=1789745392"
    ],
    "about": "La serie de juegos de Red Orchestra llega a Vietnam: Partidas multijugador de 64 jugadores, más de 20 mapas, ejército y marines de EE. UU., EVN/FAVS, FLN/VC, Australia y ERV, más de 50 armas, 4 helicópteros, minas, trampas y túneles. Brutal. Realista. Cruel. Personalización. Y napalm por la mañana.",
-   "at": "2026-11-05T22:04:59Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 (64-bit versions only)",
+     "Procesador: Intel Core i3 @ 2.5GHz or AMD Phenom @ 2.5GHz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 460 or ATI Radeon HD 5850",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 60 GB de espacio disponible",
+     "Notas adicionales: UNSUPPORTED HARDWARE: 32-bit Operating Systems"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 (64-bit versions only)",
+     "Procesador: Intel Core i5 @ 3.2GHz or AMD @ 4.0GHz or better",
+     "Memoria: 6 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 760 or AMD R9 270X or better",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 60 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "617480": {
    "trailer": {
@@ -5486,7 +5572,23 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1227690/ss_67ec94d7eda02607557dd320c8972b432597595c.600x338.jpg?t=1723920018"
    ],
    "about": "Un visceral y estiloso juego de disparos en primera persona para un jugador con un sistema de acrobacias fluido, entornos vóxel destruibles, cámara lenta a gogó, una protagonista con una sola mano y una banda sonora electro-industrial.",
-   "at": "2026-11-05T22:04:59Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Dual Core",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA 750 or equivalent"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Dual Core",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA 1050 or equivalent"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "355790": {
    "trailer": {
@@ -5861,7 +5963,18 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/383870/ss_634d9b9352169125aec4cbf8b7834a18f9992eeb.600x338.jpg?t=1755789801"
    ],
    "about": "Firewatch es un juego de misterio en primera persona para un jugador que se desarrolla en la selva de Wyoming.",
-   "at": "2026-11-06T06:57:08Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 or higher 64bit",
+     "Procesador: Intel Core i3 2.00 GHz or AMD equivalent",
+     "Memoria: 6 GB de RAM",
+     "Gráficos: NVIDIA GeForce 450 or higher with 1GB Memory",
+     "DirectX: Versión 11",
+     "Almacenamiento: 4 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1600": {
    "trailer": {
@@ -6280,7 +6393,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/226120/ss_f6dcc701e396f3382a512e00333db3fcb31c84a4.600x338.jpg?t=1748130105"
    ],
    "about": "Weird Worlds: Return to Infinite Space is a hybrid roguelike game of space exploration, adventure and starship combat.",
-   "at": "2026-11-06T21:35:25Z"
+   "reqs": {
+    "min": [
+     "Minimum:",
+     "OS *:Windows XP",
+     "Processor:Pentium II 600MHz",
+     "Memory:128 MB RAM",
+     "Graphics:Intel GMA 950",
+     "DirectX®:8.0",
+     "Hard Drive:45 MB HD space",
+     "Sound:16-bit stereo sound"
+    ],
+    "rec": [
+     "Recommended:",
+     "OS *:Windows Win7, Win8, Win 8.1, Win10",
+     "Processor:Intel Core2 duo or better",
+     "Memory:512 MB RAM",
+     "Graphics:NVidia GeForce 8 series or better",
+     "DirectX®:9.0",
+     "Hard Drive:60 MB HD space",
+     "Sound:16-bit stereo sound"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "102600": {
    "trailer": {
@@ -6334,7 +6469,18 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40400/ss_05745788af553dd5ab197d487caf88ad4baafa94.600x338.jpg?t=1754319417"
    ],
    "about": "&quot;You are outgunned. You are massively outnumbered. You must win.&quot; These are your orders. Humanity has already fought its war against the machines -- and lost. AI death squads stand watch over every planet and every wormhole, the few remaining human settlements are held captive in orbiting bubbles, and the AIs have turned their...",
-   "at": "2026-11-06T21:35:25Z"
+   "reqs": {
+    "min": [
+     "SO: Windows XP / Windows Vista / Windows 7",
+     "Procesador: 1.6 GHz (2.4 GHz recomendado, Dual Core recomendado encarecidamente para ser Anfitrión)",
+     "Memoria: 512 MB de RAM (1 GB recomendado)",
+     "Gráficos: Tarjeta gráfica que admita texturas de 1024x1024 (muchas tarjetas con 32 MB o más lo hacen), resolución de pantalla de 1024x768 o más (recomendado color de 32 bits)",
+     "DirectX®: 9.0c",
+     "Disco Duro: 300 MB de espacio libre"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "6850": {
    "trailer": {},
@@ -6467,7 +6613,23 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1311070/ss_8316e38b7809f90faf41b5c4f676c4c4afce201d.600x338.jpg?t=1791883524"
    ],
    "about": "Greak: Memories of Azur es una aventura de plataformas para un solo jugador. Azur vive bajo la amenaza de un enemigo que controla las extrañas criaturas que infectan el territorio. Ponte en la piel de tres hermanos: Greak, Adara y Raydel y combina sus habilidades para escapar juntos de la invasión.",
-   "at": "2026-11-07T06:09:34Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10 64-bit",
+     "Procesador: Intel Core 2 Duo E6750 or AMD Athlon 64 X2 6400+",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce 8800 GT, 512 GB or AMD Radeon HD 6570, 1 GB",
+     "Almacenamiento: 3 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO: Windows 10 64-bit",
+     "Procesador: Intel Core 2 Duo E8400 or AMD Phenom II X2 550",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce 9800 GTX, 1 GB or AMD Radeon HD 5750, 1 GB",
+     "Almacenamiento: 3 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1383250": {
    "trailer": {
@@ -6632,7 +6794,21 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/277700/ss_9fd07aa2add7bd6dc90dd9c58b68f2d6d60be345.600x338.jpg?t=1769974227"
    ],
    "about": "Conformity is everything in this lightning-fast platformer - get ready to shift your friendships each and every second!",
-   "at": "2026-11-08T20:33:25Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows XP or newer, 32 or 64 bit",
+     "Procesador: CPU with SSE2 support required (Core 2 Duo, Athlon X2 or newer).",
+     "Memoria: 2048 MB de RAM",
+     "Gráficos: OpenGL 3.1 or higher required (Intel HD series, NVIDIA GeForce 8000 series, AMD Radeon HD series or newer)",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ],
+    "rec": [
+     "Procesador: Quad core processor, Intel Core i5, AMD Athlon X4 or better",
+     "Memoria: 4096 MB de RAM",
+     "Gráficos: NVIDIA GeForce or AMD Radeon with 1024MB VRAM recommended."
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "228260": {
    "trailer": {
@@ -6650,7 +6826,20 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/228260/ss_0d997c428d61908c4430e4043350bb1c07874d8d.600x338.jpg?t=1788799341"
    ],
    "about": "Fallen Enchantress es un enorme juego de estrategia de fantasía. Recluta héroes, ir en misiones, entrenar ejércitos, construir ciudades y forjar alianzas en un rico mundo RPG.",
-   "at": "2026-11-09T06:48:11Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10 / 8 / 7 SP1 / Vista SP2 / XP SP3",
+     "Procesador: Procesador de 2.2 GHz",
+     "Memoria: 2 GB RAM",
+     "Gráficos: Tarjeta gráfica de 512 MB compatible con DirectX 9.0c y Pixel Shader 2.0 (Radeon x1600 / GeForce 6800)",
+     "Versión de DirectX®: 9.0c",
+     "Disco Duro: 5 GB de espacio libre",
+     "Sonido: Tarjeta de sonido compatible con DirectX 9.0c",
+     "Otros Requisitos: Para activar este juego necesitas crear una cuenta de Stardock mientras lo ejecutas en Steam."
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1066780": {
    "trailer": {
@@ -6868,7 +7057,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1430680/ss_0d1cf9af4af28948c6e71a488fe73adcd4eee4c8.600x338.jpg?t=1778170033"
    ],
    "about": "Perseguido por los mercenarios de un enemigo de poder inimaginable, el guerrero Pseudo y la criatura bajo su protección emprenden una peligrosa misión en los confines de tierras desconocidas.",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Intel i3 4130 (2.9 GHz) / AMD FX 8120 (3.1 GHz)",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 780 (3 GB) / AMD Radeon R7 260X (2 GB)",
+     "DirectX: Versión 12",
+     "Almacenamiento: 12 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Intel i5 6402P (2.8 GHz) / AMD Ryzen 5 1600X (3.6 GHz)",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce RTX 2060 (6 GB) / AMD RX 5600XT (6 GB)",
+     "DirectX: Versión 12",
+     "Almacenamiento: 12 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "446800": {
    "trailer": {
@@ -7028,7 +7237,21 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/13500/0000003946.600x338.jpg?t=1720535324"
    ],
    "about": "Entra en el oscuro inframundo de Prince of Persia Warrior Within, la impactante secuela del aclamado Prince of Persia: The Sands of Time™.Perseguido por Dahaka, una encarnación inmortal del Destino que busca una retribución divina, el Príncipe se embarcará en un camino tanto de matanzas como de misterio para desafiar a su muerte...",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "SO: Windows® 2000 / XP (sólo)",
+     "Procesador: Pentium® III a 1 GHz, AMD Athlon™ o equivalente",
+     "Memoria: 256 MB de RAM (512 MB recomendados)",
+     "Gráficos: nVidia GeForce 3 o superior, ATI Radeon 7500 o superior, Intel 915G (nVidia GeForce 4 / ATI Radeon 9500 o superior recomendada)*",
+     "Sonido: Dispositivo de sonido compatible con DirectX 9.0",
+     "DirectX: DirectX 9.0c",
+     "Disco Duro: 1.5 GB de espacio libre para la instalación mínima, 2.2 GB de espacio libre para la instalación completa",
+     "Periféricos Soportados: Ratón compatible con Windows (necesario), gamepad analógico dual",
+     "*Nota: Para ver una lista actualizada de los chipsets, gráficas y sistemas operativos soportados, por favor, visita el FAQ sobre el juego en: ."
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "19980": {
    "trailer": {
@@ -7046,7 +7269,22 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/19980/0000005465.600x338.jpg?t=1720535332"
    ],
    "about": "La aclamada franquicia de Prince Of Persia regresa por primera vez para las consolas de nueva generación y nos trae un viaje épico y completamente nuevo.Emerge un nuevo héroe – domina las acrobacias, la estrategia y las tácticas de combate del más ágil guerrero de todos los tiempos.",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "Sistema operativo: Windows XP/Windows Vista (únicamente)",
+     "Procesador: procesador Intel Pentium D Dual Core a 2,6 GHz Intel Pentium D o AMD Athlon 64 X2 3800 o superior (se recomienda Intel Core 2 Duo a 2,2 GHz o AMD Athlon 64 X2 4400 o su",
+     "Memoria: 1 GB para Windows XP/2 GB para Windows Vista",
+     "Tarjeta gráfica: 256 MB compatible con DirectX 10.0 o DirectX 9.0 y Shader Model 3.0 o superior (ver lista de tarjetas compatibles)*",
+     "Versión de DirectX: DirectX 9.0 o 10.0",
+     "Disco duro: 9 GB",
+     "Tarjeta de sonido: compatible con DirectX 9.0 o 10.0 (se recomienda 5.1)",
+     "Controles: teclado, ratón, o mando opcional compatible con Windows (se recomienda el mando Xbox 360 para Windows)",
+     "*Tarjetas gráficas compatibles en el momento del lanzamiento:",
+     "ATI RADEON series X1600*/1650*-1950/HD 20004000"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "415200": {
    "trailer": {
@@ -7102,7 +7340,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1040420/ss_afb111d83fc0c58a4ba30ad41f8bad3969b6e812.600x338.jpg?t=1768951432"
    ],
    "about": "De noche, sumérgete en tu subconsciente y descubre poderosos artefactos para conquistar tus pesadillas. De día, explora la cuidad de Redhaven y construye vínculos para desbloquear el poder de tus sueños. SUEÑA. MUERE. DESPIERTA. REPITE.",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 64-bit",
+     "Procesador: Intel Core i3",
+     "Memoria: 3 GB de RAM",
+     "Gráficos: GeForce GT 640",
+     "DirectX: Versión 10",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Notas adicionales: Requires a 64-bit processor and operating system"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64-bit",
+     "Procesador: Intel Core i5",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: GeForce GTX 970",
+     "DirectX: Versión 10",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Notas adicionales: Requires a 64-bit processor and operating system"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1297330": {
    "trailer": {
@@ -7120,7 +7380,23 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297330/ss_7835fecca4421e855cdc11fae66ccde73388b9d4.600x338.jpg?t=1773936730"
    ],
    "about": "Olija es un juego sobre la misión de Faraday, un hombre que ha naufragado y luego ha quedado atrapado en el misterioso país de Terrafagia. Armado con un arpón legendario y acompañado por otros náufragos, tendrá que abandonar este país hostil para volver a su patria.",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7, 8.1, 10 x64",
+     "Procesador: Intel Core i3-4160 (2 * 3600) or equivalent, AMD Phenom II X4 965 (4 * 3400) or equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GT 730 (2048 MB), Radeon R7 260X (2048 MB)",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7, 8.1, 10 x64",
+     "Procesador: Intel Core i5-2500K (4 * 3300) or equivalent, AMD FX-6350 (6 * 3900) or equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 660 (2048 MB), Radeon RX 550 (2048 MB)",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "488730": {
    "trailer": {
@@ -7138,7 +7414,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/488730/ss_03bbc1d6d2f35a3ef88fa88da9dbe7d17b1230d1.600x338.jpg?t=1728908991"
    ],
    "about": "Mata enemigos con velocidad y precisión en un espectáculo desmesurado de sangre y explosiones. Juega por tu cuenta o con otros, toma decisiones en cuestión de segundos, esquiva balas y haz uso de armas y habilidades para ejercer la violencia de la forma más gráfica posible.",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 / 8.1 / 10 (64 bit)",
+     "Procesador: Intel Core i5 2,3 GHz or AMD equivalent",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce 560 GTX 2 GB",
+     "DirectX: Versión 11",
+     "Almacenamiento: 9 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c Compliant"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 (64 bit)",
+     "Procesador: Intel Core i7 3,0 GHz or AMD equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 970 4 GB",
+     "DirectX: Versión 11",
+     "Almacenamiento: 9 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c Compliant"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1019590": {
    "trailer": {
@@ -7226,7 +7524,31 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1506440/ss_4d421760da2f0c84fe451b4923d212c2fb1fc861.600x338.jpg?t=1778534731"
    ],
    "about": "Batora: Lost Haven es una aventura de acción isométrica basada en decisiones y con elementos RPG. Cuenta con un sistema dual único que afecta al combate, la historia, los diálogos, los rompecabezas y los finales, y que te llevará a cuestionarte el significado del sacrificio",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 (64 bit)",
+     "Procesador: Intel Core i5-4690 @ 3.5 GHz or AMD FX-8320 X8 @ 3.5 GHz",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 1650 or AMD Radeon RX 580 with 4 GB VRAM minimum",
+     "DirectX: Versión 11",
+     "Almacenamiento: 18 GB de espacio disponible",
+     "Tarjeta de sonido: Windows Compatible Audio Device",
+     "Notas adicionales: Though not required, SSD for storage is recommended"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 (64 bit)",
+     "Procesador: Intel Core i7-8700k or AMD Ryzen 5 3600X",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: Nvidia GeForce GTX 1070 8 GB or AMD RADEON RX VEGA 56 8 GB",
+     "DirectX: Versión 11",
+     "Almacenamiento: 18 GB de espacio disponible",
+     "Tarjeta de sonido: Windows Compatible Audio Device",
+     "Notas adicionales: Though not required, SSD for storage is recommended"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1209410": {
    "trailer": {
@@ -7244,13 +7566,38 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1209410/ss_c2e0284730856bcb6314a3bcbde3f9b68f1a21f6.600x338.jpg?t=1777283148"
    ],
    "about": "«King of Seas» es un juego de rol de acción ambientado en un mundo pirata generado por procedimientos mortales. Un universo lleno de personajes increíbles y misiones alucinantes que te mantendrán bien anclado mientras luchas por convertirte en el rey de todos los piratas.",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": {
+    "min": [
+     "SO *: 64 bit Windows 10 / 8 / 7",
+     "Procesador: Intel Core i5-2500K 3.3GHz / AMD FX-8150 3.6GHz or equivalent",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: GeForce GTX 550 Ti / Radeon HD 6790 2GB VRAM*",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 4 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX compatible soundcard",
+     "Notas adicionales: * Laptop versions of graphics cards may work but are not officially supported. Steering wheels not supported."
+    ],
+    "rec": [
+     "SO *: 64 bit Windows 10 / 8 / 7",
+     "Procesador: Intel Core i5-4460 3.2 GHz / AMD Ryzen 5 1600X 3.6GHz",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 960 / Radeon HD 7950 3GB VRAM*",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 4 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX compatible soundcard",
+     "Notas adicionales: * Laptop versions of graphics cards may work but are not officially supported. Steering wheels not supported."
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "648168": {
    "trailer": {},
    "shots": [],
    "about": "",
-   "at": "2026-11-09T18:53:47Z"
+   "reqs": null,
+   "at": "2026-11-14T21:18:15Z"
   },
   "1161490": {
    "trailer": {
@@ -7336,7 +7683,21 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/13530/0000003739.600x338.jpg?t=1720535330"
    ],
    "about": "El Príncipe de Persia, un experimentado guerrero, regresa de la Isla del Tiempo a Babilonia con su amor, Kaileena. En lugar de la paz que anhela, encuentra su patria devastada por la guerra y con el reino en su contra.",
-   "at": "2026-11-10T02:46:52Z"
+   "reqs": {
+    "min": [
+     "SO: Windows® 2000 / XP (sólo)",
+     "Procesador: AMD Athlon o Intel Pentium III a 1.0 GHz (Pentium IV o AMD Athlon a 1.5 GHz recomendado)",
+     "Memoria: 256 MB de RAM (512 MB recomendados)",
+     "Gráficos:Gráfica con 32 MB y compatible con DirectX 9.0c (128 MB recomendados) (ver lista de soportadas*)",
+     "DirectX: DirectX 9.0c",
+     "Sonido Dispositivo de sonido compatible con DirectX 9.0c (Dolby Digital Live necesario para el audio Dolby Digital)",
+     "Disco Duro:1.5 GB de espacio libre",
+     "Periféricos: Gamepad compatible con Windows",
+     "*Gráficas soportadas en el momento del lanzamiento: Familias ATI 7500/8500/9000/X, familias nVidia GeForce 3/4/FX/6/7 (GeForce 4 MX no soportada). Las versiones para portátiles de "
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "505640": {
    "trailer": {
@@ -7788,7 +8149,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/334120/ss_03ba96a532b47701aa4201864cf1c6061efefb61.600x338.jpg?t=1773307364"
    ],
    "about": "Armikrog es un juego único de aventura de point and click en stop motion con plastilina de los creadores de Earthworm Jim y the Neverhood. Desvela los misterios de la fortaleza que retiene cautivos a Tommynaut y a su parlanchín perro alienígena ciego Beak-Beak a través de exploraciones y puzles.",
-   "at": "2026-11-10T02:46:52Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows XP+",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: Pentium 4 or equivalent",
+     "DirectX: Versión 9.0",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "894020": {
    "trailer": {
@@ -7824,7 +8195,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/210970/ss_fabb0939200a1f2bbb40b775c8e07645f21dc44a.600x338.jpg?t=1720810823"
    ],
    "about": "Te despiertas, a solas, en una extraña isla llena de puzles que te retarán y sorprenderán.",
-   "at": "2026-11-10T02:46:52Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7",
+     "Procesador: 1.8GHz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: Intel HD 4000 series",
+     "DirectX: Versión 10",
+     "Almacenamiento: 5 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7",
+     "Procesador: 2.4GHz",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce 780",
+     "DirectX: Versión 10",
+     "Almacenamiento: 5 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "249590": {
    "trailer": {
@@ -8170,7 +8559,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/247080/ss_09402e960ff5dfec24f559769ee29163b7b14afb.600x338.jpg?t=1791916929"
    ],
    "about": "Crypt of the NecroDancer es un galardonado juego hardcore estilo roguelike rítmico. ¡Muévete con la música y da palizas con el ritmo! Baila con la epica música de Danny Baranowsky, ¡o elige canciones de tu propia colección MP3!",
-   "at": "2026-11-10T21:50:11Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows XP, service pack 3",
+     "Procesador: 2GHz",
+     "Memoria: 1000 MB de RAM",
+     "Gráficos: 512MB VRAM",
+     "Almacenamiento: 1600 MB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "451570": {
    "trailer": {
@@ -8387,7 +8786,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/331480/ss_3b50c529a42ace9cd9adc78381a17adf4e6c63e3.600x338.jpg?t=1783556570"
    ],
    "about": "Un exsacerdote se aventura por las profundidades heladas del Infierno en busca de su hija secuestrada.",
-   "at": "2026-11-11T06:39:44Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 o superior",
+     "Procesador: Procesador Dual Core de 1,7 GHz",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 260, ATI Radeon 4870 HD u otra tarjeta equivalente con, al menos, 512 MB de VRAM",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "312780": {
    "trailer": {
@@ -9016,7 +9425,24 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/380750/ss_cef4d0d92482150802517109269a7694b53ff014.600x338.jpg?t=1748947919"
    ],
    "about": "Anima: Gate of Memories es un RPG de acción en tercera persona que cuenta la historia de un monstruo legendario y una joven sin pasado, dos seres unidos por un pacto involuntario. Forzados a permanecer juntos, sus vidas tomarán un giro inesperado cuando se involucren en una guerra en la sombra en la que tomarán un papel protagonista.",
-   "at": "2026-11-12T01:55:50Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows XP",
+     "Procesador: Dual Core processor",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: Compatible with DirectX9 with 512 MB RAM or better (NVIDIA GeForce GTX 460 / ATI Radeon HD 5850 )",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 6 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7 or newer",
+     "Procesador: Quad core processor",
+     "Memoria: 4 GB de RAM",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 6 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "939960": {
    "trailer": {
@@ -9264,7 +9690,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/65930/ss_aae4b87a40014d7ce107191f3146cd7eb128f261.600x338.jpg?t=1587584277"
    ],
    "about": "Corre el año 1962 y la Guerra Fría tiene a la nación llena de temor. Una unidad secreta del gobierno llamada The Bureau investiga una serie de ataques misteriosos hechos por un enemigo más poderoso que el comunismo.",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows Vista Service Pack 2 32-bit",
+     "Procesador: Intel Core 2 DUO 2.4 GHz / AMD Athlon X2 2.7 GHz",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: DirectX9 Compatible ATI Radeon HD 3870 / NVIDIA 8800 GT",
+     "Almacenamiento: 12 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX Compatible",
+     "Notas adicionales: Incompatible with Intel HD 3000 Integrated Graphics"
+    ],
+    "rec": [
+     "SO *: Windows 7 Service Pack 1 64-bit",
+     "Procesador: Quad Core Processor",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: DirectX11 Compatible, AMD Radeon HD 6950 / NVIDIA GeForce GTX 560",
+     "Almacenamiento: 12 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX Compatible",
+     "Notas adicionales: Incompatible with Intel HD 3000 Integrated Graphics"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "33990": {
    "trailer": {
@@ -9429,15 +9875,28 @@
     "hls": "https://video.akamai.steamstatic.com/store_trailers/1388870/494782/b688e5047e8f122bdf4aaa8cf7b2bee82a1487e6/1751231298/hls_264_master.m3u8?t=1662649976"
    },
    "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_d2367fbcc3a35c7ca7bd2cdd77b82454348430d3.600x338.jpg?t=1794329616",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_c3f3ab690c116a9f3b32db98e42d285305ffccd9.600x338.jpg?t=1794329616",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_6292fdf98da3ce1cabdc382cc930d648441781ca.600x338.jpg?t=1794329616",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_1361e27676b8ef943783593c36ab64c8fe68ab66.600x338.jpg?t=1794329616",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_6efa9b45733d84090f669b653cf84abef47884b9.600x338.jpg?t=1794329616",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_06d30d28fce51f4250843868dfbe86e3689a80e3.600x338.jpg?t=1794329616"
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_d2367fbcc3a35c7ca7bd2cdd77b82454348430d3.600x338.jpg?t=1794591495",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/dfc5ec64f7af78a70f96111a7043f446cc48000b/ss_dfc5ec64f7af78a70f96111a7043f446cc48000b.600x338.jpg?t=1794591495",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/2fabacee0cdabf31ee9aabc73123579794a1a574/ss_2fabacee0cdabf31ee9aabc73123579794a1a574.600x338.jpg?t=1794591495",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_6292fdf98da3ce1cabdc382cc930d648441781ca.600x338.jpg?t=1794591495",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/ss_1361e27676b8ef943783593c36ab64c8fe68ab66.600x338.jpg?t=1794591495",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1388870/1fc37869805e8783345227e1c82e70d75dd94629/ss_1fc37869805e8783345227e1c82e70d75dd94629.600x338.jpg?t=1794591495"
    ],
    "about": "¡Gestiona tus ingresos, recoge chicles, haz la colada y consigue dinero para desbloquear máquinas recreativas y convertir la lavandería familiar en un paraíso recreativo!",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10 32bit",
+     "Procesador: Intel Core i3 or equivalent AMD",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 660, AMD Radeon HD 6770",
+     "DirectX: Versión 11",
+     "Almacenamiento: 5 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX Compatible",
+     "Notas adicionales: Microsoft Xbox Controller for Windows® (or equivalent) is recommended."
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "13560": {
    "trailer": {},
@@ -9449,7 +9908,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/13560/0000003891.600x338.jpg?t=1764775959"
    ],
    "about": "Entra en el mundo de la acción y el sigilo cinematográficos con Splinter Cell, el juego que impulsó el género al estatus de culto. Eres Sam Fisher, un agente encubierto de élite de la división ultrasecreta de la NSA Third Echelon.",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "SO: Microsoft Windows® 2000 / XP",
+     "Procesador: Pentium® III o AMD Athlon™ a 800 MHz",
+     "Memoria: 256 MB de RAM",
+     "Gráficos: Gráfica 3D con 32 MB (64 MB recomendados)",
+     "Sonido: Dispositivo de sonido compatible con DirectX 8.1",
+     "Versión de DirectX: DirectX® 8.1 o posterior",
+     "Disco Duro: 1.5 GB de espacio libre",
+     "Multijugador: Conexión a Internet de banda ancha"
+    ],
+    "rec": [
+     "SO: Microsoft Windows® 2000 / XP",
+     "Procesador: Pentium® III o AMD Athlon™ a 1.0 GHz",
+     "Memoria: 256 MB de RAM",
+     "Gráficos: Gráfica 3D con 64 MB",
+     "Sonido: Dispositivo de sonido compatible con DirectX 8.1 y con sistema envolvente",
+     "Versión de DirectX: DirectX 8.1",
+     "Disco Duro: 2.1 GB de espacio libre",
+     "Nota: Para una lista actualizada de los chipsets, gráficas y sistemas operativos soportados, por favor, visita el FAQ sobre el juego en: ."
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "3929740": {
    "trailer": {},
@@ -9462,7 +9943,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3929740/90fc6eed4ed43b545115fe4db27f1f70b21f3501/ss_90fc6eed4ed43b545115fe4db27f1f70b21f3501.600x338.jpg?t=1764699227"
    ],
    "about": "Infíltrate en ubicaciones seguras de todo el mundo en este thriller de acción y sigilo. Descubre una conspiración global y detén un ataque bioterrorista mortal en el segundo juego de la galardonada serie Splinter Cell.",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "SO *: Originally released for Windows 7, the game can be played on Windows 10 and Windows 11 OS",
+     "Procesador: Intel Pentium III or AMD Athlon, 1.4 GHz (Pentium IV or Athlon 2.2 GHz recommended)",
+     "Memoria: 256 MB de RAM",
+     "Gráficos: 64 MB DirectX 8.1 compliant graphics card (128 MB recommended)",
+     "DirectX: Versión 8.1",
+     "Almacenamiento: 5 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 8.1 compliant sound card (EAX 2.0 or higher recommended)"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "13540": {
    "trailer": {},
@@ -9475,7 +9968,22 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/13540/0000003730.600x338.jpg?t=1765569332"
    ],
    "about": "Tom Clancy's Rainbow Six® hace su aparición en el hardware de nueva generación en la entrega más dramática de la renovada franquicia de disparos en primera persona. Los operativos de Rainbow llevan esta saga a las caóticas calles de las Vegas, la &quot;Ciudad del Pecado&quot; donde los terroristas intentar llevar sus acciones a nuevos e...",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "SO: Windows® XP (sólo)",
+     "Procesador: Pentium 4 a 3 GHz o AMD Athlon 3000 (Pentium 4 a 3.5 GHz o Athlon 3500 recomendado)",
+     "Memoria: 1 GB de RAM (2 GB recomendados)",
+     "Gráficos: Gráfica con 128 MB, compatible con DirectX 9.0c y con soporte para Shader 3.0 (256 MB recomendados) (ver lista de soportadas*)",
+     "Sonido: Dispositivo de sonido compatible con DirectX 9 (solución de audio para PC con Dolby Digital Live necesaria para el sonido Dolby Digital)",
+     "DirectX: DirectX 9 o posterior",
+     "Disco Duro: 7 GB de espacio libre",
+     "Periféricos Soportados: Teclado y ratón compatibles con Windows, controlador de Xbox 360 (con descarga de software adicional)",
+     "Multijugador: Conexión a Internet de banda ancha con 128 Kbps de subida o más rápida.",
+     "*Gráficas Soportadas: Familias nVidia GeForce 6600GT / 6800 / 7300 / 7600 / 7800 / 7900, familias ATI Radeon X1600 / X1800 / X1900. Las versiones para portátiles de estas gráficas "
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "408520": {
    "trailer": {
@@ -9493,7 +10001,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/408520/ss_3801b06a9fd37a2d1378456ad6549068117bf495.600x338.jpg?t=1666987637"
    ],
    "about": "Enter a surreal adventure where puzzles are built from dreams and memories. Solve the mystery behind an ancient artifact. Advance through a world that transforms around you. Transcend this existence.",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows™ 7 SP1, Windows™ 8.1 or later or Windows™ 10",
+     "Procesador: Intel™ Core™ i5-4590 or AMD FX™ 8350, equivalent or better",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 970 or AMD Radeon R9 290, equivalent or better",
+     "DirectX: Versión 11",
+     "Almacenamiento: 3 GB de espacio disponible",
+     "Compatibilidad con RV: SteamVR or Oculus PC. Standing Only"
+    ],
+    "rec": [
+     "SO: Windows™ 10",
+     "Procesador: Intel™ Core™ i7",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: GeForce GTX 1060 or AMD Radeon RX 480, equivalent or better",
+     "DirectX: Versión 11"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "220160": {
    "trailer": {
@@ -9511,7 +10037,33 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220160/ss_c91a0cbd49dd3bdb62179de8cc776628f28ba0ba.600x338.jpg?t=1777995384"
    ],
    "about": "Trials Evolution: Gold Edition marks the Trials franchise’s triumphant return to the PC gaming platform. RedLynx’s signature franchise, the Trials series first made its mark in gaming with the 2008 release of Trials 2 SE for the PC.",
-   "at": "2026-11-12T22:17:25Z"
+   "reqs": {
+    "min": [
+     "Minimum:",
+     "OS *:Originally released for Windows 7, the game can be played on Windows 10 and Windows 11 OS",
+     "Processor:Intel Core®2 Duo E6700 @ 2.6 GHz or AMD Athlon64 X2 6000+ @ 3.0Ghz",
+     "Memory:2 GB RAM",
+     "Graphics:DirectX® 10 compliant, 512 Mb video memory",
+     "DirectX®:11",
+     "Hard Drive:4 GB HD space",
+     "Sound:DirectX 9.0c compatible",
+     "Other Requirements:Broadband Internet connection",
+     "Requires a UPlay account"
+    ],
+    "rec": [
+     "Recommended:",
+     "OS *:Originally released for Windows 7, the game can be played on Windows 10 and Windows 11 OS",
+     "Processor:Quad-core Intel or AMD CPU",
+     "Memory:4 GB RAM",
+     "Graphics:DirectX® 11 compliant, 1024 Mb video memory",
+     "DirectX®:11",
+     "Hard Drive:5 GB HD space",
+     "Sound:DirectX 9.0c compatible",
+     "Other Requirements:Broadband Internet connection",
+     "Requires a UPlay account"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "7600": {
    "trailer": {},
@@ -9832,7 +10384,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/597170/4dbcdeca81994353342e7554925787d06c90cab9/ss_4dbcdeca81994353342e7554925787d06c90cab9.600x338.jpg?t=1784069375"
    ],
    "about": "Clone Drone in the Danger Zone es un juego de luchas a espada en tercera persona, donde te pueden mutilar cualquier parte del cuerpo. Tu mente ha sido descargada en un robot gladiador y deberás sobrevivir a las siniestras pruebas de la arena de lucha.",
-   "at": "2026-11-13T06:54:31Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 or newer",
+     "Procesador: Modern quad-core (AMD FX-Series or newer, Intel Core i5 or faster)",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: AMD Radeon HD 5770 or faster, Nvidia GeForce GT 640 or faster",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "2319390": {
    "trailer": {
@@ -10447,7 +11009,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/46500/ss_dd3c16f7ed0f11daa8ca57ebedfd573c30d83d96.600x338.jpg?t=1743167577"
    ],
    "about": "¡Syberia II también disponible!",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "SO: Windows XP / Vista / 7 /10",
+     "Procesador: 1 GHz",
+     "Memoria: 512 MB de RAM",
+     "Disco Duro: 1.2 GB de espacio libre",
+     "Gráficos: Compatible con DirectX con 128 MB de VRAM",
+     "DirectX®: 9.0c",
+     "Sonido: Compatible con DirectX 9.0c"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1205170": {
    "trailer": {
@@ -10465,7 +11039,23 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1205170/ss_b6ebbaa25f88497b46d4f5cb1b07514e6e0bb9c8.600x338.jpg?t=1778535076"
    ],
    "about": "Un juego de plataformas 2D con una peculiaridad: NADA DE SALTOS. Domina tus poderes magnéticos para completar cada nivel con rapidez y precisión. Disfruta del estilo clásico de 16 bits, gana logros en cada desafío y compite por la supremacía en la clasificación global.",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 64-bit",
+     "Procesador: Intel Core 2 Duo E6750 or AMD Athlon II X2 6400+",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTS 450, 1 GB or AMD Radeon HD 5750, 1 GB"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64 bit",
+     "Procesador: Intel Core i5-650 orAMD Phenom II X4 965",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIAGeForce GTX 650, 1 GB or AMD Radeon HD 7750, 1 GB"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "214510": {
    "trailer": {
@@ -10475,15 +11065,26 @@
     "hls": "https://video.akamai.steamstatic.com/store_trailers/214510/9892/ae2cebeaf79d5c6de362a35143224188d08ba584/1750481001/hls_264_master.m3u8?t=1447357096"
    },
    "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_a814931146da2dc9fdca7144aed54942dd581ae7.600x338.jpg?t=1780599831",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_7d5376b98dd550d4902eaff82c7fa9a86e1b0382.600x338.jpg?t=1780599831",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_7a91bb1a3f76e4dbd715f2ffff58da671fd41aaa.600x338.jpg?t=1780599831",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_a67edb9fea74140d3dedeec340eefceb7b76bc94.600x338.jpg?t=1780599831",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_ac8c5c5eb0b9aa9bc6d852afc7b9cefbdab3ad17.600x338.jpg?t=1780599831",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_eff0fa65d68b88b4c04a1d3104f218a0ee9d75eb.600x338.jpg?t=1780599831"
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_a814931146da2dc9fdca7144aed54942dd581ae7.600x338.jpg?t=1794606993",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_7d5376b98dd550d4902eaff82c7fa9a86e1b0382.600x338.jpg?t=1794606993",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_7a91bb1a3f76e4dbd715f2ffff58da671fd41aaa.600x338.jpg?t=1794606993",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_a67edb9fea74140d3dedeec340eefceb7b76bc94.600x338.jpg?t=1794606993",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_ac8c5c5eb0b9aa9bc6d852afc7b9cefbdab3ad17.600x338.jpg?t=1794606993",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214510/ss_eff0fa65d68b88b4c04a1d3104f218a0ee9d75eb.600x338.jpg?t=1794606993"
    ],
    "about": "Basado en la trilogía de películas, LEGO® El Señor de los Anillos lleva a los jugadores a los sucesos épicos de la historia clásica de El Señor de los Anillos: La Comunidad del Anillo, El Señor de los Anillos: Las Dos Torres y El Señor de los Anillos: El Retorno del Rey, con el humor y la variedad característicos de los juegos de LEGO.",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "OS *: Microsoft® Windows® XP SP3, Vista, or Windows® 7",
+     "Processor: Dual Core CPU @ 2GHz (Pentium D or better)",
+     "Memory: 1GB RAM",
+     "Hard Disk Space: 8 GB free HDD space",
+     "Video Card: NVIDIA® 7600, 7800, 8800 GT or ATI Radeon™ HD 1950 or higher",
+     "Sound: 16-bit Sound Card"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "204120": {
    "trailer": {},
@@ -10495,7 +11096,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/204120/ss_67458b4151770ac9149a7b71dd886993c0b4be29.600x338.jpg?t=1780599993"
    ],
    "about": "Lego Harry Potter: Años 5-7 lleva a los jugadores a través de las heroicas aventuras de Harry Potter por los mundos Muggle y mágico.",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "SO: Windows XP SP3 / Vista / Windows 7",
+     "Procesador: Dual Core a 2 GHz (Pentium D o superior)",
+     "Memoria: 1 GB de RAM",
+     "Disco Duro: 8.5 GB de espacio libre",
+     "Tarjeta de Vídeo: Soporte para Shader Model 3 (nVidia GeForce 6800, 7800, 8xxx o superior / ATI X1950 o superior)"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "690640": {
    "trailer": {
@@ -10513,7 +11124,28 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/690640/ss_42c0ad1a34c392ba77bf66c2e259c8b26d835f27.600x338.jpg?t=1793616299"
    ],
    "about": "¡La exitosa serie Trine vuelve a la magia de las 2,5D! Únete a tres héroes icónicos mientras emprenden una aventura por fantásticos paisajes de cuentos de hadas para salvar al mundo de las sombras del Príncipe de la Pesadilla.",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7/8/10",
+     "Procesador: Intel quad-core 2.0 GHz or dual-core 2.6 GHz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 560 or AMD Radeon HD 5700",
+     "DirectX: Versión 11",
+     "Almacenamiento: 16 GB de espacio disponible",
+     "Notas adicionales: Integrated graphics may not run the game smoothly"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7/8/10",
+     "Procesador: Intel i7-4770 or AMD FX-8350",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 960 or AMD Radeon R9 280",
+     "DirectX: Versión 11",
+     "Almacenamiento: 16 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "866140": {
    "trailer": {
@@ -10531,7 +11163,31 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/866140/ss_bfa8bcb3ff24e6c501e47b8b23ed5d4c34c50a78.600x338.jpg?t=1790876446"
    ],
    "about": "Embárcate en una aventura emotiva que habla sobre la pérdida del amor de toda una vida. Controla el tiempo, resuelve rompecabezas y modifica el entorno conforme revives los momentos agridulces de una vida pasada. Una historia sobre la felicidad y la tristeza que todos viviremos algún día.",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 / 8.1 / 10 (64 bit)",
+     "Procesador: Intel Core i3 4340 3.6 GHz or AMD equivalent",
+     "Memoria: 6 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 670 2 GB or AMD Radeon equivalent",
+     "DirectX: Versión 11",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c Compliant",
+     "Notas adicionales: Recommended input: Controller"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 (64 bit)",
+     "Procesador: Intel Core i7 3770K 3.5 GHz or AMD equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 1060 6 GB or AMD Radeon equivalent",
+     "DirectX: Versión 11",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c Compliant",
+     "Notas adicionales: Recommended input: Controller"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "21130": {
    "trailer": {},
@@ -10544,7 +11200,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/21130/ss_470bb83bb417b9a8b07ffe561d46e4713b88ea09.600x338.jpg?t=1728579610"
    ],
    "about": "Construye la aventura desde Privet Drive hasta el Torneo Tribrujo y déjate hechizar por la magia de las cuatro primeras historias de Harry Potter – ¡estilo LEGO! ¡Explora el Colegio Hogwarts™ de Magia y Hechicería, aprende hechizos, prepara pociones y revive las aventuras como nunca lo habías hecho con el humor irónico y la...",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "SO: Windows XP / Vista",
+     "Procesador: Intel P4 a 1.8 GHz / AMD Athlon XP 2200+",
+     "Memoria: 512 MB de RAM",
+     "Gráficos: ATI X1300 / nVidia GeForce FX 5800 (256 MB de RAM)",
+     "Sonido: 100% compatible con DirectX® 9.0c",
+     "Dispositivos de Entrada: Teclado y ratón / Controlador Xbox 360 para Windows"
+    ],
+    "rec": [
+     "SO: Windows XP / Vista",
+     "Procesador: Intel Core 2 Duo / AMD Athlon 64 a 2.8 GHz",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: ATI HD 2900 / nVidia GeForce 8800",
+     "Sonido: 100% compatible con DirectX® 9.0c",
+     "Dispositivos de Entrada: Teclado y ratón / Controlador Xbox 360 para Windows"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "735290": {
    "trailer": {
@@ -10562,7 +11236,18 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/735290/ss_c2d3568bb856822287140e9a370e29706ba1944a.600x338.jpg?t=1789950035"
    ],
    "about": "Una aventura noir a través del tiempo y el espacio. Cuando el triángulo amoroso en el que te ves envuelto se torna en tu contra, serás testigo del disparo de un dios celoso, también conocido como Big Bang.",
-   "at": "2026-11-13T16:31:24Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10",
+     "Procesador: AMD / Intel CPU running at 2.6 GHz or higher",
+     "Memoria: 6 GB de RAM",
+     "Gráficos: Radeon R9 285 (or equivalent) or GeForce GTX 560Ti or newer",
+     "DirectX: Versión 12",
+     "Almacenamiento: 4 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "5375410": {
    "trailer": {
@@ -11149,7 +11834,24 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594130/ss_3b3038279a60816058be72e453c64797ae31166d.600x338.jpg?t=1754871912"
    ],
    "about": "Lead The Rebellion, build your army, and shape the world with your choices. A story-heavy adventure game with multiple endings, romance options, and non-linear storytelling. A vast fantasy world waiting to be explored. Inspired by Dragon Age, and Mass Effect. Fully voice acted by a stellar cast!",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7",
+     "Procesador: Intel Core 2 Duo or Better",
+     "Memoria: 1 GB de RAM",
+     "Gráficos: Supports OpenGL 1.x or DirectX 9",
+     "Almacenamiento: 1 GB de espacio disponible",
+     "Notas adicionales: 1280x720 or Better Display"
+    ],
+    "rec": [
+     "SO: Windows 10",
+     "Procesador: Intel i5 processor",
+     "Memoria: 1 GB de RAM",
+     "Gráficos: Supports OpenGL 2.0",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "468920": {
    "trailer": {
@@ -11209,7 +11911,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1496590/ss_d017a1aa945088612d8378bd208f0c641e1b160b.600x338.jpg?t=1772227146"
    ],
    "about": "Una aventura tropical ambientada en un mundo abierto. Trepa, deslízate, nada y navega por un hermoso archipiélago en este sandbox basado en las leyes de la física. Toma el control de cualquier animal u objeto que veas y toca el ukelele.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10/11",
+     "Procesador: Intel Core i5-7600 / AMD Ryzen 5 1600",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580 / Intel Arc A380",
+     "DirectX: Versión 11",
+     "Almacenamiento: 15 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO: Windows 10/11",
+     "Procesador: Intel Core i5-9600 / AMD Ryzen 5 3600",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: NVIDIA GeForce RTX 2060 / AMD Radeon RX 5700 / Intel Arc A580",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 15 GB de espacio disponible",
+     "Notas adicionales: SSD (Solid State Drive)"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1080040": {
    "trailer": {
@@ -11261,7 +11983,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/910830/ss_2d224a32997886e4c887a3cd95cf13d97b7693b3.600x338.jpg?t=1778077821"
    ],
    "about": "Sin pasta, sin suerte y sola en la periferia. A Juno Markev le pisan los talones un asesino, y una deuda pendiente, además de otros problemas que están por llegar. Rebel Galaxy Outlaw tiene lugar en un grasiento mundo obrero habitado por forajidos, transportistas, policías y ladrones.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7, Windows Vista, Windows 8, Windows 10",
+     "Procesador: Intel® Core™ 2 Duo 2.4 GHz, AMD Athlon™ X2 2.8 GHz, or higher",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: Shader model 4.0, 1GB VRam",
+     "DirectX: Versión 11",
+     "Almacenamiento: 20 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c-compatible, 16-bit"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "984800": {
    "trailer": {
@@ -11279,7 +12013,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/984800/ss_c070cc158de6d9e02e5991df87be5255b2f8b54a.600x338.jpg?t=1777282566"
    ],
    "about": "¡Te damos la bienvenida a Automachef, un gestor de recursos en el que puedes diseñar cocinas, programar maquinaria y ver como tus obras maestras cobran vida! Es hora de diseñar la cocina del mañana",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 64-bit",
+     "Procesador: Intel Core i5-2300 or AMD A8-5600K",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: GeForce GTX 550 Ti or Radeon HD 7770",
+     "DirectX: Versión 11",
+     "Almacenamiento: 4 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX Compatible Sound Card"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64-bit",
+     "Procesador: Intel Core i5-4460 or Ryzen 3 2200G",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 950 or Radeon R9 290",
+     "DirectX: Versión 11",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX Compatible Sound Card"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "603400": {
    "trailer": {
@@ -11297,7 +12053,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/603400/ss_7e66dcaf9002a62affbcdde1ed7e3460b31c0584.600x338.jpg?t=1747750525"
    ],
    "about": "FOX n FORESTS es un plataformas de acción de estilo 16 bits con elementos de RPG. Cambia entre las estaciones del año para descubrir el secreto del bosque.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7",
+     "Procesador: 2 GHZ",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: Nvidia GeForce GT 630 or AMD Radeon HD 5570",
+     "Almacenamiento: 700 MB de espacio disponible"
+    ],
+    "rec": [
+     "SO: Windows 10"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "285160": {
    "trailer": {
@@ -11315,7 +12083,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/285160/ss_4a4df897105ba3eb05dbade695abfcceb8c5c0a6.600x338.jpg?t=1780599886"
    ],
    "about": "¡Reclama el Reino Perdido ladrillo a ladrillo! Únete a Bilbo Bolsón, Gandalf, Thorin y su compañía de enanos en una aventura épica a través de Tierra Media y viaja a la Montaña Solitaria con el juego más expansivo de LEGO hasta el momento.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows®XP SP3, Windows Vista/7/8 with latest service packs and updates installed",
+     "Procesador: AMD Athlon 64 X2 EE 3800+ (2*2000 Mhz) or similar Intel CPU, such as Intel Pentium Dual Core E2180 (2*2000 Mhz)",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce 7600 GS or ATI Radeon X1950 Pro or better",
+     "DirectX: Versión 10",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 10 GB de espacio disponible",
+     "Notas adicionales: Windows XP and DirectX® 9.0b and below not supported"
+    ],
+    "rec": [
+     "SO *: Windows XP/Vista/7/8",
+     "Procesador: AMD or Intel Quad Core running at 4*2600 Mhz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 480 or ATI Radeon HD 5850 or better",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 10 GB de espacio disponible",
+     "Notas adicionales: Windows XP and DirectX® 9.0b and below not supported"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1370140": {
    "trailer": {
@@ -11333,7 +12123,21 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1370140/ss_09b56b8f26e1e44429bc4e37fcbeda27483ea85d.600x338.jpg?t=1773929872"
    ],
    "about": "Inspirado en la época dorada de los juegos de plataformas 3D, ¡Kao el canguro vuelve con una nueva aventura! Embárcate en una odisea épica, domina los guantes mágicos, explora escenarios alucinantes y vive la mayor aventura de Kao hasta la fecha.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Win 10 or newer",
+     "Procesador: i5 3300 3,20 GHz 4 cores/4 threads",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 760 2 gb",
+     "DirectX: Versión 11",
+     "Almacenamiento: 9 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "395560": {
    "trailer": {
@@ -11351,7 +12155,20 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/395560/ss_5ee9cfde144ace3acf3c78bb80d1d7b8fb02ae1b.600x338.jpg?t=1792652674"
    ],
    "about": "In the shadow of the Cold War, Fenton Paddock is facing the hardest fight of his life. While the tensions between the superpowers threaten to tear the world apart, the British soldier has to save his family that has been caught by powerful enemies.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows® Vista™, Windows 7™, Windows 8™, Windows 10™",
+     "Procesador: Intel® Core™ i5 or 100 % compatible processor",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: DirectX® 9 compatible graphics card with at least 2 GB dedicated memory",
+     "DirectX: Versión 9.0",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX® 9 compatible sound card (optional)",
+     "Notas adicionales: Mouse/keyboard or gamepad"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "914750": {
    "trailer": {
@@ -11368,7 +12185,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/914750/ss_4174dbbb2f73806f2401a359ec982f13e2047903.600x338.jpg?t=1790096969"
    ],
    "about": "Lev livet som ett bi! Utforska en värld fylld av liv där du samlar in pollen, undviker farliga getingar och räddar din kupa. Spela med andra i tre olika lägen, inklusive co-op och spelare mot spelare på en delad skärm.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7",
+     "Procesador: Intel Core i5-2300 ou AMD FX-4350",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 550 Ti ou ATI Radeon HD 5770",
+     "DirectX: Versión 11",
+     "Almacenamiento: 10 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7",
+     "Procesador: Intel Core i5-3470 ou AMD FX-6300",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 660 ou AMD Radeon HD 7870",
+     "DirectX: Versión 11",
+     "Almacenamiento: 10 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1311510": {
    "trailer": {
@@ -11386,7 +12223,21 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1311510/ss_9e7177bf6f651154a46b71e87683a39c93b67b17.600x338.jpg?t=1791702206"
    ],
    "about": "Embracelet es un juego de aventuras ambientado en el norte de Noruega. Una historia de madurez única sobre el amor, la pérdida, la amistad y la familia... ¡y un brazalete mágico con poderes misteriosos!",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: i3 or better",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: Intel Iris or better",
+     "Almacenamiento: 1 GB de espacio disponible",
+     "Notas adicionales: Runs best on a system with a dedicated graphics card"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "791240": {
    "trailer": {
@@ -11404,7 +12255,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/791240/ss_b7b5e7bab534660f06b9b77bb746e67094b7473c.600x338.jpg?t=1747925567"
    ],
    "about": "Te presentamos a Lumote, la criatura bioluminiscente más blandita, en este bonito juego de plataformas y rompecabezas en 3D. ¡Toma el control de los habitantes del mundo en una misión para derrocar a Mastermote!",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64bit",
+     "Procesador: Intel i5 3.7 GHz (4 Cores) or equivalent",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: Nvidia GTX 770 2GB or equivalent",
+     "DirectX: Versión 11",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64bit",
+     "Procesador: Intel i5 4.0 GHz (4 Cores) or equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: Nvidia GTX 1060 4GB or equivalent",
+     "DirectX: Versión 11",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "968550": {
    "trailer": {
@@ -11422,7 +12293,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/968550/ss_b37a6e21367caf825cc7795fc7197a6033f718c7.600x338.jpg?t=1729181311"
    ],
    "about": "Construye adorables pueblos de juguete y ciudades en terrenos miniatura. Combina bloques de edificios para crear nuevas mega estructuras. Pon a prueba tus habilidades en los Desafíos basados en física o simplemente relájate mientras destruyes todo con tiernas catástrofes.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 64 Bit",
+     "Procesador: Intel Core i3 2100 (3.10 GHz) / AMD FX 6300 (3.5 GHz)",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: Intel HD 4000 (1GB) or Equivalent",
+     "DirectX: Versión 11",
+     "Almacenamiento: 4 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO: Windows 10 64 Bit",
+     "Procesador: Intel i3 8100 (3.6 GHz) / AMD Ryzen 3 2200G (3.5 GHz)",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 670 (2 GB) / AMD R7 260X (2GB)",
+     "DirectX: Versión 12",
+     "Almacenamiento: 4 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "341940": {
    "trailer": {
@@ -11440,7 +12329,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/341940/ss_69aa5491ba0d1be151af8d65f12bb2052a829389.600x338.jpg?t=1792502044"
    ],
    "about": "«Hatred» es un violento juego de disparos con dos joysticks en el que te pones en la piel de «The Antagonist» para luchar contra toda la humanidad.",
-   "at": "2026-11-13T17:48:26Z"
+   "reqs": {
+    "min": [
+     "SO *: Microsoft Windows Vista (SP2) with DirectX 11 update (KB971512-x64), Windows® 7 (Service Pack 1) , Windows 8.1 and Windows 10 - (64-bit only).",
+     "Procesador: 2.6 GHz Intel® Core™ i5-750 or 3.2 GHz AMD Phenom™ II X4 955",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 460 or AMD Radeon HD5850 (1 GB VRAM)",
+     "DirectX: Versión 11",
+     "Almacenamiento: 5 GB de espacio disponible",
+     "Tarjeta de sonido: Integrated or dedicated DirectX 11 compatible soundcard",
+     "Notas adicionales: Hatred will launch only on \"64-bit\" version of operating system."
+    ],
+    "rec": [
+     "SO *: Windows® 7 (Service Pack 1) / Windows® 8 / Windows® 8.1 / Windows® 10 / (64-bit only)",
+     "Procesador: AMD Octa-Core / Intel Quad-Core processor running at 3.4 GHz (AMD FX X8 8350 or Intel Core i5 3570 or newer architectures are recommended)",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: AMD/NVIDIA dedicated with at least 2048MB of dedicated VRAM and with at least DirectX 11 and Shader Model 5.0 support. AMD Radeon R9 285 and NVIDIA GeForce GTX 670 and ab",
+     "DirectX: Versión 11",
+     "Almacenamiento: 5 GB de espacio disponible",
+     "Tarjeta de sonido: Integrated or dedicated DirectX 11 compatible soundcard",
+     "Notas adicionales: Hatred will launch only on \"64-bit\" version of operating system."
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "1668190": {
    "trailer": {
@@ -13321,7 +14232,7 @@
    ],
    "about": "Casualties: Unknown is an unforgiving cave-exploration survival simulator. Your captors have tasked you with retrieving lost cargo on a foreign planet, explore its 11 layers and do your best to survive diverse hostile environments. You are just one of the thousands of test subjects sent to die.",
    "reqs": null,
-   "at": "2026-11-13T18:17:08Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "3629430": {
    "trailer": {
@@ -13340,7 +14251,7 @@
    ],
    "about": "DREADMOOR es una oscura aventura de pesca en primera persona ambientada en un mundo sumergido, en descomposición tras una catástrofe. Pesca en aguas turbias, mejora tu barco, fabrica equipo de supervivencia y combate a las criaturas monstruosas que acechan bajo el agua y en tierra.",
    "reqs": null,
-   "at": "2026-11-13T18:17:08Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "5266240": {
    "trailer": {
@@ -13359,7 +14270,7 @@
    ],
    "about": "Un juego de pelar patatas en primera persona. Tienes un cuchillo. Tienes un cubo. Tienes una montaña de patatas. Pélalas con física real. Corta fino, no desperdicies nada. Compra mejores herramientas. Pela hasta que no quede nada. Nadie pela como tú.",
    "reqs": null,
-   "at": "2026-11-13T18:17:08Z"
+   "at": "2026-11-14T21:18:15Z"
   },
   "1658920": {
    "trailer": {
@@ -13417,7 +14328,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1428710/ss_b7cd900057dd18673e38815740ee991f25620eaa.600x338.jpg?t=1729181401"
    ],
    "about": "Asume el rol de la creación de la diosa Juxtia y atraviesa los escombros de dos reinos divinos arrasados por la Tizna. Un sistema de combate desafiante y una banda sonora inquietante que se unen para hacer de The Tarnishing of Juxtia un juego de rol y fantasía oscura en que no te dejará indiferente.",
-   "at": "2026-11-13T18:17:08Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7",
+     "Procesador: Intel i5",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce 9600 GT/ AMD Radeon HD 6450",
+     "DirectX: Versión 11",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Intel i5",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce 9600 GT/ AMD Radeon HD 6450",
+     "DirectX: Versión 11",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "418240": {
    "trailer": {
@@ -13514,7 +14445,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413410/ss_1db8423ebc229f6951ea7308bf0926b0d8a8c11f.600x338.jpg?t=1781085607"
    ],
    "about": "Investiga asesinatos, busca pistas y habla con tus compañeros de clase. Tendrás que implicarte en juegos de palabras mortales y hablar con los sospechosos. ¡Disecciona sus declaraciones y contradice sus palabras para exponer sus mentiras! Solo hay una forma de sobrevivir: apretar el gatillo.",
-   "at": "2026-11-13T18:17:08Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7",
+     "Procesador: 2.8 GHz Intel Core 2 Duo or better",
+     "Memoria: 3 GB de RAM",
+     "Gráficos: OpenGL 3.2 or DirectX 9.0c compatible GPU with at least 1GB of VRAM",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 5 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7",
+     "Procesador: Intel(R) Core(TM) i5-3470 or better",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: OpenGL 3.2 or DirectX 9.0c compatible GPU with at least 1GB of VRAM",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 6 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "281610": {
    "trailer": {
@@ -14182,15 +15131,33 @@
   "213330": {
    "trailer": {},
    "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_94adb58ab8bbb52d3f698f9ce452a3f37d673a2e.600x338.jpg?t=1780596984",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_df2b14f13f306f8388dc1e0de5c283223583eb22.600x338.jpg?t=1780596984",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_0adf185a2691d05aa5c0ade1d0553d828e1c5333.600x338.jpg?t=1780596984",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_9e41229bb1c538594cae4cdd4de7659a433c5e13.600x338.jpg?t=1780596984",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_85bd692ad00d68264825390267e64ba86ee7ef21.600x338.jpg?t=1780596984",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_0bc843d2ee46fd761f7cb203ecfa0779500c45ae.600x338.jpg?t=1780596984"
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_94adb58ab8bbb52d3f698f9ce452a3f37d673a2e.600x338.jpg?t=1794606811",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_df2b14f13f306f8388dc1e0de5c283223583eb22.600x338.jpg?t=1794606811",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_0adf185a2691d05aa5c0ade1d0553d828e1c5333.600x338.jpg?t=1794606811",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_9e41229bb1c538594cae4cdd4de7659a433c5e13.600x338.jpg?t=1794606811",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_85bd692ad00d68264825390267e64ba86ee7ef21.600x338.jpg?t=1794606811",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/213330/ss_0bc843d2ee46fd761f7cb203ecfa0779500c45ae.600x338.jpg?t=1794606811"
    ],
    "about": "¡Las leyendas unen fuerzas! El dúo dinámico de Batman y Robin se une a otros famosos superhéroes del universo de DC, como Superman, Wonder Woman y Green Lantern, para salvar Gotham City de la destrucción de la mano de los infames villanos Lex Luthor y Joker.",
-   "at": "2026-11-13T21:29:05Z"
+   "reqs": {
+    "min": [
+     "SO: Windows XP, Windows Vista o Windows 7",
+     "Procesador: Intel Core 2 Duo a 2 GHz o AMD Athlon 64 X2 3800 a 2 GHz",
+     "Memoria: 1 GB de RAM",
+     "Disco Duro: 10 GB de espacio libre",
+     "Gráficos: nVidia 7600, 7800, 8xxx o superior / ATI 1950 o superior",
+     "Versión de DirectX®: 9.0c",
+     "Sonido: Dispositivo compatible con DirectX 9.0c",
+     "Adicional: Necesario ordenador 100% compatible con DirectX 9.0c"
+    ],
+    "rec": [
+     "Procesador: Quad Core a 2.7 GHz",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: nVidia GeForce 8800 / ATI HD3870 o superior",
+     "Adicional: Ordenador 100% compatible con DirectX 9.0c"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "252610": {
    "trailer": {
@@ -14208,7 +15175,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252610/ss_d02496b9f40a65fa6c77b7295cc9a8738e9f987e.600x338.jpg?t=1666824491"
    ],
    "about": "Control a car full of jerks as they explore cities, recruit weird people, rescue dogs, argue with each other, and face gigantic swarms of slow zombies. Randomly generated for a new story and rare events every time you play!",
-   "at": "2026-11-13T21:29:05Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7, XP, Vista, 8, and newer",
+     "Procesador: 1.3 ghz",
+     "Memoria: 128 MB de RAM",
+     "Gráficos: Minimum Supported Texture Size 2048x2048",
+     "Almacenamiento: 60 MB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "267530": {
    "trailer": {
@@ -14225,7 +15202,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/267530/ss_5d221f6285bdb75f7900512dd4ade1ca37980c72.600x338.jpg?t=1780600195"
    ],
    "about": "Únete a Emmet y a un grupo insólito de combatientes de resistencia en su heroica misión para impedir los malévolos planes de Lord Business – una misión para la cual Emmet no está totalmente preparado. Es un viaje descabellado con una sorprendente combinación de más de 90 personajes incluidos Batman, Superman, Wonder Woman, Green Ninja,...",
-   "at": "2026-11-13T21:52:01Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows®XP SP3, Windows Vista/7/8 with latest service packs and updates installed",
+     "Procesador: AMD Athlon 64 X2 EE 3800+ (2*2000 Mhz) or similar Intel CPU, such as Intel Pentium Dual Core E2180 (2*2000 Mhz)",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: NVIDIA GeForce 7600 GS or ATI Radeon X1950 Pro or better",
+     "DirectX: Versión 10",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 10 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows XP/Vista/7/8",
+     "Procesador: AMD or Intel Quad Core running at 4*2600 Mhz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 480 or ATI Radeon HD 5850 or better",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 10 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "25830": {
    "trailer": {},
@@ -14478,7 +15475,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/319910/ss_af4170aaccf8247caa01498e59adf04cff8f5231.600x338.jpg?t=1793622135"
    ],
    "about": "Trine 3: The Artifacts of Power es un juego de acción y plataformas, puzles y aventura, secuela de los premiados Trine y Trine 2. Reúnete con los tres héroes en una nueva aventura, ¡ahora por primera vez completamente tridimensional!",
-   "at": "2026-11-14T00:17:46Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10 or later, 64-bit",
+     "Procesador: Intel Core i3/i5/i7 1.8 GHz dual-core, or AMD 2.0 GHz dual-core",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA GeForce 260 / Radeon HD 4000 series / Intel HD Graphics 4000",
+     "DirectX: Versión 10",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Notas adicionales: Your purchase includes the macOS and Linux versions at no extra cost."
+    ],
+    "rec": [
+     "SO: Windows 10 or later, 64-bit",
+     "Procesador: Intel quad-core 2.0 GHz, or dual-core 2.6 GHz",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 560 2GB / Radeon HD 6850 2GB",
+     "DirectX: Versión 10",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Notas adicionales: Your purchase includes the macOS and Linux versions at no extra cost."
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   },
   "3010850": {
    "trailer": {
@@ -14820,6 +15839,126 @@
     ]
    },
    "at": "2026-11-14T21:00:47Z"
+  },
+  "5460910": {
+   "trailer": {
+    "name": "Mayday Airways - Demo Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257471222/bdbabda350c1bc34f92de2f0f31f8ed748ecc2c9/movie_600x337.jpg?t=1792524350",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5460910/460458471/97fd29bde96d442b1bfd3e62210c2d78c1ea38a6/1792522325/hls_264_master.m3u8?t=1792524350"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460910/a08506805522f15b9f4c1131afb3af66fe2c061e/ss_a08506805522f15b9f4c1131afb3af66fe2c061e.600x338.jpg?t=1794690540",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460910/38baa7a11f83449d097e1682669a1eceaf34b197/ss_38baa7a11f83449d097e1682669a1eceaf34b197.600x338.jpg?t=1794690540",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460910/3d4a2ded16d0093de3785ea13ec59b28ce525975/ss_3d4a2ded16d0093de3785ea13ec59b28ce525975.600x338.jpg?t=1794690540",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460910/9e2dc463bcf19d3f51cb084de7db615fb333146f/ss_9e2dc463bcf19d3f51cb084de7db615fb333146f.600x338.jpg?t=1794690540",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460910/ed6ed044b246f5513efda136b0059fb501a97014/ss_ed6ed044b246f5513efda136b0059fb501a97014.600x338.jpg?t=1794690540",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460910/3c549dcfb40583a609b8ae16024a0c091d57d6d3/ss_3c549dcfb40583a609b8ae16024a0c091d57d6d3.600x338.jpg?t=1794690540"
+   ],
+   "about": "Comedia aérea cooperativa para 1-4 jugadores. Dirige con tus amigos una minúscula aerolínea isleña, mantén en el aire un avión que se cae a trozos, repáralo en pleno vuelo y ten contenta a una cabina llena de pasajeros. O, al menos, con vida.",
+   "reqs": null,
+   "at": "2026-11-14T21:18:15Z"
+  },
+  "205910": {
+   "trailer": {
+    "name": "Tiny and Big Trailer 3",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/81768/movie.293x165.jpg?t=1584297589",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/205910/7948/9a3670d2cc885c23e14816381e6614c806398048/1751249001/hls_264_master.m3u8?t=1584297589"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205910/ss_76f6df8294f41775fe4a8307fb818d6f4ebfbcd6.600x338.jpg?t=1706637384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205910/ss_b1fc949b1440e7b94ae4ffe14239ca3464ac7606.600x338.jpg?t=1706637384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205910/ss_f03893e4f7300e7b45ec1ec958fb6f4935f2642b.600x338.jpg?t=1706637384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205910/ss_615c1cafaf8d7d9530d7278702b5648a369ccd33.600x338.jpg?t=1706637384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205910/ss_2204bbc9f5e6184db3e694d226f80b23ea349107.600x338.jpg?t=1706637384",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205910/ss_52a51fd23b49db6f94a05b3b6b2b18f9d513b50d.600x338.jpg?t=1706637384"
+   ],
+   "about": "Eres Tiny, un inventor friki que trata de recuperar su más querida posesión: ¡los calzoncillos del abuelo!",
+   "reqs": {
+    "min": [
+     "SO: Windows XP",
+     "Procesador: Core 2 Duo / Athlon X2 a 2 GHz o superior",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: ATI Radeon 2400 o superior / nVidia GeForce 8600 o superior",
+     "Disco Duro: 1.5 GB de espacio libre",
+     "Sonido: Dispositivo compatible con OpenAL",
+     "Notas Adicionales: Se recomienda usar ratón de 3 botones o mando de Xbox 360. Necesita drivers OpenGL."
+    ],
+    "rec": [
+     "SO: Windows 7",
+     "Gráficos: ATI Radeon 2900 o superior / nVidia GeForce 8800 o superior",
+     "Notas Adicionales: Se recomienda usar ratón de 3 botones o mando de Xbox 360. Necesita drivers OpenGL."
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
+  },
+  "40350": {
+   "trailer": {
+    "name": "Lost Horizon Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5946/movie.293x165.jpg?t=1447353577",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/40350/4166/6f4c0b64149d26a3aefafa2bb1f66cac079d8a37/1751246312/hls_264_master.m3u8?t=1447353577"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40350/ss_24c61a15ba73be1065fad1d47a89528f1442b97b.600x338.jpg?t=1792657219",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40350/ss_f9bb5863e1a9eb740cb654cf89a3738255e4a56e.600x338.jpg?t=1792657219",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40350/ss_88b45de41bc854f18f21265dc35879eb97026ba7.600x338.jpg?t=1792657219",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40350/ss_c88334bcdba82258bcd6840eb80199052cce5745.600x338.jpg?t=1792657219",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40350/ss_284ad3ef5c0dc9cfe67991ab9e3a2352e7d5e5b6.600x338.jpg?t=1792657219",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40350/ss_d402f6b48ae6e529af971b84c00e7332cfc11b39.600x338.jpg?t=1792657219"
+   ],
+   "about": "1936: Soldados del Tercer Reich recorren el mundo buscando armas ocultas para sus demenciales planes de conquista. Cuando a Fenton Paddock, un ex-soldado británico y desventurado contrabandista, le piden que localice a su amigo Richard, desaparecido en el Tíbet, no se le pasa por la cabeza que su búsqueda lo llevará por tres continentes...",
+   "reqs": {
+    "min": [
+     "SO: Windows® XP / Vista™ / Windows 7™",
+     "Procesador: Pentium IV a 2 GHz Single Core o CPU 100% compatible",
+     "Memoria: 512 MB de RAM",
+     "Gráficos: Tarjeta gráfica AGP o PCI Express con 64 MB de VRAM o mejor compatible con DirectX® 9",
+     "DirectX®: DirectX® 9",
+     "Disco Duro: 4.5 GB de espacio libre",
+     "Sonido: de 16 bit compatible con DirectX® 9 (opcional)"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-14T21:18:15Z"
+  },
+  "278360": {
+   "trailer": {
+    "name": "A Story About My Uncle - Official Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2032356/movie.293x165.jpg?t=1447361857",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/278360/20778/eeaaefe81c40a822f73ed7a6373bf312826a7fea/1750488607/hls_264_master.m3u8?t=1447361857"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/278360/ss_c1e028877064894a0d11f4825cf63fb41d912699.600x338.jpg?t=1589403981",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/278360/ss_bf2d7726b9def889c8c1aeb661fc7989f9dfeffe.600x338.jpg?t=1589403981",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/278360/ss_24afe989170ee7f81787ae20d114ff27ac383dae.600x338.jpg?t=1589403981",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/278360/ss_95f408e9978a237b93b8440b5415cbcfa222f456.600x338.jpg?t=1589403981",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/278360/ss_712129527b63bfa578f73d10b0c89a583d68d858.600x338.jpg?t=1589403981"
+   ],
+   "about": "A Story About My Uncle es un juego de plataformas en primera persona sobre un chico que va en busca de su tío desaparecido y termina en un mundo cuya existencia ni siquiera podía imaginar. El movimiento en Una Historia Sobre Mi Tío es una parte crucial de la mecánica del juego- centrándose en balancearse a través del mundo con un gancho...",
+   "reqs": {
+    "min": [
+     "SO *: Windows XP (SP3), Windows Vista (SP2), Windows 7, Windows 8",
+     "Procesador: Intel Core 2 Duo, AMD Athlon X2, or equal at 1.6GHz or better",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: DirectX 9.0c-compatible, SM 3.0-compatible",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 2 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c-compatible, 16-bit"
+    ],
+    "rec": [
+     "SO *: Windows 7 or 8",
+     "Procesador: QuadCore 2.0 GHz+",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: DirectX 9.0c-compatible, SM 3.0-compatible, 1024MB VRAM+",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 2 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c-compatible, 16-bit"
+    ]
+   },
+   "at": "2026-11-14T21:18:15Z"
   }
  }
 }
