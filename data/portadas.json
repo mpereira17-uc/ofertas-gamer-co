@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T18:14:11Z",
+ "updatedAt": "2026-11-14T20:50:23Z",
  "apps": {
   "1553000": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1553000/library_600x900.jpg?t=1764149578",
@@ -3390,17 +3390,6 @@
    "deck": "unsupported",
    "at": "2026-11-14T18:14:11Z"
   },
-  "629820": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/629820/library_600x900.jpg?t=1789673023",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/629820/library_hero.jpg?t=1789673023",
-   "reviews": {
-    "label": "Muy positivas",
-    "pct": 87,
-    "count": 22362
-   },
-   "deck": "verified",
-   "at": "2026-11-14T18:14:11Z"
-  },
   "609490": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/609490/library_600x900.jpg?t=1751460640",
    "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/609490/library_hero.jpg?t=1751460640",
@@ -3410,17 +3399,6 @@
     "count": 1837
    },
    "deck": "verified",
-   "at": "2026-11-14T18:14:11Z"
-  },
-  "236850": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/262929c03990b786390232599f3af566ae36eac7/library_600x900.jpg?t=1790873960",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/e9ca126009c5fecf7df6e2782c69a4d3336fcc32/library_hero.jpg?t=1790873960",
-   "reviews": {
-    "label": "Muy positivas",
-    "pct": 86,
-    "count": 92225
-   },
-   "deck": "unsupported",
    "at": "2026-11-14T18:14:11Z"
   },
   "216290": {
@@ -3433,6 +3411,17 @@
    },
    "deck": "playable",
    "at": "2026-11-14T18:14:11Z"
+  },
+  "227020": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227020/library_600x900.jpg?t=1730301519",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227020/library_hero.jpg?t=1730301519",
+   "reviews": {
+    "label": "Variadas",
+    "pct": 62,
+    "count": 337
+   },
+   "deck": null,
+   "at": "2026-11-14T20:50:23Z"
   }
  }
 }
