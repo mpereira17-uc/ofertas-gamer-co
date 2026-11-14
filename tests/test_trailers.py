@@ -31,7 +31,7 @@ class TrailersTest(unittest.TestCase):
 
     def test_no_repite_y_tolera_fallos(self):
         offers = [{"id": "a", "steamAppID": 30}]
-        cache, _ = trailers.update(offers, [], {"30": {"trailer": {}, "shots": [], "about": "", "at": "2026-10-20T00:00:00Z"}}, NOW,
+        cache, _ = trailers.update(offers, [], {"30": {"trailer": {}, "shots": [], "about": "", "reqs": None, "at": "2026-10-20T00:00:00Z"}}, NOW,
                                    lambda url: self.fail("no debía pedir"))
         self.assertIn("30", cache)
 
@@ -44,3 +44,24 @@ class TrailersTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RequisitosTest(unittest.TestCase):
+    def test_lista_con_viñetas(self):
+        info = {"pc_requirements": {
+            "minimum": '<strong>Mínimo:</strong><br><ul class="bb_ul"><li>Requiere un procesador y un sistema operativo de 64 bits<br></li>'
+                       '<li><strong>SO:</strong> Windows 10<br></li><li><strong>Memoria:</strong> 8 GB de RAM<br></li>'
+                       '<li><strong>Gráficos:</strong> GTX 1060 &amp; RX 580<br></li><li><script>alert(1)</script></li></ul>',
+            "recommended": '<strong>Recomendado:</strong><br><ul class="bb_ul"><li><strong>Memoria:</strong> 16 GB de RAM</li></ul>'}}
+        r = trailers.requirements(info)
+        self.assertEqual(r["min"][:3], ["Requiere un procesador y un sistema operativo de 64 bits", "SO: Windows 10", "Memoria: 8 GB de RAM"])
+        self.assertIn("Gráficos: GTX 1060 & RX 580", r["min"])
+        self.assertFalse(any("<" in x or "alert" in x for x in r["min"]))
+        self.assertEqual(r["rec"], ["Memoria: 16 GB de RAM"])
+
+    def test_texto_corrido_y_vacio(self):
+        info = {"pc_requirements": {"minimum": "<strong>Configuración mínima:</strong> Windows XP, 256 MB de RAM<br>\t<strong>Configuración recomendada:</strong> 512 MB de RAM"}}
+        r = trailers.requirements(info)
+        self.assertEqual(r["min"], ["Windows XP, 256 MB de RAM"])
+        self.assertEqual(r["rec"], ["512 MB de RAM"])
+        self.assertIsNone(trailers.requirements({"pc_requirements": []}))

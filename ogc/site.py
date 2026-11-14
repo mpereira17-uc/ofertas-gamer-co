@@ -1467,11 +1467,23 @@ class Site:
         def score(x):
             common = len(words & set(slugify_words(x["title"])))
             return (-common, x["storeId"] != o["storeId"], abs((x.get("discountPercentage") or 0) - (o.get("discountPercentage") or 0)))
-        picks = sorted((x for x in offers if x["id"] != o["id"] and x["id"] in self.detail and x.get("image")), key=score)[:4]
+        picks = sorted((x for x in offers if x["id"] != o["id"] and x["id"] in self.detail and x.get("image")), key=score)[:8]
         if not picks:
             return ""
-        return (f'<section aria-labelledby="sim-h"><h2 id="sim-h">{ICONS["sparkle"]} También te puede interesar</h2>'
-                f'<ul class="grid">{"".join(self.card(x) for x in picks)}</ul></section>')
+        return ('<section class="shelf pd-related" aria-labelledby="sim-h">'
+                + self.sec_head("", "También te puede interesar", 'Ofertas parecidas, verificadas para Colombia. <a href="ofertas.html">Ver todas</a>', "sparkle", "sim-h")
+                + f'<ul class="grid board" id="sim-list" data-slider aria-label="{len(picks)} juegos: desliza o usa las flechas">{"".join(self.card(x) for x in picks)}</ul></section>')
+
+    @staticmethod
+    def reqs_block(o):
+        """Requisitos de PC de la ficha oficial de Steam (texto plano, ya limpio)."""
+        r = o.get("reqs") or {}
+        if not (r.get("min") or r.get("rec")):
+            return ""
+        col = lambda title, items: (f'<div class="pd-req"><h3>{title}</h3><ul>' + "".join(f"<li>{e(x)}</li>" for x in items) + "</ul></div>") if items else ""
+        return (f'<section class="pd-reqs" aria-labelledby="req-h"><h2 id="req-h">{ICONS["screen"]} ¿Corre en mi PC?</h2>'
+                f'<div class="pd-req-cols">{col("Mínimos", r.get("min") or [])}{col("Recomendados", r.get("rec") or [])}</div>'
+                '<p class="meta">Requisitos publicados por el juego en su ficha de Steam.</p></section>')
 
     def offer_pages(self, offers, notice):
 
@@ -1492,20 +1504,36 @@ class Site:
                              "seller": {"@type": "Organization", "name": o["store"]},
                              **({"priceValidUntil": o["expiresAt"][:10]} if o.get("expiresAt") else {})}}
             ld = {k: v for k, v in ld.items() if v is not None}
+            cover = o.get("capsule") or ""
+            flat = o.get("image") or "assets/placeholder.svg"
+            pct = o.get("discountPercentage") or 0
+            sticker = '<span class="sticker free">GRATIS</span>' if free else (f'<span class="sticker">-{pct}%</span>' if pct else "")
+            box = (f'<div class="box pd-box store-{e(o["storeId"])} tilt-{self.tilt(o)}{"" if cover else " no-capsule"}">'
+                   f'<img src="{e(cover or flat)}" alt="Imagen de {e(o["title"])}" width="300" height="450" fetchpriority="high" decoding="async">'
+                   + ("" if cover else f'<span class="box-name" aria-hidden="true">{e(o["title"])}</span>') + f'{sticker}</div>')
+            bg = o.get("hero") or o.get("image")
+            sub = f'{self.review_line(o)}{self.deck_badge(o)}'
+            trailer = self.trailer_link(dict(o, url=f"https://store.steampowered.com/app/{o['steamAppID']}/" if o.get("steamAppID") else o["officialUrl"]))
+            media = (f'<div class="detail-media pd-media" id="trailer"><img src="{e(o["image"])}"{fallback(o)} alt="" width="920" height="430" loading="lazy" decoding="async">{trailer}</div>'
+                     if trailer and o.get("image") else "")
             self.layout(name, f"{o['title']} {what} en {o['store']}",
                         f"{o['title']} está {what} en {o['store']}. Precio, vigencia y enlace oficial verificados por Ofertas Gamer CO.",
-                        f"""<article class="detail">
-<div class="detail-media" id="trailer">{img}{self.badge(o)}{self.trailer_link(dict(o, url=f"https://store.steampowered.com/app/{o['steamAppID']}/" if o.get("steamAppID") else o["officialUrl"]))}</div>
-<div class="detail-info">{self.store_chip(o)}
+                        f"""<article class="pd">
+<header class="pd-hero">{f'<img class="pd-bg" src="{e(bg)}" alt="" width="1920" height="620" decoding="async">' if bg else ''}
+<div class="pd-top">{box}
+<div class="pd-info">{self.store_chip(o)}
 <h1>{e(o['title'])}</h1>
-{f'<p class="lead about">{e(html.unescape(o["about"]))}</p>' if o.get("about") else ''}
-{self.price_html(o, big=True)}
+{f'<div class="pd-sub">{sub}</div>' if sub else ''}
+<div class="pd-price">{self.card_price(o)}{f'<p class="save">{e(self.saving_text(o))}</p>' if self.saving_text(o) else ''}</div>
 {self.countdown(o)}{f'<p class="meta">{e(until)}</p>' if until else ''}
 {self.trust_chips(o, full=True)}
-<div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><a class="btn" href="ofertas.html">Ver más ofertas</a>{self.alert_button(o, "offer")}</div>
-{search_note}<p class="meta">Verificado el {e(date_es(o['verifiedAt']))}.</p>
-{self.share_whatsapp(o, name)}
-{notice}</div></article>{self.shots_block(o)}{self.offer_buy(o)}{self.score_block(o)}{self.history_block(o)}{self.compare_block(o)}{self.similar_offers(o, offers)}""",
+<div class="cta">{btn}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button>{self.alert_button(o, "offer")}</div>
+{search_note}<p class="meta pd-verified">{ICONS['check']} Verificado el {e(date_es(o['verifiedAt']))}{" para Colombia" if o.get("verifiedFor") == "CO" else ""}.</p>
+</div></div></header>
+{f'<p class="lead pd-about">{e(html.unescape(o["about"]))}</p>' if o.get("about") else ''}
+<div class="pd-grid"><div class="pd-main">{media}{self.shots_block(o)}{self.reqs_block(o)}{self.history_block(o)}{self.score_block(o)}{self.compare_block(o)}</div>
+<aside class="pd-side">{self.offer_buy(o)}{self.share_whatsapp(o, name)}{notice}</aside></div>
+</article>{self.similar_offers(o, offers)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
 
     @staticmethod
