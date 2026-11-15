@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-15T15:16:13Z",
+ "updatedAt": "2026-11-15T15:42:12Z",
  "apps": {
   "2719590": {
    "trailer": {
@@ -4386,7 +4386,21 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/312660/ss_3904b3242b6c8d44a244db22be370909ba4839d0.600x338.jpg?t=1681207252"
    ],
    "about": "Sniper Elite 4 combina su balística realista con un intenso sistema de sigilo y acción en tercera persona. Disfruta de los entornos más amplios y variados que se hayan visto en la franquicia, que en esta ocasión se desarrollará en la Italia del año 1943.",
-   "at": "2026-10-30T18:41:47Z"
+   "reqs": {
+    "min": [
+     "SO *: 64-bit Windows 7, 64-bit Windows 8.1 or 64-bit Windows 10",
+     "Procesador: Intel CPU Core i3-2100 or AMD equivalent",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: AMD Radeon HD 7870 (2GB) or NVIDIA GeForce GTX 660 (2GB)"
+    ],
+    "rec": [
+     "SO *: 64-bit Windows 7, 64-bit Windows 8.1 or 64-bit Windows 10",
+     "Procesador: Intel CPU Core i7-3770 or AMD equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: Nvidia GPU GeForce GTX 970 / AMD GPU Radeon RX 480"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   },
   "3218350": {
    "trailer": {
@@ -4504,15 +4518,33 @@
     "hls": "https://video.akamai.steamstatic.com/store_trailers/475550/76571/ffcf60616fe2d0ec7fefc2fbef60fc82b9d26ac1/1750535273/hls_264_master.m3u8?t=1476703351"
    },
    "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_f4132e073a69be519c14c4286681b03eba90f251.600x338.jpg?t=1792565737",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_35cd0abff26d8b4c1fdae2c11c5dd5a726059532.600x338.jpg?t=1792565737",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_53853f482ebca579986bfa8a33e15d551feeec56.600x338.jpg?t=1792565737",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_40242f5068e8abdb2f19958ae1d570234c571395.600x338.jpg?t=1792565737",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_a231f6245d8126ceeba85c67c1507a636e533966.600x338.jpg?t=1792565737",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_f3485ad1bf62b406c6f9083459667fea54dc6971.600x338.jpg?t=1792565737"
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_f4132e073a69be519c14c4286681b03eba90f251.600x338.jpg?t=1794572346",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_35cd0abff26d8b4c1fdae2c11c5dd5a726059532.600x338.jpg?t=1794572346",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_53853f482ebca579986bfa8a33e15d551feeec56.600x338.jpg?t=1794572346",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_40242f5068e8abdb2f19958ae1d570234c571395.600x338.jpg?t=1794572346",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_a231f6245d8126ceeba85c67c1507a636e533966.600x338.jpg?t=1794572346",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/475550/ss_f3485ad1bf62b406c6f9083459667fea54dc6971.600x338.jpg?t=1794572346"
    ],
    "about": "Eres el dueño de una propiedad puesto por el Estado en un Estado totalitario. ¡Debes espiar a los inquilinos, escucharlos a hurtadillas y elaborar sus perfiles! Debes reportar a cualquiera capaz de conspirar una subversión contra el Estado. ¡DEBES hacerlo! Pero, ¿lo HARÁS?",
-   "at": "2026-11-03T02:25:03Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7/8/10",
+     "Procesador: Intel Pentium Dual CPU E2180 2.00GHz",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: GeForce 600M / ATI Radeon HD 5450 (1GB)",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 1600 MB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7/8/10",
+     "Procesador: Intel Core i5 – 2.4 GHz",
+     "Memoria: 3 GB de RAM",
+     "Gráficos: GeForce GT 730 (1Gb) / Radeon R7 A10-7700K",
+     "DirectX: Versión 11",
+     "Almacenamiento: 1600 MB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   },
   "115800": {
    "trailer": {
@@ -5289,7 +5321,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203140/ss_67dd8f7a1bb731f013d167d0570aac7d064d12cc.600x338.jpg?t=1734461136"
    ],
    "about": "¡El asesino original está de vuelta! El agente 47 busca redimirse en un mundo corrupto y torcido mientras lo caza la policía, después de haber sido traicionado por la agencia.",
-   "at": "2026-11-05T22:04:59Z"
+   "reqs": {
+    "min": [
+     "Minimum:",
+     "OS *: Windows Vista, 7",
+     "Processor: True dual core CPU (Intel, AMD)",
+     "Hard Drive Space: 24GB",
+     "Memory: 2 GB RAM",
+     "Video Card: NV8600 512 Mb RAM, or AMD equivalent",
+     "DirectX®: 10"
+    ],
+    "rec": [
+     "Recommended:",
+     "OS *: Windows 7 64-bit",
+     "Processor: Intel Core i7 or AMD Athlon II X4",
+     "Hard Drive Space: 24GB",
+     "Memory: 4 GB RAM",
+     "Video Card: NVIDIA GeForce GTX 260 or ATI Radeon HD 5770",
+     "DirectX®: 11"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   },
   "1342620": {
    "trailer": {
@@ -6216,7 +6268,23 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/512790/ss_dd4159dc9217e857bc6265e08464791ac57514ef.600x338.jpg?t=1790011335"
    ],
    "about": "Descubre la verdad sobre el pasado de Quern, desvela los misterios de su presente y sé el explorador que forje su futuro. Quern introduce una mecánica reutilizable en el género clásico de los rompecabezas, haciendo que el jugador piense en el juego como un todo y no simplemente como una serie de desafíos individuales.",
-   "at": "2026-11-07T14:57:07Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 or higher",
+     "Procesador: Intel Core i3-2100 or AMD equivalent",
+     "Memoria: 3 GB de RAM",
+     "Gráficos: NVIDIA GTX 650 2GB or AMD HD7770 2GB",
+     "Almacenamiento: 9 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7 or higher",
+     "Procesador: Intel Core i7-3770K or AMD equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GTX 950",
+     "Almacenamiento: 9 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   },
   "255340": {
    "trailer": {
@@ -8066,7 +8134,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/312780/ss_e0cce89ae5c7b6706e6cb1c4384f6e03b5508add.600x338.jpg?t=1757053932"
    ],
    "about": "Way of the Samurai 4 takes place in the humble port town of Amihama during the mid 19th Century, several years after the arrival of the “black ships” from the West ended Japan’s long history of cultural isolation.",
-   "at": "2026-11-11T06:39:44Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7",
+     "Procesador: 2.13GHz Intel Core2 Duo or equivalent",
+     "Memoria: 1 GB de RAM",
+     "Gráficos: DirectX 9.0c compatible graphics card with 64Mb RAM and support for v3 shaders",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 7 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c compatible sound card"
+    ],
+    "rec": [
+     "SO *: Windows 7 or later",
+     "Procesador: 3GHz Intel i3 or equivalent",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: DirectX 9.0c compatible graphics card with 128Mb RAM and support for v3 shaders",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 7 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX 9.0c compatible sound card"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   },
   "501590": {
    "trailer": {
@@ -8145,7 +8233,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1029690/ss_c54cf4f5dddcc31a7dff07701633100d4e7cffac.600x338.jpg?t=1770633150"
    ],
    "about": "La galardonada franquicia de Karl Fairburne vuelve para destapar la Operación Kraken en la Francia de 1944. Disparar con un fusil de francotirador y disfrutar de la cámara de muertes mejorada nunca había sido tan satisfactorio. Lucha en mapas inmersivos para detener la máquina de guerra nazi.",
-   "at": "2026-11-11T16:17:15Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Intel CPU Core i3-8100 or equivalent",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: DirectX12 capable GPU with 4GB VRAM",
+     "Almacenamiento: 85 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Intel CPU Core i5-8400 or equivalent",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: DirectX12 capable GPU with 6GB VRAM",
+     "Almacenamiento: 85 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   },
   "1062340": {
    "trailer": {
@@ -14514,7 +14620,7 @@
    ],
    "about": "Domina la magia elemental en este roguelite de acción en tercera persona. Elige tus hechizos, descubre poderosas sinergias entre elementos y crea combinaciones únicas. Aumenta tu poder mediante auras pasivas y enfréntate a las consecuencias de la Corrupción mientras luchas por escapar de Setsara.",
    "reqs": null,
-   "at": "2026-11-14T00:17:46Z"
+   "at": "2026-11-15T15:42:12Z"
   },
   "4952940": {
    "trailer": {
@@ -16211,34 +16317,6 @@
    },
    "at": "2026-11-15T15:16:13Z"
   },
-  "242820": {
-   "trailer": {
-    "name": "Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2029147/movie.293x165.jpg?t=1447358568",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/242820/12967/cbdb556b6f15b2da6c7117ddb7971fbae24dd5dc/1751248596/hls_264_master.m3u8?t=1447358568"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/ss_b96262211211ebd2f1eff72a5ef44b8cb9429f39.600x338.jpg?t=1632130187",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/ss_b8247a893d2db67fd1bae53aad5e69958dc8578f.600x338.jpg?t=1632130187",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/ss_388480c167474a5b8cd21533cb47d7b2f889c542.600x338.jpg?t=1632130187",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/ss_81a6da264ac08081f67c24217b7eb26a4f5ccc3d.600x338.jpg?t=1632130187",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/ss_b9db6cd5e21bb22f2c18264c884c017c808cc8c1.600x338.jpg?t=1632130187",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/ss_f64c465763e99295f8ca03651b2632e10a11c5b6.600x338.jpg?t=1632130187"
-   ],
-   "about": "140 is a challenging minimalistic platformer with abstract colorful graphics. Rhythmic awareness is required to overcome obstacles controlled by an energetic, yet melancholic electronic soundtrack.",
-   "reqs": {
-    "min": [
-     "SO *: Windows XP",
-     "Procesador: 1.5 Ghz",
-     "Memoria: 1 GB de RAM",
-     "DirectX: Versión 9.0c",
-     "Almacenamiento: 100 MB de espacio disponible"
-    ],
-    "rec": []
-   },
-   "at": "2026-11-15T15:16:13Z"
-  },
   "1538850": {
    "trailer": {
     "name": "Grotto | NEW TRAILER",
@@ -17063,42 +17141,6 @@
    },
    "at": "2026-11-15T15:16:13Z"
   },
-  "1607240": {
-   "trailer": {
-    "name": "Launch Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256943048/movie.293x165.jpg?t=1682611643",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/1607240/561223/360da195f5d3b1874a15db32f368e29f80faa3c7/1751009307/hls_264_master.m3u8?t=1682611643"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607240/ss_3015035deb3d4a865a9b3210755d01f2c0c3e7e5.600x338.jpg?t=1791996080",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607240/ss_52dd14af168fcbf08340c0e3b6d3364202b18840.600x338.jpg?t=1791996080",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607240/ss_07332b98e5facf0f8a155eb095861dfa624019f4.600x338.jpg?t=1791996080",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607240/ss_6e94c1dcdce66cd0984912977f3f380293a7654a.600x338.jpg?t=1791996080",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607240/ss_cf2f52ab53d4450c056f7bda453c0b4fa6dbf088.600x338.jpg?t=1791996080",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1607240/ss_14734fadad083097aa197f3849c8804c141120a0.600x338.jpg?t=1791996080"
-   ],
-   "about": "¡Es hora de repartir el correo! Ahora que te acabas de graduar como cartera exploradora, ya puedes ponerte la mochila, coger las cartas ¡y repartirlas por la Arboleda Arbórea! ¡Los animales del bosque esperan impacientes verte llegar con tu sombrero de seta en esta aventura de plataformas rural!",
-   "reqs": {
-    "min": [
-     "Requiere un procesador y un sistema operativo de 64 bits",
-     "SO *: Windows 7 or later",
-     "Procesador: intel i5-10400",
-     "Memoria: 8 GB de RAM",
-     "Gráficos: GeForce GTX 1080",
-     "Almacenamiento: 2 GB de espacio disponible"
-    ],
-    "rec": [
-     "Requiere un procesador y un sistema operativo de 64 bits",
-     "SO *: Windows 7 or later",
-     "Procesador: intel i5-10400",
-     "Memoria: 16 GB de RAM",
-     "Gráficos: GeForce GTX 1080",
-     "Almacenamiento: 2 GB de espacio disponible"
-    ]
-   },
-   "at": "2026-11-15T15:16:13Z"
-  },
   "1094540": {
    "trailer": {
     "name": "Forged in Hell (EN)",
@@ -17360,6 +17402,363 @@
     ]
    },
    "at": "2026-11-15T15:16:13Z"
+  },
+  "4626680": {
+   "trailer": {
+    "name": "Official Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257333909/5eb54ba969e1c96218bbe76e9e0a12adcc096405/movie_600x337.jpg?t=1793285606",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4626680/1402291312/bbfd3964e71435ec24e5dd05b907cc9f685c3155/1780495130/hls_264_master.m3u8?t=1793285606"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626680/035541b0776173a23c21b898f8ab6ffcab4c791b/ss_035541b0776173a23c21b898f8ab6ffcab4c791b.600x338.jpg?t=1794536712",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626680/0f276bc5d8ab2c56505b44cd57e0f79ab8a77aa8/ss_0f276bc5d8ab2c56505b44cd57e0f79ab8a77aa8.600x338.jpg?t=1794536712",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626680/0b3fea7684850e3c3b6ef4781b2b83a0cf37cd34/ss_0b3fea7684850e3c3b6ef4781b2b83a0cf37cd34.600x338.jpg?t=1794536712",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626680/7eb4307ecdd129193520fea0f11c1e22d434336f/ss_7eb4307ecdd129193520fea0f11c1e22d434336f.600x338.jpg?t=1794536712",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626680/0312a796470857dfddb896def22b689dcedc4829/ss_0312a796470857dfddb896def22b689dcedc4829.600x338.jpg?t=1794536712",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626680/7b522cfe8601b7e8813c31236250128ae69664a7/ss_7b522cfe8601b7e8813c31236250128ae69664a7.600x338.jpg?t=1794536712"
+   ],
+   "about": "Construye una fábrica enorme a bordo de un arca móvil. Derrite, separa y refina chatarra caótica mediante termodinámica realista. Procesa materiales por masa en lugar de por unidades, fabrica según las propiedades de los materiales y optimiza complejas líneas de producción en un espacio estrictamente limitado.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "4809260": {
+   "trailer": {
+    "name": "Release Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257479304/6ff8e14e348f358ff1ba66157837e4cc3e8ca95f/movie_600x337.jpg?t=1793033271",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4809260/1848653341/b35489feab817c8d856b3d356b9f96f08d17b76a/1793031945/hls_264_master.m3u8?t=1793033271"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4809260/878f62c4494c3be67db4293d42abcfb496f381d3/ss_878f62c4494c3be67db4293d42abcfb496f381d3.600x338.jpg?t=1794754706",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4809260/a29cdfdec0b97bf629dfb6466da0f4116f8e3182/ss_a29cdfdec0b97bf629dfb6466da0f4116f8e3182.600x338.jpg?t=1794754706",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4809260/84f69240d48fbc47dc2f773a56f5d3677bf754f4/ss_84f69240d48fbc47dc2f773a56f5d3677bf754f4.600x338.jpg?t=1794754706",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4809260/f3b7a2cac4efd603e033248a17c9c835b11fb249/ss_f3b7a2cac4efd603e033248a17c9c835b11fb249.600x338.jpg?t=1794754706",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4809260/fe6721a3834460b21b72ce7724f97ce6c1b7b5e1/ss_fe6721a3834460b21b72ce7724f97ce6c1b7b5e1.600x338.jpg?t=1794754706",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4809260/350aa620e63dbce6c0c2f7f7a5d55c962131b6d0/ss_350aa620e63dbce6c0c2f7f7a5d55c962131b6d0.600x338.jpg?t=1794754706"
+   ],
+   "about": "¿Necesitas desconectar? Tómate un respiro en el Japón rural con este simulador de viajes súper relajante. Desbloquea logros ocultos haciendo fotos o simplemente deja que el paisaje en movimiento te haga compañía. Compra tu billete, ponte cómodo y disfruta del viaje.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "4959760": {
+   "trailer": {
+    "name": "The Heir: Steampunk Escape Room - Official Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257412329/15a0176c6645b94b71b0dc87826dfcd124ead256/movie_600x337.jpg?t=1793737008",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4959760/637972941/fd08b6868f765ad03ec5c204e4ad77579d19bc0a/1792339022/hls_264_master.m3u8?t=1793737008"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4959760/75c47e102a9676ce624458c5ffcf2e1e399905db/ss_75c47e102a9676ce624458c5ffcf2e1e399905db.600x338.jpg?t=1794483699",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4959760/7450169f18878e593c05e0cceb0a645b4ba99df3/ss_7450169f18878e593c05e0cceb0a645b4ba99df3.600x338.jpg?t=1794483699",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4959760/4f769ae4975410bc5e91262e295510a2e3c3a3ed/ss_4f769ae4975410bc5e91262e295510a2e3c3a3ed.600x338.jpg?t=1794483699",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4959760/b89486486cfdbcb5e35330736837c2ee8a154743/ss_b89486486cfdbcb5e35330736837c2ee8a154743.600x338.jpg?t=1794483699",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4959760/d001557b4dceab8a13881a71f6bb3035bd349198/ss_d001557b4dceab8a13881a71f6bb3035bd349198.600x338.jpg?t=1794483699",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4959760/c025e5a259e0ae72b3fe67b7c30ce0a795904f8c/ss_c025e5a259e0ae72b3fe67b7c30ce0a795904f8c.600x338.jpg?t=1794483699"
+   ],
+   "about": "1895. En este escape room en primera persona, encarnas al aspirante a heredero científico del Dr. Voss. Explora un inmersivo laboratorio victoriano, resuelve ingeniosos puzles integrados en el entorno y la historia, y desvela el oscuro secreto tras los experimentos de Voss.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "4958910": {
+   "trailer": {
+    "name": "Breakfast Shop Legend Demo",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257381126/b74ac68e2ccc4152261a732d157010ab1236a57d/movie_600x337.jpg?t=1786104392",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4958910/447718222/4e7d086f8970d6fab3dcb3b4eeee4317b308b5da/1784566187/hls_264_master.m3u8?t=1786104392"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958910/17e73e2ca45436b2ee67580c0de9d6c0d356a2c5/ss_17e73e2ca45436b2ee67580c0de9d6c0d356a2c5.600x338.jpg?t=1793630302",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958910/e8d8f17d5cfa15dd1469927df746ca286165926d/ss_e8d8f17d5cfa15dd1469927df746ca286165926d.600x338.jpg?t=1793630302",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958910/7d1282f352ac7413e491c83f3a7cefc0ee5c5e31/ss_7d1282f352ac7413e491c83f3a7cefc0ee5c5e31.600x338.jpg?t=1793630302",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958910/7bc66eee5bd1167dc0aa2e5c32d1b5e7276355eb/ss_7bc66eee5bd1167dc0aa2e5c32d1b5e7276355eb.600x338.jpg?t=1793630302",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958910/ae22814d1ab9f3c10f1b8be210b092930cd51525/ss_ae22814d1ab9f3c10f1b8be210b092930cd51525.600x338.jpg?t=1793630302",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4958910/8c7f633b07831382707150a10a7e5f09fe12d627/ss_8c7f633b07831382707150a10a7e5f09fe12d627.600x338.jpg?t=1793630302"
+   ],
+   "about": "Run a Taiwanese breakfast shop in this fast-paced time-management sim! Fry egg crepes, deep-fry nuggets, and mix drinks by hand. Every round ends in a frantic Rush Hour. Serve 31 customer types, catch dine-and-dashers, survive health inspections, and grow a roadside stall into a legend.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "3938920": {
+   "trailer": {
+    "name": "Release Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257500470/462528e279fe240bb3dd6078a29a700952615fe3/movie_600x337.jpg?t=1794321907",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3938920/1133572976/684049911fd0eab14e4e0799da148b7542d2929d/1794320001/hls_264_master.m3u8?t=1794321907"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3938920/25327521a421ca2a9d60f73b56b48950021b438f/ss_25327521a421ca2a9d60f73b56b48950021b438f.600x338.jpg?t=1794747190",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3938920/951777075ce542c9ee968918ec0c3c0b5d635020/ss_951777075ce542c9ee968918ec0c3c0b5d635020.600x338.jpg?t=1794747190",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3938920/12c6033899a9b2db84784442c1b4780834ee9699/ss_12c6033899a9b2db84784442c1b4780834ee9699.600x338.jpg?t=1794747190",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3938920/415448de3eebccfe5c8102677b8cd15903ae6d6d/ss_415448de3eebccfe5c8102677b8cd15903ae6d6d.600x338.jpg?t=1794747190",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3938920/c746dc3b1fbb71eae344fa78fadb39de04081d9c/ss_c746dc3b1fbb71eae344fa78fadb39de04081d9c.600x338.jpg?t=1794747190",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3938920/5e353a3442a838e51f7b43048a8195ff15756d29/ss_5e353a3442a838e51f7b43048a8195ff15756d29.600x338.jpg?t=1794747190"
+   ],
+   "about": "A desktop birding simulator.Here, you won't need to worry about feeding or raising the birds.Simply leave it running quietly on your desktop, and adorable birds will visit on their own.You can purchase food and feed them.Use the camera to capture their cute moments.Create personalized birding books.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "5421590": {
+   "trailer": {
+    "name": "Gnome Nook",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257455496/2c10b3de664faaca9d148132013deb85fbf8ace4/movie_600x337.jpg?t=1792530921",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5421590/1020986775/e2bfe348e112b56671bd6583b83540aebc26aee1/1791976357/hls_264_master.m3u8?t=1792530921"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5421590/cdf84765dff6b959e8a400aae2e5301b4989559e/ss_cdf84765dff6b959e8a400aae2e5301b4989559e.600x338.jpg?t=1794585758",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5421590/7cb1acbdf876863544711d31b735e2c2d0f4b7f5/ss_7cb1acbdf876863544711d31b735e2c2d0f4b7f5.600x338.jpg?t=1794585758",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5421590/a50d38f235ac6728ffb8761ebb799c862929dfdf/ss_a50d38f235ac6728ffb8761ebb799c862929dfdf.600x338.jpg?t=1794585758",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5421590/e2ab06f970f9295d8b1e4e55c047c7c8431909b5/ss_e2ab06f970f9295d8b1e4e55c047c7c8431909b5.600x338.jpg?t=1794585758",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5421590/cafba47983ab0abf89740acaacbf0dd15ba69477/ss_cafba47983ab0abf89740acaacbf0dd15ba69477.600x338.jpg?t=1794585758",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5421590/d7cbbabd8eba9d8c0d77c9b5902daea9508727b1/ss_d7cbbabd8eba9d8c0d77c9b5902daea9508727b1.600x338.jpg?t=1794585758"
+   ],
+   "about": "Welcome to Gnome Sweet Gnome, a cozy and satisfying 3D organizing game where thousands of little gnomes are scattered across a gigantic shop, and it's your job to put them all back where they belong. Sounds simple? Just wait until you see the floor.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "5118550": {
+   "trailer": {
+    "name": "The Demon Lord's Maid Cafe Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257400261/9f4640ae2cb413ee43ce8f7c10a45815f82ea635/movie_600x337.jpg?t=1787860704",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5118550/697053532/3d1ad2f906c5dfcf8b6859bfbc0f4eb87b36a340/1787860222/hls_264_master.m3u8?t=1787860704"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118550/7a486c77b58be6acd90fce51c8d0e3745c3dbedd/ss_7a486c77b58be6acd90fce51c8d0e3745c3dbedd.600x338.jpg?t=1788970329",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118550/42b68a99b0abed202a77cb729b9eeb8db803105d/ss_42b68a99b0abed202a77cb729b9eeb8db803105d.600x338.jpg?t=1788970329",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118550/a43bee81f1e638624e11f9c86eba88218e5294e4/ss_a43bee81f1e638624e11f9c86eba88218e5294e4.600x338.jpg?t=1788970329",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118550/9ed0656876e8e1c08518a43a8289fad35e776fc2/ss_9ed0656876e8e1c08518a43a8289fad35e776fc2.600x338.jpg?t=1788970329",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118550/054a3f712aede803b0d63450c6be5b08a65af9a1/ss_054a3f712aede803b0d63450c6be5b08a65af9a1.600x338.jpg?t=1788970329",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118550/7846a11202ce3a97ed10b9486034256562515f91/ss_7846a11202ce3a97ed10b9486034256562515f91.600x338.jpg?t=1788970329"
+   ],
+   "about": "Take my order, brother! The Demon Lord's Maid Cafe is a short cafe-themed incremental game about feeding slimes in a Maid Cafe. Buy upgrades, feed slimes, and take your Maid Cafe to the top.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "3305010": {
+   "trailer": {
+    "name": "Survivors Under Siege Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257165804/f5e01b7bfb7657d0344cb1282de5ad05f290c2a2/movie_600x337.jpg?t=1753953883",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/3305010/456423763/ecd61a9ad5abd6f8d1a3b143953c1bd7a30fbf59/1751967898/hls_264_master.m3u8?t=1753953883"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3305010/387e4981673a440d1c77939e0713b822741c8a4a/ss_387e4981673a440d1c77939e0713b822741c8a4a.600x338.jpg?t=1793898428",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3305010/ed34bef5ffdc6ab81137bfbabf4f16764fda7142/ss_ed34bef5ffdc6ab81137bfbabf4f16764fda7142.600x338.jpg?t=1793898428",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3305010/e64b212d488afec9f48aeb55d63c8d5dcf39dae1/ss_e64b212d488afec9f48aeb55d63c8d5dcf39dae1.600x338.jpg?t=1793898428",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3305010/f14aff58f5972a9a0d65ae12a865af087b35495c/ss_f14aff58f5972a9a0d65ae12a865af087b35495c.600x338.jpg?t=1793898428",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3305010/f6a12b1f996b0326ee592cfd61764ffef03174a1/ss_f6a12b1f996b0326ee592cfd61764ffef03174a1.600x338.jpg?t=1793898428",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3305010/72ca8058cc36b7f64107362e99a4c0ffaed00452/ss_72ca8058cc36b7f64107362e99a4c0ffaed00452.600x338.jpg?t=1793898428"
+   ],
+   "about": "Survivors Under Siege combina acción RTS y defensa de torres en una experiencia táctica minimalista. Coloca tus unidades estratégicamente y ataca en el momento perfecto para resistir oleadas de zombis y mutantes.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "5507940": {
+   "trailer": {
+    "name": "Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257484578/000d9d4a0ef6518eb7379462010beb266d520168/movie_600x337.jpg?t=1793491035",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5507940/1231925827/a5c6f7cb809142d8291d5159f36226979a8d46f6/1793296580/hls_264_master.m3u8?t=1793491035"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5507940/41de9397f03e45b21a13d6c229adb6c1bd73b541/ss_41de9397f03e45b21a13d6c229adb6c1bd73b541.600x338.jpg?t=1793491036",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5507940/f082edc42f15304c992e1fb01f204e39e0aa02bf/ss_f082edc42f15304c992e1fb01f204e39e0aa02bf.600x338.jpg?t=1793491036",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5507940/754d47f1ffe5e3af6317d9539ebb5be5a074a14d/ss_754d47f1ffe5e3af6317d9539ebb5be5a074a14d.600x338.jpg?t=1793491036",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5507940/af9b7ffee1ccee8d33f15eee5c4486431c136b3a/ss_af9b7ffee1ccee8d33f15eee5c4486431c136b3a.600x338.jpg?t=1793491036",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5507940/35f8021ab42aee15ae975a71bb63c4d81f503312/ss_35f8021ab42aee15ae975a71bb63c4d81f503312.600x338.jpg?t=1793491036",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5507940/7e49a9512fff9e95245d1d11171b18d2e0f926ba/ss_7e49a9512fff9e95245d1d11171b18d2e0f926ba.600x338.jpg?t=1793491036"
+   ],
+   "about": "A wizard cat digs into caves where every pixel is simulated. Lava turns water to steam, acid eats stone, oil burns, crates tumble and bombs blow the world apart. Build spell wands, pick perks, beat bosses and find the portal down - one paw at a time.",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "5175310": {
+   "trailer": {
+    "name": "pv_en",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443782/f16adbba2ff47c8fd17791522501ff7c7c74b263/movie_600x337.jpg?t=1794273456",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5175310/767270550/bde5e4dd92669a00ae77da7c0715751d434bd651/1794272870/hls_264_master.m3u8?t=1794273456"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5175310/5e243e634eb16b2ef336a47f76c107de1e2f4d31/ss_5e243e634eb16b2ef336a47f76c107de1e2f4d31.600x338.jpg?t=1794560465",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5175310/12f3c4378f48f9f45c56c24d019370026ec3c1c7/ss_12f3c4378f48f9f45c56c24d019370026ec3c1c7.600x338.jpg?t=1794560465",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5175310/142910416f8ceef073373ab1c17f739ce96ec8b6/ss_142910416f8ceef073373ab1c17f739ce96ec8b6.600x338.jpg?t=1794560465",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5175310/1cb511e18dd933c5165ed5d9395b67738bb6d7a9/ss_1cb511e18dd933c5165ed5d9395b67738bb6d7a9.600x338.jpg?t=1794560465",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5175310/7d052332d1e383fa2b16702e37df1913304a5f4f/ss_7d052332d1e383fa2b16702e37df1913304a5f4f.600x338.jpg?t=1794560465",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5175310/91d5b186f241413d7e5cffb8e93b68bce9a608fb/ss_91d5b186f241413d7e5cffb8e93b68bce9a608fb.600x338.jpg?t=1794560465"
+   ],
+   "about": "Party game asimétrico online para hasta 8 jugadores. Uno hace de profe estricto y los demás son alumnos revoltosos. Camúflate entre decenas de compañeros (PNJ), picotea a escondidas y mira el móvil en clase. Si eres el profe, ¡píllalos a todos!",
+   "reqs": null,
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "933820": {
+   "trailer": {
+    "name": "Full Release Trailer EN",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256826453/movie.293x165.jpg?t=1616085191",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/933820/354996/e02f52e0123330b94c127b390358a79ce0e66349/1751165854/hls_264_master.m3u8?t=1616085191"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933820/ss_04932227976f235dccd25a6754c0c9ae6d0c8558.600x338.jpg?t=1793719254",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933820/ss_319e63c7c36bd2c1c3e17eeba92eac99436da565.600x338.jpg?t=1793719254",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933820/ss_79741eaef478117a57a7c5124f6b3dab2d75f4af.600x338.jpg?t=1793719254",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933820/ss_7ebd405a994c22dd4705fc9e201aa501d6a5df35.600x338.jpg?t=1793719254",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933820/ss_adfe49674b1663800a7a2b001e8a1f926df0badb.600x338.jpg?t=1793719254",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/933820/ss_57e203f4ce944fbf07ec7fdbbd0cce49c1ce97ab.600x338.jpg?t=1793719254"
+   ],
+   "about": "Endzone es un juego de estrategia y supervivencia postapocalíptico, en el que comenzarás una nueva civilización tras un desastre ecológica. Construye un nuevo hogar para tu gente y asegura su supervivencia en un mundo hostil, lleno de radiación, lluvias tóxicas, tormentas de arena y sequías.",
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64-Bit",
+     "Procesador: I5-2500K, 4-Cores @3.30 GHz or equivalent AMD-Hardware",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 760",
+     "DirectX: Versión 11",
+     "Almacenamiento: 6 GB de espacio disponible",
+     "Notas adicionales: Supported: Monitors with 16:10 and wider aspect ratios (NOTE: 5:4 and 4:3 aspect ratios are not supported)"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "1383700": {
+   "trailer": {
+    "name": "Jet Kave Adventure Launch Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256818335/movie.293x165.jpg?t=1610727400",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1383700/340777/924898e5795a59f06ae01ac38c6b2239ed0c4425/1751230489/hls_264_master.m3u8?t=1610727400"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1383700/ss_40aa6f3faa7ce0278c2d688a6e0366f2f8854b15.600x338.jpg?t=1760967856",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1383700/ss_80131001bcf06c66865ba4e68db4042f3746774d.600x338.jpg?t=1760967856",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1383700/ss_ba94e726279cf899ba17dec47f14178075656ec9.600x338.jpg?t=1760967856",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1383700/ss_0310503d740a81724daa5edcc9390cffe6b0ab51.600x338.jpg?t=1760967856",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1383700/ss_531e99527fb98057282add07e388200e970d7335.600x338.jpg?t=1760967856"
+   ],
+   "about": "Recorre la prehistoria con una mochila propulsora para en este juego de piedra ficción de plataformas y aventuras. Enfréntate a desafiantes jefes, sobrevuela abismos, destroza paredes, noquea a tus enemigos, manipula objetos y detén la amenaza alienígena.",
+   "reqs": {
+    "min": [
+     "SO *: Windows 7, WIndows 8.1, Windows 10",
+     "Procesador: Intel Core i3-6006U",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: Intel® HD Graphics 520",
+     "DirectX: Versión 11",
+     "Almacenamiento: 3.3 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO *: Windows 7, WIndows 8.1, Windows 10",
+     "Procesador: Intel Core i5-10400F",
+     "Memoria: 12 GB de RAM",
+     "Gráficos: GeForce GT 1030 2GB",
+     "DirectX: Versión 11",
+     "Almacenamiento: 3.3 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "1167680": {
+   "trailer": {
+    "name": "Orbital Bullet Full Release Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256878280/movie.293x165.jpg?t=1647881952",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1167680/447770/a342e96f85c96e944afa3dfe919ab7903c867958/1751198129/hls_264_master.m3u8?t=1647881952"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/ss_05b017e1744d0742f1eca491b918726d12031532.600x338.jpg?t=1792058090",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/ss_a8761491f63ad336442c6566cf68765c1eb7a5b6.600x338.jpg?t=1792058090",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/ss_f93cbe1f3670632f09b109cc7676622061e83829.600x338.jpg?t=1792058090",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/ss_48e2eb15c4342b91137981f89b4f122152434df2.600x338.jpg?t=1792058090",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/ss_dacb738876cd0c7870725d8fb9bc4c4fb20596de.600x338.jpg?t=1792058090",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/ss_1aef89a1bbcd80d028bef52f79c8590aaf75febb.600x338.jpg?t=1792058090"
+   ],
+   "about": "Orbital Bullet is a fast paced 360° action-platformer with rogue-lite elements, where all actions take place in a circular pattern. Fight your way through a variety of procedural planets and use body modifications, crafting and heavy weaponry. Kill. Die. Modify.",
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7 or later",
+     "Procesador: Intel Core 2 Duo E6320 (2*1866) or equivalent",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: GeForce 7600 GS (512 MB) or equivalent",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "1336120": {
+   "trailer": {
+    "name": "Bridge Constructor: The Walking Dead - Gameplay Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256808317/movie.293x165.jpg?t=1605006497",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1336120/324556/9bba437e1c7c7d91000edd9acb7bdd48e9b0eec0/1751223152/hls_264_master.m3u8?t=1605006497"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1336120/ss_bbbf0a9320dba03678a9a1b9e4576b23e6eef31b.600x338.jpg?t=1717675056",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1336120/ss_7161ee73f1ad1d4d2d975b09c99ccdf483fa8284.600x338.jpg?t=1717675056",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1336120/ss_4986c3a11be02ea8cb822fa666a3fbc7742e485c.600x338.jpg?t=1717675056",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1336120/ss_212576f238f2749a2f6f3e91bc896bdd033ac4ce.600x338.jpg?t=1717675056",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1336120/ss_431c4f5e5466652cf1c0b2e26f176c97d22e83a7.600x338.jpg?t=1717675056"
+   ],
+   "about": "Bridge Constructor: The Walking Dead combina los legendarios y desafiantes puzles de Bridge Constructor™ con el universo de zombis posapocalíptico de la serie The Walking Dead de AMC.",
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 8, 10",
+     "Procesador: 3 GHz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: DirectX10 compatible",
+     "Almacenamiento: 400 MB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
+  },
+  "1252830": {
+   "trailer": {
+    "name": "AJT Launch Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256853666/movie.293x165.jpg?t=1632930897",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1252830/405186/1c654bc84c6ad3436858dba4e1a80e76c5bb583c/1750651679/hls_264_master.m3u8?t=1632930897"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252830/ss_569a5dfdad4968d457d4c81fb403f847bb604bc3.600x338.jpg?t=1785148149",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252830/ss_2ecef40fa9df059f6533b93774c395a0c6459abc.600x338.jpg?t=1785148149",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252830/ss_195607acbba6eba072fdd47d2c6b8aa2c95d53b6.600x338.jpg?t=1785148149",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252830/ss_334b0d470d54d202c08d87448c4444d48cfb0e01.600x338.jpg?t=1785148149",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252830/ss_8708f393b7cc912bc666da72882b02359081dcc3.600x338.jpg?t=1785148149",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252830/ss_79418c3a04c1665bc7c25fe9d71e55809e30752c.600x338.jpg?t=1785148149"
+   ],
+   "about": "Guía a Abby, la marioneta, a través de un sombrío pero precioso mundo de fantasía en esta aventura cinemática. Resuelve acertijos, evita trampas y huye de tus perseguidores en busca de libertad. ¿Podrá Abby tomar las riendas de su destino?",
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7+ (64-bit OS required)",
+     "Procesador: Intel Core 2 Quad Q6600",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: NVIDIA Geforce GTX 660 / Radeon HD7870",
+     "DirectX: Versión 11",
+     "Almacenamiento: 3 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7+ (64-bit OS required)",
+     "Procesador: Intel Core i5-6600K",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA Geforce GTX 980 / Radeon 5300",
+     "DirectX: Versión 11",
+     "Almacenamiento: 3 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T15:42:12Z"
   }
  }
 }
