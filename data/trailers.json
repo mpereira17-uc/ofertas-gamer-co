@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T23:58:07Z",
+ "updatedAt": "2026-11-15T06:44:49Z",
  "apps": {
   "2719590": {
    "trailer": {
@@ -414,24 +414,6 @@
    "about": "Regresa a las raíces de esta serie de estrategia en tiempo real con un modo de juego muy satisfactorio. ¡Comanda 4 facciones únicas de Warhammer 40,000, con Adeptus Mechanicus por 1.ª vez! Lucha en 70+ misiones de campaña épicas y en los modos rejugables Batalla final, Escaramuza y multijugador.",
    "reqs": null,
    "at": "2026-11-14T18:14:11Z"
-  },
-  "4231820": {
-   "trailer": {
-    "name": "Bloody Tears Trailer_EN",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416190/5ed9920e9d2e8e81a865fe3611e3d0ac372110ca/movie_600x337.jpg?t=1788478860",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4231820/1176124369/4e56e11cb8fbe08e1f2ebdbc0efd58096350019f/1788408752/hls_264_master.m3u8?t=1788478860"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/4cf6d35e1d8c07fc552a59c970ed9af490ce75a5/ss_4cf6d35e1d8c07fc552a59c970ed9af490ce75a5.600x338.jpg?t=1793067818",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/6bb79c2cde71c05a1c941c7c12ed0a626b89ad98/ss_6bb79c2cde71c05a1c941c7c12ed0a626b89ad98.600x338.jpg?t=1793067818",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/2d5f82625b0d0ba1df860913d0c2cd75c1dd9d7a/ss_2d5f82625b0d0ba1df860913d0c2cd75c1dd9d7a.600x338.jpg?t=1793067818",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/392991c1fefd76454e9c73512504c211730fb134/ss_392991c1fefd76454e9c73512504c211730fb134.600x338.jpg?t=1793067818",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/69ba6b9889cd57f09f553e607e51f75a5bbf8b92/ss_69ba6b9889cd57f09f553e607e51f75a5bbf8b92.600x338.jpg?t=1793067818",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4231820/5bc8346682072e53e759f919b6fac408787ddd2e/ss_5bc8346682072e53e759f919b6fac408787ddd2e.600x338.jpg?t=1793067818"
-   ],
-   "about": "La maldición carmesí: ¿un futuro negro o brillante? La historia continúa 23 años después de Castlevania Dracula's Curse. Sigue a Rose Belmont en un flamante título de acción y exploración 2D de KONAMI, Evil Empire y Motion Twin.",
-   "at": "2026-10-28T03:00:01Z"
   },
   "3727390": {
    "trailer": {
@@ -7041,7 +7023,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1933000/ss_af7e3d333667422aab6aeff2993b1938dbc8b639.600x338.jpg?t=1779870125"
    ],
    "about": "Luna Abyss es un juego de acción y aventura en primera persona con plataforma fluida y combate intenso. Sigue el viaje de Fawkes, quien fluctúa entre una profecía críptica y su condena en la prisión de Luna.",
-   "at": "2026-11-09T06:48:11Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 11 64-bit",
+     "Procesador: Intel Core i5-8600K / AMD Ryzen 5 2600",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 580",
+     "DirectX: Versión 12",
+     "Almacenamiento: 15 GB de espacio disponible"
+    ],
+    "rec": [
+     "SO: Windows 11 64-bit",
+     "Procesador: Intel Core i5-10600K / AMD Ryzen 5 3600",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: Nvidia GeForce GTX 1660 / AMD Radeon RX 590",
+     "DirectX: Versión 12",
+     "Almacenamiento: 15 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "3748520": {
    "trailer": {
@@ -7059,7 +7059,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3748520/01a2c5dd307a4765b7d699dca2b51b78e35b3536/ss_01a2c5dd307a4765b7d699dca2b51b78e35b3536.600x338.jpg?t=1790240546"
    ],
    "about": "Sprawl Zero es un frenético shooter inspirado en la edad de oro de los FPS, los 2000. Sobrevive en una ciudad cyberpunk controlada por los militares y el fanatismo de sectas. Derrota a quien se cruce en tu camino con los guantes de gravedad, las mejoras cibernéticas y más de 40 armas distintas.",
-   "at": "2026-11-09T06:48:11Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10 64-bit",
+     "Procesador: Intel Core i5-8400 or AMD Ryzen 5 2600",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 1050 Ti or AMD Radeon RX 570",
+     "DirectX: Versión 12",
+     "Almacenamiento: 4 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10/11 64-bit",
+     "Procesador: Intel Core i5-10400 or AMD Ryzen 5 3600",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 1660 Ti or AMD Radeon RX 6500 XT",
+     "DirectX: Versión 12",
+     "Almacenamiento: 4 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "4687500": {
    "trailer": {
@@ -13386,25 +13406,6 @@
    "reqs": null,
    "at": "2026-11-14T20:50:23Z"
   },
-  "5082170": {
-   "trailer": {
-    "name": "Fruit Kombat - Gameplay Trailer - EN",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424822/a38e48a857825a27e484c524e0e62ffb816e096c/movie_600x337.jpg?t=1791936975",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/5082170/842251255/755431f2874fdec411fdee9cb753a6e1ada303ea/1791936757/hls_264_master.m3u8?t=1791936975"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5082170/c5ee0373f8b7350b2aa66a03d7d6cbb4a17a8379/ss_c5ee0373f8b7350b2aa66a03d7d6cbb4a17a8379.600x338.jpg?t=1793782794",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5082170/9f1d3297e83bcc4b5c630c6b89c7d0567e8b29c5/ss_9f1d3297e83bcc4b5c630c6b89c7d0567e8b29c5.600x338.jpg?t=1793782794",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5082170/e6589a3fa1e466a71aa1c716dc29634dd4180bde/ss_e6589a3fa1e466a71aa1c716dc29634dd4180bde.600x338.jpg?t=1793782794",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5082170/a7038ebb7b66ab2a103879347267fe17376ee119/ss_a7038ebb7b66ab2a103879347267fe17376ee119.600x338.jpg?t=1793782794",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5082170/cb0c200b12523cf11bfea62e511447588bc9ffc2/ss_cb0c200b12523cf11bfea62e511447588bc9ffc2.600x338.jpg?t=1793782794",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5082170/bf1ec1a7b50e8cb96fbb2e01b53a6eee020a9c5c/ss_bf1ec1a7b50e8cb96fbb2e01b53a6eee020a9c5c.600x338.jpg?t=1793782794"
-   ],
-   "about": "La novela de frutas viral ahora es un juego de peleas en 3D puro caos. Vive las traiciones de telenovela y las revelaciones que nadie pidió mientras las frutas se agarran a golpes en el gimnasio. Farmea aura para soltar las ultimates de cada arma.",
-   "reqs": null,
-   "at": "2026-11-14T20:50:23Z"
-  },
   "4996910": {
    "trailer": {
     "name": "Nullnest Teaser Trailer",
@@ -13516,44 +13517,6 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4380910/356d4970f75d7530787c38eb536df19504ba1047/ss_356d4970f75d7530787c38eb536df19504ba1047.600x338.jpg?t=1794405481"
    ],
    "about": "Apúntate a la Academia Unicornio y vive tu primer curso en esta aventura de mundo abierto en Isla Unicornio.",
-   "reqs": null,
-   "at": "2026-11-14T20:50:23Z"
-  },
-  "4995460": {
-   "trailer": {
-    "name": "Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396153/c28a8e7a75dd47df963769d7b9d7e2f9eb87d800/movie_600x337.jpg?t=1793327541",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/4995460/2069713081/318d3fc796b6f6ab6649b6bd307fe65044cefd5f/1793327240/hls_264_master.m3u8?t=1793327541"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4995460/f5d80e03866e515c84ac8e476c97dec280ecdfb5/ss_f5d80e03866e515c84ac8e476c97dec280ecdfb5.600x338.jpg?t=1793581895",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4995460/03bc6617674c4800c5f48add3a10024f3d6a7533/ss_03bc6617674c4800c5f48add3a10024f3d6a7533.600x338.jpg?t=1793581895",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4995460/f61632b5fc99a267d7dd86c0afbaa561a1b0befc/ss_f61632b5fc99a267d7dd86c0afbaa561a1b0befc.600x338.jpg?t=1793581895",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4995460/f051f0d332ff336a86db49bd52b27c19bff91c7e/ss_f051f0d332ff336a86db49bd52b27c19bff91c7e.600x338.jpg?t=1793581895",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4995460/1fc4d32bdbef569f2155f9deb9b9fd5bb0e4c57c/ss_1fc4d32bdbef569f2155f9deb9b9fd5bb0e4c57c.600x338.jpg?t=1793581895",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4995460/1bb834d69d1e2a1522c81c3deb028d3d570fd418/ss_1bb834d69d1e2a1522c81c3deb028d3d570fd418.600x338.jpg?t=1793581895"
-   ],
-   "about": "A co-op restaurant management sim for 1-4 players. Chop, fry and plate orders against a ticking clock, then spend the takings between shifts on new appliances, conveyor automation, knocked-down walls and a second restaurant across town.",
-   "reqs": null,
-   "at": "2026-11-14T20:50:23Z"
-  },
-  "5450860": {
-   "trailer": {
-    "name": "Gameplay",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257468023/9ce5853c1695e9c8b3aaf288f885e00e3ba45ce3/movie_600x337.jpg?t=1793402306",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/5450860/296396782/459c6b301a96a798db53141d826dfb6c4b113098/1793401252/hls_264_master.m3u8?t=1793402306"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450860/f4b9c450e5965b0d4cd49fe7e58ed81ec9abedf3/ss_f4b9c450e5965b0d4cd49fe7e58ed81ec9abedf3.600x338.jpg?t=1793648514",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450860/31b2f4179bc0dd1502957c88853e7a0e64312ad3/ss_31b2f4179bc0dd1502957c88853e7a0e64312ad3.600x338.jpg?t=1793648514",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450860/2a140db0f279633d875df3d614c87cca42693989/ss_2a140db0f279633d875df3d614c87cca42693989.600x338.jpg?t=1793648514",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450860/008df378db99232d8c1e3ae71e7df7acb1aa2ea8/ss_008df378db99232d8c1e3ae71e7df7acb1aa2ea8.600x338.jpg?t=1793648514",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450860/b8fea8254274ffdbeaa1fcb3f3cd60405dd3b102/ss_b8fea8254274ffdbeaa1fcb3f3cd60405dd3b102.600x338.jpg?t=1793648514",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450860/f181b863ee157b3ab2c69bd000a457f18c7b228b/ss_f181b863ee157b3ab2c69bd000a457f18c7b228b.600x338.jpg?t=1793648514"
-   ],
-   "about": "Have you ever wondered, how many tickets does it take to win the lottery? Scratch tickets, match the numbers and spend your winnings on more tickets, until you are scratching millions at a time. The jackpot odds are realistic, 1 in 290,472,336, and nothing you buy changes it.",
    "reqs": null,
    "at": "2026-11-14T20:50:23Z"
   },
@@ -14654,7 +14617,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/811320/ss_8bb0de242942dcede2e08dabb63616dcc8a6817b.600x338.jpg?t=1783611381"
    ],
    "about": "Auténtico Roguelike. Shooter por turnos. Permamuerte. Un tributo a los clásicos de ciencia ficción de la era dorada del VHS. Sucesor de DRL. Solo tú y tu arma contra hordas de horrores y monstruosidades. Dales su merecido al ritmo del heavy metal.",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows® 7, 64-bit",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: OpenGL 4.3+ compatible, 2 GB VRAM",
+     "Almacenamiento: 2 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX compatible sound card"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows® 7, 64-bit",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA GeForce GTX 960 or better",
+     "Almacenamiento: 2 GB de espacio disponible",
+     "Tarjeta de sonido: DirectX compatible sound card"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "572890": {
    "trailer": {
@@ -14672,7 +14653,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/572890/ss_a0ef0c303fc3d1aa5f87c779a364190f73b7d66f.600x338.jpg?t=1781274905"
    ],
    "about": "Pikuniku es un juego de exploración absurdamente maravilloso que tiene lugar en un mundo extraño pero lúdico en el que no todo es tan alegre como parece. ¡Ayuda a extraños personajes a superar dificultades y empieza una pequeña revolución en esta deliciosa aventura distópica!",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7, 8.1, 10 x86/x64",
+     "Procesador: Intel Core2 Duo E4500 (2 * 2200) or equivalent",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: GeForce 9600 GT (512 MB) / Intel HD Graphics 2500",
+     "DirectX: Versión 10",
+     "Almacenamiento: 300 MB de espacio disponible",
+     "Notas adicionales: Controller Recommended"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "1584680": {
    "trailer": {
@@ -14690,7 +14683,25 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1584680/ss_5884f411bba56479ab0f137cea8c2f16a89d5e85.600x338.jpg?t=1794004478"
    ],
    "about": "Ponte en la piel de un ingeniero medieval y domina el arte de la guerra de asedio. En Medieval Machines Builder, diseñas, construyes y operas poderosas máquinas de guerra capaces de derribar incluso las murallas más resistentes🏰",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7",
+     "Procesador: Intel Core i3 3,20GHz / AMD Phenom II X4 955 3,2 GHz",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: GeForce GTX 750 Ti / AMD Radeon R7 265",
+     "Almacenamiento: 5 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO: Windows 10",
+     "Procesador: Intel Core i5-8400 / AMD Ryzen 5 1600",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 970 / AMD Radeon RX 580",
+     "Almacenamiento: 5 GB de espacio disponible"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "733210": {
    "trailer": {
@@ -14708,7 +14719,17 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/733210/ss_c0622c561bb0feaa55b7b97694375bf9d8807420.600x338.jpg?t=1783693791"
    ],
    "about": "Help little Peet hack-and-slash his way through a beautifully haunting coma. A hand-drawn action-adventure through a dreamy world filled with fleshy monsters, insane grown-ups, and sad children looking for their mommies.",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 or higher",
+     "Procesador: 1.7 GHz Dual Core CPU",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: Intel HD Graphics",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "15300": {
    "trailer": {},
@@ -14753,7 +14774,27 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1627570/ss_34b384fd8ed9697726f54d1a4671251efbf3ae4e.600x338.jpg?t=1757545827"
    ],
    "about": "Personajes de cuento descubren un mundo tridimensional más allá de las páginas de su libro y deben moverse entre reinos en 2D y 3D para salvar a sus amigos en esta encantadora aventura llena de acción.",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10 x64 Bit",
+     "Procesador: Intel Core i3-4160 / AMD FX-4350",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: GeForce GTX 960 (4096Mb) / Radeon RX 460 (4096Mb)",
+     "DirectX: Versión 12",
+     "Almacenamiento: 27 GB de espacio disponible",
+     "Notas adicionales: Low Quality setting, 1080p, producing 40+ FPS"
+    ],
+    "rec": [
+     "SO: Windows 10 x64 Bit",
+     "Procesador: Intel Core i5-8600K / AMD Ryzen 5 1500X",
+     "Memoria: 16 GB de RAM",
+     "Gráficos: GeForce GTX 1080 (8192MB) / Radeon RX Vega 64 (8192 MB) / Intel Arc A750",
+     "DirectX: Versión 12",
+     "Almacenamiento: 27 GB de espacio disponible",
+     "Notas adicionales: High Quality setting, 1080p, producing 60 FPS"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "449610": {
    "trailer": {
@@ -14771,7 +14812,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/449610/ss_9a5750a32ff2fa6df63cf801955816dc0ff19439.600x338.jpg?t=1756647701"
    ],
    "about": "¡Vuelve a vivir una aventura de leyenda! Disfruta de un colorido título de aventuras y acción en colaboración con Ryuichi Nishizawa, creador de la saga Wonder Boy in Monster World.",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7,8,10",
+     "Procesador: Intel/AMD Quad Core",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: GPU with 2GB VRAM available.",
+     "DirectX: Versión 10",
+     "Almacenamiento: 5000 MB de espacio disponible",
+     "Tarjeta de sonido: 100% DirectX 9.0c compatible sound card and drivers"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "1227650": {
    "trailer": {
@@ -14789,7 +14842,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1227650/ss_967b69912b597c5dba234f3dff14563626c91011.600x338.jpg?t=1792607501"
    ],
    "about": "Bang-On Balls: Chronicles es un excéntrico juego de plataformas 3D y combates con un toque de coleccionismo. Sé un héroe testarudo mientras completas misiones, coleccionas objetos y buscas secretos en eventos históricos (con dudosa ambientación).",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10",
+     "Procesador: AMD Ryzen™ 3 1200 / Intel® Core™ i3-8100",
+     "Memoria: 6 GB de RAM",
+     "Gráficos: NVIDIA® GeForce® GTX 660 2GB / AMD Radeon™ HD 7850 2GB",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 3 GB de espacio disponible",
+     "Notas adicionales: Medium settings | 1080p | 30FPS"
+    ],
+    "rec": [
+     "SO: Windows 10",
+     "Procesador: AMD Ryzen™ 5 2600X / Intel® Core™ i5-8400",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: NVIDIA® GeForce® GTX 1060 3GB / AMD Radeon™ RX 580",
+     "DirectX: Versión 12",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 3 GB de espacio disponible",
+     "Notas adicionales: High settings | 1080p | 60FPS"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "1291340": {
    "trailer": {
@@ -14807,7 +14882,19 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1291340/ss_ef8284a0132ff40e34d4a87c4c122070458091c8.600x338.jpg?t=1790002949"
    ],
    "about": "Generador instantáneo de ciudades. Coloca bloques de viviendas y mira cómo, pieza a pieza, se transforman en idílicas ciudades costeras, jardines bucólicos o imponentes ciudades sobre el mar.",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "Requiere un procesador y un sistema operativo de 64 bits",
+     "SO *: Windows 7+",
+     "Memoria: 4 GB de RAM",
+     "DirectX: Versión 11",
+     "Almacenamiento: 1 GB de espacio disponible"
+    ],
+    "rec": [
+     "Requiere un procesador y un sistema operativo de 64 bits"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "5130120": {
    "trailer": {
@@ -14825,7 +14912,18 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130120/c02089d622cd09ba68a060d236131c593d0d6e63/ss_c02089d622cd09ba68a060d236131c593d0d6e63.600x338.jpg?t=1794562133"
    ],
    "about": "In a world where human civilization is threatened by monsters, only the rare few individuals who wield forbidden skills dare challenge them. However, these brave warriors have to face an even more dangerous hazard... The Hero Syndrome. Only a young doctor can hope to cure the disease in this JRPG!",
-   "at": "2026-11-13T18:05:05Z"
+   "reqs": {
+    "min": [
+     "SO: Windows 10/11",
+     "Procesador: Core i3",
+     "Memoria: 2 GB de RAM",
+     "Gráficos: VRAM 256MB/Shader Model 2.0",
+     "DirectX: Versión 11",
+     "Almacenamiento: 2 GB de espacio disponible"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "5540650": {
    "trailer": {
@@ -15641,7 +15739,7 @@
    ],
    "about": "En algún lugar de una montaña de millones de hojas de trébol se esconde un trébol de cuatro hojas. Cava a mano con hasta 3 amigos en cooperativo online, vende la fibra y luego construye cintas y máquinas que caven por ti. Encuentra las 24 especies raras de tu Botanical Album.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5348620": {
    "trailer": {
@@ -15660,7 +15758,7 @@
    ],
    "about": "Ordena 2500+ tierras diminutas en esta acogedora experiencia de orden. Cada pieza se eleva y se convierte en tierra real sobre la que puedes caminar, y todas te proporcionan mejoras.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5314120": {
    "trailer": {
@@ -15679,7 +15777,7 @@
    ],
    "about": "A cozy first-person beachcombing game where you gather, clean, and shelve thousands of seashells along a sun-warmed coastline. Sort each find into its rightful place, restore the shore, and turn a scattered coastline into a curated collection at your own pace.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "4301730": {
    "trailer": {
@@ -15698,7 +15796,7 @@
    ],
    "about": "Estás ciego y atrapado en un pasillo infinito de un hospital. Usa tu bastón y otros sentidos para detectar anomalías, cuestionar ilusiones y encontrar una salida.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "4531360": {
    "trailer": {
@@ -15717,7 +15815,7 @@
    ],
    "about": "Tú eres el invasor. Juega como un guerrero orco y ábrete paso entre ejércitos en este survivors-like 3D. Tus habilidades se activan automáticamente: sube de nivel, elige ventajas poderosas, saquea a los caídos, arrasa sus asentamientos y vuelve cada vez más fuerte.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "4779990": {
    "trailer": {
@@ -15736,7 +15834,7 @@
    ],
    "about": "a snack-sized auto-battler roguelite. a greedy knight and his unreliable party fight entirely on their own; you pick the dungeon, draft their upgrades and decide what the gold is for. a dungeon takes about two minutes. you'll die. you'll get richer. then you'll melt it all down for crowns.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5363180": {
    "trailer": {
@@ -15755,7 +15853,7 @@
    ],
    "about": "Pinta casas, mercados y talleres en un valle nevado y los vecinos levantan un pueblo navideño. Constrúyelo a tu aire o gánatelo título a título en el modo Progresión. Sin temporizadores ni derrotas: solo callejas, luces, nieve, dieciséis piezas de escena y un pueblo para recorrer como tu elfo.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5536060": {
    "trailer": {
@@ -15773,7 +15871,7 @@
    ],
    "about": "SUMMER 1812, WITH EUROPE UNDER HIS HEAL AND BRITAIN NOT ACCEPTING ANY PEACE. NAPOLEON LEADS THE LARGEST ARMY EVER ASSEMBLED IN EUROPE. TO FINALY INVADE RUSSIA, CAN YOU QUICKLY CONQUER RUSSIA. WHILE MAKING SURE YOUR TROOPS KEEP UP THE PACE AND ARE SUPPLIED! BEFORE THE RUSSIAN WINTER?",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "3162310": {
    "trailer": {
@@ -15792,7 +15890,7 @@
    ],
    "about": "En este RPG, controlas a una persona que se ha encontrado atrapada en un lugar desconocido y está tratando de averiguar sobre su pasado. Ahora debes encontrar la salida... o quedarte atrapado para siempre.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5530970": {
    "trailer": {
@@ -15811,7 +15909,7 @@
    ],
    "about": "Un RPG incremental gratuito en el borde de tu escritorio. Elige a tu héroe, lucha contra monstruos y jefes, consigue equipo y mejora con compañeros, fabricación, minería y pesca mientras sigues con tu día.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5287810": {
    "trailer": {
@@ -15830,7 +15928,7 @@
    ],
    "about": "Es un juego idle de combate automático relajante. Comenzando como un héroe solitario, recluta gradualmente poderosos subordinados para formar una legión poderosa, mejora habilidades poderosas y conquista el mundo entero.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5542190": {
    "trailer": {
@@ -15848,7 +15946,7 @@
    ],
    "about": "Click on 'Start Game', the image will be grayed out, and the colored parts will be randomly scrambled into 16 small fragments, scattered randomly on the screen.Players click on the small image, drag it to its original position to restore it, until all the small fragments move to the correct position",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5451310": {
    "trailer": {
@@ -15867,7 +15965,7 @@
    ],
    "about": "You're a commercial diver left under an offshore platform after an accident. The only way up is a chain of emergency refuges, and each one needs something from out in the dark. You get a bearing, six strobes and a few minutes of gas. Your supervisor, Mara, stays on the radio.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5318160": {
    "trailer": {
@@ -15886,7 +15984,7 @@
    ],
    "about": "Cable Management Sim is a chill organizing game where you install cables to provide internet for a building. Plan, trace, measure and cut your cables for the perfect install. learn abilities, unlock mini games, customisation and build out your server room in a no pressure no rush environment.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "4504940": {
    "trailer": {
@@ -15905,7 +16003,7 @@
    ],
    "about": "Explora el Antiguo Egipto en busca de sus tesoros perdidos. Un relajante juego de buscar diferencias con estilo low poly 3D ambientado en preciosos escenarios hechos a mano.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5365790": {
    "trailer": {
@@ -15924,7 +16022,7 @@
    ],
    "about": "Un juego de puzles en un taller de impresión. Monta 24 láminas de archivo y originales, con cortes variados, rotación libre y espacio fuera del tablero. Completa cada prueba de trabajo y archiva la lámina terminada. Algunas ofrecen un desafío Segunda mirada.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "2386300": {
    "trailer": {
@@ -15943,7 +16041,7 @@
    ],
    "about": "Defend a mysterious lunar crystal against relentless hordes in this roguelite tower defense. Build powerful defenses, cast devastating spells, gather resources, and rebuild humanity's underground city between runs.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "4654120": {
    "trailer": {
@@ -15953,16 +16051,16 @@
     "hls": "https://video.akamai.steamstatic.com/store_trailers/4654120/520485897/f847ee52655816f485a9ccb857f5d0cebc6f6230/1793793209/hls_264_master.m3u8?t=1793794672"
    },
    "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/9ab3751870c22c72341b60d815ed6f2a90bd1866/ss_9ab3751870c22c72341b60d815ed6f2a90bd1866.600x338.jpg?t=1794441798",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/8cf1df09f175994013845fd7b75f4a397c1cc41d/ss_8cf1df09f175994013845fd7b75f4a397c1cc41d.600x338.jpg?t=1794441798",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/90a151ec776b527902af4a932bb02b1990b7794c/ss_90a151ec776b527902af4a932bb02b1990b7794c.600x338.jpg?t=1794441798",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/b10a418fb7b0f8a2eb21db853614f666948e16a3/ss_b10a418fb7b0f8a2eb21db853614f666948e16a3.600x338.jpg?t=1794441798",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/c08b6965ceaaf6da896d64f41bda60cd102af3e6/ss_c08b6965ceaaf6da896d64f41bda60cd102af3e6.600x338.jpg?t=1794441798",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/ceb2613636e46e2e9a20bf70ede0a172db0dc938/ss_ceb2613636e46e2e9a20bf70ede0a172db0dc938.600x338.jpg?t=1794441798"
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/9ab3751870c22c72341b60d815ed6f2a90bd1866/ss_9ab3751870c22c72341b60d815ed6f2a90bd1866.600x338.jpg?t=1794664782",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/8cf1df09f175994013845fd7b75f4a397c1cc41d/ss_8cf1df09f175994013845fd7b75f4a397c1cc41d.600x338.jpg?t=1794664782",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/90a151ec776b527902af4a932bb02b1990b7794c/ss_90a151ec776b527902af4a932bb02b1990b7794c.600x338.jpg?t=1794664782",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/b10a418fb7b0f8a2eb21db853614f666948e16a3/ss_b10a418fb7b0f8a2eb21db853614f666948e16a3.600x338.jpg?t=1794664782",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/c08b6965ceaaf6da896d64f41bda60cd102af3e6/ss_c08b6965ceaaf6da896d64f41bda60cd102af3e6.600x338.jpg?t=1794664782",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4654120/ceb2613636e46e2e9a20bf70ede0a172db0dc938/ss_ceb2613636e46e2e9a20bf70ede0a172db0dc938.600x338.jpg?t=1794664782"
    ],
    "about": "Un juego incremental relajante de minería espacial. Construye tu propia nave, desmantela restos de naves pieza a pieza y cambia tu botín por componentes y mejoras.",
    "reqs": null,
-   "at": "2026-11-13T21:29:05Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "609320": {
    "trailer": {
@@ -16407,7 +16505,29 @@
     "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214490/ss_b82b51fd2e63fb802c784f7a3fbe1e65148ad6e1.600x338.jpg?t=1793034411"
    ],
    "about": "Descubre el verdadero significado del terror en Alien: Isolation, un juego de horror y supervivencia que transcurre en un ambiente de constante tensión y peligro.",
-   "at": "2026-11-13T21:52:01Z"
+   "reqs": {
+    "min": [
+     "SO *: Windows 7 (32bit)",
+     "Procesador: 3.16Ghz Intel Core 2 Duo E8500",
+     "Memoria: 4 GB de RAM",
+     "Gráficos: 1GB (AMD Radeon HD 5550 or Nvidia GeForce GT 430)",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 35 GB de espacio disponible",
+     "Notas adicionales: Microsoft no longer supports Windows 10 or older versions"
+    ],
+    "rec": [
+     "SO *: Windows 7 (64bit)",
+     "Procesador: AMD: Phenom II X4 955 - 4 Core, 3.2 GHz or Intel: Core 2 Quad Q9650 - 4 Core, 3.0 GHz",
+     "Memoria: 8 GB de RAM",
+     "Gráficos: 2GB (AMD GPU: AMD Radeon R9 200 Series or Nvidia GPU: Nvidia GeForce GTX660)",
+     "DirectX: Versión 11",
+     "Red: Conexión de banda ancha a Internet",
+     "Almacenamiento: 35 GB de espacio disponible",
+     "Notas adicionales: Microsoft no longer supports Windows 10 or older versions"
+    ]
+   },
+   "at": "2026-11-15T06:44:49Z"
   },
   "274350": {
    "trailer": {
@@ -16482,7 +16602,7 @@
    ],
    "about": "A Three Kingdoms pixel-art survival roguelite. Choose your hero, combine upgrades, and fight your way through enemy hordes.",
    "reqs": null,
-   "at": "2026-11-13T23:09:07Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "5461650": {
    "trailer": {
@@ -16501,7 +16621,7 @@
    ],
    "about": "Take over a nearly bankrupt move-out clearance company and clean up the homes tenants left behind. Clear trash, scrub away grime, uncover forgotten valuables, appraise mysterious finds, sell or collect them, and grow your business. One person’s junk might just be your next big score.",
    "reqs": null,
-   "at": "2026-11-14T00:17:46Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "3301490": {
    "trailer": {
@@ -16538,7 +16658,7 @@
    ],
    "about": "Turn your everyday PC activity into an RPG adventure! Every click and keystroke helps your knight fight the undead, gain XP and find powerful loot. Equip new gear, grow stronger and rise through the ranks.",
    "reqs": null,
-   "at": "2026-11-14T00:17:46Z"
+   "at": "2026-11-15T06:44:49Z"
   },
   "319910": {
    "trailer": {
@@ -16888,37 +17008,6 @@
    ],
    "about": "A head-to-head sky shooter. Blast chains of drifting clouds to launch attacks into your rival's sky, dodge what they send or blast it back, then summon a giant Champion. Duel friends side by side or online, or take on the Sky Tour: 45 stages, bosses and 120 stars.",
    "reqs": null,
-   "at": "2026-11-14T21:00:47Z"
-  },
-  "609490": {
-   "trailer": {
-    "name": "Gameplay Trailer",
-    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256687146/movie.293x165.jpg?t=1521130567",
-    "video": "",
-    "hls": "https://video.akamai.steamstatic.com/store_trailers/609490/107322/c2f79e1f204c061d2a198b469d9dc4392d63aa8d/1751108517/hls_264_master.m3u8?t=1521130567"
-   },
-   "shots": [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609490/ss_2749c2026b00c96399114ab44a3f060fe9784901.600x338.jpg?t=1751460640",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609490/ss_804e71c05660889e2541010f27e5ccfd76cfa886.600x338.jpg?t=1751460640",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609490/ss_44aafcc1cc9653be731e8196cf49738525c91935.600x338.jpg?t=1751460640",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609490/ss_0e8169d3178e0b6ec8ab564e9cbea1e5fefd35d6.600x338.jpg?t=1751460640",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609490/ss_2984d1941ba33f6393a5a6de7969c53f646e4e05.600x338.jpg?t=1751460640",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609490/ss_90ed1d51476b950d9e8e80e78a5362040f414c97.600x338.jpg?t=1751460640"
-   ],
-   "about": "Minit es una peculiar aventura que se juega en dosis de sesenta segundos.",
-   "reqs": {
-    "min": [
-     "Requiere un procesador y un sistema operativo de 64 bits",
-     "SO *: Windows XP/Vista/7/8/8.1/10 x86/x64",
-     "Procesador: Intel Pentium D 830 (2* 3000) or equivalent / AMD Athlon 64 4000+ (2600) or equivalent",
-     "Memoria: 1 GB de RAM",
-     "Gráficos: GeForce 7600 GS (256 MB) / Radeon HD 2400 PRO (256 MB)",
-     "Almacenamiento: 200 MB de espacio disponible"
-    ],
-    "rec": [
-     "Requiere un procesador y un sistema operativo de 64 bits"
-    ]
-   },
    "at": "2026-11-14T21:00:47Z"
   },
   "5460910": {
@@ -17448,6 +17537,111 @@
     ]
    },
    "at": "2026-11-14T23:58:07Z"
+  },
+  "4531250": {
+   "trailer": {
+    "name": "Tiny Dwellings – Official Announcement Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257339303/d379cb461d01743d4f39e6aa881c740df307e67c/movie_600x337.jpg?t=1780573598",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/4531250/422210068/3caacac3587f171b567b4d8f0109c1c4c08f3ae4/1779196975/hls_264_master.m3u8?t=1780573598"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4531250/49cf11e5cc56109b18cbefc7a6192014a7dc237a/ss_49cf11e5cc56109b18cbefc7a6192014a7dc237a.600x338.jpg?t=1793609713",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4531250/5fc91124aa285a7a9e1e670ac65dfb11136a60f5/ss_5fc91124aa285a7a9e1e670ac65dfb11136a60f5.600x338.jpg?t=1793609713",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4531250/6ed36a106e2a806e16809b933514726865d978c9/ss_6ed36a106e2a806e16809b933514726865d978c9.600x338.jpg?t=1793609713",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4531250/ab0e96f6f6f4c65c3bd8cd76ba57e968621c1594/ss_ab0e96f6f6f4c65c3bd8cd76ba57e968621c1594.600x338.jpg?t=1793609713",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4531250/dfa6775c6fe11078cf48d120167adbc153094a70/ss_dfa6775c6fe11078cf48d120167adbc153094a70.600x338.jpg?t=1793609713",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4531250/ac0cf2442c4ab4a78936ad6bfba02c7b9041a461/ss_ac0cf2442c4ab4a78936ad6bfba02c7b9041a461.600x338.jpg?t=1793609713"
+   ],
+   "about": "Tiny Dwellings es un juego de construcción acogedor pixel-art con más de 1,000 objetos dibujados a mano con los que construir, decorar y relajarse. Crea encantadores casitas y pequeños dioramas a tu ritmo, con vibras lo-fi, iluminación suave y un ambiente acogedor.",
+   "reqs": null,
+   "at": "2026-11-15T06:44:49Z"
+  },
+  "5524170": {
+   "trailer": {
+    "name": "Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257486305/c7c1ecfe91b4564133c23c8a6ff1fbf8a7e28edc/movie_600x337.jpg?t=1793415462",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5524170/623549624/29a1de240a1e9d11a9db4891d7a78d36249c4fa7/1793414332/hls_264_master.m3u8?t=1793415462"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5524170/4c0517a50b0b55bc13fddde55ae02f4b0e49ae3e/ss_4c0517a50b0b55bc13fddde55ae02f4b0e49ae3e.600x338.jpg?t=1793415463",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5524170/c21b43bad53dcf90564b702ec309eef82624faa8/ss_c21b43bad53dcf90564b702ec309eef82624faa8.600x338.jpg?t=1793415463",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5524170/8a7bb710420513392276e8a378277da582f2ad8a/ss_8a7bb710420513392276e8a378277da582f2ad8a.600x338.jpg?t=1793415463",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5524170/c9a54ccea12b3e06c43e33271a019dafc1fd65c1/ss_c9a54ccea12b3e06c43e33271a019dafc1fd65c1.600x338.jpg?t=1793415463",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5524170/d032cfd2f90931fa36d5ef431fb078736ac78f7a/ss_d032cfd2f90931fa36d5ef431fb078736ac78f7a.600x338.jpg?t=1793415463",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5524170/88067423711febca94b9080f04d44eb6feeadb5d/ss_88067423711febca94b9080f04d44eb6feeadb5d.600x338.jpg?t=1793415463"
+   ],
+   "about": "Vuelve a la floristería para poner orden en Navidad. Clasifica 16 variedades de flores festivas, coloca regalos, decora el árbol y descubre las notas que han dejado.",
+   "reqs": null,
+   "at": "2026-11-15T06:44:49Z"
+  },
+  "5100770": {
+   "trailer": {
+    "name": "At once, My Lord! - Wishlist NOW!",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257407134/2eba2e6e9a166db1369fb903e7db6dc5f9d8d660/movie_600x337.jpg?t=1792777197",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5100770/990818354/7ce8f44000ef089715be06cf6b57aaecf228d8ff/1788188278/hls_264_master.m3u8?t=1792777197"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100770/1e7249096578fd60e015cd9cd31d2caa9b288c0a/ss_1e7249096578fd60e015cd9cd31d2caa9b288c0a.600x338.jpg?t=1793783021",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100770/19de45750b96f6553a57f41e88126158f6bfd5c4/ss_19de45750b96f6553a57f41e88126158f6bfd5c4.600x338.jpg?t=1793783021",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100770/01d1b7ba1655726c5cd59226902a9b23fec4945d/ss_01d1b7ba1655726c5cd59226902a9b23fec4945d.600x338.jpg?t=1793783021",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100770/7e0297823ae66bb9fb4d339752cd21b59199c8b3/ss_7e0297823ae66bb9fb4d339752cd21b59199c8b3.600x338.jpg?t=1793783021",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100770/acbf7b1795a0a43715baccc44c4b0e09d83bf65f/ss_acbf7b1795a0a43715baccc44c4b0e09d83bf65f.600x338.jpg?t=1793783021",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100770/e604b8c9f3afcef75285665f20826b77f9894352/ss_e604b8c9f3afcef75285665f20826b77f9894352.600x338.jpg?t=1793783021"
+   ],
+   "about": "La batalla en Kor’Vhar ha terminado. Los héroes se han marchado, al menos los que han podido. Ahora alguien tendrá que limpiar el desastre... Adivina quién. Recoge más de 10.000 restos y arrójalos al contenedor dimensional de reciclaje. Gánate el respeto de Lord Shellborn y quizá se muestre ante ti.",
+   "reqs": null,
+   "at": "2026-11-15T06:44:49Z"
+  },
+  "5036870": {
+   "trailer": {
+    "name": "Game Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257401460/4f60e015e9bfa0dbfa4c4980fc08127c35b65ea8/movie_600x337.jpg?t=1791535384",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/5036870/955431754/39aa5bb5c27b321cf85c973a93a0dd0eac362fbd/1791534878/hls_264_master.m3u8?t=1791535384"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5036870/e57f15ad764b6daa113f671083cacc2223dbf7a3/ss_e57f15ad764b6daa113f671083cacc2223dbf7a3.600x338.jpg?t=1794213053",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5036870/a6190bc31413b595b4687fd215f86a01bee86d70/ss_a6190bc31413b595b4687fd215f86a01bee86d70.600x338.jpg?t=1794213053",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5036870/30e02ec2796fa26e522ddb1b9f13ba5e1614f591/ss_30e02ec2796fa26e522ddb1b9f13ba5e1614f591.600x338.jpg?t=1794213053",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5036870/678e359fb3bc072941a5efd1dbf660bb7f03fda0/ss_678e359fb3bc072941a5efd1dbf660bb7f03fda0.600x338.jpg?t=1794213053",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5036870/481057807cc9d6477f2cd50b5a63f841d85f20cc/ss_481057807cc9d6477f2cd50b5a63f841d85f20cc.600x338.jpg?t=1794213053"
+   ],
+   "about": "Terror psicológico en la admisión nocturna de un depósito. Cada cuerpo llega con papeles que deben coincidir con él. Pésalo, mídelo, tómale la temperatura, escúchale el pecho. Algunos aún tienen pulso. El reglamento suma una página cada noche, y parte de lo que registras no se queda así.",
+   "reqs": null,
+   "at": "2026-11-15T06:44:49Z"
+  },
+  "427680": {
+   "trailer": {
+    "name": "Launch Trailer",
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256706860/movie.293x165.jpg?t=1683314968",
+    "video": "",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/427680/143687/d589ad73661d29058763489953ca2d82a3aca839/1751282695/hls_264_master.m3u8?t=1683314968"
+   },
+   "shots": [
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427680/ss_180d960226164154ca85e5e6c0cb65e291bd97f6.600x338.jpg?t=1732150077",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427680/ss_f2b559ee11e02181d224318acb8d601130466b78.600x338.jpg?t=1732150077",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427680/ss_2e77dc76768cf9f202f7a35d9b11d67078d4d7c2.600x338.jpg?t=1732150077",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427680/ss_eeee638116d35daaaf0e1f9d636bb1d1ce377f59.600x338.jpg?t=1732150077",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427680/ss_c8b82c0b3a015a3be7985acf989bdd485eed54ee.600x338.jpg?t=1732150077",
+    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427680/ss_eee0839717b8aadd915c772af501b832d8fc73f8.600x338.jpg?t=1732150077"
+   ],
+   "about": "Filterless fashionista Pipiro and poindextrous punster Pokkle are ordinary step-siblings facing an ordinary day in their ordinary little burg...until a grand theft macguffin occurs and they decide to become unlikely heroes for cash and glory (in that order). This goes about as well as you’d expect.",
+   "reqs": {
+    "min": [
+     "SO *: Windows XP+",
+     "Procesador: 2GHz Single core CPU",
+     "Memoria: 1 GB de RAM",
+     "Gráficos: 128 MB VRAM",
+     "DirectX: Versión 9.0c",
+     "Almacenamiento: 3 GB de espacio disponible",
+     "Tarjeta de sonido: Compatible with DirectX 9.0c"
+    ],
+    "rec": []
+   },
+   "at": "2026-11-15T06:44:49Z"
   }
  }
 }
