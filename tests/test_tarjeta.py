@@ -67,3 +67,12 @@ class TarjetaCajaTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class YaLoTengoTest(unittest.TestCase):
+    def test_clave_por_juego_y_boton(self):
+        self.assertEqual(Site.game_key({"steamAppID": 3900, "title": "Civ"}), "s3900")
+        self.assertEqual(Site.game_key({"title": "METRO 2033: Redux"}), "t-metro-2033-redux")
+        html = site().card(USD)
+        self.assertIn('data-game="t-juego-b-raro-b"', html)
+        self.assertIn('data-own="t-juego-b-raro-b"', html)

@@ -472,6 +472,11 @@ class Site:
             return '<span class="badge free">GRATIS</span>'
         return f'<span class="badge">-{o["discountPercentage"]}%</span>' if o.get("discountPercentage") else ""
 
+    @staticmethod
+    def game_key(o):
+        """Clave estable del juego (no de la oferta) para «Ya lo tengo»: el id de Steam o, si no hay, el nombre."""
+        return f"s{o['steamAppID']}" if o.get("steamAppID") else "t-" + "-".join(slugify_words(o.get("title") or ""))
+
     def tilt(self, o):
         """Inclinación del sticker (1 a 5), fija por juego para que no cambie entre visitas."""
         return int(hashlib.md5(str(o.get("id", "")).encode()).hexdigest(), 16) % 5 + 1
@@ -526,7 +531,7 @@ class Site:
         claim = (f'<button class="btn icon-btn claim-btn" type="button" data-claim="{e(o["id"])}" data-value="{self.cop_saved(o)}" aria-pressed="false" '
                  f'aria-label="Marcar {e(o["title"])} como reclamado" title="Ya lo reclamé" hidden>{ICONS["tick"]}</button>' if free and self.cop_saved(o) else "")
         share = e(self.base + self.detail[o["id"]] if o["id"] in self.detail else o["destinationUrl"])
-        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else pct}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}" data-rev="{(o.get('reviews') or {}).get('pct', 0)}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
+        return f"""<li class="card{' is-free' if free else ''}" data-id="{e(o['id'])}" data-game="{e(self.game_key(o))}" data-title="{e(o['title'].lower())}" data-store="{e(o['storeId'])}" data-type="{'gratis' if free else 'descuento'}" data-discount="{100 if free else pct}" data-expires="{e(o.get('expiresAt') or '')}" data-price="{o.get('currentPrice') or 0}" data-cop="{round(cop_now)}" data-saved="{self.cop_saved(o)}" data-score="{self.value_score(o) or 0}" data-rev="{(o.get('reviews') or {}).get('pct', 0)}"{' data-low="1"' if (self.price_stats(o) or {}).get('isLow') else ''}>
 <div class="box store-{e(o['storeId'])} tilt-{self.tilt(o)}{'' if cover else ' no-capsule'}"{self.preview_attrs(o.get("trailer"))}><img src="{e(img)}"{f' data-fallback="{e(back)}"' if back.startswith("https://") else ''} alt="{e(alt)}" width="300" height="450" loading="lazy" decoding="async">{name}{sticker}{ganga}{self.ribbon(o)}{trailer}</div>
 <div class="body"><h3 class="clamp2">{self.title_link(o)}</h3>
 <p class="card-meta"><span class="cm-store"><span class="store-dot store-{e(o["storeId"])}" aria-hidden="true"></span>{e(o["store"])}</span>{f'<span class="mc-score" title="Nota de la crítica en Metacritic">{int(o["metacritic"])}</span>' if o.get("metacritic") else ''}{self.deck_badge(o)}</p>
@@ -535,7 +540,7 @@ class Site:
 {f'<p class="save">{e(self.saving_text(o))}</p>' if self.saving_text(o) else ''}
 {self.countdown(o) or '<p class="left none" title="La tienda no publicó la fecha de fin">Sin fecha de fin</p>'}
 {self.trust_chips(o)}
-<div class="actions">{self.offer_button(o)}{claim}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn" type="button" data-share="{share}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>{ICONS['share']}</button></div>
+<div class="actions">{self.offer_button(o)}{claim}<button class="btn icon-btn" type="button" data-fav="{e(o['id'])}" aria-pressed="false" aria-label="Guardar {e(o['title'])} en favoritos" hidden>{ICONS['star']}</button><button class="btn icon-btn own-btn" type="button" data-own="{e(self.game_key(o))}" aria-pressed="false" aria-label="Marcar {e(o['title'])} como un juego que ya tengo" title="Ya lo tengo" hidden>{ICONS['check']}</button><button class="btn icon-btn" type="button" data-share="{share}" data-title="{e(o['title'])}" aria-label="Compartir {e(o['title'])}" hidden>{ICONS['share']}</button></div>
 </div></li>"""
 
     def card_caption(self, o):
@@ -2684,7 +2689,7 @@ class Site:
         shutil.copy(ROOT / "config" / "_headers", self.out / "_headers")
         (self.out / "data").mkdir(exist_ok=True)
         public = [dict({k: o[k] for k in o if k != "telegramPublishedAt"}, page=self.detail.get(o["id"]),
-                       action=self.action_label(o), saving=self.saving_text(o), ganga=o["id"] in self.ganga, tilt=self.tilt(o),
+                       action=self.action_label(o), saving=self.saving_text(o), ganga=o["id"] in self.ganga, tilt=self.tilt(o), gameKey=self.game_key(o),
                        copNow=round(self.cop_value(o["currentPrice"], o) or 0) if o.get("currentPrice") and o["currency"] != "COP" else None) for o in live]
         self.write("data/offers.json", json.dumps({"updatedAt": updated_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                                    "offers": public}, ensure_ascii=False, indent=1))
@@ -2789,7 +2794,7 @@ class Site:
         P("cookies.html", "Política de cookies", "Ofertas Gamer CO no usa cookies de seguimiento. Qué guardamos en tu navegador y cómo borrarlo.",
           f"""<div class="prose"><h1>Política de cookies</h1><p class="meta">Última actualización: {LEGAL_UPDATED}</p>
 <p>Ofertas Gamer CO no instala cookies propias ni de terceros para analítica o publicidad. Contamos las visitas con Cloudflare Web Analytics, que funciona sin cookies.</p>
-<p>Usamos el almacenamiento local del navegador solo para preferencias opcionales, como los favoritos (<code>ogc-favs</code>), el último precio que viste de cada favorito para avisarte si bajó (<code>ogc-fav-precios</code>) y tu último perfil de Steam buscado (<code>ogc-steam-perfil</code>). No se envían a ningún servidor.</p>
+<p>Usamos el almacenamiento local del navegador solo para preferencias opcionales, como los favoritos (<code>ogc-favs</code>), el último precio que viste de cada favorito para avisarte si bajó (<code>ogc-fav-precios</code>) tu último perfil de Steam buscado (<code>ogc-steam-perfil</code>) y los juegos que marcaste como «Ya lo tengo» (<code>ogc-tengo</code>). No se envían a ningún servidor.</p>
 <p>Las tiendas a las que enlazamos pueden usar sus propias cookies cuando visitas su sitio.</p>
 <p>Si en el futuro activamos anuncios u otra analítica, actualizaremos esta política y pediremos tu consentimiento cuando la ley lo requiera.</p>
 {LEGAL_REVIEW}</div>""", crumbs=[("cookies.html", "Cookies")])

@@ -50,6 +50,11 @@ const pages = ["index.html", "juegos-gratis.html", "ofertas.html", "tiendas.html
     }
     await page.goto(base + "ofertas.html");
     const total = await page.$$eval("#offers > li", (els) => els.length);
+    // en el celular los filtros están recogidos detrás del botón «Filtros»
+    if (width === 360) {
+      if (await page.isVisible("#filters")) errors.push("360px: los filtros deberían empezar recogidos");
+      await page.click(".filters-toggle");
+    }
     await page.fill("#filters input[name=q]", "hollow");
     const visible = await page.$$eval("#offers > li:not([hidden])", (els) => els.length);
     if (!(visible >= 1 && visible < total)) errors.push(`${width}px: el buscador no filtra (${visible}/${total})`);
