@@ -2120,3 +2120,14 @@ ul.grid:not(.x)>.card .card-meta .cm-store{white-space:nowrap}
 .rh-left b{display:inline-block;padding:2px 12px;margin:0 4px;border-radius:10px;background:var(--sticker);color:var(--sticker-ink);font:700 2.2rem/1.1 var(--num);transform:rotate(-3deg)}
 .spot-card .badge.rel{background:var(--sticker);color:var(--sticker-ink);border-radius:7px;transform:rotate(3deg)}
 .spot-card .spot-rank{background:#0b0c10;color:var(--sticker)}
+
+/* ---- Etapa D (2026-11-14): «Ya lo tengo» y filtros recogidos en el celular ---- */
+li[data-owned-hidden]{display:none!important}
+.is-owned .box{opacity:.45;filter:grayscale(.6)}
+.is-owned .box::before{content:"YA LO TIENES";position:absolute;z-index:4;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-8deg);padding:5px 10px;border-radius:6px;background:#0b0c10;color:#fff;font:800 .72rem/1 var(--ui);letter-spacing:.08em;white-space:nowrap}
+ul.grid:not(.x)>.card .own-btn[aria-pressed="true"]{background:var(--free);border-color:var(--free);color:#05210f}
+.owned-note{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 16px;padding:10px 14px;border:1px dashed var(--border-strong);border-radius:12px;color:var(--soft);font-size:.9rem}
+.owned-note[hidden]{display:none}
+.link-btn{padding:0;border:0;background:none;color:var(--link);font:600 .9rem var(--ui);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.filters-toggle{width:100%;min-height:46px;margin:0 0 12px;border-radius:12px}
+.filters.shop-filters.collapsed{display:none!important}

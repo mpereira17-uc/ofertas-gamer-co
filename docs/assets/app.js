@@ -57,6 +57,56 @@
     });
   });
 
+  // «Ya lo tengo»: los juegos que marcas se ocultan de las listas (solo en este navegador, clave «ogc-tengo»).
+  // En favoritos se siguen viendo; un aviso arriba de la lista permite mostrarlos de nuevo.
+  var owned = [], showOwned = false, ownNote = null;
+  try { owned = JSON.parse(store("ogc-tengo") || "[]"); } catch (e) { owned = []; }
+  if (!Array.isArray(owned)) owned = [];
+  function applyOwned() {
+    var hiddenN = 0;
+    document.querySelectorAll("li.card[data-game]").forEach(function (li) {
+      var mine = owned.indexOf(li.getAttribute("data-game")) >= 0;
+      var hide = mine && !showOwned && !li.closest("#fav-root");
+      li.classList.toggle("is-owned", mine);
+      if (hide) { li.setAttribute("data-owned-hidden", ""); hiddenN++; } else li.removeAttribute("data-owned-hidden");
+    });
+    var anchor = document.querySelector("main .grid");
+    if (!anchor) return;
+    if (!ownNote) {
+      ownNote = document.createElement("p");
+      ownNote.className = "owned-note";
+      ownNote.setAttribute("aria-live", "polite");
+      anchor.parentNode.insertBefore(ownNote, anchor);
+    }
+    ownNote.textContent = "";
+    if (!owned.length || (!hiddenN && !showOwned)) { ownNote.hidden = true; return; }
+    ownNote.hidden = false;
+    ownNote.appendChild(document.createTextNode(showOwned ? "Estás viendo también los juegos que marcaste como tuyos. " :
+      (hiddenN === 1 ? "Ocultamos 1 juego que marcaste como «Ya lo tengo». " : "Ocultamos " + hiddenN + " juegos que marcaste como «Ya lo tengo». ")));
+    var t = document.createElement("button");
+    t.type = "button";
+    t.className = "link-btn";
+    t.textContent = showOwned ? "Ocultarlos" : "Mostrarlos";
+    t.addEventListener("click", function () { showOwned = !showOwned; applyOwned(); applyFilters(); });
+    ownNote.appendChild(t);
+  }
+  document.querySelectorAll("[data-own]").forEach(function (btn) {
+    var key = btn.getAttribute("data-own");
+    btn.hidden = false;
+    btn.setAttribute("aria-pressed", owned.indexOf(key) >= 0 ? "true" : "false");
+    btn.addEventListener("click", function () {
+      var i = owned.indexOf(key);
+      if (i >= 0) owned.splice(i, 1); else owned.push(key);
+      document.querySelectorAll('[data-own="' + key.replace(/[^a-z0-9-]/gi, "") + '"]').forEach(function (b) {
+        b.setAttribute("aria-pressed", i >= 0 ? "false" : "true");
+      });
+      store("ogc-tengo", JSON.stringify(owned.slice(-2000)));
+      applyOwned();
+      applyFilters();
+    });
+  });
+  applyOwned();
+
   // Compartir o copiar enlace
   document.querySelectorAll("[data-share]").forEach(function (btn) {
     btn.hidden = false;
@@ -88,7 +138,8 @@
       var ok = (!q || d.title.indexOf(q) >= 0) && (!st || d.store === st) &&
         (!type || d.type === type) && (parseInt(d.discount || "0", 10) >= min) &&
         (!max || (d.cop !== undefined && parseInt(d.cop || "0", 10) < max && (d.type === "gratis" || parseInt(d.cop || "0", 10) > 0))) &&
-        (!onlyFavs || favs.indexOf(d.id) >= 0) && (!onlyLow || d.low === "1") && (!onlyGood || parseInt(d.rev || "0", 10) >= 80);
+        (!onlyFavs || favs.indexOf(d.id) >= 0) && (!onlyLow || d.low === "1") && (!onlyGood || parseInt(d.rev || "0", 10) >= 80) &&
+        !li.hasAttribute("data-owned-hidden");
       li.hidden = !ok;
       if (ok) shown++;
     });
@@ -105,6 +156,31 @@
   }
   if (form) {
     form.hidden = false;
+    // En el celular los filtros quedan recogidos detrás de un botón que dice cuántos hay activos
+    if (window.matchMedia && window.matchMedia("(max-width: 760px)").matches) {
+      var tgl = document.createElement("button");
+      tgl.type = "button";
+      tgl.className = "btn filters-toggle";
+      tgl.setAttribute("aria-controls", "filters");
+      var activeN = function () {
+        var n = 0;
+        if ((form.q.value || "").trim()) n++;
+        ["store", "type", "max"].forEach(function (k) { if (form[k] && form[k].value) n++; });
+        if (form.min && form.min.value && form.min.value !== "0") n++;
+        ["favs", "low", "good"].forEach(function (k) { if (form[k] && form[k].checked) n++; });
+        return n;
+      };
+      var label = function () {
+        var n = activeN(), open = !form.classList.contains("collapsed");
+        tgl.textContent = (open ? "Ocultar filtros" : "Filtros") + (n ? " (" + n + ")" : "");
+        tgl.setAttribute("aria-expanded", open ? "true" : "false");
+      };
+      form.classList.add("collapsed");
+      form.parentNode.insertBefore(tgl, form);
+      tgl.addEventListener("click", function () { form.classList.toggle("collapsed"); label(); });
+      form.addEventListener("input", label);
+      label();
+    }
     // Filtros desde la dirección (enlaces rápidos de la portada): ?q= ?tipo= ?min= ?max= ?orden= ?tienda=
     var params = new URLSearchParams(location.search);
     var setIf = function (field, value) {
@@ -587,6 +663,7 @@
         var best = {};
         (data.offers || []).forEach(function (o) {
           if (!o.steamAppID || !want[o.steamAppID] || o.status === "Vencido") return;
+          if (o.gameKey && owned.indexOf(o.gameKey) >= 0) return; // ya lo marcaste como tuyo
           var cop = o.currentPrice === 0 ? 0 : (o.copApproximation || o.currentPrice);
           var cur = best[o.steamAppID];
           if (!cur || cop < cur.cop) best[o.steamAppID] = { cop: cop, o: o };
