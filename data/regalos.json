@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T23:33:05Z",
+ "updatedAt": "2026-11-18T07:39:41Z",
  "items": [
   {
    "id": "gp-3852",
@@ -25,19 +25,6 @@
    "image": "https://www.gamerpower.com/offers/1b/6af5f33e49913.jpg",
    "url": "https://www.gamerpower.com/open/knightica-epic-games-giveaway",
    "firstSeen": "2026-11-12T22:17:25Z",
-   "active": true
-  },
-  {
-   "id": "gp-3848",
-   "title": "RUNZ Playtest",
-   "type": "early access",
-   "group": "steam",
-   "platforms": "PC, Steam",
-   "worth": "",
-   "endsOn": "2026-11-17",
-   "image": "https://www.gamerpower.com/offers/1b/6af35f1968895.jpg",
-   "url": "https://www.gamerpower.com/open/runz-playtest-steam-key-giveaway",
-   "firstSeen": "2026-11-10T21:50:11Z",
    "active": true
   },
   {
@@ -247,6 +234,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3848",
+   "title": "RUNZ Playtest",
+   "type": "early access",
+   "group": "steam",
+   "platforms": "PC, Steam",
+   "worth": "",
+   "endsOn": "2026-11-17",
+   "image": "https://www.gamerpower.com/offers/1b/6af35f1968895.jpg",
+   "url": "https://www.gamerpower.com/open/runz-playtest-steam-key-giveaway",
+   "firstSeen": "2026-11-10T21:50:11Z",
+   "active": false
   },
   {
    "id": "gp-3851",
