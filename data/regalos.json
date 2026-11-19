@@ -1,6 +1,32 @@
 {
- "updatedAt": "2026-11-19T13:25:25Z",
+ "updatedAt": "2026-11-19T23:05:51Z",
  "items": [
+  {
+   "id": "gp-3854",
+   "title": "Lonesome Village",
+   "type": "game",
+   "group": "otros",
+   "platforms": "Android, iOS",
+   "worth": "$4.99",
+   "endsOn": "2026-11-26",
+   "image": "https://www.gamerpower.com/offers/1b/6aff20a09cb65.jpg",
+   "url": "https://www.gamerpower.com/open/lonesome-village-mobile-giveaway",
+   "firstSeen": "2026-11-19T23:05:51Z",
+   "active": true
+  },
+  {
+   "id": "gp-3853",
+   "title": "Mark of the Deep",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$19.99",
+   "endsOn": "2026-11-26",
+   "image": "https://www.gamerpower.com/offers/1b/6aff1d0e4942d.jpg",
+   "url": "https://www.gamerpower.com/open/mark-of-the-deep-epic-games-giveaway",
+   "firstSeen": "2026-11-19T23:05:51Z",
+   "active": true
+  },
   {
    "id": "gp-3852",
    "title": "Contractor: The Clean Up Part 2",
@@ -12,19 +38,6 @@
    "image": "https://www.gamerpower.com/offers/1b/6afc554f06761.jpg",
    "url": "https://www.gamerpower.com/open/contractor-the-clean-up-part-2-epic-games-giveaway",
    "firstSeen": "2026-11-17T13:34:49Z",
-   "active": true
-  },
-  {
-   "id": "gp-3850",
-   "title": "Knightica",
-   "type": "game",
-   "group": "epic",
-   "platforms": "PC, Android, iOS, Epic Games Store",
-   "worth": "$14.99",
-   "endsOn": "2026-11-19",
-   "image": "https://www.gamerpower.com/offers/1b/6af5f33e49913.jpg",
-   "url": "https://www.gamerpower.com/open/knightica-epic-games-giveaway",
-   "firstSeen": "2026-11-12T22:17:25Z",
    "active": true
   },
   {
@@ -234,6 +247,19 @@
    "url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
    "firstSeen": "2026-10-26T19:15:59Z",
    "active": true
+  },
+  {
+   "id": "gp-3850",
+   "title": "Knightica",
+   "type": "game",
+   "group": "epic",
+   "platforms": "PC, Android, iOS, Epic Games Store",
+   "worth": "$14.99",
+   "endsOn": "2026-11-19",
+   "image": "https://www.gamerpower.com/offers/1b/6af5f33e49913.jpg",
+   "url": "https://www.gamerpower.com/open/knightica-epic-games-giveaway",
+   "firstSeen": "2026-11-12T22:17:25Z",
+   "active": false
   },
   {
    "id": "gp-3848",
