@@ -1,6 +1,325 @@
 {
  "semanas": [
   {
+   "week": "2026-S47",
+   "date": "2026-11-20T17:00:25Z",
+   "label": "20 de noviembre de 2026",
+   "free": [
+    {
+     "id": "epic-1f9a12b06b4f437790b6913ad136a08c-2026-11-26",
+     "title": "Mark of the Deep",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0,
+     "originalPrice": 47500.0,
+     "currency": "COP",
+     "discountPercentage": 100,
+     "image": "https://cdn1.epicgames.com/spt-assets/83a240506a884c10ad8fb99694e57a0d/mark-of-the-deep-w1ygr.png",
+     "destinationUrl": "https://store.epicgames.com/es-ES/p/mark-of-the-deep-f7dc08",
+     "officialUrl": "https://store.epicgames.com/es-ES/p/mark-of-the-deep-f7dc08",
+     "affiliate": false,
+     "expiresAt": "2026-11-26T16:00:00.000Z",
+     "regions": [
+      "CO"
+     ]
+    }
+   ],
+   "deals": [
+    {
+     "id": "cs-109746-7-1.99",
+     "title": "Metro 2033 Redux",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 2.05,
+     "originalPrice": 20.26,
+     "currency": "USD",
+     "discountPercentage": 90,
+     "copApproximation": 6858,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/capsule_231x87.jpg?t=1792681167",
+     "destinationUrl": "https://www.gog.com/en/game/metro_2033_redux",
+     "officialUrl": "https://www.gog.com/en/game/metro_2033_redux",
+     "affiliate": false,
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-102249-1-2.99",
+     "title": "Deus Ex: Human Revolution - Director's Cut",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 10140,
+     "originalPrice": 67600,
+     "currency": "COP",
+     "discountPercentage": 85,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
+     "destinationUrl": "https://store.steampowered.com/app/238010/",
+     "officialUrl": "https://store.steampowered.com/app/238010/",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T17:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-295869-1-7.49",
+     "title": "FINAL FANTASY VII REBIRTH",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 27000,
+     "originalPrice": 180000,
+     "currency": "COP",
+     "discountPercentage": 85,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2909400/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2909400/61fda2e598f865ba6e985830661b98f3167e4ccc/capsule_231x87.jpg?t=1793774936",
+     "destinationUrl": "https://store.steampowered.com/app/2909400/",
+     "officialUrl": "https://store.steampowered.com/app/2909400/",
+     "affiliate": false,
+     "expiresAt": "2026-12-02T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-278335-1-2.39",
+     "title": "Bzzzt",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 6100,
+     "originalPrice": 30500,
+     "currency": "COP",
+     "discountPercentage": 80,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1293170/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1293170/cc5bb40fb30abc202f00500a972470af63df6937/capsule_231x87.jpg?t=1750557220",
+     "destinationUrl": "https://store.steampowered.com/app/1293170/",
+     "officialUrl": "https://store.steampowered.com/app/1293170/",
+     "affiliate": false,
+     "expiresAt": "2026-11-30T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-224-1-2.49",
+     "title": "Tom Clancy's Splinter Cell Chaos Theory",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7475,
+     "originalPrice": 29900,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13570/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13570/capsule_231x87.jpg?t=1764776065",
+     "destinationUrl": "https://store.steampowered.com/app/13570/",
+     "officialUrl": "https://store.steampowered.com/app/13570/",
+     "affiliate": false,
+     "expiresAt": "2026-12-02T17:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-241-1-2.49",
+     "title": "Silent Hunter III",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7475,
+     "originalPrice": 29900,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/15210/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/15210/capsule_231x87.jpg?t=1765568766",
+     "destinationUrl": "https://store.steampowered.com/app/15210/",
+     "officialUrl": "https://store.steampowered.com/app/15210/",
+     "affiliate": false,
+     "expiresAt": "2026-12-02T17:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-1684-1-1.99",
+     "title": "Battlefield 3",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7999,
+     "originalPrice": 159999,
+     "currency": "COP",
+     "discountPercentage": 95,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238820/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238820/capsule_231x87.jpg?t=1777326004",
+     "destinationUrl": "https://store.steampowered.com/app/1238820/",
+     "officialUrl": "https://store.steampowered.com/app/1238820/",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-152332-1-1.99",
+     "title": "Battlefield 1",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7999,
+     "originalPrice": 159999,
+     "currency": "COP",
+     "discountPercentage": 95,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238840/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238840/capsule_231x87.jpg?t=1777324289",
+     "destinationUrl": "https://store.steampowered.com/app/1238840/",
+     "officialUrl": "https://store.steampowered.com/app/1238840/",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-96380-1-1.99",
+     "title": "Battlefield 4",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7999,
+     "originalPrice": 159999,
+     "currency": "COP",
+     "discountPercentage": 95,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238860/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238860/capsule_231x87.jpg?t=1777391884",
+     "destinationUrl": "https://store.steampowered.com/app/1238860/",
+     "officialUrl": "https://store.steampowered.com/app/1238860/",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-187449-1-2.49",
+     "title": "Battlefield V",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 9999,
+     "originalPrice": 199999,
+     "currency": "COP",
+     "discountPercentage": 95,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238810/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238810/capsule_231x87.jpg?t=1772707365",
+     "destinationUrl": "https://store.steampowered.com/app/1238810/",
+     "officialUrl": "https://store.steampowered.com/app/1238810/",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    }
+   ],
+   "games": [
+    {
+     "id": "wd-Q125157764",
+     "title": "Azur Promilia",
+     "date": "2026-11-26",
+     "precision": "day",
+     "platforms": [
+      "PlayStation",
+      "Windows"
+     ],
+     "genres": [
+      "Videojuego de rol de acción"
+     ],
+     "image": "",
+     "url": "https://www.wikidata.org/wiki/Q125157764",
+     "store": "Wikipedia",
+     "source": "wikidata"
+    },
+    {
+     "id": "steam-3333850",
+     "title": "Arkheron",
+     "date": "2026-11-27",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3333850/30aa0db1b4ee4eb19c72add82f8453f17053d309/header.jpg?t=1794946102",
+     "url": "https://store.steampowered.com/app/3333850/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-5527800",
+     "title": "No Asteroids",
+     "date": "2026-11-24",
+     "precision": "day",
+     "platforms": [
+      "Windows",
+      "Mac"
+     ],
+     "genres": [
+      "Casual",
+      "Indie",
+      "Simuladores"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5527800/1f9ccfcf491164a2e58024b6bac5dc06a154ba74/header.jpg?t=1795074667",
+     "url": "https://store.steampowered.com/app/5527800/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-3224600",
+     "title": "Am I Nima",
+     "date": "2026-11-27",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Aventura",
+      "Indie"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3224600/ec4c212665296bd88ee2cb506455d6b1ceeb2c30/header.jpg?t=1793672035",
+     "url": "https://store.steampowered.com/app/3224600/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-4954970",
+     "title": "No Body No Problem!",
+     "date": "2026-11-26",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción",
+      "Casual",
+      "Indie"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4954970/008e2fc16680df11749aa1d9c0e58feb444a0882/header.jpg?t=1794935825",
+     "url": "https://store.steampowered.com/app/4954970/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-5472080",
+     "title": "SHRED A BILLION",
+     "date": "2026-11-24",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Casual",
+      "Indie",
+      "Simuladores"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5472080/c7008fc401199cb78bfa366a33cb4c029e922e02/header.jpg?t=1794972158",
+     "url": "https://store.steampowered.com/app/5472080/",
+     "store": "Steam"
+    }
+   ]
+  },
+  {
    "week": "2026-S46",
    "date": "2026-11-13T16:31:24Z",
    "label": "13 de noviembre de 2026",
