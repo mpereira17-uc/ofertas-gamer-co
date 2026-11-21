@@ -6,6 +6,30 @@
  "language": "es",
  "items": [
   {
+   "id": "cs-151944-7-0.99",
+   "url": "https://www.gog.com/en/game/kathy_rain",
+   "title": "Kathy Rain",
+   "content_text": "90% de descuento en GOG: US$0.69.",
+   "date_published": "2026-11-21T12:46:08Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/370910/header.jpg"
+  },
+  {
+   "id": "cs-190757-7-2.99",
+   "url": "https://www.gog.com/en/game/warhammer_40000_mechanicus",
+   "title": "Warhammer 40,000: Mechanicus",
+   "content_text": "90% de descuento en GOG: US$1.79.",
+   "date_published": "2026-11-21T12:46:08Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/673880/header.jpg"
+  },
+  {
+   "id": "cs-544-1-4.99",
+   "url": "https://store.steampowered.com/app/1600/",
+   "title": "Dangerous Waters",
+   "content_text": "80% de descuento en Steam: $11.760 COP.",
+   "date_published": "2026-11-21T12:46:08Z",
+   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1600/header.jpg"
+  },
+  {
    "id": "cs-216847-1-1.99",
    "url": "https://store.steampowered.com/app/1108590/",
    "title": "Eldest Souls",
@@ -68,14 +92,6 @@
    "content_text": "90% de descuento en Steam: $2.100 COP.",
    "date_published": "2026-11-21T01:35:24Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/34830/header.jpg"
-  },
-  {
-   "id": "cs-151703-7-1.49",
-   "url": "https://www.gog.com/en/game/goetia",
-   "title": "Goetia",
-   "content_text": "90% de descuento en GOG: US$0.55.",
-   "date_published": "2026-11-21T01:35:24Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/421740/header.jpg"
   },
   {
    "id": "cs-234770-1-2.99",
@@ -228,22 +244,6 @@
    "content_text": "90% de descuento en Steam: $3.200 COP.",
    "date_published": "2026-11-20T07:27:17Z",
    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/279440/header.jpg"
-  },
-  {
-   "id": "cs-115484-1-0.99",
-   "url": "https://store.steampowered.com/app/265590/",
-   "title": "The Red Solstice",
-   "content_text": "90% de descuento en Steam: $1.850 COP.",
-   "date_published": "2026-11-20T07:27:17Z",
-   "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/265590/header.jpg"
-  },
-  {
-   "id": "epic-1f9a12b06b4f437790b6913ad136a08c-2026-11-26",
-   "url": "https://store.epicgames.com/es-ES/p/mark-of-the-deep-f7dc08",
-   "title": "Mark of the Deep",
-   "content_text": "Gratis en Epic Games Store.",
-   "date_published": "2026-11-19T23:05:51Z",
-   "image": "https://cdn1.epicgames.com/spt-assets/83a240506a884c10ad8fb99694e57a0d/mark-of-the-deep-w1ygr.png?resize=1&w=920"
   }
  ]
 }
