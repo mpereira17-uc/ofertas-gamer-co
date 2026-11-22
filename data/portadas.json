@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T07:01:49Z",
+ "updatedAt": "2026-11-22T16:22:21Z",
  "apps": {
   "1309620": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1309620/library_600x900.jpg?t=1758953155",
@@ -712,17 +712,6 @@
    "deck": null,
    "at": "2026-11-19T01:54:15Z"
   },
-  "247240": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247240/library_600x900.jpg?t=1776796397",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247240/library_hero.jpg?t=1776796397",
-   "reviews": {
-    "label": "Muy positivas",
-    "pct": 84,
-    "count": 1623
-   },
-   "deck": "playable",
-   "at": "2026-11-19T01:54:15Z"
-  },
   "1462040": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/library_600x900.jpg?t=1789446715",
    "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/library_hero.jpg?t=1789446715",
@@ -787,17 +776,6 @@
     "count": 41119
    },
    "deck": "verified",
-   "at": "2026-11-19T13:25:25Z"
-  },
-  "441680": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/441680/library_600x900.jpg?t=1667177107",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/441680/library_hero.jpg?t=1667177107",
-   "reviews": {
-    "label": "Variadas",
-    "pct": 53,
-    "count": 121
-   },
-   "deck": "playable",
    "at": "2026-11-19T13:25:25Z"
   },
   "1153640": {
@@ -1922,17 +1900,6 @@
    "deck": "verified",
    "at": "2026-11-22T07:01:49Z"
   },
-  "673880": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/673880/library_600x900.jpg?t=1747933345",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/673880/library_hero.jpg?t=1747933345",
-   "reviews": {
-    "label": "Muy positivas",
-    "pct": 91,
-    "count": 11550
-   },
-   "deck": "verified",
-   "at": "2026-11-22T07:01:49Z"
-  },
   "244160": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/244160/library_600x900.jpg?t=1781819205",
    "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/244160/library_hero.jpg?t=1781819205",
@@ -2130,6 +2097,28 @@
    },
    "deck": "verified",
    "at": "2026-11-22T07:01:49Z"
+  },
+  "815370": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/815370/library_600x900.jpg?t=1783077147",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/815370/library_hero.jpg?t=1783077147",
+   "reviews": {
+    "label": "Muy positivas",
+    "pct": 84,
+    "count": 81458
+   },
+   "deck": "verified",
+   "at": "2026-11-22T16:22:21Z"
+  },
+  "421740": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/421740/library_600x900.jpg?t=1775042617",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/421740/library_hero.jpg?t=1775042617",
+   "reviews": {
+    "label": "Mayormente positivas",
+    "pct": 76,
+    "count": 594
+   },
+   "deck": null,
+   "at": "2026-11-22T16:22:21Z"
   }
  }
 }
