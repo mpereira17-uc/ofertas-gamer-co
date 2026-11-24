@@ -2131,3 +2131,88 @@ ul.grid:not(.x)>.card .own-btn[aria-pressed="true"]{background:var(--free);borde
 .link-btn{padding:0;border:0;background:none;color:var(--link);font:600 .9rem var(--ui);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .filters-toggle{width:100%;min-height:46px;margin:0 0 12px;border-radius:12px}
 .filters.shop-filters.collapsed{display:none!important}
+
+/* ---- Galería tipo Steam en las fichas (2026-11-23): visor con tráiler y capturas, flechas, miniaturas y pantalla completa ---- */
+.gallery{margin:0 0 26px}
+.gal-stage{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0b0c10;outline:0}
+.gal-stage:focus-visible{box-shadow:0 0 0 3px var(--sticker)}
+.gal-slide{position:absolute;inset:0;display:block;margin:0;border-radius:0;aspect-ratio:auto;background:#0b0c10}
+.gal-slide[hidden]{display:none}
+.gal-slide>img{width:100%;height:100%;object-fit:cover}
+.gal-shot{cursor:zoom-in}
+.gal-video .play-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
+.gal-video video{position:absolute;inset:0;width:100%;height:100%;z-index:3;background:#000}
+.gal-nav{position:absolute;z-index:4;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:46px;height:46px;padding:0 0 4px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(11,12,16,.7);color:#fff;font:700 2rem/1 var(--ui);cursor:pointer;opacity:0;transition:opacity .2s,background-color .2s}
+.gal-prev{left:14px}.gal-next{right:14px}
+.gal-stage:hover .gal-nav,.gal-stage:focus-within .gal-nav{opacity:1}
+.gal-nav:hover{background:var(--sticker);color:var(--sticker-ink);border-color:var(--sticker)}
+.gal-count{position:absolute;z-index:4;right:14px;bottom:12px;margin:0;padding:3px 9px;border-radius:999px;background:rgba(11,12,16,.75);color:#fff;font:700 .8rem/1.3 var(--num)}
+.gal-thumbs{display:flex;gap:8px;margin:10px 0 0;padding:2px 2px 6px;list-style:none;overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity}
+.gal-thumbs li{flex:0 0 124px;scroll-snap-align:start}
+.gal-thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:8px;overflow:hidden;opacity:.55;outline:2px solid transparent;outline-offset:1px;transition:opacity .2s,outline-color .2s}
+.gal-thumb:hover{opacity:.9}
+.gal-thumb[aria-current="true"]{opacity:1;outline-color:var(--sticker)}
+.gal-thumb img{width:100%;height:100%;object-fit:cover}
+.gal-play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.35);color:#fff}
+.gal-play svg{width:26px;height:26px}
+dialog.gal-box{width:min(96vw,1500px);max-width:none;max-height:94vh;padding:0;border:0;background:transparent;overflow:visible}
+dialog.gal-box::backdrop{background:rgba(5,6,9,.92)}
+dialog.gal-box img{display:block;width:100%;max-height:90vh;object-fit:contain;border-radius:10px}
+dialog.gal-box .gal-nav{opacity:1}
+dialog.gal-box .gal-prev{left:-8px}dialog.gal-box .gal-next{right:-8px}
+.gal-box-count{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);margin:0;color:#fff;font:700 .9rem var(--num)}
+.gal-box-close{position:absolute;top:-44px;right:0;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer}
+@media (hover:none){.gal-nav{opacity:1;width:40px;height:40px}}
+@media (max-width:760px){.gal-thumbs li{flex-basis:96px}}
+
+/* ---- Avance al pasar el mouse (2026-11-23): la tarjeta crece y el video trae controles ---- */
+li.is-previewing,article.is-previewing{position:relative;z-index:6;transform:scale(1.05);transition:transform .3s var(--ease-out),box-shadow .3s;box-shadow:0 30px 60px -20px rgba(0,0,0,.9)}
+li.spot-card,ul.grid:not(.x)>li.card{transition:transform .3s var(--ease-out),box-shadow .3s}
+.slider-track:not(.x)>li.is-previewing{transform:scale(1.04)}
+.pv-ctrl{position:absolute;z-index:6;left:8px;right:8px;bottom:8px;display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:10px;background:rgba(11,12,16,.82);backdrop-filter:blur(6px)}
+.pv-btn{display:grid;place-items:center;min-width:34px;height:30px;padding:0 6px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:transparent;color:#fff;font:700 .78rem/1 var(--ui);cursor:pointer}
+.pv-btn:hover,.pv-btn:focus-visible{background:var(--sticker);color:var(--sticker-ink);border-color:var(--sticker)}
+.pv-vol{flex:1;min-width:50px;accent-color:var(--sticker);cursor:pointer}
+@media (prefers-reduced-motion:reduce){li.is-previewing,article.is-previewing,.slider-track:not(.x)>li.is-previewing{transform:none}}
+.box .hover-preview{border-radius:0 9px 9px 0;z-index:2}
+
+/* ---- Cabecera de páginas v8.3 (2026-11-23): título y pila de cajas sobre una repisa ---- */
+.page-hero.ph2{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin:4px 0 30px;padding:34px 34px 0;border:1px solid var(--border);border-radius:18px;background:radial-gradient(120% 140% at 100% 100%,rgba(255,210,63,.08),transparent 55%),#101218;overflow:hidden;isolation:isolate}
+.page-hero.ph2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--shelf-edge);box-shadow:0 -1px 0 rgba(255,255,255,.06) inset}
+.page-hero.ph2 .ph-text{padding-bottom:34px;min-width:0}
+.page-hero.ph2 h1{margin:0 0 10px;font:800 clamp(2rem,4.2vw,3.3rem)/1.02 var(--head);letter-spacing:-.03em;max-width:20ch;text-wrap:balance}
+.page-hero.ph2 h1 .grad{color:var(--sticker);background:none;-webkit-text-fill-color:currentColor}
+.page-hero.ph2 .lead{max-width:62ch;margin:0 0 8px}
+.page-hero.ph2 .meta{margin:0}
+.ph-stack{position:relative;width:300px;height:210px;margin-bottom:10px}
+.ph-box{position:absolute;bottom:0;width:116px;aspect-ratio:2/3;border-radius:3px 8px 8px 3px;border-left:5px solid var(--sticker);overflow:hidden;background:#1c1f27;box-shadow:0 18px 30px -14px rgba(0,0,0,.9);transform-origin:50% 100%}
+.ph-box img{width:100%;height:100%;object-fit:cover}
+.ph-b1{left:0;transform:rotate(-10deg);border-left-color:#1b9cfc;z-index:1}
+.ph-b2{left:62px;transform:rotate(-3deg);border-left-color:#a855f7;z-index:2}
+.ph-b3{left:124px;transform:rotate(4deg);border-left-color:var(--free);z-index:3}
+.ph-b4{left:184px;transform:rotate(11deg);border-left-color:#ff9800;z-index:2}
+.ph-free{background:radial-gradient(120% 140% at 100% 100%,rgba(47,214,123,.12),transparent 55%),#101218}
+.ph-rel{background:radial-gradient(120% 140% at 100% 100%,rgba(27,156,252,.12),transparent 55%),#101218}
+.ph-guide .ph-box{display:none}
+@media (max-width:760px){
+ .page-hero.ph2{grid-template-columns:1fr;padding:24px 18px 0;gap:0}
+ .page-hero.ph2 .ph-text{padding-bottom:18px}
+ .ph-stack{width:220px;height:140px;justify-self:end;margin:-6px -6px 8px 0}
+ .ph-box{width:78px}.ph-b2{left:44px}.ph-b3{left:88px}.ph-b4{left:132px}
+}
+
+/* ---- Reseñas de jugadores de Steam en la ficha (2026-11-23) ---- */
+.user-reviews{padding:22px;border:1px solid var(--border);border-radius:16px;background:var(--board)}
+.user-reviews h2{margin:0 0 8px}
+.rv-summary .card-rev{margin:0 0 14px;font-size:.95rem}
+.rv-list{display:grid;gap:12px;margin:0 0 12px;padding:0;list-style:none}
+.rv{padding:14px 16px;border-radius:12px;background:#0f1116;border-left:4px solid #66c0f4}
+.rv.rv-down{border-left-color:#e57373}
+.rv-head{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:0 0 6px}
+.rv-verdict{display:inline-flex;align-items:center;gap:6px;font:700 .9rem/1.2 var(--ui);color:#66c0f4}
+.rv-down .rv-verdict{color:#e57373}
+.rv-verdict svg{width:16px;height:16px}
+.rv-meta{color:var(--muted);font-size:.8rem}
+.rv blockquote{margin:0;color:var(--soft);font-size:.93rem;line-height:1.55}
+.js li.is-previewing.reveal.in,.js .spot-card.reveal.in.is-previewing,ul.grid:not(.x)>li.card.is-previewing,li.spot-card.is-previewing{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.js li.is-previewing.reveal.in,.js .spot-card.reveal.in.is-previewing,ul.grid:not(.x)>li.card.is-previewing,li.spot-card.is-previewing{transform:none}}
