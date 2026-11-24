@@ -2166,14 +2166,12 @@ dialog.gal-box .gal-prev{left:-8px}dialog.gal-box .gal-next{right:-8px}
 @media (max-width:760px){.gal-thumbs li{flex-basis:96px}}
 
 /* ---- Avance al pasar el mouse (2026-11-23): la tarjeta crece y el video trae controles ---- */
-li.is-previewing,article.is-previewing{position:relative;z-index:6;transform:scale(1.05);transition:transform .3s var(--ease-out),box-shadow .3s;box-shadow:0 30px 60px -20px rgba(0,0,0,.9)}
+li.is-previewing,article.is-previewing{position:relative;z-index:6;box-shadow:0 0 0 2px var(--sticker),0 30px 60px -20px rgba(0,0,0,.9)}
 li.spot-card,ul.grid:not(.x)>li.card{transition:transform .3s var(--ease-out),box-shadow .3s}
-.slider-track:not(.x)>li.is-previewing{transform:scale(1.04)}
 .pv-ctrl{position:absolute;z-index:6;left:8px;right:8px;bottom:8px;display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:10px;background:rgba(11,12,16,.82);backdrop-filter:blur(6px)}
 .pv-btn{display:grid;place-items:center;min-width:34px;height:30px;padding:0 6px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:transparent;color:#fff;font:700 .78rem/1 var(--ui);cursor:pointer}
 .pv-btn:hover,.pv-btn:focus-visible{background:var(--sticker);color:var(--sticker-ink);border-color:var(--sticker)}
 .pv-vol{flex:1;min-width:50px;accent-color:var(--sticker);cursor:pointer}
-@media (prefers-reduced-motion:reduce){li.is-previewing,article.is-previewing,.slider-track:not(.x)>li.is-previewing{transform:none}}
 .box .hover-preview{border-radius:0 9px 9px 0;z-index:2}
 
 /* ---- Cabecera de páginas v8.3 (2026-11-23): título y pila de cajas sobre una repisa ---- */
@@ -2214,5 +2212,11 @@ li.spot-card,ul.grid:not(.x)>li.card{transition:transform .3s var(--ease-out),bo
 .rv-verdict svg{width:16px;height:16px}
 .rv-meta{color:var(--muted);font-size:.8rem}
 .rv blockquote{margin:0;color:var(--soft);font-size:.93rem;line-height:1.55}
-.js li.is-previewing.reveal.in,.js .spot-card.reveal.in.is-previewing,ul.grid:not(.x)>li.card.is-previewing,li.spot-card.is-previewing{transform:scale(1.05)}
-@media (prefers-reduced-motion:reduce){.js li.is-previewing.reveal.in,.js .spot-card.reveal.in.is-previewing,ul.grid:not(.x)>li.card.is-previewing,li.spot-card.is-previewing{transform:none}}
+/* tarjeta que crece con el avance: el video llena la imagen y los controles se acomodan */
+li.is-grown .pv-ctrl,article.is-grown .pv-ctrl{left:12px;right:12px;bottom:12px;padding:8px 10px}
+li.is-grown .pv-btn{min-width:40px;height:34px;font-size:.85rem}
+.pv-ctrl{flex-wrap:wrap}
+/* mientras crece, la caja vertical pasa a formato de reproductor (16:9) para que el video la llene */
+li.is-grown .box{aspect-ratio:16/9;transform:none!important}
+li.is-grown .box>img{object-position:center 25%}
+li.is-grown .box .sticker{bottom:auto;top:12px}

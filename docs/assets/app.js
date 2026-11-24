@@ -770,8 +770,7 @@
     v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("aria-hidden", "true");
     v.addEventListener("playing", function () {
       box.classList.add("previewing");
-      var card = box.closest("li, article");
-      if (card) card.classList.add("is-previewing");  // la tarjeta crece mientras se ve el avance
+      growCard(box.closest("li, article"));  // la tarjeta crece dentro de la lista y empuja a las demás
     });
     v.addEventListener("error", function () { stopPreview(box); });
     box.appendChild(v);
@@ -793,6 +792,69 @@
       v.remove();
     }
   };
+  // La tarjeta que reproduce el avance crece dentro de su lista (no flota encima): en una cuadrícula ocupa las
+  // columnas necesarias para medir al menos ~520 px (o la mitad de la fila), y en un estante deslizable su ancho
+  // pasa a ese tamaño. Las vecinas se mueven a su nuevo lugar con un pequeño rebote, como si las empujara (FLIP).
+  var flip = function (card, change) {
+    var parent = card.parentElement;
+    var kids = parent ? Array.prototype.slice.call(parent.children) : [];
+    var before = kids.map(function (k) { return k.getBoundingClientRect(); });
+    change();
+    if (!card.animate || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    kids.forEach(function (k, i) {
+      var a = before[i], b = k.getBoundingClientRect();
+      var dx = a.left - b.left, dy = a.top - b.top;
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
+      if (k === card) {
+        k.animate([{ transform: "translate(" + dx + "px," + dy + "px)" }, { transform: "none" }],
+          { duration: 300, easing: "cubic-bezier(.2,.9,.3,1)" });
+        return;
+      }
+      k.animate([{ transform: "translate(" + dx + "px," + dy + "px)" },
+                 { transform: "translate(" + (-dx * 0.09) + "px," + (-dy * 0.09) + "px)", offset: 0.68 },
+                 { transform: "none" }], { duration: 460, easing: "cubic-bezier(.3,1.25,.5,1)" });
+    });
+  };
+  var growCard = function (card) {
+    if (!card || card._grown) return;
+    var parent = card.parentElement;
+    if (!parent) return;
+    var cs = getComputedStyle(parent), pw = parent.clientWidth, w = card.getBoundingClientRect().width;
+    var target = Math.min(pw, Math.max(520, pw * 0.5));
+    card._growAt = Date.now();
+    if (w >= target * 0.92) { card.classList.add("is-previewing"); card._grown = "none"; return; }  // ya es grande
+    flip(card, function () {
+      if (cs.display.indexOf("grid") >= 0) {
+        var cols = cs.gridTemplateColumns.split(" ").filter(Boolean).length || 1;
+        var gap = parseFloat(cs.columnGap) || 0;
+        var span = Math.min(cols, Math.max(2, Math.ceil((target + gap) / (w + gap))));
+        card._prevGrid = card.style.gridColumn;
+        card.style.gridColumn = "span " + span;
+        card._grown = "grid";
+      } else if (cs.display.indexOf("flex") >= 0) {
+        card._prevFlex = card.style.flex;
+        card.style.flex = "0 0 " + Math.round(target) + "px";
+        card._grown = "flex";
+        // el estante se desliza para que la tarjeta que creció quede a la vista
+        var pr = parent.getBoundingClientRect(), cr = card.getBoundingClientRect();
+        if (cr.left < pr.left || cr.right > pr.right) parent.scrollTo({ left: parent.scrollLeft + cr.left - pr.left - 16, behavior: "smooth" });
+      } else {
+        card._grown = "none";
+      }
+      card.classList.add("is-previewing", "is-grown");
+    });
+  };
+  var shrinkCard = function (card) {
+    if (!card || !card._grown) return;
+    var kind = card._grown;
+    card._grown = null;
+    flip(card, function () {
+      if (kind === "grid") card.style.gridColumn = card._prevGrid || "";
+      if (kind === "flex") card.style.flex = card._prevFlex || "";
+      card.classList.remove("is-previewing", "is-grown");
+    });
+  };
+
   // Controles del avance: pausa/seguir, -10 s, +10 s, sonido y volumen. Empieza sin sonido (los navegadores
   // no dejan reproducir con sonido solo); el sonido se activa al tocar el botón o la barra de volumen.
   var previewControls = function (v) {
@@ -846,8 +908,7 @@
   };
   var stopPreview = function (box) {
     box.classList.remove("previewing");
-    var card = box.closest("li, article");
-    if (card) card.classList.remove("is-previewing");
+    shrinkCard(box.closest("li, article"));
     box.querySelectorAll(".pv-ctrl").forEach(function (c) { c.remove(); });
     box.querySelectorAll(".hover-preview").forEach(function (v) {
       if (v._hls) v._hls.destroy();
@@ -857,11 +918,20 @@
   if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
     var fine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     document.querySelectorAll("[data-preview]").forEach(function (box) {
-      var timer;
+      var timer, leaveT;
       if (fine) {
         var card = box.closest("li, article") || box;
-        card.addEventListener("mouseenter", function () { timer = setTimeout(function () { startPreview(box); }, 350); });
-        card.addEventListener("mouseleave", function () { clearTimeout(timer); stopPreview(box); });
+        card.addEventListener("mouseenter", function () {
+          clearTimeout(leaveT);
+          if (box.querySelector(".hover-preview")) return;
+          timer = setTimeout(function () { startPreview(box); }, 350);
+        });
+        card.addEventListener("mouseleave", function () {
+          clearTimeout(timer);
+          // margen para que al crecer (y moverse) no se cierre sola si el cursor sigue encima
+          var wait = card._growAt && Date.now() - card._growAt < 700 ? 700 : 180;
+          leaveT = setTimeout(function () { if (!card.matches(":hover")) stopPreview(box); }, wait);
+        });
       }
       var btn = box.querySelector(".preview-btn");
       if (btn) btn.addEventListener("click", function (ev) {
