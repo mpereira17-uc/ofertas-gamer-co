@@ -768,9 +768,14 @@
     v.className = "hover-preview";
     v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
     v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("aria-hidden", "true");
-    v.addEventListener("playing", function () { box.classList.add("previewing"); });
+    v.addEventListener("playing", function () {
+      box.classList.add("previewing");
+      var card = box.closest("li, article");
+      if (card) card.classList.add("is-previewing");  // la tarjeta crece mientras se ve el avance
+    });
     v.addEventListener("error", function () { stopPreview(box); });
     box.appendChild(v);
+    box.appendChild(previewControls(v));
     if (mp4 || (hls && v.canPlayType("application/vnd.apple.mpegurl"))) {
       v.src = mp4 || hls;
       var p = v.play(); if (p && p.catch) p.catch(function () {});
@@ -788,8 +793,62 @@
       v.remove();
     }
   };
+  // Controles del avance: pausa/seguir, -10 s, +10 s, sonido y volumen. Empieza sin sonido (los navegadores
+  // no dejan reproducir con sonido solo); el sonido se activa al tocar el botón o la barra de volumen.
+  var previewControls = function (v) {
+    var bar = document.createElement("div");
+    bar.className = "pv-ctrl";
+    var stop = function (ev) { ev.preventDefault(); ev.stopPropagation(); };
+    ["click", "pointerdown", "mousedown", "touchstart"].forEach(function (t) {
+      bar.addEventListener(t, function (ev) { ev.stopPropagation(); if (t === "click") ev.preventDefault(); }, { passive: t !== "click" && t !== "mousedown" ? true : false });
+    });
+    var btn = function (label, txt, fn) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "pv-btn";
+      b.setAttribute("aria-label", label);
+      b.textContent = txt;
+      b.addEventListener("click", function (ev) { stop(ev); fn(b); });
+      bar.appendChild(b);
+      return b;
+    };
+    var play = btn("Pausar el avance", "❚❚", function (b) {
+      if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+    });
+    v.addEventListener("play", function () { play.textContent = "❚❚"; play.setAttribute("aria-label", "Pausar el avance"); });
+    v.addEventListener("pause", function () { play.textContent = "▶"; play.setAttribute("aria-label", "Seguir el avance"); });
+    btn("Retroceder 10 segundos", "−10", function () { v.currentTime = Math.max(0, v.currentTime - 10); });
+    btn("Avanzar 10 segundos", "+10", function () { if (isFinite(v.duration)) v.currentTime = Math.min(v.duration - 0.5, v.currentTime + 10); else v.currentTime += 10; });
+    var vol = document.createElement("input");
+    var mute = btn("Activar el sonido", "🔇", function () {
+      v.muted = !v.muted;
+      if (!v.muted && v.volume === 0) v.volume = 0.6;
+      sync();
+    });
+    vol.type = "range";
+    vol.min = "0"; vol.max = "1"; vol.step = "0.05"; vol.value = "0";
+    vol.className = "pv-vol";
+    vol.setAttribute("aria-label", "Volumen");
+    vol.addEventListener("input", function (ev) {
+      ev.stopPropagation();
+      v.volume = +vol.value;
+      v.muted = +vol.value === 0;
+      sync();
+    });
+    var sync = function () {
+      var off = v.muted || v.volume === 0;
+      mute.textContent = off ? "🔇" : "🔊";
+      mute.setAttribute("aria-label", off ? "Activar el sonido" : "Silenciar");
+      vol.value = off ? "0" : String(v.volume);
+    };
+    bar.appendChild(vol);
+    return bar;
+  };
   var stopPreview = function (box) {
     box.classList.remove("previewing");
+    var card = box.closest("li, article");
+    if (card) card.classList.remove("is-previewing");
+    box.querySelectorAll(".pv-ctrl").forEach(function (c) { c.remove(); });
     box.querySelectorAll(".hover-preview").forEach(function (v) {
       if (v._hls) v._hls.destroy();
       v.pause(); v.removeAttribute("src"); v.load(); v.remove();
@@ -1393,4 +1452,124 @@ document.addEventListener("error", function (ev) {
     box.appendChild(x);
     spot.parentNode.insertBefore(box, spot);
   }).catch(function () { /* sin datos: no se muestra nada */ });
+})();
+
+// Galería tipo Steam en las fichas: tráiler y capturas en un visor grande con flechas, miniaturas,
+// teclado (← →), deslizar con el dedo y pantalla completa al tocar una captura. Sin JS: primera imagen y miniaturas como enlaces.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("[data-gallery]").forEach(function (gal) {
+    var stage = gal.querySelector(".gal-stage");
+    var slides = Array.prototype.slice.call(gal.querySelectorAll(".gal-slide"));
+    var thumbs = Array.prototype.slice.call(gal.querySelectorAll(".gal-thumb"));
+    var count = gal.querySelector(".gal-count");
+    var n = slides.length, cur = 0;
+    if (n < 2 || !stage) return;
+    gal.classList.add("is-live");
+    stage.setAttribute("tabindex", "0");
+    stage.setAttribute("aria-roledescription", "carrusel");
+    var go = function (i, fromBox) {
+      i = (i + n) % n;
+      if (i === cur) return;
+      var v = slides[cur].querySelector("video");
+      if (v) v.pause();
+      slides[cur].hidden = true;
+      slides[i].hidden = false;
+      thumbs.forEach(function (t, k) { if (+t.getAttribute("data-go") === i) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current"); });
+      var th = thumbs.filter(function (t) { return +t.getAttribute("data-go") === i; })[0];
+      if (th && th.scrollIntoView) th.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduce ? "auto" : "smooth" });
+      if (count) count.textContent = (i + 1) + " / " + n;
+      cur = i;
+      if (!fromBox) syncBox();
+    };
+    var arrow = function (cls, label, txt, dir) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "gal-nav " + cls;
+      b.setAttribute("aria-label", label);
+      b.textContent = txt;
+      b.addEventListener("click", function () { go(cur + dir); });
+      stage.appendChild(b);
+    };
+    arrow("gal-prev", "Imagen anterior", "‹", -1);
+    arrow("gal-next", "Imagen siguiente", "›", 1);
+    thumbs.forEach(function (t) {
+      t.addEventListener("click", function (ev) { ev.preventDefault(); go(+t.getAttribute("data-go")); });
+    });
+    stage.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") { ev.preventDefault(); go(cur - 1); }
+      if (ev.key === "ArrowRight") { ev.preventDefault(); go(cur + 1); }
+    });
+    var x0 = null;
+    stage.addEventListener("pointerdown", function (ev) { if (ev.pointerType !== "mouse") x0 = ev.clientX; });
+    stage.addEventListener("pointerup", function (ev) {
+      if (x0 === null) return;
+      var dx = ev.clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 45) go(cur + (dx < 0 ? 1 : -1));
+    });
+
+    // Pantalla completa (solo capturas): <dialog> con la imagen grande y sus flechas
+    var box = null, boxImg = null, boxCount = null;
+    var shotOf = function (i) { return slides[i] && slides[i].classList.contains("gal-shot") ? slides[i] : null; };
+    var syncBox = function () {
+      if (!box || !box.open) return;
+      var s = shotOf(cur);
+      if (!s) { box.close(); return; }
+      boxImg.src = s.getAttribute("href");
+      boxImg.alt = (s.querySelector("img") || {}).alt || "";
+      boxCount.textContent = (cur + 1) + " / " + n;
+    };
+    var openBox = function () {
+      if (!window.HTMLDialogElement) return false;
+      if (!box) {
+        box = document.createElement("dialog");
+        box.className = "gal-box";
+        box.setAttribute("aria-label", "Captura en pantalla completa");
+        boxImg = document.createElement("img");
+        boxCount = document.createElement("p");
+        boxCount.className = "gal-box-count";
+        var close = document.createElement("button");
+        close.type = "button";
+        close.className = "gal-box-close";
+        close.setAttribute("aria-label", "Cerrar");
+        close.textContent = "×";
+        close.addEventListener("click", function () { box.close(); });
+        var nav = function (cls, label, txt, dir) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "gal-nav " + cls;
+          b.setAttribute("aria-label", label);
+          b.textContent = txt;
+          b.addEventListener("click", function () {
+            var i = cur;
+            for (var k = 0; k < n; k++) { i = (i + dir + n) % n; if (shotOf(i)) break; }
+            go(i, true);
+            syncBox();
+          });
+          box.appendChild(b);
+        };
+        box.appendChild(boxImg);
+        box.appendChild(boxCount);
+        box.appendChild(close);
+        nav("gal-prev", "Captura anterior", "‹", -1);
+        nav("gal-next", "Captura siguiente", "›", 1);
+        box.addEventListener("click", function (ev) { if (ev.target === box) box.close(); });
+        box.addEventListener("keydown", function (ev) {
+          if (ev.key === "ArrowLeft" || ev.key === "ArrowRight") {
+            ev.preventDefault();
+            box.querySelector(ev.key === "ArrowLeft" ? ".gal-prev" : ".gal-next").click();
+          }
+        });
+        document.body.appendChild(box);
+      }
+      box.showModal();
+      syncBox();
+      return true;
+    };
+    slides.forEach(function (s) {
+      if (!s.classList.contains("gal-shot")) return;
+      s.addEventListener("click", function (ev) { if (openBox()) ev.preventDefault(); });
+    });
+  });
 })();

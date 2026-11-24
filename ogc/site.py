@@ -209,10 +209,18 @@ class Site:
         if not m or m.start() > 4000 or name.startswith(("oferta-", "juego-")) and name != "oferta-del-dia.html":
             return body
         kind = next((k for key, k in self.HERO_KINDS if key in name), "plain")
-        pic = re.search(r'<img[^>]+src="(https://[^"]+)"', body[m.end():m.end() + 60000])
-        bg = f'<img class="ph-bg" src="{pic.group(1)}" alt="" width="1280" height="600" decoding="async">' if pic else ""
-        hero = (f'<header class="page-hero ph-{kind}{" has-bg" if bg else ""}">{bg}'
-                f'{m.group(0)}<span class="ph-deco" aria-hidden="true"></span></header>')
+        # Cabecera propia (v8.3): el título a la izquierda y, a la derecha, una pila de cajas inclinadas sobre una
+        # repisa con las portadas de los juegos de esa misma página (verticales primero). Sin imágenes, solo la repisa.
+        found = []
+        for u in re.findall(r'<img[^>]+src="(https://[^"]+)"', body[m.end():m.end() + 150000]):
+            if u not in found and "placeholder" not in u:
+                found.append(u)
+        tall = [u for u in found if "library_600x900" in u or "library_capsule" in u or "store-images.s-microsoft.com" in u]
+        pics = (tall + [u for u in found if u not in tall])[:4]
+        stack = "".join(f'<span class="ph-box ph-b{i}"><img src="{u}" alt="" width="300" height="450" decoding="async"></span>'
+                        for i, u in enumerate(pics, 1))
+        hero = (f'<header class="page-hero ph2 ph-{kind}{" has-stack" if pics else ""}"><div class="ph-text">{m.group(0)}</div>'
+                + (f'<div class="ph-stack" aria-hidden="true">{stack}</div>' if pics else "") + '</header>')
         return body[:m.start()] + hero + body[m.end():]
 
     def layout(self, name, title, description, body, crumbs=None, jsonld=None, noindex=False, og_type="website", og_image=None):
@@ -1516,6 +1524,25 @@ class Site:
                 + f'<ul class="grid board" id="sim-list" data-slider aria-label="{len(picks)} juegos: desliza o usa las flechas">{"".join(self.card(x) for x in picks)}</ul></section>')
 
     @staticmethod
+    def user_reviews_block(o):
+        """Reseñas de jugadores en Steam (texto limpio, sin nombres), con enlace a todas en Steam."""
+        items = o.get("userReviews") or []
+        if not items or not o.get("steamAppID"):
+            return ""
+        def card(r):
+            verdict = ("rv-up", "Recomendado") if r["up"] else ("rv-down", "No recomendado")
+            bits = [f'{r["hours"]} h jugadas' if r.get("hours") else "", f'publicada el {day_es(r["date"])}' if r.get("date") else "",
+                    f'a {r["helpful"]} les resultó útil' if r.get("helpful") else ""]
+            return (f'<li class="rv {verdict[0]}"><p class="rv-head"><span class="rv-verdict">{ICONS["check"] if r["up"] else ICONS["info"]}{verdict[1]}</span>'
+                    f'<span class="rv-meta">{e(" · ".join(b for b in bits if b))}</span></p><blockquote>{e(r["text"])}</blockquote></li>')
+        summary = Site.review_line(o)
+        link = f"https://store.steampowered.com/app/{o['steamAppID']}/#app_reviews_hash"
+        return (f'<section class="user-reviews" aria-labelledby="rv-h"><h2 id="rv-h">{ICONS["chat"]} Lo que dicen los jugadores en Steam</h2>'
+                + (f'<div class="rv-summary">{summary}</div>' if summary else "")
+                + f'<ul class="rv-list">{"".join(card(r) for r in items)}</ul>'
+                f'<p class="meta">Reseñas públicas de Steam en español, las más útiles del último año. {ext_link(link, "Ver todas en Steam", cls="btn btn-sm", label="Ver todas las reseñas en Steam (abre en otra pestaña)")}</p></section>')
+
+    @staticmethod
     def reqs_block(o):
         """Requisitos de PC de la ficha oficial de Steam (texto plano, ya limpio)."""
         r = o.get("reqs") or {}
@@ -1555,8 +1582,9 @@ class Site:
             bg = o.get("hero") or o.get("image")
             sub = f'{self.review_line(o)}{self.deck_badge(o)}'
             trailer = self.trailer_link(dict(o, url=f"https://store.steampowered.com/app/{o['steamAppID']}/" if o.get("steamAppID") else o["officialUrl"]))
-            media = (f'<div class="detail-media pd-media" id="trailer"><img src="{e(o["image"])}"{fallback(o)} alt="" width="920" height="430" loading="lazy" decoding="async">{trailer}</div>'
-                     if trailer and o.get("image") else "")
+            still = o.get("hero") or o.get("image")
+            media = self.media_gallery(dict(o, url=f"https://store.steampowered.com/app/{o['steamAppID']}/" if o.get("steamAppID") else o["officialUrl"]),
+                                       cover=f'<img src="{e(still)}" alt="" width="1920" height="1080" loading="lazy" decoding="async">' if still else "")
             self.layout(name, f"{o['title']} {what} en {o['store']}",
                         f"{o['title']} está {what} en {o['store']}. Precio, vigencia y enlace oficial verificados por Ofertas Gamer CO.",
                         f"""<article class="pd">
@@ -1572,7 +1600,7 @@ class Site:
 {search_note}<p class="meta pd-verified">{ICONS['check']} Verificado el {e(date_es(o['verifiedAt']))}{" para Colombia" if o.get("verifiedFor") == "CO" else ""}.</p>
 </div></div></header>
 {f'<p class="lead pd-about">{e(html.unescape(o["about"]))}</p>' if o.get("about") else ''}
-<div class="pd-grid"><div class="pd-main">{media}{self.shots_block(o)}{self.reqs_block(o)}{self.history_block(o)}{self.score_block(o)}{self.compare_block(o)}</div>
+<div class="pd-grid"><div class="pd-main">{media}{self.user_reviews_block(o)}{self.reqs_block(o)}{self.history_block(o)}{self.score_block(o)}{self.compare_block(o)}</div>
 <aside class="pd-side">{self.offer_buy(o)}{self.share_whatsapp(o, name)}{notice}</aside></div>
 </article>{self.similar_offers(o, offers)}""",
                         crumbs=[("ofertas.html", "Ofertas"), (name, o["title"])], jsonld=[ld], og_image=o.get("image"))
@@ -1584,6 +1612,32 @@ class Site:
                         f'<img src="{e(u)}" alt="Captura {i + 1} de {e(g["title"])}" width="600" height="338" loading="lazy" decoding="async"></a></li>'
                         for i, u in enumerate(g.get("shots") or []) if u.startswith("https://"))
         return f'<section class="shots"><h2>{ICONS["sparkle"]} Capturas oficiales</h2><ul class="shot-grid">{shots}</ul></section>' if shots else ""
+
+    def media_gallery(self, g, cover="", extra=""):
+        """Galería tipo Steam: visor grande con el tráiler primero y las capturas en tamaño completo, flechas,
+        fila de miniaturas y pantalla completa (app.js). Sin JavaScript se ve la primera y las miniaturas abren cada imagen."""
+        shots = [u for u in (g.get("shots") or []) if u.startswith("https://")][:12]
+        trailer = self.trailer_link(g)
+        title = e(g["title"])
+        slides, thumbs = [], []
+        if trailer or not shots:
+            slides.append(f'<div class="gal-slide gal-video detail-media" id="trailer" data-i="0">{cover}{extra}{trailer}</div>')
+            poster = (g.get("trailer") or {}).get("poster") or g.get("image") or ""
+            if poster.startswith("https://"):
+                thumbs.append(f'<li><a class="gal-thumb is-video" href="#trailer" data-go="0" aria-current="true" aria-label="Ver el tráiler de {title}">'
+                              f'<img src="{e(poster)}" alt="" width="293" height="165" loading="lazy" decoding="async"><span class="gal-play" aria-hidden="true">{ICONS["play"]}</span></a></li>')
+        for k, u in enumerate(shots, 1):
+            i = len(slides)
+            full = u.replace(".600x338", ".1920x1080")
+            slides.append(f'<a class="gal-slide gal-shot" href="{e(full)}" target="_blank" rel="noopener noreferrer" data-i="{i}"{" hidden" if i else ""}>'
+                          f'<img src="{e(full)}" alt="Captura {k} de {title}" width="1920" height="1080" loading="lazy" decoding="async"></a>')
+            thumbs.append(f'<li><a class="gal-thumb" href="{e(full)}" data-go="{i}"{" aria-current=\"true\"" if i == 0 else ""} aria-label="Ver la captura {k}">'
+                          f'<img src="{e(u)}" alt="" width="600" height="338" loading="lazy" decoding="async"></a></li>')
+        if len(slides) < 2:
+            return f'<div class="detail-media" id="trailer">{cover}{extra}{trailer}</div>' if (cover or trailer) else ""
+        return (f'<section class="gallery" aria-label="Tráiler y capturas de {title}" data-gallery>'
+                f'<div class="gal-stage">{"".join(slides)}<p class="gal-count" aria-live="polite">1 / {len(slides)}</p></div>'
+                f'<ol class="gal-thumbs">{"".join(thumbs)}</ol></section>')
 
     @staticmethod
     def trailer_link(g):
@@ -1613,7 +1667,7 @@ class Site:
             tags = "".join(f'<span class="tag">{e(x)}</span>' for x in g.get("platforms", [])) + \
                 "".join(f'<span class="tag genre">{e(x)}</span>' for x in g.get("genres", [])) + \
                 ('<span class="tag es">En español</span>' if g.get("spanish") else "")
-            extra = self.shots_block(g)
+            extra = ""  # las capturas ya van en la galería de arriba
             if g.get("requirements"):
                 extra += (f'<section class="reqs"><h2>{ICONS["check"]} Requisitos mínimos de PC</h2><ul>'
                           + "".join(f"<li>{e(ln)}</li>" for ln in g["requirements"].splitlines()) + '</ul><p class="meta">Según Steam. Pueden cambiar antes del lanzamiento.</p></section>')
@@ -1646,7 +1700,7 @@ class Site:
             self.layout(name, f"{g['title']}: fecha de lanzamiento" + ("" if consoles else " en PC"),
                         f"Fecha de lanzamiento de {g['title']} ({', '.join(g.get('platforms', []))}): {when}. Plataformas, géneros y enlace.",
                         f"""<article class="detail">
-<div class="detail-media" id="trailer">{img}{f'<span class="badge rel">{e(rel)}</span>' if rel else ''}{self.trailer_link(g)}</div>
+{self.media_gallery(g, cover=img, extra=f'<span class="badge rel">{e(rel)}</span>' if rel else '')}
 <div class="detail-info">
 <h1>{e(g['title'])}</h1>
 <p class="detail-date">{ICONS["calendar"]} {e(when)}</p>

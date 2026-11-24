@@ -16,7 +16,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from ogc import alerts, capsules, channels, codes, gamepass, verify, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
+from ogc import alerts, capsules, channels, codes, gamepass, userreviews, verify, community, discord, giveaways, health, images, promote, releases, sources, trailers, tumblr, weekly, wikidata
 from ogc.channels import price_line
 from ogc.releases import date_label
 from ogc.model import compute_status, dedupe, iso, merge, now_utc, parse_iso, validate
@@ -34,6 +34,7 @@ GIVEAWAYS_FILE = DATA / "regalos.json"
 TRAILERS_FILE = DATA / "trailers.json"
 CAPSULES_FILE = DATA / "portadas.json"
 GAMEPASS_FILE = DATA / "gamepass.json"
+REVIEWS_FILE = DATA / "resenas.json"
 WEEKLY_FILE = DATA / "resumenes.json"
 ALERTS_FILE = DATA / "alertas.enc"  # cifrado: lleva números de chat de Telegram
 BOT_FILE = DATA / "telegram_bot.json"
@@ -90,6 +91,8 @@ def fixture_fetch(folder):
     def fetch(url):
         if "featuredcategories" in url:
             name = "steam_featured.json"
+        elif "appreviews" in url:
+            name = "steam_appreviews.json"
         elif "catalog.gog.com" in url:
             name = "gog_catalog.json"
         elif "catalog.gamepass.com" in url:
@@ -221,6 +224,9 @@ def run(args):
     clips, status["Tráileres de las ofertas (Steam)"] = trailers.update(offers, games, load_json(TRAILERS_FILE, {}).get("apps", {}), now, sources.get_json)
     save_json(TRAILERS_FILE, {"updatedAt": iso(now), "apps": clips})
     offers = trailers.attach([dict(o) for o in offers], clips)
+    said, status["Reseñas de jugadores (Steam)"] = userreviews.update(offers, load_json(REVIEWS_FILE, {}).get("apps", {}), now, sources.get_json)
+    save_json(REVIEWS_FILE, {"updatedAt": iso(now), "apps": said})
+    offers = userreviews.attach(offers, said)
     covers, status["Portadas verticales (Steam)"] = capsules.update(offers, load_json(CAPSULES_FILE, {}).get("apps", {}), now, sources.get_json)
     save_json(CAPSULES_FILE, {"updatedAt": iso(now), "apps": covers})
     offers = capsules.attach(offers, covers)
