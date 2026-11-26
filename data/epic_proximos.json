@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T00:29:38Z",
+ "updatedAt": "2026-11-26T13:59:18Z",
  "games": [
   {
    "id": "epic-0623017cf9f341efbe07557f46beb4e8-2026-11-26",
@@ -16,6 +16,14 @@
    "image": "https://cdn1.epicgames.com/spt-assets/545b4dd8bb364c12b719268198a93ef3/bread-and-fred-3jnwn.jpg",
    "startsAt": "2026-11-26T16:00:00.000Z",
    "expiresAt": "2026-12-03T16:00:00.000Z"
+  },
+  {
+   "id": "epic-72bd05148adb4e2cacb8b2efaa4c0297-2026-12-03",
+   "title": "Strange Antiquities",
+   "url": "https://store.epicgames.com/es-ES/p/strange-antiquities-e37660",
+   "image": "https://cdn1.epicgames.com/spt-assets/d0e3b7c3690c485ca7a435d298262ab2/strange-antiquities-1kl5s.png",
+   "startsAt": "2026-12-03T16:00:00.000Z",
+   "expiresAt": "2026-12-10T16:00:00.000Z"
   }
  ]
 }
