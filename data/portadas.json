@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-28T07:59:01Z",
+ "updatedAt": "2026-11-28T16:56:53Z",
  "apps": {
   "274520": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/274520/5d265992e624b7b300b21ad58c08ef6d2778164a/library_capsule.jpg?t=1793357835",
@@ -3278,17 +3278,6 @@
    "deck": "playable",
    "at": "2026-11-26T13:59:18Z"
   },
-  "255340": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/255340/portrait.png?t=1667944341",
-   "hero": "",
-   "reviews": {
-    "label": "Muy positivas",
-    "pct": 96,
-    "count": 212
-   },
-   "deck": "verified",
-   "at": "2026-11-26T13:59:18Z"
-  },
   "234080": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/234080/portrait.png?t=1737486989",
    "hero": "",
@@ -4103,16 +4092,27 @@
    "deck": "verified",
    "at": "2026-11-28T07:59:01Z"
   },
-  "1203710": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203710/library_600x900.jpg?t=1773309345",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203710/library_hero.jpg?t=1773309345",
+  "352550": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/352550/library_600x900.jpg?t=1730815714",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/352550/library_hero.jpg?t=1730815714",
+   "reviews": {
+    "label": "Mayormente negativas",
+    "pct": 34,
+    "count": 1903
+   },
+   "deck": "unsupported",
+   "at": "2026-11-28T16:56:53Z"
+  },
+  "1115690": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1115690/library_600x900.jpg?t=1773841283",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1115690/library_hero.jpg?t=1773841283",
    "reviews": {
     "label": "Muy positivas",
-    "pct": 94,
-    "count": 2508
+    "pct": 87,
+    "count": 12782
    },
    "deck": "verified",
-   "at": "2026-11-28T07:59:01Z"
+   "at": "2026-11-28T16:56:53Z"
   }
  }
 }
