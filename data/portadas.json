@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-28T00:05:58Z",
+ "updatedAt": "2026-11-28T07:59:01Z",
  "apps": {
   "274520": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/274520/5d265992e624b7b300b21ad58c08ef6d2778164a/library_capsule.jpg?t=1793357835",
@@ -4026,17 +4026,6 @@
    "deck": null,
    "at": "2026-11-28T00:05:58Z"
   },
-  "461950": {
-   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/461950/library_600x900.jpg?t=1701878616",
-   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/461950/library_hero.jpg?t=1701878616",
-   "reviews": {
-    "label": "Muy positivas",
-    "pct": 81,
-    "count": 4888
-   },
-   "deck": "playable",
-   "at": "2026-11-28T00:05:58Z"
-  },
   "1750570": {
    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1750570/library_600x900.jpg?t=1785949205",
    "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1750570/library_hero.jpg?t=1785949205",
@@ -4091,6 +4080,39 @@
    },
    "deck": "verified",
    "at": "2026-11-28T00:05:58Z"
+  },
+  "588950": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588950/library_600x900.jpg?t=1734680274",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588950/library_hero.jpg?t=1734680274",
+   "reviews": {
+    "label": "Muy positivas",
+    "pct": 92,
+    "count": 1493
+   },
+   "deck": "playable",
+   "at": "2026-11-28T07:59:01Z"
+  },
+  "956030": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/956030/library_600x900.jpg?t=1791501294",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/956030/library_hero.jpg?t=1791501294",
+   "reviews": {
+    "label": "Extremadamente positivas",
+    "pct": 95,
+    "count": 5457
+   },
+   "deck": "verified",
+   "at": "2026-11-28T07:59:01Z"
+  },
+  "1203710": {
+   "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203710/library_600x900.jpg?t=1773309345",
+   "hero": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203710/library_hero.jpg?t=1773309345",
+   "reviews": {
+    "label": "Muy positivas",
+    "pct": 94,
+    "count": 2508
+   },
+   "deck": "verified",
+   "at": "2026-11-28T07:59:01Z"
   }
  }
 }
