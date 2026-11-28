@@ -1,6 +1,343 @@
 {
  "semanas": [
   {
+   "week": "2026-S48",
+   "date": "2026-11-28T00:05:58Z",
+   "label": "27 de noviembre de 2026",
+   "free": [
+    {
+     "id": "epic-f0a333114190492c84a9decd2bb43875-2026-12-03",
+     "title": "Bread and Fred",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0,
+     "originalPrice": 31099.0,
+     "currency": "COP",
+     "discountPercentage": 100,
+     "image": "https://cdn1.epicgames.com/spt-assets/545b4dd8bb364c12b719268198a93ef3/bread-and-fred-3jnwn.jpg",
+     "destinationUrl": "https://store.epicgames.com/es-ES/p/bread-and-fred-1db362",
+     "officialUrl": "https://store.epicgames.com/es-ES/p/bread-and-fred-1db362",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T16:00:00.000Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "epic-0623017cf9f341efbe07557f46beb4e8-2026-12-03",
+     "title": "Firestone – Idle Clicker Online RPG",
+     "store": "Epic Games Store",
+     "storeId": "epic",
+     "currentPrice": 0,
+     "currency": "COP",
+     "image": "https://cdn1.epicgames.com/spt-assets/69576a28f7154fe9a0dce97508da5163/firestone-online-idle-rpg-7mnjq.jpg",
+     "destinationUrl": "https://store.epicgames.com/es-ES/p/firestone-online-idle-rpg-bfd04b",
+     "officialUrl": "https://store.epicgames.com/es-ES/p/firestone-online-idle-rpg-bfd04b",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T16:00:00.000Z",
+     "regions": [
+      "CO"
+     ]
+    }
+   ],
+   "deals": [
+    {
+     "id": "cs-146697-1-3.99",
+     "title": "Divinity: Original Sin - Enhanced Edition",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7500,
+     "originalPrice": 75000,
+     "currency": "COP",
+     "discountPercentage": 90,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/373420/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/373420/capsule_231x87.jpg?t=1765505119",
+     "destinationUrl": "https://store.steampowered.com/app/373420/",
+     "officialUrl": "https://store.steampowered.com/app/373420/",
+     "affiliate": false,
+     "expiresAt": "2026-11-30T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-109746-7-1.99",
+     "title": "Metro 2033 Redux",
+     "store": "GOG",
+     "storeId": "gog",
+     "currentPrice": 2.05,
+     "originalPrice": 20.26,
+     "currency": "USD",
+     "discountPercentage": 90,
+     "copApproximation": 7329,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/capsule_231x87.jpg?t=1792681167",
+     "destinationUrl": "https://www.gog.com/en/game/metro_2033_redux",
+     "officialUrl": "https://www.gog.com/en/game/metro_2033_redux",
+     "affiliate": false,
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-102249-1-2.99",
+     "title": "Deus Ex: Human Revolution - Director's Cut",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 10140,
+     "originalPrice": 67600,
+     "currency": "COP",
+     "discountPercentage": 85,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
+     "destinationUrl": "https://store.steampowered.com/app/238010/",
+     "officialUrl": "https://store.steampowered.com/app/238010/",
+     "affiliate": false,
+     "expiresAt": "2026-12-03T17:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-295869-1-7.49",
+     "title": "FINAL FANTASY VII REBIRTH",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 27000,
+     "originalPrice": 180000,
+     "currency": "COP",
+     "discountPercentage": 85,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2909400/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2909400/61fda2e598f865ba6e985830661b98f3167e4ccc/capsule_231x87.jpg?t=1793774936",
+     "destinationUrl": "https://store.steampowered.com/app/2909400/",
+     "officialUrl": "https://store.steampowered.com/app/2909400/",
+     "affiliate": false,
+     "expiresAt": "2026-12-02T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-220484-1-5.99",
+     "title": "Against the Storm",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 11980,
+     "originalPrice": 59900,
+     "currency": "COP",
+     "discountPercentage": 80,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1336490/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1336490/5fb8a36f5913c8c179d1344d205d3319dc08e9d2/capsule_231x87.jpg?t=1795529301",
+     "destinationUrl": "https://store.steampowered.com/app/1336490/",
+     "officialUrl": "https://store.steampowered.com/app/1336490/",
+     "affiliate": false,
+     "expiresAt": "2026-12-05T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-227942-1-9.99",
+     "title": "Disco Elysium - The Final Cut",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 22250,
+     "originalPrice": 89000,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
+     "destinationUrl": "https://store.steampowered.com/app/632470/",
+     "officialUrl": "https://store.steampowered.com/app/632470/",
+     "affiliate": false,
+     "expiresAt": "2026-12-11T17:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-196149-1-6.24",
+     "title": "Hades",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 14700,
+     "originalPrice": 58800,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/capsule_231x87.jpg?t=1758127023",
+     "destinationUrl": "https://store.steampowered.com/app/1145360/",
+     "officialUrl": "https://store.steampowered.com/app/1145360/",
+     "affiliate": false,
+     "expiresAt": "2026-12-01T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-166-1-2.49",
+     "title": "Fallout 3",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 9975,
+     "originalPrice": 39900,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/capsule_231x87.jpg?t=1732208474",
+     "destinationUrl": "https://store.steampowered.com/app/22300/",
+     "officialUrl": "https://store.steampowered.com/app/22300/",
+     "affiliate": false,
+     "expiresAt": "2026-11-30T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-88611-1-2.49",
+     "title": "Dishonored",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 7725,
+     "originalPrice": 30900,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/205100/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/205100/4200196155ae07d085d8558abe2851fe4eb80815/capsule_231x87.jpg?t=1789050056",
+     "destinationUrl": "https://store.steampowered.com/app/205100/",
+     "officialUrl": "https://store.steampowered.com/app/205100/",
+     "affiliate": false,
+     "expiresAt": "2026-11-30T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    },
+    {
+     "id": "cs-257-1-1.24",
+     "title": "Freedom Force",
+     "store": "Steam",
+     "storeId": "steam",
+     "currentPrice": 3375,
+     "originalPrice": 13500,
+     "currency": "COP",
+     "discountPercentage": 75,
+     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8880/header.jpg",
+     "imageSmall": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8880/capsule_231x87.jpg?t=1569012854",
+     "destinationUrl": "https://store.steampowered.com/app/8880/",
+     "officialUrl": "https://store.steampowered.com/app/8880/",
+     "affiliate": false,
+     "expiresAt": "2026-12-04T18:00:00Z",
+     "regions": [
+      "CO"
+     ]
+    }
+   ],
+   "games": [
+    {
+     "id": "steam-2272360",
+     "title": "Warhammer 40,000: Dawn of War IV",
+     "date": "2026-12-03",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción",
+      "Estrategia"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2272360/f50a309da98ef75cbdae400a7d492e36314ce415/header.jpg?t=1795709250",
+     "url": "https://store.steampowered.com/app/2272360/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-4084710",
+     "title": "Rayman Legends Retold",
+     "date": "2026-12-03",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción",
+      "Aventura",
+      "Casual"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4084710/4fc23980ce04f33d7dc91bf38d74591ec00015cb/header.jpg?t=1795183629",
+     "url": "https://store.steampowered.com/app/4084710/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-3161310",
+     "title": "Hela: of Mice & Magic",
+     "date": "2026-12-01",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Aventura"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3161310/868b1938e4540924707c8db978d494322757e28d/header.jpg?t=1795541601",
+     "url": "https://store.steampowered.com/app/3161310/",
+     "store": "Steam"
+    },
+    {
+     "id": "steam-1752080",
+     "title": "HUNGER",
+     "date": "2026-12-03",
+     "precision": "day",
+     "platforms": [
+      "Windows"
+     ],
+     "genres": [
+      "Acción",
+      "Rol",
+      "Acceso anticipado"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1752080/header.jpg?t=1795644705",
+     "url": "https://store.steampowered.com/app/1752080/",
+     "store": "Steam"
+    },
+    {
+     "id": "wd-Q136373824",
+     "title": "Petit Planet",
+     "date": "2026-12-04",
+     "precision": "day",
+     "platforms": [
+      "Switch",
+      "Windows"
+     ],
+     "genres": [
+      "Videojuego de simulación"
+     ],
+     "image": "https://i.ytimg.com/vi/7HyMwlxRcCg/maxresdefault.jpg",
+     "url": "https://en.wikipedia.org/wiki/Petit_Planet",
+     "store": "Wikipedia",
+     "source": "wikidata"
+    },
+    {
+     "id": "steam-3681610",
+     "title": "DRAGON QUEST MONSTERS: El reino marchito",
+     "date": "2026-12-03",
+     "precision": "day",
+     "platforms": [
+      "Windows",
+      "Switch",
+      "Xbox",
+      "PlayStation"
+     ],
+     "genres": [
+      "Acción",
+      "Aventura",
+      "Rol"
+     ],
+     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3681610/b9aef398ba1695e8a4873626419524b2c37d6c0f/header_spanish.jpg?t=1795769522",
+     "url": "https://store.steampowered.com/app/3681610/",
+     "store": "Steam"
+    }
+   ]
+  },
+  {
    "week": "2026-S47",
    "date": "2026-11-20T17:00:25Z",
    "label": "20 de noviembre de 2026",

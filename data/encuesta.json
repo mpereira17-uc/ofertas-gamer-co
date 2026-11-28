@@ -2,17 +2,30 @@
  "current": {
   "question": "🎮 ¿Cuál vas a jugar este fin de semana?",
   "options": [
-   "Mark of the Deep",
+   "Bread and Fred",
+   "Firestone – Idle Clicker Online RPG",
+   "Divinity: Original Sin - Enhanced Edition",
    "Metro 2033 Redux",
-   "Deus Ex: Human Revolution - Director's Cut",
-   "FINAL FANTASY VII REBIRTH",
    "Otro / ninguno"
   ],
-  "week": "2026-S47",
-  "telegram": "4899955255443194573",
+  "week": "2026-S48",
+  "telegram": "4922797008214819177",
   "discord": true
  },
  "previous": [
+  {
+   "question": "🎮 ¿Cuál vas a jugar este fin de semana?",
+   "options": [
+    "Mark of the Deep",
+    "Metro 2033 Redux",
+    "Deus Ex: Human Revolution - Director's Cut",
+    "FINAL FANTASY VII REBIRTH",
+    "Otro / ninguno"
+   ],
+   "week": "2026-S47",
+   "telegram": "4899955255443194573",
+   "discord": true
+  },
   {
    "question": "🎮 ¿Cuál vas a jugar este fin de semana?",
    "options": [
